@@ -3,42 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Map — CBDC Dataset v11</title>
-<meta name="description" content="World map of retail CBDC architecture types and design features by year — mock data.">
+<title>Map — CBDC Dataset</title>
+<meta name="description" content="World map of retail CBDC architecture types, design features and declared objectives by year.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="layout">
 <aside class="side"></aside>
 <main class="content">
-<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
-<section class="hero"><div class="wide">
-  <h1>Architecture types and design features, by year</h1>
-  <p class="lead">Colour a country by its architecture type, by one feature, or by official status; drag the year to see the documented design as of that year; click a country for its full profile with quotes and trajectory. Everything except Norway and the UK is mock.</p>
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
+<section class="hero" style="padding:34px 0 22px"><div class="wide">
+  <h1 style="font-size:2rem;margin-bottom:8px">Architecture types and design features, by year</h1>
+  <p class="lead" style="font-size:1rem;max-width:900px">Every retail CBDC project with an official document, placed in one of six architecture categories (A0–C1) and coloured by any design cell or by its primary declared objective. Drag the year: the map and the chart below show the design <em>as documented at that time</em>, so you can watch categories shift as projects move from options to commitments. Click a country for the full profile — every value with its decisive document, page and quote.</p>
 </div></section>
 <div class="wide">
   <div class="map-tools">
-    <span><label>Colour by</label><select id="scheme"></select></span>
-    <span><label>As of</label><input type="range" id="year" min="2018" max="2026" step="1" value="2026"> <span class="year" id="year-label">2026</span> <button class="btn btn-outline" id="play" style="padding:4px 10px;font-size:0.8rem">▶ play</button></span>
+    <span><label>Colour by</label><select id="mode"></select></span>
+    <span><label>As of</label><input type="range" id="year" min="2016" max="2026" step="1" value="2026"> <span class="year" id="year-label">2026</span> <button class="btn btn-outline" id="play" style="padding:4px 10px;font-size:0.8rem">▶ play</button></span>
     <span><button class="btn btn-outline" id="unpin" style="padding:4px 10px;font-size:0.8rem">unpin</button></span>
   </div>
   <div class="map-layout">
-    <div id="map-wrap"><svg id="cbdc-map" viewBox="0 0 960 480" role="img" aria-label="World map of CBDC architecture types"></svg><div class="legend" id="legend" style="padding:8px 12px 10px"></div></div>
+    <div style="flex:1 1 640px;min-width:320px">
+      <div id="map-wrap"><svg id="cbdc-map" viewBox="0 0 960 470" role="img" aria-label="World map of retail CBDC architecture types"></svg><div class="legend" id="legend" style="padding:8px 12px 10px"></div></div>
+      <div class="chartbox"><h4 id="chart-title">Projects by category over time</h4><div id="timechart"></div><p class="form-note" style="margin:6px 0 0">Each bar counts projects by the category they were in according to their documents up to that year. A project enters the chart with its first document and keeps its last documented state until a later document changes it; commitment status (option / tested / adopted) is carried in the profile.</p></div>
+      <p class="form-note" style="margin-top:10px">Now: <span id="counts"></span></p>
+    </div>
     <div id="panel"></div>
   </div>
-  <p class="form-note" style="margin-top:14px">Projects by current type: <span id="counts"></span></p>
-  <p class="form-note">Monetary unions (euro area, ECCU) are one project each and are drawn on all member states. The year slider uses one snapshot per document year; real trajectories come from the extraction pipeline's dated claims (<code>history.json</code>), the mock ones are generated.</p>
+  <p class="form-note" style="margin-top:14px">Unit of analysis: one project per decision authority — the euro area, the ECCU and WAEMU are single projects drawn across their member states. Countries in light grey have no official retail-CBDC document in the registry; in darker grey the project is outside the retail matrix (wholesale-only, statutory restriction). Colour conventions in the feature modes: green = the more privacy-protective pole, red = the less protective; F3 and F12 are nominal. See <a href="features.html">Features &amp; types</a> for every definition and <a href="profiles.html">Country profiles</a> for the same data as a sortable table.</p>
 </div>
 <footer class="site">
   <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
     <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
-    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>. Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data</a>.</div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
   </div>
 </footer>
 </main>
 </div>
-<script src="assets/site.js"></script>
 <script src="assets/vendor/d3.v7.min.js"></script>
 <script src="assets/vendor/topojson-client.min.js"></script>
-<script>CBDC.load(function(D){ CBDC.drawMap(D); });</script>
-</body></html>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){ CBDC.drawMap(D); });</script></body></html>

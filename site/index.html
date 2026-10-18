@@ -3,48 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home — CBDC Dataset v11</title>
-<meta name="description" content="Open dataset of documented privacy and identifiability design in retail CBDC projects, built from official central-bank documents. v11 work in progress.">
+<title>Home — CBDC Dataset</title>
+<meta name="description" content="Open dataset of documented privacy and identifiability design in retail CBDC projects, built from official central-bank documents.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="layout">
 <aside class="side"></aside>
 <main class="content">
-<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
 <section class="hero"><div class="wrap">
   <h1>Who can see a CBDC payment — and what did the central bank actually commit to?</h1>
-  <p class="lead">Version 11 replaces the vocabulary-based purpose categories of the first release with a <em>measured</em> matrix: for each retail CBDC project, a small set of yes/no design questions (F1–F12) answered only from official documents, each answer tied to a verbatim quote, a page, a commitment status and a date. The map, the types and the time dimension below are the target product; the numbers behind them are placeholders until extraction runs.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="map.html">Open the map (mock)</a><a class="btn btn-outline" href="features.html">The questions F1–F12</a><a class="btn btn-outline" href="method.html">Method &amp; progress</a></div>
+  <p class="lead">An open dataset of documented privacy and identifiability design in every retail central bank digital currency project with an official document. Each project is answered on ten design questions from its own documents — value, evidence, commitment status, quote, page, date — placed in one of six architecture categories, and tracked over time.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="map.html">Explore the map</a><a class="btn btn-outline" href="profiles.html">Country profiles</a><a class="btn btn-outline" href="paper.html">Read the paper</a></div>
 </div></section>
-<div class="wrap"><div class="stats" id="stats">
-  <div class="stat-card"><div class="num" id="n-jur">56</div><div class="label">projects with a core document</div></div>
-  <div class="stat-card"><div class="num" id="n-docs">125</div><div class="label">core documents (frozen 18 Oct 2026)</div></div>
-  <div class="stat-card"><div class="num">10</div><div class="label">coded cells per project (F1–F12)</div></div>
-  <div class="stat-card"><div class="num">2</div><div class="label">development profiles coded (NO, UK)</div></div>
+<div class="wrap"><div class="stats">
+  <div class="stat-card"><div class="num" id="n-proj">70</div><div class="label">retail CBDC projects</div></div>
+  <div class="stat-card"><div class="num" id="n-countries">100</div><div class="label">countries covered</div></div>
+  <div class="stat-card"><div class="num" id="n-docs">387</div><div class="label">official documents, hashed and linked</div></div>
+  <div class="stat-card"><div class="num" id="n-typed">48</div><div class="label">projects with a full architecture type</div></div>
 </div></div>
 <section class="block"><div class="wrap">
-  <h2>What changed since v1</h2>
-  <p class="subtle">From "what is it for" to "what did they commit to, and who can see what".</p>
-  <p>The first release counted design vocabulary and sorted projects into six purpose "centres". Four rounds of external review found the categories hard to validate and the privacy index sensitive to sample choice. v11 keeps the open, document-based idea but changes the measurement: every project gets a <strong>feature matrix</strong> answered from its own official documents under a written <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">measurement contract</a>. Absence of mention is <em>unknown</em>, never <em>no</em>; a tested capability is not an adopted commitment; a staff paper never establishes a commitment. Purposes survive as declared, non-exclusive objectives (F11) — described, not used to classify.</p>
-  <div class="findings">
-    <div class="finding-card"><span class="n">1</span><p><strong>Architecture layer.</strong> Three questions decide the type: can the central bank routinely link an online payment to a person (F1), can the user's provider (F2), and is a private offline mode an adopted commitment (F4). Six cells A0 … C1; C is expected to be empty among adopted designs — stated in advance.</p></div>
-    <div class="finding-card"><span class="n">2</span><p><strong>Time layer.</strong> Every cell carries the year and status of the document it comes from, so a project's trajectory (option → tested → adopted, or a reversal) is part of the data. The map has a year slider for exactly this.</p></div>
-    <div class="finding-card"><span class="n">3</span><p><strong>Validation first.</strong> Extraction is a logged, reproducible API pipeline with a mechanical citation check; two authors verify development profiles; a sealed blind test set is coded by humans without model output; hypotheses and a smallest effect of interest are registered before any cell is computed.</p></div>
-  </div>
+  <h2>Why this dataset</h2>
+  <p class="subtle">Status trackers say a project is "piloting". They don't say who can see the payments.</p>
+  <p>Within a single tracker status, central banks commit to radically different designs: some keep transaction identity away from the central bank by construction, some see everything, some offer an offline mode with cash-like privacy and some rule it out. Press releases talk about privacy; design documents commit to it or don't. We read the official documents and code the commitments, not the vocabulary — and we record for every value the document, the page, the quote and whether it is an option under study, a tested capability, an adopted decision or a live arrangement.</p>
 </div></section>
 <section class="block alt"><div class="wrap">
-  <h2>Where this stands</h2>
-  <p>Corpus and selection are frozen (core_v1, 18 Oct 2026, plus a dated UK supplement). The contract is at v1.1 after the first two worked profiles. Norway and the United Kingdom are coded as development profiles with verified quotes; the remaining 54 projects on the map are <strong>mock values</strong> generated to show the finished product. See <a href="method.html">Method &amp; progress</a> for the step-by-step plan.</p>
+  <h2>Three things the data lets you do</h2>
+  <div class="findings">
+    <div class="finding-card"><span class="n">1</span><p><strong>Place every project in one of six architecture categories.</strong> Can the central bank link an online payment to a person? Can the user's provider? Is a private offline mode adopted? Those three answers give A0 … C1 — a nominal map of designs, not a score. <a href="features.html">How the categories are defined →</a></p></div>
+    <div class="finding-card"><span class="n">2</span><p><strong>Watch designs change.</strong> Each value carries the year of its document, so the map can be read as of 2018, 2021 or today, and a project's path from option to commitment — or its reversal — is visible. <a href="map.html">Open the map and drag the year →</a></p></div>
+    <div class="finding-card"><span class="n">3</span><p><strong>Separate what is declared from what is built.</strong> Declared objectives (inclusion, modernisation, sovereignty, resilience, enforcement, innovation) are recorded as non-exclusive flags with quotes and shown next to the architecture — so you can see, for example, which inclusion-declaring projects actually adopt a low-identification route.</p></div>
+  </div>
+</div></section>
+<section class="block"><div class="wrap">
+  <h2>How it is measured</h2>
+  <p>A written <a href="features.html">measurement contract</a> defines each cell, its allowed values and the traps a coder must avoid; absence of mention is <em>unknown</em>, never <em>no</em>; a staff paper never establishes a commitment. Values are extracted by a reproducible two-provider API pipeline with a mechanical check that every quote is on its cited page, verified by the authors on development projects, and audited against an independent human reference on a sealed test set. Hypotheses and the smallest effect of interest were registered before any cell was computed. <a href="pipeline.html">The pipeline →</a> · <a href="method.html">Method &amp; progress →</a></p>
+</div></section>
+<section class="block alt"><div class="wrap">
+  <h2>Open by design</h2>
+  <p>Data (CC BY 4.0), contract, pipeline code (MIT) and the validation record are public. Every cell can be challenged with a document and a page. <a href="contribute.html">How to contribute →</a></p>
 </div></section>
 <footer class="site">
   <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
     <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
-    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>. Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data</a>.</div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
   </div>
 </footer>
 </main>
 </div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
 <script src="assets/site.js"></script>
-<script>CBDC.load(function(D){ document.getElementById("n-jur").textContent=D.jurisdictions.length; document.getElementById("n-docs").textContent=D.jurisdictions.reduce(function(a,j){return a+j.docs.length},0); });</script>
-</body></html>
+<script>CBDC.load(function(D){ CBDC.stats(D); });</script></body></html>

@@ -3,47 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Features & types — CBDC Dataset v11</title>
-<meta name="description" content="The F1–F12 design questions, the architecture typology and the outcomes of the CBDC privacy measurement contract v1.1.">
+<title>Features and types — CBDC Dataset</title>
+<meta name="description" content="Definitions of the F1–F12 design cells, the six architecture categories, declared objectives, outcomes and worked examples.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="layout">
 <aside class="side"></aside>
 <main class="content">
-<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
 <section class="hero"><div class="wide">
   <h1>The questions we answer for every project</h1>
-  <p class="lead">Each cell is one question answered from the project's own official documents. A cell carries a value, an evidence state (documented / partial / unknown / conflict), a commitment status (option / adopted / tested / operational), the decisive document and page, and a verbatim quote. The full definitions are the <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">measurement contract v1.1</a>; the table is parsed from it.</p>
+  <p class="lead">One project, ten coded cells. Each cell is a question answered only from the project's own official documents under the <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">measurement contract v1.1</a>, and each answer carries five things: the <b>value</b>, an <b>evidence state</b> (documented / partial / unknown / conflict), a <b>commitment status</b> (option / adopted / tested / operational), the <b>decisive document, page and verbatim quote</b>, and the <b>date</b>. Absence of mention is <em>unknown</em>, never <em>no</em>.</p>
 </div></section>
+
 <section class="block"><div class="wide">
-  <h2>Layer 1 — architecture type</h2>
-  <p>Three cells decide the type. Online axis: <b>A</b> = the central bank can routinely link an online payment to a person (F1 yes); <b>B</b> = it cannot, but the user's payment service provider can (F1 no, F2 yes); <b>C</b> = neither can (F1 no, F2 no). Offline axis: <b>0</b> = no adopted private offline mode (F4 no); <b>1</b> = adopted (F4 yes). Missing input gives a partial type such as <code>B?</code>. The type is nominal — never a score.</p>
+  <h2>What counts as evidence</h2>
+  <p class="subtle">The authority layer of a document decides what a value can be.</p>
+  <div class="evid">
+    <div><b>Official decision</b>Board decision, law, final report of the competent body. Can set <i>adopted</i> / <i>operational</i>. Later decision on the same matter supersedes an earlier one.</div>
+    <div><b>Official design document</b>Consultation paper, design note, white paper, progress update. Sets a value with status <i>option</i> unless the body presents it as a commitment ("if issued, the central bank will not…").</div>
+    <div><b>Pilot / PoC report</b>Experiment reports, pilot evaluations. Set a value with status <i>tested</i>; a tested capability is never an adopted commitment.</div>
+    <div><b>Staff research</b>Working papers with an author-views disclaimer. Flagged separately; may corroborate a value, never establishes one. Background law published before 2018 is used only for the legal basis of F3.</div>
+  </div>
+  <p>Inference is allowed only as a necessary conclusion from documented premises, with the premises recorded and the cell flagged <i>inferred</i>: F2 = yes needs three documented premises (the PSP holds an identifier → person mapping, routinely sees the transaction record, and can link the two); F7 = no may be inferred only when verified onboarding is documented and no document mentions any lower-identification route. Conflicts between two adopted claims of equal standing are stored as <i>conflict</i> and adjudicated by the authors, never by a model.</p>
+</div></section>
+
+<section class="block alt"><div class="wide">
+  <h2>Layer 1 — the six architecture categories</h2>
+  <p>Three cells decide the type. Online axis: <b>A</b> = the central bank or core operator can routinely link an online payment to a person (F1 yes); <b>B</b> = it cannot, but the user's payment service provider can (F1 no, F2 yes); <b>C</b> = neither can (F1 no, F2 no). Offline axis: <b>0</b> = no adopted private offline mode (F4 no); <b>1</b> = adopted (F4 yes). A missing input gives a partial type (<code>B?</code>, <code>B/C0</code>). The type is nominal — never a score, never coded 1–6, never correlated.</p>
   <div class="typegrid">
     <div class="hd"></div><div class="hd">0 — no private offline mode</div><div class="hd">1 — private offline mode adopted</div>
-    <div class="hd" style="align-self:center">A · central bank can link</div><div class="cell"><b>A0</b><span id="n-A0">–</span></div><div class="cell"><b>A1</b><span id="n-A1">–</span></div>
-    <div class="hd" style="align-self:center">B · only the PSP can link</div><div class="cell"><b>B0</b><span id="n-B0">–</span></div><div class="cell"><b>B1</b><span id="n-B1">–</span></div>
-    <div class="hd" style="align-self:center">C · nobody routinely can</div><div class="cell" style="color:var(--muted)"><b>C0</b><span id="n-C0">–</span></div><div class="cell" style="color:var(--muted)"><b>C1</b><span id="n-C1">–</span></div>
+    <div class="hd" style="align-self:center">A · central bank can link</div><div class="cell"><b style="color:#9c3a26">A0</b><span id="n-A0">–</span></div><div class="cell"><b style="color:#e07a4a">A1</b><span id="n-A1">–</span></div>
+    <div class="hd" style="align-self:center">B · only the PSP can link</div><div class="cell"><b style="color:#167a4f">B0</b><span id="n-B0">–</span></div><div class="cell"><b style="color:#5cbf8a">B1</b><span id="n-B1">–</span></div>
+    <div class="hd" style="align-self:center">C · nobody routinely can</div><div class="cell"><b style="color:#2a5fb0">C0</b><span id="n-C0">–</span></div><div class="cell"><b style="color:#6fa0e8">C1</b><span id="n-C1">–</span></div>
   </div>
   <p class="form-note" id="type-counts"></p>
-  <p class="form-note">C0/C1 are expected to be empty among adopted designs; the expectation is stated before coding. Counts shown here are from the current site data (mock until extraction runs).</p>
+  <p class="form-note">C0/C1 were expected to be empty among adopted designs — stated before coding; any project that lands there is reported with its commitment status. Counts are from the current site data (mock until extraction runs).</p>
 </div></section>
+
+<section class="block"><div class="wide">
+  <h2>Layer 2 — declared objectives</h2>
+  <p>F11 records which objectives the institution <em>declares</em>, each flag with a quote, and whether it ranked one as primary (<i>one_primary</i> / <i>several_joint</i> / <i>unranked</i> / <i>conflict</i>). The six flags are payment modernisation, financial inclusion, monetary sovereignty &amp; transmission, cash substitute &amp; resilience, AML/CFT/tax enforcement, innovation &amp; competitiveness. A zero flag means "not documented", not absence of motive; "the CBDC will comply with AML rules" is a design requirement, not an objective. Word frequencies never set a flag. The map's objective mode shows the primary objective where one is ranked, otherwise "several, jointly" or "declared, unranked".</p>
+</div></section>
+
 <section class="block alt"><div class="wide">
   <h2>Outcomes used in the empirical illustration</h2>
-  <p><b>Y₁</b> = 1 if F1 = no (adopted): the central bank is separated from transaction identity. Primary illustration, used only if ≥ 20 projects are determinable and the minority class has ≥ 6. <b>Y₃</b> = 1 if F7 = yes: a route to hold or pay up to a limit without verified identity exists; reported with and without inferred zeros. <b>Y₂</b> (public-authority access) was dropped in v1.1: F3 is kept as a descriptive route only, because the routine-vs-targeted distinction depends on law outside the corpus. Hypotheses, estimands and the smallest effect of interest are in <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/PREDICTIONS_v2_2_DRAFT_2026-10-18.md">PREDICTIONS v2.2</a>.</p>
+  <p><b>Y₁</b> = 1 if F1 = no (adopted): the central bank is separated from transaction identity. Primary illustration, used only if ≥ 20 projects are determinable and the minority class has ≥ 6. <b>Y₃</b> = 1 if F7 = yes; reported with and without inferred zeros. <b>Y₂</b> (public-authority access) was dropped in v1.1: F3 is kept as a descriptive route, because the routine-vs-targeted distinction depends on law outside the corpus. Hypotheses, estimand (Δ between predictor quartiles) and the smallest effect of interest are in <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/PREDICTIONS_v2_2_DRAFT_2026-10-18.md">PREDICTIONS v2.2</a>.</p>
 </div></section>
+
 <section class="block"><div class="wide">
-  <h2>All cells (contract §4)</h2>
+  <h2>All cells — definitions (contract §4)</h2>
   <table class="ftable" id="ftable"></table>
-  <p class="form-note">F5 and F6 are reserved (schema only). F11 is Layer 2: declared objectives as non-exclusive flags with a quote each, plus whether the institution ranked one as primary. F12 is descriptive and will be checked against the technology field of the BIS and Atlantic Council trackers as an external validity criterion.</p>
+  <p class="form-note">F5 and F6 are reserved (schema only). F12 is descriptive and is checked against the technology field of the BIS and Atlantic Council trackers as an external validity criterion.</p>
+</div></section>
+
+<section class="block alt"><div class="wide">
+  <h2>Worked examples — how a cell is filled</h2>
+  <p class="subtle">From the two development profiles, with the verbatim quote and the page the pipeline cited and the mechanical check that the quote is on that page.</p>
+  <div id="examples"></div>
 </div></section>
 <footer class="site">
   <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
     <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
-    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>. Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data</a>.</div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
   </div>
 </footer>
 </main>
 </div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
 <script src="assets/site.js"></script>
-<script>CBDC.load(function(D){ CBDC.featuresTable(D); });</script></body></html>
+<script>CBDC.load(function(D){ CBDC.featuresTable(D);
+var ex=document.getElementById("examples"); var dev=D.projects.filter(function(p){return !p.mock;});
+var html="";
+["F1","F2","F4","F7","F8","F9","F10","F3","F12"].forEach(function(f){
+  html+="<h3 style='margin:18px 0 6px'>"+CBDC.FLABEL[f]+"</h3><table class='ftable'><tr><th>Project</th><th>Value · evidence · status</th><th>Decisive document</th><th>Quote</th><th>Why (justification)</th></tr>";
+  dev.forEach(function(p){ var c=p.cells[f]; if(!c) return;
+    html+="<tr><td>"+CBDC.esc(p.name)+"</td><td><b>"+CBDC.esc(c.value)+"</b><br><span style='color:var(--muted)'>"+[c.evidence_state,c.claim_status,c.derivation].filter(Boolean).join(" · ")+"</span></td><td>"+(c.doc_url?"<a href='"+c.doc_url+"'>":"")+CBDC.esc(c.doc_title||c.doc_id)+(c.doc_url?"</a>":"")+(c.doc_year?" ("+c.doc_year+")":"")+(c.page?", p. "+c.page:"")+(c.quote_verified?"<br><span class='tag dev'>"+c.quote_verified.replace(/_/g," ")+"</span>":"")+"</td><td style='white-space:normal'>"+(c.quote?"“"+CBDC.esc(c.quote)+"”":"<i>no decisive passage</i>")+"</td><td style='white-space:normal'>"+CBDC.esc(c.justification||"")+(c.counter_evidence&&c.counter_evidence!=="none found"?"<br><span style='color:var(--muted)'>Counter-evidence: "+CBDC.esc(c.counter_evidence)+"</span>":"")+"</td></tr>"; });
+  html+="</table>"; });
+ex.innerHTML=html; });</script></body></html>

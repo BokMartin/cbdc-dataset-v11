@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper — CBDC Dataset</title>
+<meta name="description" content="Working paper: institutional determinants of privacy design in central bank digital currencies — abstract, figures and registration.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
+<section class="hero"><div class="wrap">
+  <h1>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</h1>
+  <p class="lead">Martin Bok &amp; Dominik Stroukal · working paper, v11 · a measurement and data paper with a limited, pre-registered empirical illustration.</p>
+</div></section>
+<section class="block"><div class="wrap">
+  <h2>Abstract <span class="sim">target abstract — results to be filled by the registered analysis</span></h2>
+  <p>Trackers tell us whether a central bank is researching, piloting or has launched a retail CBDC; they do not tell us what it has committed to. We build an open dataset of documented privacy and identifiability design choices for every retail CBDC project with an official document (<span id="a-proj">—</span> projects, <span id="a-docs">—</span> documents, <span id="a-countries">—</span> countries), coded under a written measurement contract: for each project, whether the central bank can routinely link an online payment to a person (F1), whether the user's provider can (F2), whether a private offline mode is an adopted commitment (F4), and seven further cells on identification, re-identification, programmability, lawful access and ledger technology. Every value is tied to a verbatim quote, a page, a commitment status and a date, extracted by a reproducible two-provider pipeline with a mechanical citation check and audited against an independent human reference on a sealed test set. The three architecture cells define six nominal types; <span id="a-typed">—</span> projects receive a full type. Declared objectives are recorded as non-exclusive flags and described, not used to classify. As a pre-registered illustration we estimate, with a Firth logistic model and a smallest effect of interest fixed by elicitation, whether the size of the informal economy and the level of liberal democracy are associated with central-bank separation from transaction identity (Y₁). [Results: supported / refuted / indeterminate per hypothesis, to be inserted verbatim from the registered decision rule.] The dataset, the contract, the pipeline and the validation record are released openly; the time dimension of each cell allows the map of designs to be read as of any year since 2016.</p>
+</div></section>
+<section class="block alt"><div class="wrap">
+  <h2>Figure 1 — architecture type × declared objectives <span class="sim">mock data</span></h2>
+  <p class="subtle">Share of projects in each type that declare the objective (F11 flags, non-exclusive). Descriptive; no causal reading.</p>
+  <table class="ftable" id="crosstab"></table>
+</div></section>
+<section class="block"><div class="wrap">
+  <h2>Figure 2 — registered estimands <span class="sim">simulated illustration</span></h2>
+  <p class="subtle">What the result figure will look like: Δ = difference in the model probability of Y₁ = 1 between the 75th and 25th percentile of the predictor, with a 95 % interval, against the registered smallest effect of interest δ (shaded). Supported if the whole interval lies beyond the hypothesised bound (below −δ for H1, above +δ for H2); refuted if it lies entirely on the other side of that bound; indeterminate otherwise. The numbers shown are placeholders.</p>
+  <div class="chartbox"><div id="delta"></div></div>
+</div></section>
+<section class="block alt"><div class="wrap">
+  <h2>Figure 3 — categories over time <span class="sim">mock data</span></h2>
+  <p class="subtle">The six architecture categories as documented at each year — the same series as on the <a href="map.html">map</a>.</p>
+  <div class="chartbox"><div id="timechart"></div></div>
+</div></section>
+<section class="block"><div class="wrap">
+  <h2>What the paper claims, and what it does not</h2>
+  <p>It claims a validated instrument (definitions, inter-coder and model–human agreement, citation-verified provenance) and a documented map with a time dimension. It does not claim that institutions <em>cause</em> designs: associations are reported as "is associated with", on 20–50 determinable projects, with the smallest effect of interest fixed in advance, and whatever they show. Purposes are described, never used to rank countries. Earlier versions' vocabulary-based categories and privacy index are retired; the v1 release stays archived at cbdcdataset.org for the record.</p>
+  <p>Registration: <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/PREDICTIONS_v2_2_DRAFT_2026-10-18.md">PREDICTIONS v2.2 (draft)</a> · Contract: <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">v1.1</a> · Code and data: <a href="data.html">Data</a>.</p>
+</div></section>
+<footer class="site">
+  <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){ CBDC.stats(D); document.getElementById('a-proj').textContent=D.projects.filter(function(p){return p.cells}).length; document.getElementById('a-docs').textContent=D.projects.reduce(function(a,p){return a+p.docs.length},0); document.getElementById('a-countries').textContent=D.projects.reduce(function(a,p){return a+p.members.length},0); document.getElementById('a-typed').textContent=D.projects.filter(function(p){return CBDC.colors.TYPE[p.type]}).length; CBDC.crosstab(D,'crosstab'); CBDC.deltaPlot('#delta'); CBDC.timeChart(D,'type',2026,'#timechart'); });</script></body></html>

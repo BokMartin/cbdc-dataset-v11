@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline — CBDC Dataset</title>
+<meta name="description" content="How a value is produced, logged, checked and audited: the extraction and validation pipeline of the CBDC dataset.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
+<section class="hero"><div class="wrap">
+  <h1>Pipeline</h1>
+  <p class="lead">From an official PDF to a cell on the map: how a value is produced, logged, checked and audited. Everything on this page is runnable from the repository; the metrics shown are the targets the validation must meet.</p>
+</div></section>
+<section class="block"><div class="wide">
+  <h2>Steps</h2>
+  <div class="pipe">
+    <div class="node"><span class="k">1 · corpus</span><b>Registry of official documents</b>391 documents, 92 registry codes, SHA-256 and source URL per row; three model passes + first author select the analytical core under a written rubric; an independent LLM audits and searches gaps. Frozen as <code>core_v1</code> (dated additions as <code>core_v2</code>).</div>
+    <div class="node"><span class="k">2 · text</span><b>Page-delimited text</b><code>pdftotext -layout</code>, OCR for scans; one text file per document with page markers, so every quote can be located mechanically.</div>
+    <div class="node"><span class="k">3 · contract</span><b>Measurement contract</b>Definitions, values, qualifiers, traps, inference and supersession rules. Versioned; frozen before production; registered.</div>
+    <div class="node"><span class="k">4 · extraction</span><b>API extraction, two providers</b><code>extract_api.py</code>: no chat history; either all documents of a project in one request or per-document findings → synthesis. Logs model id, SHA-256 of contract/prompt/script, raw responses, token usage.</div>
+    <div class="node"><span class="k">5 · check</span><b>Mechanical citation check</b><code>verify_quotes.py</code>: is the quote on the cited page (±1)? The result travels with the cell as <code>quote_verified</code>; a quote not found voids the claim for audit.</div>
+    <div class="node"><span class="k">6 · adjudication</span><b>Model–model disagreement</b>Cells where the two providers differ go to the authors with both justifications; the decision and its reasoning are logged. Agreements and empty cells are sampled and audited too.</div>
+    <div class="node gate"><span class="k">7 · gate</span><b>Blind human reference</b>6–8 projects whose model output the authors never saw, coded independently by both authors from the PDFs. Scored once: α and AC1 (human–human, model–human), feature / type / Y error. Failure policy if tolerance is missed.</div>
+    <div class="node"><span class="k">8 · release</span><b>Matrix, claims, history</b><code>matrix.csv</code>, <code>claims.csv</code>, <code>history.json</code>, <code>types.csv</code>, validation files; the site reads them directly.</div>
+  </div>
+</div></section>
+<section class="block alt"><div class="wide">
+  <h2>Validation targets <span class="sim">targets, not results</span></h2>
+  <div class="kpis">
+    <div><div class="v">≥ 0.80</div><div class="l">Krippendorff's α</div><div class="m">human–human on the blind test set per family (0.667 provisional floor); AC1 reported alongside</div></div>
+    <div><div class="v">≥ α − 0.05</div><div class="l">model–human agreement</div><div class="m">each provider against the human reference; disagreements adjudicated</div></div>
+    <div><div class="v">≥ 95 %</div><div class="l">quotes verified on page</div><div class="m">development runs so far: 16–17 of 17 cells per project exact page; stage-1 findings 94–98 %</div></div>
+    <div><div class="v">100 %</div><div class="l">runs with manifest</div><div class="m">model id, hashes, raw responses, usage — reproducible in intent; provider-side sampling is not settable</div></div>
+  </div>
+  <p class="form-note">Development evidence to date (Norway, UK, contract v1.1): single-request and two-stage modes agree on all UK values but one; Norway differs on four cells, all traceable to one open definition (status of a design draft published with a decision not to issue). Those numbers are development material, not validation.</p>
+</div></section>
+<section class="block"><div class="wrap">
+  <h2>Reproduce</h2>
+<pre class="small">export ANTHROPIC_API_KEY=...            # or OPENAI_API_KEY with --provider openai
+python3 scripts/extraction/extract_api.py --jur NO --model claude-opus-5-5 --mode both \
+    --indir texts/NO --contract docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --outroot runs
+python3 -I scripts/extraction/verify_quotes.py runs/&lt;run&gt;/FILL.csv texts/NO
+python3 scripts/site/build_site_data.py       # rebuilds site/assets/data.json</pre>
+  <p>Source: <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/scripts/extraction/extract_api.py">extract_api.py</a> · <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/scripts/extraction/verify_quotes.py">verify_quotes.py</a> · <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/scripts/site/build_site_data.py">build_site_data.py</a>. Interactive agent fills used during development are not instrument output and are labelled as such in the record.</p>
+</div></section>
+<footer class="site">
+  <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){  });</script></body></html>

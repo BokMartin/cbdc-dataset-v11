@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country profiles — CBDC Dataset</title>
+<meta name="description" content="Sortable table of all retail CBDC projects with architecture type, outcomes and design cells.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
+<section class="hero"><div class="wide">
+  <h1>Country profiles</h1>
+  <p class="lead">Every project in one table: official status, architecture type, the two outcomes and each design cell. Click a column to sort; click a project to open its profile on the map with the decisive documents and quotes. This table is the data behind the map, nothing more — no score, no ranking.</p>
+</div></section>
+<div class="wide" style="padding-bottom:40px">
+  <p class="form-note">Legend: Y₁ = 1 when the central bank cannot routinely link an online payment to a person (F1 = no); Y₃ = 1 when a route without verified identity exists (F7 = yes). F-columns show the current value; evidence state, commitment status and sources are in the profile. Projects marked <span class="tag dev">real</span> are coded from documents with verified quotes; all others are mock values.</p>
+  <div style="overflow-x:auto"><table id="profiles"></table></div>
+</div>
+<footer class="site">
+  <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){ CBDC.profiles(D); });</script></body></html>
