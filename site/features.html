@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features & types — CBDC Dataset v11</title>
+<meta name="description" content="The F1–F12 design questions, the architecture typology and the outcomes of the CBDC privacy measurement contract v1.1.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
+<section class="hero"><div class="wide">
+  <h1>The questions we answer for every project</h1>
+  <p class="lead">Each cell is one question answered from the project's own official documents. A cell carries a value, an evidence state (documented / partial / unknown / conflict), a commitment status (option / adopted / tested / operational), the decisive document and page, and a verbatim quote. The full definitions are the <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">measurement contract v1.1</a>; the table is parsed from it.</p>
+</div></section>
+<section class="block"><div class="wide">
+  <h2>Layer 1 — architecture type</h2>
+  <p>Three cells decide the type. Online axis: <b>A</b> = the central bank can routinely link an online payment to a person (F1 yes); <b>B</b> = it cannot, but the user's payment service provider can (F1 no, F2 yes); <b>C</b> = neither can (F1 no, F2 no). Offline axis: <b>0</b> = no adopted private offline mode (F4 no); <b>1</b> = adopted (F4 yes). Missing input gives a partial type such as <code>B?</code>. The type is nominal — never a score.</p>
+  <div class="typegrid">
+    <div class="hd"></div><div class="hd">0 — no private offline mode</div><div class="hd">1 — private offline mode adopted</div>
+    <div class="hd" style="align-self:center">A · central bank can link</div><div class="cell"><b>A0</b><span id="n-A0">–</span></div><div class="cell"><b>A1</b><span id="n-A1">–</span></div>
+    <div class="hd" style="align-self:center">B · only the PSP can link</div><div class="cell"><b>B0</b><span id="n-B0">–</span></div><div class="cell"><b>B1</b><span id="n-B1">–</span></div>
+    <div class="hd" style="align-self:center">C · nobody routinely can</div><div class="cell" style="color:var(--muted)"><b>C0</b><span id="n-C0">–</span></div><div class="cell" style="color:var(--muted)"><b>C1</b><span id="n-C1">–</span></div>
+  </div>
+  <p class="form-note" id="type-counts"></p>
+  <p class="form-note">C0/C1 are expected to be empty among adopted designs; the expectation is stated before coding. Counts shown here are from the current site data (mock until extraction runs).</p>
+</div></section>
+<section class="block alt"><div class="wide">
+  <h2>Outcomes used in the empirical illustration</h2>
+  <p><b>Y₁</b> = 1 if F1 = no (adopted): the central bank is separated from transaction identity. Primary illustration, used only if ≥ 20 projects are determinable and the minority class has ≥ 6. <b>Y₃</b> = 1 if F7 = yes: a route to hold or pay up to a limit without verified identity exists; reported with and without inferred zeros. <b>Y₂</b> (public-authority access) was dropped in v1.1: F3 is kept as a descriptive route only, because the routine-vs-targeted distinction depends on law outside the corpus. Hypotheses, estimands and the smallest effect of interest are in <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/PREDICTIONS_v2_2_DRAFT_2026-10-18.md">PREDICTIONS v2.2</a>.</p>
+</div></section>
+<section class="block"><div class="wide">
+  <h2>All cells (contract §4)</h2>
+  <table class="ftable" id="ftable"></table>
+  <p class="form-note">F5 and F6 are reserved (schema only). F11 is Layer 2: declared objectives as non-exclusive flags with a quote each, plus whether the institution ranked one as primary. F12 is descriptive and will be checked against the technology field of the BIS and Atlantic Council trackers as an external validity criterion.</p>
+</div></section>
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>. Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){ CBDC.featuresTable(D); });</script></body></html>

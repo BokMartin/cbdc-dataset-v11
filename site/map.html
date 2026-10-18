@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map — CBDC Dataset v11</title>
+<meta name="description" content="World map of retail CBDC architecture types and design features by year — mock data.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
+<section class="hero"><div class="wide">
+  <h1>Architecture types and design features, by year</h1>
+  <p class="lead">Colour a country by its architecture type, by one feature, or by official status; drag the year to see the documented design as of that year; click a country for its full profile with quotes and trajectory. Everything except Norway and the UK is mock.</p>
+</div></section>
+<div class="wide">
+  <div class="map-tools">
+    <span><label>Colour by</label><select id="scheme"></select></span>
+    <span><label>As of</label><input type="range" id="year" min="2018" max="2026" step="1" value="2026"> <span class="year" id="year-label">2026</span> <button class="btn btn-outline" id="play" style="padding:4px 10px;font-size:0.8rem">▶ play</button></span>
+    <span><button class="btn btn-outline" id="unpin" style="padding:4px 10px;font-size:0.8rem">unpin</button></span>
+  </div>
+  <div class="map-layout">
+    <div id="map-wrap"><svg id="cbdc-map" viewBox="0 0 960 480" role="img" aria-label="World map of CBDC architecture types"></svg><div class="legend" id="legend" style="padding:8px 12px 10px"></div></div>
+    <div id="panel"></div>
+  </div>
+  <p class="form-note" style="margin-top:14px">Projects by current type: <span id="counts"></span></p>
+  <p class="form-note">Monetary unions (euro area, ECCU) are one project each and are drawn on all member states. The year slider uses one snapshot per document year; real trajectories come from the extraction pipeline's dated claims (<code>history.json</code>), the mock ones are generated.</p>
+</div>
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>. Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/site.js"></script>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script>CBDC.load(function(D){ CBDC.drawMap(D); });</script>
+</body></html>

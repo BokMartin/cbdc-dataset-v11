@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Method & progress — CBDC Dataset v11</title>
+<meta name="description" content="Where the CBDC privacy dataset v11 stands and the step-by-step plan to the registered analysis.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock data</strong>Loading…</div>
+<section class="hero"><div class="wrap">
+  <h1>Method and progress</h1>
+  <p class="lead">Written for the supervisor and for ourselves: what the paper now claims, what is finished, what is being decided this week, and the fixed order of the remaining steps. Status as of 18 October 2026.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>What the paper is now</h2>
+  <p>A <strong>measurement and data paper with a limited empirical illustration</strong>. The main contribution is a validated feature matrix of documented privacy and identifiability design choices in retail CBDC projects (F1–F12), with a deterministic architecture typology (A0–C1), a descriptive purpose layer (declared objectives) and a time dimension. The institutional associations (informal economy, liberal democracy) are illustrations on 20–50 determinable projects, pre-registered with a smallest effect of interest, and reported whatever they show. Title unchanged: <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>.</p>
+  <p>Why the change: the v1 approach (vocabulary counts → six purpose centres → a privacy index) could not be validated against an external criterion, and its headline correlation moved with the sample. Four rounds of independent review (12–18 Oct 2026) converged on the same remedy: measure a few explicit design commitments with a written contract, validate the instrument, and keep purposes descriptive.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Step by step</h2>
+  <ol class="steps">
+    <li class="done"><b>Corpus v2.2 and core selection</b><span class="st">done · 18 Oct</span><br>391 official documents, 85 jurisdictions, each with SHA-256 and source. Three model passes + the first author selected the analytical core under a written rubric (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/CORE_RUBRIC.md">CORE_RUBRIC</a>); an independent LLM audited the verdicts and searched for gaps (16 additions, e.g. Nigeria, Kazakhstan, Kenya, Nepal, Bhutan, Taiwan). <b>core_v1 frozen</b>: 109 documents / 56 jurisdictions; the UK received a dated supplement (18 documents, core_v2). Staff research is flagged as a separate authority layer.</li>
+    <li class="done"><b>Official project status</b><span class="st">done · 17 Oct</span><br>Status of all 85 jurisdictions with sources (LIVE 3, PILOT 6, PREPARATION 26, EXPLORATION 27, PAUSED 13, DISCONTINUED 4, BANNED 1, NONE 3). Used as context and for the map, not as an outcome.</li>
+    <li class="done"><b>Measurement contract</b><span class="st">v1.1 · 18 Oct</span><br>Atomic claim schema (value, evidence state, claim status option/adopted/tested/operational, quote, locator, qualifiers, derivation, provenance), feature definitions with traps, inference rules (F2 only from three documented premises; F7 = no inferred only when F8 = yes and no other route is mentioned), supersession, typology, outcomes. v1.1 after the first two profiles: F3 reduced to a descriptive lawful-access route (Y₂ dropped), F12 ledger technology added, per-cell history derived automatically. <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md">Read the contract</a>.</li>
+    <li class="done"><b>Extraction pipeline</b><span class="st">built · 18 Oct</span><br>API-based, no chat history, two modes (all documents in one request; or per-document findings → synthesis). Every run logs model id, SHA-256 of contract/prompt/script, raw responses and token usage. A mechanical check confirms each quote on its cited page (<code>quote_verified</code>). Interactive agent fills are development material only, never instrument output.</li>
+    <li class="now"><b>Worked profiles: Norway and the United Kingdom</b><span class="st">in progress</span><br>Both coded by the pipeline under v1.1 (single-stage and two-stage agree on all UK values but F4; Norway differs on 4 cells, all traceable to one open definition: the status of a design draft published together with a decision not to issue). Authors verify each cell against the cited page and classify each disagreement as model error or definition problem. Open decisions: a project status "declined, still exploring"; F12 tested-vs-undecided rule.</li>
+    <li><b>Contrasting development cases</b><span class="st">next</span><br>Euro area (one project, many sources), Canada (staff-heavy), Chile/Brazil (non-English), Hungary (discontinued), one LIVE project (Jamaica or Nigeria). Same procedure; definitions corrected after each. Second provider added to the pipeline for model–model disagreement.</li>
+    <li><b>Freeze and registration</b><span class="st">gate</span><br>Contract frozen; smallest effect of interest set by elicitation with the supervisor before any cell is computed; predictions (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/PREDICTIONS_v2_2_DRAFT_2026-10-18.md">v2.2 draft</a>) registered on OSF with the decision record and a split ledger. A sealed blind test set (6–8 projects, drawn from jurisdictions whose model output the authors have not seen) is coded independently by both authors from the PDFs.</li>
+    <li><b>Production extraction and audit</b><span class="st">after the gate</span><br>Frozen pipeline over all core projects, two providers; disagreements adjudicated by the authors with logged reasoning; one scored run on the blind test set (α and AC1 human–human and model–human; feature/type/Y error against the human reference); failure policy applies if tolerance is missed.</li>
+    <li><b>Analysis and release</b><span class="st">last</span><br>Pre-specified Firth logistic models per predictor, Δ between predictor quartiles against the registered SESOI; descriptive cross-tabulations (type × objective, F7 among inclusion-declaring projects, F12 by type, change map). Dataset, claims, history and validation files released here; the mock data on this site replaced by the output without changing the site.</li>
+  </ol>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>What we would like feedback on</h2>
+  <div class="findings">
+    <div class="finding-card"><span class="n">1</span><p><strong>The smallest effect of interest.</strong> Our working proposal is a 20-percentage-point difference in the probability of Y₁ = 1 between the 25th and 75th percentile of the predictor. We want to set it with you, before any result exists.</p></div>
+    <div class="finding-card"><span class="n">2</span><p><strong>Commitment status in pre-decision projects.</strong> Most European projects publish detailed designs while explicitly not deciding to issue. We carry the status (option / adopted / tested) with every value; the question is whether the typology may rest on option-level cells, flagged, or only on adopted ones — in which case most of the map stays undetermined.</p></div>
+    <div class="finding-card"><span class="n">3</span><p><strong>Dropping Y₂.</strong> Public-authority access turned out to depend on law outside the corpus in both profiles. We keep it as a described route and drop the hypothesis. Is that the right call, or should the background legal layer be built for a subset?</p></div>
+  </div>
+</div></section>
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Work-in-progress rebuild of <a href="https://cbdcdataset.org">cbdcdataset.org</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){});</script>
+</body></html>
