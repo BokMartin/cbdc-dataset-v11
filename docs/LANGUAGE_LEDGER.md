@@ -39,3 +39,5 @@ Page-level detection (`scripts/frame/detect_doc_language.py` → `data/frame/doc
 - **`IL_BoI_2024`** is dated March 2025 (registry year wrong). **`GH_Ghana_2023`** was published October 2024. **`ECCU_ECCB_DCash_2_RFP_2023`** is a Request for Vendor Information. The Hebrew-named Israel file is the English "Logical Architecture" (March 2024).
 - **`UA_NBU_E-hryvnia_2019`**: English filename, Ukrainian text (another wrong `en` label to add to the nine above; UA is in the 43-frame).
 - Archived ECB 2025 progress/closing reports are web-page prints, not the official PDFs; Thailand archive is the 11 Apr 2024 version, the live file is the 22 Apr "Update_Release". Bahamas and RBA files moved hosts (sanddollar.bs; /tokenised-money/).
+
+**Registry amendment applied (`data/registry/REGISTRY_AMENDMENT_2026-11-02.csv`, loaded by `scripts/frame/registry.py`):** core documents by language after correction: en 105; es 4, sl 4, nb 3, ru 2, cs 1, fi 1, nl 1, ja 1, uk 1, zh 1, zh-Hant 1 = **20 non-English** (the earlier figures 12 and 19 are superseded). Within the 43-frame: NO 3, CL 2, RU 2, CZ 1, CN 1, TW 1, UA 1 = 11 documents in 7 projects.

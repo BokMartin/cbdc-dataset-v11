@@ -1,0 +1,20 @@
+doc_id,field,old,new,basis,date,core
+NO_Norway_nbmemo-1-2018,language,en,nb,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+NO_Norway_nb_memo_2_19_dsp,language,en,nb,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+NO_Norway_norges-bank-memo-1-2021,language,en,nb,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+CZ_CzechRepublic_2022,language,en,cs,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+SI_4-tocka-Offline-digitalni-evro_2024,language,en,sl,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+CN_PBOC_LuLei_ActionPlan_2025,language,en,zh,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+UA_NBU_E-hryvnia_2019,language,en,uk,title page / source check 2026-11-02,2026-11-02,True
+RU_Russia_concept_08042021,language,ru/uk,ru,title page / source check 2026-11-02,2026-11-02,True
+RU_Russia_digital_ruble_30062025,language,ru/uk,ru,title page / source check 2026-11-02,2026-11-02,True
+JP_BoJ_Pilot_JP,language,zh,ja,title page / source check 2026-11-02,2026-11-02,True
+TH_Thailand_rCBDC_Conclusion_Report,notes,,archive = 11 Apr 2024 release; live file is 22 Apr 2024 Update_Release (one missing word fixed),source-URL check 2026-11-02,2026-11-02,True
+SI_SI_Banka-Slovenije_Zapisnik-1-seje-NSD-digitalni-evro_2024,language,en,sl,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+TW_TW-CBC-CBDC-Communication-Summary-Report-2026,language,zh,zh-Hant,title page,2026-11-02,True
+AT_AT_Oesterreichische-Natio_Financial-Inclusion-Report-Forum,language,de,en,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv); archived file is the English executive summary",2026-11-02,True
+SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024,language,en,sl,"page-level language detection (scripts/frame/detect_doc_language.py, data/frame/doc_language_detect.csv)",2026-11-02,True
+IL_BoI_2024,year,2024,2025,document dated March 2025 (source-URL check 2026-11-02),2026-11-02,True
+ECCU_ECCB_DCash_2_RFP_2023,title,ECCU_ECCB_DCash_2_RFP_2023,"ECCB DCash 2.0 Request for Vendor Information (RFVI), 2023",document type (source-URL check 2026-11-02),2026-11-02,True
+CN_PBOC_LuLei_ActionPlan_2025,core_v1,BORDERLINE,PENDING_AUTHOR_DECISION,archived file is a browser print of a cls.cn news page reproducing a 金融时报 article (29 Dec 2025); not an official PBOC publication; DROP or re-source: authors decide,2026-11-02,True
+CN_China_2021,notes,,archived 16 Jul 2021 original (URL now 404); PBOC hosts a revised ~20 Jul 2021 file with wording changes; archived version kept,source-URL check 2026-11-02,2026-11-02,True

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Recompute the project eligibility funnel from the registry and the status table (PROJECT_FRAME.md).
 Run from the repository root: python3 scripts/frame/project_frame.py  → prints the funnel and writes data/frame/projects.csv"""
-import csv, os, collections
+import sys, csv, os, collections
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 EURO = {"AT", "BE", "BG", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PT", "SK", "SI", "ES"}
 UNIONS = {"EU", "ECCU", "BCEAO"}; NOT_PROJECTS = {"BIS", "UN"}
 NON_RETAIL = {"NONE", "BANNED", "NA"}  # statuses outside the retail matrix (documented in PROJECT_FRAME.md)
 
 def main():
-    R = list(csv.DictReader(open(os.path.join(ROOT, "data/registry/REGISTRY_v2_2.csv"), encoding="utf-8")))
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from registry import load_registry
+    R = load_registry(ROOT)
     S = {r["jur"]: r for r in csv.DictReader(open(os.path.join(ROOT, "data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv"), encoding="utf-8"))}
     core = [r for r in R if r["core_v1"] or r["core_v2"]]
     def proj(code): return "EU" if code in EURO else code
