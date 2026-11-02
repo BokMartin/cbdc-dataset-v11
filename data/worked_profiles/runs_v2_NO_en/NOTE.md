@@ -1,0 +1,9 @@
+# Norway, route B (English editions) — run of 2 Nov 2026 (evening)
+
+Run `NO_en_anthropic_claude-opus-5-5_both_20261102T155656Z`: same 7 documents as `runs_v2_NO`, but documents 1, 2 and 4 are the Norges Bank English editions (Norges Bank Papers 1/2018, 2/2019, 1/2021) instead of the Norwegian Memos (LANGUAGE_LEDGER, route B). All stage-one documents ok (229 findings); synthesis 1 validation problem; single mode 7 (claim_status `n/d` on F11 flags). Citations: single 16/17 exact (the 17th is an n/d cell without locator), two-stage 17/17.
+
+**Single vs two-stage (English set): 4 full / 7 value / 6 differ.** F1: single n/d (partial/option, doc 6 p. 16) vs two-stage no (partial/tested, doc 7 p. 10); F2 yes vs n/d; F3 via_PSP vs n/d; F11 primary_status several_joint vs one_primary.
+
+**English set vs Norwegian set, single mode: 3 full / 11 value / 3 differ.** The three differences: F1 (n/d vs no), F3 (via_PSP vs n/d), F11 primary_objectives wording. All other values identical; the status/evidence labels move.
+
+Reading. Norway's F1 flips between `no` and `n/d` across four runs of the same contract (NB single: no; NB two-stage: no; EN single: n/d; EN two-stage: no), always with evidence partial and status option/tested, never admissible under rule C. The case is genuinely undetermined in the documents (a tested sandbox design plus a rough draft after a decision not to issue), and the instrument reports that correctly in the commitment view while the status-attached value is unstable. This is what the stability envelope on six fixed projects (ADR E9) is for; Norway should be one of the six. Language (route B vs original) did not change any admissible value here. The website's Norway profile now uses the route-B single fill (`NO_api_single_v1_1.csv` replaced; the Norwegian-text runs are archived in `runs_v2_NO`); its history panel still derives from the earlier two-stage history file and is labelled development.

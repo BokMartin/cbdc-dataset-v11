@@ -1,0 +1,8 @@
+doc,doc_id,title,year,core,staff,kind,lang,source_jur,chars,file
+1,NO_NBPapers_1_2018_en,"Central bank digital currencies (Norges Bank Papers 1/2018, English edition)",2018,BORDERLINE,,other,en,NO,170073,texts/NO_en/texts/doc01.txt
+2,NO_NBPapers_2_2019_en,"Central bank digital currencies (Norges Bank Papers 2/2019, English edition)",2019,KEEP,,progress_report,en,NO,127274,texts/NO_en/texts/doc02.txt
+3,NO_Norway_norges-bank-memo-2_2020-eng,NO_Norway_norges-bank-memo-2_2020-eng,2020,KEEP,,progress_report,en,NO,21591,texts/NO_en/texts/doc03.txt
+4,NO_NBPapers_1_2021_en,"Central bank digital currencies, third report of the working group (Norges Bank Papers 1/2021, English edition)",2021,KEEP,,progress_report,en,NO,246041,texts/NO_en/texts/doc04.txt
+5,NO_Norway_norges-bank-papers-2---phase-4---final-report,NO_Norway_norges-bank-papers-2---phase-4---final-report,2023,KEEP,,progress_report,en,NO,59941,texts/NO_en/texts/doc05.txt
+6,NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report,"CBDC — Final Report for Project Phase 5 (Norges Bank Papers 1/2026, Mar 2026)",2026,KEEP,,progress_report,en,NO,111965,texts/NO_en/texts/doc06.txt
+7,NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing,"CBDC — Experimental Testing in Project Phase 5 (Norges Bank Papers 3/2026, Mar 2026)",2026,KEEP,,technical_paper,en,NO,96730,texts/NO_en/texts/doc07.txt

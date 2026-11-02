@@ -1,0 +1,19 @@
+cell,agreement,single_value,single_evidence_state,single_claim_status,single_doc,single_page,two_stage_value,two_stage_evidence_state,two_stage_claim_status,two_stage_doc,two_stage_page
+F1 CB_LINK_ONLINE,differ,n/d,partial,option,6,16,no,partial,tested,7,10
+F10 PROGRAMMABLE_RESTRICTIONS,full,no,partial,option,6,17,no,partial,option,6,17
+F11 aml_cft_tax_enforcement,differ,no,unknown,n/d,n/d,n/d,n/d,unknown,n/d,4,46
+F11 cash_substitute_resilience,value,yes,documented,n/d,4,4,yes,documented,option,4,5
+F11 financial_inclusion,value,no,documented,n/d,6,6,no,documented,adopted,6,6
+F11 innovation_competitiveness,value,yes,documented,n/d,5,3,yes,documented,option,6,5
+F11 monetary_sovereignty_transmission,value,yes,documented,n/d,5,6,yes,partial,option,2,6
+F11 payment_modernisation,value,yes,documented,n/d,6,2,yes,documented,adopted,4,63
+F11 primary_objectives,differ,innovation in payment services; contingency/back-up (under the aim of an efficient and secure payment system),documented,n/d,6,5,secure and efficient payment system (payment_modernisation),partial,adopted,4,63
+F11 primary_status,differ,several_joint,documented,n/d,6,5,one_primary,partial,adopted,4,63
+F12 LEDGER_TECHNOLOGY,value,permissioned_DLT,partial,tested,6,17,permissioned_DLT,partial,tested,7,9
+F2 PSP_LINK_ONLINE,differ,yes,partial,tested,7,9,n/d,partial,tested,7,9
+F3 LAWFUL_ACCESS_ROUTE,differ,via_PSP,partial,option,6,16,n/d,partial,option,6,16
+F4 PRIVATE_OFFLINE_AVAILABLE,value,n/d,partial,option,4,42,n/d,unknown,option,2,6
+F7 LOW_ID_ROUTE,full,n/d,partial,option,4,26,n/d,partial,option,4,26
+F8 ONBOARDING_ID,full,yes,partial,option,6,16,yes,partial,option,6,16
+F9 TARGETED_REIDENTIFICATION,full,yes,partial,tested,6,12,yes,partial,tested,6,12
+# valid=True; {'differ': 6, 'full': 4, 'value': 7}

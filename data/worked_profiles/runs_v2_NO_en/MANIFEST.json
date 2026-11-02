@@ -1,0 +1,309 @@
+{
+ "jur": "NO_en",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "mode": "both",
+ "run_utc": "20261102T155656Z",
+ "status": "ok_with_validation_problems",
+ "temperature": "not_settable (provider rejects temperature for current models; provider-controlled sampling)",
+ "max_tokens": 32000,
+ "max_doc_chars": 1500000,
+ "python": "3.13.16",
+ "sdk": "anthropic 1.15.0",
+ "contract_file": "MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "schema_file": "cells_v1_1.json",
+ "schema_sha256": "b2048e3da21ccb7286dca2264efd78e86670c1fcb3d1439414ab2b7d15f83b7a",
+ "script_sha256": "0bb5215fb6ec345d20e5c6c2cd75dd46d6a135c0c12f8ad99bc83415be65cbfe",
+ "prompts_sha256": {
+  "stage1": "da7c18028bdb1417d37426bf3e071ac988b1e6e6c0d0590b3d9b2c5031a8c4b5",
+  "stage2": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+  "single": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5"
+ },
+ "docs": [
+  {
+   "doc": "1",
+   "doc_id": "NO_NBPapers_1_2018_en",
+   "title": "Central bank digital currencies (Norges Bank Papers 1/2018, English edition)",
+   "year": "2018",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "other",
+   "chars": 170073,
+   "text_sha256": "dd0f3bb1d18e568ad6f30685a508b50cbc5dceed8855a4858c344afa3c5be12d",
+   "too_long": false
+  },
+  {
+   "doc": "2",
+   "doc_id": "NO_NBPapers_2_2019_en",
+   "title": "Central bank digital currencies (Norges Bank Papers 2/2019, English edition)",
+   "year": "2019",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 127274,
+   "text_sha256": "84c72269f8f77867b12a82d92819a6efed6af874d3918ec3b4490ca4b2016bad",
+   "too_long": false
+  },
+  {
+   "doc": "3",
+   "doc_id": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "title": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "year": "2020",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 21591,
+   "text_sha256": "0b89a3ddca3617ecfa98f93824ce21f9f1f997d2f1b47b8b3cbff98cd5e9abc9",
+   "too_long": false
+  },
+  {
+   "doc": "4",
+   "doc_id": "NO_NBPapers_1_2021_en",
+   "title": "Central bank digital currencies, third report of the working group (Norges Bank Papers 1/2021, English edition)",
+   "year": "2021",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 246041,
+   "text_sha256": "fc3acc2d31add414eafcbeb750439a5114a656e54cfb95b11de1de38424f9f74",
+   "too_long": false
+  },
+  {
+   "doc": "5",
+   "doc_id": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "title": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 59941,
+   "text_sha256": "91e521562008ac3ec95508a7c2b6580d8fe4ea38a72fbbdf3d51391161666d80",
+   "too_long": false
+  },
+  {
+   "doc": "6",
+   "doc_id": "NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report",
+   "title": "CBDC \u2014 Final Report for Project Phase 5 (Norges Bank Papers 1/2026, Mar 2026)",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 111965,
+   "text_sha256": "9d864448ef83332b181ffe264a7ab7bb1e80e392f970741424cd3d50a58501b7",
+   "too_long": false
+  },
+  {
+   "doc": "7",
+   "doc_id": "NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing",
+   "title": "CBDC \u2014 Experimental Testing in Project Phase 5 (Norges Bank Papers 3/2026, Mar 2026)",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 96730,
+   "text_sha256": "d3ea5b80f764e665378b2814d92a1110f2b7d7d2e784da346935f48bbbf2c982",
+   "too_long": false
+  }
+ ],
+ "stage1": [
+  {
+   "doc": "1",
+   "doc_id": "NO_NBPapers_1_2018_en",
+   "state": "ok",
+   "rows": 30,
+   "reused": false,
+   "response_id": "msg_011CgeNuDic5TXhvCuudkwo9",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 58155,
+    "output_tokens": 8436
+   },
+   "started_utc": "2026-11-02T15:59:03.537971+00:00",
+   "seconds": 66.5
+  },
+  {
+   "doc": "2",
+   "doc_id": "NO_NBPapers_2_2019_en",
+   "state": "ok",
+   "rows": 41,
+   "reused": false,
+   "response_id": "msg_011CgeNz7n4mHaW3uKECwytr",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 44315,
+    "output_tokens": 10196
+   },
+   "started_utc": "2026-11-02T16:00:10.038330+00:00",
+   "seconds": 75.7
+  },
+  {
+   "doc": "3",
+   "doc_id": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "state": "ok",
+   "rows": 18,
+   "reused": false,
+   "response_id": "msg_011CgeP5heQPWKQLhKdNXBfK",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 14772,
+    "output_tokens": 4956
+   },
+   "started_utc": "2026-11-02T16:01:25.749853+00:00",
+   "seconds": 40.3
+  },
+  {
+   "doc": "4",
+   "doc_id": "NO_NBPapers_1_2021_en",
+   "state": "ok",
+   "rows": 48,
+   "reused": false,
+   "response_id": "msg_011CgeP8g7iicmJitpDQeppV",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 80114,
+    "output_tokens": 17829
+   },
+   "started_utc": "2026-11-02T16:02:06.118041+00:00",
+   "seconds": 141.0
+  },
+  {
+   "doc": "5",
+   "doc_id": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "state": "ok",
+   "rows": 28,
+   "reused": false,
+   "response_id": "msg_011CgePK5868VA6m8NWQpWa2",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 26845,
+    "output_tokens": 7357
+   },
+   "started_utc": "2026-11-02T16:04:27.121764+00:00",
+   "seconds": 54.3
+  },
+  {
+   "doc": "6",
+   "doc_id": "NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report",
+   "state": "ok",
+   "rows": 42,
+   "reused": false,
+   "response_id": "msg_011CgePP59SzaE6d8fioCMoQ",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 43976,
+    "output_tokens": 11370
+   },
+   "started_utc": "2026-11-02T16:05:21.442262+00:00",
+   "seconds": 87.6
+  },
+  {
+   "doc": "7",
+   "doc_id": "NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing",
+   "state": "ok",
+   "rows": 22,
+   "reused": false,
+   "response_id": "msg_011CgePVY4s1yQhHTepdUyT4",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 38027,
+    "output_tokens": 6554
+   },
+   "started_utc": "2026-11-02T16:06:49.076153+00:00",
+   "seconds": 54.2
+  }
+ ],
+ "single": {
+  "state": "ok",
+  "rows": 17,
+  "validation_problems": [
+   "F11 payment_modernisation: claim_status='n/d' not allowed",
+   "F11 financial_inclusion: claim_status='n/d' not allowed",
+   "F11 monetary_sovereignty_transmission: claim_status='n/d' not allowed",
+   "F11 cash_substitute_resilience: claim_status='n/d' not allowed",
+   "F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed",
+   "F11 innovation_competitiveness: claim_status='n/d' not allowed",
+   "F11 primary_status: claim_status='n/d' not allowed",
+   "F11 primary_objectives: claim_status='n/d' not allowed"
+  ],
+  "request": {
+   "system": {
+    "file": "requests/single.system.txt.gz",
+    "sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+    "chars": 22832
+   },
+   "user": {
+    "file": "requests/single.user.txt.gz",
+    "sha256": "7aa016cef6520d7d2247bdae4387ba22dc1a6b0f5ffec7431aed1993d04c7a50",
+    "chars": 835445
+   }
+  },
+  "response_id": "msg_011CgeNk6woqHqq4sUtjhbQo",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 257645,
+   "output_tokens": 14072
+  },
+  "started_utc": "2026-11-02T15:56:59.787043+00:00",
+  "seconds": 123.7,
+  "response": {
+   "file": "requests/single.response.txt.gz",
+   "sha256": "b5d4707ff60ccb7740bb9ea9e4590d7a28728f189004c1b07c63cfbdd19c40ba",
+   "chars": 17541
+  }
+ },
+ "stage2": {
+  "state": "ok",
+  "findings_in": 229,
+  "rows": 17,
+  "validation_problems": [
+   "F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+  ],
+  "failed_docs": [],
+  "request": {
+   "system": {
+    "file": "requests/stage2.system.txt.gz",
+    "sha256": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+    "chars": 22970
+   },
+   "user": {
+    "file": "requests/stage2.user.txt.gz",
+    "sha256": "9a6c12a4ba5d77d7f817a1508ee0f48f9beb698ae94a308bb17b5624ca5943bf",
+    "chars": 127067
+   }
+  },
+  "response_id": "msg_011CgePZZFAArBdhWYS94Vyt",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 60026,
+   "output_tokens": 12007
+  },
+  "started_utc": "2026-11-02T16:07:43.260444+00:00",
+  "seconds": 98.8,
+  "response": {
+   "file": "requests/stage2.response.txt.gz",
+   "sha256": "0e86e90ca92ba36f46420a0b20f59065e86040bf82de77a5496dda41a1bbeefa",
+   "chars": 19910
+  }
+ },
+ "problems": [
+  "single: F11 payment_modernisation: claim_status='n/d' not allowed",
+  "single: F11 financial_inclusion: claim_status='n/d' not allowed",
+  "single: F11 monetary_sovereignty_transmission: claim_status='n/d' not allowed",
+  "single: F11 cash_substitute_resilience: claim_status='n/d' not allowed",
+  "single: F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed",
+  "single: F11 innovation_competitiveness: claim_status='n/d' not allowed",
+  "single: F11 primary_status: claim_status='n/d' not allowed",
+  "single: F11 primary_objectives: claim_status='n/d' not allowed",
+  "stage2: F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+ ]
+}
