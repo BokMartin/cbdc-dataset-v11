@@ -63,6 +63,11 @@ def name(a2):
     c = pycountry.countries.get(alpha_2=a2); return getattr(c, "common_name", None) or (c.name if c else a2)
 
 registry = read_csv("data/registry/REGISTRY_v2_2.csv")
+# dated amendment: official source URLs found 2 Nov 2026 for core documents whose registry row had none (data/registry/SOURCE_URL_AMENDMENT_2026-11-02.csv)
+_amend = {r["doc_id"]: r for r in read_csv("data/registry/SOURCE_URL_AMENDMENT_2026-11-02.csv")} if os.path.exists(os.path.join(ROOT, "data/registry/SOURCE_URL_AMENDMENT_2026-11-02.csv")) else {}
+for r in registry:
+    a = _amend.get(r["doc_id"])
+    if a and not r.get("url") and a["url_kind"] != "not_found": r["url"] = a["url"]; r["url_amended"] = a["confidence"]
 status = {r["jur"]: r for r in read_csv("data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv")}
 projects = {}
 def proj(code):

@@ -30,3 +30,12 @@ Page-level detection (`scripts/frame/detect_doc_language.py` → `data/frame/doc
 - **Projects in the 43-frame affected:** CL (D/C), RU (B + D), TW (D), JP (none). All euro-area sources (FI, NL, SI, AT) belong to the union project, outside the frame. BO and UY are outside the frame / borderline.
 - **Registry corrections:** `JP_BoJ_Pilot_JP` lang `zh` → `ja`; `RU_*` lang `ru/uk` → `ru`; `TW` lang `zh` → `zh-Hant`. To be applied in the registry with a dated note (not silently in texts/DOCS.csv).
 - **Open:** identity of the FI and NL documents (needs the PDF in the registry: check title page), manual BCU check.
+
+## Addendum 2 Nov 2026 (evening): findings from the source-URL search (`data/registry/SOURCE_URL_AMENDMENT_2026-11-02.csv`)
+
+- Official URLs found for 72 of the 73 core documents that had none; 60 downloads are byte-identical to the archived PDFs (SHA-256), 5 differ only by re-save or minor revision, 4 could not be downloaded by script (NZ, PE, UY, and the TLS-blocked ones) and were checked by title/date/page count.
+- **`CN_PBOC_LuLei_ActionPlan_2025` is not an official document**: the archived file is a browser print of a Chinese financial-news page (cls.cn) reproducing a 金融时报 article of 29 Dec 2025; no copy on pbc.gov.cn. Candidate for DROP from core (or re-sourcing from the PBOC newspaper) — decision for the authors.
+- **`CN_China_2021`**: the archive holds the 16 Jul 2021 original (URL now 404); PBOC hosts a revised ~20 Jul 2021 file with wording changes. Keep the archived version (hashed) and record the revision.
+- **`IL_BoI_2024`** is dated March 2025 (registry year wrong). **`GH_Ghana_2023`** was published October 2024. **`ECCU_ECCB_DCash_2_RFP_2023`** is a Request for Vendor Information. The Hebrew-named Israel file is the English "Logical Architecture" (March 2024).
+- **`UA_NBU_E-hryvnia_2019`**: English filename, Ukrainian text (another wrong `en` label to add to the nine above; UA is in the 43-frame).
+- Archived ECB 2025 progress/closing reports are web-page prints, not the official PDFs; Thailand archive is the 11 Apr 2024 version, the live file is the 22 Apr "Update_Release". Bahamas and RBA files moved hosts (sanddollar.bs; /tokenised-money/).
