@@ -1,0 +1,19 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pytest pycountry
+      - name: instrument validity tests (citation check, derivation gate, extractor validation)
+        run: python -m pytest -q tests
+      - name: replay — project frame and site data rebuild from archived inputs, no API
+        run: |
+          python scripts/frame/project_frame.py
+          python scripts/site/build_site_data.py
+          git diff --stat -- data/frame/projects.csv
+      - name: no secrets in tree
+        run: "! grep -rIl 'sk-ant-\\|github_pat_\\|OPENAI_API_KEY=' --exclude-dir=.git . "

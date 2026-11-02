@@ -1,0 +1,167 @@
+{
+ "instrument": "contract_v1_1",
+ "contract_file": "docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "cells": [
+  "F1 CB_LINK_ONLINE",
+  "F2 PSP_LINK_ONLINE",
+  "F3 LAWFUL_ACCESS_ROUTE",
+  "F4 PRIVATE_OFFLINE_AVAILABLE",
+  "F7 LOW_ID_ROUTE",
+  "F8 ONBOARDING_ID",
+  "F9 TARGETED_REIDENTIFICATION",
+  "F10 PROGRAMMABLE_RESTRICTIONS",
+  "F11 payment_modernisation",
+  "F11 financial_inclusion",
+  "F11 monetary_sovereignty_transmission",
+  "F11 cash_substitute_resilience",
+  "F11 aml_cft_tax_enforcement",
+  "F11 innovation_competitiveness",
+  "F11 primary_status",
+  "F11 primary_objectives",
+  "F12 LEDGER_TECHNOLOGY"
+ ],
+ "values": {
+  "F1 CB_LINK_ONLINE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F2 PSP_LINK_ONLINE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F3 LAWFUL_ACCESS_ROUTE": [
+   "via_PSP",
+   "via_CB",
+   "via_both",
+   "none_stated",
+   "n/d"
+  ],
+  "F4 PRIVATE_OFFLINE_AVAILABLE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F7 LOW_ID_ROUTE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F8 ONBOARDING_ID": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F9 TARGETED_REIDENTIFICATION": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F10 PROGRAMMABLE_RESTRICTIONS": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 primary_status": [
+   "one_primary",
+   "several_joint",
+   "unranked",
+   "conflict",
+   "n/d"
+  ],
+  "F12 LEDGER_TECHNOLOGY": [
+   "conventional_centralised",
+   "permissioned_DLT",
+   "permissionless_DLT",
+   "hybrid",
+   "undecided",
+   "n/d"
+  ],
+  "F11 payment_modernisation": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 financial_inclusion": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 monetary_sovereignty_transmission": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 cash_substitute_resilience": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 aml_cft_tax_enforcement": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 innovation_competitiveness": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 primary_objectives": null
+ },
+ "evidence_state": [
+  "documented",
+  "partial",
+  "unknown",
+  "conflict",
+  "n.a."
+ ],
+ "claim_status": [
+  "option",
+  "adopted",
+  "tested",
+  "operational",
+  ""
+ ],
+ "derivation": [
+  "explicit",
+  "inferred",
+  "n.a."
+ ],
+ "fill_columns": [
+  "cell",
+  "value",
+  "evidence_state",
+  "claim_status",
+  "derivation",
+  "doc",
+  "doc_id",
+  "page",
+  "quote",
+  "actor",
+  "transaction_scope",
+  "limits",
+  "modality",
+  "legal_state",
+  "superseded",
+  "justification",
+  "counter_evidence",
+  "confidence"
+ ],
+ "finding_columns": [
+  "doc",
+  "doc_id",
+  "cell",
+  "supports_value",
+  "claim_status",
+  "page",
+  "quote",
+  "direction",
+  "actor",
+  "transaction_scope",
+  "limits",
+  "modality",
+  "note"
+ ]
+}
