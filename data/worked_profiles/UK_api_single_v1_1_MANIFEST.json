@@ -1,0 +1,504 @@
+{
+ "jur": "UK",
+ "provider": "anthropic",
+ "model": "claude-opus-5-5",
+ "mode": "both",
+ "temperature": "not_settable (provider rejects temperature for this model)",
+ "run_utc": "20261018T135122Z",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "contract_file": "MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "stage1_system_sha256": "cc275e38dfbad6552a1f8df9e5befe40256cab6e59282230edd15b618a0769f1",
+ "stage2_system_sha256": "01b3ab24dbba51579b60fd3a59349d225b882d811539adc644fc24dfff38cd42",
+ "single_system_sha256": "c0c00684861d7918016b07530ed849bf54f38baf7743197061909dccf043f678",
+ "cells": [
+  "F1 CB_LINK_ONLINE",
+  "F2 PSP_LINK_ONLINE",
+  "F3 LAWFUL_ACCESS_ROUTE",
+  "F4 PRIVATE_OFFLINE_AVAILABLE",
+  "F7 LOW_ID_ROUTE",
+  "F8 ONBOARDING_ID",
+  "F9 TARGETED_REIDENTIFICATION",
+  "F10 PROGRAMMABLE_RESTRICTIONS",
+  "F11 payment_modernisation",
+  "F11 financial_inclusion",
+  "F11 monetary_sovereignty_transmission",
+  "F11 cash_substitute_resilience",
+  "F11 aml_cft_tax_enforcement",
+  "F11 innovation_competitiveness",
+  "F11 primary_status",
+  "F11 primary_objectives",
+  "F12 LEDGER_TECHNOLOGY"
+ ],
+ "docs": [
+  {
+   "doc": "1",
+   "doc_id": "UK_BoE_2020_OpportChall",
+   "title": "UK_BoE_2020_OpportChall",
+   "year": "2020",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation",
+   "chars": 202196,
+   "text_sha256": "1912b1214a789dda703184079149fa4217bfc1e9256c6153db5d2f535e59c540",
+   "truncated": false
+  },
+  {
+   "doc": "2",
+   "doc_id": "UK_BoE_2023_TechWP",
+   "title": "UK_BoE_2023_TechWP",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 171450,
+   "text_sha256": "13081e1e3163dee069a1509b03e6d6cd509b5f31a82f2a45a7552d1c5214bc5b",
+   "truncated": false
+  },
+  {
+   "doc": "3",
+   "doc_id": "UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE",
+   "title": "The digital pound: a new form of money for households and businesses? (Consultation Paper, CP 797)",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation",
+   "chars": 245941,
+   "text_sha256": "fec584bf9798b957b4e6afcc10ddd8eeda2303ef229283a942982de6325909d5",
+   "truncated": false
+  },
+  {
+   "doc": "4",
+   "doc_id": "UK_UK-BoE-HMT-2024-01-consultation-response-BoE",
+   "title": "Response to the Bank of England and HM Treasury Consultation Paper: The digital pound: a new form of money for households and businesses?",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation_response",
+   "chars": 149212,
+   "text_sha256": "4d491d7a20001e93df859179bf13c80853a7ccff8479173d62d7165653ead648",
+   "truncated": false
+  },
+  {
+   "doc": "5",
+   "doc_id": "UK_UK-BoE-2024-01-response-to-technology-working-paper",
+   "title": "Response to the digital pound Technology Working Paper",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 61838,
+   "text_sha256": "045ce4b82db67cbc98c9c71b957988e95569029e61db4e5d883a0ecdaea72769",
+   "truncated": false
+  },
+  {
+   "doc": "6",
+   "doc_id": "UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep",
+   "title": "Point-of-sale proof of concept \u2013 digital pound experiment report",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "pilot_report",
+   "chars": 21227,
+   "text_sha256": "17b72f0a6330ed2607aa4ad735e3571e65f5d12c0e0b141064c62f97ee1b9296",
+   "truncated": false
+  },
+  {
+   "doc": "7",
+   "doc_id": "UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-",
+   "title": "The role of holding limits for sterling-denominated systemic stablecoins and a potential digital pound (Financial Stability Paper No. 53)",
+   "year": "2025",
+   "core": "BORDERLINE",
+   "staff": "Y",
+   "kind": "research_general",
+   "chars": 63524,
+   "text_sha256": "00326bdb8f57416b84cf47d83e93b00cdb6d0d00ffc3d9337bf2b11d27781f1d",
+   "truncated": false
+  },
+  {
+   "doc": "8",
+   "doc_id": "UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF",
+   "title": "Digital pound update (October 2025 design-phase update)",
+   "year": "2025",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 12116,
+   "text_sha256": "1105d45db475ba6528afb2404e63ffbe62b4152d913cf07dc4661d3093a57fc6",
+   "truncated": false
+  },
+  {
+   "doc": "9",
+   "doc_id": "UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment",
+   "title": "Progress update: The digital pound and the payments landscape",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 40440,
+   "text_sha256": "ca849f8be0229fcb80716672f75a2c6d5cb09be31a0a509912ab37d77bc7f838",
+   "truncated": false
+  },
+  {
+   "doc": "10",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF",
+   "title": "Design note \u2013 Alias service",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 29131,
+   "text_sha256": "24ca0251faec4b2ba6044ae4ec353b12c9850e9c98d96b400bc4a9fc727e6c27",
+   "truncated": false
+  },
+  {
+   "doc": "11",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF",
+   "title": "Design note \u2013 Product strategy",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 29849,
+   "text_sha256": "58219b8052248607b9aa6a020e5118762925f838e07dd8efc07b0aef5353d328",
+   "truncated": false
+  },
+  {
+   "doc": "12",
+   "doc_id": "UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD",
+   "title": "Digital pound experiment report: Offline payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "pilot_report",
+   "chars": 28546,
+   "text_sha256": "8831d907eac4ffd89a65ee2f8ab8406d6a7cd1ba029dd832ae95d812112b7a72",
+   "truncated": false
+  },
+  {
+   "doc": "13",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP",
+   "title": "Design note \u2013 Interoperability models for UK-based payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 30390,
+   "text_sha256": "4dfa746be47c7eeb91607f2ba54a52e1dad3d5c1c90059a2706c2a4be4a2bd0b",
+   "truncated": false
+  },
+  {
+   "doc": "14",
+   "doc_id": "UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul",
+   "title": "Design note \u2013 Intermediary roles and scheme rulebook",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 37923,
+   "text_sha256": "72bb3786f9f8d2959449f7edbc1e33c20a397f8ad4219afdee7e3617ea59b5f2",
+   "truncated": false
+  },
+  {
+   "doc": "15",
+   "doc_id": "UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF",
+   "title": "Design note \u2013 Blueprint framework",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 21279,
+   "text_sha256": "60044eb558ba6236b58a2dc6ef209fdd077f48045630de7fc1453953ce5c81e9",
+   "truncated": false
+  },
+  {
+   "doc": "16",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF",
+   "title": "Design note \u2013 Offline payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 24404,
+   "text_sha256": "15486e16aee46b6330677f99f64796a042926e58c5429ddd43de5a9fc1e06e1d",
+   "truncated": false
+  },
+  {
+   "doc": "17",
+   "doc_id": "UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender",
+   "title": "Progress update: Digital Pound Design Phase",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 33317,
+   "text_sha256": "d10441371f7637f97ae7a1f0ac4eee460192a6b3f1d3a40b4cb2a6d60abab082",
+   "truncated": false
+  },
+  {
+   "doc": "18",
+   "doc_id": "UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender",
+   "title": "Digital Pound Lab: Phase 1 update",
+   "year": "2026",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 13428,
+   "text_sha256": "c04bc2344a3ab701743e35f163acc70b81d656a0f1c50bf0e11ab0328ebf6837",
+   "truncated": false
+  }
+ ],
+ "stage1": [
+  {
+   "doc": "1",
+   "rows": 44,
+   "error": "",
+   "response_id": "msg_011Cg9pBbqP5pvMG2weriWFn",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 68665,
+    "output_tokens": 8578
+   },
+   "seconds": 65.7
+  },
+  {
+   "doc": "2",
+   "rows": 55,
+   "error": "",
+   "response_id": "msg_011Cg9pGSUSzPYoewtPa154u",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 59784,
+    "output_tokens": 12819
+   },
+   "seconds": 98.4
+  },
+  {
+   "doc": "3",
+   "rows": 63,
+   "error": "",
+   "response_id": "msg_011Cg9pPhDfdpZn1yq9bsjTj",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 82276,
+    "output_tokens": 13347
+   },
+   "seconds": 100.6
+  },
+  {
+   "doc": "4",
+   "rows": 0,
+   "error": "ValueError('no JSON array in response')"
+  },
+  {
+   "doc": "5",
+   "rows": 29,
+   "error": "",
+   "response_id": "msg_011Cg9pg7YpzoZ8etvjRE8M1",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 26520,
+    "output_tokens": 6749
+   },
+   "seconds": 54.2
+  },
+  {
+   "doc": "6",
+   "rows": 22,
+   "error": "",
+   "response_id": "msg_011Cg9pk78tzt52NYdc1mguM",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 15077,
+    "output_tokens": 4541
+   },
+   "seconds": 35.6
+  },
+  {
+   "doc": "7",
+   "rows": 11,
+   "error": "",
+   "response_id": "msg_011Cg9pnjPGgCeZxo8EDfQEB",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 27800,
+    "output_tokens": 3331
+   },
+   "seconds": 28.3
+  },
+  {
+   "doc": "8",
+   "rows": 13,
+   "error": "",
+   "response_id": "msg_011Cg9pppEHwbKjt3Y1LooU9",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 11888,
+    "output_tokens": 2950
+   },
+   "seconds": 24.7
+  },
+  {
+   "doc": "9",
+   "rows": 27,
+   "error": "",
+   "response_id": "msg_011Cg9prdkoguqHUEyPnsVtU",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 20351,
+    "output_tokens": 6262
+   },
+   "seconds": 50.8
+  },
+  {
+   "doc": "10",
+   "rows": 16,
+   "error": "",
+   "response_id": "msg_011Cg9pvPRwiwt4EwqRFvAq7",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16309,
+    "output_tokens": 4908
+   },
+   "seconds": 40.4
+  },
+  {
+   "doc": "11",
+   "rows": 15,
+   "error": "",
+   "response_id": "msg_011Cg9pyMbQq6h7GLZs8kAp9",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16599,
+    "output_tokens": 3521
+   },
+   "seconds": 28.5
+  },
+  {
+   "doc": "12",
+   "rows": 24,
+   "error": "",
+   "response_id": "msg_011Cg9q1TNyUM3ebRShAVCFs",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16567,
+    "output_tokens": 4927
+   },
+   "seconds": 39.9
+  },
+  {
+   "doc": "13",
+   "rows": 22,
+   "error": "",
+   "response_id": "msg_011Cg9q4PuSm4cLwX4juz54c",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 17242,
+    "output_tokens": 4522
+   },
+   "seconds": 37.2
+  },
+  {
+   "doc": "14",
+   "rows": 24,
+   "error": "",
+   "response_id": "msg_011Cg9q79EEVrDHETYFBmUtx",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 19797,
+    "output_tokens": 5503
+   },
+   "seconds": 44.4
+  },
+  {
+   "doc": "15",
+   "rows": 20,
+   "error": "",
+   "response_id": "msg_011Cg9qAQtQUYGNvW9NPzJMa",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 14497,
+    "output_tokens": 4197
+   },
+   "seconds": 34.3
+  },
+  {
+   "doc": "16",
+   "rows": 14,
+   "error": "",
+   "response_id": "msg_011Cg9qCwfd3eokqQRC6y9HR",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 15028,
+    "output_tokens": 2681
+   },
+   "seconds": 22.4
+  },
+  {
+   "doc": "17",
+   "rows": 34,
+   "error": "",
+   "response_id": "msg_011Cg9qEbGqSJ22engaE5GCb",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 18556,
+    "output_tokens": 6397
+   },
+   "seconds": 49.1
+  },
+  {
+   "doc": "18",
+   "rows": 16,
+   "error": "",
+   "response_id": "msg_011Cg9qJDQpBMggrLGeuNJge",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 12728,
+    "output_tokens": 3837
+   },
+   "seconds": 32.4
+  }
+ ],
+ "stage2": {
+  "findings_in": 449,
+  "rows": 17,
+  "error": "",
+  "response_id": "msg_011Cg9qLbTfyqzr4XYzJDhcb",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 77489,
+   "output_tokens": 12105
+  },
+  "seconds": 101.8
+ },
+ "script_sha256": "a1f259127f656868c63da2278d29af0b84cf96515bcc635ceb41569494fd2415",
+ "single": {
+  "rows": 17,
+  "error": "",
+  "response_id": "msg_011Cg9p2rSTcgePhrKGV8bYV",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 373247,
+   "output_tokens": 13552
+  },
+  "seconds": 118.7
+ }
+}

@@ -1,0 +1,8 @@
+doc,doc_id,title,year,core,staff,kind,pages,chars,file
+1,NO_Norway_nbmemo-1-2018,NO_Norway_nbmemo-1-2018,2018,BORDERLINE,,other,55,159619,llm_fill/NO/texts/doc01.txt
+2,NO_Norway_nb_memo_2_19_dsp,NO_Norway_nb_memo_2_19_dsp,2019,KEEP,,progress_report,34,118391,llm_fill/NO/texts/doc02.txt
+3,NO_Norway_norges-bank-memo-2_2020-eng,NO_Norway_norges-bank-memo-2_2020-eng,2020,KEEP,,progress_report,9,21224,llm_fill/NO/texts/doc03.txt
+4,NO_Norway_norges-bank-memo-1-2021,NO_Norway_norges-bank-memo-1-2021,2021,KEEP,,progress_report,66,220095,llm_fill/NO/texts/doc04.txt
+5,NO_Norway_norges-bank-papers-2---phase-4---final-report,NO_Norway_norges-bank-papers-2---phase-4---final-report,2023,KEEP,,progress_report,20,59285,llm_fill/NO/texts/doc05.txt
+6,NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report,"CBDC — Final Report for Project Phase 5 (Norges Bank Papers 1/2026, Mar 2026)",2026,KEEP,,progress_report,31,111034,llm_fill/NO/texts/doc06.txt
+7,NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing,"CBDC — Experimental Testing in Project Phase 5 (Norges Bank Papers 3/2026, Mar 2026)",2026,KEEP,,technical_paper,45,95462,llm_fill/NO/texts/doc07.txt

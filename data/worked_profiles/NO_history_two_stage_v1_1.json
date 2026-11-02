@@ -1,0 +1,751 @@
+{
+ "F1 CB_LINK_ONLINE": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 23,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 28,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 8,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 31,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 24,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 38,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 16,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 16,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 15,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 11,
+   "value": "no",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 12,
+   "value": "no",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 8,
+   "value": "no",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 10,
+   "value": "no",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 11,
+   "value": "no",
+   "claim_status": "tested"
+  }
+ ],
+ "F4 PRIVATE_OFFLINE_AVAILABLE": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 25,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 25,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 8,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 24,
+   "value": "yes",
+   "claim_status": "option"
+  }
+ ],
+ "F8 ONBOARDING_ID": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 45,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 25,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 24,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 18,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 41,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 16,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 9,
+   "value": "yes",
+   "claim_status": "tested"
+  }
+ ],
+ "F11 payment_modernisation": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 5,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 5,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 9,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2020",
+   "doc": 3,
+   "page": 3,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 4,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 62,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 5,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 6,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 2,
+   "value": "flag",
+   "claim_status": "adopted"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 2,
+   "value": "flag",
+   "claim_status": "adopted"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 5,
+   "value": "1",
+   "claim_status": "adopted"
+  }
+ ],
+ "F11 cash_substitute_resilience": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 5,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 4,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 9,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2020",
+   "doc": 3,
+   "page": 3,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 4,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 5,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 3,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 8,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 2,
+   "value": "flag",
+   "claim_status": "option"
+  }
+ ],
+ "F11 innovation_competitiveness": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 8,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 12,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 17,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 5,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 25,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 3,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 7,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 17,
+   "value": "flag",
+   "claim_status": "option"
+  }
+ ],
+ "F11 primary_status": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "one_primary",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 9,
+   "value": "unranked",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 5,
+   "value": "unranked",
+   "claim_status": "option"
+  }
+ ],
+ "F11 primary_objectives": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 4,
+   "value": "trust in money/monetary system (efficient, robust payment system)",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 5,
+   "value": "efficient and robust payment system",
+   "claim_status": "option"
+  }
+ ],
+ "F12 LEDGER_TECHNOLOGY": [
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 27,
+   "value": "conventional_centralised",
+   "claim_status": "option"
+  },
+  {
+   "year": "2018",
+   "doc": 1,
+   "page": 47,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 29,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 17,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2020",
+   "doc": 3,
+   "page": 7,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2020",
+   "doc": 3,
+   "page": 5,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 48,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 8,
+   "value": "permissioned_DLT",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 8,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 10,
+   "value": "undecided",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 17,
+   "value": "permissioned_DLT",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 19,
+   "value": "permissioned_DLT",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 11,
+   "value": "permissioned_DLT",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 9,
+   "value": "permissioned_DLT",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 5,
+   "value": "permissioned_DLT",
+   "claim_status": "tested"
+  }
+ ],
+ "F7 LOW_ID_ROUTE": [
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 26,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 24,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 9,
+   "value": "no",
+   "claim_status": "tested"
+  }
+ ],
+ "F11 monetary_sovereignty_transmission": [
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 10,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 15,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2019",
+   "doc": 2,
+   "page": 17,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 4,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 26,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 7,
+   "value": "1",
+   "claim_status": "option"
+  },
+  {
+   "year": "2023",
+   "doc": 5,
+   "page": 6,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 7,
+   "value": "flag",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 7,
+   "value": "flag",
+   "claim_status": "option"
+  }
+ ],
+ "F2 PSP_LINK_ONLINE": [
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 23,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 7,
+   "page": 9,
+   "value": "yes",
+   "claim_status": "tested"
+  }
+ ],
+ "F9 TARGETED_REIDENTIFICATION": [
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 38,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 24,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 12,
+   "value": "yes",
+   "claim_status": "tested"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 12,
+   "value": "yes",
+   "claim_status": "tested"
+  }
+ ],
+ "F10 PROGRAMMABLE_RESTRICTIONS": [
+  {
+   "year": "2021",
+   "doc": 4,
+   "page": 41,
+   "value": "yes",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 17,
+   "value": "no",
+   "claim_status": "option"
+  },
+  {
+   "year": "2026",
+   "doc": 6,
+   "page": 17,
+   "value": "no",
+   "claim_status": "option"
+  }
+ ]
+}

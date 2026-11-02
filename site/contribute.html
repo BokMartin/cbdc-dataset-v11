@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contribute — CBDC Dataset</title>
+<meta name="description" content="How to challenge a cell, add a document or reuse the CBDC dataset.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="side"></aside>
+<main class="content">
+<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
+<section class="hero"><div class="wrap"><h1>Contribute</h1><p class="lead">The dataset is open because we expect to be wrong somewhere. Every cell has a document, a page and a quote — so a disagreement can be specific.</p></div></section>
+<section class="block"><div class="wrap">
+  <div class="contrib-grid">
+    <div class="card"><h3>Challenge a cell</h3><p>Open the project on the <a href="map.html">map</a>, note the cell, the cited document and page, and open an issue with the passage you think decides it differently. We answer with the contract rule that applies and log the outcome.</p></div>
+    <div class="card"><h3>Add a document</h3><p>An official document we missed (decision, consultation, design note, pilot report, law)? Send the official URL and date. It enters the registry as a dated addition (<code>core_v2</code>, <code>core_v3</code>…), never silently into the frozen core.</p></div>
+    <div class="card"><h3>Translate or check a non-English source</h3><p>Quotes are kept in the source language. Native readers who can check a quote against its page are the most valuable reviewers we can have.</p></div>
+    <div class="card"><h3>Reuse</h3><p>CC BY 4.0 for data and documentation, MIT for code. If you build on the matrix, cite the working paper and the contract version you used; the version is in every file's header.</p></div>
+  </div>
+  <p class="form-note">Issues and pull requests: GitHub repository (link in the footer once public). We do not accept values without a document and page.</p>
+</div></section>
+<footer class="site">
+  <div class="wrap">
+    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
+    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
+    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
+  </div>
+</footer>
+</main>
+</div>
+<script src="assets/vendor/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/site.js"></script>
+<script>CBDC.load(function(D){  });</script></body></html>

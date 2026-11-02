@@ -1,0 +1,885 @@
+{
+ "version": "core_v1",
+ "frozen_at": "2026-10-18",
+ "as_of_date": "2026-10-18",
+ "registry": "REGISTRY_v2_2.csv",
+ "n_core": 109,
+ "n_keep": 77,
+ "n_borderline": 32,
+ "n_jurisdictions": 56,
+ "pending_files": [],
+ "docs": [
+  {
+   "doc_id": "RU_Russia_consultation_paper_201013",
+   "jur": "RU",
+   "year": "2020",
+   "fname": "RU_Russia_consultation_paper_201013_eng.pdf",
+   "sha256": "be19956b6a27f9555044034f681a1aaeff982eca2e56ad6d143c8822ac85d796",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CA_Jasper_Phase12_2017",
+   "jur": "CA",
+   "year": "2017",
+   "fname": "CA_Payments_jasper_report_eng.pdf",
+   "sha256": "d28e14ec2e2b68069e1afc92ae6876002e4d5c5dfad1754e593148d75cf9516d",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SE_Riksbank_2017",
+   "jur": "SE",
+   "year": "2017",
+   "fname": "SE_Riksbank_rapport_ekrona_uppdaterad_170920_eng.pdf",
+   "sha256": "b20527266d2e5335dc1ffea9e8dfa0f12b88b0d0d4667f7a53c5a8568c7c6be8",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "UY_Uruguay_BCU_BilleteDigital_2017",
+   "jur": "UY",
+   "year": "2017",
+   "fname": "UY_Uruguay_BCU_Billete_Digital_2017.pdf",
+   "sha256": "6c915e5e6302990674822a24ccdb0d36ef13b4030c7218236dd687680acc41f5",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CA_Jasper_III_2018",
+   "jur": "CA",
+   "year": "2018",
+   "fname": "CA_Payments_jasper_phase_iii_whitepaper_EN.pdf",
+   "sha256": "c8cb640dd16118db280915169f95a407ac21360780e9f196bd315a0c9c905c0f",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "IS_CBI_2018",
+   "jur": "IS",
+   "year": "2018",
+   "fname": "IS_Iceland_Special_Publication_12.pdf",
+   "sha256": "5d8f11453cfb6b703be1e9fcd6bcbd880714dbb644889def8d1d1f9d232707ab",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "NO_Norway_nbmemo-1-2018",
+   "jur": "NO",
+   "year": "2018",
+   "fname": "NO_Norway_nbmemo-1-2018-digitalesentralbankpenger.pdf",
+   "sha256": "77cb6ac01db02ab5c410ff9ef1e4a6b258f5f336a8d5c98bba2abbfed82d94be",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "ZA_SARB_SARB_ProjectKhokha-20180605",
+   "jur": "ZA",
+   "year": "2018",
+   "fname": "ZA_SARB_SARB_ProjectKhokha-20180605.pdf",
+   "sha256": "1e11eb78bc53daeef738e6ba5704195ebf7d203c7ad7a55257473b12597625b7",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "BS_Bahamas_SandDollar_2019",
+   "jur": "BS",
+   "year": "2019",
+   "fname": "BS_Bahamas_Project_Sanddollar_2019.pdf",
+   "sha256": "ea908a81cac506057d8d9028f278f4bd59d4d56c91e5ffb5ffa349f6e8749ef1",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NO_Norway_nb_memo_2_19_dsp",
+   "jur": "NO",
+   "year": "2019",
+   "fname": "NO_Norway_nb_memo_2_19_dsp.pdf",
+   "sha256": "919ff709d96b0b9f1398543d0710f3bb4f8735a51e84038be494398c477f3927",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "UA_NBU_E-hryvnia_2019",
+   "jur": "UA",
+   "year": "2019",
+   "fname": "UA_NBU_Analytical_Report_E-hryvnia.pdf",
+   "sha256": "444dbd0e58a78eddf04c1d598295922bf46a9e358164d2ab9612567ff48f1d5a",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CH_CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-I-settling-tokenise_2",
+   "jur": "CH",
+   "year": "2020",
+   "fname": "CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-I-settling-tokenise_2020.pdf",
+   "sha256": "cc47766d7955333340c571aab55024347f453e3aec0d75327bca2ee8192c504f",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "LU_LU_Banque-centrale-du-Lux_DCB-Services-Wholesale-CBDC-Prototype-BCL_20",
+   "jur": "LU",
+   "year": "2020",
+   "fname": "LU_Banque-centrale-du-Lux_DCB-Services-Wholesale-CBDC-Prototype-BCL_2020.pdf",
+   "sha256": "31673509c16e2107e1d7dd843b10cbf8ceda23d09bd65017eee8089b24d6f01a",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "jur": "NO",
+   "year": "2020",
+   "fname": "NO_Norway_norges-bank-memo-2_2020-eng.pdf",
+   "sha256": "f7a1ce716fcf4bab9200cb2f71844c77cb86cf51a009d9f380b031521cb26290",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "UK_BoE_2020_OpportChall",
+   "jur": "UK",
+   "year": "2020",
+   "fname": "UK_BoE_central-bank-digital-currency-opportunities-challenges-and-design.pdf",
+   "sha256": "9747a5f223f59eb08bd1c134328fdb31643b19deac338fa70a03503717c0f6a9",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "BE_BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-statu",
+   "jur": "BE",
+   "year": "2021",
+   "fname": "BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-status-update-F_2021.pdf",
+   "sha256": "5828ddded9fe0cb2aca1b4b7ff2010a763b4d05c2381123509d9b3d7d163c458",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CN_China_2021",
+   "jur": "CN",
+   "year": "2021",
+   "fname": "CN_China_PBoC_e-CNY_white_paper_2021.pdf",
+   "sha256": "91de0b7462baaa65add222bda05d2551618e8edd09c8954354ce7ec3e5bb8c78",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "EE_EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021_page",
+   "jur": "EE",
+   "year": "2021",
+   "fname": "EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021.pdf",
+   "sha256": "23ee867cab5799117023497a76f845ef4e357064f5fc37383e19306db1bb5832",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "GH_Ghana_2021",
+   "jur": "GH",
+   "year": "2021",
+   "fname": "GH_Ghana_eCedi-Design-Paper.pdf",
+   "sha256": "ebc0144c918be4c8da5065f8619370d0fcc9e395753c4bab05f9ea96fc120027",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "HK_HKMA_2021",
+   "jur": "HK",
+   "year": "2021",
+   "fname": "HK_HKMA_e-HKD_A_technical_perspective.pdf",
+   "sha256": "983adae42147c9eaae7c883618951bfe1c89bfd3e5feec042f73f7edea4cc3ac",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "IT_BdI_MISP_2021",
+   "jur": "IT",
+   "year": "2021",
+   "fname": "IT_Italy_N.10-MISP.pdf",
+   "sha256": "1b4d5db3e664d70a41fc75fb00853bee38a86f38fa8a24c8f6571f404acc8363",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_2021_pag",
+   "jur": "JM",
+   "year": "2021",
+   "fname": "JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_2021_page.pdf",
+   "sha256": "b46526c17e2a861431a3672198ece789ef4f6e2dd789e72fdaaa48e9e9827b7e",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "MG_BFM_RFI_2021",
+   "jur": "MG",
+   "year": "2021",
+   "fname": "MG_Madagascar_BFM_e-Ariary_RFI-RFQ_VF-BFM.pdf",
+   "sha256": "98f2c081dff855358a70f2233f68d0c811b35179468f67ef9e6d19fde6a5496e",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NO_Norway_norges-bank-memo-1-2021",
+   "jur": "NO",
+   "year": "2021",
+   "fname": "NO_Norway_norges-bank-memo-1-2021.pdf",
+   "sha256": "0c593ed2410297af011f166bba36a647ac8798a6ab8823184359d083d198e406",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NZ_RBNZ_CBDCIssuesPaper_2021",
+   "jur": "NZ",
+   "year": "2021",
+   "fname": "WAYBACK_da81215e_cbdc-issues-paper.pdf",
+   "sha256": "118651f0ec457add2e4c7301c4363d44a768859796461e9bd92bc44a2368b76e",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "RU_Russia_concept_08042021",
+   "jur": "RU",
+   "year": "2021",
+   "fname": "RU_Russia_concept_08042021.pdf",
+   "sha256": "5a18963b2f6a1ad26a61320e2adfe67e745a5d81015c1d029ec2f5871e142635",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AU_RBA_002",
+   "jur": "AU",
+   "year": "2022",
+   "fname": "AU_RBA_australian-cbdc-pilot-for-digital-finance-innovation-white-paper.pdf",
+   "sha256": "a5a150ac2a90b0264a581b5a560e39024d25376671a133b31c4225c2e4c72b45",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CH_CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-II-settling-tokenis_2",
+   "jur": "CH",
+   "year": "2022",
+   "fname": "CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-II-settling-tokenis_2022.pdf",
+   "sha256": "f6118d2e03e17de9926cc7c2e18416f9cdc87145eb5dcb72cd7a73b9b4554e82",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CL_CL_Banco-Central-de-Chile_Primer-Informe-Emision-de-una-mo",
+   "jur": "CL",
+   "year": "2022",
+   "fname": "CL_Banco-Central-de-Chile_Primer-Informe-Emision-de-una-moneda-digit_2022.pdf",
+   "sha256": "88a2256a84d128cf4620988ebcf6391efc6b9e266b76a3edbffd6899bb07adfb",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CZ_CzechRepublic_2022",
+   "jur": "CZ",
+   "year": "2022",
+   "fname": "CZ_CNB_digitalni-penize-centralnich-bank-CBDC.pdf",
+   "sha256": "0be917982342c2ea60cbf1d0b55b0c8ef9c2860702b150010c62019f5b224c8d",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "HK_HKMA_2022",
+   "jur": "HK",
+   "year": "2022",
+   "fname": "HK_HKMA_20220920e4a1.pdf",
+   "sha256": "cd024099fa51b43016c033083fbc934d17f36691d8d8a89b2a43c517e506e551",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "HK_HKMA_eHKD_PolicyDesign",
+   "jur": "HK",
+   "year": "2022",
+   "fname": "HK_HKMA_e-HKD_A_Policy_and_Design_Perspective.pdf",
+   "sha256": "7bcebfc51eea53cc5d818175e7d363689a1dcea95b249e7d2f98f77ed44424e9",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "ID_Indonesia_2022",
+   "jur": "ID",
+   "year": "2022",
+   "fname": "ID_Indonesia_White-Paper-CBDC-2022_en.pdf",
+   "sha256": "5becea73d710e641d0bd65c3e006a4ffb7bdb7dd9f549a3e0903e98796ce63cc",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "IN_RBI_ConceptNote_2022",
+   "jur": "IN",
+   "year": "2022",
+   "fname": "IN_India_CONCEPTNOTEACB531172E0B4DFC9A6E506C2C24FFB6.PDF",
+   "sha256": "9a5b4ae84b5c9b0043e83ff3656596de9f79926530c4c36d9261cdd78ff6d855",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JP_BoJ_2022",
+   "jur": "JP",
+   "year": "2022",
+   "fname": "JP_BoJ_rel220526a.pdf",
+   "sha256": "1d5e3664456aa1c6b29555b6261cb245ba51576eb5d4b289b44c1e35668d7682",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NA_BoN_2022",
+   "jur": "NA",
+   "year": "2022",
+   "fname": "NA_Namibia_dc7fb7a3-aaab-4f23-babb-2a1a86f71e5a.pdf",
+   "sha256": "0312bb67b77beb7e37d09fa40d1e98d19654d4febd394a54e7a87b2248a7e150",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "SG_MAS_mas-project-orchid-report",
+   "jur": "SG",
+   "year": "2022",
+   "fname": "SG_MAS_mas-project-orchid-report.pdf",
+   "sha256": "b57dd489b0743c981bda0910c6fa8620c49cbee51b3cb5c2db4bad3a8ae59f51",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "US_Fed_2022",
+   "jur": "US",
+   "year": "2022",
+   "fname": "US_Fed_money-and-payments-20220120.pdf",
+   "sha256": "6060b8d12c696dbcb28ad1fb4c8c2707c6405d05d348cbf2961f51964d44c029",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "US_NYFed_CedarPhaseOne_2022",
+   "jur": "US",
+   "year": "2022",
+   "fname": "US_NYFed_project-cedar-phase-one-report.pdf",
+   "sha256": "7354023ff78e43c7863d2283e0dca2ea66bb63470db8c732802504e4cc55a17c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "US_WhiteHouse_TechEval_2022",
+   "jur": "US",
+   "year": "2022",
+   "fname": "US_WhiteHouse_archived_09-2022-Technical-Evaluation-US-CBDC-System.pdf",
+   "sha256": "2505c48ebbe6e36fde2b88016e82aaa987044f46b595b9c22a9bc45eadcbc349",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "UY_BCU_Seven_Lessons_2022",
+   "jur": "UY",
+   "year": "2022",
+   "fname": "UY_BCU_Seven_Lessons_from_e-Peso_Sarmiento_2022.pdf",
+   "sha256": "856a9c10a2a37b3de57a34f80f4b3d77b98eac307e3545e24617f6adaafb7200",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "ZA_SARB_Project_Khokha_2_Full_Report_6_April_2022",
+   "jur": "ZA",
+   "year": "2022",
+   "fname": "ZA_SARB_Project_Khokha_2_Full_Report_6_April_2022.pdf",
+   "sha256": "a44ada8208993443d7ea4d992d9b83be6cccc84b5950b15d27f2d40d77e1a39b",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AU_RBA_001",
+   "jur": "AU",
+   "year": "2023",
+   "fname": "AU_RBA_australian-cbdc-pilot-for-digital-finance-innovation-project-report.pdf",
+   "sha256": "6519a2b65c0b147e9e7f59c35628dec31a042fb00f2595497b98318336215fdb",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "BR_Brazil_2023",
+   "jur": "BR",
+   "year": "2023",
+   "fname": "BR_Brazil_Digital_Brazilian_Real_Press_Conference_Guidelines_Pilot_RD_Mar2023.pdf",
+   "sha256": "df2191d0cd6fc1ad4403e390fda8f304d29bba8a56af185c990811464f37dff1",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CA_BoC_Consultation_Report_2023",
+   "jur": "CA",
+   "year": "2023",
+   "fname": "CA_BoC_Digital_Dollar_Consultation_Report_2023.pdf",
+   "sha256": "1936a1e45562d3f3b00bd3080e1df05f0d838bae46f8477398f94af368fbbf06",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "ECCU_ECCB_DCash_2_RFP_2023",
+   "jur": "ECCU",
+   "year": "2023",
+   "fname": "ECCU_ECCB_DCash_2.0_RFP_2023.pdf",
+   "sha256": "207374e71c2585d7709bdfa2f90c05e11a1527a7d2c0602f751836aace09ca7d",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se",
+   "jur": "FI",
+   "year": "2023",
+   "fname": "FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-seurantaryh_2023.pdf",
+   "sha256": "72280131bcbeed8599a80293bcaed8b4c33f1544473470d95982b22c4eca6386",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "GH_Ghana_2023",
+   "jur": "GH",
+   "year": "2024",
+   "fname": "GH_Ghana_The-eCedi-Report-221024.pdf",
+   "sha256": "51c555a0392ee49d87755fa5fff934b038f4e0712bed1d51918783b7743f1f85",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "ID_Indonesia_2023a",
+   "jur": "ID",
+   "year": "2023",
+   "fname": "ID_Indonesia_Consultative-Paper-Rupiah-Digital-BI.pdf",
+   "sha256": "45410d2d4034c000ae1b25b2d2f333c180f41758b246e427e5d9314f29052c57",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JP_BoJ_PoC2",
+   "jur": "JP",
+   "year": "2023",
+   "fname": "JP_BoJ_dig230529a.pdf",
+   "sha256": "bdb65ddbc70e645bd8da5c37763162c9bf6333df12da10b336847d5d6145106f",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NL_NL_Ministerie-van-Financi_Brief-van-de-Minister-van-Financien-over-d_2",
+   "jur": "NL",
+   "year": "2023",
+   "fname": "NL_Ministerie-van-Financi_Brief-van-de-Minister-van-Financien-over-d_2023.pdf",
+   "sha256": "481651954a71ca23a6c4e5c1c984a28c9457565882e9cb845ede9a231cb93e63",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "jur": "NO",
+   "year": "2023",
+   "fname": "NO_Norway_norges-bank-papers-2---phase-4---final-report.pdf",
+   "sha256": "e94fbcd5ebd90876a008c64254019098aef8e9fc92f7738559f525c015371a9e",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "PE_Peru_cbdc-presentation",
+   "jur": "PE",
+   "year": "2023",
+   "fname": "PE_Peru_cbdc-presentation.pdf",
+   "sha256": "35dde822f706159bcf3a2bed25658f6215d333dfa7cc579a7ba94bf133e20121",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "PW_Palau_Phase1_Report",
+   "jur": "PW",
+   "year": "2023",
+   "fname": "PW_Palau_Republic-of-Palau-Stablecoin-Program-Phase-1-Report.pdf",
+   "sha256": "310514d2f239c14e0b6ef5d4dac60600e80184eef4298a0a4b39f2be204829f3",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "UK_BoE_2023_TechWP",
+   "jur": "UK",
+   "year": "2023",
+   "fname": "UK_BoE_the-digital-pound-technology-working-paper.pdf",
+   "sha256": "33517448816990e79ca16f1d6dc68345c8d160650aa284f80e8808cdf45f4413",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AU_RBA_003",
+   "jur": "AU",
+   "year": "2024",
+   "fname": "AU_RBA_project-acacia-consultation-paper-2024-11.pdf",
+   "sha256": "e50b98eb12d8a4f78baf5f03eb38d5023cebdf45cb8714aac02836e6aa4c9852",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AW_ARU_001",
+   "jur": "AW",
+   "year": "2024",
+   "fname": "AW_Aruba_readBlob.do_5decead7.pdf",
+   "sha256": "11da27aa6f63a0a9710fbbb1a8d7dabe08ff06dd8547647213aad41ab11bc06c",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "BE_BE_Nationale-Bank-van-Bel_FMI-and-Payment-Services-Report-",
+   "jur": "BE",
+   "year": "2024",
+   "fname": "BE_Nationale-Bank-van-Bel_FMI-and-Payment-Services-Report-2024-Payme_2024.pdf",
+   "sha256": "2f3e7c9f372ce13f4b2ca0f5171a9ddb18cda0f588245b81c57be8c4d7047f1a",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CL_CL_Banco-Central-de-Chile_Segundo-Informe-Emision-de-una-m",
+   "jur": "CL",
+   "year": "2024",
+   "fname": "CL_Banco-Central-de-Chile_Segundo-Informe-Emision-de-una-moneda-digi_2024.pdf",
+   "sha256": "547cc8fdd37d60acb1c619457346065818896845eb32a2da32491d842fd46f28",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "EU_ECB_2024",
+   "jur": "EU",
+   "year": "2024",
+   "fname": "EU_ECB_ecb.deprp202412.en.pdf",
+   "sha256": "fcd2d2b193b17f700b16d4fdf95fc07b6980a5539eb5cae38c7bd236525e8c3c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "ID_Indonesia_2024",
+   "jur": "ID",
+   "year": "2024",
+   "fname": "ID_Indonesia_Laporan_POC_Proyek_Garuda_EN.pdf",
+   "sha256": "84927f4b3325df560508d52496571be2c725b9d3743f4bfed617d641269497c7",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "IL_Israel_#U05d0#U05e8#U05db#U05d9#U05d8#U05e7#U05d8#U05d5#U05e8#U05d4-#U05dc#U05d5#U05d2#U05d9#U05ea-#U05d0#U05e0#U05d2#U05dc#U05d9#U05ea.pdf",
+   "jur": "IL",
+   "year": "2024",
+   "fname": "IL_Israel_#U05d0#U05e8#U05db#U05d9#U05d8#U05e7#U05d8#U05d5#U05e8#U05d4-#U05dc#U05d5#U05d2#U05d9#U05ea-#U05d0#U05e0#U05d2#U05dc#U05d9#U05ea.pdf",
+   "sha256": "b4191f2e6e165f15d9ddc7716ca9b7397e94cde3d50dc52077ffccc468f2d8df",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "IL_BoI_2024",
+   "jur": "IL",
+   "year": "2024",
+   "fname": "IL_Israel_initial-design-for-the-digital-shekel-system.pdf",
+   "sha256": "ff0dc2ba61a299c29883df010baf79222278de139d2225b95922ca4fa2160c7c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JP_BoJ_Pilot_JP",
+   "jur": "JP",
+   "year": "2024",
+   "fname": "JP_BoJ_archived_dig240422a.pdf",
+   "sha256": "6d26970f52e785414c0d3c3ccddf3901d8ae1f8b73a5f86f702c5f9fe41bedb9",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JP_BoJ_Pilot_EN",
+   "jur": "JP",
+   "year": "2024",
+   "fname": "JP_BoJ_dig240531a.pdf",
+   "sha256": "623363420320a0260aa5961f912049af0dbac96f48e98b19e293c440cbfdeedc",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "MO_AMCM_eMOP_WP",
+   "jur": "MO",
+   "year": "2024",
+   "fname": "MO_Macao_e-MOP_en.pdf",
+   "sha256": "70df96859d07ef1a3dd0b83ac6e600bd97dda9d30b1183dc7fe503cfef35c152",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NZ_RBNZ_cbdc-insights-dossier-for-public-1",
+   "jur": "NZ",
+   "year": "2024",
+   "fname": "NZ_RBNZ_cbdc-insights-dossier-for-public-1.pdf",
+   "sha256": "29fbcc8de10ffbbc3d10187b679a9698bb6115291b690a6798d6bc30e5df6a8f",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "SI_4-tocka-Offline-digitalni-evro_2024",
+   "jur": "SI",
+   "year": "2024",
+   "fname": "SI_Banka-Slovenije_4-tocka-Offline-digitalni-evro_2024.pdf",
+   "sha256": "0878ce29f321f7198edd3387de40f1d765f97a67391a44e7755e63adf99b21ae",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SI_SI_Banka-Slovenije_Zapisnik-1-seje-NSD-digitalni-evro_2024",
+   "jur": "SI",
+   "year": "2024",
+   "fname": "SI_Banka-Slovenije_Zapisnik-1-seje-NSD-digitalni-evro_2024.pdf",
+   "sha256": "87901be797239e4573937baaa923914e96a88885b7f02c743895d29c0fab5e7f",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SI_SI_Banka-Slovenije_Zapisnik-2-seje-NSD-digitalni-evro_2024",
+   "jur": "SI",
+   "year": "2024",
+   "fname": "SI_Banka-Slovenije_Zapisnik-2-seje-NSD-digitalni-evro_2024.pdf",
+   "sha256": "3faba4b8979a9840baefcadee01a1fb8a18342cf22083689839ffd1e5894c719",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024",
+   "jur": "SI",
+   "year": "2024",
+   "fname": "SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024.pdf",
+   "sha256": "27d3cdef1bfbbddadcf2993868770255512004652c0f5d5c7df59ca16b668210",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SZ_Eswatini_2024-Fintech-Digital-Lilangeni-Design-Paper",
+   "jur": "SZ",
+   "year": "2024",
+   "fname": "SZ_Eswatini_2024-Fintech-Digital-Lilangeni-Design-Paper.pdf",
+   "sha256": "88516e2e75059dd970702c0128cd3b281631914b9c3ab6e3c069d8128b1961de",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "TH_Thailand_rCBDC_Conclusion_Report",
+   "jur": "TH",
+   "year": "2024",
+   "fname": "TH_Thailand_rCBDC_Conclusion_Report.pdf",
+   "sha256": "7b9bd649aedbdbada1cc9bc4d89d676903b4b8a4567e41d5520eca6d95ddafda",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report",
+   "jur": "TR",
+   "year": "2024",
+   "fname": "TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report.pdf",
+   "sha256": "af264a199ccebc93d419ddb9790b3763bba03d826728969a91517bb441b1b606",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AE_UAE_001",
+   "jur": "AE",
+   "year": "2025",
+   "fname": "AE_UAE_cbdc-short-report_july.pdf",
+   "sha256": "5627d4c5f667b72e7c56e50af4c9dd09b8f6dade1647881462534756852c96e2",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AT_AT_Oesterreichische-Natio_Financial-Inclusion-Report-Forum",
+   "jur": "AT",
+   "year": "2025",
+   "fname": "AT_Oesterreichische-Natio_Financial-Inclusion-Report-Forum-on-the-di_2025.pdf",
+   "sha256": "c6109ead8baf6477a08b16d1ca56a2533bcfc67f41aad4fec5c1296ce3cf578b",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "BO_BCB_Boliviano_Digital_2025",
+   "jur": "BO",
+   "year": "2025",
+   "fname": "BO_Bolivia_BCB_Primer_Informe_Boliviano_Digital_2025.pdf",
+   "sha256": "8dc9162f87d0d388d90f9ae3a5320258ea2cb1906472819fa393b13d1567d532",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CA_BoC_PETs_SDP2025_1",
+   "jur": "CA",
+   "year": "2025",
+   "fname": "CA_BoC_PETs_for_CBDC_SDP2025-1.pdf",
+   "sha256": "a61600fddc8a564c5f5e8de344a02faaa4c18f40b5b6186435b4b60020c35d64",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "CA_BoC_RetailFeasibility_SDP2025_9",
+   "jur": "CA",
+   "year": "2025",
+   "fname": "CA_BoC_Retail_CBDC_Feasibility_SDP2025-9.pdf",
+   "sha256": "08c42f21a2834ab7606d8319c827259e9629f64ed631120948351fdcefc8808a",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "CN_PBOC_LuLei_ActionPlan_2025",
+   "jur": "CN",
+   "year": "2025",
+   "fname": "CN_PBOC_LuLei_ActionPlan_FinancialNews_2025.pdf",
+   "sha256": "4f35aac4b4749c0b36760b4890bf1ad3dac2c3aacf67750b211fb17eed868934",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "EU_ECB_ClosingReport_2025",
+   "jur": "EU",
+   "year": "2025",
+   "fname": "EU_ECB_DigitalEuro_Closing_Report_Preparation_Phase_2025.pdf",
+   "sha256": "47684f4b0df1fe6f6ae5c93a8eb8c6ecad71a11ca278ccec8531a95e48265783",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "EU_ECB_ThirdProgress_2025",
+   "jur": "EU",
+   "year": "2025",
+   "fname": "EU_ECB_DigitalEuro_Third_Progress_Report_2025.pdf",
+   "sha256": "dc7f909e9784bba8b08694b44c1e25fdcbba7a1b0fce9dc148cdb445b359eb37",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "HK_HKMA_eHKD_Phase2_2025",
+   "jur": "HK",
+   "year": "2025",
+   "fname": "HK_HKMA_eHKD_Pilot_Programme_Phase2_Report_2025.pdf",
+   "sha256": "768f42223ec583ea684ddc85dff09adceb589cb37bd9ebe4822b08faf13a3355",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "HU_Hungary_2025",
+   "jur": "HU",
+   "year": "2025",
+   "fname": "HU_Hungary_student-safe-white-paper-final-20250303-en.pdf",
+   "sha256": "f6e2386c50800ce2511c7a6aa9c7b52c9f710ebd531f335a56341fc752a91072",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "RU_Russia_digital_ruble_30062025",
+   "jur": "RU",
+   "year": "2025",
+   "fname": "RU_Russia_digital_ruble_30062025.pdf",
+   "sha256": "e227c49de6caab68eb7ef5c8fd4b2c173a5bb07a8ae7d53e3e20f01dc05faf0c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "SE_Riksbank_PaymentsReport_2025",
+   "jur": "SE",
+   "year": "2025",
+   "fname": "SE_Riksbank_Payments_Report_2025.pdf",
+   "sha256": "347233a0a7ceac2a5dcd2d708b59954e97a2ed9ad0c928e1953aea26791be1b7",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "TR_DigitalLira_Phase2_2025",
+   "jur": "TR",
+   "year": "2025",
+   "fname": "Digital_Turkish_Lira_Second_Phase_Progress_Report.pdf",
+   "sha256": "2f158b0f3387524e27f36cf085270eda58e45be9c77b1e6f8eb0e910eeb0a74c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "US_WhiteHouse_EO14178_2025",
+   "jur": "US",
+   "year": "2025",
+   "fname": "US_WhiteHouse_EO14178_FR_2025.pdf",
+   "sha256": "d6749cba663ce2b8449a85994e63c0048a1505e03f4e521524109c2f0fcb7fdd",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "SE_Riksbank_PaymentsReport_2026",
+   "jur": "SE",
+   "year": "2026",
+   "fname": "SE_Riksbank_Payments_Report_2026.pdf",
+   "sha256": "37e99e79ac367ad820490eef9c50babcb42f076c4b03f978cda36b2c55598435",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "RW_RW-NBR-CBDC-PoC-Report-2026",
+   "jur": "RW",
+   "year": "2026",
+   "fname": "RW_NBR_CBDC_PoC_Report_2026.pdf",
+   "sha256": "701ada6c0bc97a0e3ff921f126c7926ee3dd742e1276e55ae50df164e7d9e5bb",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "KE_KE-CBK-CBDC-Discussion-Paper-2022",
+   "jur": "KE",
+   "year": "2022",
+   "fname": "KE_CBK_CBDC_Discussion_Paper_2022.pdf",
+   "sha256": "e344d763754f1e40c514b2ca891920ea3fdca52cf4b8a376273ed634d6085404",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "MU_MU-BoM-Digital-Rupee-Consultation-2023",
+   "jur": "MU",
+   "year": "2023",
+   "fname": "MU_BoM_Digital_Rupee_Consultation_2023.pdf",
+   "sha256": "1cf7c6b350ccaaceb3fbd16a92bf11bf96cac18291af50d5792062e19b103922",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NP_NP-NRB-CBDC-Concept-Report-2022",
+   "jur": "NP",
+   "year": "2022",
+   "fname": "NP_NRB_CBDC_Concept_Report_2022.pdf",
+   "sha256": "020f7e0ab207672f43185379c3fa8ef669b433ba7adfe3034b21bff91252c747",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021",
+   "jur": "BT",
+   "year": "2021",
+   "fname": "BT_RMA_Druk_Nguldrel_Lamtoen_2030_2021.pdf",
+   "sha256": "f94dddd54b290ecf6c788e1eb3e3fe7e1cf369d7637d786d5ab07ccbf321bcdd",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021",
+   "jur": "KZ",
+   "year": "2021",
+   "fname": "KZ_NBK_Digital_Tenge_Pilot_White_Paper_2021.pdf",
+   "sha256": "7a0ed55cb940212d64c35e316ff72fcfca0d025108e9e1994bd994b8e1519d5c",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "KZ_KZ-NBK-Digital-Tenge-White-Paper-2023",
+   "jur": "KZ",
+   "year": "2023",
+   "fname": "KZ_NBK_Digital_Tenge_White_Paper_2023.pdf",
+   "sha256": "4ee65f3790436fa18b350fc65ebb2cf8c06b166be1849cd93bf4f58a1d65f337",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "TW_TW-CBC-CBDC-Communication-Summary-Report-2026",
+   "jur": "TW",
+   "year": "2026",
+   "fname": "TW_CBC_CBDC_Communication_Summary_Report_2026.pdf",
+   "sha256": "0f4b4a6f693d87dd65fb48f53376a141beab1afec0c30cf3fcc68f69dbf5530d",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "AU_AU-RBA-Treasury-Retail-CBDC-Update-2026",
+   "jur": "AU",
+   "year": "2026",
+   "fname": "AU_RBA_Treasury_Retail_CBDC_Update_2026.pdf",
+   "sha256": "eea5684777855138a6ebae630c037bc150359d5d702e7b9a18b8942ac20dd657",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "ZA_ZA-SARB-Retail-CBDC-Position-Paper-2025",
+   "jur": "ZA",
+   "year": "2025",
+   "fname": "ZA_SARB_Retail_CBDC_Position_Paper_2025.pdf",
+   "sha256": "89be925dcde3b0d00959c0f5a61a7bee8283c00eee2b7f66e1c382298b60a8ce",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report",
+   "jur": "NO",
+   "year": "2026",
+   "fname": "NO_NorgesBank_Papers_1_2026_CBDC_Phase5_Final_Report.pdf",
+   "sha256": "b97442f89dcaea61129d13c148c91f4051610f90884e3b633b1413d964d200ec",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing",
+   "jur": "NO",
+   "year": "2026",
+   "fname": "NO_NorgesBank_Papers_3_2026_CBDC_Phase5_Experimental_Testing.pdf",
+   "sha256": "5c1c43cbe3637a6ce9bb2f853380aa963bd9ac35d0e81d75af150e7a56ec68bd",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "IL_IL-BoI-Digital-Shekel-Progress-Report-2025-pub2026",
+   "jur": "IL",
+   "year": "2026",
+   "fname": "IL_BoI_Digital_Shekel_Progress_Report_2025_pub2026.pdf",
+   "sha256": "d8ff2c1c16a2a8256e42ae96b6b006524238c92682ed74bacdbb2ff2531e8506",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JM_JM-BOJ-Amendment-Act-5-of-2022",
+   "jur": "JM",
+   "year": "2022",
+   "fname": "JM_BOJ_Amendment_Act_5_of_2022.pdf",
+   "sha256": "5691d61e049989a738a5b9080b59255d0cfd3a9e7bce3aac1b103e58cbcae281",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "JM_JM-BOJ-CBDC-FAQs-Booklet-2022",
+   "jur": "JM",
+   "year": "2022",
+   "fname": "JM_BOJ_CBDC_FAQs_Booklet_2022.pdf",
+   "sha256": "60c22f04bab3dc82bb595562196a9c8057bba092b9b64cdb0dcd6ca8d2460a35",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "JM_JM-BOJ-CBDC-FAQs-webpage-2022-upd2025",
+   "jur": "JM",
+   "year": "2022",
+   "fname": "JM_BOJ_CBDC_FAQs_webpage_2022_upd2025.pdf",
+   "sha256": "ace03aa2af14929b8cc7d508ecaab7a4244bfc61d8c438177ef951d117bcce16",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "JM_JM-BOJ-Annual-Report-2022-CBDC-sections",
+   "jur": "JM",
+   "year": "2023",
+   "fname": "JM_BOJ_Annual_Report_2022_CBDC_sections.pdf",
+   "sha256": "9918879ca71de8e5a90719f633a85c8a5afdabe46cb9804b6be3411681fc3f12",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "JM_JM-BOJ-Annual-Report-2021-CBDC-sections",
+   "jur": "JM",
+   "year": "2022",
+   "fname": "JM_BOJ_Annual_Report_2021_CBDC_sections.pdf",
+   "sha256": "ff80436af8f3eaab5e80667a5623194c27a8f498169fbe9a65557ce285c71251",
+   "core": "BORDERLINE"
+  },
+  {
+   "doc_id": "NG_NG-CBN-eNaira-Regulatory-Guidelines-2021",
+   "jur": "NG",
+   "year": "2021",
+   "fname": "NG_CBN_eNaira_Regulatory_Guidelines_2021.pdf",
+   "sha256": "59049cba4e452f7facdbfab7b9149178b7fbf7c3949d69524b3034a5f4a5010d",
+   "core": "KEEP"
+  },
+  {
+   "doc_id": "NG_NG-CBN-eNaira-Diaspora-Remittances-Framework-2023",
+   "jur": "NG",
+   "year": "2023",
+   "fname": "NG_CBN_eNaira_Diaspora_Remittances_Framework_2023.pdf",
+   "sha256": "7ba931315fe791029d874778322e63b74e7ff071100b9fcd4518c1b2bb497872",
+   "core": "KEEP"
+  }
+ ]
+}

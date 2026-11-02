@@ -1,0 +1,19 @@
+doc,doc_id,title,year,core,staff,kind,pages,chars,file
+1,UK_BoE_2020_OpportChall,UK_BoE_2020_OpportChall,2020,KEEP,,consultation,57,200767,llm_fill/UK/texts/doc01.txt
+2,UK_BoE_2023_TechWP,UK_BoE_2023_TechWP,2023,KEEP,,technical_paper,86,169361,llm_fill/UK/texts/doc02.txt
+3,UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE,"The digital pound: a new form of money for households and businesses? (Consultation Paper, CP 797)",2023,KEEP,,consultation,116,243028,llm_fill/UK/texts/doc03.txt
+4,UK_UK-BoE-HMT-2024-01-consultation-response-BoE,Response to the Bank of England and HM Treasury Consultation Paper: The digital pound: a new form of money for households and businesses?,2024,KEEP,,consultation_response,71,147314,llm_fill/UK/texts/doc04.txt
+5,UK_UK-BoE-2024-01-response-to-technology-working-paper,Response to the digital pound Technology Working Paper,2024,KEEP,,technical_paper,33,60896,llm_fill/UK/texts/doc05.txt
+6,UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep,Point-of-sale proof of concept – digital pound experiment report,2024,KEEP,,pilot_report,22,20522,llm_fill/UK/texts/doc06.txt
+7,UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-,The role of holding limits for sterling-denominated systemic stablecoins and a potential digital pound (Financial Stability Paper No. 53),2025,BORDERLINE,Y,research_general,31,62528,llm_fill/UK/texts/doc07.txt
+8,UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF,Digital pound update (October 2025 design-phase update),2025,BORDERLINE,,progress_report,7,11763,llm_fill/UK/texts/doc08.txt
+9,UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment,Progress update: The digital pound and the payments landscape,2025,KEEP,,progress_report,22,39735,llm_fill/UK/texts/doc09.txt
+10,UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF,Design note – Alias service,2025,KEEP,,white_paper,15,28617,llm_fill/UK/texts/doc10.txt
+11,UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF,Design note – Product strategy,2025,KEEP,,white_paper,18,29257,llm_fill/UK/texts/doc11.txt
+12,UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD,Digital pound experiment report: Offline payments,2025,KEEP,,pilot_report,15,28001,llm_fill/UK/texts/doc12.txt
+13,UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP,Design note – Interoperability models for UK-based payments,2025,KEEP,,white_paper,20,29716,llm_fill/UK/texts/doc13.txt
+14,UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul,Design note – Intermediary roles and scheme rulebook,2025,KEEP,,white_paper,21,37232,llm_fill/UK/texts/doc14.txt
+15,UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF,Design note – Blueprint framework,2025,KEEP,,white_paper,13,20801,llm_fill/UK/texts/doc15.txt
+16,UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF,Design note – Offline payments,2025,KEEP,,white_paper,12,23956,llm_fill/UK/texts/doc16.txt
+17,UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender,Progress update: Digital Pound Design Phase,2026,KEEP,,progress_report,8,32944,llm_fill/UK/texts/doc17.txt
+18,UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender,Digital Pound Lab: Phase 1 update,2026,BORDERLINE,,progress_report,13,12940,llm_fill/UK/texts/doc18.txt
