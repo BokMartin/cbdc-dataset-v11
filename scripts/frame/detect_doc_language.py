@@ -12,7 +12,7 @@ from lingua import LanguageDetectorBuilder
 texts, out = sys.argv[1], sys.argv[2]
 det = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
 rows = []
-for f in sorted(glob.glob(os.path.join(texts, "*", "DOCS.csv"))):
+for f in sorted(glob.glob(os.path.join(texts, "*", "DOCS.csv")) + glob.glob(os.path.join(texts, "DOCS.csv"))):
     for r in csv.DictReader(open(f, encoding="utf-8")):
         p = r["file"] if os.path.exists(r["file"]) else os.path.join(os.path.dirname(f), "texts", os.path.basename(r["file"]))
         pages = re.split(r"=== DOC \d+ PAGE \d+ ===\n", open(p, encoding="utf-8", errors="replace").read())[1:]
