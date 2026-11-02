@@ -214,6 +214,15 @@ for code, p in projects.items():
             try: did = no2id[str(int(float(c.get("doc_no", ""))))]; d = by_id[did]; c.update({"doc_id": did, "doc_title": d["title"], "doc_year": d["year"], "doc_url": d["url"]})
             except Exception: c["doc_join"] = "unresolved"
         p["history"] = real_history(p, p["cells"], os.path.join(dev_dir, f"{code}_history_two_stage_v1_1.json"))
+    # documented statements (privacy-posture survey), released for exposed projects only (data/statements/<code>_statements.csv)
+    st_csv = os.path.join(ROOT, "data/statements", f"{code}_statements.csv")
+    if os.path.exists(st_csv):
+        by_id = {d["doc_id"]: d for d in p["docs"]}; st = []
+        for r in csv.DictReader(open(st_csv, encoding="utf-8")):
+            d = by_id.get(r["doc_id"], {})
+            st.append({"type": r["type"], "status": r["status"], "basis": r["basis"], "actor": r["actor"], "doc_id": r["doc_id"], "doc_title": d.get("title", r["doc_id"]), "doc_year": d.get("year", r["year"]),
+                       "doc_url": d.get("url", ""), "page": r["page"], "quote": r["quote"], "label": r["label"], "verified": r["quote_verified"]})
+        p["statements"] = st; p["statements_note"] = "model-only survey, development extraction, citation-checked"
     elif p["retail"]:
         p["cells"], p["history"] = mock_project(p); p["mock"] = True
     else:

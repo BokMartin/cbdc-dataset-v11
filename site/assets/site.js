@@ -85,7 +85,30 @@
       "<div class='typeline'>Commitment type: <b style='color:" + typeCol(p.type) + "'>" + p.type + "</b> <span class='meta'>(documented + endorsed/operational cells only)</span> &nbsp;·&nbsp; permissive view: " + (p.type_permissive || "—") + "<br><span class='meta'>Y₁ " + (p.y1 === null ? "undetermined" : p.y1) + " (permissive " + (p.y1_permissive === null ? "—" : p.y1_permissive) + ") · Y₃ " + (p.y3 === null ? "undetermined" : p.y3) + (s && !isCurrent ? " · snapshot " + s.year + ": " + s.type : "") + "</span></div>" +
       "<table>" + rows + "</table><div class='timeline'><div class='meta'>Documented trajectory — type · primary objective per document year" + (p.mock ? " (mock)" : "") + ":</div>" + tl + ch + "</div>" +
       "<div class='meta' style='margin-top:10px'>Documents (" + p.docs.length + "): " + p.docs.map(function (d) { return (d.url ? '<a href="' + d.url + '" title="' + C.esc(d.title) + '">' : "<span title='" + C.esc(d.title) + "'>") + d.year + (d.verdict ? " " + d.verdict[0] : "") + (d.url ? "</a>" : "</span>"); }).join(" · ") + "</div>" +
-      (p.status_source ? "<div class='meta'>Status source: <a href='" + p.status_source + "'>link</a></div>" : "");
+      (p.status_source ? "<div class='meta'>Status source: <a href='" + p.status_source + "'>link</a></div>" : "") + C.statements(p);
+  };
+
+  // ---------- documented statements (privacy-posture survey; released for exposed projects only) ----------
+  C.STYPE = { PRINCIPLE: "Privacy as principle / objective", CB_NO_PERSONAL_DATA: "Central bank does not see personal data", CB_SEES_DATA: "Central bank sees / may see data", PSP_HOLDS_IDENTITY: "Intermediaries hold identity", PSEUDONYMISATION: "Pseudonymisation", TIERED_LOW_ID: "Low-identification tier", ANONYMITY_REJECTED: "Cash-like anonymity rejected", OFFLINE_PRIVACY: "Offline privacy", LAWFUL_ACCESS: "Lawful access / AML", DATA_MINIMISATION: "Data minimisation", USER_CONTROL_CONSENT: "User control / consent", NO_COMMERCIAL_USE: "No commercial use", PROGRAMMABILITY: "Programmability", PET_TECHNIQUE: "Privacy-enhancing technique", LEGAL_COMMITMENT: "Legal commitment", PRIVACY_AS_RISK_OR_TRADEOFF: "Privacy as risk / trade-off", OTHER: "Other" };
+  C.STYPE_ORDER = ["CB_NO_PERSONAL_DATA", "CB_SEES_DATA", "PSP_HOLDS_IDENTITY", "PSEUDONYMISATION", "TIERED_LOW_ID", "ANONYMITY_REJECTED", "OFFLINE_PRIVACY", "PET_TECHNIQUE", "DATA_MINIMISATION", "USER_CONTROL_CONSENT", "NO_COMMERCIAL_USE", "LEGAL_COMMITMENT", "PRINCIPLE", "LAWFUL_ACCESS", "PROGRAMMABILITY", "PRIVACY_AS_RISK_OR_TRADEOFF", "OTHER"];
+  C.statements = function (p) {
+    var S = p.statements; if (!S || !S.length) return "";
+    var ok = S.filter(function (s) { return s.verified === "exact_page" || s.verified === "spanning_pages" || s.verified === "elsewhere_in_doc"; });
+    var by = {}; ok.forEach(function (s) { (by[s.type] = by[s.type] || []).push(s); });
+    var ORD = { endorsed: 0, operational: 1, tested: 2, considered: 3, rejected: 4, unclear: 5 };
+    var html = "<div class='statements'><h4>Documented statements on privacy and identifiability <span class='tag dev'>" + (p.statements_note || "development") + "</span></h4>" +
+      "<div class='meta'>" + ok.length + " citation-checked statements in " + p.docs.filter(function (d) { return d.layer !== "registry"; }).length + " core documents (" + (S.length - ok.length) + " not located verbatim and hidden). Each line links to the official document at the cited PDF page. Status is attached to the statement: <i>considered</i> is not a commitment.</div>";
+    C.STYPE_ORDER.forEach(function (t) {
+      var L = by[t]; if (!L) return; L.sort(function (a, b) { return (ORD[a.status] - ORD[b.status]) || (b.doc_year - a.doc_year); });
+      var n = { endorsed: 0, operational: 0, tested: 0, considered: 0 }; L.forEach(function (s) { if (n[s.status] !== undefined) n[s.status]++; });
+      html += "<details><summary><b>" + C.STYPE[t] + "</b> <span class='meta'>" + L.length + " · " + Object.keys(n).filter(function (k) { return n[k]; }).map(function (k) { return n[k] + " " + k; }).join(", ") + "</span></summary><ul>" +
+        L.map(function (s) {
+          var loc = C.esc(s.doc_title) + (s.doc_year ? " (" + s.doc_year + ")" : "") + (s.page ? ", p. " + s.page : "");
+          var link = s.doc_url ? '<a href="' + s.doc_url + (s.page ? "#page=" + s.page : "") + '" target="_blank" rel="noopener">' + loc + "</a>" : loc + " <span class='meta'>(source URL pending)</span>";
+          return "<li><span class='st st-" + s.status + "'>" + s.status + "</span>" + (s.basis && s.basis !== "n/d" ? " <span class='meta'>" + s.basis + "</span>" : "") + " “" + C.esc(s.quote) + "” <span class='src'>" + link + (s.verified !== "exact_page" ? " <span class='tag dev'>" + s.verified.replace(/_/g, " ") + "</span>" : "") + "</span></li>";
+        }).join("") + "</ul></details>";
+    });
+    return html + "</div>";
   };
 
   // ---------- distribution over time (stacked bars) ----------

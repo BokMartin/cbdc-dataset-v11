@@ -1,0 +1,46 @@
+{
+ "rendered_utc": "2026-11-02T14:49:59.827300+00:00",
+ "contract": "docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "schema": "schema/cells_v1_1.json",
+ "schema_sha256": "b2048e3da21ccb7286dca2264efd78e86670c1fcb3d1439414ab2b7d15f83b7a",
+ "prompts": {
+  "extraction_stage1.system": {
+   "file": "prompts/extraction_stage1.system.md",
+   "sha256": "da7c18028bdb1417d37426bf3e071ac988b1e6e6c0d0590b3d9b2c5031a8c4b5",
+   "chars": 22044
+  },
+  "extraction_stage2_synthesis.system": {
+   "file": "prompts/extraction_stage2_synthesis.system.md",
+   "sha256": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+   "chars": 22970
+  },
+  "extraction_single.system": {
+   "file": "prompts/extraction_single.system.md",
+   "sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+   "chars": 22832
+  },
+  "endorsement_census.system": {
+   "file": "prompts/endorsement_census.system.md",
+   "sha256": "dd472fa618f43fc8590f0e0048117a72fb4c2207a83fc4982f88d18f21c8d7be",
+   "chars": 21981
+  },
+  "posture_survey.system": {
+   "file": "prompts/posture_survey.system.md",
+   "sha256": "9fc3d77d91678158191fa0263c2893e1b7f8bb37e9673a550e0b51d70a8dead4",
+   "chars": 2733
+  }
+ },
+ "user_message_formats": {
+  "extraction_stage1": "PROJECT <jur>, DOCUMENT <n> [<doc_id>] ... followed by the page-delimited text (=== DOC n PAGE p ===)",
+  "extraction_stage2_synthesis": "document list (doc, doc_id, title, year, kind, staff flag) + JSON array of stage-1 findings",
+  "extraction_single": "PROJECT <jur>\\n\\nDOCUMENTS:\\n<list>\\n\\n########## DOCUMENT n [doc_id] ########## + page-delimited texts of all core documents",
+  "endorsement_census": "same as extraction_single (all core documents of one project)",
+  "posture_survey": "PROJECT <jur>, DOCUMENT <n> [<doc_id>], year, kind, lang + page-delimited text of one document"
+ },
+ "provider_settings": {
+  "anthropic": "messages.stream, max_tokens per stage (32000 extraction, 4000 census, 16000-40000 survey); temperature not settable",
+  "openai": "chat.completions, temperature 0"
+ },
+ "note": "Every real run also archives the exact request text (requests/*.txt.gz) and the response; these exports are the rendered prompts for reading and for re-running elsewhere."
+}
