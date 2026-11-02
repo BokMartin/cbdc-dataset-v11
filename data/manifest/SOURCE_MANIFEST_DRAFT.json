@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-02T17:01:12.063811+00:00",
+ "generated_utc": "2026-11-02T19:48:18.688653+00:00",
  "n_rows": 128,
  "n_evidence_documents": 124,
  "n_projects": 48,
  "by_route": {
-  "A": 105,
-  "D": 15,
+  "A": 106,
+  "D": 14,
   "B_pair_original": 4,
   "B": 3,
   "B_available": 1
  },
  "by_language": {
-  "en": 108,
+  "en": 109,
   "es": 4,
   "zh": 1,
   "cs": 1,
@@ -21,8 +21,7 @@
   "ja": 1,
   "nb": 3,
   "ru": 2,
-  "zh-Hant": 1,
-  "uk": 1
+  "zh-Hant": 1
  },
  "by_verdict": {
   "KEEP": 92,
@@ -43,7 +42,6 @@
   "RU:RU_Russia_concept_08042021",
   "RU:RU_Russia_digital_ruble_30062025",
   "TW:TW_TW-CBC-CBDC-Communication-Summary-Report-2026",
-  "UA:UA_NBU_E-hryvnia_2019",
   "UY:UY_Uruguay_BCU_BilleteDigital_2017"
  ],
  "missing_url": [],

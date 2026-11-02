@@ -23,6 +23,8 @@ A project whose model-generated cell values any author has read is **exposed** a
 | 2026-11-02 | CL | Reconstruction of archived script versions; project frame recomputed from registry | no values | none |
 | 2026-11-02 | CL (model only) | Endorsement census, 43 national retail candidates, one request per project (`scripts/census/endorsement_census.py`, claude-opus-5-5, contract v1.1 as definition source). Per-project file sealed off-repo (`census_sealed/ENDORSEMENT_CENSUS_sealed.jsonl`, SHA-256 in `data/census/ENDORSEMENT_CENSUS_aggregate.json`); the census log is off-repo too. Authors receive the aggregate only. | model yes; **authors no** | none for authors; census values are not instrument output and are never merged into profiles |
 | 2026-11-02 | CL (model only) | Statement-type survey of all 125 core documents (`scripts/census/posture_survey.py`), sealed off-repo; authors receive aggregates (`data/census/POSTURE_SURVEY_aggregate.json`) and example quotes from NO/UK only; posture-layer definitions (`docs/PRIVACY_POSTURE_LAYER_DESIGN_2026-11-02.md`) written after this pass and before any human coding | model yes; authors no | definitions post-date a model pass over the corpus: disclosed in registration |
+| 2026-11-02 | CL, external model (OpenAI) | Independent audit of the day's work from the audit pack (no sealed data, no texts); report in `docs/audits/`; dispositions in ADR-002 | no per-project values | none |
+| 2026-11-02 | CL | UK both-mode run and NO route-B run (`runs_v2_UK`, `runs_v2_NO_en`) | yes (NO, UK; both already exposed) | none beyond NO/UK |
 | 2026-11-02 | CL | Valid single vs two-stage NO run (v2 extractor, complete coverage) | yes (NO, already exposed) | none beyond NO |
 
 ## Planned entries (to be filled when they happen)

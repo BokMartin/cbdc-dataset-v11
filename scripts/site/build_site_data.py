@@ -222,7 +222,7 @@ for code, p in projects.items():
         for r in csv.DictReader(open(st_csv, encoding="utf-8")):
             d = by_id.get(r["doc_id"], {})
             st.append({"type": r["type"], "status": r["status"], "basis": r["basis"], "actor": r["actor"], "doc_id": r["doc_id"], "doc_title": d.get("title", r["doc_id"]), "doc_year": d.get("year", r["year"]),
-                       "doc_url": d.get("url", ""), "page": r["page"], "quote": r["quote"], "label": r["label"], "verified": r["quote_verified"]})
+                       "doc_url": d.get("url", ""), "page": r["page"], "found_page": r.get("quote_found_page", ""), "quote": r["quote"], "label": r["label"], "verified": r["quote_verified"]})
         p["statements"] = st; p["statements_note"] = "model-only survey, development extraction, citation-checked"
         p["posture"] = derive.posture_summary([{"type": x["type"], "status": x["status"], "basis": x["basis"], "quote_verified": x["verified"]} for x in st])
     elif p["retail"]:

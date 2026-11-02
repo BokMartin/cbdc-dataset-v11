@@ -107,8 +107,9 @@
       var n = { endorsed: 0, operational: 0, tested: 0, considered: 0 }; L.forEach(function (s) { if (n[s.status] !== undefined) n[s.status]++; });
       html += "<details><summary><b>" + C.STYPE[t] + "</b> <span class='meta'>" + L.length + " · " + Object.keys(n).filter(function (k) { return n[k]; }).map(function (k) { return n[k] + " " + k; }).join(", ") + "</span></summary><ul>" +
         L.map(function (s) {
-          var loc = C.esc(s.doc_title) + (s.doc_year ? " (" + s.doc_year + ")" : "") + (s.page ? ", p. " + s.page : "");
-          var link = s.doc_url ? '<a href="' + s.doc_url + (s.page ? "#page=" + s.page : "") + '" target="_blank" rel="noopener">' + loc + "</a>" : loc + " <span class='meta'>(source URL pending)</span>";
+          var pg = (s.verified === "elsewhere_in_doc" || s.verified === "spanning_pages") && s.found_page ? s.found_page : s.page;   // link the page where the quote was located, not the model's locator
+          var loc = C.esc(s.doc_title) + (s.doc_year ? " (" + s.doc_year + ")" : "") + (pg ? ", p. " + pg : "") + (s.verified === "elsewhere_in_doc" ? " <span class='meta'>(model cited p. " + s.page + "; corrected)</span>" : "");
+          var link = s.doc_url ? '<a href="' + s.doc_url + (pg ? "#page=" + pg : "") + '" target="_blank" rel="noopener">' + loc + "</a>" : loc + " <span class='meta'>(source URL pending)</span>";
           return "<li><span class='st st-" + s.status + "'>" + s.status + "</span>" + (s.basis && s.basis !== "n/d" ? " <span class='meta'>" + s.basis + "</span>" : "") + " “" + C.esc(s.quote) + "” <span class='src'>" + link + (s.verified !== "exact_page" ? " <span class='tag dev'>" + s.verified.replace(/_/g, " ") + "</span>" : "") + "</span></li>";
         }).join("") + "</ul></details>";
     });
@@ -177,7 +178,7 @@
     function draw() {
       rows.sort(function (a, b) { var x = a[sortKey], y = b[sortKey]; if (x === "" && y !== "") return 1; if (y === "" && x !== "") return -1; return (x > y ? 1 : x < y ? -1 : 0) * (asc ? 1 : -1); });
       el.innerHTML = "<thead><tr>" + cols.map(function (c) { return "<th data-k='" + c[0] + "'" + (c[0] === sortKey ? " class='sorted'" : "") + ">" + c[1] + (c[0] === sortKey ? (asc ? " ↑" : " ↓") : "") + "</th>"; }).join("") + "</tr></thead><tbody>" +
-        rows.map(function (r) { return "<tr><td><a href='map.html?project=" + r.code + "'>" + C.esc(r.name) + "</a>" + (r.mock ? "" : " <span class='tag dev'>real</span>") + "</td><td><i class='sw' style='background:" + (STATUSC[r.status] || UNKNOWN) + "'></i>" + r.status + "</td><td><b style='color:" + typeCol(r.type) + "'>" + r.type + "</b></td>" +
+        rows.map(function (r) { return "<tr><td><a href='map.html?project=" + r.code + "'>" + C.esc(r.name) + "</a>" + (r.mock ? "" : " <span class='tag dev'>development · not validated</span>") + "</td><td><i class='sw' style='background:" + (STATUSC[r.status] || UNKNOWN) + "'></i>" + r.status + "</td><td><b style='color:" + typeCol(r.type) + "'>" + r.type + "</b></td>" +
           ["y1", "y3", "F1", "F2", "F4", "F7", "F8", "F9", "F10", "F3", "F12"].map(function (k) { return "<td>" + C.esc(r[k]).replace(/_/g, " ") + "</td>"; }).join("") + "<td>" + C.esc(r.primary) + "</td><td>" + r.ndocs + "</td><td>" + r.last + "</td></tr>"; }).join("") + "</tbody>";
       el.querySelectorAll("th").forEach(function (th) { th.onclick = function () { var k = th.dataset.k; if (sortKey === k) asc = !asc; else { sortKey = k; asc = true; } draw(); }; });
     }

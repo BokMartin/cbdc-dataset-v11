@@ -26,8 +26,8 @@ Purpose. The endorsement census showed that the strict commitment matrix (contra
 
 Three facts that shape the design:
 
-1. **Privacy is discussed almost everywhere, decided almost nowhere.** 41 of 43 projects have at least one architectural statement about identifiability; endorsed or operational architectural statements of *any* kind exist in 15. The commitment matrix is not wrong, it is simply the top rung of a ladder most projects have not climbed.
-2. **CB_NO_PERSONAL_DATA and CB_SEES_DATA co-occur in 17 projects** (5 have only "no", 13 only "sees", 8 neither). Within a project the position moves across documents, designs and years. A single F1 value hides this; the posture layer should record *both* directions with status and date, and the paper should show the movement.
+1. **Privacy is discussed almost everywhere, decided almost nowhere.** 40 of 43 projects have at least one architectural statement in the raw survey; after the mechanical citation check and the eligibility rule (located, not rejected, not staff research) it is 35, and endorsed or operational architectural statements of *any* kind exist in 13 (`data/census/POSTURE_LADDER_aggregate.json`; the figure 41 in the first version of this memo was a counting error, audit item 9). The commitment matrix is not wrong, it is simply the top rung of a ladder most projects have not climbed.
+2. **CB_NO_PERSONAL_DATA and CB_SEES_DATA co-occur in 12 projects on located claims** (5 have only "no", 11 only "sees", 15 neither; raw survey: 17 / 5 / 13 / 8). Within a project the position moves across documents, designs and years. A single F1 value hides this; the posture layer should record *both* directions with status and date, and the paper should show the movement.
 3. The most frequent type is privacy framed as **risk, trade-off or public concern** (32 projects), never endorsed. That is "privacy talk" in the authors' sense, and it is measurable as a stance, not as sentiment.
 
 ## 2. Proposed layer A: posture ladder (ordinal, per project, derived from claims)
@@ -36,10 +36,10 @@ Derived mechanically from atomic claims with the same pipeline, citation check a
 
 | level | definition | survey count (43) |
 |---|---|---|
-| **P3 commitment** | ≥ 1 *endorsed or operational* architectural claim about identifiability (types CB_NO_PERSONAL_DATA, CB_SEES_DATA, PSP_HOLDS_IDENTITY, PSEUDONYMISATION, TIERED_LOW_ID, OFFLINE_PRIVACY, ANONYMITY_REJECTED, PET_TECHNIQUE) | 15 |
-| **P2 architecture considered or tested** | ≥ 1 architectural claim of those types with status considered/tested, none endorsed | 25 |
-| **P1 principle only** | privacy/data protection stated as principle, legal commitment, data minimisation or user control, without an architectural claim | 1 |
-| **P0 silent** | no statement about user privacy/identifiability (lawful access, programmability and risk talk do not count) | 2 |
+| **P3 commitment** | ≥ 1 *endorsed or operational* architectural claim about identifiability (types CB_NO_PERSONAL_DATA, CB_SEES_DATA, PSP_HOLDS_IDENTITY, PSEUDONYMISATION, TIERED_LOW_ID, OFFLINE_PRIVACY, ANONYMITY_REJECTED, PET_TECHNIQUE); rejected-only and staff-research claims never count | 13 (raw 15) |
+| **P2 architecture considered or tested** | ≥ 1 architectural claim of those types with status considered/tested, none endorsed | 22 (raw 25) |
+| **P1 principle only** | privacy/data protection stated as principle, legal commitment, data minimisation or user control, without an architectural claim | 3 (raw 1) |
+| **P0 silent or not located** | no located eligible statement about user privacy/identifiability (lawful access, programmability and risk talk do not count); the export separates search complete, nothing found from quotes not located | 5 (raw 2) |
 
 P3 is wider than F1: it counts any endorsed architectural position (e.g. "PSPs hold identity", "no cash-like anonymity"), not only the CB-linkage question. Y₁ stays defined on F1; the ladder is the descriptive layer that shows where the 35 undetermined projects sit. It is ordinal, never scored or correlated as a number; cross-tabulated with project status and the H2 covariate descriptively.
 
@@ -47,17 +47,17 @@ P3 is wider than F1: it counts any endorsed architectural position (e.g. "PSPs h
 
 Each is a yes/not_documented cell with status, basis, locator and quote, so "sensitive" means *low evidential threshold*, not *loose definition*. Status and basis stay attached and are reported, so a reviewer can see that "yes (considered, policy basis)" is not a commitment.
 
-| id | question | from survey type | retail projects with ≥ 1 |
+| id | question | from survey type | retail projects with ≥ 1 (raw → located) |
 |---|---|---|---|
-| G1 PRIVACY_PRINCIPLE_STATED | privacy / data protection stated as a design principle, objective or requirement | PRINCIPLE | 34 |
-| G2 CB_NO_DATA_STATEMENT | any statement that the CB will not / cannot see or hold personal or transaction-identity data (basis policy / architectural / cryptographic recorded) | CB_NO_PERSONAL_DATA | 22 |
-| G3 CB_DATA_STATEMENT | any statement that the CB will or may see or hold such data | CB_SEES_DATA | 30 |
-| G4 LOW_ID_TIER_MENTIONED | a tier/wallet without full identity verification mentioned as option, test or decision | TIERED_LOW_ID | 24 |
-| G5 CASH_ANONYMITY_REJECTED | explicit statement that cash-like anonymity will not be offered | ANONYMITY_REJECTED | 12 |
-| G6 PET_NAMED | a named privacy-enhancing technique considered or tested | PET_TECHNIQUE | 12 |
-| G7 DATA_MINIMISATION_STATED | collect/retain only what is necessary | DATA_MINIMISATION | 17 |
-| G8 LEGAL_PRIVACY_COMMITMENT | statutory or legislative privacy commitment named | LEGAL_COMMITMENT | 21 |
-| G9 PRIVACY_AS_RISK | privacy discussed as risk, trade-off, public concern or adoption barrier | PRIVACY_AS_RISK_OR_TRADEOFF | 32 |
+| G1 PRIVACY_PRINCIPLE_STATED | privacy / data protection stated as a design principle, objective or requirement | PRINCIPLE | 34 → 25 |
+| G2 CB_NO_DATA_STATEMENT | any statement that the CB will not / cannot see or hold personal or transaction-identity data (basis policy / architectural / cryptographic recorded) | CB_NO_PERSONAL_DATA | 22 → 17 |
+| G3 CB_DATA_STATEMENT | any statement that the CB will or may see or hold such data | CB_SEES_DATA | 30 → 23 |
+| G4 LOW_ID_TIER_MENTIONED | a tier/wallet without full identity verification mentioned as option, test or decision | TIERED_LOW_ID | 24 → 19 |
+| G5 CASH_ANONYMITY_REJECTED | explicit statement that cash-like anonymity will not be offered | ANONYMITY_REJECTED | 12 → 11 |
+| G6 PET_NAMED | a named privacy-enhancing technique considered or tested | PET_TECHNIQUE | 12 → 10 |
+| G7 DATA_MINIMISATION_STATED | collect/retain only what is necessary | DATA_MINIMISATION | 17 → 12 |
+| G8 LEGAL_PRIVACY_COMMITMENT | statutory or legislative privacy commitment named | LEGAL_COMMITMENT | 21 → 18 |
+| G9 PRIVACY_AS_RISK | privacy discussed as risk, trade-off, public concern or adoption barrier | PRIVACY_AS_RISK_OR_TRADEOFF | 32 → 26 |
 
 F3 (lawful access) and F10 (programmability) already cover LAWFUL_ACCESS and PROGRAMMABILITY; USER_CONTROL_CONSENT and NO_COMMERCIAL_USE map to the reserved F6 and are too thin (5 projects) to carry. G2 and G3 together replace the loss of information in a single F1 value: both can be yes for one project, with dates.
 
@@ -86,6 +86,10 @@ The authors want to keep a phrase-count/sentiment layer as a supplementary datas
 - TIERED_LOW_ID: NO doc 2 p. 26, considered: limited access for persons not meeting the requirements, small amounts, one identified party.
 - PROGRAMMABILITY: NO doc 6 p. 17, considered: "CBDC should not be programmable money".
 - NO_COMMERCIAL_USE: UK doc 3 p. 78, considered, legal: "Any commercial use of personal data would need to comply with UK data protection laws."
+
+## 6a. Citation check of the survey itself
+
+Of 2,628 survey statements, 2,094 (80 %) are located verbatim on the cited page, 19 elsewhere in the document, 100 are fuzzy candidates and **415 (16 %) are not located**. The posture layer uses located claims only; the 16 % is the survey model's quotation error rate and is reported as such.
 
 ## 7. Side finding from the survey: the Norway memos are in Norwegian
 

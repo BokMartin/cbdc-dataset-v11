@@ -28,13 +28,14 @@ def main():
     for r in R:
         if not (r["core_v1"] or r["core_v2"]): continue
         p = "EU" if r["jur"] in EURO else r["jur"]; lang = r["language"]
-        route = "A" if lang == "en" else ("B_available" if r["doc_id"] in B_AVAILABLE else "D")
+        route = r.get("route") or ("A" if lang == "en" else ("B_available" if r["doc_id"] in B_AVAILABLE else "D"))
         if any(a["parallel_of"] == r["doc_id"] for a in adds) or r["doc_id"] in PAIR_OF: route = "B_pair_original"
         rows.append({"doc_id": r["doc_id"], "project": p, "jur": r["jur"], "year": r["year"], "title": r["title"] or r["fname"], "doc_kind": r["doc_kind"], "verdict": r["core_v1"] or r["core_v2"],
-                     "staff_research": r["staff_research"], "language": lang, "route": route, "parallel_of": PAIR_OF.get(r["doc_id"], ""), "url": r["url"], "url_amended": r.get("url_amended", ""), "sha256": r["sha256"],
+                     "staff_research": r["staff_research"], "language": lang, "route": route, "parallel_of": r.get("parallel_of") or PAIR_OF.get(r["doc_id"], ""), "url": r["url"], "url_amended": r.get("url_amended", "") or ("addition" if r.get("route") else ""), "sha256": r["sha256"],
                      "licence_class": lic.get(r["doc_id"], {}).get("licence_class", lic_inst.get(r["jur"], {}).get("licence_class", "")), "in_frame_43": frame.get(p, {}).get("retail_candidate", "False"),
                      "provenance_note": (r.get("notes", "") if r.get("amended", "") and "notes@" in r.get("amended", "") else "") + (B_AVAILABLE.get(r["doc_id"], "")), "amended": r.get("amended", "")})
     for a in adds:
+        if any(x["doc_id"] == a["doc_id"] for x in rows): continue
         rows.append({"doc_id": a["doc_id"], "project": a["jur"], "jur": a["jur"], "year": a["year"], "title": a["title"], "doc_kind": "", "verdict": "KEEP" if "2018" not in a["doc_id"] else "BORDERLINE",
                      "staff_research": "", "language": a["language"], "route": a["route"], "parallel_of": a["parallel_of"], "url": a["url"], "url_amended": "addition", "sha256": a["sha256"],
                      "licence_class": lic_inst.get(a["jur"], {}).get("licence_class", ""), "in_frame_43": frame.get(a["jur"], {}).get("retail_candidate", "False"), "provenance_note": a["basis"], "amended": f"added@{a['date']};"})

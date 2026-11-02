@@ -94,6 +94,9 @@ def parse_array(text):
     return arr
 
 
+ENUM_FIELDS = ("evidence_state", "claim_status", "decision_status", "implementation_status", "basis", "derivation", "unknown_reason")  # validated when present in the schema
+
+
 def validate_fill(rows, schema):
     """Strict output validation: complete cell list, no duplicates, allowed enums. Returns (ok_rows, problems)."""
     problems = []; by = {}
@@ -109,8 +112,8 @@ def validate_fill(rows, schema):
             if v.lower() in low: r["value"] = low[v.lower()]
             elif v.lower() in ("unknown", "", "none", "undetermined"): r["value"] = "n/d"
             else: problems.append(f"{c}: value {v!r} not in {allowed}")
-        for fld, enum in (("evidence_state", schema["evidence_state"]), ("claim_status", schema["claim_status"]), ("derivation", schema["derivation"])):
-            if str(r.get(fld, "")).strip() not in enum: problems.append(f"{c}: {fld}={r.get(fld)!r} not allowed")
+        for fld in ENUM_FIELDS:
+            if fld in schema and str(r.get(fld, "")).strip() not in schema[fld]: problems.append(f"{c}: {fld}={r.get(fld)!r} not allowed")
         by[c] = r
     for c in schema["cells"]:
         if c not in by: problems.append(f"missing cell {c}")

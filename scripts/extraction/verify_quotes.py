@@ -9,7 +9,9 @@ States written to `quote_verified` (and `quote_match_ratio`):
   fuzzy_candidate      best fuzzy match ratio >= 0.90 but not exact (OCR noise, hyphenation, furniture) — requires human resolution
   invalid              nothing above; the citation does not support the claim as quoted
   empty                no quote given (allowed only when value is n/d)
-  error:<...>          unreadable doc/page fields
+  invalid_locator      doc or page missing or not an integer (fractional locators are rejected, never truncated)
+  error:<...>          unreadable doc fields
+`quote_found_page` records where the quote was located (for elsewhere_in_doc / spanning / fuzzy) so the locator can be corrected.
 A prefix match is never accepted (v1 accepted the first 200 characters, which let a reversed final clause pass).
 Page furniture: lines that repeat on >= 50% of pages (running heads, page numbers) are removed before matching; the
 removal is logged in `quote_furniture_removed` for the reader.
@@ -36,39 +38,51 @@ def load_pages(path):
     return pages, furniture
 
 def check(q, pages, p):
-    """Return (state, ratio)."""
-    if not q: return "empty", 1.0
-    if p is not None and p in pages and q in pages[p]: return "exact_page", 1.0
-    if any(q in t for t in pages.values()): return "elsewhere_in_doc", 1.0   # whole quote on one page, but not the cited one
-    if p is not None:  # genuinely crossing a page break next to the cited page
+    """Return (state, ratio, found_page). Order: exact on the cited page → genuine crossing of a page break at the cited page
+    (the quote is in neither adjacent page alone) → whole quote elsewhere in the document → fuzzy → invalid (audit item 3)."""
+    if not q: return "empty", 1.0, None
+    if p is not None and p in pages and q in pages[p]: return "exact_page", 1.0, p
+    if p is not None:
         for a, b in ((p, p + 1), (p - 1, p)):
-            if a in pages and b in pages and q in (pages[a] + " " + pages[b]): return "spanning_pages", 1.0
-    # fuzzy candidate: best window on the cited page (or any page), ratio over normalised text
-    best = 0.0
-    cand = [pages[p]] if (p is not None and p in pages) else list(pages.values())
-    for t in cand:
+            if a in pages and b in pages and q not in pages[a] and q not in pages[b] and q in (pages[a] + " " + pages[b]): return "spanning_pages", 1.0, a
+    for pg, t in sorted(pages.items()):
+        if q in t: return "elsewhere_in_doc", 1.0, pg   # whole quote on one page, but not the cited one: locator to be corrected
+    best = 0.0; best_pg = None
+    cand = [(p, pages[p])] if (p is not None and p in pages) else sorted(pages.items())
+    for pg, t in cand:
         if not t: continue
         sm = difflib.SequenceMatcher(None, q, t, autojunk=False)
         m = sm.find_longest_match(0, len(q), 0, len(t))
         if m.size == 0: continue
         start = max(0, m.b - (m.a)); window = t[start:start + len(q) + 20]
-        best = max(best, difflib.SequenceMatcher(None, q, window, autojunk=False).ratio())
-    return ("fuzzy_candidate" if best >= 0.90 else "invalid"), round(best, 3)
+        r = difflib.SequenceMatcher(None, q, window, autojunk=False).ratio()
+        if r > best: best, best_pg = r, pg
+    return ("fuzzy_candidate" if best >= 0.90 else "invalid"), round(best, 3), (best_pg if best >= 0.90 else None)
+
+
+def parse_page(x):
+    """Integer PDF page index or None; a fractional or non-numeric locator is invalid, never truncated (audit item 3)."""
+    t = str(x if x is not None else "").strip()
+    if t in ("", "n/d", "nan", "None"): return None
+    if not t.lstrip("-").isdigit(): raise ValueError(f"non-integer page locator {t!r}")
+    return int(t)
+
 
 def main(fill, indir):
     docs = {int(r["doc"]): r for r in csv.DictReader(open(os.path.join(indir, "DOCS.csv"), encoding="utf-8"))}
     cache = {}; rows = list(csv.DictReader(open(fill, encoding="utf-8"))); out = []
     for r in rows:
-        q = norm(r.get("quote", "")); state, ratio, furn = "empty", 1.0, ""
+        q = norm(r.get("quote", "")); state, ratio, furn, found = "empty", 1.0, "", None
         if q:
             try:
-                d = int(float(r["doc"])); p = int(float(r["page"])) if str(r.get("page", "")).strip() not in ("", "n/d", "nan") else None
+                d = int(r["doc"]) if str(r["doc"]).strip().isdigit() else int(float(r["doc"])) if float(r["doc"]).is_integer() else (_ for _ in ()).throw(ValueError("non-integer doc"))
+                p = parse_page(r.get("page", ""))
                 f = docs[d]["file"]; f = f if os.path.exists(f) else os.path.join(indir, "texts", os.path.basename(f))
                 if d not in cache: cache[d] = load_pages(f)
-                pages, furniture = cache[d]; state, ratio = check(q, pages, p); furn = str(len(furniture))
-            except Exception as e: state, ratio = ("invalid_locator" if str(r.get("doc","")).strip().lower() in ("", "n/d") else f"error:{e}"), 0.0
+                pages, furniture = cache[d]; state, ratio, found = check(q, pages, p); furn = str(len(furniture))
+            except Exception as e: state, ratio = ("invalid_locator" if (str(r.get("doc","")).strip().lower() in ("", "n/d") or "locator" in str(e)) else f"error:{e}"), 0.0
         elif str(r.get("value", "")).strip().lower() not in ("n/d", "unknown", ""): state = "empty_but_value_set"
-        r["quote_verified"] = state; r["quote_match_ratio"] = ratio; r["quote_furniture_removed"] = furn; out.append(r)
+        r["quote_verified"] = state; r["quote_match_ratio"] = ratio; r["quote_furniture_removed"] = furn; r["quote_found_page"] = found if found is not None else ""; out.append(r)
     o = fill.replace(".csv", ".verified.csv")
     with open(o, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0].keys())); w.writeheader(); w.writerows(out)

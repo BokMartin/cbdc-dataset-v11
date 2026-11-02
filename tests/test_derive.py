@@ -18,3 +18,18 @@ def test_operational_counts():
 def test_v2_fields():
     assert derive.admissible({"value": "no", "evidence_state": "documented", "decision_status": "endorsed"})
     assert not derive.admissible({"value": "no", "evidence_state": "documented", "decision_status": "considered", "implementation_status": "tested"})
+
+
+def test_rule_c_full_gate():
+    from derive import admissible
+    base = {"value": "no", "evidence_state": "documented"}
+    assert admissible(base | {"decision_status": "endorsed", "implementation_status": "untested_or_unreported"})
+    assert admissible(base | {"decision_status": "unclear", "implementation_status": "operational"})
+    assert not admissible(base | {"decision_status": "rejected", "implementation_status": "operational"})     # audit item 2
+    assert not admissible(base | {"decision_status": "superseded", "implementation_status": "operational"})
+    assert not admissible(base | {"decision_status": "endorsed", "staff_research": "Y"})
+    assert not admissible(base | {"decision_status": "endorsed", "conflict": "true"})
+    assert admissible(base | {"claim_status": "", "decision_status": "endorsed"})                             # blank legacy field never shadows v2
+    assert admissible(base | {"claim_status": "adopted"}) and not admissible(base | {"claim_status": "tested"})
+    assert admissible({"value": "via_PSP", "evidence_state": "documented", "decision_status": "endorsed"}, categorical={"via_psp", "via_cb", "via_both", "none_stated"})
+    assert not admissible({"value": "via_PSP", "evidence_state": "documented", "decision_status": "endorsed"})  # yes/no cells reject categorical values

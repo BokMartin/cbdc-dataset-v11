@@ -13,10 +13,13 @@ def test_ladder():
     assert posture_level([S("CB_NO_PERSONAL_DATA", "endorsed")]) == "P3"
     assert posture_level([S("CB_NO_PERSONAL_DATA", "endorsed", verified="invalid")]) == "P0"   # unlocated quote never counts
     assert posture_level([S("PSP_HOLDS_IDENTITY", "", ) | {"implementation_status": "operational"}]) == "P3"
+    assert posture_level([S("CB_NO_PERSONAL_DATA", "rejected")]) == "P0"                       # rejected-only never counts (audit item 17)
+    assert posture_level([S("CB_NO_PERSONAL_DATA", "endorsed") | {"staff_research": "Y"}]) == "P0"   # staff research sets no level
+    assert posture_level([{"statement_type": "CB_NO_PERSONAL_DATA", "decision_status": "endorsed", "quote_verified": "exact_page"}]) == "P3"  # contract field names
 
 def test_g():
     g = g_indicators([S("CB_NO_PERSONAL_DATA", "considered", basis="policy"), S("CB_NO_PERSONAL_DATA", "endorsed", basis="architectural"), S("CB_SEES_DATA", "considered"), S("PET_TECHNIQUE", "tested", verified="fuzzy_candidate")])
-    assert g["G2"] == {"value": "yes", "status": "endorsed", "basis": "architectural", "n": 2}
+    assert g["G2"] == {"value": "yes", "status": "endorsed", "implementation": "", "basis": "architectural", "n": 2}
     assert g["G3"]["value"] == "yes" and g["G3"]["status"] == "considered"
     assert g["G6"]["value"] == "not_documented"   # only an unlocated claim
     assert g["G9"]["value"] == "not_documented"

@@ -6,7 +6,7 @@ Unit of analysis = one retail CBDC project per decision authority (contract §1)
 
 | Step | Count | Rule |
 |---|---:|---|
-| Registry rows (documents) | 391 | all official documents registered, with SHA-256 and URL |
+| Registry rows (documents) | 391 | all official documents registered with SHA-256; URL present for all 125 core documents after the 2 Nov amendment, still blank for 40 non-core registry rows |
 | Registry codes | 92 | 85 jurisdictions + 3 unions (EU, ECCU, BCEAO) + BIS, UN + euro-area national central banks counted under their own codes |
 | Core-flagged documents (core_v1 + core_v2) | 125 | 109 frozen core_v1 (77 KEEP, 32 BORDERLINE) + 16 dated UK additions |
 | Core codes | 56 | |

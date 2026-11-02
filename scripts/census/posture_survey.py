@@ -50,6 +50,8 @@ def main():
     ap.add_argument("--model", required=True); ap.add_argument("--max-tokens", type=int, default=16000); ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--sealed-out", required=True); ap.add_argument("--aggregate-out", required=True); ap.add_argument("--only", default="")
     a = ap.parse_args()
+    ROOT_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if os.path.abspath(a.sealed_out).startswith(ROOT_REPO + os.sep): raise SystemExit("refusing: --sealed-out must be outside the repository (EXPOSURE_LEDGER)")
     frame = {r["project"]: r for r in csv.DictReader(open(a.frame, encoding="utf-8"))}
     projects = sorted(p for p in os.listdir(a.texts) if os.path.exists(os.path.join(a.texts, p, "DOCS.csv")))
     if a.only: projects = [p for p in projects if p in a.only.split(",")]
@@ -78,7 +80,7 @@ def main():
         rec["utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
         with lock:
             with open(a.sealed_out, "a", encoding="utf-8") as fh: fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
-            done[x["doc_id"]] = rec; print(f"[posture] {p} doc {x['doc']}: {rec['state'].split(':')[0]} {len(rec.get('statements', []))} statements", flush=True)
+            done[x["doc_id"]] = rec; print(f"[posture] {p} doc {x['doc']}: {rec['state'].split(':')[0]}", flush=True)  # statement counts not logged (sealed)
 
     with ThreadPoolExecutor(max_workers=a.workers) as ex: list(ex.map(run, jobs))
     # aggregate: no project names

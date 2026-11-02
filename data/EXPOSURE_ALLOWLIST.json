@@ -1,0 +1,5 @@
+{
+ "note": "Projects whose model-generated per-project values may be released into the repository or the website (EXPOSURE_LEDGER.md). Scripts that release sealed results refuse any project not listed here. Add a project only together with a dated ledger entry.",
+ "exposed": {"NO": "2026-10-18 development case (agent and API fills seen by MB)", "UK": "2026-10-18 development case (agent and API fills seen by MB)"},
+ "release_of_remaining_projects": "after the blind reference workbooks are locked and scored (contract v2 §13; audit 2 Nov item 19)"
+}

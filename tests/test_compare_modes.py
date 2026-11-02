@@ -9,8 +9,8 @@ def write(path, rows):
         w = csv.DictWriter(f, fieldnames=COLS); w.writeheader(); w.writerows(rows)
 
 
-def run(a, b, out):
-    return subprocess.run([sys.executable, SCRIPT, a, b, "--labels", "s", "t", "--out", out], capture_output=True, text=True).stdout
+def run(a, b, out, extra=()):
+    r = subprocess.run([sys.executable, SCRIPT, a, b, "--labels", "s", "t", "--out", out, *extra], capture_output=True, text=True); return r.stdout + f"[exit {r.returncode}]"
 
 
 def test_levels_and_invalid():
@@ -27,3 +27,11 @@ def test_levels_and_invalid():
     B[0]["processing_state"] = "processing_failed"; write(f"{d}/b.csv", B)
     out = run(f"{d}/a.csv", f"{d}/b.csv", f"{d}/c.csv")
     assert "INVALID comparison" in out and "processing_failed" in out
+
+
+def test_header_only_fill_is_invalid_with_schema():
+    import json
+    d = tempfile.mkdtemp(); write(f"{d}/a.csv", [{"cell": "F1", "value": "no", "evidence_state": "documented", "claim_status": "adopted", "doc": "1", "page": "2", "processing_state": "ok"}]); write(f"{d}/b.csv", [])
+    json.dump({"cells": ["F1", "F2"]}, open(f"{d}/schema.json", "w"))
+    out = run(f"{d}/a.csv", f"{d}/b.csv", f"{d}/c.csv", ["--schema", f"{d}/schema.json"])
+    assert "INVALID" in out and "missing expected cells" in out and "[exit 2]" in out

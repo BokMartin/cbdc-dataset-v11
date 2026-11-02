@@ -49,6 +49,8 @@ def main():
     ap.add_argument("--sealed-out", required=True); ap.add_argument("--aggregate-out", required=True); ap.add_argument("--only", default="")
     ap.add_argument("--include-unions", action="store_true")
     a = ap.parse_args()
+    ROOT_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if os.path.abspath(a.sealed_out).startswith(ROOT_REPO + os.sep): raise SystemExit("refusing: --sealed-out must be outside the repository (EXPOSURE_LEDGER)")
     contract = open(a.contract, encoding="utf-8").read(); system = SYSTEM + contract
     frame = [r for r in csv.DictReader(open(a.frame, encoding="utf-8"))]
     targets = [r["project"] for r in frame if r["retail_candidate"] == "True" or (a.include_unions and r["union"] == "True")]
@@ -66,12 +68,12 @@ def main():
             docs = list(csv.DictReader(open(os.path.join(d, "DOCS.csv"), encoding="utf-8")))
             doclist = "\n".join(f"doc {x['doc']} [{x['doc_id']}]: {x['title']} ({x['year']}; kind {x['kind']}; core {x['core']}; staff_research {x['staff']}; lang {x['lang']})" for x in docs)
             user = f"PROJECT {p}\n\nDOCUMENTS:\n{doclist}\n\n" + "\n\n".join(f"########## DOCUMENT {x['doc']} [{x['doc_id']}] ##########\n" + open(x['file'] if os.path.exists(x['file']) else os.path.join(d, 'texts', os.path.basename(x['file'])), encoding='utf-8', errors='replace').read() for x in docs)
-            print(f"[census] {p}: {len(docs)} docs, {len(user)//1000}k chars ...", end=" ", flush=True)
+            print(f"[census] {p}: {len(docs)} docs, {len(user)//1000}k chars ...", end=" ", flush=True)  # project named; category is not
             req = archive(reqdir, f"{p}.user", user)
             try:
                 text, meta = cl.call(system, user); rows = parse_array(text); rec = {"project": p, "state": "ok", "result": rows[0] if rows else {}, "meta": meta, "n_docs": len(docs), "chars": len(user), "request_sha256": req["sha256"]}
             except Exception as e: rec = {"project": p, "state": f"failed:{e!r}", "n_docs": len(docs), "chars": len(user)}
-            print(rec["state"], rec.get("result", {}).get("category", ""))
+            print(rec["state"].split(":")[0])  # category deliberately not logged (sealed)
         rec["utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
         with open(a.sealed_out, "a", encoding="utf-8") as f: f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         done[p] = rec

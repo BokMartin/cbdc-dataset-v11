@@ -1,0 +1,58 @@
+{
+ "as_of": "2026-11-02T19:48:53.086149+00:00",
+ "n_documents": 125,
+ "n_retail_projects": 43,
+ "citation_states_all_statements": {
+  "exact_page": 2094,
+  "invalid": 415,
+  "fuzzy_candidate": 100,
+  "elsewhere_in_doc": 19
+ },
+ "ladder_located_eligible": {
+  "P2": 22,
+  "P1": 3,
+  "P0": 5,
+  "P3": 13
+ },
+ "projects_with_any_architectural_statement_raw": 40,
+ "projects_with_located_eligible_architectural_statement": 35,
+ "G_yes_located": {
+  "G1": 25,
+  "G3": 23,
+  "G4": 19,
+  "G7": 12,
+  "G8": 18,
+  "G9": 26,
+  "G5": 11,
+  "G2": 17,
+  "G6": 10
+ },
+ "G_yes_by_status": {
+  "G1|considered": 17,
+  "G3|considered": 19,
+  "G4|considered": 13,
+  "G7|considered": 7,
+  "G8|considered": 12,
+  "G9|considered": 25,
+  "G1|endorsed": 8,
+  "G3|endorsed": 3,
+  "G5|endorsed": 4,
+  "G8|endorsed": 6,
+  "G2|considered": 12,
+  "G6|considered": 10,
+  "G7|endorsed": 5,
+  "G4|endorsed": 6,
+  "G2|endorsed": 5,
+  "G5|considered": 7,
+  "G9|unclear": 1,
+  "G3|unclear": 1
+ },
+ "joint_G2_G3_located": {
+  "G2=not_documented,G3=yes": 11,
+  "G2=not_documented,G3=not_documented": 15,
+  "G2=yes,G3=yes": 12,
+  "G2=yes,G3=not_documented": 5
+ },
+ "sealed_file_sha256": "238060823a8333b056fdbba13eff8900b29329b6ef959b55f2bc1d9966bac3e9",
+ "note": "Counts over located (exact/spanning), non-rejected, non-staff statements; no project named. Supersedes the raw-count ladder in the design memo."
+}

@@ -13,14 +13,28 @@ ADMISSIBLE_STATUS = {"adopted", "operational", "endorsed"}  # v1.1 labels + v2 d
 YESNO = {"yes", "no"}
 
 
-def admissible(cell):
-    """True if a cell may set a commitment value (rule C)."""
+def _status(cell):
+    """(decision_status, implementation_status) with the v1.1 crosswalk; a blank legacy field never shadows the v2 fields."""
+    dec = str(cell.get("decision_status", "") or "").strip().lower(); impl = str(cell.get("implementation_status", "") or "").strip().lower()
+    legacy = str(cell.get("claim_status", "") or "").strip().lower()
+    if not dec and not impl and legacy:
+        dec, impl = {"option": ("considered", "untested_or_unreported"), "tested": ("considered", "tested"), "adopted": ("endorsed", "untested_or_unreported"), "operational": ("endorsed", "operational")}.get(legacy, ("unclear", "unclear"))
+    return dec, impl
+
+
+def admissible(cell, categorical=None):
+    """True if a cell may set a commitment value (contract v2 §5, rule C): value in the cell's admissible set (yes/no, or the
+    categorical set passed in), evidence_state documented, decision endorsed (any implementation) or implementation operational,
+    not rejected/superseded, no conflict flag, official layer (not staff research)."""
     if not cell: return False
-    v = str(cell.get("value", "")).strip().lower()
-    ev = str(cell.get("evidence_state", "")).strip().lower()
-    st = str(cell.get("claim_status", cell.get("decision_status", ""))).strip().lower()
-    impl = str(cell.get("implementation_status", "")).strip().lower()
-    return v in YESNO and ev == "documented" and (st in ADMISSIBLE_STATUS or impl == "operational")
+    v = str(cell.get("value", "")).strip().lower(); ev = str(cell.get("evidence_state", "")).strip().lower()
+    dec, impl = _status(cell)
+    if v not in (categorical or YESNO): return False
+    if ev != "documented": return False
+    if dec in ("rejected", "superseded"): return False
+    if str(cell.get("conflict", "")).strip().lower() in ("true", "yes", "1") or str(cell.get("superseded", "")).strip(): return False
+    if str(cell.get("staff_research", "")).strip().lower() in ("y", "yes", "true", "1"): return False
+    return dec == "endorsed" or impl == "operational"
 
 
 def _val(cell, strict):
@@ -74,9 +88,23 @@ G_INDICATORS = {"G1": "PRINCIPLE", "G2": "CB_NO_PERSONAL_DATA", "G3": "CB_SEES_D
 STATUS_RANK = {"endorsed": 4, "operational": 4, "tested": 2, "considered": 1, "unclear": 0, "rejected": 0, "": 0}
 
 
+def _stype(s): return s.get("statement_type") or s.get("type")
+
+
+def _sstatus(s):
+    dec = str(s.get("decision_status", "") or s.get("status", "") or "").lower(); impl = str(s.get("implementation_status", "") or "").lower()
+    if dec in ("tested", "operational") and not impl: dec, impl = ("considered" if dec == "tested" else "endorsed"), dec   # survey one-axis status
+    return dec, impl
+
+
 def _committed(s):
-    st = str(s.get("decision_status", s.get("status", ""))).lower(); impl = str(s.get("implementation_status", "")).lower()
-    return st in ("endorsed", "operational") or impl == "operational"
+    dec, impl = _sstatus(s); return dec == "endorsed" or impl == "operational"
+
+
+def _eligible(s):
+    """Counts toward the ladder only if located, not rejected/superseded, not staff research (contract v2 §6b.2)."""
+    dec, _ = _sstatus(s)
+    return _located(s) and dec not in ("rejected", "superseded") and str(s.get("staff_research", "")).lower() not in ("y", "yes", "true", "1")
 
 
 def _located(s): return str(s.get("quote_verified", s.get("verified", ""))).lower() in LOCATED
@@ -84,11 +112,11 @@ def _located(s): return str(s.get("quote_verified", s.get("verified", ""))).lowe
 
 def posture_level(statements):
     """P3 / P2 / P1 / P0 from located statement claims (contract v2 §6b.2). Unlocated claims never count."""
-    S = [s for s in statements if _located(s)]
-    arch = [s for s in S if s.get("type") in ARCH_TYPES]
+    S = [s for s in statements if _eligible(s)]
+    arch = [s for s in S if _stype(s) in ARCH_TYPES]
     if any(_committed(s) for s in arch): return "P3"
     if arch: return "P2"
-    if any(s.get("type") in PRINCIPLE_TYPES for s in S): return "P1"
+    if any(_stype(s) in PRINCIPLE_TYPES for s in S): return "P1"
     return "P0"
 
 
@@ -96,10 +124,12 @@ def g_indicators(statements):
     """G1–G9: yes / not_documented with highest status and basis of the strongest supporting located claim (§6b.3)."""
     out = {}
     for g, t in G_INDICATORS.items():
-        sup = [s for s in statements if s.get("type") == t and _located(s)]
-        if not sup: out[g] = {"value": "not_documented", "status": "", "basis": "", "n": 0}; continue
-        best = max(sup, key=lambda s: STATUS_RANK.get(str(s.get("decision_status", s.get("status", ""))).lower(), 0))
-        out[g] = {"value": "yes", "status": str(best.get("decision_status", best.get("status", ""))).lower(), "basis": best.get("basis", ""), "n": len(sup)}
+        sup = [s for s in statements if _stype(s) == t and _eligible(s)]
+        if not sup: out[g] = {"value": "not_documented", "status": "", "implementation": "", "basis": "", "n": 0}; continue
+        def rank(s):
+            dec, impl = _sstatus(s); return (STATUS_RANK.get(dec, 0) + (4 if impl == "operational" else 2 if impl == "tested" else 0))
+        best = max(sup, key=rank); dec, impl = _sstatus(best)
+        out[g] = {"value": "yes", "status": dec, "implementation": impl, "basis": best.get("basis", ""), "n": len(sup)}
     return out
 
 

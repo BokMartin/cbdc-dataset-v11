@@ -12,6 +12,9 @@ from verify_quotes import norm, load_pages, check
 
 ap = argparse.ArgumentParser(); ap.add_argument("--sealed", required=True); ap.add_argument("--texts", required=True); ap.add_argument("--projects", required=True); ap.add_argument("--out", required=True)
 a = ap.parse_args(); allowed = set(a.projects.split(",")); os.makedirs(a.out, exist_ok=True)
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+exposed = set(json.load(open(os.path.join(ROOT, "data/EXPOSURE_ALLOWLIST.json")))["exposed"])
+if allowed - exposed: raise SystemExit(f"refusing to release {sorted(allowed - exposed)}: not in data/EXPOSURE_ALLOWLIST.json (add a dated EXPOSURE_LEDGER entry first)")
 rows = {p: [] for p in allowed}; cache = {}
 for line in open(a.sealed, encoding="utf-8"):
     r = json.loads(line)
@@ -24,10 +27,10 @@ for line in open(a.sealed, encoding="utf-8"):
         q = norm(s.get("quote", ""))
         try: pg = int(s.get("page"))
         except Exception: pg = None
-        st, ratio = check(q, pages, pg) if q else ("empty", 0.0)
+        st, ratio, found = check(q, pages, pg) if q else ("empty", 0.0, None)
         rows[r["project"]].append({"project": r["project"], "doc": r["doc"], "doc_id": r["doc_id"], "year": r["year"], "kind": r["kind"], "type": s.get("type", ""), "status": s.get("status", ""),
                                    "basis": s.get("basis", ""), "actor": s.get("actor", ""), "page": pg if pg is not None else "", "quote": s.get("quote", ""), "label": s.get("label", ""),
-                                   "quote_verified": st, "quote_match_ratio": ratio})
+                                   "quote_verified": st, "quote_match_ratio": ratio, "quote_found_page": found if found is not None else ""})
 for p, L in rows.items():
     o = os.path.join(a.out, f"{p}_statements.csv")
     with open(o, "w", newline="", encoding="utf-8") as fh:

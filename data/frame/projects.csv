@@ -29,7 +29,7 @@ MO,False,PREPARATION,True,True,1,en:1,MO
 MU,False,UNRESEARCHED,True,True,1,en:1,MU
 NA,False,EXPLORATION,True,True,1,en:1,NA
 NG,False,UNRESEARCHED,True,True,2,en:2,NG
-NO,False,PAUSED,True,True,7,en:4;nb:3,NO
+NO,False,PAUSED,True,True,10,en:7;nb:3,NO
 NP,False,UNRESEARCHED,True,True,1,en:1,NP
 NZ,False,PAUSED,True,True,2,en:2,NZ
 PE,False,PILOT,True,True,1,en:1,PE
@@ -42,7 +42,7 @@ SZ,False,EXPLORATION,True,True,1,en:1,SZ
 TH,False,PAUSED,True,True,1,en:1,TH
 TR,False,PREPARATION,True,True,2,en:2,TR
 TW,False,UNRESEARCHED,True,True,1,zh-Hant:1,TW
-UA,False,EXPLORATION,True,True,1,uk:1,UA
+UA,False,EXPLORATION,True,True,1,en:1,UA
 UK,False,EXPLORATION,True,True,18,en:18,UK
 US,False,BANNED,True,False,4,en:4,US
 UY,False,EXPLORATION,True,True,2,en:1;es:1,UY
