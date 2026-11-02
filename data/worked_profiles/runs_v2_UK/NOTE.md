@@ -1,0 +1,9 @@
+# United Kingdom — valid single vs two-stage comparison (2 Nov 2026, ADR-001 E11)
+
+Run `UK_anthropic_claude-opus-5-5_both_20261102T123351Z` (extractor v2, contract v1.1, schema v1_1, claude-opus-5-5). All 18 documents processed in stage one (469 findings), synthesis `ok`, 0 validation problems; single mode (1,221k chars in one request) `ok_with_validation_problems` (1: `claim_status = n/d` on an F11 flag).
+
+Comparison (17 cells): **3 full, 12 value-only, 2 differ** (F11 aml flag n/d vs no; primary_objectives wording). Every yes/no value of the type and outcomes agrees across modes: F1 no, F2 yes, F4 n/d, F7 no, F8 yes, F9 yes, F10 no, F3 via_PSP, F12 undecided. Under rule C (derive.py): type B? in both, Y₁ = 1 in both (F1 no / adopted; single documented, two-stage partial), Y₃ = 0 in both.
+
+**Citation check differs sharply:** two-stage **17/17 exact_page**; single **11 exact, 5 elsewhere_in_doc, 1 invalid_locator** (the n/d cell). All five mislocated quotes exist verbatim in the cited document at a constant offset (doc 3: cited 12 → found 16; doc 4: cited 29/26/26/27 → found 31/28/28/29): in the 1.2M-character single request the model cited the **printed page label** instead of the PDF page index. This is the locator problem NO16 anticipated (`page_index` + `printed_label` in v2), and a mode difference the Norway run (7 documents) did not show.
+
+Reading, with Norway: with complete coverage the modes agree on type-relevant values (NO: all but F2; UK: all); they differ on status labels and descriptive cells (NO) and on locator discipline in very long single requests (UK). For routing (ADR E12) this favours two-stage, or single only within a token budget well below the UK size, and in any case the v2 locator fields plus the mechanical check. The earlier "two-stage is systematically more conservative" is not reproduced.

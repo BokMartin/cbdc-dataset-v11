@@ -1,0 +1,19 @@
+cell,agreement,single_value,single_evidence_state,single_claim_status,single_doc,single_page,two_stage_value,two_stage_evidence_state,two_stage_claim_status,two_stage_doc,two_stage_page
+F1 CB_LINK_ONLINE,value,no,documented,adopted,3,57,no,partial,adopted,4,45
+F10 PROGRAMMABLE_RESTRICTIONS,full,no,documented,adopted,17,7,no,documented,adopted,17,7
+F11 aml_cft_tax_enforcement,differ,n/d,unknown,n/d,n/d,n/d,no,documented,adopted,4,27
+F11 cash_substitute_resilience,value,yes,documented,adopted,3,40,yes,documented,adopted,3,29
+F11 financial_inclusion,value,yes,documented,adopted,3,29,yes,documented,adopted,9,16
+F11 innovation_competitiveness,value,yes,documented,adopted,4,6,yes,documented,adopted,3,56
+F11 monetary_sovereignty_transmission,value,yes,documented,adopted,3,9,yes,documented,adopted,3,28
+F11 payment_modernisation,value,yes,documented,adopted,3,28,yes,documented,adopted,17,4
+F11 primary_objectives,differ,"(1) sustain access to UK central bank money as anchor for confidence and safety, underpinning monetary and financial stability and sovereignty (singleness of money); (2) promote innovation, choice and efficiency in domestic payments",documented,adopted,3,28,"(a) preserving access to retail public money as anchor / singleness of money (monetary and financial stability and sovereignty); (b) supporting innovation, choice and efficiency across the UK payments system",documented,adopted,17,4
+F11 primary_status,value,several_joint,documented,adopted,3,28,several_joint,documented,adopted,17,4
+F12 LEDGER_TECHNOLOGY,full,undecided,documented,option,9,15,undecided,documented,option,9,15
+F2 PSP_LINK_ONLINE,value,yes,documented,adopted,3,12,yes,documented,adopted,4,10
+F3 LAWFUL_ACCESS_ROUTE,value,via_PSP,documented,adopted,4,29,via_PSP,documented,adopted,4,31
+F4 PRIVATE_OFFLINE_AVAILABLE,full,n/d,unknown,option,16,4,n/d,unknown,option,16,4
+F7 LOW_ID_ROUTE,value,no,documented,adopted,4,26,no,partial,adopted,4,28
+F8 ONBOARDING_ID,value,yes,documented,adopted,4,26,yes,documented,adopted,4,28
+F9 TARGETED_REIDENTIFICATION,value,yes,documented,adopted,4,27,yes,documented,adopted,4,31
+# valid=True; {'value': 12, 'full': 3, 'differ': 2}

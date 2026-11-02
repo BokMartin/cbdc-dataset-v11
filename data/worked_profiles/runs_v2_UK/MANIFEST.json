@@ -1,0 +1,600 @@
+{
+ "jur": "UK",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "mode": "both",
+ "run_utc": "20261102T123351Z",
+ "status": "ok",
+ "temperature": "not_settable (provider rejects temperature for current models; provider-controlled sampling)",
+ "max_tokens": 32000,
+ "max_doc_chars": 1500000,
+ "python": "3.13.16",
+ "sdk": "anthropic 1.15.0",
+ "contract_file": "MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "schema_file": "cells_v1_1.json",
+ "schema_sha256": "b2048e3da21ccb7286dca2264efd78e86670c1fcb3d1439414ab2b7d15f83b7a",
+ "script_sha256": "0bb5215fb6ec345d20e5c6c2cd75dd46d6a135c0c12f8ad99bc83415be65cbfe",
+ "prompts_sha256": {
+  "stage1": "da7c18028bdb1417d37426bf3e071ac988b1e6e6c0d0590b3d9b2c5031a8c4b5",
+  "stage2": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+  "single": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5"
+ },
+ "docs": [
+  {
+   "doc": "1",
+   "doc_id": "UK_BoE_2020_OpportChall",
+   "title": "UK_BoE_2020_OpportChall",
+   "year": "2020",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation",
+   "chars": 202196,
+   "text_sha256": "1912b1214a789dda703184079149fa4217bfc1e9256c6153db5d2f535e59c540",
+   "too_long": false
+  },
+  {
+   "doc": "2",
+   "doc_id": "UK_BoE_2023_TechWP",
+   "title": "UK_BoE_2023_TechWP",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 171450,
+   "text_sha256": "13081e1e3163dee069a1509b03e6d6cd509b5f31a82f2a45a7552d1c5214bc5b",
+   "too_long": false
+  },
+  {
+   "doc": "3",
+   "doc_id": "UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE",
+   "title": "The digital pound: a new form of money for households and businesses? (Consultation Paper, CP 797)",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation",
+   "chars": 245941,
+   "text_sha256": "fec584bf9798b957b4e6afcc10ddd8eeda2303ef229283a942982de6325909d5",
+   "too_long": false
+  },
+  {
+   "doc": "4",
+   "doc_id": "UK_UK-BoE-HMT-2024-01-consultation-response-BoE",
+   "title": "Response to the Bank of England and HM Treasury Consultation Paper: The digital pound: a new form of money for households and businesses?",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "consultation_response",
+   "chars": 149212,
+   "text_sha256": "4d491d7a20001e93df859179bf13c80853a7ccff8479173d62d7165653ead648",
+   "too_long": false
+  },
+  {
+   "doc": "5",
+   "doc_id": "UK_UK-BoE-2024-01-response-to-technology-working-paper",
+   "title": "Response to the digital pound Technology Working Paper",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 61838,
+   "text_sha256": "045ce4b82db67cbc98c9c71b957988e95569029e61db4e5d883a0ecdaea72769",
+   "too_long": false
+  },
+  {
+   "doc": "6",
+   "doc_id": "UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep",
+   "title": "Point-of-sale proof of concept \u2013 digital pound experiment report",
+   "year": "2024",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "pilot_report",
+   "chars": 21227,
+   "text_sha256": "17b72f0a6330ed2607aa4ad735e3571e65f5d12c0e0b141064c62f97ee1b9296",
+   "too_long": false
+  },
+  {
+   "doc": "7",
+   "doc_id": "UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-",
+   "title": "The role of holding limits for sterling-denominated systemic stablecoins and a potential digital pound (Financial Stability Paper No. 53)",
+   "year": "2025",
+   "core": "BORDERLINE",
+   "staff": "Y",
+   "kind": "research_general",
+   "chars": 63524,
+   "text_sha256": "00326bdb8f57416b84cf47d83e93b00cdb6d0d00ffc3d9337bf2b11d27781f1d",
+   "too_long": false
+  },
+  {
+   "doc": "8",
+   "doc_id": "UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF",
+   "title": "Digital pound update (October 2025 design-phase update)",
+   "year": "2025",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 12116,
+   "text_sha256": "1105d45db475ba6528afb2404e63ffbe62b4152d913cf07dc4661d3093a57fc6",
+   "too_long": false
+  },
+  {
+   "doc": "9",
+   "doc_id": "UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment",
+   "title": "Progress update: The digital pound and the payments landscape",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 40440,
+   "text_sha256": "ca849f8be0229fcb80716672f75a2c6d5cb09be31a0a509912ab37d77bc7f838",
+   "too_long": false
+  },
+  {
+   "doc": "10",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF",
+   "title": "Design note \u2013 Alias service",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 29131,
+   "text_sha256": "24ca0251faec4b2ba6044ae4ec353b12c9850e9c98d96b400bc4a9fc727e6c27",
+   "too_long": false
+  },
+  {
+   "doc": "11",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF",
+   "title": "Design note \u2013 Product strategy",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 29849,
+   "text_sha256": "58219b8052248607b9aa6a020e5118762925f838e07dd8efc07b0aef5353d328",
+   "too_long": false
+  },
+  {
+   "doc": "12",
+   "doc_id": "UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD",
+   "title": "Digital pound experiment report: Offline payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "pilot_report",
+   "chars": 28546,
+   "text_sha256": "8831d907eac4ffd89a65ee2f8ab8406d6a7cd1ba029dd832ae95d812112b7a72",
+   "too_long": false
+  },
+  {
+   "doc": "13",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP",
+   "title": "Design note \u2013 Interoperability models for UK-based payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 30390,
+   "text_sha256": "4dfa746be47c7eeb91607f2ba54a52e1dad3d5c1c90059a2706c2a4be4a2bd0b",
+   "too_long": false
+  },
+  {
+   "doc": "14",
+   "doc_id": "UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul",
+   "title": "Design note \u2013 Intermediary roles and scheme rulebook",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 37923,
+   "text_sha256": "72bb3786f9f8d2959449f7edbc1e33c20a397f8ad4219afdee7e3617ea59b5f2",
+   "too_long": false
+  },
+  {
+   "doc": "15",
+   "doc_id": "UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF",
+   "title": "Design note \u2013 Blueprint framework",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 21279,
+   "text_sha256": "60044eb558ba6236b58a2dc6ef209fdd077f48045630de7fc1453953ce5c81e9",
+   "too_long": false
+  },
+  {
+   "doc": "16",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF",
+   "title": "Design note \u2013 Offline payments",
+   "year": "2025",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "white_paper",
+   "chars": 24404,
+   "text_sha256": "15486e16aee46b6330677f99f64796a042926e58c5429ddd43de5a9fc1e06e1d",
+   "too_long": false
+  },
+  {
+   "doc": "17",
+   "doc_id": "UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender",
+   "title": "Progress update: Digital Pound Design Phase",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 33317,
+   "text_sha256": "d10441371f7637f97ae7a1f0ac4eee460192a6b3f1d3a40b4cb2a6d60abab082",
+   "too_long": false
+  },
+  {
+   "doc": "18",
+   "doc_id": "UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender",
+   "title": "Digital Pound Lab: Phase 1 update",
+   "year": "2026",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 13428,
+   "text_sha256": "c04bc2344a3ab701743e35f163acc70b81d656a0f1c50bf0e11ab0328ebf6837",
+   "too_long": false
+  }
+ ],
+ "stage1": [
+  {
+   "doc": "1",
+   "doc_id": "UK_BoE_2020_OpportChall",
+   "state": "ok",
+   "rows": 41,
+   "reused": false,
+   "response_id": "msg_011Cge7RKkidKukFKz1we9uk",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 68682,
+    "output_tokens": 10176
+   },
+   "started_utc": "2026-11-02T12:36:02.561270+00:00",
+   "seconds": 77.0
+  },
+  {
+   "doc": "2",
+   "doc_id": "UK_BoE_2023_TechWP",
+   "state": "ok",
+   "rows": 52,
+   "reused": false,
+   "response_id": "msg_011Cge7WyqKzVdz8qrhB1Mux",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 59801,
+    "output_tokens": 13866
+   },
+   "started_utc": "2026-11-02T12:37:19.554806+00:00",
+   "seconds": 104.4
+  },
+  {
+   "doc": "3",
+   "doc_id": "UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE",
+   "state": "ok",
+   "rows": 60,
+   "reused": false,
+   "response_id": "msg_011Cge7egZyLMMiCZ1G85hs3",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 82293,
+    "output_tokens": 18282
+   },
+   "started_utc": "2026-11-02T12:39:03.988990+00:00",
+   "seconds": 134.1
+  },
+  {
+   "doc": "4",
+   "doc_id": "UK_UK-BoE-HMT-2024-01-consultation-response-BoE",
+   "state": "ok",
+   "rows": 62,
+   "reused": false,
+   "response_id": "msg_011Cge7paLTWS2FqKmgGPh8N",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 52844,
+    "output_tokens": 16704
+   },
+   "started_utc": "2026-11-02T12:41:18.153537+00:00",
+   "seconds": 121.3
+  },
+  {
+   "doc": "5",
+   "doc_id": "UK_UK-BoE-2024-01-response-to-technology-working-paper",
+   "state": "ok",
+   "rows": 32,
+   "reused": false,
+   "response_id": "msg_011Cge7yWy4698sWdCkjra3i",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 26537,
+    "output_tokens": 6866
+   },
+   "started_utc": "2026-11-02T12:43:19.485443+00:00",
+   "seconds": 52.8
+  },
+  {
+   "doc": "6",
+   "doc_id": "UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep",
+   "state": "ok",
+   "rows": 18,
+   "reused": false,
+   "response_id": "msg_011Cge83QH5MsTDjaXcwRaCe",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 15094,
+    "output_tokens": 4516
+   },
+   "started_utc": "2026-11-02T12:44:12.259095+00:00",
+   "seconds": 34.5
+  },
+  {
+   "doc": "7",
+   "doc_id": "UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-",
+   "state": "ok",
+   "rows": 10,
+   "reused": false,
+   "response_id": "msg_011Cge85wycoBEq6B8wfyE1N",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 27817,
+    "output_tokens": 2919
+   },
+   "started_utc": "2026-11-02T12:44:46.776433+00:00",
+   "seconds": 21.9
+  },
+  {
+   "doc": "8",
+   "doc_id": "UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF",
+   "state": "ok",
+   "rows": 15,
+   "reused": false,
+   "response_id": "msg_011Cge87ZZ3eUo6chNyBMR8s",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 11905,
+    "output_tokens": 4599
+   },
+   "started_utc": "2026-11-02T12:45:08.692356+00:00",
+   "seconds": 37.8
+  },
+  {
+   "doc": "9",
+   "doc_id": "UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment",
+   "state": "ok",
+   "rows": 23,
+   "reused": false,
+   "response_id": "msg_011Cge8AMHCYgGAdx1DeoXvz",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 20368,
+    "output_tokens": 5022
+   },
+   "started_utc": "2026-11-02T12:45:46.448230+00:00",
+   "seconds": 38.8
+  },
+  {
+   "doc": "10",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF",
+   "state": "ok",
+   "rows": 10,
+   "reused": false,
+   "response_id": "msg_011Cge8DDBcZf49PJQBPCEv8",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16326,
+    "output_tokens": 3572
+   },
+   "started_utc": "2026-11-02T12:46:25.301143+00:00",
+   "seconds": 29.9
+  },
+  {
+   "doc": "11",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF",
+   "state": "ok",
+   "rows": 12,
+   "reused": false,
+   "response_id": "msg_011Cge8FQs9GmwFzvcUDmt4U",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16616,
+    "output_tokens": 3374
+   },
+   "started_utc": "2026-11-02T12:46:55.189820+00:00",
+   "seconds": 29.2
+  },
+  {
+   "doc": "12",
+   "doc_id": "UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD",
+   "state": "ok",
+   "rows": 20,
+   "reused": false,
+   "response_id": "msg_011Cge8HZz8QTgDwUSES9hjQ",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 16584,
+    "output_tokens": 5430
+   },
+   "started_utc": "2026-11-02T12:47:24.432469+00:00",
+   "seconds": 42.8
+  },
+  {
+   "doc": "13",
+   "doc_id": "UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP",
+   "state": "ok",
+   "rows": 18,
+   "reused": false,
+   "response_id": "msg_011Cge8LjGJZALchtTh46nLL",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 17259,
+    "output_tokens": 3953
+   },
+   "started_utc": "2026-11-02T12:48:07.261900+00:00",
+   "seconds": 30.4
+  },
+  {
+   "doc": "14",
+   "doc_id": "UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul",
+   "state": "ok",
+   "rows": 21,
+   "reused": false,
+   "response_id": "msg_011Cge8Nxy8DDgTMnEzPYmnK",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 19814,
+    "output_tokens": 5615
+   },
+   "started_utc": "2026-11-02T12:48:37.646943+00:00",
+   "seconds": 44.6
+  },
+  {
+   "doc": "15",
+   "doc_id": "UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF",
+   "state": "ok",
+   "rows": 13,
+   "reused": false,
+   "response_id": "msg_011Cge8SFpyQXTGVWytx2FPp",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 14514,
+    "output_tokens": 4335
+   },
+   "started_utc": "2026-11-02T12:49:22.278574+00:00",
+   "seconds": 35.8
+  },
+  {
+   "doc": "16",
+   "doc_id": "UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF",
+   "state": "ok",
+   "rows": 16,
+   "reused": false,
+   "response_id": "msg_011Cge8UtsUd6t47eF9NDvv3",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 15045,
+    "output_tokens": 5198
+   },
+   "started_utc": "2026-11-02T12:49:58.092151+00:00",
+   "seconds": 41.6
+  },
+  {
+   "doc": "17",
+   "doc_id": "UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender",
+   "state": "ok",
+   "rows": 28,
+   "reused": false,
+   "response_id": "msg_011Cge8XxoTJPN5bspQ4Lwtx",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 18573,
+    "output_tokens": 8231
+   },
+   "started_utc": "2026-11-02T12:50:39.655296+00:00",
+   "seconds": 62.2
+  },
+  {
+   "doc": "18",
+   "doc_id": "UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender",
+   "state": "ok",
+   "rows": 18,
+   "reused": false,
+   "response_id": "msg_011Cge8cYe3Ko6SvdAcEcY9i",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 12745,
+    "output_tokens": 4520
+   },
+   "started_utc": "2026-11-02T12:51:41.865361+00:00",
+   "seconds": 34.5
+  }
+ ],
+ "single": {
+  "state": "ok",
+  "rows": 17,
+  "validation_problems": [
+   "F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+  ],
+  "request": {
+   "system": {
+    "file": "requests/single.system.txt.gz",
+    "sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+    "chars": 22832
+   },
+   "user": {
+    "file": "requests/single.user.txt.gz",
+    "sha256": "5d8c5939b045938de0cc242c9ea469bd170e0704aa5d6995ecb1ee5b37b2684e",
+    "chars": 1221129
+   }
+  },
+  "response_id": "msg_011Cge7FkRWPPNeZ4UHj2wjs",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 374740,
+   "output_tokens": 14737
+  },
+  "started_utc": "2026-11-02T12:33:52.823053+00:00",
+  "seconds": 129.7,
+  "response": {
+   "file": "requests/single.response.txt.gz",
+   "sha256": "2468ff93bdebaa23155bca0b6600dca089c22492ab09d89a1c5b94d9d0b0fe9d",
+   "chars": 16849
+  }
+ },
+ "stage2": {
+  "state": "ok",
+  "findings_in": 469,
+  "rows": 17,
+  "validation_problems": [],
+  "failed_docs": [],
+  "request": {
+   "system": {
+    "file": "requests/stage2.system.txt.gz",
+    "sha256": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+    "chars": 22970
+   },
+   "user": {
+    "file": "requests/stage2.user.txt.gz",
+    "sha256": "8091e8c352dbbb1401159394e17a410ef4fedb75963ff28efd23e2b6c3aaa385",
+    "chars": 267503
+   }
+  },
+  "response_id": "msg_011Cge8f65DE5KRdp2Vz5weX",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 118013,
+   "output_tokens": 14169
+  },
+  "started_utc": "2026-11-02T12:52:16.366572+00:00",
+  "seconds": 112.8,
+  "response": {
+   "file": "requests/stage2.response.txt.gz",
+   "sha256": "8bbfe9179a4ad5bb51cc8671c843e676290a532580eb485a34986a97e3526657",
+   "chars": 20174
+  }
+ },
+ "problems": [
+  "single: F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+ ]
+}
