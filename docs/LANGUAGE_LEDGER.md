@@ -19,6 +19,10 @@ Search for official English counterparts: web check 2 Nov 2026 (Opus research ag
 | 11 | AT | AT_…Financial-Inclusion-Report-Forum (2025) | de | BORDERLINE (euro-area source) | summary only: EN executive summary (~1,000 words) | D (summary corroborates) | EN summary https://www.oenb.at/dam/jcr:5b6297e0-1ea6-4689-b7e7-ac91af88a5fd/Financial-Inclusion-Report_Forum-on-the-digital-euro_summary.pdf (link unstable) |
 | 12 | UY | UY_Uruguay_BCU_BilleteDigital_2017 | es | BORDERLINE | none found (BCU page not openable by the agent; **manual check**) | D | https://www.bcu.gub.uy/Comunicaciones/Paginas/Billete_Digital_Piloto.aspx |
 
+## Amendment 2 Nov 2026 (evening): registry language labels are unreliable
+
+Page-level detection (`scripts/frame/detect_doc_language.py` → `data/frame/doc_language_detect.csv`, lingua) flags nine labels: **eight `en` documents are not English** (NO_Norway_nbmemo-1-2018, NO_Norway_nb_memo_2_19_dsp, NO_Norway_norges-bank-memo-1-2021: Norwegian Bokmål; CZ_CzechRepublic_2022: Czech; SI_4-tocka-Offline-digitalni-evro_2024, SI Zapisnik 1. and 3. seje: Slovenian; CN_PBOC_LuLei_ActionPlan_2025: Chinese) and the AT document labelled `de` is the English executive summary. Corrected count: **19 non-English core documents**, of which within the 43-frame: NO ×3, CZ ×1, CN ×1, CL ×2, RU ×2, TW ×1. Next: check Norges Bank's English editions of Memo 1/2018, 2/2019 and 1/2021 (route B expected), PBOC/CZ English versions (unlikely), and correct the registry with a dated note. The "113 English originals" statement above is withdrawn.
+
 ## Consequences
 
 - **Route B available:** RU 2021 concept (use the EN edition as evidence; RU original for the parallel-text test) and JP pilot progress (EN already a core document; the JA file is its pair, so the JP project has no non-English evidence).
