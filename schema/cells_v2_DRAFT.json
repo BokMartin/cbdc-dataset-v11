@@ -285,5 +285,64 @@
  "aliases": {
   "page": "page_index",
   "claim_status": "decision_status"
+ },
+ "statement_types": [
+  "PRINCIPLE",
+  "CB_NO_PERSONAL_DATA",
+  "CB_SEES_DATA",
+  "PSP_HOLDS_IDENTITY",
+  "PSEUDONYMISATION",
+  "TIERED_LOW_ID",
+  "ANONYMITY_REJECTED",
+  "OFFLINE_PRIVACY",
+  "LAWFUL_ACCESS",
+  "DATA_MINIMISATION",
+  "USER_CONTROL_CONSENT",
+  "NO_COMMERCIAL_USE",
+  "PROGRAMMABILITY",
+  "PET_TECHNIQUE",
+  "LEGAL_COMMITMENT",
+  "PRIVACY_AS_RISK_OR_TRADEOFF",
+  "OTHER"
+ ],
+ "statement_columns": [
+  "project",
+  "doc",
+  "doc_id",
+  "type",
+  "decision_status",
+  "implementation_status",
+  "basis",
+  "actor",
+  "page_index",
+  "printed_label",
+  "quote",
+  "label",
+  "quote_verified",
+  "quote_match_ratio"
+ ],
+ "posture_layer": {
+  "ladder": [
+   "P0",
+   "P1",
+   "P2",
+   "P3"
+  ],
+  "indicators": {
+   "G1 PRIVACY_PRINCIPLE_STATED": "PRINCIPLE",
+   "G2 CB_NO_DATA_STATEMENT": "CB_NO_PERSONAL_DATA",
+   "G3 CB_DATA_STATEMENT": "CB_SEES_DATA",
+   "G4 LOW_ID_TIER_MENTIONED": "TIERED_LOW_ID",
+   "G5 CASH_ANONYMITY_REJECTED": "ANONYMITY_REJECTED",
+   "G6 PET_NAMED": "PET_TECHNIQUE",
+   "G7 DATA_MINIMISATION_STATED": "DATA_MINIMISATION",
+   "G8 LEGAL_PRIVACY_COMMITMENT": "LEGAL_COMMITMENT",
+   "G9 PRIVACY_AS_RISK": "PRIVACY_AS_RISK_OR_TRADEOFF"
+  },
+  "indicator_values": [
+   "yes",
+   "not_documented"
+  ],
+  "derivation": "scripts/derive.py posture_level / g_indicators; contract v2 \u00a76b"
  }
 }

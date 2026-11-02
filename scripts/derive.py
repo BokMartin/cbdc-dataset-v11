@@ -64,3 +64,44 @@ if __name__ == "__main__":
     uk = {"F1": {"value": "no", "evidence_state": "documented", "claim_status": "adopted"}, "F2": {"value": "yes", "evidence_state": "documented", "claim_status": "adopted"}, "F4": {"value": "no", "evidence_state": "partial", "claim_status": "option"}, "F7": {"value": "no", "evidence_state": "documented", "claim_status": "adopted"}}
     s = summary(uk); assert s["y1_commitment"] == 1 and s["type_commitment"] == "B?" and s["type_permissive"] == "B0" and s["y3_commitment"] == 0, s
     print("derive.py self-test ok:", s)
+
+
+# ---------- privacy-posture layer (contract v2 §6b) ----------
+ARCH_TYPES = {"CB_NO_PERSONAL_DATA", "CB_SEES_DATA", "PSP_HOLDS_IDENTITY", "PSEUDONYMISATION", "TIERED_LOW_ID", "OFFLINE_PRIVACY", "ANONYMITY_REJECTED", "PET_TECHNIQUE"}
+PRINCIPLE_TYPES = {"PRINCIPLE", "LEGAL_COMMITMENT", "DATA_MINIMISATION", "USER_CONTROL_CONSENT", "NO_COMMERCIAL_USE"}
+LOCATED = {"exact_page", "spanning_pages"}
+G_INDICATORS = {"G1": "PRINCIPLE", "G2": "CB_NO_PERSONAL_DATA", "G3": "CB_SEES_DATA", "G4": "TIERED_LOW_ID", "G5": "ANONYMITY_REJECTED", "G6": "PET_TECHNIQUE", "G7": "DATA_MINIMISATION", "G8": "LEGAL_COMMITMENT", "G9": "PRIVACY_AS_RISK_OR_TRADEOFF"}
+STATUS_RANK = {"endorsed": 4, "operational": 4, "tested": 2, "considered": 1, "unclear": 0, "rejected": 0, "": 0}
+
+
+def _committed(s):
+    st = str(s.get("decision_status", s.get("status", ""))).lower(); impl = str(s.get("implementation_status", "")).lower()
+    return st in ("endorsed", "operational") or impl == "operational"
+
+
+def _located(s): return str(s.get("quote_verified", s.get("verified", ""))).lower() in LOCATED
+
+
+def posture_level(statements):
+    """P3 / P2 / P1 / P0 from located statement claims (contract v2 §6b.2). Unlocated claims never count."""
+    S = [s for s in statements if _located(s)]
+    arch = [s for s in S if s.get("type") in ARCH_TYPES]
+    if any(_committed(s) for s in arch): return "P3"
+    if arch: return "P2"
+    if any(s.get("type") in PRINCIPLE_TYPES for s in S): return "P1"
+    return "P0"
+
+
+def g_indicators(statements):
+    """G1–G9: yes / not_documented with highest status and basis of the strongest supporting located claim (§6b.3)."""
+    out = {}
+    for g, t in G_INDICATORS.items():
+        sup = [s for s in statements if s.get("type") == t and _located(s)]
+        if not sup: out[g] = {"value": "not_documented", "status": "", "basis": "", "n": 0}; continue
+        best = max(sup, key=lambda s: STATUS_RANK.get(str(s.get("decision_status", s.get("status", ""))).lower(), 0))
+        out[g] = {"value": "yes", "status": str(best.get("decision_status", best.get("status", ""))).lower(), "basis": best.get("basis", ""), "n": len(sup)}
+    return out
+
+
+def posture_summary(statements):
+    return {"posture_level": posture_level(statements), "g": g_indicators(statements), "n_located": sum(1 for s in statements if _located(s)), "n_statements": len(statements)}

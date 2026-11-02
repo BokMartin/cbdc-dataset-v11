@@ -97,6 +97,39 @@ Unchanged from v1.1 unless stated. Each cell = value · evidence_state · decisi
 | **F11 OBJECTIVES** Δ | Which objectives does the institution state, and did it rank one as main? | 8 atomic tags, each `endorsed` / `considered` / `explicitly_rejected` / `not_documented` / `unresolved` (NO13); `primary_status` as v1.1; `primary_objectives` from **ranked original statements with stable ids** (UK11, NO14) | Tags: `payment_modernisation` · `financial_inclusion` · `monetary_sovereignty` · `monetary_policy_transmission` (split, NO13) · `cash_substitute` · `payment_resilience` (split) · `aml_cft_tax_enforcement` · `innovation_competitiveness`. Display crosswalk to the six v1.1 groups in `schema/f11_crosswalk.json` (ADR D5). Later rejection supersedes; omission from a later list ≠ rejection (NO14). |
 | **F12 LEDGER_TECHNOLOGY** Δ | Which ledger technology, by **component**, and with what selection status? | per component (`core_ledger`, `offline_component`, `settlement_layer`): conventional_centralised / permissioned_DLT / permissionless_DLT / hybrid / undecided / n/d; `selection_status` = tested / shortlisted / selected / operational; `platform` free text | "hybrid" = a *defined* combination within the core ledger, not "DLT in one pilot, centralised in another" (ADR D3). Concurrent coding check against archived tracker versions (BIS, Atlantic Council) is a check of the extraction, not of privacy validity (E18). |
 
+## 6b. Privacy-posture layer (descriptive; added 2 Nov 2026 after the sealed statement survey)
+
+Purpose. The commitment matrix (§5) answers *who has decided*. Most projects have not decided (endorsement census: 5 endorsed F1 positions of 43). The posture layer answers *who has said what, with what status*, from the same atomic claims, with the same locators, citation check and status fields, so that nothing in it is less auditable than a commitment. It never sets a cell of §6, never enters Y or the type, and is reported as descriptive output with status attached. Definitions were written after a model-only survey of the corpus (`docs/PRIVACY_POSTURE_LAYER_DESIGN_2026-11-02.md`; exposure ledger entry) and before any human coding.
+
+**6b.1 Statement claims.** In addition to F-cell claims, the extraction records every statement about user privacy, identifiability, personal-data access or anonymity as a claim with `statement_type` ∈ {PRINCIPLE, CB_NO_PERSONAL_DATA, CB_SEES_DATA, PSP_HOLDS_IDENTITY, PSEUDONYMISATION, TIERED_LOW_ID, ANONYMITY_REJECTED, OFFLINE_PRIVACY, LAWFUL_ACCESS, DATA_MINIMISATION, USER_CONTROL_CONSENT, NO_COMMERCIAL_USE, PROGRAMMABILITY, PET_TECHNIQUE, LEGAL_COMMITMENT, PRIVACY_AS_RISK_OR_TRADEOFF, OTHER}, with `decision_status`, `implementation_status`, `basis`, `actor`, locator and verbatim quote (definitions in `pipeline/prompts/posture_survey.system.md`). Statements are released per project only after the project is exposed (development case or after the blind draw).
+
+**6b.2 Posture ladder P (ordinal, per project, derived, `derive.posture_level`).** Architectural types A = {CB_NO_PERSONAL_DATA, CB_SEES_DATA, PSP_HOLDS_IDENTITY, PSEUDONYMISATION, TIERED_LOW_ID, OFFLINE_PRIVACY, ANONYMITY_REJECTED, PET_TECHNIQUE}; principle types B = {PRINCIPLE, LEGAL_COMMITMENT, DATA_MINIMISATION, USER_CONTROL_CONSENT, NO_COMMERCIAL_USE}.
+- **P3 commitment**: ≥ 1 located claim of type A with decision_status endorsed or implementation_status operational.
+- **P2 architecture considered/tested**: ≥ 1 located claim of type A, none endorsed/operational.
+- **P1 principle only**: ≥ 1 located claim of type B, none of type A.
+- **P0 silent**: none of A or B (LAWFUL_ACCESS, PROGRAMMABILITY, PRIVACY_AS_RISK_OR_TRADEOFF and OTHER do not count).
+Only claims whose quote is located (`quote_verified` ∈ {exact_page, spanning_pages}) count. P is nominal-ordinal: reported as counts and cross-tabulations, never as a number in a model.
+
+**6b.3 Indicators G1–G9 (binary, any status, status and basis attached).** Each = yes / not_documented; "yes" requires ≥ 1 located claim of the type, and the export carries the highest status among supporting claims and the basis of the strongest one.
+
+| id | question | statement type |
+|---|---|---|
+| G1 PRIVACY_PRINCIPLE_STATED | privacy / data protection stated as a design principle, objective or requirement | PRINCIPLE |
+| G2 CB_NO_DATA_STATEMENT | any statement that the CB will not / cannot see or hold personal or transaction-identity data | CB_NO_PERSONAL_DATA |
+| G3 CB_DATA_STATEMENT | any statement that the CB will or may see or hold such data | CB_SEES_DATA |
+| G4 LOW_ID_TIER_MENTIONED | a tier/wallet without full identity verification as option, test or decision | TIERED_LOW_ID |
+| G5 CASH_ANONYMITY_REJECTED | explicit statement that cash-like anonymity will not be offered | ANONYMITY_REJECTED |
+| G6 PET_NAMED | a named privacy-enhancing technique considered or tested | PET_TECHNIQUE |
+| G7 DATA_MINIMISATION_STATED | collect / retain only what is necessary | DATA_MINIMISATION |
+| G8 LEGAL_PRIVACY_COMMITMENT | statutory or legislative privacy commitment named | LEGAL_COMMITMENT |
+| G9 PRIVACY_AS_RISK | privacy discussed as risk, trade-off, public concern or adoption barrier | PRIVACY_AS_RISK_OR_TRADEOFF |
+
+G2 and G3 may both be yes for one project; both are reported with dates (claim history), which is the point. Traps as in §6: "will not use" is policy basis; staff research sets nothing; status attaches to the claim, not the genre.
+
+**6b.4 Linguistic emphasis (layer C, separate table).** Per document: share of paragraphs labelled PRIV / TRACE by the validated encoder (round 1), and the stance ratio = statements of type PRIVACY_AS_RISK_OR_TRADEOFF / (PRINCIPLE + type A statements). No sentiment scoring. Word counts may appear as an appendix column. Never sets a cell, never enters Y or the illustration; labelled "linguistic emphasis".
+
+**6b.5 Human verification.** G-cells and P are verified by source-checking the located quotes (one author per project), not by blind coding, except in the blind sample where statements are coded with the F-cells from the PDFs.
+
 ## 7. Derivation rules
 
 1. **Primary values** come only from admissible claims (§5). Status-attached values are reported with their status; staff-research corroborates, never establishes.
@@ -109,7 +142,7 @@ Unchanged from v1.1 unless stated. Each cell = value · evidence_state · decisi
 
 ## 8. Outcomes and illustration
 
-- **Y₁** = 1 ⇔ admissible F1 = no; 0 ⇔ admissible F1 = yes; else undetermined. Orientation rule unchanged (≥ 20 determinable, minority ≥ 6) — tested against the sealed endorsement census (§13) before registration.
+- **Y₁** = 1 ⇔ admissible F1 = no; 0 ⇔ admissible F1 = yes; else undetermined. Orientation rule unchanged (≥ 20 determinable, minority ≥ 6). **Sealed endorsement census (2 Nov 2026, model-only): 5 endorsed F1 positions of 43 (3 no, 2 yes), 3 operational-undocumented; the rule is not met in the commitment view.** Consequence [OPEN, 6 Nov]: the classified illustration H2 is not feasible on the commitment matrix; the paper's empirical core is the audited cross-project account plus the posture layer (§6b); any H2 estimate is exploratory on the status-attached view, labelled as such, or dropped.
 - **Y₂** dropped (v1.1). **Y₃** = 1 ⇔ admissible F7 = yes; 0 ⇔ admissible F7 = no (explicit only); kept only if determinable projects ≥ 20 **[OPEN: depends on F7 census count]**.
 - **H1** descriptive only; **H2** (liberal democracy) the single classified illustration (ADR A4). Decision table (ADR F6): Δ ≥ +δ supported if L > +δ; strong magnitude excluded if U < +δ; otherwise indeterminate; two-sided 95 %. **δ elicited** in a structured session with independent written answers before registration (ADR F8; working value 0.20 is *not* adopted). Covariate from one archived release, common year ≤ 2025; quartiles from the eligible frame before excluding unknown Y (ADR F3–F4). Interval for the nonlinear contrast itself with convergence checks; decision rule simulated at n = 20/30/40/45 (ADR F5, F7). No controls, no extra outcomes, no union-inclusive sensitivity, no CBI covariate (ADR A5, F9, F10).
 - **8.4 Missingness:** eligible-but-undetermined projects are counted and bounds reported (all-undetermined-as-0 / as-1).
@@ -144,6 +177,7 @@ Gates as proposed (E9), to be fixed with denominators: α ≥ .80 (and AC1) on c
 
 ## 14. Change log and crosswalk
 
+- 2026-11-02 (evening) **§6b posture layer** added (P0–P3, G1–G9, emphasis layer C) from the sealed statement survey; endorsement census result recorded (§8).
 - 2026-11-02 **v2 DRAFT**: rules A–F adopted into §4–§5 and §7; `decision_status` × `implementation_status` with crosswalk (§4.2); project status as four fields (§4.3); rule C admissibility symmetric (§5); F1 actor rule D with `basis` and `analytic_linkability` (§6); **F7 inference from silence deleted**; F11 eight atomic tags with crosswalk; F12 by component; locators with spans and offsets; `unknown_reason`; `processing_state` outside the scale; evidence-language ledger (§9); blank reference workbook and E5 source-first F1 (§10); routing and replay (§11); gates (§12); exposure (§13). Y₂ remains dropped; F9/F10 and the blind-set size are open.
 - 2026-10-18 v1.1; 2026-10-18 v1 (see v1.1 §12).
 

@@ -96,7 +96,11 @@
     var ok = S.filter(function (s) { return s.verified === "exact_page" || s.verified === "spanning_pages" || s.verified === "elsewhere_in_doc"; });
     var by = {}; ok.forEach(function (s) { (by[s.type] = by[s.type] || []).push(s); });
     var ORD = { endorsed: 0, operational: 1, tested: 2, considered: 3, rejected: 4, unclear: 5 };
-    var html = "<div class='statements'><h4>Documented statements on privacy and identifiability <span class='tag dev'>" + (p.statements_note || "development") + "</span></h4>" +
+    var PL = { P0: "P0 silent", P1: "P1 principle only", P2: "P2 architecture considered / tested", P3: "P3 architectural commitment" };
+    var GL = { G1: "privacy principle", G2: "CB sees no personal data", G3: "CB sees data", G4: "low-ID tier", G5: "cash anonymity rejected", G6: "PET named", G7: "data minimisation", G8: "legal commitment", G9: "privacy as risk" };
+    var post = p.posture ? "<div class='typeline'>Privacy posture: <b>" + (PL[p.posture.posture_level] || p.posture.posture_level) + "</b> <span class='meta'>(descriptive layer, contract v2 §6b; never sets a cell or Y)</span><br>" +
+      Object.keys(p.posture.g).map(function (k) { var g = p.posture.g[k]; return "<span class='st " + (g.value === "yes" ? "st-" + g.status : "") + "' title='" + k + "'>" + GL[k] + (g.value === "yes" ? ": " + g.status : ": not documented") + "</span>"; }).join(" ") + "</div>" : "";
+    var html = "<div class='statements'>" + post + "<h4>Documented statements on privacy and identifiability <span class='tag dev'>" + (p.statements_note || "development") + "</span></h4>" +
       "<div class='meta'>" + ok.length + " citation-checked statements in " + p.docs.filter(function (d) { return d.layer !== "registry"; }).length + " core documents (" + (S.length - ok.length) + " not located verbatim and hidden). Each line links to the official document at the cited PDF page. Status is attached to the statement: <i>considered</i> is not a commitment.</div>";
     C.STYPE_ORDER.forEach(function (t) {
       var L = by[t]; if (!L) return; L.sort(function (a, b) { return (ORD[a.status] - ORD[b.status]) || (b.doc_year - a.doc_year); });
