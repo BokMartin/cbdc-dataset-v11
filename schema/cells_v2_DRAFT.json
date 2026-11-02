@@ -1,0 +1,289 @@
+{
+ "instrument": "contract_v2_draft",
+ "contract_file": "docs/MEASUREMENT_CONTRACT_v2_DRAFT_2026-11-02.md",
+ "status": "DRAFT 2026-11-02; not for production until adopted",
+ "cells": [
+  "F1 CB_LINK_ONLINE",
+  "F2 PSP_LINK_ONLINE",
+  "F3 LAWFUL_ACCESS_ROUTE",
+  "F4 PRIVATE_OFFLINE_AVAILABLE",
+  "F7 LOW_ID_ROUTE",
+  "F8 ONBOARDING_ID",
+  "F9 TARGETED_REIDENTIFICATION",
+  "F10 PROGRAMMABLE_RESTRICTIONS",
+  "F11 payment_modernisation",
+  "F11 financial_inclusion",
+  "F11 monetary_sovereignty",
+  "F11 monetary_policy_transmission",
+  "F11 cash_substitute",
+  "F11 payment_resilience",
+  "F11 aml_cft_tax_enforcement",
+  "F11 innovation_competitiveness",
+  "F11 primary_status",
+  "F11 primary_objectives",
+  "F12 core_ledger",
+  "F12 offline_component",
+  "F12 settlement_layer"
+ ],
+ "values": {
+  "F1 CB_LINK_ONLINE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F2 PSP_LINK_ONLINE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F3 LAWFUL_ACCESS_ROUTE": [
+   "via_PSP",
+   "via_CB",
+   "via_both",
+   "none_stated",
+   "n/d"
+  ],
+  "F4 PRIVATE_OFFLINE_AVAILABLE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F7 LOW_ID_ROUTE": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F8 ONBOARDING_ID": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F9 TARGETED_REIDENTIFICATION": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F10 PROGRAMMABLE_RESTRICTIONS": [
+   "yes",
+   "no",
+   "n/d"
+  ],
+  "F11 payment_modernisation": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 financial_inclusion": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 monetary_sovereignty": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 monetary_policy_transmission": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 cash_substitute": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 payment_resilience": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 aml_cft_tax_enforcement": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 innovation_competitiveness": [
+   "endorsed",
+   "considered",
+   "explicitly_rejected",
+   "not_documented",
+   "unresolved"
+  ],
+  "F11 primary_status": [
+   "one_primary",
+   "several_joint",
+   "unranked",
+   "conflict",
+   "n/d"
+  ],
+  "F11 primary_objectives": null,
+  "F12 core_ledger": [
+   "conventional_centralised",
+   "permissioned_DLT",
+   "permissionless_DLT",
+   "hybrid",
+   "undecided",
+   "n/d"
+  ],
+  "F12 offline_component": [
+   "conventional_centralised",
+   "permissioned_DLT",
+   "permissionless_DLT",
+   "hybrid",
+   "undecided",
+   "n/d"
+  ],
+  "F12 settlement_layer": [
+   "conventional_centralised",
+   "permissioned_DLT",
+   "permissionless_DLT",
+   "hybrid",
+   "undecided",
+   "n/d"
+  ]
+ },
+ "evidence_state": [
+  "documented",
+  "partial",
+  "unknown",
+  "conflict",
+  "n.a."
+ ],
+ "decision_status": [
+  "considered",
+  "endorsed",
+  "rejected",
+  "superseded",
+  "unclear",
+  ""
+ ],
+ "implementation_status": [
+  "untested_or_unreported",
+  "tested",
+  "operational",
+  "unclear",
+  ""
+ ],
+ "basis": [
+  "policy",
+  "architectural",
+  "cryptographic",
+  "n/d",
+  ""
+ ],
+ "derivation": [
+  "explicit",
+  "inferred",
+  "n.a."
+ ],
+ "unknown_reason": [
+  "never_addressed",
+  "provisional_only",
+  "privacy_unspecified",
+  "search_incomplete",
+  ""
+ ],
+ "selection_status_F12": [
+  "tested",
+  "shortlisted",
+  "selected",
+  "operational",
+  ""
+ ],
+ "processing_state": [
+  "ok",
+  "ok_with_validation_problems",
+  "processing_failed",
+  "incomplete"
+ ],
+ "optional_cells": [
+  "F9 TARGETED_REIDENTIFICATION",
+  "F10 PROGRAMMABLE_RESTRICTIONS"
+ ],
+ "fill_columns": [
+  "cell",
+  "value",
+  "evidence_state",
+  "decision_status",
+  "implementation_status",
+  "basis",
+  "derivation",
+  "doc",
+  "doc_id",
+  "page_index",
+  "printed_label",
+  "quote",
+  "actor",
+  "reference_participant",
+  "transaction_scope",
+  "limits",
+  "modality",
+  "legal_state",
+  "design_or_experiment_id",
+  "retail_or_wholesale",
+  "issuer",
+  "decision_authority",
+  "endorsement_source",
+  "unknown_reason",
+  "superseded",
+  "analytic_linkability",
+  "justification",
+  "counter_evidence",
+  "confidence"
+ ],
+ "finding_columns": [
+  "doc",
+  "doc_id",
+  "cell",
+  "supports_value",
+  "decision_status",
+  "implementation_status",
+  "basis",
+  "page_index",
+  "quote",
+  "direction",
+  "actor",
+  "transaction_scope",
+  "limits",
+  "modality",
+  "design_or_experiment_id",
+  "note"
+ ],
+ "status_crosswalk_v1_1": {
+  "option": [
+   "considered",
+   "untested_or_unreported"
+  ],
+  "tested": [
+   "considered",
+   "tested"
+  ],
+  "adopted": [
+   "endorsed",
+   "untested_or_unreported"
+  ],
+  "operational": [
+   "endorsed",
+   "operational"
+  ]
+ },
+ "aliases": {
+  "page": "page_index",
+  "claim_status": "decision_status"
+ }
+}

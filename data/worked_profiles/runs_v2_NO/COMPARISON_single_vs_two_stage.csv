@@ -1,0 +1,19 @@
+cell,agreement,single_value,single_evidence_state,single_claim_status,single_doc,single_page,two_stage_value,two_stage_evidence_state,two_stage_claim_status,two_stage_doc,two_stage_page
+F1 CB_LINK_ONLINE,value,no,partial,tested,7,10,no,partial,option,6,16
+F10 PROGRAMMABLE_RESTRICTIONS,full,no,partial,option,6,17,no,partial,option,6,17
+F11 aml_cft_tax_enforcement,value,no,unknown,n/d,6,16,no,partial,option,4,41
+F11 cash_substitute_resilience,differ,yes,documented,option,4,4,no,documented,adopted,6,5
+F11 financial_inclusion,value,no,documented,option,6,6,no,documented,adopted,6,6
+F11 innovation_competitiveness,differ,yes,documented,option,5,3,no,documented,adopted,6,5
+F11 monetary_sovereignty_transmission,value,yes,documented,option,5,6,yes,partial,option,6,7
+F11 payment_modernisation,value,yes,documented,option,5,5,yes,documented,adopted,6,2
+F11 primary_objectives,differ,"innovation in payment services and payment contingency/preparedness (joint emphasis), within the overarching aim that NOK remains an efficient, attractive and secure means of payment",documented,option,6,5,safe/secure and efficient payment system in NOK,partial,adopted,6,2
+F11 primary_status,differ,several_joint,documented,option,6,5,one_primary,partial,option,5,13
+F12 LEDGER_TECHNOLOGY,differ,permissioned_DLT,partial,tested,7,9,undecided,documented,option,6,19
+F2 PSP_LINK_ONLINE,differ,yes,partial,tested,7,9,n/d,partial,tested,7,9
+F3 LAWFUL_ACCESS_ROUTE,full,n/d,partial,option,6,22,n/d,partial,option,6,22
+F4 PRIVATE_OFFLINE_AVAILABLE,value,n/d,unknown,option,4,8,n/d,partial,option,4,24
+F7 LOW_ID_ROUTE,full,n/d,partial,option,2,26,n/d,partial,option,2,26
+F8 ONBOARDING_ID,full,yes,partial,option,6,16,yes,partial,option,6,16
+F9 TARGETED_REIDENTIFICATION,value,yes,partial,option,4,24,yes,partial,tested,6,12
+# valid=True; {'value': 7, 'full': 4, 'differ': 6}

@@ -21,10 +21,11 @@ A project whose model-generated cell values any author has read is **exposed** a
 | 2026-10-27 | CL (external LLM consultant) | Consultation pack incl. NO/UK fills; consultant's review quotes NO/UK values | yes (NO, UK) | none beyond NO/UK |
 | 2026-10-28 | MB, CL | Consultation document (Parts I–V) | discusses NO/UK only | none beyond NO/UK |
 | 2026-11-02 | CL | Reconstruction of archived script versions; project frame recomputed from registry | no values | none |
+| 2026-11-02 | CL (model only) | Endorsement census, 43 national retail candidates, one request per project (`scripts/census/endorsement_census.py`, claude-opus-5-5, contract v1.1 as definition source). Per-project file sealed off-repo (`census_sealed/ENDORSEMENT_CENSUS_sealed.jsonl`, SHA-256 in `data/census/ENDORSEMENT_CENSUS_aggregate.json`); the census log is off-repo too. Authors receive the aggregate only. | model yes; **authors no** | none for authors; census values are not instrument output and are never merged into profiles |
+| 2026-11-02 | CL | Valid single vs two-stage NO run (v2 extractor, complete coverage) | yes (NO, already exposed) | none beyond NO |
 
 ## Planned entries (to be filled when they happen)
 
-- Model-only endorsement census of the 43 national retail candidates (Phase 1): **sealed**; authors receive aggregate counts only (number of projects by endorsement category and document type). Per-project results are stored encrypted/off-repo until after the blind draw; the sealed file's hash is committed.
 - Development cases 3–7 (euro area, Canada, Chile, Hungary, one LIVE project): exposed on the date each author first reads a model output for them.
 - Blind set draw (Phase 3): list sealed by hash; published after scoring.
 - δ elicitation: independent written answers from MB, DS, MI dated and stored before the joint session.

@@ -1,0 +1,26 @@
+{
+ "display_groups_v1_1": {
+  "payment_modernisation": [
+   "payment_modernisation"
+  ],
+  "financial_inclusion": [
+   "financial_inclusion"
+  ],
+  "monetary_sovereignty_transmission": [
+   "monetary_sovereignty",
+   "monetary_policy_transmission"
+  ],
+  "cash_substitute_resilience": [
+   "cash_substitute",
+   "payment_resilience"
+  ],
+  "aml_cft_tax_enforcement": [
+   "aml_cft_tax_enforcement"
+  ],
+  "innovation_competitiveness": [
+   "innovation_competitiveness"
+  ]
+ },
+ "group_rule": "a v1.1 group flag is 'yes' if any member tag is endorsed; 'considered' if any member is considered and none endorsed; 'no' if all documented members are explicitly_rejected; otherwise n/d",
+ "source": "ADR-001 D5, NO13"
+}

@@ -1,0 +1,43 @@
+{
+ "as_of": "2026-11-02T12:34:23.275157+00:00",
+ "model": "claude-opus-5-5",
+ "provider": "anthropic",
+ "system_sha256": "dd472fa618f43fc8590f0e0048117a72fb4c2207a83fc4982f88d18f21c8d7be",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "n_projects": 43,
+ "states": {
+  "ok": 43
+ },
+ "category": {
+  "endorsed_no": 3,
+  "tested_only": 9,
+  "none": 10,
+  "endorsed_yes": 2,
+  "proposal_only": 16,
+  "operational_undocumented": 3
+ },
+ "basis": {
+  "architectural": 28,
+  "n/d": 11,
+  "policy": 4
+ },
+ "strongest_doc_kind": {
+  "other": 10,
+  "experiment_report": 12,
+  "design_note": 8,
+  "consultation": 8,
+  "annual_report": 1,
+  "decision": 3,
+  "final_report": 1
+ },
+ "issuance_decision_state": {
+  "decided_to_issue": 3,
+  "decided_not_now": 7,
+  "not_decided": 26,
+  "n/d": 1,
+  "issued": 5,
+  "discontinued": 1
+ },
+ "sealed_file_sha256": "06ca6f96d29f248d9e666b960ce1943e3d90194325a98c1e07e6a17d66cbba96",
+ "note": "Per-project results are sealed (outside the repository) until after the blind draw; see EXPOSURE_LEDGER.md."
+}

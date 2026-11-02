@@ -1,0 +1,294 @@
+{
+ "jur": "NO",
+ "provider": "anthropic",
+ "model_requested": "claude-opus-5-5",
+ "mode": "both",
+ "run_utc": "20261102T122025Z",
+ "status": "ok",
+ "temperature": "not_settable (provider rejects temperature for current models; provider-controlled sampling)",
+ "max_tokens": 32000,
+ "max_doc_chars": 1500000,
+ "python": "3.13.16",
+ "sdk": "anthropic 1.15.0",
+ "contract_file": "MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "schema_file": "cells_v1_1.json",
+ "schema_sha256": "b2048e3da21ccb7286dca2264efd78e86670c1fcb3d1439414ab2b7d15f83b7a",
+ "script_sha256": "0bb5215fb6ec345d20e5c6c2cd75dd46d6a135c0c12f8ad99bc83415be65cbfe",
+ "prompts_sha256": {
+  "stage1": "da7c18028bdb1417d37426bf3e071ac988b1e6e6c0d0590b3d9b2c5031a8c4b5",
+  "stage2": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+  "single": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5"
+ },
+ "docs": [
+  {
+   "doc": "1",
+   "doc_id": "NO_Norway_nbmemo-1-2018",
+   "title": "NO_Norway_nbmemo-1-2018",
+   "year": "2018",
+   "core": "BORDERLINE",
+   "staff": "",
+   "kind": "other",
+   "chars": 161001,
+   "text_sha256": "4b952fdc484bdce54633734224ec4282577ecd21f14f1a6e94cb09759277891a",
+   "too_long": false
+  },
+  {
+   "doc": "2",
+   "doc_id": "NO_Norway_nb_memo_2_19_dsp",
+   "title": "NO_Norway_nb_memo_2_19_dsp",
+   "year": "2019",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 119300,
+   "text_sha256": "d737c563b01e6fbed87e7f36db84d29a351ca347e81714eefedc57cb6258b9ce",
+   "too_long": false
+  },
+  {
+   "doc": "3",
+   "doc_id": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "title": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "year": "2020",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 21580,
+   "text_sha256": "6e5f623b5fc1f818ffb72c87b4303bdf61603a4e9b7bc62d1b639f2fba49c822",
+   "too_long": false
+  },
+  {
+   "doc": "4",
+   "doc_id": "NO_Norway_norges-bank-memo-1-2021",
+   "title": "NO_Norway_norges-bank-memo-1-2021",
+   "year": "2021",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 221749,
+   "text_sha256": "e6dd3a72f90b563c0508fcf7a8bdf719638ca1c3e73eb3ec389c63abf769414f",
+   "too_long": false
+  },
+  {
+   "doc": "5",
+   "doc_id": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "title": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "year": "2023",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 59930,
+   "text_sha256": "c1ec1c03bb002cea9e0b04dc824c8744099e115c266d8c1ba5e40ab03c77e5f7",
+   "too_long": false
+  },
+  {
+   "doc": "6",
+   "doc_id": "NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report",
+   "title": "CBDC \u2014 Final Report for Project Phase 5 (Norges Bank Papers 1/2026, Mar 2026)",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "progress_report",
+   "chars": 111954,
+   "text_sha256": "536a462ea964b8194eb24508523957c579b16d531b9640860d8bf66fdbffc9f9",
+   "too_long": false
+  },
+  {
+   "doc": "7",
+   "doc_id": "NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing",
+   "title": "CBDC \u2014 Experimental Testing in Project Phase 5 (Norges Bank Papers 3/2026, Mar 2026)",
+   "year": "2026",
+   "core": "KEEP",
+   "staff": "",
+   "kind": "technical_paper",
+   "chars": 96719,
+   "text_sha256": "1f72133aaba8359944fd1c35b163781df5e2f98b92457478ea3c16fd320297f4",
+   "too_long": false
+  }
+ ],
+ "stage1": [
+  {
+   "doc": "1",
+   "doc_id": "NO_Norway_nbmemo-1-2018",
+   "state": "ok",
+   "rows": 36,
+   "reused": false,
+   "response_id": "msg_011Cge6PFsPZ3HFMneEwZFk5",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 71187,
+    "output_tokens": 12100
+   },
+   "started_utc": "2026-11-02T12:22:27.933212+00:00",
+   "seconds": 95.5
+  },
+  {
+   "doc": "2",
+   "doc_id": "NO_Norway_nb_memo_2_19_dsp",
+   "state": "ok",
+   "rows": 36,
+   "reused": false,
+   "response_id": "msg_011Cge6WJDENPNv8AtgYeU4i",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 55272,
+    "output_tokens": 12224
+   },
+   "started_utc": "2026-11-02T12:24:03.402180+00:00",
+   "seconds": 92.2
+  },
+  {
+   "doc": "3",
+   "doc_id": "NO_Norway_norges-bank-memo-2_2020-eng",
+   "state": "ok",
+   "rows": 20,
+   "reused": false,
+   "response_id": "msg_011Cge6d6NmmWX6zYVKBzxPz",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 14767,
+    "output_tokens": 5812
+   },
+   "started_utc": "2026-11-02T12:25:35.632291+00:00",
+   "seconds": 51.5
+  },
+  {
+   "doc": "4",
+   "doc_id": "NO_Norway_norges-bank-memo-1-2021",
+   "state": "ok",
+   "rows": 49,
+   "reused": false,
+   "response_id": "msg_011Cge6gtqbTgfXGWoVA1qX1",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 95656,
+    "output_tokens": 16292
+   },
+   "started_utc": "2026-11-02T12:26:27.162611+00:00",
+   "seconds": 120.8
+  },
+  {
+   "doc": "5",
+   "doc_id": "NO_Norway_norges-bank-papers-2---phase-4---final-report",
+   "state": "ok",
+   "rows": 30,
+   "reused": false,
+   "response_id": "msg_011Cge6qoFVm69P5mWzoKuva",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 26840,
+    "output_tokens": 6999
+   },
+   "started_utc": "2026-11-02T12:28:27.956021+00:00",
+   "seconds": 52.3
+  },
+  {
+   "doc": "6",
+   "doc_id": "NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report",
+   "state": "ok",
+   "rows": 38,
+   "reused": false,
+   "response_id": "msg_011Cge6uecTHQRjA8r16TpCv",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 43971,
+    "output_tokens": 11242
+   },
+   "started_utc": "2026-11-02T12:29:20.257029+00:00",
+   "seconds": 84.5
+  },
+  {
+   "doc": "7",
+   "doc_id": "NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing",
+   "state": "ok",
+   "rows": 22,
+   "reused": false,
+   "response_id": "msg_011Cge71stLNj4chKwA4ztNp",
+   "model_returned": "claude-opus-5-5",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 38022,
+    "output_tokens": 6347
+   },
+   "started_utc": "2026-11-02T12:30:44.768366+00:00",
+   "seconds": 47.2
+  }
+ ],
+ "single": {
+  "state": "ok",
+  "rows": 17,
+  "validation_problems": [
+   "F2 PSP_LINK_ONLINE: derivation='inferred (\u00a76.5: (i) banks map customers to ledger addresses in own registers, doc 7 p.9; (ii) participating banks have read access to the ledger transaction history, doc 6 p.12; (iii) same retail online sandbox, same participant)' not allowed",
+   "F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+  ],
+  "request": {
+   "system": {
+    "file": "requests/single.system.txt.gz",
+    "sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+    "chars": 22832
+   },
+   "user": {
+    "file": "requests/single.user.txt.gz",
+    "sha256": "0caa9f3c99cdf41bc7d9bbaf332ce83efb8cf97d3c3363f2385e39cb72c80784",
+    "chars": 793917
+   }
+  },
+  "response_id": "msg_011Cge6EXH5sgNj2HQrzX6sg",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 297166,
+   "output_tokens": 13828
+  },
+  "started_utc": "2026-11-02T12:20:29.345233+00:00",
+  "seconds": 118.6,
+  "response": {
+   "file": "requests/single.response.txt.gz",
+   "sha256": "a259711989ceb84a3ae34b532fd56455f91f2fe47a2d5b5f7e2c4c3960ca4331",
+   "chars": 16680
+  }
+ },
+ "stage2": {
+  "state": "ok",
+  "findings_in": 231,
+  "rows": 17,
+  "validation_problems": [],
+  "failed_docs": [],
+  "request": {
+   "system": {
+    "file": "requests/stage2.system.txt.gz",
+    "sha256": "c4718cc3468db30abf790613f043332513330ed8b98d74ce7e5d97df968788d4",
+    "chars": 22970
+   },
+   "user": {
+    "file": "requests/stage2.user.txt.gz",
+    "sha256": "2771a2540c17ebcd7ab078434c4cc8727c99d269f26fc0938e59448619f3eb0b",
+    "chars": 126240
+   }
+  },
+  "response_id": "msg_011Cge75MrfppK5sSGsqfoBt",
+  "model_returned": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "usage": {
+   "input_tokens": 62335,
+   "output_tokens": 12696
+  },
+  "started_utc": "2026-11-02T12:31:32.001799+00:00",
+  "seconds": 105.6,
+  "response": {
+   "file": "requests/stage2.response.txt.gz",
+   "sha256": "60e0e9437c94146b396377dacbf60d9fa52650503a5d41c20b1655a04150f95c",
+   "chars": 19486
+  }
+ },
+ "problems": [
+  "single: F2 PSP_LINK_ONLINE: derivation='inferred (\u00a76.5: (i) banks map customers to ledger addresses in own registers, doc 7 p.9; (ii) participating banks have read access to the ledger transaction history, doc 6 p.12; (iii) same retail online sandbox, same participant)' not allowed",
+  "single: F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed"
+ ]
+}
