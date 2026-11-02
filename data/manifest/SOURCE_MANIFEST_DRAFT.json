@@ -1,0 +1,53 @@
+{
+ "generated_utc": "2026-11-02T17:01:12.063811+00:00",
+ "n_rows": 128,
+ "n_evidence_documents": 124,
+ "n_projects": 48,
+ "by_route": {
+  "A": 105,
+  "D": 15,
+  "B_pair_original": 4,
+  "B": 3,
+  "B_available": 1
+ },
+ "by_language": {
+  "en": 108,
+  "es": 4,
+  "zh": 1,
+  "cs": 1,
+  "fi": 1,
+  "nl": 1,
+  "sl": 4,
+  "ja": 1,
+  "nb": 3,
+  "ru": 2,
+  "zh-Hant": 1,
+  "uk": 1
+ },
+ "by_verdict": {
+  "KEEP": 92,
+  "BORDERLINE": 36
+ },
+ "by_licence": {
+  "not_stated": 14,
+  "all_rights_reserved": 42,
+  "open_licence": 10,
+  "reproduction_with_attribution": 62
+ },
+ "in_frame_43": 102,
+ "non_english_in_frame_43": [
+  "CL:CL_CL_Banco-Central-de-Chile_Primer-Informe-Emision-de-una-mo",
+  "CL:CL_CL_Banco-Central-de-Chile_Segundo-Informe-Emision-de-una-m",
+  "CN:CN_PBOC_LuLei_ActionPlan_2025",
+  "CZ:CZ_CzechRepublic_2022",
+  "RU:RU_Russia_concept_08042021",
+  "RU:RU_Russia_digital_ruble_30062025",
+  "TW:TW_TW-CBC-CBDC-Communication-Summary-Report-2026",
+  "UA:UA_NBU_E-hryvnia_2019",
+  "UY:UY_Uruguay_BCU_BilleteDigital_2017"
+ ],
+ "missing_url": [],
+ "missing_sha256": [],
+ "gap_check": "pending: uniform authority/content rule (ADR D1) to be applied per project before freeze",
+ "status": "DRAFT; frozen at Phase 3 as SOURCE_MANIFEST_v1"
+}
