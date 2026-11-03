@@ -1,11 +1,11 @@
-/* CBDC Dataset v11 — shared site script (no build step). Sidebar, data loading, map with year slider and modes,
+/* CBDC Dataset v12 — shared site script (no build step). Sidebar, data loading, map with year slider and modes,
    distribution-over-time chart, project panel, profiles table, feature table, paper figures. */
 (function () {
   var NAV = [["index.html", "Home"], ["map.html", "Map"], ["profiles.html", "Country profiles"], ["features.html", "Features & types"], ["paper.html", "Paper"],
              ["pipeline.html", "Pipeline"], ["method.html", "Method & progress"], ["data.html", "Data"], ["contribute.html", "Contribute"], ["about.html", "About"]];
   var here = location.pathname.split("/").pop() || "index.html";
   var side = document.querySelector("aside.side");
-  if (side) side.innerHTML = '<a class="brand" href="index.html">CBDC <span>Dataset</span></a><div class="side-tag">Open research data · v11</div><nav class="main">' +
+  if (side) side.innerHTML = '<a class="brand" href="index.html">CBDC <span>Dataset</span></a><div class="side-tag">Open research data · v12 (in development)</div><nav class="main">' +
     NAV.map(function (n) { return '<a href="' + n[0] + '"' + (n[0] === here ? ' class="current"' : "") + ">" + n[1] + "</a>"; }).join("") +
     '</nav><div class="side-foot"><strong>Cite as</strong>Bok, M. &amp; Stroukal, D. (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>';
 

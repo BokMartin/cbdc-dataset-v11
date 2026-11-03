@@ -4,7 +4,7 @@
 REAL inputs
   data/registry/REGISTRY_v2_2.csv                    document registry (391 documents, 92 registry codes)
   data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv  official project status with sources
-  docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md       feature definitions (parsed from §4)
+  archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md       feature definitions (parsed from §4)
   data/worked_profiles/<JUR>_api_single_v1_1.csv     development fills (the only real cell values so far)
 MOCK
   Every other cell value, trajectory and decisive page is generated here with a fixed seed. Values are drawn
@@ -26,7 +26,7 @@ rng = random.Random(1101)
 def read_csv(p): return list(csv.DictReader(open(os.path.join(ROOT, p), encoding="utf-8")))
 
 # ---------- contract: feature definitions ----------
-contract = open(os.path.join(ROOT, "docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md"), encoding="utf-8").read()
+contract = open(os.path.join(ROOT, "archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md"), encoding="utf-8").read()
 features = []
 for line in contract.split("\n"):
     m = re.match(r"\| \*\*(F\d+) ([A-Z_]+)\*\*[^|]*\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|$", line)

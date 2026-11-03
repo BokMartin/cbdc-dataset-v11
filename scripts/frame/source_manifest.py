@@ -7,7 +7,7 @@ Columns: doc_id, project (analytic project code; euro-area members → EU), jur,
 staff_research, language, route (A English original · B issuer English edition · C checked translation · D machine/provisional ·
 B_available = issuer English edition exists but is not yet ingested), parallel_of, url, url_amended, sha256, licence_class,
 in_frame_43, provenance_note, amended.
-Output: data/manifest/SOURCE_MANIFEST_DRAFT.csv + SOURCE_MANIFEST_DRAFT.json (counts). Frozen at Phase 3 as SOURCE_MANIFEST_v1.
+Output: data/manifest/SOURCE_MANIFEST_v12_DRAFT.csv + SOURCE_MANIFEST_v12_DRAFT.json (counts). Frozen at Phase 3 as SOURCE_MANIFEST_v12.
 """
 import csv, json, os, sys, collections, datetime as dt
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE)); sys.path.insert(0, HERE)
@@ -41,7 +41,7 @@ def main():
                      "licence_class": lic_inst.get(a["jur"], {}).get("licence_class", ""), "in_frame_43": frame.get(a["jur"], {}).get("retail_candidate", "False"), "provenance_note": a["basis"], "amended": f"added@{a['date']};"})
     rows.sort(key=lambda x: (x["project"], x["year"], x["doc_id"]))
     os.makedirs(os.path.join(ROOT, "data/manifest"), exist_ok=True)
-    with open(os.path.join(ROOT, "data/manifest/SOURCE_MANIFEST_DRAFT.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(ROOT, "data/manifest/SOURCE_MANIFEST_v12_DRAFT.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     c = lambda k: dict(collections.Counter(x[k] for x in rows))
     evid = [x for x in rows if x["route"] != "B_pair_original"]
@@ -50,7 +50,7 @@ def main():
                "non_english_in_frame_43": sorted(f"{x['project']}:{x['doc_id']}" for x in evid if x["in_frame_43"] == "True" and x["route"] in ("D", "B_available")),
                "missing_url": [x["doc_id"] for x in rows if not x["url"]], "missing_sha256": [x["doc_id"] for x in rows if not x["sha256"]],
                "gap_check": "pending: uniform authority/content rule (ADR D1) to be applied per project before freeze", "status": "DRAFT; frozen at Phase 3 as SOURCE_MANIFEST_v1"}
-    json.dump(summary, open(os.path.join(ROOT, "data/manifest/SOURCE_MANIFEST_DRAFT.json"), "w"), indent=1); print(json.dumps(summary, indent=1))
+    json.dump(summary, open(os.path.join(ROOT, "data/manifest/SOURCE_MANIFEST_v12_DRAFT.json"), "w"), indent=1); print(json.dumps(summary, indent=1))
 
 
 if __name__ == "__main__": main()

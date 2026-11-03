@@ -14,7 +14,7 @@ Stages (each is an existing script; nothing here is new logic):
 Human stages (reference coding, adjudication, blind draw, release of sealed results) are NOT run here; see README.
 
 usage: run_all.py --provider anthropic --model claude-opus-5-5 --texts /path/texts --sealed-dir /path/outside/repo \
-         --contract docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json \
+         --contract archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json \
          [--projects NO,UK] [--mode both] [--stages frame,prompts,census,survey,extract,verify,compare,site] [--dry-run]
 Provider API key from the environment (ANTHROPIC_API_KEY / OPENAI_API_KEY). Every API stage writes its own manifest and request archive.
 """

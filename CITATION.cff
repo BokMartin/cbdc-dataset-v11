@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-title: "CBDC Dataset v11 — documented privacy and identifiability design in retail CBDC projects (work in progress)"
+title: "CBDC Dataset v12 — documented privacy and identifiability design in retail CBDC projects (in development)"
 authors:
   - family-names: Bok
     given-names: Martin
     affiliation: Prague University of Economics and Business
   - family-names: Stroukal
     given-names: Dominik
-version: "11.0-wip"
+version: "12.0-dev"
 date-released: "2026-10-18"
 license: CC-BY-4.0
 url: "https://cbdcdataset.org"

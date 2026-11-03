@@ -18,7 +18,7 @@ Goal (authors, 2 Nov 2026): everything the models are asked to do is kept here a
 ```
 python3 scripts/pipeline/run_all.py --provider anthropic --model claude-opus-5-5 \
   --texts /data/texts --sealed-dir /data/sealed \
-  --contract docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json --mode both
+  --contract archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json --mode both
 ```
 
 `--dry-run` prints the commands without calling any API. `--projects NO,UK` limits the run. `--stages` selects stages.

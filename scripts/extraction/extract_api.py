@@ -14,7 +14,7 @@ Changes from the 18 Oct version (archived in archive/run_scripts/):
   * two modes retained: single (all documents in one request) and two-stage (per-document findings → synthesis from findings)
 
 usage: extract_api.py --jur NO --provider anthropic --model claude-opus-5-5 --mode single|two-stage|both \
-         --indir <DOCS.csv + texts/> --contract docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json --outroot runs
+         --indir <DOCS.csv + texts/> --contract archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md --schema schema/cells_v1_1.json --outroot runs
 providers: anthropic (ANTHROPIC_API_KEY), openai (OPENAI_API_KEY, optional OPENAI_BASE_URL). No key is ever written to the run folder.
 """
 import argparse, csv, datetime as dt, gzip, hashlib, json, os, platform, re, shutil, sys, time

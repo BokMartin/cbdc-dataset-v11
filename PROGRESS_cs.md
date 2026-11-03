@@ -1,4 +1,14 @@
-# Kde jsme — krátce česky (2. 11. 2026)
+# Kde jsme — krátce česky (3. 11. 2026, v12)
+
+**Od 3. 11. pracujeme pod označením v12.** Historie zůstává v jednom repozitáři (tag `v11-dev-final`, soubory jen k v11 v `archive/v11/`). Co se změnilo: zdroje podle pravidla autority a obsahu (D1) místo žánrové rubriky, jeden source manifest s URL, hashem, jazykem, routou a licencí; kontrakt v12 (endorsement, dva statusové osy, symetrická přípustnost, bez odvozování z mlčení); posture vrstva P0 až P3 a G1 až G9; jazykový ledger s routami A až D; pečetění a exposure allowlist v kódu; pipeline s verzovanými prompty.
+
+**Co je hotové (2. 11.):** audit druhým modelem zapracován (ADR-002); gap check všech 43 projektů (378 kandidátů, 354 mimo registr, major gaps u 27 projektů); Norsko přepočítáno z anglických vydání (route B); licence a oficiální URL u všech 125 core dokumentů; 24 testů.
+
+**Co je další:** rozhodnutí autorů nad 178 prioritními řádky gap checku → stažení, hashe, texty → manifest v12 → nový census → kontrakt v12 přijat → vývojové případy → freeze, Zenodo, OSF → slepá sada → produkce → analýza.
+
+**Pátek 6. 11.:** `docs/CONSULTATION_BRIEF_2026-11-06_cs.md`.
+
+## Stav k 2. 11. 2026 (historický)
 
 **Od 28. 10. (externí konzultace):** všech 6 pravidel a 28 dispozic zapracováno do ADR-001 (`DECISIONS/`), zaveden exposure ledger, zmrazen projektový rámec 48/46/43, pipeline opravena (úplný citační check, stavy selhání, přísná validace, archiv requestů, 16 testů, CI), draft contractu v2 + JSON schéma, parametrizovaný builder review sešitů a slepý referenční sešit, δ elicitační formulář.
 

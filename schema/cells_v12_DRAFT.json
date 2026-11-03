@@ -1,7 +1,7 @@
 {
- "instrument": "contract_v2_draft",
- "contract_file": "docs/MEASUREMENT_CONTRACT_v2_DRAFT_2026-11-02.md",
- "status": "DRAFT 2026-11-02; not for production until adopted",
+ "instrument": "contract_v12_draft",
+ "contract_file": "docs/MEASUREMENT_CONTRACT_v12_DRAFT.md",
+ "status": "DRAFT (v12 instrument; was \"contract v2 draft\" on 2 Nov 2026); not for production until adopted",
  "cells": [
   "F1 CB_LINK_ONLINE",
   "F2 PSP_LINK_ONLINE",

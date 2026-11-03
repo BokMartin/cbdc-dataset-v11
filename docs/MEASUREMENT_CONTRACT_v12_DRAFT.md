@@ -1,4 +1,6 @@
-# MEASUREMENT CONTRACT v2 — CBDC privacy dataset / paper v11 (DRAFT)
+# MEASUREMENT CONTRACT v12 — CBDC privacy dataset v12 (DRAFT)
+
+*Numbering: the instrument is versioned with the dataset from 3 Nov 2026. "Contract v2" in documents dated 2 Nov 2026 (ADR-001, ADR-002, audit, design memo) means this draft; contract v1.1 is the v11 instrument (`archive/v11/docs/`).*
 
 Status: **draft for the authors' consultation of 6 November 2026**, prepared 2 November 2026 by Claude from contract v1.1 (18 Oct) and ADR-001 (dispositions of the external consultation of 28 Oct). Nothing here is adopted until an author initials the corresponding ADR row. Items marked **[OPEN]** need an author decision on 6 Nov. Authors: Martin Bok, Dominik Stroukal. Technical collaborator: Claude. Target: Data & Policy (measurement and data paper, limited illustration).
 

@@ -12,7 +12,7 @@ usage:
   build_review_workbook.py review    --jur NO --name Norway --docs llm_fill/NO/DOCS.csv --registry REGISTRY.csv --contract C.md \
       --schema schema/cells_v1_1.json --fill opus=FILL_a.csv [--fill gpt=FILL_b.csv] --pdf-root "C:/.../dizertace v 11/" --out OUT.xlsx
   build_review_workbook.py reference --jur CL --name Chile  --docs texts/CL/DOCS.csv --registry REGISTRY.csv --contract C.md \
-      --schema schema/cells_v2_DRAFT.json --coder MB --pdf-root ... --out CL_reference_MB.xlsx [--cells "F1 CB_LINK_ONLINE,F7 LOW_ID_ROUTE"]
+      --schema schema/cells_v12_DRAFT.json --coder MB --pdf-root ... --out CL_reference_MB.xlsx [--cells "F1 CB_LINK_ONLINE,F7 LOW_ID_ROUTE"]
 No path is hard-coded; every input is an argument.
 """
 import argparse, json, os, re

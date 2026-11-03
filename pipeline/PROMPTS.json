@@ -1,9 +1,9 @@
 {
- "rendered_utc": "2026-11-02T14:49:59.827300+00:00",
- "contract": "docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
+ "rendered_utc": "2026-11-03T12:16:54.580718+00:00",
+ "contract": "archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md",
  "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
  "schema": "schema/cells_v1_1.json",
- "schema_sha256": "b2048e3da21ccb7286dca2264efd78e86670c1fcb3d1439414ab2b7d15f83b7a",
+ "schema_sha256": "c4e83f03a87f09d70d09e33f517e9e9dbaed73de0c0f58a3ec95e3f939fe2ebe",
  "prompts": {
   "extraction_stage1.system": {
    "file": "prompts/extraction_stage1.system.md",
