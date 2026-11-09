@@ -16,4 +16,4 @@ jobs:
           python scripts/site/build_site_data.py
           git diff --stat -- data/frame/projects.csv
       - name: no secrets in tree
-        run: "! grep -rIl 'sk-ant-\\|github_pat_\\|OPENAI_API_KEY=' --exclude-dir=.git . "
+        run: "! grep -rIl 'sk-ant-\\|github_pat_\\|OPENAI_API_KEY=' --exclude-dir=.git --exclude-dir=.github . "
