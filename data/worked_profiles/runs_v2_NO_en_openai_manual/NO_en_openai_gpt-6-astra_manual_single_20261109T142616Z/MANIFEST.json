@@ -1,0 +1,47 @@
+{
+ "jur": "NO_en",
+ "manual": true,
+ "interface": "OpenAI Playground (platform.openai.com)",
+ "operator": "MB (Codex-assisted)",
+ "provider": "openai",
+ "model": "gpt-6-astra",
+ "settings": {
+  "temperature": null,
+  "max_output_tokens": null,
+  "top_p": null,
+  "reasoning": "medium",
+  "other": "reasoning.mode=standard; reasoning.summary=auto; text.format=text; text.verbosity=medium; service_tier=default (Standard); tools=[]; stream=true; store=true; WebSocket mode enabled"
+ },
+ "date_utc": "2026-11-03",
+ "notes": "Completed single request. System instructions are exported by the Responses Playground with role=developer. Both input texts match the original ZIP files exactly. Temperature, top_p and max_output_tokens are not exposed by this model in this Playground and are absent from its code export; null means not explicitly set, not zero. Response copied using the Copy button in Responses API raw output; response.txt contains the decoded output_text string without edits. playground_log.txt is the post-run View code export of the full conversation, including the response; it is not a wire-level request log. playground_settings_before_run.txt is the pre-run View code export; the composer user message was not included in that pre-run export.",
+ "source_run": "runs_v2_NO_en",
+ "request": {
+  "system": {
+   "file": "requests/single.system.txt.gz",
+   "sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+   "chars": 22832
+  },
+  "user": {
+   "file": "requests/single.user.txt.gz",
+   "sha256": "7aa016cef6520d7d2247bdae4387ba22dc1a6b0f5ffec7431aed1993d04c7a50",
+   "chars": 835445
+  }
+ },
+ "pasted_text_check": {},
+ "response_sha256": "4d4468f3636b3c1d98cf15ba506e86ab429742a2218d2a75331152b602262c3b",
+ "response_chars": 20917,
+ "status": "ok_with_validation_problems",
+ "validation_problems": [
+  "F2 PSP_LINK_ONLINE: derivation='inferred: \u00a76.5; (i) banks maintain customer-to-ledger-address mappings in test case 1 (doc 7 p. 9); (ii) participating banks have ledger read access (doc 6 p. 12); (iii) linking an address to identity exposes its transaction history in that same retail sandbox (doc 6 p. 12).' not allowed",
+  "F4 PRIVATE_OFFLINE_AVAILABLE: claim_status='n/d' not allowed",
+  "F4 PRIVATE_OFFLINE_AVAILABLE: derivation='n/d' not allowed",
+  "F7 LOW_ID_ROUTE: claim_status='n/d' not allowed",
+  "F7 LOW_ID_ROUTE: derivation='n/d' not allowed",
+  "F11 aml_cft_tax_enforcement: claim_status='n/d' not allowed",
+  "F11 aml_cft_tax_enforcement: derivation='n/d' not allowed"
+ ],
+ "schema_sha256": "c4e83f03a87f09d70d09e33f517e9e9dbaed73de0c0f58a3ec95e3f939fe2ebe",
+ "contract_sha256": "ef1970f7779db01df0dd2b7050caa330b055d012f1258e1897fd2e55a81b21f7",
+ "ingested_utc": "2026-11-09T14:26:16.991952+00:00",
+ "caveat": "Manual run: the human-supplied settings cannot be verified from the response; token usage unavailable; treat as a development comparison unless the interface's own log is attached."
+}

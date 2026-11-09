@@ -1,0 +1,19 @@
+cell,agreement,anthropic_two_stage_value,anthropic_two_stage_evidence_state,anthropic_two_stage_claim_status,anthropic_two_stage_doc,anthropic_two_stage_page,openai_single_value,openai_single_evidence_state,openai_single_claim_status,openai_single_doc,openai_single_page
+F1 CB_LINK_ONLINE,value,no,partial,tested,7,10,no,documented,option,6,16
+F10 PROGRAMMABLE_RESTRICTIONS,value,no,partial,option,6,17,no,documented,option,6,17
+F11 aml_cft_tax_enforcement,value,n/d,unknown,n/d,4,46,n/d,unknown,n/d,6,16
+F11 cash_substitute_resilience,value,yes,documented,option,4,5,yes,documented,adopted,6,5
+F11 financial_inclusion,full,no,documented,adopted,6,6,no,documented,adopted,6,6
+F11 innovation_competitiveness,value,yes,documented,option,6,5,yes,documented,adopted,6,5
+F11 monetary_sovereignty_transmission,value,yes,partial,option,2,6,yes,documented,option,6,7
+F11 payment_modernisation,value,yes,documented,adopted,4,63,yes,documented,adopted,6,2
+F11 primary_objectives,differ,secure and efficient payment system (payment_modernisation),partial,adopted,4,63,innovation_competitiveness; cash_substitute_resilience,documented,adopted,6,5
+F11 primary_status,differ,one_primary,partial,adopted,4,63,several_joint,documented,adopted,6,5
+F12 LEDGER_TECHNOLOGY,value,permissioned_DLT,partial,tested,7,9,permissioned_DLT,documented,tested,7,9
+F2 PSP_LINK_ONLINE,differ,n/d,partial,tested,7,9,yes,documented,tested,6,12
+F3 LAWFUL_ACCESS_ROUTE,full,n/d,partial,option,6,16,n/d,partial,option,6,16
+F4 PRIVATE_OFFLINE_AVAILABLE,value,n/d,unknown,option,2,6,n/d,unknown,n/d,4,42
+F7 LOW_ID_ROUTE,value,n/d,partial,option,4,26,n/d,unknown,n/d,4,26
+F8 ONBOARDING_ID,value,yes,partial,option,6,16,yes,documented,option,4,24
+F9 TARGETED_REIDENTIFICATION,value,yes,partial,tested,6,12,yes,documented,tested,6,12
+# valid=True; {'value': 12, 'full': 2, 'differ': 3}; 

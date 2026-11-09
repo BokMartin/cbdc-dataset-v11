@@ -1,0 +1,27 @@
+{
+  "provider": "openai",
+  "model": "gpt-6-astra",
+  "temperature": null,
+  "max_output_tokens": null,
+  "top_p": null,
+  "reasoning": "medium",
+  "other": "reasoning.mode=standard; reasoning.summary=auto; text.format=text; text.verbosity=medium; service_tier=default (Standard); tools=[]; stream=true; store=true; WebSocket mode enabled",
+  "interface": "OpenAI Playground (platform.openai.com)",
+  "operator": "MB (Codex-assisted)",
+  "date_utc": "2026-11-03",
+  "notes": "Completed single request. System instructions are exported by the Responses Playground with role=developer. Both input texts match the original ZIP files exactly. Temperature, top_p and max_output_tokens are not exposed by this model in this Playground and are absent from its code export; null means not explicitly set, not zero. Response copied using the Copy button in Responses API raw output; response.txt contains the decoded output_text string without edits. playground_log.txt is the post-run View code export of the full conversation, including the response; it is not a wire-level request log. playground_settings_before_run.txt is the pre-run View code export; the composer user message was not included in that pre-run export.",
+  "requested_settings": {
+    "temperature": 0,
+    "top_p": 1,
+    "max_output_tokens": 32000,
+    "reasoning": "default"
+  },
+  "status": "completed",
+  "response_id": "resp_0467ce46e007cf01006aea2d51118887d2ae0e9e4f012ab392",
+  "message_id": "msg_0467ce46e007cf01006aea2d75a07c87d289c1ce071e333dc3",
+  "system_sha256": "18f1765892ddf62a23e52fe48455fdcf8d06e5da1e11102f7a5c2fce0f6826e5",
+  "user_sha256": "7aa016cef6520d7d2247bdae4387ba22dc1a6b0f5ffec7431aed1993d04c7a50",
+  "response_sha256": "4d4468f3636b3c1d98cf15ba506e86ab429742a2218d2a75331152b602262c3b",
+  "export_input_texts_verified": true,
+  "response_cell_count": 17
+}
