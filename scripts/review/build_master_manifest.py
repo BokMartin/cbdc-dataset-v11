@@ -10,7 +10,8 @@ registry doc_id or on SHA-256 (linked attachments on the parent candidate's file
 Output columns: master_path · project · source · id · workbook_id · year · title · fname · ext · size · sha256 · registry_sha256 ·
 hash_check · v11_verdict · decision_v12 (pre-fill, see build_all_documents_workbook.py) · decision_source · note.
 
-usage: build_master_manifest.py --items data/manifest/MASTER_ITEMS_2026-11-09.json --workbook <ALL xlsx> --out data/manifest/MASTER_MANIFEST_2026-11-09.csv
+usage: build_master_manifest.py --items data/manifest/MASTER_ITEMS_2026-11-10.json --workbook <ALL xlsx> --out data/manifest/MASTER_MANIFEST_2026-11-10.csv
+(10 Nov 2026: the folder was completed with the remaining 246 gap-check files; candidate ids are CAND-<pre-screen row> = workbook ids.)
 """
 import argparse, csv, json, os, collections
 import openpyxl

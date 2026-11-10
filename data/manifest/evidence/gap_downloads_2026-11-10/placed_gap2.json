@@ -1,0 +1,1884 @@
+{
+"144": {
+"project": "NO",
+"fname": "NO__2023-04__Finansiell-infrastruktur-2023-section-2-2-Digitale-sentralbankpenger-a.html",
+"sha256": "7f345529ad01f8482ad7da826980b17ffdaaa3a76550207941a13bef38b1ded1",
+"size": 154502,
+"url": "https://www.norges-bank.no/aktuelt/publikasjoner/Finansiell-infrastruktur---rapport/finansiell-infrastruktur-2023/nettrapport-finansiell-infrastruktur-2023/"
+},
+"145": {
+"project": "NO",
+"fname": "NO__2023-12__Central-bank-digital-currency-experimental-testing-in-project-Phase-4.html",
+"sha256": "8da94d2a7adaa80ab112f1ef345af0fe333cf776ff1f754504a8697812187dfc",
+"size": 30678,
+"url": "https://www.norges-bank.no/en/news-events/news-publications/Reports/Norges-Bank-Papers/2023/papers-32023-cbdc-testing/"
+},
+"146": {
+"project": "NO",
+"fname": "NO__2023-12__New-report-from-the-central-bank-digital-currency-working-group-news-i.html",
+"sha256": "450e1fe9abca03f6376f133a2ce11c37258cfb6f504cafadde7fbb7d3318831e",
+"size": 33471,
+"url": "https://www.norges-bank.no/en/news-events/news-publications/News-items/2023/2023-12-18-cbdc"
+},
+"147": {
+"project": "NO",
+"fname": "NO__2025-06__Finansiell-infrastruktur-2025-section-Tokenisering-og-sentralbankpenge.html",
+"sha256": "8e3a6eea07986c545bb5e0fb2adc1dd262a66acb189423b205cfc11f3d116308",
+"size": 234059,
+"url": "https://www.norges-bank.no/aktuelt/publikasjoner/Finansiell-infrastruktur---rapport/finansiell-infrastruktur-2025/nettrapport-finansiell-infrastruktur-2025/"
+},
+"148": {
+"project": "NO",
+"fname": "NO__2025-12__Norges-Bank-does-not-currently-recommend-the-introduction-of-a-central.html",
+"sha256": "4be39c8e4c8e818474215dedf896e13e73f4d12202b0f33830da83c60fc80abf",
+"size": 31612,
+"url": "https://www.norges-bank.no/en/news-events/news/News-items/2025/25-12-10-cbdc/"
+},
+"149": {
+"project": "NO",
+"fname": "NO__2026-03__Exploration-of-central-bank-digital-currency-news-item-on-publication.html",
+"sha256": "e86cfdeae336d34bb6b36b2015f1a46244e18df00664cb65f18f25d98fe58716",
+"size": 30561,
+"url": "https://www.norges-bank.no/en/news-events/news/News-items/2026/26-03-23-cbdc/"
+},
+"150": {
+"project": "NO",
+"fname": "NO__2026-03__Assessment-of-the-potential-consequences-for-Norway-of-the-introductio.html",
+"sha256": "0c27f2349c648125d0a17e312adcde731089c450c80123cb848091d11b36cab9",
+"size": 30714,
+"url": "https://www.norges-bank.no/en/news-events/publications/Norges-Bank-Papers/2026/nb-memo-2-CBDC-consequenses/"
+},
+"151": {
+"project": "NO",
+"fname": "NO__2026-03__WHOLESALE-Tokenised-bank-deposits-wholesale-CBDC-and-the-central-bank.html",
+"sha256": "90789a226811ed69c02eda7239f47114b30c6bebce639e7dd11e65e76d5f5cda",
+"size": 30169,
+"url": "https://www.norges-bank.no/en/news-events/publications/Staff-Memo/2026/staff-memo-1-2026-cbdc-liquidity/"
+},
+"152": {
+"project": "NO",
+"fname": "NO__2026-06__Norges-Bank-does-not-currently-recommend-the-introduction-of-a-central.html",
+"sha256": "6af7ab771b7a15dc165e56f214eda1f57a7c9d299354b74505c1e2553f7c7d72",
+"size": 42709,
+"url": "https://www.norges-bank.no/en/topics/payment-system/central-bank-digital-currency/assessment-of-cbdc/"
+},
+"153": {
+"project": "NO",
+"fname": "NO__2026-06__Finansiell-infrastruktur-2026-article-Tokenisering-og-digitale-sentral.html",
+"sha256": "327b617c7497ee548e89ad2f96582388e0f877110721c181676beeb318bc5c1e",
+"size": 190826,
+"url": "https://www.norges-bank.no/aktuelt/publikasjoner/Finansiell-infrastruktur---rapport/finansiell-infrastruktur-2026/nettrapport-finansiell-infrastruktur-2026/"
+},
+"24": {
+"project": "CA",
+"fname": "CA__2020-02__Technology-Approach-for-a-CBDC-Staff-Analytical-Note-2020-6.html",
+"sha256": "48d049fe962fe1fee5a6ac611c4d6b93337cc966f74884f85e5ee6dc44d0df2f",
+"size": 152626,
+"url": "https://www.bankofcanada.ca/2020/02/staff-analytical-note-2020-6/"
+},
+"25": {
+"project": "CA",
+"fname": "CA__2020-02__Contingency-planning-for-a-central-bank-digital-currency.html",
+"sha256": "708a4c975d4c28eaf3df2ffc354e9b470ced8a1dbf071a8aa81bb0d173ffabcc",
+"size": 205366,
+"url": "https://www.bankofcanada.ca/2020/02/contingency-planning-central-bank-digital-currency/"
+},
+"26": {
+"project": "CA",
+"fname": "CA__2020-02__Money-and-Payments-in-the-Digital-Age-speech-Timothy-Lane-Deputy-Gover.html",
+"sha256": "4ba092c12a789ad0ccd1b806511e42b72849a60892267e1d617ba44d80b8a56a",
+"size": 161688,
+"url": "https://www.bankofcanada.ca/2020/02/money-payments-digital-age/"
+},
+"27": {
+"project": "CA",
+"fname": "CA__2020-06__Privacy-in-CBDC-technology-Staff-Analytical-Note-2020-9.html",
+"sha256": "da986f3f0b782cb0a5b18940cba77e92193c4fd1a20af9fe5843a9710e7371a1",
+"size": 156613,
+"url": "https://www.bankofcanada.ca/2020/06/staff-analytical-note-2020-9/"
+},
+"28": {
+"project": "CA",
+"fname": "CA__2021-02__Changing-how-we-pay-speech-summary-Timothy-Lane.html",
+"sha256": "d453383a8d63d85b58243a22ec4f8e5f54720c8cfd48c353600d836aaf6a179b",
+"size": 144592,
+"url": "https://www.bankofcanada.ca/2021/02/changing-how-we-pay/"
+},
+"29": {
+"project": "CA",
+"fname": "CA__2022-10__Archetypes-for-a-retail-CBDC-Staff-Analytical-Note-2022-14.html",
+"sha256": "732582136391f5b409c2e8c3136c03fef5d8b51a3132b6c2067d073e44951bee",
+"size": 219383,
+"url": "https://www.bankofcanada.ca/2022/10/staff-analytical-note-2022-14/"
+},
+"30": {
+"project": "CA",
+"fname": "CA__2023-05__Bank-of-Canada-launches-public-consultations-on-a-digital-dollar-press.html",
+"sha256": "f4fd547c22ff733188196bcd62286ced0240a3f3f783bb3495d61183efb0f00c",
+"size": 136534,
+"url": "https://www.bankofcanada.ca/2023/05/bank-canada-launches-public-consultations-digital-dollar/"
+},
+"31": {
+"project": "CA",
+"fname": "CA__2023-11__What-we-heard-Bank-of-Canada-publishes-report-on-digital-dollar-consul.html",
+"sha256": "30f9c2acf456abf6e36c7115f28dd8d8aeb24ce5d4b0108e9d5d681bd711be6e",
+"size": 135769,
+"url": "https://www.bankofcanada.ca/2023/11/what-we-heard-bank-of-canada-publishes-report-on-digital-dollar-consultations-outlines-further-engagement-plans/"
+},
+"32": {
+"project": "CA",
+"fname": "CA__2023-11__What-we-heard-Engaging-with-financial-institutions-on-a-digital-Canadi.pdf",
+"sha256": "11c98afab03b2ce3ebf2cb2e06af15a8868f29071c7926854c33113ddac3d692",
+"size": 270924,
+"url": "https://www.bankofcanada.ca/wp-content/uploads/2023/11/Engaging-with-financial-institutions-on-a-digital-Canadian-dollar.pdf"
+},
+"33": {
+"project": "CA",
+"fname": "CA__2024-03__Bank-of-Canada-Annual-Report-2023-Currency-chapter-Exploring-a-Digital.html",
+"sha256": "74e8f2bfe11ed8ddd09fa2776e0558c3a6e6d875a14e2c9936f5d0e8dc99ce49",
+"size": 154005,
+"url": "https://www.bankofcanada.ca/publications/annual-reports-quarterly-financial-reports/annual-report-2023/currency/"
+},
+"34": {
+"project": "CA",
+"fname": "CA__2025-03__Bank-of-Canada-Annual-Report-2024-Currency-chapter.html",
+"sha256": "a56067b17787a90bacad03773439928793246ad6c133a3a887e89924efe23e75",
+"size": 152866,
+"url": "https://www.bankofcanada.ca/publications/annual-reports-quarterly-financial-reports/annual-report-2024/currency/"
+},
+"186": {
+"project": "SE",
+"fname": "SE__2018-10__The-Riksbank-s-e-krona-project-Report-2.pdf",
+"sha256": "0b7c62e438cae069a9f47b2c1591d79c77a7d437ff693ffe2c16c2f3131ec334",
+"size": 1429589,
+"url": "https://www.riksbank.se/globalassets/media/rapporter/e-krona/2018/the-riksbanks-e-krona-project-report-2.pdf"
+},
+"187": {
+"project": "SE",
+"fname": "SE__2021-04__E-krona-pilot-phase-1.pdf",
+"sha256": "9b134f0a16f126a5ed7a1ccac51f9fe3622c8d13c84b5ceed18c7ef8d798b219",
+"size": 1352127,
+"url": "https://www.riksbank.se/globalassets/media/rapporter/e-krona/2021/e-krona-pilot-phase-1.pdf"
+},
+"188": {
+"project": "SE",
+"fname": "SE__2022__Payments-Report-2022-The-Riksbank-is-making-preparations-for-a-possibl.html",
+"sha256": "9da6b95754ec37cb338ea6f029b3fb1a7d0de443493016f5b45cfecd617db0e3",
+"size": 513087,
+"url": "https://www.riksbank.se/en-gb/payments--cash/payments-in-sweden/payments-report-2022/the-riksbanks-work-and-policy/the-riksbank-is-making-preparations-for-a-possible-e-krona-/"
+},
+"189": {
+"project": "SE",
+"fname": "SE__2022-04__E-krona-pilot-phase-2.pdf",
+"sha256": "23bb8c2f4e7fd0fe65a40d449ee9dc4d4897284abbab950d0d2fae23c593621b",
+"size": 1868463,
+"url": "https://www.riksbank.se/globalassets/media/rapporter/e-krona/2022/e-krona-pilot-phase-2.pdf"
+},
+"190": {
+"project": "SE",
+"fname": "SE__2023-04__E-krona-pilot-phase-3.pdf",
+"sha256": "8548a6f141fcb4d84efdbf5b73c0a1241d0df479742fed03f198ec6ff83b18ad",
+"size": 1611231,
+"url": "https://www.riksbank.se/globalassets/media/rapporter/e-krona/2023/e-krona-pilot-phase-3.pdf"
+},
+"191": {
+"project": "SE",
+"fname": "SE__2023-08__Work-on-e-krona-entering-new-phase-news.html",
+"sha256": "9e8be1f69787b51350424e16ad6389b3a63b7218bdbfcb1c9287c61670b0f3c5",
+"size": 502234,
+"url": "https://www.riksbank.se/en-gb/press-and-published/notices-and-press-releases/notices/2023/work-on-e-krona-entering-new-phase/"
+},
+"192": {
+"project": "SE",
+"fname": "SE__2023-10__Consultation-response-regarding-The-state-and-payments-SOU-2023-16.pdf",
+"sha256": "aeea4e705b81e97ffdddff4e563da0fd15dd23d9b1e2ceef5c726e855a395242",
+"size": 965687,
+"url": "https://www.riksbank.se/globalassets/media/remisser/riksbankens-remissvar/engelska/2023/consultation-response-regarding-the-state-and-payments-sou-2023_16.pdf"
+},
+"193": {
+"project": "SE",
+"fname": "SE__2023-10__Political-decisions-needed-urgently-so-that-everyone-can-pay-press-rel.html",
+"sha256": "401211a1de356302d5e75a352b83f83e2a99ba295533a953d4256c01383275ab",
+"size": 506418,
+"url": "https://www.riksbank.se/en-gb/press-and-published/notices-and-press-releases/press-releases/2023/political-decisions-needed-urgently--so-that-everyone-can-pay/"
+},
+"194": {
+"project": "SE",
+"fname": "SE__2024__Payments-Report-2024-Work-on-the-e-krona-continues.html",
+"sha256": "125d02a75fe47b2d08c0cb68c861ff947dd1c80701babe3edde211295b1c58b0",
+"size": 509615,
+"url": "https://www.riksbank.se/en-gb/payments--cash/payments-in-sweden/payments-report--2024/the-riksbanks-work-and-policy/work-on-the-e-krona-continues/"
+},
+"195": {
+"project": "SE",
+"fname": "SE__2024-03__E-krona-pilot-phase-4-offline-payments-with-e-krona.pdf",
+"sha256": "269cbf61bcebdcf9094e68ef379bec0b331c771d36f535fdd1a90a566cfac4e0",
+"size": 2035367,
+"url": "https://www.riksbank.se/globalassets/media/rapporter/e-krona/2024/e-krona-pilot-phase-4.pdf"
+},
+"196": {
+"project": "SE",
+"fname": "SE__2026-10__Letter-to-the-Committee-on-Finance-information-on-developments-that-br.pdf",
+"sha256": "04a5412337f8fbe9fb3c5e630f0fdd28454f5c613005d721223da6db6a7ae536",
+"size": 235546,
+"url": "https://www.riksbank.se/globalassets/media/nyheter--pressmeddelanden/nyheter/2026/261015-skrivelse-till-fiu/letter-to-the-committee-on-finance--information-on-developments-that-bring-the-issue-of-a-digital-krona-to-the-fore.pdf"
+},
+"214": {
+"project": "TH",
+"fname": "TH__2021-04__The-Way-Forward-for-Retail-Central-Bank-Digital-Currency-in-Thailand-c.pdf",
+"sha256": "82f3f56cd56b9d1ecab0ac2015c5d1fdad0c1d27d8fffcc160b7614d2ab8de6a",
+"size": 4251251,
+"url": "https://www.bot.or.th/content/dam/bot/documents/th/financial-innovation/cbdc/20210402_BOT_RetailCBDCPaper.pdf"
+},
+"215": {
+"project": "TH",
+"fname": "TH__2021-04__Press-release-No-21-2021-The-Way-Forward-for-Retail-CBDC-in-Thailand.html",
+"sha256": "a901255487d027a09a6494d17da3a9062f4189904b2927bad8e17c09a6a8ed71",
+"size": 88375,
+"url": "https://www.bot.or.th/en/news-and-media/news/news-20210402.html"
+},
+"216": {
+"project": "TH",
+"fname": "TH__2021-08__Retail-CBDC-Implications-on-Monetary-Policy-and-Financial-Stability-in.pdf",
+"sha256": "11da3930d78d82ff614d9a0e235c59bf69e6e16f81eeff009fcde07cea6aa883",
+"size": 1781670,
+"url": "https://www.bot.or.th/content/dam/bot/documents/th/financial-innovation/cbdc/20210819_CBDC%20%E0%B8%99%E0%B8%B1%E0%B8%A2%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%82%E0%B8%A2%E0%B8%9A%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99.pdf"
+},
+"217": {
+"project": "TH",
+"fname": "TH__2021-08__Press-release-No-60-2021-Retail-CBDC-Implications-on-the-Thai-Financia.html",
+"sha256": "7662f68ac1427afbc4712d7bc98a871d398f1778d2e89b40c10b07d233b5d8fe",
+"size": 95178,
+"url": "https://www.bot.or.th/en/news-and-media/news/news-20210819.html"
+},
+"218": {
+"project": "TH",
+"fname": "TH__2022-02__Repositioning-Thailand-s-Financial-Sector-for-a-Sustainable-Digital-Ec.pdf",
+"sha256": "11bbccce0f9b038f8d6fef96a39029f366baba90588cb1c6e866d24e58b33db1",
+"size": 9879321,
+"url": "https://www.bot.or.th/content/dam/bot/financial-innovation/financial-landscape/ConsultationPaper-FinancialLandscape-EN.pdf"
+},
+"219": {
+"project": "TH",
+"fname": "TH__2022-08__Press-release-No-39-2022-Progress-of-Retail-CBDC-Development.html",
+"sha256": "b40684420dbba852c3c458e2fb9175928fd3c87f09d4b88722b8c64642f2ed88",
+"size": 92712,
+"url": "https://www.bot.or.th/en/news-and-media/news/news-20220805.html"
+},
+"220": {
+"project": "TH",
+"fname": "TH__2022-10__Press-release-No-61-2565-Key-points-from-BOT-Digital-Finance-Conferenc.html",
+"sha256": "60810ee733ad010d2256414b06610525b8edcafe6a6d2505837dc31335625a9f",
+"size": 181910,
+"url": "https://www.bot.or.th/th/news-and-media/news/news-20221030-2.html"
+},
+"221": {
+"project": "TH",
+"fname": "TH__2023__Annual-Report-2022-retail-CBDC-section.pdf",
+"sha256": "3719bef0540237bb078d2f464f487276581403aa9c878e56fac2a79ac8c0a008",
+"size": 15432731,
+"url": "https://www.bot.or.th/content/dam/bot/documents/en/research-and-publications/reports/annual-report/AnnualReport2022.pdf"
+},
+"222": {
+"project": "TH",
+"fname": "TH__2024__Annual-Report-2023-Box-5-The-Progress-of-CBDC.pdf",
+"sha256": "618a7449952434feb7adb4dd2ff3a5659560a8abdee39f9882eff05a8124d8d3",
+"size": 27937493,
+"url": "https://www.bot.or.th/content/dam/bot/documents/en/research-and-publications/reports/annual-report/AnnualReport_2023Eng.pdf"
+},
+"223": {
+"project": "TH",
+"fname": "TH__2024-04__Retail-CBDC-Pilot-Program-Conclusion-Report-and-Plan-landing-page.html",
+"sha256": "31e48591b95033dd5339c8d22d570fce71e95d323a374b63bf636765854ca6f7",
+"size": 89555,
+"url": "https://www.bot.or.th/en/financial-innovation/digital-finance/central-bank-digital-currency-tokenization-emerging-payment-technologies/newsandmedia/Pilot-CBDC-2024.html"
+},
+"224": {
+"project": "TH",
+"fname": "TH__2025__Annual-Report-2024-Retail-CBDC-Pilot-section.pdf",
+"sha256": "f8d4ecaa14f23bf99d94dd9b358bd1578ca75efda4c3eac6083c98bad291e751",
+"size": 18054508,
+"url": "https://www.bot.or.th/content/dam/bot/documents/en/research-and-publications/reports/annual-report/AnnualReport_2024Eng.pdf"
+},
+"4": {
+"project": "AU",
+"fname": "AU__2020-09__Retail-Central-Bank-Digital-Currency-Design-Considerations-Rationales.html",
+"sha256": "6278377ddafea5edfd7f9202ae8c95008ce226734cb4f258a20cb3b0ca094a28",
+"size": 121742,
+"url": "https://www.rba.gov.au/publications/bulletin/2020/sep/retail-central-bank-digital-currency-design-considerations-rationales-and-implications.html"
+},
+"5": {
+"project": "AU",
+"fname": "AU__2020-10__Retail-Central-Bank-Digital-Currency-Design-Considerations-and-Rationa.html",
+"sha256": "c5654e1c80c85e9d556b12fd76c6134d991d00a5357b6ba17ac71ddd1354aded",
+"size": 69683,
+"url": "https://www.rba.gov.au/speeches/2020/sp-so-2020-10-14.html"
+},
+"6": {
+"project": "AU",
+"fname": "AU__2021-12__Payments-The-Future-speech-Philip-Lowe-Governor.html",
+"sha256": "9caec04818ecdfad1021bd9d86ee3f13b9040be18e9247d84f357c5569b44229",
+"size": 53423,
+"url": "https://www.rba.gov.au/speeches/2021/sp-gov-2021-12-09.html"
+},
+"8": {
+"project": "AU",
+"fname": "AU__2023-08__Reserve-Bank-and-Digital-Finance-CRC-Complete-CBDC-Research-Project-Jo.html",
+"sha256": "f66fc98a79a521d1c05e9f0cfab4b4e0d51ede09ea6618d9557224765b0f8548",
+"size": 28245,
+"url": "https://www.rba.gov.au/media-releases/2023/mr-23-21.html"
+},
+"9": {
+"project": "AU",
+"fname": "AU__2024-04__Valuing-Safety-and-Privacy-in-Retail-Central-Bank-Digital-Currency-RDP.html",
+"sha256": "a1f88ec85bd46677cc6c79b22fd7fe14ecdf0b3dd5abe38ec58ac29d5cd99ac5",
+"size": 32616,
+"url": "https://www.rba.gov.au/publications/rdp/2024/2024-02.html"
+},
+"10": {
+"project": "AU",
+"fname": "AU__2024-09__RBA-and-Treasury-Joint-Paper-on-Central-Bank-Digital-Currency-and-the.html",
+"sha256": "13a240508c64e2fbba2a6175560f24ec535598419b3017f42f500d902b50450b",
+"size": 26063,
+"url": "https://www.rba.gov.au/media-releases/2024/mr-24-17.html"
+},
+"11": {
+"project": "AU",
+"fname": "AU__2024-09__Financial-Innovation-and-the-Future-of-CBDC-in-Australia-speech-Brad-J.html",
+"sha256": "a3f4a1511ab61bb80524e07bc096743864b7d8263c7185aa9ccd05d53aaba352",
+"size": 74213,
+"url": "https://www.rba.gov.au/speeches/2024/sp-ag-2024-09-18.html"
+},
+"104": {
+"project": "KZ",
+"fname": "KZ__2021-05__Answers-to-questions-on-the-consultative-report.pdf",
+"sha256": "32f2bf5ae2da4811e734b2ea865555625af13e4b85cf06161be94d01f6709486",
+"size": 1230333,
+"url": "https://nationalbank.kz/file/download/67167"
+},
+"105": {
+"project": "KZ",
+"fname": "KZ__2022-04__FAQ-on-the-digital-tenge.pdf",
+"sha256": "c802c47fa7b8c85df56c7d223a0dcc1b86a4cc3770745865d51791e656927fc4",
+"size": 224807,
+"url": "https://nationalbank.kz/file/download/76990"
+},
+"107": {
+"project": "KZ",
+"fname": "KZ__2022-12__White-Paper-2022-Results-of-the-study-on-the-need-to-introduce-the-dig.pdf",
+"sha256": "11ebb84327928708db66af4c7cffba089a2332301e0b9acc29634f341178b1d6",
+"size": 94933827,
+"url": "https://nationalbank.kz/file/download/85868"
+},
+"108": {
+"project": "KZ",
+"fname": "KZ__2023-09__Status-report-implementation-plan-for-phase-one.pdf",
+"sha256": "271bc4ed2cdbb9ca641025100bf36631e9dac5dca3ff13b6585e4b93d31da0b4",
+"size": 22685923,
+"url": "https://nationalbank.kz/file/download/95201"
+},
+"110": {
+"project": "KZ",
+"fname": "KZ__2026-01__Information-message-on-the-legal-status-of-the-NDFI.pdf",
+"sha256": "02152c0841f640b8329544c6674b5b01a9022c0e6135e3b3131ab33d9adbd9ed",
+"size": 618879,
+"url": "https://nationalbank.kz/file/download/116636"
+},
+"111": {
+"project": "KZ",
+"fname": "KZ__2026-02__.pdf",
+"sha256": "be32753bc38b25d61b43c06865f22b5a6e581fcff1bb0ca686ac9c8e3e6d68d1",
+"size": 583442,
+"url": "https://nationalbank.kz/file/download/120097"
+},
+"112": {
+"project": "KZ",
+"fname": "KZ__2026-04__42-Rules-on-issuance-circulation-and-redemption-of-digital-tenge.docx",
+"sha256": "d8d757091711f652887dffd5a698f4c918b457875d551fe663290b58338c5d23",
+"size": 152929,
+"url": "https://nationalbank.kz/file/download/126513"
+},
+"109": {
+"project": "KZ",
+"fname": "KZ__2026-01__1-62-4-62-5-41-1-41-4-digital-tenge-provisions-as-amended-by-the-Janua.html",
+"sha256": "a8d3dc915d919cead12092ea890efd70894ee78e92056d8cdb86747d4e9d29c4",
+"size": 934798,
+"url": "https://adilet.zan.kz/rus/docs/Z1600000011"
+},
+"114": {
+"project": "MO",
+"fname": "MO__2024-09__e-MOP-R-D-project-proceeding-in-an-orderly-way.html",
+"sha256": "ba2dcdac08726c99daa012602811b7e45844f4d1ab5daef3f7b73baca2e2e690",
+"size": 91212,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20240923-1/1140"
+},
+"115": {
+"project": "MO",
+"fname": "MO__2024-09__AMCM-and-PBoC-Digital-Currency-Institute-advance-e-MOP.html",
+"sha256": "dac4679c8ca8f23b3ff1666634a851f9df2911f2962a9d5242051d9fe69647ea",
+"size": 94862,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20240926/1141"
+},
+"116": {
+"project": "MO",
+"fname": "MO__2024-12__e-MOP-Q-A-FAQ.html",
+"sha256": "28c13e34b7be0e8a72298239d4933c62273ef2a8f0085802e431d0b854fac48e",
+"size": 108592,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/Special_Coverage/emop/emop-faq"
+},
+"118": {
+"project": "MO",
+"fname": "MO__2024-12__prototype-ceremony.html",
+"sha256": "5e03dd99cf4763ec1de9799e81046948dc8c84f2add49feb8400d1008fda0224",
+"size": 100565,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20241212eMOP01/1172"
+},
+"119": {
+"project": "MO",
+"fname": "MO__2024-12__e-MOP-White-Paper-formally-released.html",
+"sha256": "da56e02fbbba3b7b47a35ac54f513f145e912b5eb9c85303c6f291689dd45f93",
+"size": 94354,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20241212eMOP02/1173"
+},
+"120": {
+"project": "MO",
+"fname": "MO__2024-12__e-MOP-introduction-special-web-page.html",
+"sha256": "3f2eaa1dafa0fca8dd5ca36961ac983fd1581e12ca63caf6ce7d5364e870c7dc",
+"size": 89653,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/Special_Coverage/emop/emop-introduction"
+},
+"122": {
+"project": "MO",
+"fname": "MO__2025-11__2025-policy-focus-financial-sector-2025.html",
+"sha256": "84b360102f2fd5bef5655d0ce34c5b8fe056bc65bc92b9aa9fef93ae5c5c95d9",
+"size": 102697,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20251117_DAP/1292"
+},
+"124": {
+"project": "MO",
+"fname": "MO__2026-06__China-Lusophone-CBDC-seminar.html",
+"sha256": "f9d90216518bd579d7486da6d4d1517318a639e7ee681393493b522602155fab",
+"size": 105114,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/DAP_20260601/1384"
+},
+"125": {
+"project": "MO",
+"fname": "MO__2026-06__WHOLESALE-mBridge-23-first-day-on-mBridge.html",
+"sha256": "0b02923c48b839878e41f2e6032226743bd347435aa3ce8e50aee963233d0a92",
+"size": 91494,
+"url": "https://www.amcm.gov.mo/zh-hant/news-notice/statement/detail/20260603_mbridge/1387"
+},
+"117": {
+"project": "MO",
+"fname": "MO__2024-12__prototype-demonstration-slides.pdf",
+"sha256": "3551db60e49b60e009a77a15ca9dd2b3699ac65c85c68c8ceaf9c067519d1309",
+"size": 4438154,
+"url": "https://cdn.amcm.gov.mo/uploads/media/images/emop/Demonstracao_slides.pdf"
+},
+"121": {
+"project": "MO",
+"fname": "MO__2025-07__2024-AMCM-Annual-Report-2024.pdf",
+"sha256": "f2dc12633769a517116d57bc630cad89f9140e9a745a27cd044cafd21cd3fe58",
+"size": 9002722,
+"url": "https://cdn.amcm.gov.mo/uploads/media/research_and_stats/annual_reports/2024/annual_report_2024_cn_web_r.pdf"
+},
+"205": {
+"project": "SZ",
+"fname": "SZ__2022-10__Press-release-Central-Bank-of-Eswatini-partners-with-Giesecke-Devrient.pdf",
+"sha256": "9db73171bf131dc9fc93810c14f916fb13ade1b1750a8e22c9f544ba240fa8d5",
+"size": 134309,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2022/10/Central-Bank-Digital-Currency-Press-Release-1.pdf"
+},
+"207": {
+"project": "SZ",
+"fname": "SZ__2023-05__Initial-Design-Paper-for-the-Digital-Lilangeni-final-pre-pilot-DV07.pdf",
+"sha256": "64a5b1e714f8d52e51354a32a0da7103c26e4825dcf8ccf370c98c4e93551b84",
+"size": 933008,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2021/04/DV07-Initial-Digital-Lilangeni-Design-Paper-final-pre-pilot-Final.pdf"
+},
+"208": {
+"project": "SZ",
+"fname": "SZ__2023-10__Governor-s-speech-Presentation-of-the-2022-23-Annual-Integrated-Report.pdf",
+"sha256": "c158566147eabd4d52cdefca27d58ebf3e51303a105aebe5072faa8045e2133d",
+"size": 440231,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2021/04/Governors-Speech-Annual-Integrated-Report-Presentation-2-October-2023.pdf"
+},
+"209": {
+"project": "SZ",
+"fname": "SZ__2024-08__Annual-Integrated-Report-2023-24-section-Central-Bank-Digital-Currency.pdf",
+"sha256": "8064651ff509ca43013e79e29b6d4f0c1c7d79b2f9e7c3e3f7fa3501e8711680",
+"size": 9068360,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2024/08/2023-24-Annual-Integrated-Report-min.pdf"
+},
+"231": {
+"project": "TW",
+"fname": "TW__2020-12__.pdf",
+"sha256": "a68e7342575e621694c1f38cd40f22c16eb76a83fa640badd90460482401cc52",
+"size": 885707,
+"url": "https://www.cbc.gov.tw/dl-162617-030b4943f1774e93897002fdaee6f115.html"
+},
+"101": {
+"project": "KE",
+"fname": "KE__2023-05__Discussion-Paper-on-Central-Bank-Digital-Currency-Comments-from-the-Pu.pdf",
+"sha256": "535ae41f6d94695e9fa9776804c559a5aa8d0092640cb64cc3264683f6f726d6",
+"size": 1741279,
+"url": "https://www.centralbank.go.ke/wp-content/uploads/2023/06/Discussion-Paper-on-Central-Bank-Digital-Currency-Comments-from-the-Public.pdf"
+},
+"102": {
+"project": "KE",
+"fname": "KE__2023-06__Press-Release-Issuance-of-Discussion-Paper-on-Central-Bank-Digital-Cur.pdf",
+"sha256": "3c4139e7df4621b1f6abd0ad5ba6714a40e98948d05c1ea2de93dbf166160bbb",
+"size": 107131,
+"url": "https://www.centralbank.go.ke/uploads/press_releases/103592893_Press%20Release%20-%20Issuance%20of%20Discussion%20Paper%20on%20Central%20Bank%20Digital%20Currency%20-%20Comments%20from%20the%20Public.pdf"
+},
+"2": {
+"project": "AE",
+"fname": "AE__2024-06__The-CBUAE-successfully-launches-Project-mBridge-Minimum-Viable-Product.pdf",
+"sha256": "5a646d9776950996f2184677e9051312c5b2e6e5b3a6b62e0e7a71a3455203c2",
+"size": 140801,
+"url": "https://centralbank.ae/media/zo1jlmsq/the-cbuae-successfully-launches-project-mbridge-minimum-viable-product-platform-for-early-adopters-en.pdf"
+},
+"1": {
+"project": "AE",
+"fname": "AE__2024__CBUAE-Annual-Report-2023-section-8-9-1-Digital-Dirham.pdf",
+"sha256": "0496ca33a23bb15a1670d051956d594a1a7abc2f60b6b8a94431219da3e7264d",
+"size": 44646674,
+"url": "https://www.centralbank.ae/media/4woismcv/cbuae-annual-report_2023_a4_e-2.pdf"
+},
+"0": {
+"project": "AE",
+"fname": "AE__2023-11__Federal-Decree-Law-No-54-of-2023-Amending-Certain-Provisions-of-Federa.html",
+"sha256": "4270666ea4880a96f26e7e26c33402d6f14ac1991ab0400f13be690a1edd1b25",
+"size": 132582,
+"url": "https://rulebook.centralbank.ae/node/5802"
+},
+"14": {
+"project": "AW",
+"fname": "AW__2025-11__Summary-Report-FPN-Conference-2025-Driving-the-Future-of-Payments-incl.pdf",
+"sha256": "359082c9e3022aca2f342513b3156c54212f8c1354c8444ba672a8bad8d50994",
+"size": 27979390,
+"url": "https://www.cbaruba.org/fpn/Summary%20Report%20FPN%20Conference%202025.pdf"
+},
+"15": {
+"project": "AW",
+"fname": "AW__2026-05__Operational-Report-2025-Centrale-Bank-van-Aruba.pdf",
+"sha256": "752afb64fa572501c69151a5af666567c406cd8aa23a41572a5630f9d0b72c5a",
+"size": 2273313,
+"url": "https://www.cbaruba.org/readBlob.do?id=19029"
+},
+"170": {
+"project": "PW",
+"fname": "PW__2024-07__Republic-of-Palau-Stablecoin-Program-Phase-2a-Report-Palau-National-Pa.pdf",
+"sha256": "f39ff9cf7d8dd353fed23501f9f8d633cfb5773dbf85408f249ec61ae768ae27",
+"size": 2086785,
+"url": "https://www.palaugov.pw/wp-content/uploads/Palau-National-Payment-System-Phase-2a-Final-Report.pdf"
+},
+"171": {
+"project": "PW",
+"fname": "PW__2026__Palau-Stablecoin-official-program-page-listing-reports-FAQs-draft-bill.html",
+"sha256": "d69f7741ff60c4d6e3ca8f7065c648a3934ca230b8f5ce34cdaeba24f1b99fae",
+"size": 252748,
+"url": "https://www.palaugov.pw/stablecoin/"
+},
+"7": {
+"project": "AU",
+"fname": "AU__2023-06__A-Strategic-Plan-for-Australia-s-Payments-System.html",
+"sha256": "6428d549e01159ec30cd8c346625d929823187991fc829aa4a01268c095a96bc",
+"size": 24897,
+"url": "https://treasury.gov.au/publication/p2023-404960"
+},
+"7-pdf": {
+"project": "AU",
+"fname": "AU__2023-06__A-Strategic-Plan-for-Australia-s-Payments-System__attachment-1.pdf",
+"sha256": "966e7919307c1e498115d23cd52283e569415405d2b47292f68c27fa3e92064d",
+"size": 462484,
+"url": "https://treasury.gov.au/publication/p2023-404960"
+},
+"126": {
+"project": "MU",
+"fname": "MU__2022-04__Intervention-of-Governor-Harvesh-Seegolam-during-discussion-on-Central.html",
+"sha256": "9afb03fb16d982b257f78b9d44dd46afdec9a9e7501353023ed5cd32d0b5cd6f",
+"size": 219329,
+"url": "https://www.bom.mu/media/speeches/intervention-governor-harvesh-seegolam-during-discussion-central-bank-digital-currencies-and"
+},
+"43": {
+"project": "CN",
+"fname": "CN__2021-07__transcript-of-white-paper-press-briefing.html",
+"sha256": "5248c8a7d0efd61e8cb95abe850b3acaf1f3bf815ad6b50e513142ccd9d076f5",
+"size": 50607,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212553792417/index.html",
+"note": ""
+},
+"44": {
+"project": "CN",
+"fname": "CN__2021-11__30-Yi-Gang-BOFIT-30th-anniversary.html",
+"sha256": "4b4e3fd66d9abbf6f22136c41d57b45bbf8d26afcd50d3d37b56c6e9ed0f0967",
+"size": 29325,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212552085568/index.html",
+"note": ""
+},
+"45": {
+"project": "CN",
+"fname": "CN__2022-04__pilot-work-symposium.html",
+"sha256": "5336bbb92318f2ed748e4ad06b30901d0a92ea436e2b2a49a4382caae026ed36",
+"size": 26012,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212552431371/index.html",
+"note": ""
+},
+"46": {
+"project": "CN",
+"fname": "CN__2022-10__PBOC-achievements-series-article.html",
+"sha256": "ccd88196df17da895ab44c054a18078df9d70780414604ed85dbf879a59ec72e",
+"size": 16824,
+"url": "https://www.pbc.gov.cn/redianzhuanti/118742/4657542/4678070/index.html",
+"note": ""
+},
+"47": {
+"project": "CN",
+"fname": "CN__2022-10__2022-Yi-Gang-Hong-Kong-FinTech-Week-2022.html",
+"sha256": "d0bef1d8da8d6ebae00b82da8e52bf6364070a409b2463ab5be7a63451436a37",
+"size": 25987,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2025092212552844288/index.html",
+"note": ""
+},
+"48": {
+"project": "CN",
+"fname": "CN__2025-10__Pan-Gongsheng-2025-Financial-Street-Forum.html",
+"sha256": "d547f421e9da476a3b004b279691d81d8b6f8b4cd635852ffee43ee41bfdb0b8",
+"size": 42567,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/5880408/index.html",
+"note": ""
+},
+"49": {
+"project": "CN",
+"fname": "CN__2026-01__2026-PBOC-2026-work-conference.html",
+"sha256": "9130d8f3e7d1bfa2a6fd9e08d5fbaf62beee4b99e18bd040a3091968497cd5f0",
+"size": 37769,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026010617203861687/index.html",
+"note": ""
+},
+"50": {
+"project": "CN",
+"fname": "CN__2026-03__2025.html",
+"sha256": "4d7f844fd21db29567decbff8540bd4cf043e91294ca510cc3452d2d82006092",
+"size": 32155,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026030215305689078/index.html",
+"note": ""
+},
+"51": {
+"project": "CN",
+"fname": "CN__2026-06__Pan-Gongsheng-2026-Lujiazui-Forum.html",
+"sha256": "49c4d9e2f9dff32627ae0845d377b3bfa6c21d869de1fdf8e760e226421a270d",
+"size": 42288,
+"url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026061711412181694/index.html",
+"note": ""
+},
+"199": {
+"project": "SG",
+"fname": "SG__2021-11__A-Retail-Central-Bank-Digital-Currency-Economic-Considerations-in-the.pdf",
+"sha256": "269f9816392e16504375f52ee6f806b1b25dea4f2b097fea5950e08216018f70",
+"size": 654560,
+"url": "https://www.mas.gov.sg/-/media/MAS/EPG/Monographs-or-Information-Paper/A-retail-CBDC---Economic-Considerations-in-the-Singapore-Context.pdf",
+"note": ""
+},
+"201": {
+"project": "SG",
+"fname": "SG__2022-03__Reply-to-COS-Cut-on-Digital-Sing-Dollar-parliamentary-reply-by-Ministe.html",
+"sha256": "9d21537b5f875fab4aead50a1b66caf15a0890eb53dba1acacf647e3d7d0e8e4",
+"size": 251054,
+"url": "https://www.mas.gov.sg/news/parliamentary-replies/2022/reply-to-cos-cut-on-digital-sing-dollar",
+"note": ""
+},
+"197": {
+"project": "SG",
+"fname": "SG__2021-05__Reply-to-Parliamentary-Question-on-the-implementation-progress-of-Proj.html",
+"sha256": "ccc77f64a11a074d9ec6870f52cf9b77d1f8ad2caab5f5ffa7a34320ddffa60d",
+"size": 257890,
+"url": "https://www.mas.gov.sg/news/parliamentary-replies/2021/reply-to-parliamentary-question-on-the-implementation-progress-of-project-ubin",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"198": {
+"project": "SG",
+"fname": "SG__2021-06__MAS-Partners-IMF-World-Bank-and-others-to-launch-Global-Challenge-for.html",
+"sha256": "1a287269ade61f33051f870a4d0b07fe89d774e2c052fb16580cf2104f900cf0",
+"size": 263406,
+"url": "https://www.mas.gov.sg/news/media-releases/2021/mas-partners-imf-world-bank-and-others-to-launch-global-challenge-for-retail-cbdc-solutions",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"200": {
+"project": "SG",
+"fname": "SG__2021-11__The-Future-of-Money-Finance-and-the-Internet-speech-by-Ravi-Menon-MD-a.html",
+"sha256": "a2bcfe850b618d8573c3af69f61584814a7d05ab9fe1a25e694b274b9ea97935",
+"size": 273981,
+"url": "https://www.mas.gov.sg/news/speeches/2021/the-future-of-money-finance-and-the-internet",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"202": {
+"project": "SG",
+"fname": "SG__2022-04__Money-at-a-Crossroads-Public-or-Private-Digital-Money-panel-remarks-by.html",
+"sha256": "75e0b5337fe1512f5c72b26ca2d362919e6e64d9cf2a8f9f30733c794db4085f",
+"size": 259087,
+"url": "https://www.mas.gov.sg/news/speeches/2022/money-at-a-crossroads-public-or-private-digital-money",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"203": {
+"project": "SG",
+"fname": "SG__2022-08__Yes-to-Digital-Asset-Innovation-No-to-Cryptocurrency-Speculation-openi.html",
+"sha256": "e443d14de7ea85193090be05eecb2572f6a9edb207f40644054b9a51f5f367ff",
+"size": 279845,
+"url": "https://www.mas.gov.sg/news/speeches/2022/yes-to-digital-asset-innovation-no-to-cryptocurrency-speculation",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"204": {
+"project": "SG",
+"fname": "SG__2023-06__Purpose-Bound-Money-PBM-Technical-Whitepaper-with-media-release-MAS-Pr.html",
+"sha256": "b6ea68e1c2a0c6ee120a6759c700db6de916eb236b9fb40a58f488c03aa8e5cb",
+"size": 254578,
+"url": "https://www.mas.gov.sg/publications/monographs-or-information-paper/2023/purpose-bound-money-whitepaper",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"232": {
+"project": "TW",
+"fname": "TW__2021-11__CBDC-Special-report-to-Legislative-Yuan-CBDC-readiness.pdf",
+"sha256": "74faebff809a7bce9092664d612a12f7c59fc54444ebf2d6a0e2f8af598bb7f1",
+"size": 426505,
+"url": "https://www.cbc.gov.tw/tw/dl-178284-f4f6c762503e41a2a1a2fd6ba7184cd3.html",
+"note": ""
+},
+"233": {
+"project": "TW",
+"fname": "TW__2022-09__Business-report-to-Legislative-Yuan-Sep-2022.pdf",
+"sha256": "dceceea1adef9da133e99d4479d2774f17312834df2f804960d664af15c63b68",
+"size": 2335839,
+"url": "https://www.cbc.gov.tw/tw/dl-192983-f144e1b742dc4148857d62c8fbefe837.html",
+"note": ""
+},
+"234": {
+"project": "TW",
+"fname": "TW__2023-03__Business-report-to-Legislative-Yuan-Finance-Committee-Mar-2023.pdf",
+"sha256": "7cb6fefa7b6ff10f087545a24687da7dbf6dd0f7de16e5f3ab68fc8efa04a25d",
+"size": 1072598,
+"url": "https://www.cbc.gov.tw/tw/dl-194843-a2ab2f31e814493e958c622811af16fe.html",
+"note": ""
+},
+"235": {
+"project": "TW",
+"fname": "TW__2024-06__CBDC-MPC-press-conference-note-CBDC-survey-results.pdf",
+"sha256": "2c1e2ee2c39148cc74600685c65ba5b02a3f1472f8fc0aa941fd854534535a96",
+"size": 1427349,
+"url": "https://www.cbc.gov.tw/dl-206166-4db7b214888a4a68ab19d7a0db95f3b2.html",
+"note": ""
+},
+"236": {
+"project": "TW",
+"fname": "TW__2024-07__Special-report-to-Legislative-Yuan-Finance-Committee-planning-of-digit.pdf",
+"sha256": "d23a35baa48aa46143cb3a5fde8313dfaedde3c9e83d715548865c508513613d",
+"size": 1061811,
+"url": "https://www.cbc.gov.tw/tw/dl-207544-42c9b9ed08e04a6499545ff1f715ddb2.html",
+"note": ""
+},
+"237": {
+"project": "TW",
+"fname": "TW__2025-06__CBDC.pdf",
+"sha256": "c652ef9647dee7fca04688d5d07e6b7519e83f68c9f5210a1c2f4220100ca6a6",
+"size": 1123327,
+"url": "https://www.cbc.gov.tw/dl-216089-0c9684ef5be34ab0834fe44df0057886.html",
+"note": ""
+},
+"238": {
+"project": "TW",
+"fname": "TW__2025-10__Business-report-to-Legislative-Yuan-Finance-Committee-Oct-2025.pdf",
+"sha256": "34aeee0e7e572882186ad874facc1654532f4718acadf9ba2d4c6eb2adf8cc82",
+"size": 1672715,
+"url": "https://www.cbc.gov.tw/tw/dl-218932-34a1cb92cc5d4415a3830c4638d303da.html",
+"note": ""
+},
+"239": {
+"project": "TW",
+"fname": "TW__2026-03__Business-report-to-Legislative-Yuan-Finance-Committee-Mar-2026.pdf",
+"sha256": "746630ef3c6131c55e2cd19f4c6bbba0be6d33cac426a8a364dbcbf4a16453e1",
+"size": 1471751,
+"url": "https://www.cbc.gov.tw/tw/dl-225165-b56d9b5e547843a4822acd679cb4868e.html",
+"note": ""
+},
+"133": {
+"project": "NG",
+"fname": "NG__2021-08__CBN-Selects-Technical-Partner-For-Digital-Currency-Project-press-relea.pdf",
+"sha256": "6ffcafba2108215d06f9d427ab74a43968bd9cb0227c178a9a92fa00f9cc6fdf",
+"size": 135763,
+"url": "https://www.cbn.gov.ng/Out/2021/CCD/CBN%20Press%20Release%20(CBDC)%2030082021.pdf",
+"note": ""
+},
+"135": {
+"project": "NG",
+"fname": "NG__2021-10__President-Buhari-To-Unveil-eNaira-on-Monday-25-October-2021-press-rele.pdf",
+"sha256": "e084054637cdb6ef1d0b4f9a7f63909ac175b15a9a8c97760339239a7e2884e9",
+"size": 96883,
+"url": "https://www.cbn.gov.ng/Out/2021/CCD/eNaira%20Launch%20Press%20release%20%20231021.pdf",
+"note": ""
+},
+"136": {
+"project": "NG",
+"fname": "NG__2021-12__2021-Annual-Economic-Report-eNaira-launch.pdf",
+"sha256": "790c048eab1cf77c2b8500e1d802f29dfbd846718fb518cb58b341dec8bd251e",
+"size": 7308609,
+"url": "https://www.cbn.gov.ng/Out/2023/RSD/2021%20CBN%20ANNUAL%20ECONOMIC%20REPORT.a.pdf",
+"note": ""
+},
+"137": {
+"project": "NG",
+"fname": "NG__2022-06__Monetary-Credit-Foreign-Trade-and-Exchange-Policy-Guidelines-for-Fisca.pdf",
+"sha256": "dd18bb209119fb082759b0d1b1a4ed6249eb55962cde983fa904cd6a8d05e5c0",
+"size": 2821051,
+"url": "https://www.cbn.gov.ng/Out/2022/MPD/Credit%20Guidelines%202022%20-2023%2020.05.2022.pdf",
+"note": ""
+},
+"138": {
+"project": "NG",
+"fname": "NG__2022-10__CBN-Marks-First-Anniversary-of-eNaira-press-release.pdf",
+"sha256": "37b2ecd50969571deaae4d6dbd819158e59f6adb6c5f7cac2e76b1e20fb99ffc",
+"size": 133076,
+"url": "https://www.cbn.gov.ng/Out/2022/CCD/CBN%20Marks%20First%20Anniversary.pdf",
+"note": ""
+},
+"139": {
+"project": "NG",
+"fname": "NG__2022-12__2022-Annual-Economic-Report-section-3-1-4-2-eNaira.pdf",
+"sha256": "292c930c5b455b3443ab0069e83e844942bf00cb930e0de019a50a9592587390",
+"size": 7608639,
+"url": "https://www.cbn.gov.ng/Out/2024/RSD/2022%20ANNUAL%20REPORT.pdf",
+"note": ""
+},
+"140": {
+"project": "NG",
+"fname": "NG__2023-10__Economics-of-Digital-Currencies-A-Book-of-Readings.pdf",
+"sha256": "dcae4bd2c21cdd7af93b5b93dfe4b5c2be07cc88814e4495042bc6fddfcf5b23",
+"size": 7579173,
+"url": "https://www.cbn.gov.ng/Out/2023/RSD/Economics%20of%20Digital%20Currencies.pdf",
+"note": ""
+},
+"141": {
+"project": "NG",
+"fname": "NG__2023-10__Press-Release-eNaira-No-Threat-To-Financial-Stability.pdf",
+"sha256": "22f738ae22851fe180d4c6a62812881d742d3bda748449cb42048c4378f7bcff",
+"size": 93676,
+"url": "https://www.cbn.gov.ng/Out/2023/CCD/CBN%20Press%20Release%20%20eNaira%20(091023).pdf",
+"note": ""
+},
+"92": {
+"project": "JP",
+"fname": "JP__2020-10__The-Bank-of-Japan-s-Approach-to-Central-Bank-Digital-Currency.pdf",
+"sha256": "9b8bee805ca3e363e3152fce68342adbb17193e1b6a8a31eb58137856f90bd5b",
+"size": 563524,
+"url": "https://www.boj.or.jp/en/about/release_2020/data/rel201009e1.pdf",
+"note": ""
+},
+"93": {
+"project": "JP",
+"fname": "JP__2022-04__Possible-Design-Choices-of-CBDC-Opening-Remarks-by-Executive-Director.html",
+"sha256": "cd0f35cef35bc37ba6a25c4baf488548caf12e15d532dfe3d28d1c30c8838367",
+"size": 46678,
+"url": "https://www.boj.or.jp/en/about/press/koen_2022/ko220413b.htm",
+"note": ""
+},
+"94": {
+"project": "JP",
+"fname": "JP__2023-02__Commencement-of-Central-Bank-Digital-Currency-Experiments-Pilot-Progra.pdf",
+"sha256": "8f605dc8af5cedfe528af1817e4a39b6576df7f62d7c7e199854be09d5944467",
+"size": 546403,
+"url": "https://www.boj.or.jp/en/paym/digital/dig230217b.pdf",
+"note": ""
+},
+"97": {
+"project": "JP",
+"fname": "JP__2025-06__Envisioning-the-Future-of-Payment-Systems-in-the-Digital-Society-Openi.html",
+"sha256": "11606f3895eb5cf42554b854eb578cf0328e8cf00b518385d57d634e3393dd7c",
+"size": 43333,
+"url": "https://www.boj.or.jp/en/about/press/koen_2025/ko250613a.htm",
+"note": ""
+},
+"98": {
+"project": "JP",
+"fname": "JP__2025-07__Central-Bank-Digital-Currency-Experiments-Progress-on-the-Pilot-Progra.pdf",
+"sha256": "061740df49f96fc792ec4a32c20a2a2922c530624363fb3ea3750929638c421b",
+"size": 1047030,
+"url": "https://www.boj.or.jp/en/paym/digital/dig250718a.pdf",
+"note": ""
+},
+"99": {
+"project": "JP",
+"fname": "JP__2026-02__Points-Forming-Lines-Evolving-to-Surfaces-Opening-Remarks-by-Executive.html",
+"sha256": "fd52bf97d6243c797160bed39a9e5448416e6246e791e7b09a898a9ece09ffd0",
+"size": 43603,
+"url": "https://www.boj.or.jp/en/about/press/koen_2026/ko260217a.htm",
+"note": ""
+},
+"100": {
+"project": "JP",
+"fname": "JP__2026-09__Central-Bank-Digital-Currency-Experiments-Progress-Report-on-the-Pilot.pdf",
+"sha256": "6280e211c2b59f45e323d429c448d7d25cef92572decde7fc6e5a9306ae26dc6",
+"size": 1703646,
+"url": "https://www.boj.or.jp/en/paym/digital/dig260911a.pdf",
+"note": ""
+},
+"174": {
+"project": "RU",
+"fname": "RU__2023-08__press-release.html",
+"sha256": "5a4e172c0d8421588ca6a60b925daae96428d3ba7b50f58879bd80cfb2d2762a",
+"size": 32576,
+"url": "https://www.cbr.ru/press/event/?id=16991",
+"note": ""
+},
+"175": {
+"project": "RU",
+"fname": "RU__2024__2025-2027.pdf",
+"sha256": "d42210dc9ed11934670efdcab7a40857c74761d2d0c2123d50e82383e585fd58",
+"size": 1387978,
+"url": "https://www.cbr.ru/content/document/file/170680/onrnps_2025-27.pdf",
+"note": ""
+},
+"177": {
+"project": "RU",
+"fname": "RU__2025-07__1-2026-press-release.html",
+"sha256": "80a60faf381064d39b96686b349b59d855616b6e96ac9fb57a2900d54c131ef1",
+"size": 34467,
+"url": "https://www.cbr.ru/press/event/?id=25772",
+"note": ""
+},
+"179": {
+"project": "RU",
+"fname": "RU__2026-06__with-press-release-of-18-June-2026.pdf",
+"sha256": "32b138c5468ef4d54d435491b30a93af867ac7c90c58ecbeb4bbcb9c36cfd6db",
+"size": 1909657,
+"url": "https://www.cbr.ru/content/document/file/193705/commercial_smart_contract_platform.pdf",
+"note": ""
+},
+"180": {
+"project": "RU",
+"fname": "RU__2026-08__interview-with-A-Bakina-Director-NPS-Department.html",
+"sha256": "35f61eb04104ac02a0059793352c1b5240e84d697869bd95d2c859b207a17ca6",
+"size": 57304,
+"url": "https://www.cbr.ru/press/event/?id=32778",
+"note": ""
+},
+"181": {
+"project": "RU",
+"fname": "RU__2026-08__press-release.html",
+"sha256": "507a31d60ddad45833a7d102cdcf8460da5a77c552bf5eebb9ac23a2f4b37292",
+"size": 33890,
+"url": "https://www.cbr.ru/press/event/?id=32802",
+"note": ""
+},
+"182": {
+"project": "RU",
+"fname": "RU__2026-09__FAQ.html",
+"sha256": "b13e9c886305b831485175a9382c3552e8315eb62ae1a85f1244b7bb0251852c",
+"size": 216871,
+"url": "https://www.cbr.ru/PSystem/dr/faq/",
+"note": ""
+},
+"17": {
+"project": "BS",
+"fname": "BS__2021-02__Consultation-Paper-Proposed-Legislation-for-the-Regulation-of-the-prov.pdf",
+"sha256": "f8723e51cd6d24d6429330812445f94cedbb405cdc5545628835811d116f8ad6",
+"size": 882821,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/2021-02-15-11-24-12-Central-Bank-Electronic-Bahamian-Dollars-Regulations-2021-1775669628-HLJe8w.pdf",
+"note": ""
+},
+"19": {
+"project": "BS",
+"fname": "BS__2021-03__Consumer-Centric-Aspects-of-the-Proposed-Regulations-for-the-Bahamian.pdf",
+"sha256": "c15c2f5e5bf83c15dd7dadda509222eb8e33528572657a4e3beff383ac7781d1",
+"size": 736419,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/PSD-Policy-Paper-on-Consumers-Issues-1771877847-CxSVn0.pdf",
+"note": ""
+},
+"20": {
+"project": "BS",
+"fname": "BS__2021-08__Bahamian-Dollar-Digital-Currency-Regulations-2021-Official-Gazette-fin.pdf",
+"sha256": "d7e047660372aa7f41ba2a7fd1bfb3f1eb91f5df375728f12930cf95d7da9f90",
+"size": 5995725,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/2022-02-11-11-53-25-Bahamian-Dollar-Digital-Currency-Regulations-2021-Final-Gazetted-1771870299-qdGZiY.pdf",
+"note": ""
+},
+"21": {
+"project": "BS",
+"fname": "BS__2022-05__Bahamian-Dollar-Digital-Currency-Holding-and-Transactional-Limits-Noti.pdf",
+"sha256": "c64d9e31fe474145e503f8cde9ff426a6adf322b5439501fdcbf89592958e3cf",
+"size": 941685,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/2022-08-02-16-38-17-Bahamian-Dollar-Digital-Currency-Holding-and-Transactional-Limits-Notice-2022-1771870199-GFMn1Z.pdf",
+"note": ""
+},
+"22": {
+"project": "BS",
+"fname": "BS__2022-11__The-Bahamas-Experience-with-the-Sand-Dollar-Remarks-by-Governor-John-R.pdf",
+"sha256": "e4c7c92c563065f0ed4ebd34e35ae2f4706ee45222dd060ac2b66b035777cf3d",
+"size": 859333,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/2022-11-10-16-42-59-European-Commission-Presentation-on-Sand-Dollar-Experience-20221107DG1-1775062580-vIcAek.pdf",
+"note": ""
+},
+"23": {
+"project": "BS",
+"fname": "BS__2025-05__Annual-Report-Statement-of-Accounts-2024-section-Digital-Currency-Adop.pdf",
+"sha256": "a8dd4502e275abb3eccd68c0eb8cecf7d38f07f30263316f1f05e5d1b1ba418b",
+"size": 4531538,
+"url": "https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/2025-05-22-12-05-26-2024-CBOB-Annual-Report--Statement-of-Accounts-1772477612-91lrzD.pdf",
+"note": ""
+},
+"55": {
+"project": "GH",
+"fname": "GH__2021-08__Press-Release-Bank-of-Ghana-partners-with-Giesecke-Devrient-to-pilot-f.pdf",
+"sha256": "bdb3cc14c9c5a6eb5eef7350e8fdb22d097cc0ca89835d532664d44a3203841d",
+"size": 735198,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2021/08/CBDC-Joint-Press-Release-BoG-GD-3.pdf",
+"note": ""
+},
+"56": {
+"project": "GH",
+"fname": "GH__2023-07__Bank-of-Ghana-2022-Annual-Report-Central-Bank-Digital-Currency.pdf",
+"sha256": "e6238e41c38c38cb7ef3312fde537dd42be13f6cc64f37d0fee45ccb11223f79",
+"size": 14070711,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2023/07/Annual-Report-2022.pdf",
+"note": ""
+},
+"57": {
+"project": "GH",
+"fname": "GH__2023-10__Press-Release-eCedi-Hackathon-2023.pdf",
+"sha256": "4b9edb2f0f9c3e9c400e52d388d5c650d0245d350211bb80d8fdb5a7ed632a20",
+"size": 126955,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2023/10/Press-Release-eCedi-Hackathon-03-10-23.pdf",
+"note": ""
+},
+"58": {
+"project": "GH",
+"fname": "GH__2023-12__Governor-s-Opening-Remarks-at-eCedi-Hackathon-Awards-Dinner-Dr-Ernest.pdf",
+"sha256": "98825fe014ae0bafa76b7d95272e7b73a6734e9d9ac4229192dd5bc2c06f2df4",
+"size": 126659,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2023/12/Governors-Speech-eCedi-Hackathon-14.12.23.pdf",
+"note": ""
+},
+"59": {
+"project": "GH",
+"fname": "GH__2024-10__Press-Release-Bank-of-Ghana-s-eCedi-wins-Innovation-in-Digital-Currenc.pdf",
+"sha256": "5dd26c6a9850ce3197be3a79fca9f8f1dbe2f38310231ed1ba3012d78820103e",
+"size": 106167,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2024/10/PRESS-RELEASE-BANK-OF-GHANAS-ECEDI-WINS-INNOVATION-IN-DIGITAL-CURRENCY-DESIGN-AWARD-101024.pdf",
+"note": ""
+},
+"60": {
+"project": "GH",
+"fname": "GH__2025-11__Dr-Zakari-Mumuni-First-Deputy-Governor-The-Digital-Cedi-A-Strategic-Vi.pdf",
+"sha256": "a8b001c45ab9c8892f74e31321b2f4db91a041b3ac02c650301fc1f6221e6c73",
+"size": 125220,
+"url": "https://www.bog.gov.gh/wp-content/uploads/2025/11/DR.-ZAKARI-MUMUNI-PRESENTATION-THE-DIGITAL-CEDI-%E2%80%93-A-STRATEGIC-VISION-FOR-GHANAS-DIGITAL-CURRENCY.pdf",
+"note": ""
+},
+"81": {
+"project": "IS",
+"fname": "IS__2022-01__Se-labankarafeyrir-CBDC-Hvert-ver-ur-hlutverk-se-labankanna-fj-rm-lake.pdf",
+"sha256": "a5b50242d0e03a3d0f3f27d16fc770aa2a9170086ee98cf729d34f5d8d21e4e3",
+"size": 542726,
+"url": "https://sedlabanki.is/library/?itemid=8a60d993-7ad9-11ec-9b9f-005056bccf91&type=pdf",
+"note": ""
+},
+"82": {
+"project": "IS",
+"fname": "IS__2022-03__Framt-peninga-Se-labankarafeyrir-CBDC-talk-by-Deputy-Governor-Rannveig.pdf",
+"sha256": "c6f527202dcfe73a6340432261ab020167f23f2493fde6549e6cc201109e867a",
+"size": 539688,
+"url": "https://sedlabanki.is/library/?itemid=6f79095c-ac51-11ec-9ba1-005056bccf91&type=pdf",
+"note": ""
+},
+"83": {
+"project": "IS",
+"fname": "IS__2023-03__S-rrit-nr-17-Se-labankarafeyrir-Special-Publication-no-17-Central-bank.pdf",
+"sha256": "43e8c09c72bfeadd200ad380f1c45174f6ceb4e5c3383ff80d55efa3afcdfd67",
+"size": 708674,
+"url": "https://sedlabanki.is/library/?itemid=264a60a3-ea6e-11ed-9bae-005056bccf91&type=pdf",
+"note": ""
+},
+"84": {
+"project": "IS",
+"fname": "IS__2023-10__Se-labankarafeyrir-Central-bank-digital-currency-speech-by-Deputy-Gove.pdf",
+"sha256": "8a51de5d54b1e3dc7e2a66b2c66a8b7af859e0ca117da0b8cd4e8460d63be3f9",
+"size": 770031,
+"url": "https://sedlabanki.is/library/?itemid=eca03e82-6f5a-11ee-9bb6-005056bccf91&type=pdf",
+"note": ""
+},
+"85": {
+"project": "IS",
+"fname": "IS__2025-06__Vettvangur-Vefrit-um-efnahags-og-fj-rm-l-Rafevran-og-hrif-hennar-sland.pdf",
+"sha256": "5033de73880aa2fb82a2a1e71032a69749a430d17dfebc4e3b4df589aa16bbae",
+"size": 5653034,
+"url": "https://sedlabanki.is/library/?itemid=8d47ddde-180b-49d8-9141-894a0b06a2cc",
+"note": ""
+},
+"86": {
+"project": "IS",
+"fname": "IS__2026-06__Fj-rm-lainnvi-ir-Se-labankarafeyrir-section-Central-Bank-web-page-on-f.html",
+"sha256": "69b9e08dc643db532ec4da56b508788ff62c1ed8c52e95819b697ce28614166d",
+"size": 94530,
+"url": "https://sedlabanki.is/greidslumidlun/fjarmalainnvidir/",
+"note": ""
+},
+"157": {
+"project": "NZ",
+"fname": "NZ__2024-02__CBDC-Business-Plan-storyboard-Mapping-the-way-forward-information-rele.pdf",
+"sha256": "cede9f6a041009c1e6f4468fc601873118011e048b6e839666e747a9c6f9c8e3",
+"size": 1186614,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/cbdc-exploration-business-plan-storyboard-1.pdf",
+"note": ""
+},
+"158": {
+"project": "NZ",
+"fname": "NZ__2024-04__Digital-cash-in-New-Zealand-Consultation-Paper.pdf",
+"sha256": "eae40ac75a30e8bb43116dbe020da601ddfe4bffd133d77fac27c65067dfc6da",
+"size": 1938639,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/digital-cash-in-nz-consultation-paper.pdf",
+"note": ""
+},
+"159": {
+"project": "NZ",
+"fname": "NZ__2024-04__Designing-privacy-into-digital-cash-Digital-Cash-Consultation-Note-4.pdf",
+"sha256": "df242ccbc7f03d51dae1d1269f08a36e80f7bdcec11cada0b3153861af1ee794",
+"size": 686566,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/designing-privacy-into-digital-cash-1.pdf",
+"note": ""
+},
+"160": {
+"project": "NZ",
+"fname": "NZ__2024-04__Designing-a-digital-cash-ecosystem-Digital-Cash-Consultation-Note-1.pdf",
+"sha256": "5e4ee857db9f22ee29b0f8102b6cf3043547d1c65a34901388d5ff495535775d",
+"size": 987422,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/ecosystem-design-note_final-1.pdf",
+"note": ""
+},
+"161": {
+"project": "NZ",
+"fname": "NZ__2024-04__Innovation-and-reliability-opportunities-for-digital-cash-Digital-Cash.pdf",
+"sha256": "bfe9174c80204d57880cf1b86708c14772ccdfcffcf08fcf3c578e7ed9e16e52",
+"size": 833696,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/innovation-and-reliability-opportuntities-for-digital-cash.pdf",
+"note": ""
+},
+"162": {
+"project": "NZ",
+"fname": "NZ__2024-12__Responses-to-submissions-on-Digital-Cash.pdf",
+"sha256": "aaa5cce0312c0289f8581b596719d78f992c49e0db899aa4c2e25698114f178b",
+"size": 650104,
+"url": "https://consultations.rbnz.govt.nz/money-and-cash/digital-cash-in-new-zealand/user_uploads/summary-responses-to-digital-cash-submissions-dec-2024-1.pdf",
+"note": ""
+},
+"61": {
+"project": "HK",
+"fname": "HK__2023-05__Commencement-of-the-e-HKD-Pilot-Programme-press-release.html",
+"sha256": "690637e49ddbfcfdc25230cdbd58b5773e037b9560ee9b8cffc333da9d7b1970",
+"size": 83405,
+"url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/05/20230518-4/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"62": {
+"project": "HK",
+"fname": "HK__2023-10__e-HKD-Pilot-Programme-Phase-1-Report.pdf",
+"sha256": "010674ba369310f77ef24d9fcd2b6100f477b775524aa00524f36df0c1626411",
+"size": 8192234,
+"url": "https://www.hkma.gov.hk/media/eng/doc/key-information/press-release/2023/20231030e3a1.pdf",
+"note": ""
+},
+"63": {
+"project": "HK",
+"fname": "HK__2023-10__HKMA-publishes-the-e-HKD-Pilot-Programme-Phase-1-Report-press-release.html",
+"sha256": "230146b6431d8f1ec3e6c188e9d04c078080d2b396b99874478653505e640e7e",
+"size": 81723,
+"url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2023/10/20231030-3/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"64": {
+"project": "HK",
+"fname": "HK__2024-09__HKMA-commences-Phase-2-of-e-HKD-Pilot-Programme-and-expands-Project-e.html",
+"sha256": "353f61367337b923240ee20a47b0941eed01f154621c58fa1785a1fdf244dcd9",
+"size": 82501,
+"url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2024/09/20240923-3/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"65": {
+"project": "HK",
+"fname": "HK__2025-10__HKMA-completes-e-HKD-Pilot-Programme-and-outlines-future-direction-of.html",
+"sha256": "9899a24674389c7e900d23c389cd620676feed80a67da2da7c5077d28a2f32fa",
+"size": 83276,
+"url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/10/20251028-4/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"127": {
+"project": "NA",
+"fname": "NA__2022-03__Bank-of-Namibia-Annual-Report-2021-Innovation-Hub-CBDC-desirability-re.pdf",
+"sha256": "c3927df61f0e315ae78958349743c9bffa725b3137c60640f390297edab6c12e",
+"size": 4461310,
+"url": "https://www.bon.com.na/getattachment/a1dcdabe-2001-447e-85be-aed9bbab0cda/.aspx",
+"note": ""
+},
+"128": {
+"project": "NA",
+"fname": "NA__2022-09__Welcoming-remarks-by-Governor-Johannes-Gawaxab-at-the-CBDC-and-Crypto.pdf",
+"sha256": "abe060139bfed171872057ec23793fc256427fdb3f5a8ff0a646d97aed7833e9",
+"size": 190308,
+"url": "https://www.bon.com.na/getattachment/60a75488-f092-4973-a1fc-74c3a5c544cf/.aspx",
+"note": ""
+},
+"129": {
+"project": "NA",
+"fname": "NA__2024-03__Bank-of-Namibia-Annual-Report-2023-Governor-message-CBDC-roadmap.pdf",
+"sha256": "44508f28d8364dbefe4d6f73784d9ef474d6e4c115c09f65b14b5d1c93cd5df8",
+"size": 22939924,
+"url": "https://www.bon.com.na/getattachment/848db3c3-1ad1-40d0-a94d-a17b14c30439/.aspx",
+"note": ""
+},
+"130": {
+"project": "NA",
+"fname": "NA__2024-04__Remarks-by-Governor-Johannes-Gawaxab-at-the-launch-of-the-N-100-bankno.pdf",
+"sha256": "8944a581728b3a1bbbd6c9b466ef7e4deb9de2e5613a671db54e1051f8ca8d8a",
+"size": 214540,
+"url": "https://www.bon.com.na/getattachment/d7f649ec-b52d-420a-9bc6-ae703b052f6d/.aspx",
+"note": ""
+},
+"164": {
+"project": "PE",
+"fname": "PE__2024-10__Preguntas-frecuentes-Primer-Piloto-de-Innovaci-n-con-Dinero-Digital-FA.html",
+"sha256": "f38322a1eaaa49ab8637e31a7d184da65d1dfb71c0791e26ee8b7d7cc839a4c4",
+"size": 32258,
+"url": "https://www.bcrp.gob.pe/sistema-de-pagos/proyecto-cbdc/pilotos-de-innovacion-de-dinero-digital/preguntas-frecuentes-ppidd.html",
+"note": ""
+},
+"165": {
+"project": "PE",
+"fname": "PE__2025-03__Reporte-del-Sistema-Nacional-de-Pagos-y-del-sector-Fintech-en-Per-Marz.html",
+"sha256": "c1b8e52d72dae2763b82c0a69652676bbb01a67c6c628951e2cd40fecbccac5c",
+"size": 119585,
+"url": "https://www.bcrp.gob.pe/docs/Publicaciones/reporte-del-sistema-nacional-de-pagos/2025/marzo/rspf-marzo-2025.html",
+"note": ""
+},
+"166": {
+"project": "PE",
+"fname": "PE__2025-03__Nota-informativa-Empieza-evaluaci-n-del-primer-piloto-de-innovaci-n-co.pdf",
+"sha256": "600e16b4bc111d21c0a17cd5187c6ec79085cd20d3ad5272499f509abd4af0f0",
+"size": 134154,
+"url": "https://www.bcrp.gob.pe/docs/Transparencia/Notas-Informativas/2025/nota-informativa-2025-03-18.pdf",
+"note": ""
+},
+"167": {
+"project": "PE",
+"fname": "PE__2025-09__Reporte-del-Sistema-Nacional-de-Pagos-y-del-sector-Fintech-en-Per-Seti.html",
+"sha256": "a13358dc3b40cb64074e167ce674d52c84fa2d6ae3a639a7b6166007016c283b",
+"size": 114228,
+"url": "https://www.bcrp.gob.pe/docs/Publicaciones/reporte-del-sistema-nacional-de-pagos/2025/setiembre/rspf-setiembre-2025.html",
+"note": ""
+},
+"169": {
+"project": "PE",
+"fname": "PE__2026-03__Reporte-del-Sistema-Nacional-de-Pagos-y-del-sector-Fintech-en-Per-Marz.html",
+"sha256": "5a5223370f04fbac85cf8b8d3e980c449c34ad650da13559cb62f255f661d63f",
+"size": 136183,
+"url": "https://www.bcrp.gob.pe/docs/Publicaciones/reporte-del-sistema-nacional-de-pagos/2026/marzo/rspf-marzo-2026.html",
+"note": ""
+},
+"168-pdf": {
+"project": "PE",
+"fname": "PE__2025-09__Dise-o-e-Implementaci-n-del-Piloto-de-CBDC-Minorista-en-Per-Documento__attachment-1.pdf",
+"sha256": "e6f28082739b526058dbd0621d3c5f65558cd1ec8607c4cb20abe5a1c0645b08",
+"size": 1427725,
+"url": "https://investigacion.bcrp.gob.pe/es/investigaciones/documentos-de-trabajo/dt-2025/dt-2025-003",
+"note": ""
+},
+"163": {
+"project": "PE",
+"fname": "PE__2024-04__Circular-N-0011-2024-BCRP-Reglamento-de-Pilotos-de-Innovaci-n-de-Diner.pdf",
+"sha256": "c31caea266d582c8af51aa9604584ba75325f1626964796bcf9aa50bfac00b32",
+"size": 163850,
+"url": "https://busquedas.elperuano.pe/api/visor_html/2279891-1",
+"note": ""
+},
+"206": {
+"project": "SZ",
+"fname": "SZ__2022-11__CBDC-Briefing-CBDC-Explainer.pdf",
+"sha256": "b187c44c3dbbc905712332fdb2a279be49b4b93d5f516667917f1750eb671e69",
+"size": 161379,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2021/04/CBDC-Briefing_Approved.pdf",
+"note": ""
+},
+"211": {
+"project": "SZ",
+"fname": "SZ__2025-08__Annual-Integrated-Report-2024-25-section-Central-Bank-Digital-Currency.pdf",
+"sha256": "f81c236fe338e919a87f674679274425599362616fda52dc68a0239d5ea69c51",
+"size": 8616928,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2021/04/Annual-Integrated-Report-2024-25.pdf",
+"note": ""
+},
+"213": {
+"project": "SZ",
+"fname": "SZ__n.d. (a__Frequently-Asked-Questions-CBDC-section.html",
+"sha256": "e7b5e682f92d8946bb95ec2c49e0068c2f15dfa0bc4720446e9d0d600c401867",
+"size": 252410,
+"url": "https://www.centralbank.org.sz/faq/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"87": {
+"project": "JM",
+"fname": "JM__2021-03__BOJ-Annual-Report-2020-Central-Bank-Digital-Currency-CBDC-initiative-s.pdf",
+"sha256": "67f5054b92a81ab1c1d853bb5d16ff7f1cbca739678eeb754b42a1e3a8c22c49",
+"size": 13888073,
+"url": "https://boj.org.jm/wp-content/uploads/2021/03/2020_boj_annual_report.pdf",
+"note": ""
+},
+"88": {
+"project": "JM",
+"fname": "JM__2021-03__A-Primer-on-BOJ-s-Central-Bank-Digital-Currency-op-ed-by-Deputy-Govern.html",
+"sha256": "efba4db0ed36d884cec6b0e536cc7e083b6e21c75e6481c6bfb645c48821ff16",
+"size": 341729,
+"url": "https://boj.org.jm/a-primer-on-bojs-central-bank-digital-currency/",
+"note": "dynamic HTML: hash differs from first fetch (same size); hash is of the kept file"
+},
+"89": {
+"project": "JM",
+"fname": "JM__2024-03__BOJ-Annual-Report-2023-Central-Bank-Digital-Currency-national-roll-out.pdf",
+"sha256": "96ed3de6b737d29d2758a84f36ee836b45173dda9a219f9b49953dbe08dd4a5a",
+"size": 27075561,
+"url": "https://boj.org.jm/wp-content/uploads/2024/03/2023-BOJ-Annual-Report.pdf",
+"note": ""
+},
+"131": {
+"project": "NA",
+"fname": "NA__2025-04__Bank-of-Namibia-Annual-Report-2024-Governor-engagements.pdf",
+"sha256": "86734897d3c4aed9983fe863bab4bb48a81c4fb9633458750b7cc48f2bbe66de",
+"size": 20329530,
+"url": "https://www.bon.com.na/getattachment/ef99b9ce-a67c-4888-8319-a3a013c5b2a9/.aspx",
+"note": ""
+},
+"132": {
+"project": "NA",
+"fname": "NA__2026-04__Bank-of-Namibia-Annual-Report-2025-Strategic-Objective-3-Explore-a-Cen.pdf",
+"sha256": "04653eee78bb06d8b38f42113fd60c77a3c5a800cafaa13c6434e219108de15b",
+"size": 8396820,
+"url": "https://www.bon.com.na/getattachment/Publications/Annual-Reports/BON-ANNUAL-REPORT-30-MARCH.pdf.aspx?lang=en-ZA",
+"note": ""
+},
+"225": {
+"project": "TR",
+"fname": "TR__2021-09__Press-Release-on-Central-Bank-Digital-Turkish-Lira-R-D-Project-2021-40.html",
+"sha256": "d0392c291b3cfd3c61830531af422e163d4a66dbe74b37529151994e75d63f8e",
+"size": 32844,
+"url": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2021/ANO2021-40",
+"note": "via base64 transfer"
+},
+"226": {
+"project": "TR",
+"fname": "TR__2022-12__Press-Release-on-the-Use-of-Digital-Turkish-Lira-2022-55.html",
+"sha256": "59363f3f6ad4e4f5d8caae5027e078ddddd5aa933eb1fae884135860c2b4c6ec",
+"size": 31342,
+"url": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2022/ANO2022-55",
+"note": "via base64 transfer"
+},
+"229": {
+"project": "TR",
+"fname": "TR__2025-09__Press-Release-on-Call-to-Join-the-Digital-Turkish-Lira-Project-Ecosyst.html",
+"sha256": "2630aea8650af6d5bbf5d25a5b0eb397ccf39d4351ea8a07532c97f42b9276ea",
+"size": 32271,
+"url": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2025/ANO2025-46",
+"note": "via base64 transfer"
+},
+"230": {
+"project": "TR",
+"fname": "TR__2026-08__Press-Release-on-the-Application-Results-of-the-Call-to-Join-the-Digit.html",
+"sha256": "5bc1b2101b3f467e64aa93c4beffa3e6098cc03f53d062eeb259a968dfcde3ec",
+"size": 33204,
+"url": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2026/ANO2026-33",
+"note": "via base64 transfer"
+},
+"227": {
+"project": "TR",
+"fname": "TR__2024-09__Governor-Fatih-Karahan-s-Presentation-on-24-Fintech-Riyadh-slides.pdf",
+"sha256": "4569d9b74c658fa80ecbb2def8a6c150ed1749f978265ab098527c2352bc6e13",
+"size": 695506,
+"url": "https://www.tcmb.gov.tr/wps/wcm/connect/c2d3f2af-7d29-4742-bc1b-a3483a7a55f0/RemarksG03_09_2024.pdf?MOD=AJPERES",
+"note": "via base64 transfer"
+},
+"228": {
+"project": "TR",
+"fname": "TR__2025-01__Digital-Turkish-Lira-Benefits-and-Opportunities-CBRT-Blog.html",
+"sha256": "440c828415ce45ca389a0250c33247110f1584611b0c40a2222b25757bfe50d2",
+"size": 54730,
+"url": "https://tcmb.gov.tr/wps/wcm/connect/blog/en/main+menu/analyses/digital+turkish+lira+benefits+and+opportunities",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"240": {
+"project": "UA",
+"fname": "UA__2020-06__Report-on-the-results-of-the-International-Conference-CBDCinUA2020.pdf",
+"sha256": "e4a0c2863c3b964dc4c3c07ddf426edb1e07752b63c18b7f842acbc7ce274f4b",
+"size": 641893,
+"url": "https://bank.gov.ua/en/file/download?file=CBDCinUA2020%20report.pdf",
+"note": "via base64 transfer"
+},
+"243": {
+"project": "UA",
+"fname": "UA__2021-12__National-Bank-welcomes-the-Ministry-of-Digital-Transformation-pilot-on.html",
+"sha256": "acafd438212c7d315ffe18c21703d29c2e69408c125202c3ef67d662d800f93e",
+"size": 127557,
+"url": "https://bank.gov.ua/en/news/all/natsionalniy-bank-vitaye-pilotniy-proyekt-ministerstva-tsifrovoyi-transformatsiyi-schodo-vipusku-programovanih-elektronnih-groshey",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"244": {
+"project": "UA",
+"fname": "UA__2022-11__NBU-Unveils-E-hryvnia-Concept-to-Payment-Market-and-Virtual-Asset-Mark.html",
+"sha256": "99ed9f66e99f720ba65c04274570df5e6aaae1f6cc896970195bc1837eccb17a",
+"size": 128417,
+"url": "https://bank.gov.ua/en/news/all/natsionalniy-bank-predstaviv-uchasnikam-platijnogo-rinku-ta-rinku-virtualnih-aktiviv--proyekt-kontseptsiyi-e-grivni",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"242": {
+"project": "UA",
+"fname": "UA__2021-07__Survey-Results-on-the-Possibility-of-E-hryvnia-Implementation.pdf",
+"sha256": "f45035e44844e703dd0032dbd9697315b65bd8eeeab1efe6939dfd5a187d4a84",
+"size": 1242681,
+"url": "https://bank.gov.ua/en/file/download?file=E-hryvnya_2021_en.pdf",
+"note": "via base64 transfer"
+},
+"245": {
+"project": "UA",
+"fname": "UA__2023-02__Draft-Vision-of-Introducing-E-hryvnia-E-hryvnia-digital-money-of-the-N.pdf",
+"sha256": "c809d674eed7bb15fbc7051404093511b28e2964468a65dee685ee0eb56768ad",
+"size": 1448456,
+"url": "https://bank.gov.ua/admin_uploads/article/Draft_vision_introducing_e-hryvnia_2023_en.pdf",
+"note": "via base64 transfer"
+},
+"246": {
+"project": "UK",
+"fname": "UK__2021-04__Bank-of-England-statement-on-Central-Bank-Digital-Currency-CBDC-Taskfo.html",
+"sha256": "7c60891b145f711c929cb4207ebc709e078cd06e0c04141e27d717d92015aed3",
+"size": 81413,
+"url": "https://www.bankofengland.co.uk/news/2021/april/bank-of-england-statement-on-central-bank-digital-currency",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"249": {
+"project": "UK",
+"fname": "UK__2021-11__Statement-on-Central-Bank-Digital-Currency-next-steps.html",
+"sha256": "1a3abae915dfc4316f939b664de4864404af617a75b14e4cc45fce1b53d7f882",
+"size": 80828,
+"url": "https://www.bankofengland.co.uk/news/2021/november/statement-on-central-bank-digital-currency-next-steps",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"251": {
+"project": "UK",
+"fname": "UK__2023-02__The-digital-pound-speech-by-Jon-Cunliffe-UK-Finance.html",
+"sha256": "b09c4ac5d8b96c06ae3cb538efdd7f6eb2f1d064f7f5bc2b2f4955ec147af8da",
+"size": 126494,
+"url": "https://www.bankofengland.co.uk/speech/2023/february/jon-cunliffe-speech-at-uk-finance-update-on-central-bank-digital-currency",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"248": {
+"project": "UK",
+"fname": "UK__2021-06__Central-Bank-Digital-Currency-an-update-on-the-Bank-of-England-s-work.html",
+"sha256": "c28062ecb84a2b78d604349723f58060acb170ff86974c1032e0eb1cfb4af0a1",
+"size": 370598,
+"url": "https://www.bankofengland.co.uk/speech/2021/june/tom-mutton-pre-recorded-keynote-speech-the-future-of-fintech-digital-conference",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"247": {
+"project": "UK",
+"fname": "UK__2021-06__New-forms-of-digital-money-Discussion-Paper.html",
+"sha256": "64b4344526239af2b1f3f428ebcf76005eb853b3f5657a5aa6601be6f6b84455",
+"size": 1195127,
+"url": "https://www.bankofengland.co.uk/paper/2021/new-forms-of-digital-money",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"250": {
+"project": "UK",
+"fname": "UK__2023-02__HM-Treasury-and-Bank-of-England-consider-plans-for-a-digital-pound-new.html",
+"sha256": "3dc47c4e73f8adbc49520bbb18c3fd5ae7173781cf7abad0cf79d617bb898087",
+"size": 80550,
+"url": "https://www.gov.uk/government/news/hm-treasury-and-bank-of-england-consider-plans-for-a-digital-pound",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"252": {
+"project": "UK",
+"fname": "UK__2024-01__Bank-of-England-and-HM-Treasury-respond-to-digital-pound-consultation.html",
+"sha256": "bc35729f530f130eb5c1348d7ea12bc8d2cdeaf8324512898a14ecc0b5945e85",
+"size": 77260,
+"url": "https://www.gov.uk/government/news/bank-of-england-and-hm-treasury-respond-to-digital-pound-consultation",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"253": {
+"project": "UK",
+"fname": "UK__2024-11__National-Payments-Vision-incl-section-Exploring-a-potential-digital-po.html",
+"sha256": "5439cd3b718f934c91c23746c308262f55c4398527ec5c7f5dbd1d69e9b66ca1",
+"size": 77896,
+"url": "https://www.gov.uk/government/publications/national-payments-vision",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"35": {
+"project": "CH",
+"fname": "CH__2018-04__The-financial-markets-in-changing-times-Changes-today-and-tomorrow-the.html",
+"sha256": "5f13dcad07d776aff37e87bb91fcdf13e0b5513c21ef5b64fd54c6368d7b6c57",
+"size": 75800,
+"url": "https://www.snb.ch/en/publications/communication/speeches/2018/ref_20180405_amr",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"36": {
+"project": "CH",
+"fname": "CH__2019-09__Currencies-money-and-digital-tokens-speech-Thomas-J-Jordan-Chairman.html",
+"sha256": "181e04c2b3a7b0cd9d80ef9115b8633480906c221a309f8c019ce86864fdf99f",
+"size": 75378,
+"url": "https://www.snb.ch/en/publications/communication/speeches/2019/ref_20190905_tjn",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"40": {
+"project": "CL",
+"fname": "CL__2022-07__Encuesta-sobre-exploraci-n-de-desarrollo-de-Monedas-Digitales-de-Banco.pdf",
+"sha256": "62e25011d1d44e704ae25bc693e3882da4ceefbd13425afb80c7698ca5355383",
+"size": 102622,
+"url": "https://www.bcentral.cl/documents/33528/130503/Encuesta_MDBC_BCCh.pdf",
+"note": "via base64 transfer"
+},
+"66": {
+"project": "HU",
+"fname": "HU__2023-05__Conscious-money-management-digitally-and-playfully-the-MNB-Student-Saf.html",
+"sha256": "ea5a0220564f4c5e6837f7e775b42b2f4c1a35f70a7aacf7f1957cb8316dcdcf",
+"size": 229862,
+"url": "https://www.mnb.hu/en/pressroom/press-releases/press-releases-2023/conscious-money-management-digitally-and-playfully-the-mnb-student-safe-mobile-application-has-been-renewed",
+"note": "via base64 transfer"
+},
+"69": {
+"project": "HU",
+"fname": "HU__2024-12__Student-Safe-mobile-app-says-goodbye-the-Magyar-Nemzeti-Bank-s-success.html",
+"sha256": "51767c31c78d6c0c3a9857efe46150503f68ae3918fe7b1cab96772e3a729cb4",
+"size": 230351,
+"url": "https://www.mnb.hu/en/pressroom/press-releases/press-releases-2024/student-safe-mobile-app-says-goodbye-the-magyar-nemzeti-bank-s-successful-pilot-project-comes-to-an-end",
+"note": "via base64 transfer"
+},
+"52": {
+"project": "CZ",
+"fname": "CZ__2021-02__Digit-ln-m-na-garantovan-NB-budoucnost-koruny-V-Benda-J-Mat-j-commenta.html",
+"sha256": "a98917f522e59d13495296aa2f109c7e8ad001dc382dcacf47e15e10a5e64dcf",
+"size": 70229,
+"url": "https://www.cnb.cz/cs/verejnost/servis-pro-media/autorske-clanky-rozhovory-s-predstaviteli-cnb/Digitalni-mena-garantovana-CNB-budoucnost-koruny",
+"note": "via base64 transfer"
+},
+"54": {
+"project": "CZ",
+"fname": "CZ__2026-07__Ale-Michl-Stav-me-NB-s-AI-v-z-kladech-a-digit-ln-korunou-Colours-of-Os.html",
+"sha256": "3b8c09ac68f73d15ebe560a713715db2b7fa1f8e5832b8f0c6cde2cab65cef37",
+"size": 95035,
+"url": "https://www.cnb.cz/cs/verejnost/servis-pro-media/autorske-clanky-rozhovory-s-predstaviteli-cnb/Ales-Michl-Stavime-CNB-s-AI-v-zakladech-a-digitalni-korunou/",
+"note": "via base64 transfer"
+},
+"53": {
+"project": "CZ",
+"fname": "CZ__2022-05__Digit-ln-m-na-NB-budoucnost-koruny-Prozat-m-v-ce-ot-zek-ne-odpov-d-O-D.pdf",
+"sha256": "0598ecee6c5ea36ad2bd29d440789b4918fadd9fa39700173ea81a1ff394b2da",
+"size": 806680,
+"url": "https://www.cnb.cz/export/sites/cnb/cs/verejnost/.galleries/pro_media/konference_projevy/vystoupeni_projevy/download/dedek_20220517_diskusni_forum_hk.pdf",
+"note": "via base64 transfer"
+},
+"72": {
+"project": "ID",
+"fname": "ID__2024-07__Tanya-Jawab-Blueprint-Sistem-Pembayaran-Indonesia-2030.pdf",
+"sha256": "0e76288a9b8eb4062c38d698930911d23d64db6d67f3af5e08ee4601c77916cb",
+"size": 71474,
+"url": "https://www.bi.go.id/id/publikasi/kajian/Documents/Tanya-Jawab-BSPI-2030.pdf",
+"note": "via base64 transfer"
+},
+"155": {
+"project": "NP",
+"fname": "NP__2025-04__Acting-Governor-Neelam-Dhungana-Timsina-address-on-NRB-70th-anniversar.pdf",
+"sha256": "ec73aa1b2b070e46ce07f48f0566a1ac473da876e7b14ac33545229e43fa7218",
+"size": 441923,
+"url": "https://www.nrb.org.np/ofg/%e0%a4%a8%e0%a5%87%e0%a4%aa%e0%a4%be%e0%a4%b2-%e0%a4%b0%e0%a4%be%e0%a4%b7%e0%a5%8d%e0%a4%9f%e0%a5%8d%e0%a4%b0-%e0%a4%ac%e0%a5%87%e0%a4%82%e0%a4%95%e0%a4%95%e0%a5%8b-%e0%a5%ad%e0%a5%a6-%e0%a4%94/",
+"note": "via base64 transfer"
+},
+"156": {
+"project": "NP",
+"fname": "NP__2025-07__Monetary-Policy-for-2025-26-FY-2082-83-implementation-annex.pdf",
+"sha256": "7e3572d2ec5c531799fecd6a8cd2e9f8e3b256f521f5b862bbfedc25ea4c3980",
+"size": 1168848,
+"url": "https://www.nrb.org.np/contents/uploads/2025/08/Monetary_Policy_2082-083_English.pdf",
+"note": "via base64 transfer"
+},
+"184": {
+"project": "RW",
+"fname": "RW__2025-07__Frequently-Asked-Questions-FAQs-about-CBDC-Central-Bank-Digital-Curren.pdf",
+"sha256": "a1b7cf592f9c701b1eb4d0ee5635c34aecd9ea6c1516547333c0c7d5c0cac271",
+"size": 120455,
+"url": "https://www.bnr.rw/documents/FAQs_CBDC_3aCep52.pdf",
+"note": "via base64 transfer"
+},
+"185": {
+"project": "RW",
+"fname": "RW__2026-02__CBDC-page-Financial-Innovation-CBDC-feasibility-study-summary-and-swee.html",
+"sha256": "5276cc796eaf544c1e2fb379fae8129fb71b5bb41facfe30a0712cbbc1e8bdf3",
+"size": 20701,
+"url": "https://www.bnr.rw/financialinnovation",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"254": {
+"project": "ZA",
+"fname": "ZA__2021-09__BIS-Innovation-Hub-and-the-South-African-Reserve-Bank-will-test-CBDCs.html",
+"sha256": "f8a4323a9b0dc021969453f878418fb40a43d18375aa6d6de3692dad1cb8a45d",
+"size": 76330,
+"url": "https://www.resbank.co.za/en/home/publications/publication-detail-pages/media-releases/2021/BIS-Innovation-Hub-and-the-SARB-will-test-CBDCs-for-international-settlements",
+"note": "via base64 transfer"
+},
+"256": {
+"project": "ZA",
+"fname": "ZA__2025-11__SARB-position-paper-on-the-necessity-of-a-retail-CBDC-in-South-Africa.html",
+"sha256": "b4b5a910e9a713229a4cda007073c8aab39fc471b640588047d8098c4cc4cc95",
+"size": 78103,
+"url": "https://www.resbank.co.za/en/home/publications/publication-detail-pages/Fintech/sarb-position-paper-on-the-necessity-of-a-retail-cbdc-in-south-a",
+"note": "via base64 transfer"
+},
+"13": {
+"project": "AU",
+"fname": "AU__2026-09__RITS-Consultation-and-Retail-CBDC-Update-Media-Release-2026-24.html",
+"sha256": "b9a36965f1d514bc1c0a4e4530f502ec2330909879a25acbdcef76d81ce83766",
+"size": 26126,
+"url": "https://www.rba.gov.au/media-releases/2026/mr-26-24.html",
+"note": "via base64 transfer"
+},
+"12": {
+"project": "AU",
+"fname": "AU__2026-08__Public-Consultation-Unmet-Payment-Needs-and-Digital-Money-Report-prepa.pdf",
+"sha256": "97ae9ecdd19e4349553120c25f48fdb931991380dce64f26cdb48c23c5cc7edb",
+"size": 888003,
+"url": "https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/unmet-payment-needs-consultation-final-report.pdf",
+"note": "via base64 transfer"
+},
+"95": {
+"project": "JP",
+"fname": "JP__2024-04__CBDC-Relevant-Ministries-and-BOJ-Liaison-Meeting-on-CBDC-Interim-Summa.pdf",
+"sha256": "aa2feb138d247f625f42c95dc8c3da4a161e92dfe914a12ee6759e8c9cd922e1",
+"size": 389499,
+"url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/20240417chuukanseiri.pdf",
+"note": "via base64 transfer"
+},
+"96": {
+"project": "JP",
+"fname": "JP__2025-05__CBDC-Second-Interim-Summary.pdf",
+"sha256": "5becfff0cc1f05ce177d292f69c2f81bacf1544702861cc4e8fb69dacca7e363",
+"size": 564959,
+"url": "https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/20250522_2nd_InterimReport.pdf",
+"note": "via base64 transfer"
+},
+"142": {
+"project": "NO",
+"fname": "NO__2020-11__Speech-Central-bank-digital-currency-and-real-time-payments-Deputy-Gov.html",
+"sha256": "8a64a79f8391f00ebc37016e82de0b3f7afd3ef23e360564881ed616e456b060",
+"size": 50353,
+"url": "https://www.norges-bank.no/en/news-events/news/Speeches/2020/2020-11-05-bache/",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"143": {
+"project": "NO",
+"fname": "NO__2021-11__Speech-Digital-currencies-and-real-time-payments-the-road-ahead-Govern.html",
+"sha256": "828b594ea06bfb65869d88cbd0f1253d276d980d0cbb6251c3cf1d8d98c27a85",
+"size": 55312,
+"url": "https://www.norges-bank.no/en/news-events/news/Speeches/2021/2021-11-04-payments-conference/",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"210": {
+"project": "SZ",
+"fname": "SZ__2024-08__Governor-s-Presentation-of-the-2023-24-Annual-Integrated-Report-speech.pdf",
+"sha256": "34aab218c024bfe2c77863a86b3142eedd7c0988fa977147b629f364af660b7d",
+"size": 333059,
+"url": "https://www.centralbank.org.sz/wp-content/uploads/2021/04/September-2024-Governors-Speech-Annual-Integrated-Report-2023-24.pdf",
+"note": "via base64 transfer"
+},
+"212": {
+"project": "SZ",
+"fname": "SZ__2025-11__CBDC-project-web-page-incl-Next-Steps.html",
+"sha256": "e1af5b0704d0e8907ad21aab6e9b1460ceb0d5049cfd49009072f981b185f745",
+"size": 204502,
+"url": "https://www.centralbank.org.sz/cbdc/",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"18": {
+"project": "BS",
+"fname": "BS__2021-02__Public-Consultation-on-Proposed-Legislation-for-the-Regulation-of-the.html",
+"sha256": "4f27ca5cf2268ab3c96ae52fb00c9ca3b2e70d59cf6f4765d0156b2d8fb91b01",
+"size": 372913,
+"url": "https://www.centralbankbahamas.com/news/press-releases/public-consultation-on-proposed-legislation-for-the-regulation-of-the-provision-and-use-of-central-bank-issued-electronic-bahamian-dollars",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"74": {
+"project": "IN",
+"fname": "IN__2022-02__Union-Budget-2022-23-Speech-of-the-Finance-Minister-para-111-Digital-R.pdf",
+"sha256": "9767a916bdc0596577659767b50da5c92929d1b9f5f835ae3769b954fcee8b84",
+"size": 706427,
+"url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_Speech.pdf",
+"note": "via base64 transfer"
+},
+"172": {
+"project": "RU",
+"fname": "RU__2023-07__24-07-2023-340-digital-ruble-platform-law.html",
+"sha256": "39ab862bd9e755028a214d80413ae60dd98b9dda2c2a31994a8ae7ea1b7b6acb",
+"size": 66858,
+"url": "http://kremlin.ru/acts/bank/49579",
+"note": "via base64 transfer; http origin without crypto.subtle: SHA-256 computed in container only"
+},
+"173": {
+"project": "RU",
+"fname": "RU__2023-07__24-07-2023-339-amendments-to-Civil-Code-legal-regime-of-digital-rubles.html",
+"sha256": "d337bf215b08887ee5018c4a5f2c3fafd7ae0f7515c72cd47bf9d5e0204ef02b",
+"size": 39140,
+"url": "http://kremlin.ru/acts/bank/49555",
+"note": "via base64 transfer; http origin without crypto.subtle: SHA-256 computed in container only"
+},
+"176": {
+"project": "RU",
+"fname": "RU__2025-05__23-05-2025-105-AML-CFT-regime-for-operations-with-digital-rubles-on-th.html",
+"sha256": "652975c0a3176676270ca43079f0fe62a53b9fb6f4b30419f7e78be841d8b361",
+"size": 67780,
+"url": "http://kremlin.ru/acts/bank/51960",
+"note": "via base64 transfer; http origin without crypto.subtle: SHA-256 computed in container only"
+},
+"178": {
+"project": "RU",
+"fname": "RU__2025-07__23-07-2025-248-phased-mass-introduction-of-the-digital-ruble-from-1-Se.html",
+"sha256": "3347adf69326d5c4fc46001c0d5232dac36d64acc1a641262dc3079540c3ffac",
+"size": 66643,
+"url": "http://kremlin.ru/acts/bank/52201",
+"note": "via base64 transfer; http origin without crypto.subtle: SHA-256 computed in container only"
+},
+"168": {
+"project": "PE",
+"fname": "PE__2025-09__Dise-o-e-Implementaci-n-del-Piloto-de-CBDC-Minorista-en-Per-Documento.html",
+"sha256": "efab73906a9483275c293b411f19dd45f489479649dcf3c811a828ccf73fa759",
+"size": 92039,
+"url": "https://investigacion.bcrp.gob.pe/es/investigaciones/documentos-de-trabajo/dt-2025/dt-2025-003",
+"note": "via base64 transfer; dynamic HTML: hash differs from first fetch"
+},
+"37": {
+"project": "CH",
+"fname": "CH__2022__SNB-Annual-Report-2021-Accountability-report-section-on-central-bank-d.pdf",
+"sha256": "d70b4c5fbc5b4fc5cc32d42e7245cc484f9bfd8e25be386080578cf356a87f83",
+"size": 1418745,
+"url": "https://www.snb.ch/dam/jcr:346da4f4-ba4f-4c12-bc03-1623dc17eec0/annrep_2021_rechenschaft.en.pdf",
+"note": "via base64 transfer"
+},
+"38": {
+"project": "CH",
+"fname": "CH__2023__SNB-Annual-Report-2022-Accountability-report-section-on-central-bank-d.pdf",
+"sha256": "8e19ef2e077732a7d5a3095736bb028f7a47812d2d15aea60a50188ec28596d1",
+"size": 1540513,
+"url": "https://www.snb.ch/dam/jcr:5f45c39f-19bd-4190-a87f-5674b6f93557/annrep_2022_rechenschaft.en.pdf",
+"note": "via base64 transfer"
+},
+"255": {
+"project": "ZA",
+"fname": "ZA__2025-11__SARB-retail-CBDC-Background-Note-companion-to-the-Position-Paper-repor.pdf",
+"sha256": "6cf9b9c9c60bb71d623591e92e6c3f26bd4375c3ad1c837826a213c8f65390cf",
+"size": 1864316,
+"url": "https://www.resbank.co.za/content/dam/sarb/publications/fintech/SARB%20retail%20CBDC%20Background%20Note_Final%20November%2020251125.pdf",
+"note": "via base64 transfer"
+},
+"39": {
+"project": "CL",
+"fname": "CL__2022-07__Informe-de-Sistemas-de-Pago-julio-2022-secci-n-Monedas-digitales-de-ba.pdf",
+"sha256": "da17828f5e7fc60300748fd8073fd9795f57f3e49b7477fd52073a7bda87d334",
+"size": 2476732,
+"url": "https://www.bcentral.cl/documents/33528/3652920/Informe_de_sistema_de_pago_julio_2022.pdf/037fea7f-ce7f-1257-0025-62d71871a4b6",
+"note": ""
+},
+"41": {
+"project": "CL",
+"fname": "CL__2023-08__Informe-de-Sistemas-de-Pago-agosto-2023-Exploraci-n-de-MDBC-e-implemen.pdf",
+"sha256": "dfae19d985383d413d5ad6af1b1a2608acac5863b1f0dff7e2c4dcc76af86e42",
+"size": 3183681,
+"url": "https://www.bcentral.cl/documents/33528/4387742/Informe-de-Sistemas-de-Pago-agosto-2023.pdf/ec39444d-4623-05ee-aa4c-263cbcd72b11",
+"note": ""
+},
+"42": {
+"project": "CL",
+"fname": "CL__2026-08__Recuadro-III-3-Stablecoins-y-el-problema-de-la-liquidaci-n-mayorista-I.pdf",
+"sha256": "4b5969273f5f9fe8169e6a76cb758a11267f7ee7489eeb3dc01c89cc22fd38f0",
+"size": 6579966,
+"url": "https://www.bcentral.cl/documents/33528/8546748/Informe%20de%20Sistemas%20de%20Pago%20Agosto%202026.pdf/fd0f320e-be20-7680-a0db-511554d82029",
+"note": ""
+},
+"67": {
+"project": "HU",
+"fname": "HU__2023-07__FinTech-s-Digitaliz-ci-s-Jelent-s-2023-keretes-r-s-Az-els-lakoss-gi-di.pdf",
+"sha256": "53d70760ec29ae021a1aef5528493b1447088d45dabb902d2986bf02c1486a6f",
+"size": 8063198,
+"url": "https://www.mnb.hu/letoltes/final-hu-fintech-e-s-digitaliza-cio-s-jelente-s-2023.pdf",
+"note": ""
+},
+"68": {
+"project": "HU",
+"fname": "HU__2024-07__FinTech-s-Digitaliz-ci-s-Jelent-s-2024-keretes-r-s-Az-MNB-wholesale-di.pdf",
+"sha256": "428b194e8dda71de87b0b19e102149d5ae9fd860f0f33fca6bb0133dd9335cd4",
+"size": 7585813,
+"url": "https://www.mnb.hu/letoltes/fintech-e-s-digitaliza-cio-s-jelente-s-2024-hun-0719-2.pdf",
+"note": ""
+},
+"183": {
+"project": "RW",
+"fname": "RW__2024-09__Research-Paper-on-Rwanda-Central-Bank-Digital-Currency-CBDC-feasibilit.pdf",
+"sha256": "05b77859f5ac0abfbf520536c6520447fb1adafada2e105b9f7842f937f84d75",
+"size": 3062868,
+"url": "https://www.bnr.rw/documents/CBDC_Research_Paper_Engl_Updated.pdf",
+"note": ""
+},
+"154": {
+"project": "NP",
+"fname": "NP__2024-07__Monetary-Policy-for-2024-25-English-full-text-para-116-and-implementat.pdf",
+"sha256": "2cedf9f7e05f8b27eb51cd1f8d2879b43bdb6b3fd8d7ff77ab1281894eb50d82",
+"size": 4540191,
+"url": "https://www.nrb.org.np/contents/uploads/2024/08/Monetary-Policy-in-English-for-2024-25.pdf",
+"note": ""
+},
+"103": {
+"project": "KZ",
+"fname": "KZ__2021-05__Digital-Tenge-consultative-report-for-public-discussion.pdf",
+"sha256": "975c5137654cebb01a42a6fa7df4f87ff75e951c9c5aaf3c1435582b852e9ae6",
+"size": 2969843,
+"url": "https://nationalbank.kz/file/download/66539",
+"note": ""
+},
+"106": {
+"project": "KZ",
+"fname": "KZ__2022-07__Decision-making-model-for-introducing-the-digital-tenge.pdf",
+"sha256": "df61a94173b3ac9fc56ff8bb07781b68c20b621523c14aec5dc9608d5f7430bc",
+"size": 4427770,
+"url": "https://nationalbank.kz/file/download/78803",
+"note": ""
+},
+"71": {
+"project": "ID",
+"fname": "ID__2023-11__Laporan-Konsultasi-Publik-Proyek-Garuda-Garuda-Project-Public-Consulta.pdf",
+"sha256": "8896f819e57eed28d61b57664c465be866fc6572e18173a05f82ddfe45667407",
+"size": 12024339,
+"url": "https://www.bi.go.id/id/rupiah/digital-rupiah/Documents/Laporan-Konsultasi-Publik-Proyek-Garuda.pdf",
+"note": ""
+},
+"70": {
+"project": "ID",
+"fname": "ID__2023-01__Undang-Undang-Nomor-4-Tahun-2023-tentang-Pengembangan-dan-Penguatan-Se.pdf",
+"sha256": "36c9f60bc997219c818d86188d766c2cc7637964fb9aba9c6ea90f8c7e7900fb",
+"size": 19042827,
+"url": "https://www.bi.go.id/id/tentang-bi/profil/uu-bi/UndangUndang%20BI/UU-RI-04-2023.pdf",
+"note": ""
+},
+"90": {
+"project": "JM",
+"fname": "JM__2025-04__BOJ-Annual-Report-2024-Fintech-Regulatory-Sandbox-Development-and-CBDC.pdf",
+"sha256": "cebfbf46c62dcc9e2c9a67559b5c241e5cfebe2f10954bf49658814919fd7f20",
+"size": 32401816,
+"url": "https://boj.org.jm/wp-content/uploads/2025/04/2024-BOJ-Annual-Report-final.pdf",
+"note": ""
+},
+"91": {
+"project": "JM",
+"fname": "JM__2026-03__BOJ-Annual-Report-2025-Fintech-Regulatory-Sandbox-Development-and-CBDC.pdf",
+"sha256": "afe8c8222f27b6a8cf01f0658f2b6efd7fa5c3ba3eb1e6bb66fd4e1a462d990f",
+"size": 33617846,
+"url": "https://boj.org.jm/wp-content/uploads/2026/03/2025-BOJ-Annual-Report-final.pdf",
+"note": ""
+}
+}

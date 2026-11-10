@@ -14,7 +14,7 @@ decision_v12 pre-fill (unified vocabulary KEEP / BORDERLINE / DROP / COMPANION /
                                reject->DROP); decision_source = "model pre-screen"
 Every pre-filled value is a proposal until the authors confirm it; `read_source_decisions.py` treats decision_source != "author" as unconfirmed.
 
-usage: build_all_documents_workbook.py --url-status <json> --downloads data/manifest/MANUAL_DOWNLOADS_2026-11-09.csv --out <xlsx>
+usage: build_all_documents_workbook.py --url-status <json> --downloads data/manifest/MANUAL_DOWNLOADS_2026-11-10.csv --out <xlsx>
 """
 import argparse, csv, json, os, sys, collections, datetime
 from openpyxl import Workbook
@@ -77,7 +77,7 @@ def main():
     for t in [f"ALL DOCUMENTS, v12 source decision (built {datetime.date.today().isoformat()}). One row per document we know of: {sum(1 for x in rows if x[1]=='registry')} registry rows + {sum(1 for x in rows if x[1]=='candidate')} gap-check candidates.",
               "Decide in the yellow column decision_v12 for EVERY row. Values: KEEP (evidence document) / BORDERLINE (keep, flag) / DROP (not evidence) / COMPANION (same content as another kept document: cover release, landing page, summary) / WHOLESALE (wholesale-only) / RECHECK (open the file first).",
               "The column is PRE-FILLED: 'decision_source' says who proposed it. 'MB v11' = your October decision (KEEP/BORDERLINE carried over). 'model triage, title-level' = your v11 DROPs re-triaged by the model from titles only (low confidence). 'model pre-screen' = the model's D1 proposal for new candidates. Overwrite whatever you disagree with; when you confirm a row, change decision_source to 'author' (or leave it: read_source_decisions.py will ask for the unconfirmed ones).",
-              "Columns 'file' / 'sha256' / 'downloaded': registry documents are in the v11 corpus (Dropbox 'Dizertace all the PDFs'); 126 candidates were fetched on 5 and 9 Nov into Dropbox 'new cbdc files\\<CODE>\\'; 5 could not be retrieved (reason given); the remaining candidates are downloaded by script once accepted.",
+              "Columns 'file' / 'sha256' / 'downloaded': registry documents are in the v11 corpus (Dropbox 'Dizertace all the PDFs'); all 378 candidates with a working link were fetched on 5, 9 and 10 Nov into Dropbox 'Dizertace all the PDFs\\CBDC_MASTER_v12\\<CODE>\\' (the first 126 also sit in 'new cbdc files'); 13 could not be retrieved (reason given: 2 dead URLs, 7 RBI bot protection, 1 dead host, 1 broken TLS, 1 geo-block, 1 file of 407 MB).",
               "Rule of record: docs/SOURCE_RULE_D1.md (official body on its own channel; retail CBDC of the project; load-bearing content; genre never decides). As-of 2026-10-18 for the registry; candidates carry their own dates (later documents are dated amendments).",
               "Sheet PROJECTS: counts per project from the pre-filled decisions (KEEP+BORDERLINE) and the indicative tier (T1 >= 8, T2 5-7, T3 <= 4). Final tiers are recomputed from your decisions."]:
         ws.append([t])
