@@ -40,10 +40,11 @@ def main():
     docs = collections.defaultdict(list)
     for w in W:
         # the linked PDF ("__attachment-1" / "__official-download") is the document, the HTML page of the same name its landing page
-        files = sorted(man.get(w["id"], []), key=lambda m: (not re.search(r"__(attachment-\d+|official-download)\.", m["fname"]), m["fname"])); f = files[0] if files else None
+        allf = man.get(w["id"], []); en_ed = [m for m in allf if m["source"] == "english_edition"]  # route-B English editions are shown, the row keeps the original as its file
+        files = sorted([m for m in allf if m["source"] != "english_edition"], key=lambda m: (not re.search(r"__(attachment-\d+|official-download)\.", m["fname"]), m["fname"])); f = files[0] if files else None
         l = lang.get(f["sha256"], {}) if f else {}
         y = str(w["year"] or "").strip(); y = y if re.fullmatch(r"(19|20)\d\d", y) else "n.d."
-        docs[w["project"]].append({**w, "y": y, "dec": w["decision_v12"] or "", "master": f["master_path"] if f else "", "ext": f["ext"] if f else "", "nfiles": len(files),
+        docs[w["project"]].append({**w, "y": y, "dec": w["decision_v12"] or "", "master": f["master_path"] if f else "", "ext": f["ext"] if f else "", "nfiles": len(files), "en_ed": en_ed[0]["master_path"] if en_ed else "",
                                    "lang": l.get("lang_class", ""), "share_en": l.get("share_en", ""), "pages": l.get("pages", ""), "lflag": l.get("flag", ""), "sha": f["sha256"] if f else ""})
     proj = {}
     for p, ds in docs.items():
@@ -89,7 +90,7 @@ def main():
             for x in sorted(docs[p], key=lambda x: (x["y"], ORDER.get(x["dec"], 9), str(x["title"]))):
                 u = x["URL"] or ""; m = re.search(r'HYPERLINK\("([^"]+)"', str(u)); u = m.group(1) if m else u
                 d.append([p, proj[p]["tier"] if g != "OUT_OF_FRAME" else "", x["y"], x["date"] or "", x["dec"], "", x["decision_source"] or "", x["title"], x["kind"] or "", x["lang"], x["share_en"], x["pages"], x["source"], x["MB verdict v11"] or "", x["model reason"] or "",
-                          x["master"] + (f" (+{x['nfiles']-1} linked)" if x["nfiles"] > 1 else "") if x["master"] else (x["downloaded"] or ""), x["lflag"], f'=HYPERLINK("{u}","open")' if u else "", x["id"], ""])
+                          (x["master"] + (f" (+{x['nfiles']-1} linked)" if x["nfiles"] > 1 else "") if x["master"] else (x["downloaded"] or "")) + (" | EN edition: " + x["en_ed"] if x["en_ed"] else ""), x["lflag"], f'=HYPERLINK("{u}","open")' if u else "", x["id"], ""])
                 i = d.max_row
                 if x["dec"] in FILL: d.cell(i, 5).fill = PatternFill("solid", fgColor=FILL[x["dec"]])
                 d.cell(i, 6).fill = PatternFill("solid", fgColor="FFF2CC")

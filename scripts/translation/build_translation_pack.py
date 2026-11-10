@@ -22,7 +22,7 @@ SHA-256 of the exact user message), so any later run can prove it sent the same 
 
 usage: build_translation_pack.py --tiers data/manifest/TIERS_2026-11-10.csv --cache <text cache dir> --pack <dir> --date 2026-11-10 [--route-b data/translation/ROUTE_B_PAIRS.csv]
 """
-import argparse, csv, hashlib, os, re, collections
+import argparse, csv, glob, hashlib, os, re, collections
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE))
 DENSE = {"zh", "ja", "ko"}
 NAMES = {"ru": "Russian", "zh": "Chinese", "ja": "Japanese", "es": "Spanish", "nb": "Norwegian Bokmål", "sl": "Slovenian", "fi": "Finnish", "nl": "Dutch", "th": "Thai", "tr": "Turkish", "sv": "Swedish",
@@ -56,6 +56,9 @@ def main():
     a = ap.parse_args()
     rb = {r["id"]: r for r in csv.DictReader(open(a.route_b, encoding="utf-8"))} if os.path.exists(a.route_b) else {}
     ovp = os.path.join(ROOT, "data/translation/LANGUAGE_OVERRIDES.csv"); ov = {r["id"]: r for r in csv.DictReader(open(ovp, encoding="utf-8"))} if os.path.exists(ovp) else {}
+    eds = {}
+    for f in sorted(glob.glob(os.path.join(ROOT, "data/translation/ENGLISH_EDITIONS_*.csv"))):
+        for e in csv.DictReader(open(f, encoding="utf-8")): eds[e["parallel_of"]] = e
     queue = []; reqs = []
     for r in csv.DictReader(open(a.tiers, encoding="utf-8")):
         if r["tier"] not in ("T1", "T2") or r["decision_v12"] not in ("KEEP", "BORDERLINE", "RECHECK"): continue
@@ -72,6 +75,7 @@ def main():
         q = {"doc_key": key, "priority": prio, "input_mode": mode, "tier": r["tier"], "project": r["project"], "year": r["year"], "id": r["id"], "decision_v12": r["decision_v12"], "language": r["language"],
              "share_en": r["share_en"], "pages": r["pages"], "chars": "", "chunks": "", "title": r["title"], "master_path": r["master_path"], "source_sha256": r["sha256"],
              "issuer_english_edition": (f"{b['status']}: {b['english_edition']}" if b else "not checked"), "check_confidence": (b["confidence"] if b else ""),
+             "english_edition_file": (lambda e: (f"CBDC_MASTER_v12/{e['project']}/{e['fname']} (sha256 {e['sha256']}, {e['pages'] or 1} p.)" if e and e["fname"] else (e["status"] if e else "")))(eds.get(r["id"])),
              "note": "; ".join(x for x in [(b["note"] if b else ""), r["text_flag"], (ov[r["id"]]["basis"] if r["id"] in ov else "")] if x)}
         if mode == "text" and prio != "RB":
             limit = a.chars_dense if lang in DENSE else a.chars

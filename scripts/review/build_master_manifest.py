@@ -27,6 +27,8 @@ def main():
     out = []
     for it in items:
         w = byid.get(it["id"]) or bysha.get(it["sha256"]) or byfile.get(it["fname"]); note = it.get("flag", "")
+        if w is None and it.get("parallel_of"):  # issuer's English edition of a document already in the workbook (route B)
+            w = byid.get(it["parallel_of"]); note = (note + "; " if note else "") + "issuer English edition of " + it["parallel_of"]
         if w is None and "__" in it["fname"]:  # linked attachment of an HTML candidate: parent has the same stem before the last "__"
             stem = it["fname"].rsplit("__", 1)[0]
             for k, r in byfile.items():
