@@ -5,8 +5,12 @@ MB, 9-10 Nov 2026: every non-English document is translated into English by a se
 (a translation error is preferred to model bias; a translation-vs-original sub-sample is kept for comparison).
 
 Queue (one row per non-English document of a T1/T2 project with decision KEEP / BORDERLINE / RECHECK):
-  priority  A = evidence (KEEP/BORDERLINE) · B = RECHECK (translate only if the authors keep it) · BENCH = the issuer publishes its own
-            English edition (route B: that edition is the evidence); the original is translated only as the translation-quality benchmark
+  priority  A = evidence (KEEP/BORDERLINE) · B = RECHECK (translate only if the authors keep it) · RB = the issuer publishes its own
+            English edition of the same document (route B: that edition is the evidence; NO translation request is built) · BENCH = a
+            route-B document chosen as translation-quality benchmark (translated with the same prompt and compared with the issuer's English)
+            The English-edition check of 10 Nov 2026 is in data/translation/ROUTE_B_PAIRS.csv (status full_edition / partial / unofficial /
+            none_found, URL, how it was verified, confidence); only full_edition changes the route. LANGUAGE_OVERRIDES.csv sets the language
+            of files whose text layer could not be detected (scans of English originals leave the queue).
   input_mode  text = text layer usable (requests are built) · ocr_or_pdf = scanned / garbled text layer (no request built: OCR first, or
             give the PDF itself to a vision model with the same system prompt) · no_file = document not retrieved
 Request pack (written OUTSIDE the repository: source texts are the issuers' copyright): <pack>/requests/<doc_key>/<doc_key>.chunk-XX-of-NN.txt,
@@ -51,20 +55,25 @@ def main():
     ap.add_argument("--route-b", default=os.path.join(ROOT, "data/translation/ROUTE_B_PAIRS.csv")); ap.add_argument("--chars", type=int, default=18000); ap.add_argument("--chars-dense", type=int, default=9000)
     a = ap.parse_args()
     rb = {r["id"]: r for r in csv.DictReader(open(a.route_b, encoding="utf-8"))} if os.path.exists(a.route_b) else {}
+    ovp = os.path.join(ROOT, "data/translation/LANGUAGE_OVERRIDES.csv"); ov = {r["id"]: r for r in csv.DictReader(open(ovp, encoding="utf-8"))} if os.path.exists(ovp) else {}
     queue = []; reqs = []
     for r in csv.DictReader(open(a.tiers, encoding="utf-8")):
-        if r["tier"] not in ("T1", "T2") or r["decision_v12"] not in ("KEEP", "BORDERLINE", "RECHECK") or r["language"] == "en": continue
+        if r["tier"] not in ("T1", "T2") or r["decision_v12"] not in ("KEEP", "BORDERLINE", "RECHECK"): continue
+        if r["id"] in ov: r["language"] = ov[r["id"]]["language"]
+        if r["language"] == "en": continue
         lang = r["language"].replace("mixed:", ""); key = re.sub(r"[^A-Za-z0-9_-]+", "-", f"{r['project']}_{r['id']}")[:70]
         b = rb.get(r["id"])
-        prio = "BENCH" if b else ("A" if r["decision_v12"] in ("KEEP", "BORDERLINE") else "B")
+        full = b and b["status"] == "full_edition"
+        prio = ("BENCH" if b["benchmark"] == "yes" else "RB") if full else ("A" if r["decision_v12"] in ("KEEP", "BORDERLINE") else "B")
         cf = os.path.join(a.cache, r["sha256"] + ".txt") if r["sha256"] else ""
         if not r["master_path"]: mode = "no_file"
         elif r["text_flag"].startswith(("scanned", "garbled", "too_little")) or not lang or not os.path.exists(cf): mode = "ocr_or_pdf"
         else: mode = "text"
         q = {"doc_key": key, "priority": prio, "input_mode": mode, "tier": r["tier"], "project": r["project"], "year": r["year"], "id": r["id"], "decision_v12": r["decision_v12"], "language": r["language"],
              "share_en": r["share_en"], "pages": r["pages"], "chars": "", "chunks": "", "title": r["title"], "master_path": r["master_path"], "source_sha256": r["sha256"],
-             "issuer_english_edition": (b["english_edition"] if b else "not checked"), "note": (b["note"] if b else r["text_flag"])}
-        if mode == "text":
+             "issuer_english_edition": (f"{b['status']}: {b['english_edition']}" if b else "not checked"), "check_confidence": (b["confidence"] if b else ""),
+             "note": "; ".join(x for x in [(b["note"] if b else ""), r["text_flag"], (ov[r["id"]]["basis"] if r["id"] in ov else "")] if x)}
+        if mode == "text" and prio != "RB":
             limit = a.chars_dense if lang in DENSE else a.chars
             us = units(open(cf, encoding="utf-8").read(), limit); chunks = []; cur = []; size = 0
             for u in us:
@@ -80,10 +89,10 @@ def main():
                        f"chunk: {i} of {len(chunks)} | markers PAGE {ch[0][0]} to PAGE {ch[-1][0]} | text_sha256: {sha(body)}\n--- BEGIN SOURCE TEXT ---\n{body}--- END SOURCE TEXT ---\n")
                 fn = f"{key}.chunk-{i:02d}-of-{len(chunks):02d}.txt"; open(os.path.join(d, fn), "w", encoding="utf-8", newline="\n").write(msg)
                 reqs.append({"doc_key": key, "chunk": i, "of": len(chunks), "first_marker": ch[0][0], "last_marker": ch[-1][0], "markers": len(ch), "chars": len(body), "request_file": f"requests/{key}/{fn}", "user_sha256": sha(msg), "source_sha256": r["sha256"]})
-        if mode == "text" and r["master_path"].endswith(".html") and q["chars"] > 60000 and not q["note"]:
+        if mode == "text" and r["master_path"].endswith(".html") and (q["chars"] or 0) > 60000 and not q["note"]:
             q["note"] = "long HTML page (whole law or page with boilerplate): consider translating only the cited provisions"
         queue.append(q)
-    order = {"A": 0, "B": 1, "BENCH": 2}
+    order = {"A": 0, "B": 1, "BENCH": 2, "RB": 3}
     queue.sort(key=lambda q: (order[q["priority"]], q["tier"], q["project"], q["year"], q["doc_key"]))
     os.makedirs(os.path.join(ROOT, "data/translation"), exist_ok=True)
     for name, rows in [(f"TRANSLATION_QUEUE_{a.date}.csv", queue), (f"TRANSLATION_REQUESTS_{a.date}.csv", reqs)]:
@@ -92,7 +101,7 @@ def main():
                 w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     c = collections.Counter((q["priority"], q["input_mode"]) for q in queue)
     print(len(queue), "documents;", dict(c)); print(len(reqs), "requests;", sum(r["chars"] for r in reqs), "source characters")
-    for p in "A", "B", "BENCH": print(p, "text-mode docs", sum(1 for q in queue if q["priority"] == p and q["input_mode"] == "text"), "requests", sum(q["chunks"] or 0 for q in queue if q["priority"] == p))
+    for p in "A", "B", "BENCH", "RB": print(p, "text-mode docs", sum(1 for q in queue if q["priority"] == p and q["input_mode"] == "text"), "requests", sum(q["chunks"] or 0 for q in queue if q["priority"] == p))
 
 
 if __name__ == "__main__": main()

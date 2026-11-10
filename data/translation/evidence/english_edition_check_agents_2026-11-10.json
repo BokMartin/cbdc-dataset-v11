@@ -1,0 +1,1097 @@
+[
+ {
+  "doc_key": "TW_CAND-340",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English version of the Dec 2020 CBDC reference material found. The CBC's English Monetary Policy Release section only started carrying English 'Selected Issues' from post-meeting supplementary materials with 2025Q4 (released 2026-03-09). English items for the 2020Q4 meeting found were only the Provisional Schedule 2021 (cp-448-124984, 2020-12-17) and the Minutes 2020Q4 (cp-448-128237, 2021-01-28); neither is the CBDC reference material.",
+  "confidence": "medium",
+  "searched": [
+   "web: cbc.gov.tw/en CBDC latest developments December 2020 press conference",
+   "web: cbc.gov.tw en Post-Monetary Policy Meeting press conference December 2020 supplementary digital currency",
+   "fetched cbc.gov.tw/en/cp-448-124984-d1a0d-2.html",
+   "fetched cbc.gov.tw/en/cp-448-128237-ff59d-2.html",
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)"
+  ],
+  "note": "The English 2020Q4 minutes (https://www.cbc.gov.tw/en/dl-164358-a3da4926991e4a898050bf178d1b0541.html, seen on the press-release page, PDF not opened) may mention CBDC in passing. They are not the same document."
+ },
+ {
+  "doc_key": "TW_CAND-341",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "The CBC English site has no section for reports to the Legislative Yuan. Its English publications are the Annual Report, the FSR, BoP, statistics and similar. Searches found no English text of the Nov 2021 special report.",
+  "confidence": "medium",
+  "searched": [
+   "web: cbc.gov.tw en Central Bank Digital Currency Legislative Yuan report English 2021 2024",
+   "web: site:cbc.gov.tw/en CBDC (returned only Chinese dl- files)",
+   "web: site:cbc.gov.tw/en Legislative Yuan report",
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)"
+  ],
+  "note": "The English Annual Report 2021 probably summarises CBDC work briefly. That would at most count as partial coverage, not an edition."
+ },
+ {
+  "doc_key": "TW_CAND-343",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "I fetched the CBC English Speeches page: it lists 18 items, and the only one from 2020 onwards is the 2022-08-03 CABEI remarks. The 2022-06-29 FISC speech is not there. The BIS speech archive carries no CBC Taiwan texts (Taiwan is not a BIS member). dl-196005 turned out to be the English Annual Report 2022, not this speech.",
+  "confidence": "high",
+  "searched": [
+   "fetched https://www.cbc.gov.tw/en/lp-449-2.html",
+   "web: cbc.gov.tw/en speech Governor Chin-Long Yang 2022 digital transformation central bank money FISC",
+   "web: BIS central bankers speeches Chin-Long Yang 2022",
+   "fetched https://www.cbc.gov.tw/dl-196005-4d342653c9a242cdb5a046742c4b83b5.html (English Annual Report 2022)"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_CAND-345",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English edition of the business reports to the Legislative Yuan exists on the CBC English site (publications and press-release sections checked). The English Annual Report 2022 (dl-196005, fetched) is a different document.",
+  "confidence": "medium",
+  "searched": [
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)",
+   "web: site:cbc.gov.tw Business Report Legislative Yuan English governor"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_CAND-346",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "English 'Selected Issues' translations of post-meeting supplementary materials begin only with 2025Q4. For the 2024Q2 meeting (2024-06-13) the English site has only the minutes (cp-448-174066, released 2024-07-26, fetched; the page text does not mention CBDC). No English text of the CBDC survey note was found.",
+  "confidence": "medium",
+  "searched": [
+   "web: Central Bank Republic of China Taiwan CBDC survey results June 2024 English press release",
+   "web: cbc.gov.tw en Supplementary Materials Post-Monetary Policy Meeting Press Conference CBDC survey 2024",
+   "web: 'Selected Issues from the Supplementary Materials' 2024Q2",
+   "fetched cbc.gov.tw/en/cp-448-174066-27e13-2.html",
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_CAND-347",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "As for TW_CAND-341: the CBC publishes no English versions of its special reports to the Legislative Yuan, and searches found no English text.",
+  "confidence": "medium",
+  "searched": [
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)",
+   "web: cbc.gov.tw en Central Bank Digital Currency Legislative Yuan report English 2021 2024 digital currency issuance"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_CAND-349",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "Business reports to the Legislative Yuan are Chinese only. Nothing in English was found.",
+  "confidence": "medium",
+  "searched": [
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_CAND-350",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "Business reports to the Legislative Yuan are Chinese only. The English Annual Report 2025 (dl-225821, foreword April 2026, fetched) is a different document, though it does mention CBDC research and wholesale CBDC trials.",
+  "confidence": "medium",
+  "searched": [
+   "cbc.gov.tw/en Speeches list lp-449-2 (fetched: 18 items, only 2022-08-03 CABEI remarks since 2020; nothing CBDC)",
+   "cbc.gov.tw/en Publications lp-535-2 (fetched: no CBDC or Legislative Yuan reports)",
+   "cbc.gov.tw/en Monetary Policy Release list lp-1025-2-1-20 (fetched: English 'Selected Issues from the Supplementary Materials' exist only from 2025Q4 onwards)",
+   "fetched https://www.cbc.gov.tw/dl-225821-d2da34b6f2a041be96d7a0b049ea945b.html"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "The Chinese press release (115)新聞發布第066號, dated 2026-04-15 (fetched: https://www.cbc.gov.tw/tw/cp-302-191133-c1456-1.html), links only Chinese attachments: the report (dl-225293) and a table (dl-225294). It offers no English link. English press releases I fetched from around that date (2026-04-17 cp-448-191147, 2026-04-23 cp-448-191171, 2026-04-30 cp-448-191202) are unrelated. Searches found no English version of the report.",
+  "confidence": "medium",
+  "searched": [
+   "fetched cbc.gov.tw/tw/cp-302-191133-c1456-1.html",
+   "web: Central Bank Taiwan English Summary Report CBDC external communication activities April 2026",
+   "web: ... press release CBDC April 15 2026 English",
+   "fetched cbc.gov.tw/en/cp-448-191147, -191171, -191202"
+  ],
+  "note": "The input file has no direct URL. The Chinese PDF is https://www.cbc.gov.tw/tw/dl-225293-b536ca324ca2454b975128d57b774c62.html, taken from the press release. I could not browse the English press-release list pages 6 and 7 (mid-April 2026) because the fetch tool blocked them (permission not granted), so a short English press release cannot be fully ruled out."
+ },
+ {
+  "doc_key": "CN_CAND-062",
+  "status": "full_edition",
+  "english_url": "https://www.bis.org/review/r211213f.htm",
+  "landing_page": "https://www.bis.org/speeches/20211213-speech-conference-bank-finland-institute-emerging-economics",
+  "url_check": "fetched_ok",
+  "english_title": "Yi Gang: Speech – Conference of the Bank of Finland Institute for Emerging Economics",
+  "evidence": "The BIS central bankers' speeches text names Yi Gang, Governor of the PBC, at the BOFIT 30th Anniversary Conference. The event date is given as 10 Nov 2021 and the BIS posting as 13 Dec 2021. It runs about 950 words and covers e-CNY pilot progress, stability safeguards, privacy (small amounts anonymous, large amounts traceable), cash and cross-border work (mBridge). The topics match the Chinese 1-page speech. A PDF is also listed at bis.org/review/r211213f.pdf (seen_in_search pattern; not fetched).",
+  "confidence": "medium",
+  "searched": [
+   "web: Yi Gang BOFIT 30th anniversary video speech November 2021 pbc.gov.cn english",
+   "web: bis.org review Yi Gang BOFIT 30th anniversary",
+   "web: site:pbc.gov.cn/en Yi Gang Bank of Finland ...",
+   "fetch pbc.gov.cn/en speeches page: blocked (permission not granted)"
+  ],
+  "note": "I could not open pbc.gov.cn (Chinese or English) because the fetch tool blocked it, so I did not check the English text against the Chinese paragraph by paragraph, and could not confirm whether pbc.gov.cn/en also hosts it. The BIS text is the issuer-provided text you asked me to accept. Caixin Global also published an unofficial 'Full Text' (caixinglobal.com 2021-11-10). Confidence is medium because the length and date match were not checked against the Chinese original."
+ },
+ {
+  "doc_key": "CN_CAND-063",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "I found no English PBOC release on the 2022-04-02 e-CNY pilot symposium. English coverage comes only from media (China Daily, Global Times, Reuters via investing.com, centralbanking.com).",
+  "confidence": "low",
+  "searched": [
+   "web: PBOC holds symposium e-CNY research development pilot April 2022 English news release",
+   "web: PBC symposium e-CNY pilot Fan Yifei April 2 2022 ...",
+   "pbc.gov.cn/en: not reachable (fetch blocked)"
+  ],
+  "note": "I could not check the pbc.gov.cn/en news section because fetches were blocked, so the low grade reflects a gap in coverage, not evidence of absence. The PBOC English site sometimes carries short English news items, so a manual check is advised."
+ },
+ {
+  "doc_key": "CN_CAND-064",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "I found no English version of the 2022-10-12 article 扎实开展数字人民币研发试点工作 (PBOC achievements series). Only Chinese copies turned up (cs.com.cn, wallstreetcn).",
+  "confidence": "low",
+  "searched": [
+   "web: 扎实开展数字人民币研发试点工作 人民银行 2022 英文",
+   "web: PBOC English Steadily/Solidly e-CNY R&D pilot achievements October 2022",
+   "pbc.gov.cn/en: fetch blocked"
+  ],
+  "note": "pbc.gov.cn/en was not reachable, so this needs a manual check."
+ },
+ {
+  "doc_key": "CN_CAND-065",
+  "status": "full_edition",
+  "english_url": "https://www.bis.org/review/r221031c.htm",
+  "landing_page": "https://www.bis.org/speeches/20221031-speech-hong-kong-fintech-week-2022",
+  "url_check": "fetched_ok",
+  "english_title": "Yi Gang: Speech - Hong Kong FinTech Week 2022",
+  "evidence": "BIS central bankers' speeches text: Yi Gang, Governor of the PBC, virtual address at Hong Kong FinTech Week 2022, 31 Oct 2022. It runs about 450 words and covers CBDC privacy, managed anonymity, the two-tier design, data protection, soft and hard wallets, cash, and HKMA cooperation. The date and venue match the Chinese 1-page speech. The PDF is at https://www.bis.org/review/r221031c.pdf (seen_in_search).",
+  "confidence": "medium",
+  "searched": [
+   "web: Yi Gang speech Hong Kong FinTech Week 2022 e-CNY pbc.gov.cn en",
+   "web: pbc.gov.cn/en Yi Gang speech e-CNY privacy Hong Kong FinTech Week",
+   "fetch pbc.gov.cn Chinese page: blocked"
+  ],
+  "note": "I could not fetch the Chinese original to compare lengths. About 450 words is plausible for a short video address, but check it against the Chinese character count before substituting."
+ },
+ {
+  "doc_key": "CN_CAND-066",
+  "status": "full_edition",
+  "english_url": "https://www.bis.org/review/r251031n.htm",
+  "landing_page": "https://www.bis.org/review/r251031n.htm",
+  "url_check": "fetched_ok",
+  "english_title": "Pan Gongsheng: China's macroprudential management system - development practice and future evolution",
+  "evidence": "BIS central bankers' speeches text: Pan Gongsheng, Governor of the PBC, Annual Conference of the Financial Street Forum 2025, Beijing, delivered 27 Oct 2025 and posted by BIS 10 Nov 2025. It runs about 4,000 words. The structure is opening remarks (monetary policy, government bond trading, e-CNY and stablecoins, personal credit relief), then sections I, II and III on macroprudential management. The English title translates the Chinese title 中国宏观审慎管理体系的建设实践与未来演进 exactly. The PDF is at https://www.bis.org/review/r251031n.pdf (seen_in_search).",
+  "confidence": "high",
+  "searched": [
+   "web: Pan Gongsheng 2025 Financial Street Forum speech macroprudential management system english pbc.gov.cn",
+   "web: People's Bank of China English Speeches Pan Gongsheng ... site:pbc.gov.cn",
+   "pbc.gov.cn/en: fetch blocked"
+  ],
+  "note": "I could not check whether pbc.gov.cn/en hosts the same English text, because the fetch was blocked."
+ },
+ {
+  "doc_key": "CN_CN_PBOC_LuLei_ActionPlan_2025",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "The article by Deputy Governor Lu Lei (late Dec 2025, on the e-CNY action plan and the move to 'digital deposit money' from 1 Jan 2026) is covered in English only by media: China Daily, investinchina, Reuters syndications, crypto press. I found no PBOC English text and no BIS posting.",
+  "confidence": "low",
+  "searched": [
+   "web: Lu Lei PBOC deputy governor 2025 e-CNY action plan article cls.cn",
+   "web: Lu Lei signed article e-CNY digital deposit money December 2025 Financial News full text English PBOC website",
+   "web: Lu Lei e-CNY article Financial News December 29 2025 PBOC English full text pbc.gov.cn en"
+  ],
+  "note": "The dataset copy comes from cls.cn, a third party. The original was probably carried by Financial News (金融时报), a PBOC-affiliated outlet, or by pbc.gov.cn. pbc.gov.cn/en could not be checked."
+ },
+ {
+  "doc_key": "CN_CAND-060",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "NPC Observer's page on the PBOC Law (fetched) labels the 2020 draft for public comment 'Chinese only' and gives no English translation. Only English summaries from media and law firms exist (Dechert, China Law & Practice, gov.cn English news).",
+  "confidence": "medium",
+  "searched": [
+   "web: PBOC Law revised draft for public comment October 2020 English translation digital currency",
+   "web: Law of the People's Bank of China Draft Revision for Public Comment 2020 English translation chinalawtranslate OR pkulaw",
+   "fetched https://npcobserver.com/legislation/law-on-the-peoples-bank-of-china/"
+  ],
+  "note": "pbc.gov.cn/en could not be checked (fetch blocked). An English news item announcing the consultation may exist there, but it would be partial at most."
+ },
+ {
+  "doc_key": "CN_CAND-070",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "NPC Observer (fetched) labels the 2026 NPCSC first-reading draft 'Chinese only'. The NPC does not publish official English texts of drafts. English coverage is news only (China Daily NPC subsite 2026-06-24, people.cn, Caixin).",
+  "confidence": "high",
+  "searched": [
+   "web: NPC Standing Committee PBOC Law revision draft first reading June 2026 English",
+   "fetched npcobserver.com/legislation/law-on-the-peoples-bank-of-china/"
+  ],
+  "note": "China Daily's NPC subsite (https://subsites.chinadaily.com.cn/npc/2026-06/24/c_1192622.htm, seen_in_search) has an English news summary. It is a state media report on the draft, not the draft itself."
+ },
+ {
+  "doc_key": "MO_CAND-169",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "The Macao Boletim Oficial is published only in Chinese and Portuguese, which are Macao's official languages. Searches found no English text of Lei n.º 10/2023, official or unofficial, only English news reports (Macau Daily Times, Macau Post Daily, centralbanking.com).",
+  "confidence": "high",
+  "searched": [
+   "web: Macao Law No. 10/2023 legal regime of currency issuance English translation digital pataca"
+  ],
+  "note": "I did not fetch the gazette PDF. The judgement that no official English exists rests on the gazette's bilingual (PT/ZH) status and on the searches. Note that the input lang field is empty: the gazette PDF is bilingual, so the Portuguese text is itself an official, authentic version."
+ },
+ {
+  "doc_key": "MO_CAND-170",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "I found no English AMCM version of the 2024-09-23 statement. English reports exist only in the media (Macau Daily Times, Macau Post Daily, Macau Business).",
+  "confidence": "low",
+  "searched": [
+   "web: amcm.gov.mo en e-MOP research and development project proceeding orderly September 2024 statement",
+   "web: amcm.gov.mo/en news-notice statement e-MOP 20240923",
+   "web: gov.mo en news AMCM e-MOP ... 2024",
+   "fetch amcm.gov.mo zh-hant statement page: blocked (permission not granted)"
+  ],
+  "note": "amcm.gov.mo was blocked for fetching and is barely indexed by search. AMCM's website is normally trilingual (ZH/PT/EN), so an English statement at amcm.gov.mo/en/... is quite possible. Check manually by switching language on the statement page."
+ },
+ {
+  "doc_key": "MO_CAND-172",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English e-MOP FAQ turned up in search.",
+  "confidence": "low",
+  "searched": [
+   "web: amcm.gov.mo en e-MOP FAQ digital Macao pataca",
+   "web: site:amcm.gov.mo e-MOP (no amcm.gov.mo results returned)"
+  ],
+  "note": "amcm.gov.mo could not be fetched. The special-coverage page probably has PT and EN language variants (e.g. /en/news-notice/Special_Coverage/emop/emop-faq), but I did not verify this and have not filled in any URL. Manual check needed."
+ },
+ {
+  "doc_key": "MO_CAND-173",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "I found no English version of the prototype demonstration slides. The filename 'Demonstracao_slides.pdf' suggests the deck may be Portuguese or bilingual. The input lang field is empty.",
+  "confidence": "low",
+  "searched": [
+   "web: AMCM e-MOP prototype demonstration slides English pdf cdn.amcm.gov.mo emop"
+  ],
+  "note": "The PDF was not opened. Check its language manually: if it is ZH/PT/EN bilingual, the English text is already inside the source."
+ },
+ {
+  "doc_key": "MO_CAND-179",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "Searches did not surface an English AMCM Annual Report 2025. The CDN folder (research_and_stats/annual_reports/2025/) and the '_cn_' filename suffix suggest that language siblings may exist, but I did not guess or fetch any URL.",
+  "confidence": "low",
+  "searched": [
+   "web: AMCM Annual Report 2025 English pdf cdn.amcm.gov.mo annual_report_2025",
+   "web: annual_report_2024_en OR annual_report_2023_en amcm",
+   "web: AMCM annual report 2025 released June 2026 English"
+  ],
+  "note": "AMCM has historically published annual reports in Chinese, Portuguese and English. I am going on background knowledge here; it is not verified in this session. A full English edition is therefore likely. Check the AMCM English 'Annual Reports' page manually. This is the most probable miss in the MO set."
+ },
+ {
+  "doc_key": "KZ_CAND-150",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2025/06/NBK-Digital-Tenge-Public-Discussion-Report-May-2021-1.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/",
+  "url_check": "linked_from_page_but_not_fetched (fetch blocked: permission/provenance refusal; landing page fetched_ok)",
+  "english_title": "NBK Digital Tenge Public Discussion Report (May 2021)",
+  "evidence": "Official NPCK (NBK subsidiary) English Documents page lists this file with the label 'NBK Digital Tenge Public Discussion Report (May 2021)', matching the RU consultative report of 2021-05-05. Contents/page count not verified because the PDF could not be fetched.",
+  "confidence": "medium",
+  "searched": [
+   "fetch nationalbank.kz/en/page/cifrovoy-tenge-pilotnyy-proekt (blocked)",
+   "search 'Digital Tenge consultative report public discussion English'",
+   "fetch npck.kz/?p=1346",
+   "fetch npck.kz/en/digital-tenge/documents/"
+  ],
+  "note": "Republished by NPCK in 2025/06 uploads; original 2021 English file on nationalbank.kz not located (NBK Digital Tenge page blocked). Verify page count (~34) before substituting."
+ },
+ {
+  "doc_key": "KZ_CAND-151",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "Not listed on the NPCK English Documents page (8 items, none is Q&A); no English Q&A found in searches.",
+  "confidence": "medium",
+  "searched": [
+   "search 'digital tenge answers to questions consultative report participants English'",
+   "fetch npck.kz/en/digital-tenge/documents/",
+   "nationalbank.kz/en Digital Tenge page (blocked)"
+  ],
+  "note": "The main NBK Digital Tenge English page could not be fetched (permission block), so an English version hosted only there cannot be excluded."
+ },
+ {
+  "doc_key": "KZ_CAND-152",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English FAQ file found in search; not on NPCK English Documents page.",
+  "confidence": "low",
+  "searched": [
+   "search 'digital tenge FAQ frequently asked questions nationalbank.kz 2022 English'",
+   "fetch npck.kz/en/digital-tenge/documents/",
+   "nationalbank.kz/en Digital Tenge page (blocked)"
+  ],
+  "note": "Short 4-page FAQ; if one exists it would most likely sit on the blocked nationalbank.kz/en Digital Tenge page. Low confidence for that reason."
+ },
+ {
+  "doc_key": "KZ_CAND-153",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2025/06/DecisionMaking-Framework-for-Digital-Tenge-Issuance-2022-1.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/",
+  "url_check": "fetched_ok",
+  "english_title": "The decision-making framework for digital tenge issuance (listed as 'DecisionMaking Framework for Digital Tenge Issuance (July 2022)')",
+  "evidence": "Issuer NBK; English; TOC: Abbreviations, Executive summary, Overview of CBDC projects, Decision-making framework, Description, Analysis and expected results, Interpretation, Appendix (p.33), References (p.60+) => at least ~60 pp vs RU 65 pp; dated July 2022 matching RU 2022-07-01.",
+  "confidence": "high",
+  "searched": [
+   "fetch npck.kz/?p=1346",
+   "fetch npck.kz/en/digital-tenge/documents/",
+   "fetch PDF"
+  ],
+  "note": "A few untranslated Russian fragments remain in the English file (e.g. heading 'Сокращения')."
+ },
+ {
+  "doc_key": "KZ_CAND-154",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2025/06/White_Paper_2022_Results_of_feasibility_study_of_introduction_of.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/",
+  "url_check": "fetch_failed:client_error (linked from landing page, which was fetched_ok)",
+  "english_title": "White Paper 2022 Results of feasibility study of introduction of Digital Tenge (December 2022)",
+  "evidence": "Listed on NPCK English Documents page and on npck.kz/?p=1346 as the 2022 report on the study of the need for the Digital Tenge; NBK English press release 2022-12-15 (nationalbank.kz/en/news/press-relizy/14693) links file https://nationalbank.kz/file/download/85871 (489.59 KB; fetch blocked). Search also returns nationalbank.kz/file/download/85870 for the English title (fetch_failed:client_error). Page count not verified.",
+  "confidence": "medium",
+  "searched": [
+   "search 'White Paper 2022 Results of feasibility study of introduction of Digital Tenge'",
+   "fetch nationalbank.kz/en/news/press-relizy/14693",
+   "fetch nationalbank.kz/en/news/novosti/14692",
+   "fetch npck.kz documents page",
+   "fetch PDF (failed)"
+  ],
+  "note": "Title equivalence is strong; length (RU 145 pp) unverified. 85871 at ~490 KB may be the press release PDF rather than the report; 85870 is a candidate NBK-hosted English file (adjacent ID to RU 85868) but unverified. Prefer the NPCK file once it can be opened and length checked."
+ },
+ {
+  "doc_key": "KZ_CAND-155",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2025/06/Status_Report_Digital_Tenge_implementation_plan_for_Phase_One_2023-1.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/",
+  "url_check": "fetch_failed:server_error (linked from landing page, which was fetched_ok)",
+  "english_title": "Status Report Digital Tenge implementation plan for Phase One (September 2023)",
+  "evidence": "Title and month match RU 'Статус-доклад. Цифровой тенге: план реализации первой фазы' (2023-09-18). Distinct from 'White Paper 2023 Results of the first implementation phase (December 2023)', which is a different document. Page count not verified.",
+  "confidence": "medium",
+  "searched": [
+   "fetch npck.kz/en/digital-tenge/documents/",
+   "fetch PDF (server error, retry refused)",
+   "fetch nationalbank.kz/file/download/95209 (RU info message only)"
+  ],
+  "note": "Do not confuse with the December 2023 White Paper (npck.kz/.../White-Paper-2023-Results-of-the-first-implementation-phase-2.pdf)."
+ },
+ {
+  "doc_key": "KZ_CAND-157",
+  "status": "unofficial",
+  "english_url": "https://adilet.zan.kz/eng/docs/Z1600000011",
+  "landing_page": "https://adilet.zan.kz/eng/docs/Z1600000011",
+  "url_check": "seen_in_search (fetched but page is a JavaScript shell with no text); text verified via third-party mirror https://zakon.uchet.kz/eng/docs/Z1600000011 (fetched_ok)",
+  "english_title": "Payments and payment systems (Law of RK of 26 July 2016 No. 11-VI)",
+  "evidence": "Mirror of the Adilet English text is headed 'Unofficial translation', amendments 'as of 01.04.2027', latest cited amending law 16.01.2026 No. 259-VIII; contains Art. 1 items 62-4 to 62-11 (62-4 'digital Tenge ... digital form of the national currency ... and legal tender') and Arts. 41-1 'Digital account', 41-2 'Organization of digital Tenge circulation', 41-3 'Issuance, redemption, depositing and withdrawal of digital Tenge from a digital account', 41-4 'Change of digital Tenge platform participant managing the digital account'.",
+  "confidence": "high",
+  "searched": [
+   "search 'adilet.zan.kz eng On payments and payment systems Z1600000011'",
+   "fetch adilet.zan.kz/eng/docs/Z1600000011, /compare, /download (JS shell)",
+   "fetch zakon.uchet.kz/eng/docs/Z1600000011"
+  ],
+  "note": "Adilet (Ministry of Justice RCLI) English texts are labelled 'Unofficial translation'; not an official edition, so keep RU as authoritative."
+ },
+ {
+  "doc_key": "KZ_CAND-161",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English text of NBK Board Resolution No. 42 (Rules on issuance, circulation and redemption of digital tenge) found on adilet.zan.kz/eng or nationalbank.kz/en via search. Only third-party English news (Astana Times 2026-05-13, orda.kz) describing the rules; no English text linked.",
+  "confidence": "medium",
+  "searched": [
+   "search 'National Bank Kazakhstan resolution No. 42 2026 rules issuance circulation redemption digital tenge English'",
+   "search adilet eng exact title",
+   "search nationalbank.kz/en rules press release",
+   "fetch astanatimes article"
+  ],
+  "note": "Adilet may add an unofficial English translation later; worth re-checking. Third-party English news only (would be 'partial' at most, not by issuer)."
+ },
+ {
+  "doc_key": "KZ_CAND-156",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2025/07/Digital_Tenge_Report_2024_ENG-2.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/",
+  "url_check": "fetched_ok",
+  "english_title": "Development of the digital tenge: results of the second phase of the project (listed as 'White Paper 2024 Results of the second implementation phase (December 2024)')",
+  "evidence": "Same upload folder and naming as RU file (Digital_Tenge_Report_2024_RUS.pdf / _ENG-2 / _KAZ-2); title matches RU; ~41 pp (reference list p.41) vs RU 43 pp; TOC: Expert opinions, Glossary, Introduction, About the Digital Tenge, International practice, Results of study of potential applications, Archetypes and scenarios for 2024, Plans for 2025, Conclusion, Reference list.",
+  "confidence": "high",
+  "searched": [
+   "search 'npck.kz Digital Tenge Report 2024 ENG pdf'",
+   "fetch PDF",
+   "fetch npck.kz/en/digital-tenge/documents/"
+  ],
+  "note": "Documents page labels it 'December 2024'; dataset date 2025-04."
+ },
+ {
+  "doc_key": "KZ_CAND-160",
+  "status": "full_edition",
+  "english_url": "https://npck.kz/wp-content/uploads/2026/05/DT_WP_2025_ENG_FINAL_2.pdf",
+  "landing_page": "https://npck.kz/en/digital-tenge/documents/ (also https://npck.kz/?p=36586, which links https://npck.kz/wp-content/uploads/2026/03/DT_WP_2025_ENG_FINAL-1.pdf)",
+  "url_check": "fetched_ok (both FINAL_2 and FINAL-1)",
+  "english_title": "Digital Tenge: White Paper 2025 (listed as 'White Paper 2025 Results of the third implementation phase (December 2025)')",
+  "evidence": "Issuer NPCK; English; TOC Introduction p.9 ... Plans for 2026 p.46, Conclusion p.47, Reference list p.48 => ~48-49 pp vs RU 49 pp. Matches RU 'Цифровой тенге: итоговый доклад 2025'.",
+  "confidence": "high",
+  "searched": [
+   "search nationalbank.kz Digital Tenge report English",
+   "fetch npck.kz/?p=36586",
+   "fetch both ENG PDFs",
+   "fetch documents page"
+  ],
+  "note": "Two English uploads exist: 2026/03 FINAL-1 (linked from announcement page) and 2026/05 FINAL_2 (linked from current Documents page); TOCs identical in what was visible. RU input is 2026/03 FINAL-2. Choose the version aligned with the RU file or document the choice."
+ },
+ {
+  "doc_key": "EU_FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": "https://www.suomenpankki.fi/en/money-and-payments/digitaalinen-euro/digitaalisen-euron-kansallinen-seurantaryhma/",
+  "url_check": "landing_page fetched_ok; Finnish item page https://www.suomenpankki.fi/fi/ajankohtaista/puheet-ja-haastattelut/2023/johtokunnan-jasen-tuomas-valimaki-digitaalisen-euron-kansallisen-seurantaryhman-kokous-31.5.2023 fetch_failed:permission_request_not_answered",
+  "english_title": null,
+  "evidence": "Bank of Finland's ENGLISH page for the national digital euro monitoring group links all meeting materials (17.2.2022, 15.9.2022, 25.11.2022, 31.5.2023, 1.11.2023) only to Finnish (/fi/) pages; no English alternative offered for the 31.5.2023 Välimäki material. Searches found no English edition.",
+  "confidence": "medium",
+  "searched": [
+   "Suomen Pankki digitaalisen euron kansallinen seurantaryhmä 31.5.2023 Välimäki esitys",
+   "Bank of Finland national digital euro follow-up group meeting 31 May 2023 presentation English Välimäki",
+   "bofbulletin OR suomenpankki.fi/en Tuomas Välimäki digital euro speech May 2023",
+   "fetched EN monitoring-group page"
+  ],
+  "note": "Could not open the Finnish item page itself to check for a language switcher; the EN hub page linking to Finnish only is strong evidence no English edition exists."
+ },
+ {
+  "doc_key": "EU_NL_NL_Ministerie-van-Financi_Brief-van-de-Minister-van-Financien-ov",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "Dutch source https://zoek.officielebekendmakingen.nl/kst-27863-136.pdf fetched_ok (no English annex)",
+  "english_title": null,
+  "evidence": "Letter dated 16 May 2023, signed S.A.M. Kaag, 9 pp (7 pp letter + 2 Dutch annexes; cabinet's five conditions for a digital euro). Contains no English translation/attachment. Searches for a government.nl English version returned nothing; only unrelated English items surfaced (e.g. Tweede Kamer rapporteur 'Final Report Digital Euro - House of Representatives 23 June 2023', a different document by parliament).",
+  "confidence": "medium",
+  "searched": [
+   "\"27863\" \"136\" Kamerstuk digitale euro brief minister van Financiën",
+   "government.nl digital euro letter to parliament Minister of Finance 2023 English translation",
+   "government.nl \"digital euro\" Kaag letter May 2023 cabinet conditions English",
+   "site:government.nl digital euro"
+  ],
+  "note": "government.nl was not fetched directly; conclusion rests on search results. Dutch ministries rarely translate Kamerbrieven; the Tweede Kamer rapporteur report (June 2023) is English but is NOT this letter."
+ },
+ {
+  "doc_key": "EU_SI_4-tocka-Offline-digitalni-evro_2024",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "Slovenian source fetched_ok; https://www.bsi.si/sl/placilni-sistemi/digitalni-evro fetch_failed:permission_request_not_answered",
+  "english_title": null,
+  "evidence": "Presentation 'Offline digitalni evro', Martin Pezdir (Banka Slovenije, payment and settlement systems), 3rd NSD session 18 Sep 2024, ~12 slides, mostly Slovenian with some English terms. Not stated to be an ECB deck. No English edition found in searches; bsi.si/en search hits are only press items (e.g. 'Digital euro - cash meets technology' speech, invitation to present solutions).",
+  "confidence": "medium",
+  "searched": [
+   "\"Offline digitalni evro\" Banka Slovenije",
+   "Banka Slovenije national digital euro forum minutes English bsi.si/en digital euro",
+   "bsi.si/en payment systems digital euro national forum",
+   "\"bsi.si/en\" \"digital-euro\" payment-systems"
+  ],
+  "note": "Same storage folder (79a420d3-...) holds the 3rd-session minutes and item 3 deck, so this is session-3 (18.9.2024) item 4. Only English NSD-related file seen: an ECB deck '2025-07-10 Meeting with Slovenia National Stakeholder Group on a Digital Euro' (different, 2025)."
+ },
+ {
+  "doc_key": "EU_SI_SI_Banka-Slovenije_Zapisnik-1-seje-NSD-digitalni-evro_2024",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "Slovenian source fetch_failed:permission_request_not_answered (URL seen_in_search with title 'Zapisnik končen 1. seje NSD digitalni evro')",
+  "english_title": null,
+  "evidence": "Search for NSD minutes returned only Slovenian minutes (sessions 1-5, 7, 8). No English minutes seen anywhere; minutes of sessions 2 and 3 (fetched) are Slovenian and mention no English versions.",
+  "confidence": "medium",
+  "searched": [
+   "bsi.si NSD digitalni evro nacionalni svet zapisnik seje",
+   "Banka Slovenije national digital euro forum minutes English bsi.si/en digital euro"
+  ],
+  "note": "BSI Slovenian digital euro landing page and English site could not be fetched (blocked)."
+ },
+ {
+  "doc_key": "EU_SI_SI_Banka-Slovenije_Zapisnik-2-seje-NSD-digitalni-evro_2024",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "Slovenian source fetched_ok",
+  "english_title": null,
+  "evidence": "Minutes of 2nd session, 26 Apr 2024, Slovenian, 4 pp; no mention of English versions. No English minutes found in searches.",
+  "confidence": "medium",
+  "searched": [
+   "bsi.si NSD digitalni evro nacionalni svet zapisnik seje",
+   "Banka Slovenije national digital euro forum minutes English"
+  ],
+  "note": ""
+ },
+ {
+  "doc_key": "EU_SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "Slovenian PDF https://www.bsi.si/storage/uploads/79a420d3-6569-4917-a7dc-f1e2158b75be/Zapisnik-3_-seje-NSD-digitalni-evro.pdf fetched_ok; input landing page fetch_failed:permission_request_not_answered",
+  "english_title": null,
+  "evidence": "Minutes of 3rd session, 18 Sep 2024, Slovenian, 3 pp, agenda incl. item 4 offline digital euro (Pezdir); no mention of English versions. No English minutes found.",
+  "confidence": "medium",
+  "searched": [
+   "bsi.si NSD digitalni evro nacionalni svet zapisnik seje",
+   "Banka Slovenije national digital euro forum minutes English"
+  ],
+  "note": "Input url is the landing page, not the PDF; the direct Slovenian PDF is the url_check URL above (found via search, fetched)."
+ },
+ {
+  "doc_key": "JP_CAND-140",
+  "status": "full_edition",
+  "english_url": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdcli/20240612chuukanseirien.pdf",
+  "landing_page": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdcli/InterimReport.html",
+  "url_check": "english_url fetched_ok; landing_page fetched_ok",
+  "english_title": "Relevant Ministries and the Bank of Japan Liaison Meeting on Central Bank Digital Currency (CBDC) Interim Report",
+  "evidence": "Labelled 'Provisional translation'; dated April 17, 2024; ~27 numbered pages (JA 26); structure 1 Introduction / 2 Developments in Japan and abroad / 3 Key considerations for the Design Outline (vertical/horizontal coexistence, security and user data, legal, other) / 4 Conclusion / References (members, meetings). Landing page lists it under 2024.4.17 together with a separate English Summary (20240513chuukanseirigaiyouen.pdf).",
+  "confidence": "high",
+  "searched": [
+   "mof.go.jp english CBDC Liaison Meeting interim summary provisional translation",
+   "fetched InterimReport.html and the PDF"
+  ],
+  "note": "Filename date (20240612) is the English upload date, not the report date. Use the full report, not the 'Summary' PDF."
+ },
+ {
+  "doc_key": "JP_CAND-141",
+  "status": "full_edition",
+  "english_url": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdcli/20250725_2nd_chuukanseirien.pdf",
+  "landing_page": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdcli/InterimReport.html",
+  "url_check": "english_url fetched_ok; landing_page fetched_ok",
+  "english_title": "Relevant Ministries and the Bank of Japan Liaison Meeting on Central Bank Digital Currency (CBDC): Second Interim Report",
+  "evidence": "Labelled 'Provisional translation'; listed under 2025.5.22 on landing page; ~36 numbered pages (JA 30); Preface, 1 Background, 2 Other jurisdictions, 3 BOJ experiments, 4 Summary of discussions: (1) private-law framework, (2) coexistence of privacy and data utilization/public policy objectives, (3) division of roles with private payment instruments; References.",
+  "confidence": "high",
+  "searched": [
+   "mof.go.jp english CBDC Liaison Meeting interim summary provisional translation",
+   "fetched InterimReport.html and the PDF"
+  ],
+  "note": "No date printed on the English PDF itself; filename 20250725 = upload date. Separate English Summary also exists (20250725_2nd_chuukanseirigaiyouen.pdf) - do not confuse."
+ },
+ {
+  "doc_key": "TH_CAND-319",
+  "status": "partial",
+  "english_url": "https://www.bot.or.th/content/dam/bot/documents/th/news-and-media/news/2021/news-20210819-document.pdf",
+  "landing_page": "https://www.bot.or.th/en/news-and-media/news/news-20210819.html",
+  "url_check": "english_url fetched_ok (Thai report with 4-page English Summary at front); landing_page fetched_ok; EN press release PDF https://www.bot.or.th/content/dam/bot/documents/en/news-and-media/news/2021/news-20210819.pdf linked_from_page_but_not_fetched (fetch_failed:permission_request_not_answered)",
+  "english_title": "Retail Central Bank Digital Currency: Implications on Monetary Policy and Financial Stability in Thailand (English Summary, pp.1-4)",
+  "evidence": "BOT's own document (Aug 2021, ~36 pp) is Thai with an embedded 4-page English Summary; the EN press release page (No. 60/2021, 19 Aug 2021) links only an EN press-release PDF and the Thai document. BOT 'Thailand's CBDC Journey' EN page shows a 'Retail CBDC and Monetary Stability' report card but no visible English PDF URL. No full English edition found.",
+  "confidence": "medium",
+  "searched": [
+   "Bank of Thailand \"Retail CBDC: Implications on Monetary Policy and Financial Stability\" pdf",
+   "bot.or.th documents en financial-innovation cbdc ...",
+   "\"Retail CBDC\" \"Monetary Stability\" Bank of Thailand report pdf",
+   "Bank of Thailand 2021 \"Implications on Monetary Policy and Financial Stability\" CBDC (extended)",
+   "fetched EN news-20210819, EN CBDC journey page, EN CBDC page"
+  ],
+  "note": "The held file (documents/th/financial-innovation/cbdc/20210819_CBDC...pdf) is likely the same Thai+English-summary document hosted at another path - check whether our held copy already contains the English Summary pages. Related but DIFFERENT English paper: PIER Discussion Paper 152 'Monetary and Financial Perspectives on Retail CBDC in the Thai Context' (Chucherd et al., BOT Monetary Policy Group + PIER, May 2021 updated Aug 2021, https://www.pier.or.th/files/dp/pier_dp_152.pdf, fetched_ok) - authors' views disclaimer, not the issuer's edition; do not substitute. The 'Retail CBDC and Monetary Stability' report button on the EN journey page could point to an English file not visible to the fetcher - low residual risk."
+ },
+ {
+  "doc_key": "TR_CAND-333",
+  "status": "full_edition",
+  "english_url": "https://tcmb.gov.tr/wps/wcm/connect/c2d3f2af-7d29-4742-bc1b-a3483a7a55f0/RemarksG03_09_2024.pdf?MOD=AJPERES&CACHEID=ROOTWORKSPACE-c2d3f2af-7d29-4742-bc1b-a3483a7a55f0-p6TQV4r",
+  "landing_page": "https://tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Remarks+by+Governor/2024",
+  "url_check": "english_url fetched_ok; landing_page fetched_ok",
+  "english_title": "Governor Fatih Karahan's Presentation on \"24° Fintech\" (Riyadh), 03/09/2024",
+  "evidence": "The English site's Remarks by Governor 2024 list links exactly the same file (same content UUID c2d3f2af-...) that we hold. Deck is 10 slides, English except one Turkish source note on slide 7 ('BIS Innovation Hub ile Hong Kong Monetary Authority'nin ortaklaşa yürüttüğü projenin çıktıları ... sonraki ihraçlarda kullanılmıştır.') and the product name 'GEÇİT' on slide 6.",
+  "confidence": "high",
+  "searched": [
+   "tcmb.gov.tr Governor Karahan \"24 Fintech\" Riyadh presentation September 2024",
+   "fetched EN Remarks by Governor 2024 list and the PDF"
+  ],
+  "note": "No separate English-only version exists: the held file IS the issuer's English edition. Treat it as English text (no MT needed beyond one Turkish source line). Classified full_edition because the issuer's English publication = held file."
+ },
+ {
+  "doc_key": "JP_CAND-139",
+  "status": "partial",
+  "english_url": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdc/20231213torimatomegaiyouen.pdf",
+  "landing_page": null,
+  "url_check": "english_url fetched_ok (seen_in_search); English Expert Panel landing page https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdc/index.html fetch_failed:permission_request_not_answered; Japanese landing https://www.mof.go.jp/about_mof/councils/meeting_of_cbdc/index.html fetched_ok",
+  "english_title": "Report of the Expert Panel on CBDC - summary - (as of 12/13/2023), Provisional translation",
+  "evidence": "Only an English translation of the SUMMARY (概要, JA file 20231213torimatomegaiyou.pdf) was found; labelled 'Provisional translation' and '- summary -'. The Japanese landing page lists the full 取りまとめ, the 概要 and a reference note, none with an English link. No full English report found in searches.",
+  "confidence": "medium",
+  "searched": [
+   "mof.go.jp english Experts' Meeting on CBDC summary report December 2023 pdf",
+   "\"Experts' Meeting on CBDC\" Ministry of Finance Japan English provisional translation 2023",
+   "\"Report of the Expert Panel on CBDC\" provisional translation mof.go.jp english",
+   "fetched JA meeting_of_cbdc/index.html"
+  ],
+  "note": "English summary corresponds to the 概要 slide summary, not the 24-page full report we hold - do not substitute. English landing page could not be opened, so a full English report linked only there cannot be fully excluded (none appeared in 3 searches)."
+ },
+ {
+  "doc_key": "JP_CAND-145",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": "https://www.mof.go.jp/english/about_mof/councils/meeting_of_cbdcli/InterimReport.html",
+  "url_check": "English landing fetched_ok (lists only 2024.4.17 and 2025.5.22 items); JA meeting page https://www.mof.go.jp/about_mof/councils/meeting_of_cbdcre/20260619haihu.html fetched_ok (no English link)",
+  "english_title": null,
+  "evidence": "The English Liaison Meeting page lists the 2024 Interim Report and 2025 Second Interim Report (each + Summary) but nothing for the June 2026 Progress Report. JA 19 June 2026 meeting page has no English link. Two searches found no English progress report.",
+  "confidence": "medium",
+  "searched": [
+   "mof.go.jp english meeting_of_cbdcli progress report 2026 CBDC Liaison Meeting",
+   "\"Progress Report\" \"Liaison Meeting on Central Bank Digital Currency\" 2026 English Ministry of Finance",
+   "mof.go.jp/english meeting_of_cbdcli 2026 \"Progress Report\" provisional translation (extended)"
+  ],
+  "note": "MOF has published English provisional translations of both previous reports with a 2-month lag; an English edition may still appear - re-check InterimReport.html later."
+ },
+ {
+  "doc_key": "SE_CAND-288",
+  "status": "partial",
+  "english_url": "https://prod.sou.gov.se/contentassets/3de91b1dd3c14c988562cd76d37935e4/sou-2023_16_summary.pdf",
+  "landing_page": "https://www.regeringen.se/rattsliga-dokument/statens-offentliga-utredningar/2023/03/sou-202316/",
+  "url_check": "english_url seen_in_search and fetched_ok; landing_page fetch_failed:permission_request_not_answered (link from landing page not verified)",
+  "english_title": "The state and the payments - Summary, SOU 2023:16 (Report of Betalningsutredningen / the Payments Inquiry)",
+  "evidence": "Standalone 22-page English summary with its own ISBN (978-91-525-0590-8 PDF), Government Offices of Sweden, translated by ToEnglish Pty Ltd; 18 sections incl. legal tender, crypto-assets, digital central bank currencies, need for a CBDC in Sweden. Only a summary; no full English version found.",
+  "confidence": "high",
+  "searched": [
+   "SOU 2023:16 \"The State and Payments\" English summary Payments Inquiry Sweden",
+   "fetched summary PDF"
+  ],
+  "note": "Hosted on prod.sou.gov.se (official SOU host). Riksbank also published an English meeting summary of the report (dialogue forum) - not the issuer's edition. Input record has pages=1 because the input url is the landing page."
+ },
+ {
+  "doc_key": "TR_CAND-337",
+  "status": "partial",
+  "english_url": "https://tcmb.gov.tr/wps/wcm/connect/4aa246bb-ea9d-4a27-aaea-faa4a10f5fc9/ANO2025-46.pdf?MOD=AJPERES&CACHEID=ROOTWORKSPACE-4aa246bb-ea9d-4a27-aaea-faa4a10f5fc9-pAdV7tb",
+  "landing_page": "https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2025/ANO2025-46",
+  "url_check": "english_url fetched_ok (linked from EN Press Releases 2025 list https://tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Announcements/Press+Releases/2025/, fetched_ok); landing_page seen_in_search, fetch_failed:permission_request_not_answered",
+  "english_title": "Press Release on Call to Join the Digital Turkish Lira Project Ecosystem (No. 2025-46), 03/09/2025",
+  "evidence": "Short English press release; it states the scope and procedures of the call are available 'here (in Turkish only)'. GlobalGovernmentFinance also describes the call document as Turkish-language only. No English call document exists.",
+  "confidence": "high",
+  "searched": [
+   "tcmb.gov.tr \"Call to Join\" Digital Turkish Lira Project Ecosystem 2025",
+   "\"KatilimCagrisi\" tcmb",
+   "\"ANO2025-46\" tcmb",
+   "tcmb.gov.tr ... Call Digital Turkish Lira ecosystem English (extended)",
+   "fetched EN press-release list, ANO2025-46.pdf, coingeek and globalgovernmentfinance articles"
+  ],
+  "note": "The issuer itself states the call document is Turkish-only; English press release is a short announcement, not an edition of the 7-page call. Follow-up EN press release 2026-33 on application results exists (seen_in_search)."
+ },
+ {
+  "doc_key": "PE_CAND-251",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English text of Circular 0011-2024-BCRP found in search results. Searches return only the Spanish circular PDF (bcrp.gob.pe/docs/.../circular-0011-2024-bcrp.pdf), El Peruano, vLex, iuslatin and Andina (Spanish-titled item under andina.pe/ingles/). BCRP has an English CBDC project page (bcrp.gob.pe/payments-system/cbdc-project.html, seen_in_search) that might summarise the regulation, but it was behind a bot challenge.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP \"Regulation of Digital Money Innovation Pilots\" Circular 0011-2024",
+   "bcrp.gob.pe eng-docs informative note 2024 \"digital money\" pilot regulation",
+   "site:bcrp.gob.pe eng-docs \"digital money\"",
+   "fetch bcrp.gob.pe/payments-system/cbdc-project.html (bot challenge)"
+  ],
+  "note": "BCRP does not usually translate circulars/legal norms into English. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-255",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": "https://www.bcrp.gob.pe/payments-system/cbdc-project.html",
+  "url_check": "fetch_failed:bot_challenge (Incapsula)",
+  "english_title": null,
+  "evidence": "No English FAQ found. Spanish FAQ PDFs show up in search (circular-0011-2024-bcrp-preguntas-frecuentes.pdf; Resoluciones-Gerencia-General/2024/preguntas-frecuentes.pdf). An English CBDC project page exists (title 'cbdc project', seen_in_search) but its content could not be read, so I could not tell whether it carries an English FAQ.",
+  "confidence": "low",
+  "searched": [
+   "BCRP \"first digital money innovation pilot\" \"frequently asked questions\"",
+   "bcrp.gob.pe \"payments-system\" cbdc-project digital money pilots frequently asked questions",
+   "bcrp.gob.pe/en CBDC project \"digital money innovation pilots\""
+  ],
+  "note": "Check by hand: open bcrp.gob.pe/payments-system/cbdc-project.html in a browser and look for an English FAQ. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-257",
+  "status": "unofficial",
+  "english_url": "https://andina.pe/ingles/noticia-peru-evaluation-of-bcrs-first-digital-money-innovation-pilot-begins-1022763.aspx",
+  "landing_page": "https://andina.pe/ingles/",
+  "url_check": "fetched_ok",
+  "english_title": "Peru: Evaluation of BCR's First Digital Money Innovation Pilot begins",
+  "evidence": "Andina (the state news agency, Editora Perú, not BCRP) English article published 2025-03-18, dateline 'Lima, Mar. 19'. Same content as the note: evaluation began 10 March 2025; 67,000 active BiPay users; about 91,000 transactions/day; S/4.2 million in circulation; USSD; Circular 011-2024-BCRP. It does not say it reproduces the note and embeds a BCRP tweet. Fetching an English BCRP edition at the eng-docs path was refused by the permission layer (not tried on the site); no eng-docs copy showed up in search.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP \"digital money\" innovation pilot informative note English",
+   "\"Evaluation of the first digital money innovation pilot\" BCRP press release March 2025",
+   "\"bcrp.gob.pe/eng-docs\" informative note"
+  ],
+  "note": "A news-agency rewrite, not a translation by the issuer, so it must not replace machine translation. BCRP does publish some English informative notes (e.g. the monetary program notes under bcrp.gob.pe/en/monetary-policy/...), but none was found for this one. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-259",
+  "status": "unofficial",
+  "english_url": "https://hstalks.com/article/9613/download/",
+  "landing_page": "https://ideas.repec.org/a/aza/jpss00/y2025v19i2p154-169.html",
+  "url_check": "fetched_ok",
+  "english_title": "Design and implementation of Peru's retail central bank digital currency pilot",
+  "evidence": "English article by BCRP staff (Milton Vega, Elmer Sánchez, Arturo Andía) in the Journal of Payments Strategy & Systems 19(2), pp.154-169 (16 pp), 2025-06-01, DOI 10.69554/FUVE7616, Henry Stewart Publications. Its title matches DT 2025-003 word for word, the length is comparable (18 pp), and the abstract covers the same ground (hybrid model, IMF technical assistance, offline/USSD through a telco, quasi-experimental randomized district-level promotions). Published BEFORE the Spanish DT (Sept 2025), so the English text is probably the original and the DT its Spanish version. A BCRP English landing page https://investigacion.bcrp.gob.pe/en/research/working-papers/dt-2025/dt-2025-003-en (and .../2025/wp-2025-003) is seen_in_search, but search engines index it under the title 'Adoption and welfare effects of payment innovations: The case of digital wallets in Peru', which is actually DT 2025-006 (dt-2025-006-en; BIS WP 1329). Fetching it returned a bot challenge.",
+  "confidence": "low",
+  "searched": [
+   "\"Diseño e Implementación del Piloto de CBDC Minorista en Perú\" documento de trabajo",
+   "\"Design and implementation of Peru's retail central bank digital currency pilot\" working paper BCRP 2025-003",
+   "BCRP working paper 2025-003 English",
+   "fetch investigacion.bcrp.gob.pe dt-2025-003-en / wp-2025-003 / es page (bot challenge / permission refused)",
+   "fetch ideas.repec.org rbp/wpaper/2025-003 (permission refused)"
+  ],
+  "note": "Not issued by BCRP itself: a third-party journal published it, under copyright, and the wording may differ from the DT. If the dataset accepts staff-authored English versions it is a strong match, but check by hand before swapping it in. Also open dt-2025-003-en in a browser: it may host an English PDF, or only an English abstract page. The search title mismatch with DT 2025-006 needs explaining. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-260",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "Search finds only the Spanish rspf-marzo-2026.pdf/.html and the Spanish 'informe sistema de pagos y fintech 2025-1'. No English edition of the Reporte del Sistema Nacional de Pagos y del sector Fintech showed up.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP \"Payment System\" \"Fintech\" report Peru March 2026 English",
+   "fetch bcrp.gob.pe/reporte-de-inflacion/75-ingles/payments-system.html (bot challenge)"
+  ],
+  "note": "bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-249",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English version of RGG 0009-2024-BCRP found. BCRP does not, as a rule, translate General Management resolutions.",
+  "confidence": "medium",
+  "searched": [
+   "site:bcrp.gob.pe eng-docs \"digital money\"",
+   "bcrp.gob.pe eng-docs informative note 2024 \"digital money\" pilot regulation"
+  ],
+  "note": "The 'lang' field is empty in the input; the source is Spanish. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-250",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "The IDEAS/RePEc record (fetched_ok) lists only the Spanish title 'Pilotos con CBDC: Ampliando la frontera de los pagos digitales en Perú' (Vega & Andía, Moneda 198, pp.10-16). BCRP does post English versions of SOME Moneda articles on investigacion.bcrp.gob.pe (e.g. moneda-194-07-en 'Central Bank Digital Currency: Promoting Digital Payments in Peru', seen_in_search; revista-moneda-189/moneda-189-01-en). Search found no moneda-198 English page.",
+  "confidence": "medium",
+  "searched": [
+   "investigacion.bcrp.gob.pe magazine-moneda moneda-198-en",
+   "\"revista-moneda-198\" OR \"moneda-198-02-en\" BCRP",
+   "\"CBDC pilots\" \"expanding the frontier of digital payments in Peru\"",
+   "BCRP Moneda magazine English Vega Andía CBDC pilots"
+  ],
+  "note": "English Moneda translations exist for some issues, so a 198 English page could exist without being indexed. Worth one look in a browser at investigacion.bcrp.gob.pe/en/research/magazine-moneda/. The related Moneda 194-07 English article is a DIFFERENT, earlier article. bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-252",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English version of Annex 1 to Circular 0011-2024-BCRP found; search returns only Spanish BCRP/El Peruano items.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP \"Regulation of Digital Money Innovation Pilots\" Circular 0011-2024",
+   "site:bcrp.gob.pe eng-docs \"digital money\""
+  ],
+  "note": "bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-253",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English BCRP note found. Andina has an item under its /ingles/ path (andina.pe/ingles/noticia-bcr-emite-reglamento-pilotos-innovacion-dinero-digital-982286.aspx, seen_in_search), but its title is in Spanish ('BCR emite reglamento de pilotos de innovación de dinero digital'), so it is probably Spanish text. Even if it is English, it is not from the issuer.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP \"digital money\" innovation pilot informative note English",
+   "\"eng-docs/Transparencia/Notas-Informativas\" 2024",
+   "\"bcrp.gob.pe/eng-docs\" informative note"
+  ],
+  "note": "bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "PE_CAND-254",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": null,
+  "english_title": null,
+  "evidence": "No English BCRP note or English press item on the Bitel selection (17 July 2024) found; only Spanish media coverage.",
+  "confidence": "medium",
+  "searched": [
+   "BCRP press release \"Bitel\" digital money pilot July 2024 English \"informative note\"",
+   "\"eng-docs/Transparencia/Notas-Informativas\" 2024"
+  ],
+  "note": "bcrp.gob.pe and investigacion.bcrp.gob.pe returned an Incapsula/Imperva bot-challenge page to WebFetch (no content); some other fetches were refused by the permission layer (PROVENANCE_REQUIRED). Conclusions for BCRP-hosted pages rest on search results only."
+ },
+ {
+  "doc_key": "RU_CAND-266",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "original kremlin.ru/acts/bank/49579 fetch blocked (PROVENANCE_REQUIRED); no en.kremlin.ru page seen in any search result",
+  "english_title": null,
+  "evidence": "No official English text of Federal Law 340-FZ found. Bank of Russia English press release 'Law on digital ruble adopted' (11 Jul 2023, cbr.ru/eng/press/event/?id=16900, fetched_ok) summarises the law but is a CBR news item, not the law text, and is about Duma adoption, not the signed law. Only third-party English summaries (Interfax, CoinDesk, digitalpolicyalert, cryptoslate) found.",
+  "confidence": "medium",
+  "searched": [
+   "site:en.kremlin.ru digital ruble law signed",
+   "Russia 340-FZ digital ruble law English translation full text",
+   "en.kremlin.ru acts news digital ruble law signed Civil Code",
+   "cbr.ru/eng/press/event/?id=16900 (fetched)"
+  ],
+  "note": "Kremlin publishes federal law texts in Russian only; en.kremlin.ru could not be checked directly because fetching URLs not seen in search was blocked. Third-party summaries are not translations of the text. Keep machine translation."
+ },
+ {
+  "doc_key": "RU_CAND-267",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "original kremlin.ru URL not fetched; no en.kremlin.ru page seen in search",
+  "english_title": null,
+  "evidence": "No official English text of Federal Law 339-FZ (Civil Code amendments) found. Only third-party news (e.g. Interfax 'State Duma adopts digital ruble amendments to Civil Code', seen_in_search).",
+  "confidence": "medium",
+  "searched": [
+   "en.kremlin.ru acts news digital ruble law signed Civil Code",
+   "site:en.kremlin.ru digital ruble law signed"
+  ],
+  "note": "Same limitation as RU_CAND-266. Keep machine translation."
+ },
+ {
+  "doc_key": "RU_CAND-269",
+  "status": "full_edition",
+  "english_url": "https://cbr.ru/eng/press/event/?id=16993",
+  "landing_page": "https://cbr.ru/eng/press/event/?id=16993",
+  "url_check": "fetched_ok",
+  "english_title": "Digital ruble: start of pilot testing",
+  "evidence": "English news item dated 9 August 2023; title is a direct rendering of 'Цифровой рубль: старт пилота'; content: pilot with real transactions from 15 August, 13 banks, quote from First Deputy Governor Olga Skorobogatova, 30 points of sale in 11 cities, next-year plans (dynamic QR, B2B). Short single-page item, comparable length.",
+  "confidence": "medium",
+  "searched": [
+   "cbr.ru/eng digital ruble pilot launch August 2023 press release",
+   "cbr.ru/eng/press/event/?id=16993 (fetched)",
+   "cbr.ru/eng/press/event/?id=16991 (blocked)",
+   "cbr.ru/press/event/?id=16991 (fetched, returned unrelated content)"
+  ],
+  "note": "English id (16993) differs from Russian id (16991). The constructed English URL with id=16991 was not fetchable. A fetch of the Russian URL ?id=16991 returned content of a different, 12 Sep 2024 release, so the Russian text could not be compared paragraph by paragraph; equivalence rests on matching title, date and content against the known pilot announcement. Verify the Russian original quickly by eye before swapping."
+ },
+ {
+  "doc_key": "RU_CAND-270",
+  "status": "partial",
+  "english_url": "https://cbr.ru/eng/press/event/?id=23280",
+  "landing_page": "https://cbr.ru/eng/press/event/?id=23280",
+  "url_check": "fetched_ok",
+  "english_title": "Bank of Russia approves National Payment System Development Guidelines until 2027 (press release, 26 Dec 2024)",
+  "evidence": "The English press release links to the SAME Russian PDF (cbr.ru/Content/Document/File/170680/onrnps_2025-27.pdf), not an English file. The English payment-system page (cbr.ru/eng/Psystem, fetched_ok) lists English PDFs for the 2021-2023 Strategy (strategy_nps_2021-2023e.pdf) and the Oversight Results, but no English edition of the 2025-2027 guidelines.",
+  "confidence": "high",
+  "searched": [
+   "Bank of Russia Main Directions for the Development of the National Payment System 2025-2027 English",
+   "cbr.ru/eng/press/event/?id=23280 (fetched)",
+   "cbr.ru/eng/Psystem (fetched)"
+  ],
+  "note": "English summary only (about 300 words vs 43 pages). Earlier strategy (2021-2023) did get an English edition, this one apparently did not."
+ },
+ {
+  "doc_key": "RU_CAND-271",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "no English official page seen in search",
+  "english_title": null,
+  "evidence": "No official English text of Federal Law 105-FZ (AML/CFT and digital rubles) found.",
+  "confidence": "medium",
+  "searched": [
+   "site:en.kremlin.ru digital ruble law signed",
+   "Russia digital ruble law English translation"
+  ],
+  "note": "Not specifically searched beyond general kremlin/digital ruble law queries; Kremlin does not publish English law texts. Keep machine translation."
+ },
+ {
+  "doc_key": "RU_CAND-273",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "no en.kremlin.ru page seen in search",
+  "english_title": null,
+  "evidence": "No official English text of Federal Law 248-FZ found. Related CBR English press release 'Bank of Russia proposes new deadlines for full-scale introduction of digital ruble' (25 Jun 2025, cbr.ru/eng/press/event/?id=24732, fetched_ok) describes the proposed amendments, not the law text. Third-party English news (TASS, Interfax 23 Jul 2025) seen_in_search.",
+  "confidence": "medium",
+  "searched": [
+   "Kremlin Vladimir Putin signed Federal Law digital ruble universal QR code 2025",
+   "cbr.ru/eng/press/event/?id=24732 (fetched)"
+  ],
+  "note": "Keep machine translation."
+ },
+ {
+  "doc_key": "RU_RU_Russia_digital_ruble_30062025",
+  "status": "partial",
+  "english_url": "https://www.cbr.ru/eng/press/event/?id=24743",
+  "landing_page": "https://www.cbr.ru/eng/press/event/?id=24743",
+  "url_check": "fetched_ok",
+  "english_title": "Digital ruble today and tomorrow: Bank of Russia's report on pilot testing (press release, 30 June 2025)",
+  "evidence": "Document identified: report 'Цифровой рубль: текущий статус проекта' (Digital Ruble: Current Status of the Project), Bank of Russia, 30 June 2025, linked from Russian press release cbr.ru/press/event/?id=24741 ('Цифровой рубль сегодня и завтра: отчет Банка России о пилотировании', fetched_ok). The English press release (id=24743) links to the SAME Russian PDF (Content/Document/File/177415/digital_ruble_30062025.pdf); no English PDF exists on the page.",
+  "confidence": "high",
+  "searched": [
+   "Bank of Russia digital ruble 30 June 2025 document",
+   "Digital Ruble: Current Status of the Project Bank of Russia report English pdf",
+   "Цифровой рубль: текущий статус проекта Банк России 30 июня 2025",
+   "Digital ruble today and tomorrow Bank of Russia pilot report",
+   "cbr.ru/press/event/?id=24741 (fetched)",
+   "cbr.ru/eng/press/event/?id=24743 (fetched)"
+  ],
+  "note": "Suggested title for the dataset: 'Цифровой рубль: текущий статус проекта' (Bank of Russia, 30.06.2025). English press release is a short summary (2,500 wallets, ~100k transactions, 150+ localities)."
+ },
+ {
+  "doc_key": "RU_CAND-274",
+  "status": "partial",
+  "english_url": "https://cbr.ru/eng/press/event/?id=32631",
+  "landing_page": "https://cbr.ru/eng/press/event/?id=32631",
+  "url_check": "fetched_ok",
+  "english_title": "Platform of commercial smart contracts in digital rubles: Bank of Russia concept (press release, 18 June 2026)",
+  "evidence": "English press release summarises the concept (PCSC, smart-contract library, CBR as operator at first stage, comments until 30 Sept 2026). Fetched page shows no PDF link at all (neither English nor Russian), and no English concept PDF found in search.",
+  "confidence": "medium",
+  "searched": [
+   "Bank of Russia commercial smart contract platform concept English",
+   "cbr.ru smart contracts platform concept English pdf commercial_smart_contract_platform",
+   "cbr.ru/eng/press/event/?id=32631 (fetched twice)"
+  ],
+  "note": "Document is a consultation concept; CBR did publish English versions of some earlier consultation papers (e.g. 2020 digital ruble consultation paper), so an English concept PDF cannot be fully ruled out, but none was linked or indexed."
+ },
+ {
+  "doc_key": "RU_CAND-276",
+  "status": "full_edition",
+  "english_url": "https://www.cbr.ru/eng/press/event/?id=32808",
+  "landing_page": "https://www.cbr.ru/eng/press/event/?id=32808",
+  "url_check": "fetched_ok",
+  "english_title": "Digital ruble launched",
+  "evidence": "English news item dated 31 August 2026, same date as the Russian release; content: major banks and retailers ready from 1 Sept 2026, one account per person (two for sole proprietors), top-up limit 300,000 rubles/month for individuals, free for individuals, business fees waived to end-2026, hotline numbers. Single-page item of comparable length.",
+  "confidence": "medium",
+  "searched": [
+   "cbr.ru eng digital ruble use start 1 September 2026 press release",
+   "cbr.ru/eng/press/event/?id=32808 (fetched)",
+   "cbr.ru/eng/press/event/?id=32802 (blocked)",
+   "cbr.ru/press/event/?id=32802 (fetched, but returned English text)"
+  ],
+  "note": "English id 32808 differs from Russian id 32802. Fetching the Russian URLs ?id=32802 and ?id=32808 both returned the English text 'Digital ruble launched' (fetcher apparently served the English rendering), so a side-by-side check against the Russian original was not possible. Title 'старт использования' vs 'launched' is a loose but plausible rendering. Spot-check before swapping."
+ },
+ {
+  "doc_key": "RU_CAND-277",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": "https://cbr.ru/eng/analytics/d_ok/dig_ruble/",
+  "url_check": "original cbr.ru/PSystem/dr/faq/ fetch blocked (PROVENANCE_REQUIRED); cbr.ru/eng/analytics/d_ok/dig_ruble/ fetched_ok",
+  "english_title": null,
+  "evidence": "No English edition of the current FAQ found. The only English Q&A-style page is cbr.ru/eng/analytics/d_ok/dig_ruble/ (8 questions, 'Last updated on: 28.03.2023'), an older pre-law explainer, not the same document as the 2026 FAQ.",
+  "confidence": "medium",
+  "searched": [
+   "cbr.ru eng digital ruble FAQ questions and answers",
+   "cbr.ru/eng/fintech/dr digital ruble",
+   "cbr.ru/eng/analytics/d_ok/dig_ruble/ (fetched)",
+   "cbr.ru/eng/psystem/dr/faq/ (blocked)"
+  ],
+  "note": "Could not fetch the Russian FAQ or a guessed English FAQ URL (blocked), so it was not possible to check for a language switch. The 2023 English explainer must not be used as a substitute."
+ },
+ {
+  "doc_key": "RU_CAND-268",
+  "status": "none_found",
+  "english_url": null,
+  "landing_page": null,
+  "url_check": "no English text seen in search",
+  "english_title": null,
+  "evidence": "No official English edition of Regulation 820-P found. Related English CBR press releases: 'Rules for digital ruble platform drafted' (12 Jul 2023, cbr.ru/eng/press/event/?id=16909, fetched_ok) links only the Russian draft PDF (StaticHtml/File/41186/230712-45-1.pdf). Garant English (english.garant.ru/mon/archive/2023/08/15) appeared in search but fetch failed in a redirect loop; it is a third-party legal news digest, not the issuer.",
+  "confidence": "medium",
+  "searched": [
+   "Bank of Russia Regulation 820-P On the Digital Ruble Platform English",
+   "Bank of Russia Regulation No. 820-P August 3, 2023 digital ruble platform translation",
+   "cbr.ru/eng/press/event/?id=16909 (fetched)",
+   "english.garant.ru/mon/archive/2023/08/15 (fetch_failed: redirect loop)"
+  ],
+  "note": "If Garant offers a paid English translation, it would be 'unofficial', not issuer-published. Keep machine translation."
+ }
+]
