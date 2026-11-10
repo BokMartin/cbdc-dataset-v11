@@ -13,7 +13,7 @@ Queue (one row per non-English document of a T1/T2 project with decision KEEP / 
             of files whose text layer could not be detected (scans of English originals leave the queue).
   input_mode  text = text layer usable (requests are built) · ocr_or_pdf = scanned / garbled text layer (no request built: OCR first, or
             give the PDF itself to a vision model with the same system prompt) · no_file = document not retrieved
-Request pack (written OUTSIDE the repository: source texts are the issuers' copyright): <pack>/requests/<doc_key>/<doc_key>.chunk-XX-of-NN.txt,
+Request pack (written OUTSIDE the repository: source texts are the issuers' copyright): <pack>/requests/<A_evidence|B_recheck_later|BENCH_quality_check>/<doc_key>/<doc_key>.chunk-XX-of-NN.txt,
 each a complete user message (header with doc_key, source SHA-256, chunk and page range; then the page-marked source text).
 Chunks are cut at page markers (a page longer than the limit is split at paragraph breaks into parts PAGE n.k); limit --chars
 (default 18 000 characters; 9 000 for zh / ja, whose characters carry more text).
@@ -85,14 +85,14 @@ def main():
                 cur.append(u); size += len(u[1])
             if cur: chunks.append(cur)
             q["chars"] = sum(len(t) for _, t in us); q["chunks"] = len(chunks)
-            d = os.path.join(a.pack, "requests", key); os.makedirs(d, exist_ok=True)
+            pf = {"A": "A_evidence", "B": "B_recheck_later", "BENCH": "BENCH_quality_check"}[prio]; d = os.path.join(a.pack, "requests", pf, key); os.makedirs(d, exist_ok=True)
             for i, ch in enumerate(chunks, 1):
                 body = "".join(f"=== PAGE {n} ===\n{t}\n" for n, t in ch)
                 msg = (f"TRANSLATION REQUEST\ndoc_key: {key}\nproject: {r['project']} | year: {r['year']} | source language (detected): {NAMES.get(lang, lang)} ({lang})\n"
                        f"title: {r['title']}\nsource file: {r['master_path']}\nsource_sha256: {r['sha256']}\ntext layer: pdftotext -layout (PDF) / visible text (HTML), no OCR\n"
                        f"chunk: {i} of {len(chunks)} | markers PAGE {ch[0][0]} to PAGE {ch[-1][0]} | text_sha256: {sha(body)}\n--- BEGIN SOURCE TEXT ---\n{body}--- END SOURCE TEXT ---\n")
                 fn = f"{key}.chunk-{i:02d}-of-{len(chunks):02d}.txt"; open(os.path.join(d, fn), "w", encoding="utf-8", newline="\n").write(msg)
-                reqs.append({"doc_key": key, "chunk": i, "of": len(chunks), "first_marker": ch[0][0], "last_marker": ch[-1][0], "markers": len(ch), "chars": len(body), "request_file": f"requests/{key}/{fn}", "user_sha256": sha(msg), "source_sha256": r["sha256"]})
+                reqs.append({"doc_key": key, "chunk": i, "of": len(chunks), "first_marker": ch[0][0], "last_marker": ch[-1][0], "markers": len(ch), "chars": len(body), "priority": prio, "request_file": f"requests/{pf}/{key}/{fn}", "user_sha256": sha(msg), "source_sha256": r["sha256"]})
         if mode == "text" and r["master_path"].endswith(".html") and (q["chars"] or 0) > 60000 and not q["note"]:
             q["note"] = "long HTML page (whole law or page with boilerplate): consider translating only the cited provisions"
         queue.append(q)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check the translation responses of one run (API or manual Playground), assemble one English text per document and write the manifest.
 
-For every document of the run folder <pack>/responses/<run>/<doc_key>/ it requires one `<request name>.response.txt` per registered
+For every document with at least one response below <pack>/responses/<run>/ (in <doc_key>/ sub-folders or flat) it requires one `<request name>.response.txt` per registered
 chunk and checks each response: (1) first line `TRANSLATION doc_key=… chunk=i/n source_sha256=…` equals the request; (2) the marker
 lines `=== PAGE x ===` are exactly those of the request, in order; (3) last line `=== END OF CHUNK ===`; (4) the translation of a
 non-empty page is not empty and the response is not suspiciously short (< 25 % of the source characters; < 60 % for zh/ja sources is
@@ -34,10 +34,15 @@ def main():
         from lingua import LanguageDetectorBuilder; det = LanguageDetectorBuilder.from_all_languages().build()
     except Exception: det = None
     outdir = os.path.join(a.pack, "translations", a.run); os.makedirs(outdir, exist_ok=True); rows = []
-    for key in sorted(d for d in os.listdir(run) if os.path.isdir(os.path.join(run, d))):
+    found = {}  # response files may sit in <run>/<doc_key>/ or anywhere below the run folder (a model that returns one flat folder)
+    for d, _, fs in os.walk(run):
+        for f in fs:
+            if f.endswith(".response.txt"): found[f[:-len(".response.txt")]] = os.path.join(d, f[:-len(".response.txt")])
+    keys = sorted({k for k, rs in reqs.items() if any(os.path.basename(r["request_file"])[:-4] in found for r in rs)})
+    for key in keys:
         q = Q[key]; problems = []; pages = collections.OrderedDict(); rsha = []; usha = []; src_chars = 0; out_chars = 0; models = set()
         for r in sorted(reqs[key], key=lambda r: int(r["chunk"])):
-            base = os.path.join(run, key, os.path.basename(r["request_file"])[:-4]); usha.append(r["user_sha256"])
+            name = os.path.basename(r["request_file"])[:-4]; base = found.get(name, os.path.join(run, key, name)); usha.append(r["user_sha256"])
             if not os.path.exists(base + ".response.txt"): problems.append(f"chunk {r['chunk']}: no response"); continue
             user = open(os.path.join(a.pack, r["request_file"]), encoding="utf-8").read()
             if sha(user) != r["user_sha256"]: problems.append(f"chunk {r['chunk']}: request file changed")
