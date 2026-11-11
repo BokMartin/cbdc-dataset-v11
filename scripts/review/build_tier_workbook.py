@@ -33,6 +33,12 @@ def main():
     a = ap.parse_args()
     wbi = openpyxl.load_workbook(a.workbook, read_only=True); R = list(wbi["ALL_DOCUMENTS"].iter_rows(values_only=True)); hdr = R[0]
     W = [dict(zip(hdr, r)) for r in R[1:]]
+    # author decisions recorded after the workbook was built (data/manifest/AUTHOR_DECISIONS_<date>.csv) override its pre-fill
+    import glob, os
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(a.manifest)), "AUTHOR_DECISIONS_*.csv"))):
+        dec = {r["id"]: r for r in csv.DictReader(open(f, encoding="utf-8"))}
+        for w in W:
+            if w["id"] in dec: w["decision_v12"] = dec[w["id"]]["decision_v12"]; w["decision_source"] = "author"
     P = {r[0]: dict(zip(list(wbi["PROJECTS"].iter_rows(min_row=1, max_row=1, values_only=True))[0], r)) for r in wbi["PROJECTS"].iter_rows(min_row=2, values_only=True)}
     lang = {r["sha256"]: r for r in csv.DictReader(open(a.language, encoding="utf-8"))}
     man = collections.defaultdict(list)
