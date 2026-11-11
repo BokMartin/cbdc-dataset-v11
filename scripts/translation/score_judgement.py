@@ -2,14 +2,14 @@
 """Score the human judgement of benchmark sentence pairs (protocol in the INSTRUCTIONS sheet of the judgement workbook, fixed
 11 Nov 2026 before judging). Codes: S same, W translation weaker, X translation stronger, M meaning differs otherwise, D not judgeable.
 Reports, per stratum (pairs marked by the automatic check / random control of unmarked pairs) and weighted to all matched privacy
-sentences (N_marked = 56, N_unmarked = 116): counts and shares among judgeable pairs with 95 % Wilson intervals. With two judges
+sentences (N_marked = 56, N_unmarked = 107): counts and shares among judgeable pairs with 95 % Wilson intervals. With two judges
 (--second) also raw agreement and Cohen's kappa. The script checks that the sentence pairs in the workbook are the registered ones.
 
 usage: score_judgement.py --workbook <filled xlsx> [--second <second judge's xlsx>] --key data/translation/benchmark/JUDGEMENT_KEY_2026-11-11.csv --out <json>
 """
 import argparse, csv, hashlib, json, collections
 import openpyxl
-CODES = ["S", "W", "X", "M", "D"]; N = {"flagged": 56, "control": 116}
+CODES = ["S", "W", "X", "M", "D"]; N = {"flagged": 56, "control": 107}
 
 
 def wilson(k, n, z=1.96):
@@ -39,7 +39,7 @@ def main():
     for k in "SWXM":  # weighted share over all matched privacy sentences, assuming D pairs are missing at random within a stratum
         sh = [res["strata"][st][k]["share"] for st in ("flagged", "control")]
         w[k] = round((sh[0] * N["flagged"] + sh[1] * N["control"]) / (N["flagged"] + N["control"]), 3) if None not in sh else None
-    res["weighted_share_all_172_matched"] = w
+    res["weighted_share_all_163_matched"] = w
     if a.second:
         K = read(a.second, key); ns = sorted(J); po = sum(J[n] == K[n] for n in ns) / len(ns)
         ca, cb = collections.Counter(J.values()), collections.Counter(K.values()); pe = sum(ca[k] * cb[k] for k in CODES) / len(ns) ** 2
