@@ -26,6 +26,7 @@ A project whose model-generated cell values any author has read is **exposed** a
 | 2026-11-02 | CL, external model (OpenAI) | Independent audit of the day's work from the audit pack (no sealed data, no texts); report in `docs/audits/`; dispositions in ADR-002 | no per-project values | none |
 | 2026-11-02 | CL | UK both-mode run and NO route-B run (`runs_v2_UK`, `runs_v2_NO_en`) | yes (NO, UK; both already exposed) | none beyond NO/UK |
 | 2026-11-02 | CL | Valid single vs two-stage NO run (v2 extractor, complete coverage) | yes (NO, already exposed) | none beyond NO |
+| 2026-11-12 | CL, MB (aggregate) | Deterministic privacy-talk pilot (`scripts/census/talk_pilot.py`): dictionary hits per sentence on 250 evidence documents; committed output holds corpus-level aggregates only (`data/census/TALK_PILOT_aggregate.json`); per-document and per-project values were computed in memory and not written or shown | no per-project values; keyword counts, not cells | none |
 
 ## Planned entries (to be filled when they happen)
 
