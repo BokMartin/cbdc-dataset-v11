@@ -58,9 +58,12 @@ def main():
         y = str(w["year"] or "").strip(); y = y if re.fullmatch(r"(19|20)\d\d", y) else "n.d."
         docs[w["project"]].append({**w, "y": y, "dec": w["decision_v12"] or "", "master": f["master_path"] if f else "", "ext": f["ext"] if f else "", "nfiles": len(files), "en_ed": en_ed[0]["master_path"] if en_ed else "",
                                    "lang": l.get("lang_class", ""), "share_en": l.get("share_en", ""), "pages": l.get("pages", ""), "lflag": l.get("flag", ""), "sha": f["sha256"] if f else ""})
+    LINK = {r["original_id"]: r["english_id"] for r in csv.DictReader(open(os.path.join(os.path.dirname(os.path.abspath(a.manifest)), "EDITION_LINKS.csv"), encoding="utf-8"))}
     proj = {}
     for p, ds in docs.items():
-        ev = [d for d in ds if d["dec"] in ("KEEP", "BORDERLINE")]; rc = [d for d in ds if d["dec"] == "RECHECK"]
+        # one publication is counted once: an original whose English edition is itself an evidence row is not counted again (data/manifest/EDITION_LINKS.csv; audit of 13 Nov 2026, item 2)
+        evid = {d["id"] for d in ds if d["dec"] in ("KEEP", "BORDERLINE")}
+        ev = [d for d in ds if d["id"] in evid and LINK.get(d["id"]) not in evid]; rc = [d for d in ds if d["dec"] == "RECHECK"]
         frame = (P.get(p, {}).get("in 43-frame") == "yes"); union = p == "EU"
         t = tier(len(ev)); tu = tier(len(ev) + len(rc))
         yrs = sorted(d["y"] for d in ev if d["y"] != "n.d.")
@@ -120,7 +123,7 @@ def main():
                 d.cell(i, 26).fill = PatternFill("solid", fgColor="FFF2CC")
                 if d.cell(i, 25).value: d.cell(i, 25).fill = PatternFill("solid", fgColor="F4B084")
                 if str(d.cell(i, 27).value).startswith("NO"): d.cell(i, 27).fill = PatternFill("solid", fgColor="F8CBAD")
-                out_rows.append({"project": p, "tier": proj[p]["tier"] if g != "OUT_OF_FRAME" else "out_of_frame", "tier_if_recheck_kept": proj[p]["tier_up"] if g != "OUT_OF_FRAME" else "", "year": x["y"], "id": x["id"], "decision_v12": x["dec"], "decision_source": x["decision_source"] or "",
+                out_rows.append({"project": p, "tier": proj[p]["tier"] if g != "OUT_OF_FRAME" else "out_of_frame", "tier_if_recheck_kept": proj[p]["tier_up"] if g != "OUT_OF_FRAME" else "", "year": x["y"], "id": x["id"], "same_publication_as": LINK.get(x["id"], ""), "decision_v12": x["dec"], "decision_source": x["decision_source"] or "",
                                  "language": x["lang"], "share_en": x["share_en"], "pages": x["pages"], "text_flag": x["lflag"], "master_path": x["master"], "sha256": x["sha"], "title": x["title"]})
         for c, wd in enumerate([7, 5, 6, 10, 12, 12, 16, 60, 14, 9, 7, 6, 9, 10, 40, 46, 16, 7, 12, 24, 34, 12, 18, 9, 34, 22, 26, 9, 9, 9], 1): d.column_dimensions[get_column_letter(c)].width = wd
         for c in range(1, len(dh) + 1): d.cell(1, c).font = BOLD; d.cell(1, c).fill = PatternFill("solid", fgColor="DDDDDD")

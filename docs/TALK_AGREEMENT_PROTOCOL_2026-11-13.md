@@ -1,5 +1,7 @@
 # Human agreement on the privacy-talk codebook: protocol (13 Nov 2026)
 
+**Withdrawn before coding (13 Nov 2026, afternoon).** The independent audit of the same day found that the sample included duplicate language editions, that coders and model would see different context, and that the status facet contradicts the contract. No unit was coded. The sample file is removed; a development sample and a new main sample are drawn after the repairs (ADR-005). The text below is kept as the record of the first design.
+
 Status: written and committed before either coder has coded a unit and before any model has classified a unit. The thresholds in section 4 are a proposal by the pipeline author; MB and DS confirm or change them before they open the sheet CODE, and the change is recorded here with a date.
 
 ## 1. Purpose

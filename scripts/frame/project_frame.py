@@ -5,6 +5,7 @@ import sys, csv, os, collections
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 EURO = {"AT", "BE", "BG", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PT", "SK", "SI", "ES"}
 UNIONS = {"EU", "ECCU", "BCEAO"}; NOT_PROJECTS = {"BIS", "UN"}
+UNION_IN_FRAME = {"EU"}  # ADR-005 (MB, 13 Nov 2026): the digital euro is a project of its own and is analysed like a national project; covariate analyses that need a country stay on national_candidate
 NON_RETAIL = {"NONE", "BANNED", "NA"}  # statuses outside the retail matrix (documented in PROJECT_FRAME.md)
 
 def main():
@@ -22,13 +23,13 @@ def main():
     for p, d in sorted(rows.items()):
         st = S.get(p, {}).get("status", "UNRESEARCHED"); st = "UNRESEARCHED" if st.startswith("UNRESEARCHED") else st
         union = p in UNIONS; retail = st not in NON_RETAIL
-        out.append({"project": p, "union": union, "status": st, "national_candidate": not union, "retail_candidate": (not union) and retail,
+        out.append({"project": p, "union": union, "status": st, "national_candidate": not union, "retail_candidate": (not union) and retail, "analytic_frame": ((not union) or p in UNION_IN_FRAME) and retail,
                     "n_core_docs": d["n_core_docs"], "languages": ";".join(f"{k}:{v}" for k, v in sorted(d["languages"].items())), "source_codes": ";".join(sorted(d["source_codes"]))})
     os.makedirs(os.path.join(ROOT, "data/frame"), exist_ok=True)
     with open(os.path.join(ROOT, "data/frame/projects.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0].keys())); w.writeheader(); w.writerows(out)
     n_all, n_nat, n_ret = len(out), sum(1 for o in out if o["national_candidate"]), sum(1 for o in out if o["retail_candidate"])
-    print(f"registry rows {len(R)} | core docs {len(core)} | candidate projects {n_all} | national {n_nat} | national retail {n_ret}")
+    print(f"registry rows {len(R)} | core docs {len(core)} | candidate projects {n_all} | national {n_nat} | national retail {n_ret} | analytic frame {sum(1 for o in out if o['analytic_frame'])}")
     print("status of national retail candidates:", dict(collections.Counter(o["status"] for o in out if o["retail_candidate"])))
 
 if __name__ == "__main__": main()

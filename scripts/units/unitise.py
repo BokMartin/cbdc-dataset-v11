@@ -91,15 +91,21 @@ def main():
     for d in a.translations:
         for f in glob.glob(os.path.join(d, "*.en.txt")): tr[os.path.basename(f)[:-7]] = f
     ed = {e["parallel_of"]: e for e in csv.DictReader(open(a.editions, encoding="utf-8")) if e["sha256"]}
+    # audit of 13 Nov 2026, item 2: a benchmark translation is never production text, and a publication is read once, through its English edition
+    bench = {q["doc_key"] for f in glob.glob(os.path.join(ROOT, "data/translation/TRANSLATION_QUEUE_*.csv")) for q in csv.DictReader(open(f, encoding="utf-8")) if q["priority"] == "BENCH"}
+    tr = {k: v for k, v in tr.items() if k not in bench}
+    link = {r["original_id"]: r["english_id"] for r in csv.DictReader(open(os.path.join(ROOT, "data/manifest/EDITION_LINKS.csv"), encoding="utf-8"))}
+    T = list(csv.DictReader(open(a.tiers, encoding="utf-8"))); evid = {r["id"] for r in T if r["decision_v12"] in ("KEEP", "BORDERLINE")}
     rows = []; skipped = []
     for r in csv.DictReader(open(a.tiers, encoding="utf-8")):
         if r["decision_v12"] not in ("KEEP", "BORDERLINE") or r["tier"] == "out_of_frame": continue
+        if link.get(r["id"]) in evid: skipped.append({"id": r["id"], "project": r["project"], "reason": "same publication as its English edition " + link[r["id"]] + " (read there)"}); continue
         key = re.sub(r"[^A-Za-z0-9_-]+", "-", f"{r['project']}_{r['id']}")[:70]; path = route = None
-        if r["language"] == "en" and r["sha256"] and os.path.exists(os.path.join(a.cache, r["sha256"] + ".txt")): path, route = os.path.join(a.cache, r["sha256"] + ".txt"), "A"
+        if r["language"] == "en" and r["sha256"] and (os.path.exists(os.path.join(a.cache, r["sha256"] + ".txt")) or os.path.exists(local.get(r["sha256"], "-"))): path, route = os.path.join(a.cache, r["sha256"] + ".txt"), ("B" if r["id"] in link.values() else "A")
         elif r["id"] in ed and os.path.exists(os.path.join(a.cache, ed[r["id"]]["sha256"] + ".txt")): path, route = os.path.join(a.cache, ed[r["id"]]["sha256"] + ".txt"), "B"
         elif key in tr: path, route = tr[key], "D"
         if not path: skipped.append({"id": r["id"], "project": r["project"], "reason": r["language"] and r["language"] != "en" and "no English text (" + r["language"] + ")" or r["text_flag"] or "no file"}); continue
-        src_sha = r["sha256"] if route != "B" else ed[r["id"]]["sha256"]; lay = os.path.join(a.cache, r["sha256"] + ".txt") if route == "D" else path
+        src_sha = r["sha256"] if (route != "B" or r["language"] == "en") else ed[r["id"]]["sha256"]; lay = os.path.join(a.cache, r["sha256"] + ".txt") if route == "D" else path
         gs = gap_share(open(lay, encoding="utf-8").read()) if os.path.exists(lay) else ""; mode = "translation_of_layout_text" if route == "D" else "layout_or_html"
         lp = local.get(src_sha, "")
         if route in "AB" and lp.lower().endswith(".pdf") and os.path.exists(lp): path = reading_order(lp, a.rocache, src_sha); mode = "reading_order"
