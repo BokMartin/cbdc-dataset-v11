@@ -48,7 +48,7 @@ Author decisions: the translation policy (all non-English evidence is translated
 8. **Exposure.** Coding 400 units from 42 projects shows the authors source sentences of projects for which they are later supposed to code F-cells blind (`docs/PROCESS_v12.md` step 19, `EXPOSURE_LEDGER.md`). They see no model output, but they are no longer naive about those texts.
 9. **Low project signal.** With an ICC near 0.15 a project-level talk score is unreliable for most projects, yet the paper's question compares talk and commitment per project.
 10. **Process.** None of the scripts written since 3 Nov has a test (the six test files cover the earlier extraction pipeline). CI failed for a day on a false positive without being noticed. Manifests exist in several dated versions. The registry's `issuer` field held the acquisition batch for 121 evidence documents until 13 Nov.
-11. **As-of date.** The contract fixes 18 Oct 2026 as the as-of date; documents were collected and downloaded in November, and some carry later dates.
+11. **As-of date.** The contract fixes 18 Oct 2026 as the as-of date; documents were collected and downloaded in November. No evidence document with a full date is later than the as-of date, but 128 of the 281 evidence rows have no full date on record (year only), nine of them from 2026, so the rule cannot be checked for them.
 12. **Literature anchors** of the proposal (section 7) are from the model's memory and have not passed a citation check.
 
 ## 5. Not in the pack, by design
