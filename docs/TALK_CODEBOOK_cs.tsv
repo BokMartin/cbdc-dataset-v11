@@ -1,0 +1,46 @@
+KÓDOVACÍ PRAVIDLA (verze 0.2, návrh; hodnoty jsou anglicky, protože tak půjdou do dat)		
+RELEVANT		
+relevant	R	Věta sama říká něco o: kdo vidí, drží, propojuje nebo používá identitu, transakční data či zůstatky uživatelů CBDC; anonymitě nebo pseudonymitě; ověřování totožnosti jako podmínce použití (včetně peněženek s nižší identifikací); ochraně, minimalizaci, uchovávání či využití osobních údajů; přístupu úřadů k datům (včetně AML/CFT sledování uživatelů); soukromí jako cíli, požadavku, riziku, kompromisu nebo obavě veřejnosti.
+relevant	N	Vše ostatní: soukromí někoho jiného než uživatelů CBDC (velkoobchodní účastníci, cookies webu), bezpečnost a podvody bez výroku o datech uživatelů, identifikace bank a firem, nadpis nebo položka obsahu, která téma jen jmenuje, věta, která jen odkazuje jinam.
+relevant	U	Věta je nečitelná nebo useknutá tak, že nelze určit obsah.
+		Zmínka není výrok: slovo "privacy" v nadpisu nebo výčtu kapitol je N. Na tom, kdo mluví a jak závazně, relevance nezávisí.
+VOICE (kdo mluví)		
+voice	OWN	Vydavatel dokumentu říká vlastním hlasem, co platí, co zamýšlí, co zvažuje nebo co testoval.
+voice	REPORTED	Věta podává cizí názor nebo fakt: respondenti konzultace, veřejnost, literatura, jiná země, účastník jednání, dodavatel.
+voice	UNCLEAR	Nelze rozhodnout.
+ASPECT (o jakém aspektu soukromí věta je; vyberte hlavní, případně druhý do aspect2)		
+aspect	CB_ACCESS	Co vidí, drží nebo nevidí centrální banka (nebo provozovatel jádra systému).
+aspect	INTERMEDIARY_DATA	Co vidí a drží banky, poskytovatelé plateb a peněženek.
+aspect	AUTHORITY_ACCESS	Přístup úřadů a orgánů činných v trestním řízení, AML/CFT, sledování a hlášení transakcí.
+aspect	ANONYMITY	Anonymita nebo pseudonymita jako vlastnost peněz či plateb (včetně výroku, že anonymita nebude).
+aspect	IDENTIFICATION	Ověřování totožnosti uživatelů, KYC, úrovně a peněženky s nižší identifikací.
+aspect	OFFLINE	Soukromí v offline platbách.
+aspect	DATA_PROTECTION	Pravidla ochrany osobních údajů, minimalizace, doba uchovávání, zákon o ochraně údajů.
+aspect	USER_CONTROL	Souhlas a kontrola uživatele nad daty, komerční využití dat.
+aspect	PETS	Pojmenovaná technika ochrany soukromí (zero-knowledge proofs, blind signatures, homomorfní šifrování apod.).
+aspect	GENERAL	Soukromí obecně jako cíl, princip, riziko nebo kompromis, bez konkrétního aspektu.
+DIRECTION (kterým směrem výrok míří)		
+direction	RESTRICT	Omezuje, kdo data vidí, nebo chrání uživatele (banka data neuvidí, sbírá se jen nezbytné).
+direction	GRANT	Dává někomu viditelnost nebo vyžaduje identifikaci (úřady dostanou přístup, uživatel musí být ověřen, anonymita nebude).
+direction	TRADEOFF	Soukromí jako riziko, kompromis, napětí s jiným cílem nebo obava.
+direction	NEUTRAL	Popisuje bez směru (definice, otázka, výčet možností bez příklonu).
+BASIS (čím je výrok podložen)		
+basis	NONE	Jen prohlášení ("soukromí je pro nás prioritou").
+basis	POLICY	Pravidlo nebo slib instituce ("data nebudeme používat"). Slib NEPOUŽÍVAT data je vždy POLICY, nikdy ARCHITECTURAL.
+basis	LEGAL	Zákon, nařízení nebo návrh zákona.
+basis	ARCHITECTURAL	Uspořádání systému to zajišťuje (data zůstávají u zprostředkovatele, banka dostává jen pseudonymy).
+basis	CRYPTOGRAPHIC	Kryptografická technika to zajišťuje.
+STATUS (v jakém stavu věc je)		
+status	CONSIDERED	Zvažuje se, je to možnost, návrh, otázka.
+status	TESTED	Bylo vyzkoušeno v pilotu, prototypu, experimentu.
+status	ENDORSED	Instituce se k tomu přihlásila jako k rozhodnutí nebo požadavku.
+status	OPERATIONAL	Platí v běžícím systému nebo v účinném předpisu.
+status	REJECTED	Výslovně odmítnuto.
+status	NOT_APPLICABLE	Obecné tvrzení bez vazby na konkrétní návrh (definice, popis rizika).
+MODALITY		
+modality	FIRM	Řečeno jako fakt nebo rozhodnutí (is, will, shall, must, does not).
+modality	CONDITIONAL	Podmíněně nebo jako možnost (could, might, would, may, is being considered, one option). U strojového překladu se řiďte smyslem věty, ne jedním slovesem.
+FLAGS (nepovinné)		
+flags	anonymity_rejected	Věta výslovně říká, že anonymita jako u hotovosti nebude.
+flags	low_id_tier	Věta zmiňuje úroveň nebo peněženku bez plného ověření totožnosti.
+flags	two_statements	Věta obsahuje dva různé výroky, které nejdou zakódovat jedním řádkem (popište v note).

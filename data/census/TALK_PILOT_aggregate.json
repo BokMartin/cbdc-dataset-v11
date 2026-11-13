@@ -3,7 +3,7 @@
  "corpus": {
   "documents": 250,
   "projects": 42,
-  "sentences": 118965,
+  "sentences": 125178,
   "by_route": {
    "A_english_original": 192,
    "D_machine_translation": 46,
@@ -31,180 +31,180 @@
   "salience_narrow": {
    "n": 250,
    "min": 0.0,
-   "q1": 0.0054,
-   "median": 0.0207,
-   "q3": 0.0381,
-   "max": 0.5807
+   "q1": 0.0046,
+   "median": 0.0201,
+   "q3": 0.0368,
+   "max": 0.5464
   },
   "salience_broad": {
    "n": 250,
    "min": 0.0,
-   "q1": 0.0253,
-   "median": 0.0443,
-   "q3": 0.0725,
-   "max": 0.612
+   "q1": 0.0244,
+   "median": 0.044,
+   "q3": 0.0724,
+   "max": 0.5809
   },
   "documents_with_zero_narrow_hits": 39,
-  "privacy_sentences_total_narrow": 3294,
-  "share_of_all_privacy_sentences_in_top_10pct_documents": 0.551,
-  "spearman_count_vs_length": 0.617,
-  "spearman_share_vs_length": 0.087,
-  "spearman_narrow_vs_broad_share": 0.817
+  "privacy_sentences_total_narrow": 3251,
+  "share_of_all_privacy_sentences_in_top_10pct_documents": 0.547,
+  "spearman_count_vs_length": 0.614,
+  "spearman_share_vs_length": 0.064,
+  "spearman_narrow_vs_broad_share": 0.82
  },
  "by_kind": {
   "annual_report": {
    "documents": 8,
-   "sentences": 14240,
-   "pooled_salience_narrow": 0.002,
-   "median_doc_salience": 0.0019
+   "sentences": 15765,
+   "pooled_salience_narrow": 0.0015,
+   "median_doc_salience": 0.0014
   },
   "annual_report_chapter": {
    "documents": 6,
-   "sentences": 3051,
-   "pooled_salience_narrow": 0.0059,
-   "median_doc_salience": 0.0062
+   "sentences": 3105,
+   "pooled_salience_narrow": 0.0055,
+   "median_doc_salience": 0.0063
   },
   "consultation": {
    "documents": 19,
-   "sentences": 13268,
-   "pooled_salience_narrow": 0.0296,
-   "median_doc_salience": 0.0168
+   "sentences": 13402,
+   "pooled_salience_narrow": 0.0292,
+   "median_doc_salience": 0.0171
   },
   "consultation_response": {
    "documents": 10,
-   "sentences": 4529,
-   "pooled_salience_narrow": 0.059,
+   "sentences": 4543,
+   "pooled_salience_narrow": 0.0588,
    "median_doc_salience": 0.0488
   },
   "design_note": {
    "documents": 9,
-   "sentences": 3466,
-   "pooled_salience_narrow": 0.0929,
-   "median_doc_salience": 0.0408
+   "sentences": 3561,
+   "pooled_salience_narrow": 0.0859,
+   "median_doc_salience": 0.0413
   },
   "faq": {
    "documents": 7,
-   "sentences": 820,
-   "pooled_salience_narrow": 0.0305,
+   "sentences": 826,
+   "pooled_salience_narrow": 0.0303,
    "median_doc_salience": 0.028
   },
   "legislation": {
    "documents": 14,
-   "sentences": 4856,
-   "pooled_salience_narrow": 0.0086,
+   "sentences": 4855,
+   "pooled_salience_narrow": 0.0095,
    "median_doc_salience": 0.0123
   },
   "other": {
    "documents": 17,
-   "sentences": 12782,
-   "pooled_salience_narrow": 0.0074,
+   "sentences": 13074,
+   "pooled_salience_narrow": 0.0071,
    "median_doc_salience": 0.013
   },
   "pilot_report": {
    "documents": 32,
-   "sentences": 13897,
-   "pooled_salience_narrow": 0.0293,
-   "median_doc_salience": 0.0179
+   "sentences": 16229,
+   "pooled_salience_narrow": 0.0243,
+   "median_doc_salience": 0.0145
   },
   "press_release": {
    "documents": 27,
-   "sentences": 1401,
+   "sentences": 1397,
    "pooled_salience_narrow": 0.02,
    "median_doc_salience": 0.0137
   },
   "progress_report": {
    "documents": 17,
-   "sentences": 6912,
+   "sentences": 6937,
    "pooled_salience_narrow": 0.0317,
-   "median_doc_salience": 0.0261
+   "median_doc_salience": 0.0251
   },
   "report": {
    "documents": 26,
-   "sentences": 13867,
-   "pooled_salience_narrow": 0.0252,
+   "sentences": 13901,
+   "pooled_salience_narrow": 0.0248,
    "median_doc_salience": 0.0205
   },
   "speech": {
    "documents": 15,
-   "sentences": 2494,
-   "pooled_salience_narrow": 0.018,
+   "sentences": 2357,
+   "pooled_salience_narrow": 0.0191,
    "median_doc_salience": 0.0179
   },
   "technical_paper": {
    "documents": 10,
-   "sentences": 7237,
-   "pooled_salience_narrow": 0.0897,
-   "median_doc_salience": 0.0767
+   "sentences": 7489,
+   "pooled_salience_narrow": 0.0863,
+   "median_doc_salience": 0.0735
   },
   "white_paper": {
    "documents": 22,
-   "sentences": 10233,
-   "pooled_salience_narrow": 0.0334,
-   "median_doc_salience": 0.0273
+   "sentences": 11260,
+   "pooled_salience_narrow": 0.0305,
+   "median_doc_salience": 0.0274
   }
  },
  "by_year": {
   "2018": {
    "documents": 7,
-   "sentences": 4865,
-   "pooled_salience_narrow": 0.037,
-   "median_doc_salience": 0.0316
+   "sentences": 5000,
+   "pooled_salience_narrow": 0.0352,
+   "median_doc_salience": 0.0303
   },
   "2020": {
    "documents": 10,
-   "sentences": 4333,
-   "pooled_salience_narrow": 0.0314,
-   "median_doc_salience": 0.0363
+   "sentences": 4226,
+   "pooled_salience_narrow": 0.0319,
+   "median_doc_salience": 0.037
   },
   "2021": {
    "documents": 37,
-   "sentences": 15180,
-   "pooled_salience_narrow": 0.0328,
-   "median_doc_salience": 0.0224
+   "sentences": 15778,
+   "pooled_salience_narrow": 0.0316,
+   "median_doc_salience": 0.0235
   },
   "2022": {
    "documents": 34,
-   "sentences": 14669,
-   "pooled_salience_narrow": 0.0215,
-   "median_doc_salience": 0.023
+   "sentences": 15333,
+   "pooled_salience_narrow": 0.0203,
+   "median_doc_salience": 0.0212
   },
   "2023": {
    "documents": 41,
-   "sentences": 14004,
-   "pooled_salience_narrow": 0.0328,
+   "sentences": 14287,
+   "pooled_salience_narrow": 0.0325,
    "median_doc_salience": 0.0172
   },
   "2024": {
    "documents": 48,
-   "sentences": 19998,
-   "pooled_salience_narrow": 0.0368,
-   "median_doc_salience": 0.0217
+   "sentences": 21026,
+   "pooled_salience_narrow": 0.0333,
+   "median_doc_salience": 0.022
   },
   "2025": {
    "documents": 46,
-   "sentences": 29351,
-   "pooled_salience_narrow": 0.0253,
+   "sentences": 31515,
+   "pooled_salience_narrow": 0.0234,
    "median_doc_salience": 0.0152
   },
   "2026": {
    "documents": 21,
-   "sentences": 13001,
-   "pooled_salience_narrow": 0.0117,
+   "sentences": 13100,
+   "pooled_salience_narrow": 0.0116,
    "median_doc_salience": 0.0126
   }
  },
  "by_route": {
   "A_english_original": {
    "documents": 192,
-   "sentences": 99889,
-   "pooled_salience_narrow": 0.0282,
-   "median_doc_salience": 0.0189
+   "sentences": 105976,
+   "pooled_salience_narrow": 0.0263,
+   "median_doc_salience": 0.0181
   },
   "B_issuer_english_edition": {
    "documents": 12,
-   "sentences": 4531,
-   "pooled_salience_narrow": 0.0435,
-   "median_doc_salience": 0.0298
+   "sentences": 4657,
+   "pooled_salience_narrow": 0.0412,
+   "median_doc_salience": 0.0317
   },
   "D_machine_translation": {
    "documents": 46,
@@ -216,29 +216,29 @@
  "by_tier": {
   "T1": {
    "documents": 129,
-   "sentences": 55508,
-   "pooled_salience_narrow": 0.0348,
-   "median_doc_salience": 0.0214
+   "sentences": 55899,
+   "pooled_salience_narrow": 0.034,
+   "median_doc_salience": 0.0213
   },
   "T2": {
    "documents": 67,
-   "sentences": 24659,
-   "pooled_salience_narrow": 0.0353,
+   "sentences": 27169,
+   "pooled_salience_narrow": 0.0319,
    "median_doc_salience": 0.0217
   },
   "T3": {
    "documents": 54,
-   "sentences": 38798,
-   "pooled_salience_narrow": 0.0127,
+   "sentences": 42110,
+   "pooled_salience_narrow": 0.0114,
    "median_doc_salience": 0.0141
   }
  },
  "modal_profile_of_privacy_sentences": {
-  "plain": 0.508,
-  "possibility": 0.208,
-  "permission": 0.13,
-  "intention": 0.107,
-  "obligation": 0.048
+  "plain": 0.525,
+  "possibility": 0.205,
+  "permission": 0.121,
+  "intention": 0.102,
+  "obligation": 0.047
  },
  "project_level": {
   "projects": 42,
@@ -254,45 +254,45 @@
   "pooled_salience_narrow_across_projects": {
    "n": 42,
    "min": 0.0007,
-   "q1": 0.0107,
-   "median": 0.0218,
-   "q3": 0.0393,
-   "max": 0.0995
+   "q1": 0.0105,
+   "median": 0.0202,
+   "q3": 0.0355,
+   "max": 0.0782
   },
   "split_half_reliability_spearman_brown": {
    "share": {
-    "median": 0.49,
-    "p05": 0.14,
-    "p95": 0.72
+    "median": 0.46,
+    "p05": 0.08,
+    "p95": 0.71
    },
    "count": {
-    "median": 0.76,
-    "p05": 0.66,
-    "p95": 0.84
+    "median": 0.78,
+    "p05": 0.67,
+    "p95": 0.85
    },
    "share_broad": {
-    "median": 0.32,
-    "p05": -0.28,
+    "median": 0.3,
+    "p05": -0.34,
     "p95": 0.66
    },
    "share_standardised_by_document_kind": {
-    "median": 0.03,
-    "p05": -0.68,
-    "p95": 0.46
+    "median": -0.02,
+    "p05": -0.67,
+    "p95": 0.36
    },
    "breadth_term_families": {
-    "median": 0.76,
-    "p05": 0.64,
-    "p95": 0.85
+    "median": 0.78,
+    "p05": 0.67,
+    "p95": 0.86
    },
    "mean_of_document_shares": {
-    "median": 0.57,
-    "p05": 0.3,
-    "p95": 0.75
+    "median": 0.51,
+    "p05": 0.21,
+    "p95": 0.7
    }
   },
-  "spearman_project_share_vs_number_of_documents": 0.247,
-  "spearman_project_count_vs_number_of_documents": 0.672,
+  "spearman_project_share_vs_number_of_documents": 0.28,
+  "spearman_project_count_vs_number_of_documents": 0.675,
   "breadth_term_families_across_projects": {
    "n": 42,
    "min": 6,
@@ -301,43 +301,43 @@
    "q3": 12,
    "max": 14
   },
-  "spearman_breadth_vs_number_of_documents": 0.616,
-  "spearman_breadth_vs_share": 0.287,
+  "spearman_breadth_vs_number_of_documents": 0.608,
+  "spearman_breadth_vs_share": 0.306,
   "split_half_share_projects_with_8plus_documents": {
    "projects": 11,
-   "median": 0.73,
-   "p05": 0.44,
+   "median": 0.74,
+   "p05": 0.45,
    "p95": 0.89
   }
  },
- "convergence_share_based": 0.774,
+ "convergence_share_based": 0.791,
  "convergence_with_model_survey_exposed_projects_only": {
   "documents": 25,
-  "spearman_narrow_hits_vs_survey_statements": 0.947,
-  "spearman_broad_hits_vs_survey_statements": 0.942
+  "spearman_narrow_hits_vs_survey_statements": 0.946,
+  "spearman_broad_hits_vs_survey_statements": 0.938
  },
  "variance_decomposition_document_salience": {
   "transform": "arcsine square root of the narrow share",
   "mixed_model_random_intercept_project": {
    "no_controls": {
-    "project_variance_share_ICC": 0.155,
-    "residual_sd": 0.0982
+    "project_variance_share_ICC": 0.156,
+    "residual_sd": 0.0973
    },
    "document_kind": {
-    "project_variance_share_ICC": 0.167,
+    "project_variance_share_ICC": 0.132,
     "residual_sd": 0.0929
    },
    "kind_and_length": {
-    "project_variance_share_ICC": 0.167,
+    "project_variance_share_ICC": 0.131,
     "residual_sd": 0.093
    },
    "kind_length_year": {
-    "project_variance_share_ICC": 0.192,
-    "residual_sd": 0.0925
+    "project_variance_share_ICC": 0.133,
+    "residual_sd": 0.093
    }
   },
-  "R2_document_kind_alone": 0.186,
-  "R2_project_dummies_alone": 0.279,
-  "adjR2_project_dummies_alone": 0.136
+  "R2_document_kind_alone": 0.185,
+  "R2_project_dummies_alone": 0.28,
+  "adjR2_project_dummies_alone": 0.138
  }
 }

@@ -1,0 +1,123 @@
+id,issuer,issuer_type,joint_with,voice_class,name_key,note
+AU_RBA_002,Reserve Bank of Australia,central_bank,Digital Finance CRC,joint_with_external,Reserve Bank of Australia,
+AU_RBA_001,Reserve Bank of Australia,central_bank,Digital Finance CRC,joint_with_external,Reserve Bank of Australia,
+AU_RBA_003,Reserve Bank of Australia,central_bank,Digital Finance CRC,joint_with_external,Reserve Bank of Australia,wholesale project (Acacia)
+AU_AU-RBA-Treasury-Retail-CBDC-Update-2026,Reserve Bank of Australia,central_bank,Australian Treasury,joint_with_government,Reserve Bank of Australia,
+LU_LU_Banque-centrale-du-Lux_DCB-Services-Wholesale-CBDC-Prototype-BCL_20,Banque centrale du Luxembourg,central_bank,,staff_authored,BCL,disclaimer in text: views of the author(s)
+IT_BdI_MISP_2021,Banca d'Italia,central_bank,,staff_authored,Bank of Italy|Banca d.Italia,series with authors' disclaimer
+EE_EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021_page,Eesti Pank,central_bank,other Eurosystem central banks (experimentation work stream),institutional,Eesti Pank|Bank of Estonia,participating banks to be confirmed from the document
+BE_BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-statu,National Bank of Belgium,central_bank,,staff_authored,National Bank of Belgium|NBB|the Bank,signed thematic article in the FMI report
+NL_NL_Ministerie-van-Financi_Brief-van-de-Minister-van-Financien-over-d_2,Ministry of Finance of the Netherlands,government,,institutional,Minister of Finance,letter to parliament; not a central bank
+FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se,Bank of Finland,central_bank,,meeting_record,Bank of Finland,minutes of a stakeholder group: contains participants' views
+EU_ECB_2024,European Central Bank,central_bank,,institutional,Eurosystem,
+SI_4-tocka-Offline-digitalni-evro_2024,Banka Slovenije,central_bank,,institutional,Bank of Slovenia|Banka Slovenije|Banke Slovenije,presentation to the national group
+BE_BE_Nationale-Bank-van-Bel_FMI-and-Payment-Services-Report-,National Bank of Belgium,central_bank,,institutional,the Bank,
+SI_SI_Banka-Slovenije_Zapisnik-1-seje-NSD-digitalni-evro_2024,Banka Slovenije,central_bank,,meeting_record,Bank of Slovenia|Banka Slovenije|Banke Slovenije,minutes of a stakeholder group
+SI_SI_Banka-Slovenije_Zapisnik-2-seje-NSD-digitalni-evro_2024,Banka Slovenije,central_bank,,meeting_record,Bank of Slovenia|Banka Slovenije|Banke Slovenije,minutes of a stakeholder group
+SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024,Banka Slovenije,central_bank,,meeting_record,Bank of Slovenia|Banka Slovenije|Banke Slovenije,minutes of a stakeholder group
+EU_ECB_ClosingReport_2025,European Central Bank,central_bank,,institutional,Eurosystem,
+EU_ECB_ThirdProgress_2025,European Central Bank,central_bank,,institutional,Eurosystem,
+AT_AT_Oesterreichische-Natio_Financial-Inclusion-Report-Forum,Oesterreichische Nationalbank,central_bank,Financial Inclusion Working Group (external members),joint_with_external,Oesterreichische Nationalbank,working-group report: views of external members
+IL_Israel_#U05d0#U05e8#U05db#U05d9#U05d8#U05e7#U05d8#U05d5#U05e8#U05d4-#U05dc#U05d5#U05d2#U05d9#U05ea-#U05d0#U05e0#U05d2#U05dc#U05d9#U05ea.pdf,Bank of Israel,central_bank,,institutional,Bank of Israel,steering committee paper with named authors
+IL_BoI_2024,Bank of Israel,central_bank,,institutional,Bank of Israel,
+IL_IL-BoI-Digital-Shekel-Progress-Report-2025-pub2026,Bank of Israel,central_bank,,institutional,Bank of Israel,
+JP_BoJ_2022,Bank of Japan,central_bank,,institutional,Bank of Japan,
+JP_BoJ_PoC2,Bank of Japan,central_bank,,institutional,Bank of Japan,
+JP_BoJ_Pilot_EN,Bank of Japan,central_bank,,institutional,Bank of Japan,
+JP_BoJ_Pilot_JP,Bank of Japan,central_bank,,institutional,Bank of Japan,
+KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021,National Bank of Kazakhstan,central_bank,,institutional,National Bank|NBK,
+KZ_KZ-NBK-Digital-Tenge-White-Paper-2023,National Bank of Kazakhstan,central_bank,,institutional,National Bank|NBK,
+NO_Norway_nbmemo-1-2018,Norges Bank,central_bank,,institutional,Norges Bank,working-group report
+NO_Norway_nb_memo_2_19_dsp,Norges Bank,central_bank,,institutional,Norges Bank,working-group report
+NO_Norway_norges-bank-memo-2_2020-eng,Norges Bank,central_bank,,institutional,Norges Bank,
+NO_Norway_norges-bank-memo-1-2021,Norges Bank,central_bank,,institutional,Norges Bank,working-group report
+NO_Norway_norges-bank-papers-2---phase-4---final-report,Norges Bank,central_bank,,institutional,Norges Bank,
+NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing,Norges Bank,central_bank,,institutional,Norges Bank,
+NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report,Norges Bank,central_bank,,institutional,Norges Bank,
+NZ_RBNZ_CBDCIssuesPaper_2021,Reserve Bank of New Zealand,central_bank,,institutional,Reserve Bank,
+NZ_RBNZ_cbdc-insights-dossier-for-public-1,Reserve Bank of New Zealand,central_bank,Accenture,commissioned_external,Reserve Bank of New Zealand,prepared by Accenture for the RBNZ: not the bank's own voice
+RU_Russia_consultation_paper_201013,Bank of Russia,central_bank,,institutional,Bank of Russia,
+RU_Russia_concept_08042021,Bank of Russia,central_bank,,institutional,Bank of Russia,
+RU_Russia_digital_ruble_30062025,Bank of Russia,central_bank,,institutional,Bank of Russia,
+SE_Riksbank_2017,Sveriges Riksbank,central_bank,,institutional,Riksbank,
+SE_Riksbank_PaymentsReport_2025,Sveriges Riksbank,central_bank,,institutional,Riksbank,
+SE_Riksbank_PaymentsReport_2026,Sveriges Riksbank,central_bank,,institutional,Riksbank,
+TW_TW-CBC-CBDC-Communication-Summary-Report-2026,Central Bank of the Republic of China (Taiwan),central_bank,,institutional,Central Bank,summary of external feedback: contains respondents' views
+UK_BoE_2020_OpportChall,Bank of England,central_bank,,institutional,Bank of England,
+UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE,Bank of England,central_bank,HM Treasury,joint_with_government,Bank of England|HM Treasury,
+UK_BoE_2023_TechWP,Bank of England,central_bank,,institutional,Bank of England,
+UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-HMT-2024-01-consultation-response-BoE,Bank of England,central_bank,HM Treasury,joint_with_government,Bank of England|HM Treasury,
+UK_UK-BoE-2024-01-response-to-technology-working-paper,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment,Bank of England,central_bank,HM Treasury,joint_with_government,Bank of England|HM Treasury,
+UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF,Bank of England,central_bank,HM Treasury,joint_with_government,Bank of England|HM Treasury,
+UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-,Bank of England,central_bank,,staff_authored,Bank of England|the Bank,Financial Stability Paper series: check whether it carries an authors' disclaimer
+UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender,Bank of England,central_bank,HM Treasury,joint_with_government,Bank of England|HM Treasury,
+UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender,Bank of England,central_bank,,institutional,Bank of England|the Bank,
+BS_Bahamas_SandDollar_2019,Central Bank of The Bahamas,central_bank,,institutional,Central Bank,
+CA_Jasper_Phase12_2017,Bank of Canada,central_bank,Payments Canada; R3,joint_with_external,Bank of Canada,wholesale project
+CA_Jasper_III_2018,Bank of Canada,central_bank,Payments Canada; TMX Group; Accenture; R3,joint_with_external,Bank of Canada,wholesale project
+CA_BoC_Consultation_Report_2023,Bank of Canada,central_bank,Forum Research,commissioned_external,Bank of Canada,consultation results written by Forum Research: reports respondents' views
+CA_BoC_RetailFeasibility_SDP2025_9,Bank of Canada,central_bank,,staff_authored,Bank of Canada,Staff Discussion Paper
+CA_BoC_PETs_SDP2025_1,Bank of Canada,central_bank,,staff_authored,Bank of Canada,Staff Discussion Paper
+CN_China_2021,People's Bank of China,central_bank,,institutional,People's Bank of China,
+CN_PBOC_LuLei_ActionPlan_2025,People's Bank of China,central_bank,,official_article,Lu Lei,article by a deputy governor; the file is a copy from a news portal and not the PBOC site: source to be replaced or confirmed
+HK_HKMA_2021,Hong Kong Monetary Authority,central_bank,BIS Innovation Hub Hong Kong Centre,joint_with_external,HKMA|Hong Kong Monetary Authority,
+HK_HKMA_2022,Hong Kong Monetary Authority,central_bank,,institutional,HKMA|Hong Kong Monetary Authority,
+HK_HKMA_eHKD_PolicyDesign,Hong Kong Monetary Authority,central_bank,,institutional,HKMA|Hong Kong Monetary Authority,
+HK_HKMA_eHKD_Phase2_2025,Hong Kong Monetary Authority,central_bank,pilot participants,joint_with_external,HKMA|Hong Kong Monetary Authority,pilot report with participants' use cases
+IN_RBI_ConceptNote_2022,Reserve Bank of India,central_bank,,institutional,Reserve Bank of India,
+JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_2021_pag,Bank of Jamaica,central_bank,,institutional,Bank of Jamaica|BOJ,
+JM_JM-BOJ-Annual-Report-2021-CBDC-sections,Bank of Jamaica,central_bank,,institutional,Bank of Jamaica|BOJ,
+JM_JM-BOJ-CBDC-FAQs-webpage-2022-upd2025,Bank of Jamaica,central_bank,,institutional,Bank of Jamaica|BOJ,
+JM_JM-BOJ-Annual-Report-2022-CBDC-sections,Bank of Jamaica,central_bank,,institutional,Bank of Jamaica|BOJ,
+MO_AMCM_eMOP_WP,Monetary Authority of Macao,central_bank,,institutional,AMCM|Monetary Authority of Macao,
+MU_MU-BoM-Digital-Rupee-Consultation-2023,Bank of Mauritius,central_bank,,institutional,Bank of Mauritius,
+NG_NG-CBN-eNaira-Regulatory-Guidelines-2021,Central Bank of Nigeria,central_bank,,institutional,Central Bank of Nigeria,binding guidelines
+PE_Peru_cbdc-presentation,Banco Central de Reserva del Perú,central_bank,,institutional,BCRP,presentation
+TH_Thailand_rCBDC_Conclusion_Report,Bank of Thailand,central_bank,,institutional,Bank of Thailand,
+TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report,Central Bank of the Republic of Türkiye,central_bank,,institutional,CBRT|Central Bank of the Republic of T,
+TR_DigitalLira_Phase2_2025,Central Bank of the Republic of Türkiye,central_bank,,institutional,CBRT|Central Bank of the Republic of T,
+AE_UAE_001,Central Bank of the UAE,central_bank,,institutional,CBUAE,Policy Paper series: check for an authors' disclaimer
+AW_ARU_001,Centrale Bank van Aruba,central_bank,,staff_authored,Centrale Bank van Aruba,edited volume; disclaimer in text: views of the authors
+BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021,Royal Monetary Authority of Bhutan,central_bank,,institutional,RMA|Royal Monetary Authority,
+CH_CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-I-settling-tokenise_2,Swiss National Bank,central_bank,BIS Innovation Hub; SIX,joint_with_external,Swiss National Bank,wholesale project
+CH_CH_BIS-Innovation-Hub-Swi_Project-Helvetia-Phase-II-settling-tokenis_2,Swiss National Bank,central_bank,BIS Innovation Hub; SIX,joint_with_external,Swiss National Bank,wholesale project
+GH_Ghana_2021,Bank of Ghana,central_bank,,institutional,Bank of Ghana,
+GH_Ghana_2023,Bank of Ghana,central_bank,,institutional,Bank of Ghana,
+HU_Hungary_2025,Magyar Nemzeti Bank,central_bank,,institutional,Magyar Nemzeti Bank,
+ID_Indonesia_2022,Bank Indonesia,central_bank,,institutional,Bank Indonesia,
+ID_Indonesia_2023a,Bank Indonesia,central_bank,,institutional,Bank Indonesia,wholesale
+ID_Indonesia_2024,Bank Indonesia,central_bank,,institutional,Bank Indonesia,wholesale
+IS_CBI_2018,Central Bank of Iceland,central_bank,,institutional,Central Bank of Iceland,
+KE_KE-CBK-CBDC-Discussion-Paper-2022,Central Bank of Kenya,central_bank,,institutional,CBK|Central Bank of Kenya,
+MG_BFM_RFI_2021,Banky Foiben'i Madagasikara,central_bank,,institutional,Banky Foiben,request for information to vendors
+NA_BoN_2022,Bank of Namibia,central_bank,,institutional,Bank of Namibia,
+NP_NP-NRB-CBDC-Concept-Report-2022,Nepal Rastra Bank,central_bank,,institutional,Nepal Rastra Bank,
+PW_Palau_Phase1_Report,Ministry of Finance of the Republic of Palau,government,Ripple (technology partner),institutional,Ministry of Finance,issuer is a ministry: Palau has no central bank
+RW_RW-NBR-CBDC-PoC-Report-2026,National Bank of Rwanda,central_bank,,institutional,National Bank of Rwanda,
+SG_MAS_mas-project-orchid-report,Monetary Authority of Singapore,central_bank,,institutional,MAS|Monetary Authority of Singapore,
+SZ_Eswatini_2024-Fintech-Digital-Lilangeni-Design-Paper,Central Bank of Eswatini,central_bank,,institutional,Central Bank of Eswatini,
+UA_NBU_E-hryvnia_2019,National Bank of Ukraine,central_bank,,institutional,NBU|National Bank of Ukraine|Національний банк,
+UY_BCU_Seven_Lessons_2022,Banco Central del Uruguay,central_bank,,staff_authored,Sarmiento,single-author paper; disclaimer in text: views of the author only
+ZA_SARB_SARB_ProjectKhokha-20180605,South African Reserve Bank,central_bank,participating banks; ConsenSys,joint_with_external,South African Reserve Bank,wholesale project
+ZA_SARB_Project_Khokha_2_Full_Report_6_April_2022,South African Reserve Bank,central_bank,industry participants,joint_with_external,South African Reserve Bank,wholesale project
+ZA_ZA-SARB-Retail-CBDC-Position-Paper-2025,South African Reserve Bank,central_bank,,institutional,SARB,
+NO_NBPapers_1_2018_en,Norges Bank,central_bank,,institutional,Norges Bank,issuer's English edition of Memo 1/2018
+NO_NBPapers_2_2019_en,Norges Bank,central_bank,,institutional,Norges Bank,issuer's English edition of Memo 2/2019
+NO_NBPapers_1_2021_en,Norges Bank,central_bank,,institutional,Norges Bank,issuer's English edition of Memo 1/2021
+JM_JM-BOJ-Amendment-Act-5-of-2022,Parliament of Jamaica,legislature,,legal_text,Bank of Jamaica|BOJ,act of parliament
+JM_JM-BOJ-CBDC-FAQs-Booklet-2022,Bank of Jamaica,central_bank,,institutional,Bank of Jamaica|BOJ,
+NG_NG-CBN-eNaira-Diaspora-Remittances-Framework-2023,Central Bank of Nigeria,central_bank,,institutional,,operational framework
+CL_CL_Banco-Central-de-Chile_Primer-Informe-Emision-de-una-mo,Banco Central de Chile,central_bank,,institutional,,
+CL_CL_Banco-Central-de-Chile_Segundo-Informe-Emision-de-una-m,Banco Central de Chile,central_bank,,institutional,,
+CZ_CzechRepublic_2022,Česká národní banka,central_bank,,institutional,,to be confirmed from the document (no English text yet)
+UY_Uruguay_BCU_BilleteDigital_2017,Banco Central del Uruguay,central_bank,,institutional,,to be confirmed from the document (no English text yet)
+CAND-022,Centrale Bank van Aruba,central_bank,World Bank; Eastern Caribbean Central Bank (enclosed presentations),meeting_record,CBA|Centrale Bank van Aruba,480-page conference summary of the Foro di Pago Nacional with enclosed slides of other institutions: only the CBA parts are the issuer speaking
