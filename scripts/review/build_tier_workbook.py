@@ -46,6 +46,10 @@ def main():
         dec = {r["id"]: r for r in csv.DictReader(open(f, encoding="utf-8"))}; AD.update(dec)
         for w in W:
             if w["id"] in dec: w["decision_v12"] = dec[w["id"]]["decision_v12"]; w["decision_source"] = "author"
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(a.manifest)), "AUTHOR_CONFIRMATIONS_*.csv"))):
+        cf = {r["id"]: r for r in csv.DictReader(open(f, encoding="utf-8"))}
+        for w in W:
+            if w["id"] in cf and w["id"] not in AD: w["decision_source"] = "author (confirmed)"; AD[w["id"]] = cf[w["id"]]
     # the authors' own earlier inputs are shown in their columns (MB, 13 Nov 2026): recorded decisions pre-fill 'decision (authors)';
     # --carry copies everything typed into an earlier copy of this workbook (decision, note, issuer / voice, tier) by document id
     CARRY = {}; CARRY_T = {}
@@ -84,7 +88,7 @@ def main():
         proj[p] = {"project": p, "frame": "yes" if frame else ("union project (digital euro)" if union else "no"), "status": P.get(p, {}).get("status") or "", "n": len(ds), "ev": len(ev), "keep": sum(d["dec"] == "KEEP" for d in ev),
                    "bord": sum(d["dec"] == "BORDERLINE" for d in ev), "rc": len(rc), "tier": t, "tier_up": tu, "group": t if (frame or union) else "OUT_OF_FRAME",
                    "first": yrs[0] if yrs else "", "last": yrs[-1] if yrs else "", "byyear": collections.Counter(d["y"] for d in ev),
-                   "non_en": sum(1 for d in ev if d["lang"] and d["lang"] != "en"), "no_lang": sum(1 for d in ev if not d["lang"]), "unconfirmed": sum(1 for d in ev + rc if d["decision_source"] != "author")}
+                   "non_en": sum(1 for d in ev if d["lang"] and d["lang"] != "en"), "no_lang": sum(1 for d in ev if not d["lang"]), "unconfirmed": sum(1 for d in ev + rc if not str(d["decision_source"]).startswith("author"))}
     wb = Workbook(); ws = wb.active; ws.title = "README"
     cnt = collections.Counter(v["group"] for v in proj.values()); move = [p for p, v in proj.items() if v["group"] != "OUT_OF_FRAME" and v["tier"] != v["tier_up"]]
     for t in [f"TIER REVIEW, v12 (built {datetime.date.today().isoformat()}). Projects by number of evidence documents: T1 >= 8, T2 5-7, T3 <= 4 (T3 is listed but not used for the year-by-year series).",
