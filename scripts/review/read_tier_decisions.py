@@ -21,7 +21,7 @@ ALLOWED = ("KEEP", "BORDERLINE", "COMPANION", "WHOLESALE", "DROP")
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--tiers", required=True); ap.add_argument("--by", required=True); ap.add_argument("--date", required=True); ap.add_argument("--confirm-all-evidence", action="store_true"); ap.add_argument("--partial", action="store_true")
+    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--tiers", required=True); ap.add_argument("--by", required=True); ap.add_argument("--date", required=True); ap.add_argument("--confirm-all-evidence", action="store_true"); ap.add_argument("--partial", action="store_true"); ap.add_argument("--suffix", default="", help="letter added to the file names when a second workbook is read on the same date")
     a = ap.parse_args(); T = {r["id"]: r for r in csv.DictReader(open(a.tiers, encoding="utf-8"))}
     sha = hashlib.sha256(open(a.workbook, "rb").read()).hexdigest(); basis = f"{os.path.basename(a.workbook)} (sha256 {sha})"
     wb = openpyxl.load_workbook(a.workbook, read_only=True); seen = set(); bad = []; dec = []; conf = []; iss = []
@@ -50,7 +50,9 @@ def main():
     R = list(wb["PROJECTS"].iter_rows(values_only=True)) if "PROJECTS" in wb.sheetnames else [[]]; ti = list(R[0]).index("tier (authors)") if "tier (authors)" in R[0] else None
     tiers = [{"project": r[0], "tier_authors": r[ti], "by": a.by, "date": a.date, "basis": basis} for r in R[1:] if ti is not None and r[ti] not in (None, "")]
     # confirmations are effective: a confirmed row is no longer 'model pre-screen' (the tier builder reads AUTHOR_CONFIRMATIONS as author decisions that change nothing)
-    for name, rows in ((f"AUTHOR_DECISIONS_{a.date}.csv", dec), (f"AUTHOR_CONFIRMATIONS_{a.date}.csv", conf), (f"AUTHOR_ISSUER_NOTES_{a.date}.csv", iss), (f"AUTHOR_TIERS_{a.date}.csv", tiers)):
+    tag = a.date + a.suffix
+    for name, rows in ((f"AUTHOR_DECISIONS_{tag}.csv", dec), (f"AUTHOR_CONFIRMATIONS_{tag}.csv", conf), (f"AUTHOR_ISSUER_NOTES_{tag}.csv", iss), (f"AUTHOR_TIERS_{tag}.csv", tiers)):
+        if rows and os.path.exists(os.path.join(ROOT, "data/manifest", name)): raise SystemExit(f"{name} exists: use --suffix")
         if rows:
             with open(os.path.join(ROOT, "data/manifest", name), "w", newline="", encoding="utf-8") as fh:
                 w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)

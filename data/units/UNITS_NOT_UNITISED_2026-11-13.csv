@@ -2,19 +2,12 @@ id,project,reason
 JM_JM-BOJ-Amendment-Act-5-of-2022,JM,scanned_or_image (OCR needed)
 JM_JM-BOJ-CBDC-FAQs-Booklet-2022,JM,scanned_or_image (OCR needed)
 JP_BoJ_Pilot_JP,JP,same publication as its English edition JP_BoJ_Pilot_EN (read there)
-NO_Norway_nbmemo-1-2018,NO,same publication as its English edition NO_NBPapers_1_2018_en (read there)
-NO_Norway_nb_memo_2_19_dsp,NO,same publication as its English edition NO_NBPapers_2_2019_en (read there)
-NO_Norway_norges-bank-memo-1-2021,NO,same publication as its English edition NO_NBPapers_1_2021_en (read there)
-CAND-099,ID,no English text (id)
 CAND-117,IN,no file
 CAND-121,IN,no file
 CAND-120,IN,no file
-CAND-169,MO,no file
-CAND-173,MO,scanned_or_image (OCR needed)
-CAND-179,MO,no file
-CAND-203,NG,no file
-NG_NG-CBN-eNaira-Diaspora-Remittances-Framework-2023,NG,scanned_or_image (OCR needed)
-CAND-333,TR,no English text (mixed:en)
+NO_Norway_nbmemo-1-2018,NO,same publication as its English edition NO_NBPapers_1_2018_en (read there)
+NO_Norway_nb_memo_2_19_dsp,NO,same publication as its English edition NO_NBPapers_2_2019_en (read there)
+NO_Norway_norges-bank-memo-1-2021,NO,same publication as its English edition NO_NBPapers_1_2021_en (read there)
 CL_CL_Banco-Central-de-Chile_Primer-Informe-Emision-de-una-mo,CL,no English text (es)
 CL_CL_Banco-Central-de-Chile_Segundo-Informe-Emision-de-una-m,CL,no English text (es)
 CAND-057,CL,no English text (es)
@@ -26,6 +19,12 @@ CAND-127,IS,no English text (is)
 CAND-126,IS,no English text (is)
 CAND-129,IS,no English text (is)
 CAND-167,MG,no English text (fr)
+CAND-169,MO,no file
+CAND-173,MO,scanned_or_image (OCR needed)
+CAND-179,MO,no file
+CAND-203,NG,no file
+NG_NG-CBN-eNaira-Diaspora-Remittances-Framework-2023,NG,scanned_or_image (OCR needed)
 CAND-236,NP,no English text (ne)
+CAND-333,TR,no English text (mixed:en)
 UY_Uruguay_BCU_BilleteDigital_2017,UY,no English text (es)
 CAND-375,UY,no English text (es)
