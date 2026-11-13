@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install pytest pycountry
+      - name: every script compiles (a comment once swallowed a statement, 13 Nov 2026)
+        run: python -m compileall -q scripts
       - name: instrument validity tests (citation check, derivation gate, extractor validation)
         run: python -m pytest -q tests
       - name: replay — project frame and site data rebuild from archived inputs, no API
