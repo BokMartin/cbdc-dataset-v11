@@ -1,42 +1,195 @@
 {
- "version": "v13 DRAFT 2026-11-12",
- "unit": {"unit_id": "<doc_key>:p<page>:s<n>", "source": "scripts/units/unitise.py; data/units/UNITS_MANIFEST_<date>.csv"},
- "document_metadata": {"issuer_type": ["central_bank", "government", "legislature", "other", "not_recorded"], "route": ["A", "B", "D"], "kind": "workbook document kind"},
- "L0_mention": {"dictionaries": "scripts/units/select_candidates.py (BROAD), scripts/census/talk_pilot.py (NARROW)", "strata": ["D", "N", "R", "-", "X"]},
- "L1_relevance": {"values": ["R", "N", "U"], "prompt": "pipeline/prompts/talk_L1_relevance.system.md"},
+ "version": "v13 DRAFT 2026-11-13",
+ "unit": {
+  "unit_id": "<doc_key>:p<page>:s<n>",
+  "source": "scripts/units/unitise.py; data/units/UNITS_MANIFEST_<date>.csv"
+ },
+ "document_metadata": {
+  "issuer_type": [
+   "central_bank",
+   "government",
+   "legislature",
+   "other",
+   "not_recorded"
+  ],
+  "route": [
+   "A",
+   "B",
+   "D"
+  ],
+  "kind": "workbook document kind"
+ },
+ "L0_mention": {
+  "dictionaries": "scripts/units/select_candidates.py (BROAD), scripts/census/talk_pilot.py (NARROW)",
+  "strata": [
+   "D",
+   "N",
+   "R",
+   "-",
+   "X"
+  ]
+ },
+ "L1_relevance": {
+  "values": [
+   "R",
+   "N",
+   "U"
+  ],
+  "prompt": "pipeline/prompts/talk_L1_relevance.system.md"
+ },
  "L2_facets": {
-  "voice": ["OWN", "REPORTED", "UNCLEAR"],
-  "object": ["IDENTITY", "TRANSACTIONS", "BALANCES", "SEVERAL", "GENERAL"],
-  "observer": ["CENTRAL_BANK", "INTERMEDIARY", "AUTHORITY", "COMMERCIAL", "COUNTERPARTY", "NOBODY", "SEVERAL", "UNSPECIFIED"],
-  "direction": ["RESTRICT", "GRANT", "TRADEOFF", "NEUTRAL"],
-  "basis": ["NONE", "POLICY", "LEGAL", "ARCHITECTURAL", "CRYPTOGRAPHIC"],
-  "status": ["CONSIDERED", "TESTED", "ENDORSED", "OPERATIONAL", "REJECTED", "NOT_APPLICABLE"],
-  "modality": ["FIRM", "CONDITIONAL"],
-  "flags": ["anonymity_rejected", "low_id_tier", "offline", "two_statements"],
+  "voice": [
+   "OWN",
+   "REPORTED",
+   "UNCLEAR"
+  ],
+  "aspect": [
+   "CB_ACCESS",
+   "INTERMEDIARY_DATA",
+   "AUTHORITY_ACCESS",
+   "ANONYMITY",
+   "IDENTIFICATION",
+   "OFFLINE",
+   "DATA_PROTECTION",
+   "USER_CONTROL",
+   "PETS",
+   "GENERAL"
+  ],
+  "aspect2": "optional second aspect, same values",
+  "direction": [
+   "RESTRICT",
+   "GRANT",
+   "TRADEOFF",
+   "NEUTRAL"
+  ],
+  "basis": [
+   "NONE",
+   "POLICY",
+   "LEGAL",
+   "ARCHITECTURAL",
+   "CRYPTOGRAPHIC"
+  ],
+  "status": [
+   "CONSIDERED",
+   "TESTED",
+   "ENDORSED",
+   "OPERATIONAL",
+   "REJECTED",
+   "NOT_APPLICABLE"
+  ],
+  "modality": [
+   "FIRM",
+   "CONDITIONAL"
+  ],
+  "flags": [
+   "anonymity_rejected",
+   "low_id_tier",
+   "two_statements"
+  ],
   "prompt": "pipeline/prompts/talk_L2_facets.system.md"
  },
  "crosswalk_from_survey_types_2026-11-02": {
-  "PRINCIPLE": {"direction": "NEUTRAL", "basis": "NONE"},
-  "PRIVACY_AS_RISK_OR_TRADEOFF": {"direction": "TRADEOFF"},
-  "CB_NO_PERSONAL_DATA": {"observer": "CENTRAL_BANK", "direction": "RESTRICT"},
-  "CB_SEES_DATA": {"observer": "CENTRAL_BANK", "direction": "GRANT"},
-  "PSP_HOLDS_IDENTITY": {"observer": "INTERMEDIARY", "direction": "GRANT", "object": ["IDENTITY", "SEVERAL"]},
-  "PSEUDONYMISATION": {"object": "IDENTITY", "direction": "RESTRICT", "basis": ["ARCHITECTURAL", "CRYPTOGRAPHIC"]},
-  "TIERED_LOW_ID": {"flags": ["low_id_tier"]},
-  "ANONYMITY_REJECTED": {"flags": ["anonymity_rejected"]},
-  "OFFLINE_PRIVACY": {"flags": ["offline"]},
-  "LAWFUL_ACCESS": {"observer": "AUTHORITY", "direction": "GRANT"},
-  "DATA_MINIMISATION": {"direction": "RESTRICT", "object": "GENERAL", "note": "collection / retention limited"},
-  "USER_CONTROL_CONSENT": {"direction": "RESTRICT", "note": "consent or user choice as the limiting condition; candidate for an extra flag"},
-  "NO_COMMERCIAL_USE": {"observer": "COMMERCIAL", "direction": "RESTRICT"},
-  "PET_TECHNIQUE": {"basis": "CRYPTOGRAPHIC"},
-  "LEGAL_COMMITMENT": {"basis": "LEGAL"},
-  "PROGRAMMABILITY": {"note": "not a privacy statement under L1; stays with F10"},
-  "OTHER": {"note": "mostly voice = REPORTED, or not relevant under L1"}
+  "PRINCIPLE": {
+   "aspect": "GENERAL",
+   "direction": "NEUTRAL"
+  },
+  "PRIVACY_AS_RISK_OR_TRADEOFF": {
+   "aspect": "GENERAL",
+   "direction": "TRADEOFF"
+  },
+  "CB_NO_PERSONAL_DATA": {
+   "aspect": "CB_ACCESS",
+   "direction": "RESTRICT"
+  },
+  "CB_SEES_DATA": {
+   "aspect": "CB_ACCESS",
+   "direction": "GRANT"
+  },
+  "PSP_HOLDS_IDENTITY": {
+   "aspect": "INTERMEDIARY_DATA",
+   "direction": "GRANT"
+  },
+  "PSEUDONYMISATION": {
+   "aspect": "ANONYMITY",
+   "direction": "RESTRICT"
+  },
+  "TIERED_LOW_ID": {
+   "aspect": "IDENTIFICATION",
+   "direction": "RESTRICT",
+   "flags": [
+    "low_id_tier"
+   ]
+  },
+  "ANONYMITY_REJECTED": {
+   "aspect": "ANONYMITY",
+   "direction": "GRANT",
+   "flags": [
+    "anonymity_rejected"
+   ]
+  },
+  "OFFLINE_PRIVACY": {
+   "aspect": "OFFLINE"
+  },
+  "LAWFUL_ACCESS": {
+   "aspect": "AUTHORITY_ACCESS",
+   "direction": "GRANT"
+  },
+  "DATA_MINIMISATION": {
+   "aspect": "DATA_PROTECTION",
+   "direction": "RESTRICT"
+  },
+  "LEGAL_COMMITMENT": {
+   "aspect": "DATA_PROTECTION",
+   "basis": "LEGAL"
+  },
+  "USER_CONTROL_CONSENT": {
+   "aspect": "USER_CONTROL",
+   "direction": "RESTRICT"
+  },
+  "NO_COMMERCIAL_USE": {
+   "aspect": "USER_CONTROL",
+   "direction": "RESTRICT"
+  },
+  "PET_TECHNIQUE": {
+   "aspect": "PETS",
+   "basis": "CRYPTOGRAPHIC"
+  },
+  "PROGRAMMABILITY": {
+   "note": "not a privacy statement under L1; stays with F10"
+  },
+  "OTHER": {
+   "note": "mostly voice = REPORTED, or not relevant under L1"
+  }
  },
  "derived": {
-  "funnel": ["units (excluding X)", "L0 mentions", "L1 relevant", "voice = OWN", "basis in {LEGAL, ARCHITECTURAL, CRYPTOGRAPHIC}", "status in {ENDORSED, OPERATIONAL}", "admissible F-commitments (contract)"],
-  "talk_components": {"salience": "share of units that are L1 relevant with voice OWN", "specificity": "among those, share with basis LEGAL / ARCHITECTURAL / CRYPTOGRAPHIC", "stance": "share TRADEOFF against RESTRICT"},
+  "funnel": [
+   "units (excluding X)",
+   "L0 mentions",
+   "L1 relevant",
+   "voice = OWN",
+   "basis in {LEGAL, ARCHITECTURAL, CRYPTOGRAPHIC}",
+   "status in {ENDORSED, OPERATIONAL}",
+   "admissible F-commitments (contract)"
+  ],
+  "talk_components": {
+   "salience": "share of units that are L1 relevant with voice OWN",
+   "specificity": "among those, share with basis LEGAL / ARCHITECTURAL / CRYPTOGRAPHIC",
+   "stance": "share TRADEOFF against RESTRICT",
+   "aspect_profile": "distribution of OWN relevant units over the ten aspects, per issuer type; reported as a table, never summed"
+  },
   "regulator_view": "all components are reported by issuer_type, so that what the central bank says, what the government says and what the law says are never pooled silently"
+ },
+ "aspect_to_F_cells": {
+  "CB_ACCESS": "F1 CB_LINK_ONLINE",
+  "INTERMEDIARY_DATA": "F2 PSP_LINK_ONLINE",
+  "AUTHORITY_ACCESS": "F3 LAWFUL_ACCESS_ROUTE",
+  "OFFLINE": "F4 PRIVATE_OFFLINE_AVAILABLE",
+  "IDENTIFICATION": "F7 (low-ID route) / F8 ONBOARDING_ID",
+  "ANONYMITY": "F1 and F4 jointly",
+  "DATA_PROTECTION": "no F-cell",
+  "USER_CONTROL": "no F-cell (reserved F6)",
+  "PETS": "no F-cell (basis of F1 / F4)",
+  "GENERAL": "no F-cell",
+  "note": "indicative mapping, to be checked against the contract before use; it is what lets talk and commitment be compared aspect by aspect"
  }
 }
