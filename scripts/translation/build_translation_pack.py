@@ -22,7 +22,7 @@ SHA-256 of the exact user message), so any later run can prove it sent the same 
 
 usage: build_translation_pack.py --tiers data/manifest/TIERS_2026-11-10.csv --cache <text cache dir> --pack <dir> --date 2026-11-10 [--route-b data/translation/ROUTE_B_PAIRS.csv]
 """
-import argparse, csv, glob, hashlib, os, re, collections
+import argparse, csv, glob, hashlib, json, os, re, sys, collections
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE))
 DENSE = {"zh", "ja", "ko"}
 NAMES = {"ru": "Russian", "zh": "Chinese", "ja": "Japanese", "es": "Spanish", "nb": "Norwegian Bokmål", "sl": "Slovenian", "fi": "Finnish", "nl": "Dutch", "th": "Thai", "tr": "Turkish", "sv": "Swedish",
@@ -53,7 +53,16 @@ def units(text, limit):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--tiers", required=True); ap.add_argument("--cache", required=True); ap.add_argument("--pack", required=True); ap.add_argument("--date", required=True)
     ap.add_argument("--route-b", default=os.path.join(ROOT, "data/translation/ROUTE_B_PAIRS.csv")); ap.add_argument("--chars", type=int, default=18000); ap.add_argument("--chars-dense", type=int, default=9000)
+    ap.add_argument("--pdfmap", help="JSON sha256 -> local path of the master file (needed for the reading-order rule)"); ap.add_argument("--rocache", help="directory for reading-order text of PDFs")
     a = ap.parse_args()
+    # Added 13 Nov 2026 (audit items 3 and 12). (1) Text mode: a PDF whose layout text has column gaps on at least 15 % of its long lines is
+    # translated from reading-order text (pdftotext without -layout), because the layout text interleaves the columns. (2) Page spans:
+    # data/translation/PAGE_SPANS.csv limits a general publication to the listed pages. Both are stated in the request header.
+    sys.path.insert(0, os.path.join(ROOT, "scripts/units")); import unitise
+    local = json.load(open(a.pdfmap)) if a.pdfmap else {}
+    sp = os.path.join(ROOT, "data/translation/PAGE_SPANS.csv"); spans = {}
+    if os.path.exists(sp):
+        for r in csv.DictReader(open(sp, encoding="utf-8")): spans[r["id"]] = {n for part in r["pages"].split(";") for n in range(int(part.split("-")[0]), int(part.split("-")[-1]) + 1)}
     rb = {r["id"]: r for r in csv.DictReader(open(a.route_b, encoding="utf-8"))} if os.path.exists(a.route_b) else {}
     ovp = os.path.join(ROOT, "data/translation/LANGUAGE_OVERRIDES.csv"); ov = {r["id"]: r for r in csv.DictReader(open(ovp, encoding="utf-8"))} if os.path.exists(ovp) else {}
     eds = {}
@@ -79,7 +88,14 @@ def main():
              "note": "; ".join(x for x in [(b["note"] if b else ""), r["text_flag"], (ov[r["id"]]["basis"] if r["id"] in ov else "")] if x)}
         if mode == "text" and prio != "RB":
             limit = a.chars_dense if lang in DENSE else a.chars
-            us = units(open(cf, encoding="utf-8").read(), limit); chunks = []; cur = []; size = 0
+            src_text = open(cf, encoding="utf-8").read(); layer = "pdftotext -layout (PDF) / visible text (HTML), no OCR"; gs = unitise.gap_share(src_text); lp = local.get(r["sha256"], "")
+            if gs >= 0.15 and lp.lower().endswith(".pdf") and os.path.exists(lp) and a.rocache:
+                os.makedirs(a.rocache, exist_ok=True); src_text = open(unitise.reading_order(lp, a.rocache, r["sha256"]), encoding="utf-8").read()
+                layer = f"pdftotext reading order, no -layout, no OCR (layout text had column gaps on {gs:.0%} of long lines)"; q["note"] = "; ".join(x for x in [q["note"], "reading-order text"] if x)
+            us = units(src_text, limit)
+            if r["id"] in spans:
+                us = [u for u in us if int(u[0].split(".")[0]) in spans[r["id"]]]; layer += f"; pages limited to {min(spans[r['id']])}-{max(spans[r['id']])} by data/translation/PAGE_SPANS.csv"; q["note"] = "; ".join(x for x in [q["note"], "page span"] if x)
+            chunks = []; cur = []; size = 0
             for u in us:
                 if cur and size + len(u[1]) > limit: chunks.append(cur); cur = []; size = 0
                 cur.append(u); size += len(u[1])
@@ -89,7 +105,7 @@ def main():
             for i, ch in enumerate(chunks, 1):
                 body = "".join(f"=== PAGE {n} ===\n{t}\n" for n, t in ch)
                 msg = (f"TRANSLATION REQUEST\ndoc_key: {key}\nproject: {r['project']} | year: {r['year']} | source language (detected): {NAMES.get(lang, lang)} ({lang})\n"
-                       f"title: {r['title']}\nsource file: {r['master_path']}\nsource_sha256: {r['sha256']}\ntext layer: pdftotext -layout (PDF) / visible text (HTML), no OCR\n"
+                       f"title: {r['title']}\nsource file: {r['master_path']}\nsource_sha256: {r['sha256']}\ntext layer: {layer}\n"
                        f"chunk: {i} of {len(chunks)} | markers PAGE {ch[0][0]} to PAGE {ch[-1][0]} | text_sha256: {sha(body)}\n--- BEGIN SOURCE TEXT ---\n{body}--- END SOURCE TEXT ---\n")
                 fn = f"{key}.chunk-{i:02d}-of-{len(chunks):02d}.txt"; open(os.path.join(d, fn), "w", encoding="utf-8", newline="\n").write(msg)
                 reqs.append({"doc_key": key, "chunk": i, "of": len(chunks), "first_marker": ch[0][0], "last_marker": ch[-1][0], "markers": len(ch), "chars": len(body), "priority": prio, "request_file": f"requests/{pf}/{key}/{fn}", "user_sha256": sha(msg), "source_sha256": r["sha256"]})

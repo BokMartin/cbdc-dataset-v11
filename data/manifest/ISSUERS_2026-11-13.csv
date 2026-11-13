@@ -179,7 +179,7 @@ CAND-088,HK,T2,2024,press_release,Hong Kong Monetary Authority,central_bank,,ins
 HK_HKMA_eHKD_Phase2_2025,HK,T2,2025,pilot_report,Hong Kong Monetary Authority,central_bank,pilot participants,joint_with_external,,proposed_2026-11-13,yes,yes,,,pilot report with participants' use cases
 ID_Indonesia_2022,ID,T2,2022,white_paper,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 ID_Indonesia_2023a,ID,T2,2023,consultation,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
-CAND-096,ID,T2,2023,legislation,Republic of Indonesia (DPR/President); hosted by Bank Indonesia,legislature,,legal_text,,prescreen_record,no,,,issuer is not a central bank,
+CAND-096,ID,T2,2023,legislation,Republic of Indonesia (DPR/President); hosted by Bank Indonesia,legislature,,legal_text,,prescreen_record,yes,,,issuer is not a central bank,
 CAND-099,ID,T2,2024,report,Bank Indonesia,central_bank,,institutional,,prescreen_record,no,,,,
 ID_Indonesia_2024,ID,T2,2024,pilot_report,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
 CAND-118,IN,T2,2022,press_release,"Government of India, Ministry of Finance (PIB)",government,,institutional,,prescreen_record,yes,,,issuer is not a central bank,

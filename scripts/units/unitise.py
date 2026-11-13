@@ -96,6 +96,10 @@ def main():
     tr = {k: v for k, v in tr.items() if k not in bench}
     link = {r["original_id"]: r["english_id"] for r in csv.DictReader(open(os.path.join(ROOT, "data/manifest/EDITION_LINKS.csv"), encoding="utf-8"))}
     T = list(csv.DictReader(open(a.tiers, encoding="utf-8"))); evid = {r["id"] for r in T if r["decision_v12"] in ("KEEP", "BORDERLINE")}
+    tlayer = {}  # text layer each translation of record was made from (column added to the translation manifests on 13 Nov 2026; earlier runs used layout text)
+    for f in sorted(glob.glob(os.path.join(ROOT, "data/translation/TRANSLATION_MANIFEST_*.csv"))):
+        for q in csv.DictReader(open(f, encoding="utf-8")):
+            if q["status"] == "ok" and q["priority"] != "BENCH": tlayer[q["doc_key"]] = q.get("source_text_layer", "")
     rows = []; skipped = []
     for r in csv.DictReader(open(a.tiers, encoding="utf-8")):
         if r["decision_v12"] not in ("KEEP", "BORDERLINE") or r["tier"] == "out_of_frame": continue
@@ -106,7 +110,7 @@ def main():
         elif key in tr: path, route = tr[key], "D"
         if not path: skipped.append({"id": r["id"], "project": r["project"], "reason": r["language"] and r["language"] != "en" and "no English text (" + r["language"] + ")" or r["text_flag"] or "no file"}); continue
         src_sha = r["sha256"] if (route != "B" or r["language"] == "en") else ed[r["id"]]["sha256"]; lay = os.path.join(a.cache, r["sha256"] + ".txt") if route == "D" else path
-        gs = gap_share(open(lay, encoding="utf-8").read()) if os.path.exists(lay) else ""; mode = "translation_of_layout_text" if route == "D" else "layout_or_html"
+        gs = gap_share(open(lay, encoding="utf-8").read()) if os.path.exists(lay) else ""; mode = ("translation_of_reading_order_text" if "reading order" in tlayer.get(key, "") else "translation_of_layout_text") if route == "D" else "layout_or_html"
         lp = local.get(src_sha, "")
         if route in "AB" and lp.lower().endswith(".pdf") and os.path.exists(lp): path = reading_order(lp, a.rocache, src_sha); mode = "reading_order"
         elif route in "AB": mode = "html_visible_text" if lp.lower().endswith((".html", ".htm")) else "layout"

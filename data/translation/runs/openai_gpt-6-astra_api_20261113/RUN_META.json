@@ -1,0 +1,25 @@
+{
+ "run": "openai_gpt-6-astra_api_20261113",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "max_tokens": 32000,
+ "sdk": "openai 3.49.0",
+ "python": "3.13.18",
+ "system_sha256": "5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716",
+ "system_prompt_file": "pipeline/prompts/translation.system.md",
+ "started_utc": "2026-11-13T13:44:45.557358+00:00",
+ "interface": "API (Responses API, one call per chunk, no history, no tools)",
+ "requests_selected": 13,
+ "model_returned": [
+  "gpt-6-astra"
+ ],
+ "temperature": "provider default (not sent)",
+ "last_call_started_utc": "2026-11-13T13:58:50.556703+00:00",
+ "calls": 11,
+ "complete": 11,
+ "input_tokens": 80886,
+ "output_tokens": 59125,
+ "scope": "ID CAND-096 (new evidence after the RECHECK decisions of 13 Nov; pages 113-117 and 606-609 by PAGE_SPANS.csv) and re-translation of TW CAND-345 and CAND-350 from reading-order text (their first translation was made from column-interleaved layout text). PE CAND-250 was planned in the same run and not done: the API account ran out of credit (HTTP 429).",
+ "one_request_per_conversation": "yes",
+ "operator": "MB (run by Claude in the project container; key supplied by MB, not stored)"
+}

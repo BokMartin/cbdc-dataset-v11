@@ -1,42 +1,44 @@
 #!/usr/bin/env python3
-"""Human agreement sample for the privacy-talk instrument: 400 units for two coders (MB, DS) plus 30 training units.
+"""Human coding samples for the privacy-talk instrument (version of 13 Nov 2026, after the independent audit; ADR-005).
 
-Drawn BEFORE any model has classified a unit, from the candidate units of select_candidates.py (strata D dictionary hit, N neighbour,
-R random control). Nothing here uses model output; the two coders code the same units independently, and the model is run on them later.
-Design (fixed here, seed in the manifest):
-  training  30 units from the two exposed projects (NO, UK): 20 D, 5 N, 5 R. Coded together, discussed, used to fix the codebook. Not scored.
-  main     400 units, NO and UK included but never a training unit:
-           stratum x text route quotas  D: A 190, B 20, D 50 · N: A 58, B 6, D 16 · R: A 44, B 4, D 12
-           (D is over-sampled because facets can only be compared on relevant units; R checks that coders agree on "not relevant";
-           route B and D are over-sampled so that agreement can be reported separately for issuer-English and machine-translated text)
-           route-A cells are split by project tier 45 % T1, 35 % T2, 20 % T3; within a group projects take turns (round robin in
-           hash order), at most 4 units per document and stratum, units in hash order: no project or long document can dominate.
-  hash     SHA-256(seed | unit_id); seed "talk-v13-agreement-2026-11-13". Each coder gets the rows in a different hash order.
-Outputs outside the repository (unit text is issuers' copyright): one workbook per coder with sheets READ_ME, CODEBOOK, TRAINING, CODE.
-Repository: data/units/AGREEMENT_SAMPLE_<date>.csv (unit ids, strata, SHA-256 of the unit text, row order per coder; no text).
+Two designs, both drawn before any model has classified a unit, from the candidate units of select_candidates.py:
+  dev   development sample, 120 units: D 90 (route A 62, B 9, D 19) · N 15 (11, 1, 3) · R 15 (11, 1, 3). Both authors code ALL facets;
+        the result decides which facets are kept, merged or dropped. The codebook and the model prompts may be revised on it.
+  main  reference sample, 400 units: D 260 (190, 20, 50) · N 80 (58, 6, 16) · R 60 (44, 4, 12). Drawn only after the document set and
+        the codebook are frozen; never contains a dev unit; not used to tune prompts, so it stays a clean reference for the model.
+Within a stratum x route cell the route-A units are split by project tier 45 % T1, 35 % T2, 20 % T3; projects take turns (round robin
+in hash order), with a cap per document and stratum (dev 2, main 4), units in hash order. Hash = SHA-256(seed | unit_id).
+Context shown to the coder is the unit's paragraph from scripts/units/context.py, the same string the model will receive.
+Outputs outside the repository (unit text is issuers' copyright): one workbook per coder (READ_ME, CODEBOOK, CODE), rows in a
+different hash order for each coder. Repository: data/units/AGREEMENT_SAMPLE_<design>_<date>.csv with unit ids, strata, the SHA-256
+of the unit text and of the document's unit file (a re-extraction that changes the text is detected), and the row order per coder.
 
-usage: draw_agreement_sample.py --units <units dir> --issuers data/manifest/ISSUERS_2026-11-13.csv --out <dir> --date 2026-11-13
+usage: draw_agreement_sample.py --design dev|main --units <units dir> --issuers data/manifest/ISSUERS_<date>.csv --out <dir> --date 2026-11-13
 """
-import argparse, csv, glob, hashlib, json, os, re, collections
+import argparse, csv, glob, hashlib, json, os, re, sys, collections
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE))
-SEED = "talk-v13-agreement-2026-11-13"
-QUOTA = {("D", "A"): 190, ("D", "B"): 20, ("D", "D"): 50, ("N", "A"): 58, ("N", "B"): 6, ("N", "D"): 16, ("R", "A"): 44, ("R", "B"): 4, ("R", "D"): 12}
-TRAIN = {"D": 20, "N": 5, "R": 5}; TIER_SHARE = (("T1", .45), ("T2", .35), ("T3", .20)); DOC_CAP = 4
+sys.path.insert(0, HERE); import context
+DESIGN = {"dev": {"seed": "talk-v13-dev-2026-11-13", "cap": 2, "quota": {("D", "A"): 62, ("D", "B"): 9, ("D", "D"): 19, ("N", "A"): 11, ("N", "B"): 1, ("N", "D"): 3, ("R", "A"): 11, ("R", "B"): 1, ("R", "D"): 3}},
+          "main": {"seed": "talk-v13-main-2026-11-13", "cap": 4, "quota": {("D", "A"): 190, ("D", "B"): 20, ("D", "D"): 50, ("N", "A"): 58, ("N", "B"): 6, ("N", "D"): 16, ("R", "A"): 44, ("R", "B"): 4, ("R", "D"): 12}}}
+TIER_SHARE = (("T1", .45), ("T2", .35), ("T3", .20)); SEED = None
+ROUTE = {"A": "English original", "B": "issuer's English edition", "D": "MACHINE TRANSLATION"}
 WRAP = Alignment(wrap_text=True, vertical="top"); BOLD = Font(bold=True)
+COLS = ["n", "unit_id", "project", "issuer (document)", "kind", "year", "text is", "page", "paragraph (unit marked »…«)", "UNIT TO CODE",
+        "relevant", "voice", "aspect", "aspect2", "stance", "basis", "decision", "implementation", "modality", "anonymity_rejected", "low_id_tier", "two_statements", "note"]
 
 
 def clean(t):
     t = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", " ", t)  # control characters are not allowed in a worksheet; the hash in the manifest is of the unit text as unitised
-    return ("'" + t) if t[:1] in "=+-@" else t
+    return ("'" + t) if t and t[0] in "=+-@" else t
 
 
 def hx(*p): return hashlib.sha256("|".join(p).encode()).hexdigest()
 
 
-def round_robin(pool, n, taken, cap=DOC_CAP):
+def round_robin(pool, n, taken, cap):
     """pool: units (dicts); projects take turns in hash order, units in hash order, at most `cap` per document."""
     byp = collections.defaultdict(list)
     for u in sorted(pool, key=lambda u: hx(SEED, u["unit_id"])):
@@ -52,82 +54,79 @@ def round_robin(pool, n, taken, cap=DOC_CAP):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--units", required=True); ap.add_argument("--issuers", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True)
+    global SEED
+    ap = argparse.ArgumentParser(); ap.add_argument("--design", required=True, choices=list(DESIGN)); ap.add_argument("--units", required=True); ap.add_argument("--issuers", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True)
     ap.add_argument("--schema", default=os.path.join(ROOT, "schema/talk_units_v13_DRAFT.json")); ap.add_argument("--codebook", default=os.path.join(ROOT, "docs/TALK_CODEBOOK_cs.tsv"))
-    a = ap.parse_args()
-    man = {r["doc_key"]: r for r in csv.DictReader(open(sorted(glob.glob(os.path.join(ROOT, "data/units/UNITS_MANIFEST_*.csv")))[-1], encoding="utf-8"))}
+    a = ap.parse_args(); D = DESIGN[a.design]; SEED = D["seed"]
+    mf = sorted(glob.glob(os.path.join(ROOT, "data/units/UNITS_MANIFEST_*.csv")))[-1]; man = {r["doc_key"]: r for r in csv.DictReader(open(mf, encoding="utf-8"))}
     iss = {r["id"]: r for r in csv.DictReader(open(a.issuers, encoding="utf-8"))}
+    taken = set()  # the main sample never contains a unit of a development sample
+    if a.design == "main":
+        for f in glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_SAMPLE_dev_*.csv")): taken |= {r["unit_id"] for r in csv.DictReader(open(f, encoding="utf-8"))}
     pool = []; text = {}
     for key, m in man.items():
         U = list(csv.DictReader(open(os.path.join(a.units, key + ".units.csv"), encoding="utf-8")))
         st = {r["unit_id"]: r["stratum"] for r in csv.DictReader(open(os.path.join(a.units, key + ".candidates.csv"), encoding="utf-8"))}
         for i, u in enumerate(U):
             if u["unit_id"] in st:
-                text[u["unit_id"]] = (U[i - 1]["text"] if i else "", u["text"], U[i + 1]["text"] if i + 1 < len(U) else "", u["page"])
-                pool.append({"unit_id": u["unit_id"], "doc_key": key, "project": m["project"], "tier": m["tier"], "route": m["route"], "kind": m["kind"], "year": m["year"], "id": m["id"], "stratum": st[u["unit_id"]]})
-    taken = set(); train = []
-    for s, n in TRAIN.items():
-        got = round_robin([u for u in pool if u["stratum"] == s and u["project"] in ("NO", "UK")], n, taken, cap=2); train += got; taken |= {u["unit_id"] for u in got}
-    main_ = []
-    for (s, rt), q in QUOTA.items():
+                text[u["unit_id"]] = (context.render(U, i), u["text"], u["page"])
+                pool.append({"unit_id": u["unit_id"], "doc_key": key, "project": m["project"], "tier": m["tier"], "route": m["route"], "kind": m["kind"], "year": m["year"], "id": m["id"], "stratum": st[u["unit_id"]], "units_sha256": m["units_sha256"]})
+    sample = []
+    for (s, rt), q in D["quota"].items():
         cell = [u for u in pool if u["stratum"] == s and u["route"] == rt]
-        if rt == "A":
+        if rt == "A" and q >= 10:
             parts = [(t, round(q * sh)) for t, sh in TIER_SHARE]; parts[0] = (parts[0][0], q - sum(n for _, n in parts[1:]))
-            for t, n in parts:
-                got = round_robin([u for u in cell if u["tier"] == t], n, taken); main_ += got; taken |= {u["unit_id"] for u in got}
-        else:
-            got = round_robin(cell, q, taken); main_ += got; taken |= {u["unit_id"] for u in got}
-    for u in train: u["set"] = "training"
-    for u in main_: u["set"] = "main"
+        else: parts = [(None, q)]
+        for t, n in parts:
+            got = round_robin([u for u in cell if t is None or u["tier"] == t], n, taken, D["cap"]); sample += got; taken |= {u["unit_id"] for u in got}
+            if len(got) < n: raise SystemExit(f"quota not filled: {s} {rt} {t}: {len(got)} of {n}")
     S = json.load(open(a.schema))["L2_facets"]; os.makedirs(a.out, exist_ok=True)
     cb = [l.rstrip("\n").split("\t") for l in open(a.codebook, encoding="utf-8") if l.strip()]
-    cols = ["n", "unit_id", "project", "issuer (document)", "kind", "year", "page", "context before", "UNIT TO CODE", "context after",
-            "relevant (R/N/U)", "voice", "aspect", "aspect2 (optional)", "direction", "basis", "status", "modality", "flags (optional)", "note"]
-    lists = {11: ["R", "N", "U"], 12: S["voice"], 13: S["aspect"], 14: S["aspect"], 15: S["direction"], 16: S["basis"], 17: S["status"], 18: S["modality"], 19: S["flags"]}
-    rows = []
+    lists = {"relevant": ["R", "N", "U"], "voice": S["voice"], "aspect": S["aspect"], "aspect2": S["aspect"], "stance": S["stance"], "basis": S["basis"], "decision": S["decision"], "implementation": S["implementation"], "modality": S["modality"],
+             "anonymity_rejected": ["x"], "low_id_tier": ["x"], "two_statements": ["x"]}
+    purpose = ("ZKUŠEBNÍ vzorek: kódujete všechny údaje, aby se ukázalo, které fungují. Podle výsledku se pravidla upraví a slabé údaje vypustí." if a.design == "dev"
+               else "OSTRÝ vzorek: pravidla jsou zamčená; výsledek je referenční měření shody.")
     for coder in ("MB", "DS"):
         wb = Workbook(); ws = wb.active; ws.title = "READ_ME"
-        for t in [f"Privacy-talk agreement sample, coder {coder} (drawn {a.date}, seed {SEED}). 30 training units (sheet TRAINING) and {len(main_)} units to code (sheet CODE).",
-                  "POSTUP: 1) Oba si přečtěte list CODEBOOK. 2) List TRAINING (30 vět, Norsko a UK) nakódujte každý sám, pak je společně projděte a vyjasněte si pravidla; případné změny pravidel zapište, než začnete s listem CODE. 3) List CODE kóduje každý SÁM, bez porady a bez pomoci jazykového modelu; o jednotlivých větách se nebavte, dokud oba neskončíte.",
-                  "CO SE KÓDUJE: jen věta ve sloupci UNIT TO CODE. Sloupce 'context before / after' jsou sousední věty a slouží jen k pochopení zájmen a odkazů.",
+        for t in [f"Privacy-talk {a.design} sample, coder {coder} (drawn {a.date}, seed {SEED}): {len(sample)} units on sheet CODE. {purpose}",
+                  "POSTUP: 1) Přečtěte si list CODEBOOK. 2) List CODE kóduje každý SÁM, bez porady a bez pomoci jazykového modelu; o jednotlivých větách se nebavte, dokud oba neskončíte. 3) Soubor uložte pod stejným názvem a pošlete.",
+                  "CO SE KÓDUJE: jen věta ve žlutém sloupci UNIT TO CODE. Sloupec 'paragraph' je odstavec, ve kterém věta stojí (věta je v něm označena »takto«); slouží k pochopení zájmen, odkazů a toho, kdo mluví. Je prázdný, pokud věta stojí sama (nadpis, buňka tabulky). Stejný odstavec dostane i model.",
                   "Sloupec 'relevant': R = věta sama něco říká o soukromí, identifikovatelnosti nebo přístupu k datům uživatelů retailové CBDC; N = neříká; U = nečitelná nebo useknutá. Pokud N nebo U, ostatní sloupce nechte prázdné.",
-                  "Pokud R: vyplňte voice, aspect, direction, basis, status, modality (rozbalovací seznamy). aspect2 a flags jen když je potřeba. Do 'note' pište pochybnosti: jsou cenné pro úpravu pravidel.",
-                  "Text některých vět je strojový překlad (hranaté závorky obsahují původní termín) a některé věty jsou úlomky tabulek nebo nadpisů: to je součást měření, kódujte, co je napsáno.",
-                  "Pořadí řádků je pro každého kodéra jiné (náhodné), aby se neprojevila únava na stejných větách. Neřaďte list CODE podle projektu: kódujte v daném pořadí. Odhad času: 5 až 6 hodin.",
-                  "Po dokončení soubor uložte pod stejným názvem a pošlete; shodu spočítá scripts/units/score_agreement.py (Krippendorffovo alfa pro každý sloupec)."]:
+                  "Pokud R: vyplňte voice, aspect, stance, basis, decision, implementation, modality (rozbalovací seznamy). aspect2 a tři příznaky (x) jen když je potřeba. Do 'note' pište pochybnosti: jsou cenné pro úpravu pravidel.",
+                  "Sloupec 'text is' říká, zda čtete anglický originál, anglické vydání vydavatele, nebo STROJOVÝ PŘEKLAD (v něm hranaté závorky obsahují původní termín). Některé věty jsou úlomky tabulek nebo nadpisů: to je součást měření, kódujte, co je napsáno.",
+                  "Pořadí řádků je pro každého kodéra jiné (náhodné). Neřaďte list podle projektu: kódujte v daném pořadí. Odhad času: " + ("asi 2 hodiny." if a.design == "dev" else "5 až 6 hodin."),
+                  "Shodu spočítá scripts/units/score_agreement.py (Krippendorffovo alfa a AC1 pro každý sloupec, tabulky záměn)."]:
             ws.append([t])
         ws.column_dimensions["A"].width = 160
         for r in ws.iter_rows():
             for c in r: c.alignment = WRAP
         c_ = wb.create_sheet("CODEBOOK")
         for l in cb: c_.append(l)
-        for i, wd in enumerate([14, 22, 110], 1): c_.column_dimensions[chr(64 + i)].width = wd
+        for i, wd in enumerate([18, 26, 120], 1): c_.column_dimensions[chr(64 + i)].width = wd
         for r in c_.iter_rows():
             for c in r: c.alignment = WRAP
             if r[0].value and not r[1].value: r[0].font = BOLD
-        for name, data in (("TRAINING", train), ("CODE", main_)):
-            d = wb.create_sheet(name); d.append(cols); order = sorted(data, key=lambda u: hx(SEED, coder, u["unit_id"]))
-            for n, u in enumerate(order, 1):
-                b, t, af, pg = text[u["unit_id"]]; i_ = iss.get(u["id"], {})
-                d.append([n, u["unit_id"], u["project"], (i_.get("issuer") or "") + (" + " + i_["joint_with"] if i_.get("joint_with") else ""), u["kind"], u["year"], pg, clean(b[:600]), clean(t), clean(af[:600])] + [""] * 10)
-                d.cell(n + 1, 9).fill = PatternFill("solid", fgColor="FFF2CC")
-                if name == "CODE": u["order_" + coder] = n
-            for c, wd in enumerate([5, 14, 7, 22, 12, 6, 5, 38, 70, 38, 9, 11, 18, 18, 11, 15, 15, 12, 16, 30], 1): d.column_dimensions[d.cell(1, c).column_letter].width = wd
-            for c in range(1, len(cols) + 1): d.cell(1, c).font = BOLD; d.cell(1, c).fill = PatternFill("solid", fgColor="DDDDDD")
-            for r in d.iter_rows():
-                for c in r: c.alignment = WRAP
-            for c, vals in lists.items():
-                dv = DataValidation(type="list", formula1='"' + ",".join(vals) + '"', allow_blank=True); d.add_data_validation(dv); L = d.cell(1, c).column_letter; dv.add(f"{L}2:{L}{len(data) + 1}")
-            d.freeze_panes = "I2"
-        wb.save(os.path.join(a.out, f"TALK_AGREEMENT_SAMPLE_{coder}_{a.date}.xlsx"))
-    for u in train + main_:
-        rows.append({"unit_id": u["unit_id"], "set": u["set"], "stratum": u["stratum"], "project": u["project"], "tier": u["tier"], "route": u["route"], "kind": u["kind"],
-                     "unit_text_sha256": hashlib.sha256(text[u["unit_id"]][1].encode("utf-8")).hexdigest(), "order_MB": u.get("order_MB", ""), "order_DS": u.get("order_DS", "")})
-    with open(os.path.join(ROOT, "data/units", f"AGREEMENT_SAMPLE_{a.date}.csv"), "w", newline="", encoding="utf-8") as fh:
+        d = wb.create_sheet("CODE"); d.append(COLS); order = sorted(sample, key=lambda u: hx(SEED, coder, u["unit_id"]))
+        for n, u in enumerate(order, 1):
+            ctx, t, pg = text[u["unit_id"]]; i_ = iss.get(u["id"], {})
+            d.append([n, u["unit_id"], u["project"], (i_.get("issuer") or "") + (" + " + i_["joint_with"] if i_.get("joint_with") else ""), u["kind"], u["year"], ROUTE[u["route"]], pg, clean(ctx), clean(t)] + [""] * (len(COLS) - 10))
+            d.cell(n + 1, 10).fill = PatternFill("solid", fgColor="FFF2CC"); u["order_" + coder] = n
+        for c, wd in enumerate([5, 14, 7, 22, 12, 6, 14, 5, 60, 60, 9, 11, 18, 18, 11, 15, 14, 16, 12, 8, 8, 8, 30], 1): d.column_dimensions[d.cell(1, c).column_letter].width = wd
+        for c in range(1, len(COLS) + 1): d.cell(1, c).font = BOLD; d.cell(1, c).fill = PatternFill("solid", fgColor="DDDDDD")
+        for r in d.iter_rows():
+            for c in r: c.alignment = WRAP
+        for name, vals in lists.items():
+            dv = DataValidation(type="list", formula1='"' + ",".join(vals) + '"', allow_blank=True); d.add_data_validation(dv); L = d.cell(1, COLS.index(name) + 1).column_letter; dv.add(f"{L}2:{L}{len(sample) + 1}")
+        d.freeze_panes = "K2"
+        wb.save(os.path.join(a.out, f"TALK_{a.design.upper()}_SAMPLE_{coder}_{a.date}.xlsx"))
+    rows = [{"unit_id": u["unit_id"], "set": a.design, "stratum": u["stratum"], "project": u["project"], "tier": u["tier"], "route": u["route"], "kind": u["kind"],
+             "unit_text_sha256": hashlib.sha256(text[u["unit_id"]][1].encode("utf-8")).hexdigest(), "context_sha256": hashlib.sha256(text[u["unit_id"]][0].encode("utf-8")).hexdigest(), "units_file_sha256": u["units_sha256"],
+             "order_MB": u["order_MB"], "order_DS": u["order_DS"]} for u in sample]
+    with open(os.path.join(ROOT, "data/units", f"AGREEMENT_SAMPLE_{a.design}_{a.date}.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     c = collections.Counter
-    print("training", len(train), "main", len(main_), dict(c(u["stratum"] for u in main_)), dict(c(u["route"] for u in main_)), dict(c(u["tier"] for u in main_)),
-          "projects", len({u["project"] for u in main_}), "documents", len({u["doc_key"] for u in main_}), "max per project", c(u["project"] for u in main_).most_common(3))
+    print(a.design, len(sample), dict(c(u["stratum"] for u in sample)), dict(c(u["route"] for u in sample)), dict(c(u["tier"] for u in sample)),
+          "projects", len({u["project"] for u in sample}), "documents", len({u["doc_key"] for u in sample}), "with paragraph context", sum(bool(text[u["unit_id"]][0]) for u in sample), "manifest", os.path.basename(mf))
 
 
 if __name__ == "__main__": main()

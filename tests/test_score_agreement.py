@@ -30,8 +30,8 @@ def test_bootstrap_does_not_score_degenerate_replicates_as_perfect():
 
 
 def test_end_to_end_counts_relevance_disagreement_as_facet_disagreement():
-    allowed = {"relevant": RNU, **{k: ["X", "Y"] for k in list(sa.COLS)[1:]}}
-    blank = {k: "" for k in list(sa.COLS)[1:]}
+    allowed = {"relevant": RNU, **{k: ["X", "Y"] for k in sa.COLS[1:]}}
+    blank = {k: "" for k in sa.COLS[1:]}
     A = {"u1": {"relevant": "R", **{k: "X" for k in blank}}, "u2": {"relevant": "R", **{k: "X" for k in blank}}, "u3": {"relevant": "N", **blank}}
     B = {"u1": {"relevant": "R", **{k: "X" for k in blank}}, "u2": {"relevant": "N", **blank}, "u3": {"relevant": "N", **blank}}
     S = {u: {"stratum": "D", "route": "A"} for u in A}

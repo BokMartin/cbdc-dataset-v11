@@ -1,5 +1,5 @@
 {
- "version": "v13 DRAFT 2026-11-13",
+ "version": "v13 DRAFT 0.3, 2026-11-13 (after the independent audit; ADR-005)",
  "unit": {
   "unit_id": "<doc_key>:p<page>:s<n>",
   "source": "scripts/units/unitise.py; data/units/UNITS_MANIFEST_<date>.csv"
@@ -17,7 +17,8 @@
    "B",
    "D"
   ],
-  "kind": "workbook document kind"
+  "kind": "workbook document kind",
+  "voice_class": "data/manifest/ISSUERS_<date>.csv (institutional, staff_authored, official_speech, ...): a document-level attribute, confirmed by the authors; a staff-authored document never establishes a commitment whatever its units say"
  },
  "L0_mention": {
   "dictionaries": "scripts/units/select_candidates.py (BROAD), scripts/census/talk_pilot.py (NARROW)",
@@ -27,7 +28,8 @@
    "R",
    "-",
    "X"
-  ]
+  ],
+  "strata_note": "D, N, R are classified; X (fragments that are not dictionary hits, boilerplate links) is outside every denominator and is audited separately"
  },
  "L1_relevance": {
   "values": [
@@ -56,9 +58,9 @@
    "GENERAL"
   ],
   "aspect2": "optional second aspect, same values",
-  "direction": [
-   "RESTRICT",
-   "GRANT",
+  "stance": [
+   "PROTECTS",
+   "EXPOSES",
    "TRADEOFF",
    "NEUTRAL"
   ],
@@ -69,12 +71,17 @@
    "ARCHITECTURAL",
    "CRYPTOGRAPHIC"
   ],
-  "status": [
+  "decision": [
    "CONSIDERED",
-   "TESTED",
    "ENDORSED",
+   "UNCLEAR",
+   "NOT_APPLICABLE"
+  ],
+  "implementation": [
+   "UNTESTED_OR_UNREPORTED",
+   "TESTED",
    "OPERATIONAL",
-   "REJECTED",
+   "UNCLEAR",
    "NOT_APPLICABLE"
   ],
   "modality": [
@@ -86,57 +93,67 @@
    "low_id_tier",
    "two_statements"
   ],
-  "prompt": "pipeline/prompts/talk_L2_facets.system.md"
+  "model_only": {
+   "modal_term": "the modal word the model relied on, kept as a diagnostic for translated text; not coded by humans and not scored"
+  },
+  "prompt": "pipeline/prompts/talk_L2_facets.system.md",
+  "changes_v0.3": [
+   "status split into the contract's two axes (rule B): decision x implementation; REJECTED removed: a decided 'will not be offered' is an ENDORSED position with stance EXPOSES and the flag anonymity_rejected",
+   "direction renamed stance and defined from the user's side (PROTECTS / EXPOSES), so that granting access to an actor and requiring identification are no longer one value named GRANT",
+   "basis must be stated for the coded proposition itself; the strongest basis in the paragraph is no longer taken; naming a technique is not CRYPTOGRAPHIC unless it is said to deliver the property",
+   "OPERATIONAL means a live CBDC system; a law in force is basis LEGAL, not implementation OPERATIONAL",
+   "flags are three separate yes/no fields"
+  ]
  },
  "crosswalk_from_survey_types_2026-11-02": {
   "PRINCIPLE": {
    "aspect": "GENERAL",
-   "direction": "NEUTRAL"
+   "stance": "NEUTRAL"
   },
   "PRIVACY_AS_RISK_OR_TRADEOFF": {
    "aspect": "GENERAL",
-   "direction": "TRADEOFF"
+   "stance": "TRADEOFF"
   },
   "CB_NO_PERSONAL_DATA": {
    "aspect": "CB_ACCESS",
-   "direction": "RESTRICT"
+   "stance": "PROTECTS"
   },
   "CB_SEES_DATA": {
    "aspect": "CB_ACCESS",
-   "direction": "GRANT"
+   "stance": "EXPOSES"
   },
   "PSP_HOLDS_IDENTITY": {
    "aspect": "INTERMEDIARY_DATA",
-   "direction": "GRANT"
+   "stance": "EXPOSES"
   },
   "PSEUDONYMISATION": {
    "aspect": "ANONYMITY",
-   "direction": "RESTRICT"
+   "stance": "PROTECTS"
   },
   "TIERED_LOW_ID": {
    "aspect": "IDENTIFICATION",
-   "direction": "RESTRICT",
    "flags": [
     "low_id_tier"
-   ]
+   ],
+   "stance": "PROTECTS"
   },
   "ANONYMITY_REJECTED": {
    "aspect": "ANONYMITY",
-   "direction": "GRANT",
    "flags": [
     "anonymity_rejected"
-   ]
+   ],
+   "stance": "EXPOSES"
   },
   "OFFLINE_PRIVACY": {
    "aspect": "OFFLINE"
   },
   "LAWFUL_ACCESS": {
    "aspect": "AUTHORITY_ACCESS",
-   "direction": "GRANT"
+   "stance": "EXPOSES"
   },
   "DATA_MINIMISATION": {
    "aspect": "DATA_PROTECTION",
-   "direction": "RESTRICT"
+   "stance": "PROTECTS"
   },
   "LEGAL_COMMITMENT": {
    "aspect": "DATA_PROTECTION",
@@ -144,52 +161,58 @@
   },
   "USER_CONTROL_CONSENT": {
    "aspect": "USER_CONTROL",
-   "direction": "RESTRICT"
+   "stance": "PROTECTS"
   },
   "NO_COMMERCIAL_USE": {
    "aspect": "USER_CONTROL",
-   "direction": "RESTRICT"
+   "stance": "PROTECTS"
   },
   "PET_TECHNIQUE": {
    "aspect": "PETS",
-   "basis": "CRYPTOGRAPHIC"
+   "note": "basis is coded from the unit; naming a technique does not set CRYPTOGRAPHIC"
   },
   "PROGRAMMABILITY": {
    "note": "not a privacy statement under L1; stays with F10"
   },
   "OTHER": {
    "note": "mostly voice = REPORTED, or not relevant under L1"
-  }
+  },
+  "note": "lossy and one-way: the 17 survey types cannot be recovered from the facets; direction values of v0.2 read RESTRICT -> PROTECTS, GRANT -> EXPOSES"
  },
  "derived": {
-  "funnel": [
-   "units (excluding X)",
-   "L0 mentions",
-   "L1 relevant",
-   "voice = OWN",
-   "basis in {LEGAL, ARCHITECTURAL, CRYPTOGRAPHIC}",
-   "status in {ENDORSED, OPERATIONAL}",
-   "admissible F-commitments (contract)"
-  ],
-  "talk_components": {
-   "salience": "share of units that are L1 relevant with voice OWN",
-   "specificity": "among those, share with basis LEGAL / ARCHITECTURAL / CRYPTOGRAPHIC",
-   "stance": "share TRADEOFF against RESTRICT",
-   "aspect_profile": "distribution of OWN relevant units over the ten aspects, per issuer type; reported as a table, never summed"
+  "rule": "talk labels are descriptive. No talk label sets, replaces or bypasses an F-cell; commitments come only from atomic claims under the contract (rules A, B, C).",
+  "nested_shares": {
+   "U": "eligible units of the fixed document set (all strata except X)",
+   "L": "relevant units (L1), estimated with stratum weights (D and N weight 1, R weight 1/rate)",
+   "O": "relevant units with voice OWN",
+   "M": "OWN units with basis LEGAL, ARCHITECTURAL or CRYPTOGRAPHIC",
+   "E": "OWN units with decision ENDORSED or implementation OPERATIONAL (reported for all OWN units and, separately, within M)",
+   "reported": "L/U, O/L, M/O, E/O and E/M with intervals; a ratio with a zero denominator is undefined; dictionary hits are a retrieval diagnostic, not a stage"
   },
-  "regulator_view": "all components are reported by issuer_type, so that what the central bank says, what the government says and what the law says are never pooled silently"
+  "talk_against_commitment": "per aspect with a matching cell, a 2 x 2 table of projects: at least one OWN relevant unit on the aspect (yes / no) x admissible commitment in the cell under rule C (yes / no), with the located units listed",
+  "highest_rung": "per project and aspect, the highest of: declaratory (basis NONE) < policy < legal or architectural or cryptographic basis < endorsed < operational; reported with the number of documents searched",
+  "event_history": "per project and aspect, the year of the first OWN unit, of the first OWN unit with a legal / architectural / cryptographic basis, of the first ENDORSED unit and of the first OPERATIONAL unit (MB, 13 Nov 2026: this is the year-by-year output per project)",
+  "yearly_corpus_series": "shares by year pooled over projects, with document-bootstrap intervals",
+  "not_reported": [
+   "difference of a talk index and a commitment index",
+   "ranking of projects by amount of privacy talk",
+   "'silent' projects (reported instead: no OWN unit found in N documents searched, with the upper bound from the random control)",
+   "share of privacy units per project and year"
+  ],
+  "regulator_view": "every table is reported by issuer type and document voice class; central bank, government and legislature are never pooled silently"
  },
- "aspect_to_F_cells": {
+ "context": "the paragraph of the unit, rendered by scripts/units/context.py for coders and for the model alike",
+ "aspect_comparison_cells": {
   "CB_ACCESS": "F1 CB_LINK_ONLINE",
   "INTERMEDIARY_DATA": "F2 PSP_LINK_ONLINE",
   "AUTHORITY_ACCESS": "F3 LAWFUL_ACCESS_ROUTE",
   "OFFLINE": "F4 PRIVATE_OFFLINE_AVAILABLE",
-  "IDENTIFICATION": "F7 (low-ID route) / F8 ONBOARDING_ID",
-  "ANONYMITY": "F1 and F4 jointly",
-  "DATA_PROTECTION": "no F-cell",
-  "USER_CONTROL": "no F-cell (reserved F6)",
-  "PETS": "no F-cell (basis of F1 / F4)",
-  "GENERAL": "no F-cell",
-  "note": "indicative mapping, to be checked against the contract before use; it is what lets talk and commitment be compared aspect by aspect"
+  "IDENTIFICATION": "F7 / F8",
+  "ANONYMITY": "none (general anonymity is neither F1 nor F4)",
+  "DATA_PROTECTION": "none",
+  "USER_CONTROL": "none",
+  "PETS": "none",
+  "GENERAL": "none",
+  "note": "pairs used ONLY to line up the 2 x 2 table of talk against commitment. An aspect label never establishes the cell: actor, data object, ordinary or exceptional access, payer or payee and design version are recorded in the atomic claims of the contract, not here."
  }
 }

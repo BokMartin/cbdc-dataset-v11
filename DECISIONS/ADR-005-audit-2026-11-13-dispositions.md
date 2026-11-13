@@ -48,3 +48,23 @@ Shared context for humans and models (the paragraph, not adjacent units); two st
 - Retire the posture layer P0 to P3 / G1 to G9 of the contract in favour of the unit-based instrument (audit item 11)? Not yet decided.
 - CH: MB asks to check the SNB speech against the Federal Council's 2019 position; the project's status in the frame is to be re-checked.
 - Two document universes (audit item 9) are not feasible by December; the proposal is to name the result "privacy statements in the selected evidence corpus" and to make no claim about an institution's communication as a whole.
+
+## 6. Decisions of MB, 13 Nov 2026, 14:42
+
+1. **Year-by-year output per project is the event history** (first own-voice statement, first with a mechanism or legal basis, first endorsed, first operational, per aspect), with the corpus-level yearly series beside it. A yearly share per project is not reported.
+2. **Narrowing accepted**; which facets stay is decided by the development sample (`docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md`).
+3. **ECCU stays outside the frame.** The frame is 44 projects: 43 national retail candidates and the digital euro. The euro area is included as the one union project with a retail CBDC under preparation and a large evidence base; this is an author choice and is stated as such.
+4. **The posture layer P0 to P3 / G1 to G9 is retired** in favour of the unit-based instrument. To do: contract section 6b, `scripts/derive.py` (`posture_level`), its tests, the site; the outputs of 2 Nov stay archived as development artefacts.
+5. Translation of the new non-English evidence with the same model and prompt (run `openai_gpt-6-astra_api_20261113`).
+
+## 7. Done on 13 Nov after these decisions
+
+- Talk schema v0.3, L1 prompt v0.2, L2 prompt v0.3, Czech codebook v0.3: decision and implementation as two axes, rule A in both languages, `stance` (PROTECTS / EXPOSES) instead of `direction`, basis must belong to the coded statement, REJECTED removed, flags as three fields, the aspect-to-cell map reduced to comparison pairs that never set a cell, the funnel replaced by nested shares, the 2 × 2 table, the highest rung and the event history.
+- One context rule for coders and model (`scripts/units/context.py`).
+- Candidate rule v2: short dictionary hits are no longer excluded, boilerplate only when it is not a sentence, dictionary extended (AML/CFT, monitoring, retention, encryption, zero-knowledge, "cannot see").
+- Translation text mode: a PDF with column gaps on at least 15 % of its long lines is translated from reading-order text; `data/translation/PAGE_SPANS.csv` limits a general publication to the pages that name the CBDC (first use: Indonesian Law 4/2023, 9 of 819 pages).
+- ID CAND-099 (Blueprint 2030) has an issuer English edition on bi.go.id: route B, not machine-translated; the file is still to be downloaded and its page count compared.
+- CL CAND-057 is a T3 document and stays untranslated like the other non-English T3 evidence (translation scope is T1/T2).
+- Translation run `openai_gpt-6-astra_api_20261113`: 11 calls, all complete (ID CAND-096; TW CAND-345 and CAND-350 re-translated from reading-order text and replacing their first translations). PE CAND-250 was not re-translated: the API account ran out of credit; its first translation (from layout text, column gaps on 45 % of long lines) stays in use and is flagged.
+- Development sample drawn: 120 units, 38 projects, 82 documents (`data/units/AGREEMENT_SAMPLE_dev_2026-11-13.csv`); workbooks for MB and DS outside the repository.
+- Units after all changes of the day: 259 documents (A 198, B 18, D 43), 190 890 units; candidates D 8 528, N 6 484, R 6 244 (21 256); X 49 452.

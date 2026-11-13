@@ -1,0 +1,2 @@
+id,pages,rule,decided
+CAND-096,113-117;606-609,"general law of 819 pages (Law 4/2023 on the financial sector): only the pages that name the CBDC ('Rupiah digital', pages 114-116 and 607-608 of the PDF) with one page before and after are translated and unitised; the term list names the project, never privacy",pipeline author 13 Nov 2026; to be confirmed by the authors with the general rule for sections of general publications (ADR-005)

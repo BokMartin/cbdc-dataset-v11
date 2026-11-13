@@ -1,46 +1,52 @@
-KÓDOVACÍ PRAVIDLA (verze 0.2, návrh; hodnoty jsou anglicky, protože tak půjdou do dat)		
+KÓDOVACÍ PRAVIDLA (verze 0.3 po auditu z 13. 11. 2026; hodnoty jsou anglicky, protože tak půjdou do dat)		
+ZÁSADA		Kódujete, co věta ŘÍKÁ. Vaše štítky popisují řeč o soukromí; o tom, k čemu se projekt zavázal (F-buňky), nerozhodují. Kontext je odstavec, věta ke kódování je v něm označena »takto«. Stejný odstavec dostane i model.
 RELEVANT		
 relevant	R	Věta sama říká něco o: kdo vidí, drží, propojuje nebo používá identitu, transakční data či zůstatky uživatelů CBDC; anonymitě nebo pseudonymitě; ověřování totožnosti jako podmínce použití (včetně peněženek s nižší identifikací); ochraně, minimalizaci, uchovávání či využití osobních údajů; přístupu úřadů k datům (včetně AML/CFT sledování uživatelů); soukromí jako cíli, požadavku, riziku, kompromisu nebo obavě veřejnosti.
-relevant	N	Vše ostatní: soukromí někoho jiného než uživatelů CBDC (velkoobchodní účastníci, cookies webu), bezpečnost a podvody bez výroku o datech uživatelů, identifikace bank a firem, nadpis nebo položka obsahu, která téma jen jmenuje, věta, která jen odkazuje jinam.
+relevant	N	Vše ostatní: soukromí někoho jiného než uživatelů CBDC (velkoobchodní účastníci, bankovní tajemství obecně, cookies webu), bezpečnost a podvody bez výroku o datech uživatelů, identifikace bank a firem, nadpis nebo položka obsahu, která téma jen jmenuje, věta, která jen odkazuje jinam. Programovatelnost je R jen tehdy, když věta říká, že vyžaduje nebo odhaluje, kdo uživatel je nebo za co platí.
 relevant	U	Věta je nečitelná nebo useknutá tak, že nelze určit obsah.
-		Zmínka není výrok: slovo "privacy" v nadpisu nebo výčtu kapitol je N. Na tom, kdo mluví a jak závazně, relevance nezávisí.
+		Zmínka není výrok: slovo "privacy" v nadpisu nebo výčtu kapitol je N. Na tom, kdo mluví a jak závazně, relevance nezávisí. Pokud N nebo U, ostatní sloupce nechte prázdné.
 VOICE (kdo mluví)		
 voice	OWN	Vydavatel dokumentu říká vlastním hlasem, co platí, co zamýšlí, co zvažuje nebo co testoval.
 voice	REPORTED	Věta podává cizí názor nebo fakt: respondenti konzultace, veřejnost, literatura, jiná země, účastník jednání, dodavatel.
 voice	UNCLEAR	Nelze rozhodnout.
 ASPECT (o jakém aspektu soukromí věta je; vyberte hlavní, případně druhý do aspect2)		
-aspect	CB_ACCESS	Co vidí, drží nebo nevidí centrální banka (nebo provozovatel jádra systému).
-aspect	INTERMEDIARY_DATA	Co vidí a drží banky, poskytovatelé plateb a peněženek.
+aspect	CB_ACCESS	Co vidí, drží nebo nevidí sama centrální banka (nebo ten, kdo jedná jejím jménem).
+aspect	INTERMEDIARY_DATA	Co vidí a drží banky, poskytovatelé plateb a peněženek nebo provozovatel nezávislý na centrální bance.
 aspect	AUTHORITY_ACCESS	Přístup úřadů a orgánů činných v trestním řízení, AML/CFT, sledování a hlášení transakcí.
 aspect	ANONYMITY	Anonymita nebo pseudonymita jako vlastnost peněz či plateb (včetně výroku, že anonymita nebude).
 aspect	IDENTIFICATION	Ověřování totožnosti uživatelů, KYC, úrovně a peněženky s nižší identifikací.
 aspect	OFFLINE	Soukromí v offline platbách.
 aspect	DATA_PROTECTION	Pravidla ochrany osobních údajů, minimalizace, doba uchovávání, zákon o ochraně údajů.
 aspect	USER_CONTROL	Souhlas a kontrola uživatele nad daty, komerční využití dat.
-aspect	PETS	Pojmenovaná technika ochrany soukromí (zero-knowledge proofs, blind signatures, homomorfní šifrování apod.).
+aspect	PETS	Pojmenovaná technika ochrany soukromí (zero-knowledge proofs, blind signatures, šifrování apod.).
 aspect	GENERAL	Soukromí obecně jako cíl, princip, riziko nebo kompromis, bez konkrétního aspektu.
-DIRECTION (kterým směrem výrok míří)		
-direction	RESTRICT	Omezuje, kdo data vidí, nebo chrání uživatele (banka data neuvidí, sbírá se jen nezbytné).
-direction	GRANT	Dává někomu viditelnost nebo vyžaduje identifikaci (úřady dostanou přístup, uživatel musí být ověřen, anonymita nebude).
-direction	TRADEOFF	Soukromí jako riziko, kompromis, napětí s jiným cílem nebo obava.
-direction	NEUTRAL	Popisuje bez směru (definice, otázka, výčet možností bez příklonu).
-BASIS (čím je výrok podložen)		
+STANCE (z pohledu uživatele)		
+stance	PROTECTS	Věta říká, že vidění, propojování, sběr, využití dat nebo identifikace je omezeno či vyloučeno (banka data neuvidí, sbírá se jen nezbytné, peněženka bez plné identifikace).
+stance	EXPOSES	Věta říká, že někdo data uvidí, bude držet nebo může získat, že uživatel musí být identifikován, nebo že anonymita nebude.
+stance	TRADEOFF	Soukromí jako riziko, kompromis, napětí s jiným cílem nebo obava, bez příklonu.
+stance	NEUTRAL	Jmenuje soukromí jako cíl, princip nebo téma, aniž říká, co se omezuje nebo zpřístupňuje.
+BASIS (čím věta sama výrok podkládá)		
 basis	NONE	Jen prohlášení ("soukromí je pro nás prioritou").
 basis	POLICY	Pravidlo nebo slib instituce ("data nebudeme používat"). Slib NEPOUŽÍVAT data je vždy POLICY, nikdy ARCHITECTURAL.
-basis	LEGAL	Zákon, nařízení nebo návrh zákona.
+basis	LEGAL	Jako základ je jmenován zákon, nařízení, návrh zákona nebo zákonná povinnost.
 basis	ARCHITECTURAL	Uspořádání systému to zajišťuje (data zůstávají u zprostředkovatele, banka dostává jen pseudonymy).
-basis	CRYPTOGRAPHIC	Kryptografická technika to zajišťuje.
-STATUS (v jakém stavu věc je)		
-status	CONSIDERED	Zvažuje se, je to možnost, návrh, otázka.
-status	TESTED	Bylo vyzkoušeno v pilotu, prototypu, experimentu.
-status	ENDORSED	Instituce se k tomu přihlásila jako k rozhodnutí nebo požadavku.
-status	OPERATIONAL	Platí v běžícím systému nebo v účinném předpisu.
-status	REJECTED	Výslovně odmítnuto.
-status	NOT_APPLICABLE	Obecné tvrzení bez vazby na konkrétní návrh (definice, popis rizika).
+basis	CRYPTOGRAPHIC	O pojmenované technice se říká, že ochranu zajišťuje. Pouhé jmenování techniky ("zkoumáme zero-knowledge proofs") je NONE.
+		Základ musí být řečen pro TENTO výrok: ve větě samé nebo ve větě odstavce, na kterou věta zjevně navazuje. Mechanismus zmíněný v odstavci k něčemu jinému se nepočítá.
+DECISION (jak daleko je věc rozhodnuta; podle kontraktu, pravidlo A)		
+decision	CONSIDERED	Možnost, návrh, konzultační text, pracovní předpoklad, doporučení, záměr bez rozhodnutí, výsledek experimentu. Pevné sloveso nestačí: "digitální měna bude chránit soukromí" v konzultačním dokumentu je CONSIDERED.
+decision	ENDORSED	Věta nebo odstavec říká, že orgán oprávněný rozhodnout (bankovní rada, vláda, zákonodárce) to rozhodl nebo se k tomu zavázal; patří sem zákon a závazek, který závisí už jen na budoucím rozhodnutí o vydání. Rozhodnuté "anonymita nebude" je také ENDORSED.
+decision	UNCLEAR	Nelze určit.
+decision	NOT_APPLICABLE	Cizí názory, obecná hodnocení, definice, věty, které nejsou o návrhu projektu.
+IMPLEMENTATION (zda to bylo vyzkoušeno nebo běží)		
+implementation	UNTESTED_OR_UNREPORTED	Nic o zkoušce ani provozu.
+implementation	TESTED	Podle věty vyzkoušeno v pilotu, prototypu nebo experimentu.
+implementation	OPERATIONAL	Podle věty platí v běžícím systému CBDC. Účinný zákon bez běžícího systému NENÍ OPERATIONAL (je to basis LEGAL a decision ENDORSED).
+implementation	UNCLEAR	Nelze určit.
+implementation	NOT_APPLICABLE	Stejné případy jako u decision.
 MODALITY		
-modality	FIRM	Řečeno jako fakt nebo rozhodnutí (is, will, shall, must, does not).
-modality	CONDITIONAL	Podmíněně nebo jako možnost (could, might, would, may, is being considered, one option). U strojového překladu se řiďte smyslem věty, ne jedním slovesem.
-FLAGS (nepovinné)		
-flags	anonymity_rejected	Věta výslovně říká, že anonymita jako u hotovosti nebude.
-flags	low_id_tier	Věta zmiňuje úroveň nebo peněženku bez plného ověření totožnosti.
-flags	two_statements	Věta obsahuje dva různé výroky, které nejdou zakódovat jedním řádkem (popište v note).
+modality	FIRM	Řečeno jako fakt, rozhodnutí nebo povinnost (is, will, shall, must, does not).
+modality	CONDITIONAL	Podmíněně nebo jako možnost (could, might, would, may, is being considered, one option). Řiďte se smyslem věty, ne jedním slovesem; u strojového překladu zvlášť.
+PŘÍZNAKY (nepovinné, napište x)		
+anonymity_rejected	x	Věta výslovně říká, že anonymita jako u hotovosti nebude.
+low_id_tier	x	Věta zmiňuje úroveň nebo peněženku bez plného ověření totožnosti.
+two_statements	x	Věta obsahuje dva výroky, které by dostaly různé štítky; zakódujte hlavní a popište v note.

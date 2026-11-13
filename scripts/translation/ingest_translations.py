@@ -23,13 +23,14 @@ def sha(s): return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--pack", required=True); ap.add_argument("--date", required=True); ap.add_argument("--run", required=True); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--pack", required=True); ap.add_argument("--date", required=True); ap.add_argument("--run", required=True); ap.add_argument("--expect", nargs="*", help="doc_keys that must be present and pass; the script exits with an error otherwise"); a = ap.parse_args()
     system = open(os.path.join(ROOT, "pipeline/prompts/translation.system.md"), encoding="utf-8").read()
     Q = {q["doc_key"]: q for q in csv.DictReader(open(os.path.join(a.pack, f"TRANSLATION_QUEUE_{a.date}.csv"), encoding="utf-8"))}
     reqs = collections.defaultdict(list)
     for r in csv.DictReader(open(os.path.join(a.pack, f"TRANSLATION_REQUESTS_{a.date}.csv"), encoding="utf-8")): reqs[r["doc_key"]].append(r)
     run = os.path.join(a.pack, "responses", a.run); rm = json.load(open(os.path.join(run, "RUN_META.json")))
-    if rm.get("system_sha256") and rm["system_sha256"] != sha(system): print("WARNING: RUN_META system_sha256 differs from pipeline/prompts/translation.system.md")
+    # fail closed (audit of 13 Nov 2026, item 3): a run made with another system prompt is not ingested
+    if rm.get("system_sha256") and rm["system_sha256"] != sha(system): raise SystemExit("RUN_META system_sha256 differs from pipeline/prompts/translation.system.md: this run was made with another prompt")
     try:
         from lingua import LanguageDetectorBuilder; det = LanguageDetectorBuilder.from_all_languages().build()
     except Exception: det = None
@@ -40,16 +41,20 @@ def main():
             if f.endswith(".response.txt"): found[f[:-len(".response.txt")]] = os.path.join(d, f[:-len(".response.txt")])
     keys = sorted({k for k, rs in reqs.items() if any(os.path.basename(r["request_file"])[:-4] in found for r in rs)})
     for key in keys:
-        q = Q[key]; problems = []; pages = collections.OrderedDict(); rsha = []; usha = []; src_chars = 0; out_chars = 0; models = set()
+        q = Q[key]; layer = ""; problems = []; pages = collections.OrderedDict(); rsha = []; usha = []; src_chars = 0; out_chars = 0; models = set()
         for r in sorted(reqs[key], key=lambda r: int(r["chunk"])):
             name = os.path.basename(r["request_file"])[:-4]; base = found.get(name, os.path.join(run, key, name)); usha.append(r["user_sha256"])
             if not os.path.exists(base + ".response.txt"): problems.append(f"chunk {r['chunk']}: no response"); continue
             user = open(os.path.join(a.pack, r["request_file"]), encoding="utf-8").read()
+            tl = re.search(r"^text layer: (.*)$", user, re.M); layer = tl.group(1) if tl else ""
             if sha(user) != r["user_sha256"]: problems.append(f"chunk {r['chunk']}: request file changed")
             text = open(base + ".response.txt", encoding="utf-8").read().replace("\r\n", "\n"); rsha.append(sha(text))
             if os.path.exists(base + ".meta.json"):
                 m = json.load(open(base + ".meta.json")); models.add(m.get("model_returned", ""))
-                if not m.get("complete", True): problems.append(f"chunk {r['chunk']}: marked incomplete ({m.get('stop_reason')})")
+                if not m.get("complete", False): problems.append(f"chunk {r['chunk']}: not marked complete ({m.get('stop_reason')})")
+                if m.get("response_sha256") and m["response_sha256"] != sha(open(base + ".response.txt", encoding="utf-8").read()): problems.append(f"chunk {r['chunk']}: response file differs from the hash recorded at the call")
+                if m.get("user_sha256") and m["user_sha256"] != r["user_sha256"]: problems.append(f"chunk {r['chunk']}: response was made for another request (user_sha256)")
+                if m.get("system_sha256") and m["system_sha256"] != sha(system): problems.append(f"chunk {r['chunk']}: response was made with another system prompt")
             lines = text.strip().split("\n")
             want = f"TRANSLATION doc_key={key} chunk={r['chunk']}/{r['of']} source_sha256={r['source_sha256']}"
             if lines[0].strip() != want: problems.append(f"chunk {r['chunk']}: header line differs")
@@ -76,20 +81,23 @@ def main():
         status = "ok" if not problems else "FAILED"
         head = (f"# English machine translation (route D, provisional). doc_key: {key} | source: {q['master_path']} | source_sha256: {q['source_sha256']}\n"
                 f"# provider: {rm.get('provider')} | model: {'; '.join(sorted(x for x in models if x)) or rm.get('model') or rm.get('model_requested')} | interface: {rm.get('interface')} | run: {a.run} | system prompt sha256: {sha(system)}\n"
-                f"# Not checked by a reader of the source language. Report errors via the project website.\n")
+                f"# source text layer: {layer}\n# Not checked by a reader of the source language. Report errors via the project website.\n")
         if status == "ok": open(os.path.join(outdir, key + ".en.txt"), "w", encoding="utf-8", newline="\n").write(head + body)
         rows.append({"doc_key": key, "id": q["id"], "project": q["project"], "year": q["year"], "priority": q["priority"], "source_language": q["language"], "master_path": q["master_path"], "source_sha256": q["source_sha256"],
                      "chunks": len(reqs[key]), "request_sha256": " ".join(usha), "response_sha256": " ".join(rsha), "translation_file": f"translations/{a.run}/{key}.en.txt" if status == "ok" else "",
                      "translation_sha256": sha(head + body) if status == "ok" else "", "pages": len(pages), "source_chars": src_chars, "translation_chars": out_chars, "ratio": ratio, "share_not_english": left,
                      "translator_notes": body.count("[TN:"), "illegible_marks": body.count("[ILLEGIBLE]"), "provider": rm.get("provider", ""), "model": "; ".join(sorted(x for x in models if x)) or rm.get("model") or rm.get("model_requested", ""),
                      "interface": rm.get("interface", ""), "run": a.run, "date_utc": (rm.get("started_utc") or rm.get("date_utc") or "")[:10], "system_sha256": sha(system), "route": "D (machine translation, provisional)" if q["priority"] != "BENCH" else "benchmark only (issuer English edition is the evidence)",
-                     "status": status, "problems": "; ".join(problems)})
+                     "source_text_layer": layer, "status": status, "problems": "; ".join(problems)})
     dst = os.path.join(ROOT, "data/translation", f"TRANSLATION_MANIFEST_{a.run}.csv")
     with open(dst, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     print(dst, len(rows), "documents;", dict(collections.Counter(r["status"] for r in rows)))
     for r in rows:
         if r["status"] != "ok": print("  FAILED", r["doc_key"], "|", r["problems"][:200])
+    if a.expect is not None:
+        ok = {r["doc_key"] for r in rows if r["status"] == "ok"}; bad = [k for k in a.expect if k not in ok]
+        if bad: raise SystemExit("expected documents missing or failed: " + ", ".join(bad))
 
 
 if __name__ == "__main__": main()

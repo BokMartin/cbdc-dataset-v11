@@ -11,7 +11,7 @@ docs/TALK_AGREEMENT_PROTOCOL_2026-11-13.md before coding; this script only compu
 usage: score_agreement.py --a <coder 1 xlsx> --b <coder 2 xlsx> --sample data/units/AGREEMENT_SAMPLE_2026-11-13.csv --out <json>
 """
 import argparse, csv, json, os, random, collections
-COLS = {"relevant": 10, "voice": 11, "aspect": 12, "direction": 14, "basis": 15, "status": 16, "modality": 17}
+COLS = ["relevant", "voice", "aspect", "stance", "basis", "decision", "implementation", "modality"]  # read by column header, not by position
 
 
 def alpha(pairs):
@@ -51,11 +51,13 @@ def stat(pairs, categories, seed=20261113, B=2000):
 def read(f, allowed):
     """One coder's sheet CODE. Duplicate unit ids and values outside the declared lists stop the scoring: nothing is silently dropped."""
     import openpyxl  # only needed to read the workbooks; the coefficients are tested without it
-    R = list(openpyxl.load_workbook(f, read_only=True)["CODE"].iter_rows(min_row=2, values_only=True)); out = {}; bad = []
-    for r in R:
-        if not r[1]: continue
-        if r[1] in out: bad.append(f"duplicate unit id {r[1]}")
-        out[r[1]] = {k: (str(r[c]).strip().upper() if r[c] not in (None, "") else "") for k, c in COLS.items()}
+    R = list(openpyxl.load_workbook(f, read_only=True)["CODE"].iter_rows(values_only=True)); h = [str(x) for x in R[0]]; out = {}; bad = []
+    ix = {k: h.index(k) for k in COLS}; uid = h.index("unit_id")
+    for r in R[1:]:
+        if not r[uid]: continue
+        if r[uid] in out: bad.append(f"duplicate unit id {r[uid]}")
+        r = list(r); r[1] = r[uid]
+        out[r[1]] = {k: (str(r[c]).strip().upper() if r[c] not in (None, "") else "") for k, c in ix.items()}
         bad += [f"{r[1]}: {k}={v!r} not in the declared list" for k, v in out[r[1]].items() if v and v not in allowed[k]]
     if bad: raise SystemExit(f"{f}: {len(bad)} problems, first: " + "; ".join(bad[:5]))
     return out
@@ -68,7 +70,7 @@ def score(A, Bc, S, allowed):
     union = [u for u in done if "R" in (A[u]["relevant"], Bc[u]["relevant"])]
     res = {"units_in_sample": len(S), "units_coded_by_both": len(done), "units_left_blank_by_a_coder": len(ids) - len(done), "units_both_relevant": len(both), "units_relevant_for_at_least_one": len(union),
            "relevant": stat([(A[u]["relevant"], Bc[u]["relevant"]) for u in done], allowed["relevant"])}
-    for k in list(COLS)[1:]:
+    for k in COLS[1:]:
         res[k] = stat([(A[u][k], Bc[u][k]) for u in both], allowed[k])
         res[k]["facet_blank_on_a_relevant_unit"] = sum(1 for u in both if not (A[u][k] and Bc[u][k]))
         # end to end: a unit only one coder found relevant counts as a disagreement on the facet (the other coder's label is NOT_RELEVANT)
@@ -81,8 +83,8 @@ def score(A, Bc, S, allowed):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--a", required=True); ap.add_argument("--b", required=True); ap.add_argument("--sample", required=True); ap.add_argument("--out", required=True)
     ap.add_argument("--schema", default=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "schema/talk_units_v13_DRAFT.json"))
-    a = ap.parse_args(); F = json.load(open(a.schema))["L2_facets"]; allowed = {"relevant": ["R", "N", "U"], **{k: F[k] for k in list(COLS)[1:]}}
-    S = {r["unit_id"]: r for r in csv.DictReader(open(a.sample, encoding="utf-8")) if r["set"] == "main"}
+    a = ap.parse_args(); F = json.load(open(a.schema))["L2_facets"]; allowed = {"relevant": ["R", "N", "U"], **{k: F[k] for k in COLS[1:]}}
+    S = {r["unit_id"]: r for r in csv.DictReader(open(a.sample, encoding="utf-8")) if r["set"] in ("main", "dev")}
     res = score(read(a.a, allowed), read(a.b, allowed), S, allowed)
     json.dump(res, open(a.out, "w"), indent=1); print(json.dumps({k: {x: y for x, y in v.items() if x != "confusion"} if isinstance(v, dict) else v for k, v in res.items() if not k.startswith("by_")}, indent=1))
 
