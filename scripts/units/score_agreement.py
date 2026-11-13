@@ -11,7 +11,6 @@ docs/TALK_AGREEMENT_PROTOCOL_2026-11-13.md before coding; this script only compu
 usage: score_agreement.py --a <coder 1 xlsx> --b <coder 2 xlsx> --sample data/units/AGREEMENT_SAMPLE_2026-11-13.csv --out <json>
 """
 import argparse, csv, json, os, random, collections
-import openpyxl
 COLS = {"relevant": 10, "voice": 11, "aspect": 12, "direction": 14, "basis": 15, "status": 16, "modality": 17}
 
 
@@ -51,6 +50,7 @@ def stat(pairs, categories, seed=20261113, B=2000):
 
 def read(f, allowed):
     """One coder's sheet CODE. Duplicate unit ids and values outside the declared lists stop the scoring: nothing is silently dropped."""
+    import openpyxl  # only needed to read the workbooks; the coefficients are tested without it
     R = list(openpyxl.load_workbook(f, read_only=True)["CODE"].iter_rows(min_row=2, values_only=True)); out = {}; bad = []
     for r in R:
         if not r[1]: continue
