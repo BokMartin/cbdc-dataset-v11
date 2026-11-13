@@ -1,0 +1,24 @@
+{
+ "run": "openai_gpt-6-astra_api_20261110",
+ "provider": "openai",
+ "model_requested": "gpt-6-astra",
+ "model_returned": [
+  "gpt-6-astra"
+ ],
+ "interface": "API (Responses API, one call per chunk, no history, no tools)",
+ "max_tokens": 32000,
+ "temperature": "provider default (not sent)",
+ "sdk": "openai 3.49.0",
+ "python": "3.13.18",
+ "system_prompt_file": "pipeline/prompts/translation.system.md (v1.1)",
+ "system_sha256": "5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716",
+ "started_utc": "2026-11-10T21:55:40.426100+00:00",
+ "last_call_started_utc": "2026-11-10T22:18:06.708449+00:00",
+ "calls": 174,
+ "complete": 174,
+ "input_tokens": 900655,
+ "output_tokens": 533759,
+ "scope": "priority A (evidence, 131 requests / 38 documents) and BENCH (5 benchmark pairs, 43 requests); 8 parallel workers",
+ "one_request_per_conversation": "yes",
+ "operator": "MB (run by Claude in the project container; key supplied by MB, not stored)"
+}
