@@ -25,7 +25,6 @@ CAND-111,IL,T1,2025,consultation,Bank of Israel (Steering Committee for the Pote
 IL_IL-BoI-Digital-Shekel-Progress-Report-2025-pub2026,IL,T1,2026,progress_report,Bank of Israel,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_2021_pag,JM,T1,2021,white_paper,Bank of Jamaica,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 JM_JM_Bank-of-Jamaica-Deputy_Bank-of-Jamaica-s-CBDC-Solution_2021_page,JM,T1,2021,speech,wave1_2026-10,other,,official_speech,,prescreen_record,yes,,,issuer is not a central bank,
-JM_JM-BOJ-Amendment-Act-5-of-2022,JM,T1,2022,legislation,Parliament of Jamaica,legislature,,legal_text,,proposed_2026-11-13,no,,,issuer is not a central bank,act of parliament
 JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_2022_pag,JM,T1,2022,other,wave1_2026-10,other,,institutional,,prescreen_record,yes,,,issuer is not a central bank,
 JM_JM-BOJ-Annual-Report-2021-CBDC-sections,JM,T1,2022,annual_report_chapter,Bank of Jamaica,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 JM_JM-BOJ-CBDC-FAQs-webpage-2022-upd2025,JM,T1,2022,explainer,Bank of Jamaica,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
@@ -99,7 +98,6 @@ AU_RBA_003,AU,T2,2024,consultation,Reserve Bank of Australia,central_bank,Digita
 CAND-016,AU,T2,2024,report,Reserve Bank of Australia and Australian Treasury,central_bank,Australian Treasury,joint_with_government,,prescreen_record,yes,,,,
 AU_AU-RBA-Treasury-Retail-CBDC-Update-2026,AU,T2,2026,decision,Reserve Bank of Australia,central_bank,Australian Treasury,joint_with_government,,proposed_2026-11-13,yes,yes,,,
 BS_Bahamas_SandDollar_2019,BS,T2,2019,white_paper,Central Bank of The Bahamas,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
-CAND-029,BS,T2,2021,legislation,Government of The Bahamas / Central Bank of The Bahamas (Official Gazette; CBOB legal framework page),government,,legal_text,,prescreen_record,yes,,,issuer is not a central bank,
 CAND-026,BS,T2,2021,consultation,Central Bank of The Bahamas,central_bank,,institutional,,prescreen_record,yes,,,,
 CAND-028,BS,T2,2021,design_note,Central Bank of The Bahamas (Payment Systems Department),central_bank,,institutional,,prescreen_record,yes,,,,
 CAND-030,BS,T2,2022,legislation,Central Bank of The Bahamas (Official Gazette),central_bank,,legal_text,,prescreen_record,yes,,,,
@@ -115,11 +113,6 @@ HK_HKMA_2022,HK,T2,2022,consultation_response,Hong Kong Monetary Authority,centr
 HK_HKMA_eHKD_PolicyDesign,HK,T2,2022,consultation,Hong Kong Monetary Authority,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-086,HK,T2,2023,pilot_report,Hong Kong Monetary Authority,central_bank,,institutional,,prescreen_record,yes,,,,
 HK_HKMA_eHKD_Phase2_2025,HK,T2,2025,pilot_report,Hong Kong Monetary Authority,central_bank,pilot participants,joint_with_external,,proposed_2026-11-13,yes,yes,,,pilot report with participants' use cases
-ID_Indonesia_2022,ID,T2,2022,white_paper,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
-ID_Indonesia_2023a,ID,T2,2023,consultation,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
-CAND-096,ID,T2,2023,legislation,Republic of Indonesia (DPR/President); hosted by Bank Indonesia,legislature,,legal_text,,prescreen_record,yes,,,issuer is not a central bank,
-CAND-099,ID,T2,2024,report,Bank Indonesia,central_bank,,institutional,,prescreen_record,yes,,,,
-ID_Indonesia_2024,ID,T2,2024,pilot_report,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
 IN_RBI_ConceptNote_2022,IN,T2,2022,white_paper,Reserve Bank of India,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-117,IN,T2,2022,press_release,Reserve Bank of India,central_bank,,institutional,,prescreen_record,no,,,,
 CAND-114,IN,T2,2022,speech,"Government of India, Ministry of Finance",government,,official_speech,,prescreen_record,yes,,,issuer is not a central bank,
@@ -152,7 +145,6 @@ CAND-276,RU,T2,2026,press_release,Bank of Russia,central_bank,,institutional,,pr
 CAND-003,AE,T3,2024,annual_report,Central Bank of the UAE (CBUAE),central_bank,,institutional,,prescreen_record,yes,,,,
 AE_UAE_001,AE,T3,2025,white_paper,Central Bank of the UAE,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,Policy Paper series: check for an authors' disclaimer
 CAND-005,AE,T3,2025,report,Central Bank of the UAE,central_bank,,staff_authored,,proposed_2026-11-13,yes,yes,AE_CAND-005:p1:s5,,"Working Paper 1/2025 with an authors-views disclaimer; a different document from Policy Paper 1/2025 (AE_UAE_001): 48 against 15 pages, different text (checked 13 Nov on MB note about a possible duplicate)"
-CAND-007,AE,T3,2025,legislation,UAE Federal Government (UAE Legislation portal),government,,legal_text,,prescreen_record,yes,,,issuer is not a central bank,
 AW_ARU_001,AW,T3,2024,research_general,Centrale Bank van Aruba,central_bank,,staff_authored,,proposed_2026-11-13,yes,yes,AW_AW_ARU_001:p3:s8,,edited volume; disclaimer in text: views of the authors
 CAND-022,AW,T3,2025,other,Centrale Bank van Aruba,central_bank,World Bank; Eastern Caribbean Central Bank (enclosed presentations),meeting_record,yes,proposed_2026-11-13,yes,yes,,check who publishes,480-page conference summary of the Foro di Pago Nacional with enclosed slides of other institutions: only the CBA parts are the issuer speaking; disclaimer of an international organisation in the front matter: check who publishes
 BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021,BT,T3,2021,strategy,Royal Monetary Authority of Bhutan,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
@@ -180,6 +172,10 @@ CAND-091,HU,T3,2023,press_release,Magyar Nemzeti Bank,central_bank,,institutiona
 CAND-092,HU,T3,2023,report,Magyar Nemzeti Bank,central_bank,,institutional,,prescreen_record,no,,,,
 CAND-095,HU,T3,2024,press_release,Magyar Nemzeti Bank,central_bank,,institutional,,prescreen_record,yes,,,,
 HU_Hungary_2025,HU,T3,2025,pilot_report,Magyar Nemzeti Bank,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
+ID_Indonesia_2022,ID,T3,2022,white_paper,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
+ID_Indonesia_2023a,ID,T3,2023,consultation,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
+CAND-099,ID,T3,2024,report,Bank Indonesia,central_bank,,institutional,,prescreen_record,yes,,,,
+ID_Indonesia_2024,ID,T3,2024,pilot_report,Bank Indonesia,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,wholesale
 IS_CBI_2018,IS,T3,2018,other,Central Bank of Iceland,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-127,IS,T3,2023,speech,Central Bank of Iceland (Deputy Governor Rannveig Sigurðardóttir),central_bank,,official_speech,,prescreen_record,no,,,,
 CAND-126,IS,T3,2023,consultation,Central Bank of Iceland (Seðlabanki Íslands),central_bank,,institutional,,prescreen_record,no,,,,
@@ -188,11 +184,9 @@ KE_KE-CBK-CBDC-Discussion-Paper-2022,KE,T3,2022,consultation,Central Bank of Ken
 CAND-148,KE,T3,2023,consultation_response,Central Bank of Kenya,central_bank,,institutional,yes,prescreen_record,yes,,,,
 MG_BFM_RFI_2021,MG,T3,2021,rfp_rfi,Banky Foiben'i Madagasikara,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,request for information to vendors
 CAND-167,MG,T3,2024,other,Banky Foiben'i Madagasikara,central_bank,,institutional,,prescreen_record,no,,,,
-CAND-169,MO,T3,2023,legislation,Legislative Assembly / Chief Executive of Macao SAR (Boletim Oficial),legislature,,legal_text,,prescreen_record,no,,,issuer is not a central bank,
 MO_AMCM_eMOP_WP,MO,T3,2024,white_paper,Monetary Authority of Macao,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-173,MO,T3,2024,design_note,Monetary Authority of Macao (AMCM),central_bank,,institutional,,prescreen_record,no,,,,
 CAND-179,MO,T3,2026,annual_report,Monetary Authority of Macao (AMCM),central_bank,,institutional,,prescreen_record,no,,,,
-CAND-187,MU,T3,2023,legislation,Bank of Mauritius (consolidation); National Assembly (amending Act 2020),central_bank,,legal_text,,prescreen_record,yes,,,,
 MU_MU-BoM-Digital-Rupee-Consultation-2023,MU,T3,2023,consultation,Bank of Mauritius,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-190,MU,T3,2024,press_release,Bank of Mauritius,central_bank,,institutional,,prescreen_record,yes,,,,
 CAND-191,MU,T3,2025,annual_report,Bank of Mauritius,central_bank,,institutional,,prescreen_record,yes,,,,
@@ -206,7 +200,6 @@ NG_NG-CBN-eNaira-Diaspora-Remittances-Framework-2023,NG,T3,2023,decision,Central
 CAND-225,NP,T3,2021,other,Nepal Rastra Bank,central_bank,,institutional,,prescreen_record,yes,,,,
 NP_NP-NRB-CBDC-Concept-Report-2022,NP,T3,2022,consultation,Nepal Rastra Bank,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,
 CAND-232,NP,T3,2025,report,Nepal Rastra Bank,central_bank,,institutional,,prescreen_record,yes,,,,
-CAND-236,NP,T3,2026,legislation,"Ministry of Finance (government bill, House of Representatives)",government,,legal_text,,prescreen_record,no,,,issuer is not a central bank,
 PE_Peru_cbdc-presentation,PE,T3,2023,white_paper,Banco Central de Reserva del Perú,central_bank,,institutional,,proposed_2026-11-13,yes,yes,,,presentation
 CAND-251,PE,T3,2024,legislation,Banco Central de Reserva del Perú,central_bank,,legal_text,,prescreen_record,yes,,,,
 CAND-250,PE,T3,2024,report,Banco Central de Reserva del Perú,central_bank,,institutional,,prescreen_record,yes,,,,

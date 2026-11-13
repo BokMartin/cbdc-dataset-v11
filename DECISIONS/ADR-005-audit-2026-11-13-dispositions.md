@@ -88,3 +88,8 @@ Consequences to state in the paper:
 - Contract rule A lists legislation among the forms of endorsement. That stays true for the status of a claim; it no longer means that the statute is an evidence document.
 
 Open, for the authors: eleven legal texts are still evidence. Issued by the central bank itself: RU Regulation 820-P, NG eNaira Regulatory Guidelines, PE Circular 0011-2024, BS Regulations 2022 (CAND-030). Issued by a legislature or government: JM Bank of Jamaica (Amendment) Act 2022, BS Regulations 2021 (CAND-029), ID Law 4/2023, AE Decree-Law 6/2025, MO Law 10/2023, MU Bank of Mauritius Act, NP Amendment Bill. Applying the reason of this decision uniformly would move the second group (7 documents) to COMPANION: ID would fall to T3 (5 to 4 evidence documents), BS stays T2 (6 to 5), JM stays T1 (9 to 8), AE, MO and MU go from 4 to 3.
+
+## 10. Decisions of MB, 13 Nov 2026, 17:38 to 17:39
+
+1. The rule on legal texts is applied uniformly: the seven acts of a legislature or government that were still evidence are companions (`data/manifest/AUTHOR_DECISIONS_2026-11-13c.csv`); the four binding texts issued by a central bank stay evidence. KZ NBK Resolution 42 is a central-bank text that MB moved to COMPANION himself earlier the same day; it is left as he decided and is the one exception to the line, to be looked at again.
+2. Confirmed: a companion may be cited as the source of a decision and of the legal state of a claim made by an evidence document (`endorsement_source`, `legal_state`), and never originates a claim on its own.
