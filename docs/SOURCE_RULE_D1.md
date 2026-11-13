@@ -31,3 +31,17 @@ Corrections to existing registry rows surfaced by the check: CL "Prueba de Conce
 Not checked (named in the coverage notes): parliamentary records behind 403 (UK, MO, NP, IN), Hebrew-only forum summaries (IL), Kazakh editions, BCU pre-2021 (site search broken), BI press releases (site did not load), CH Federal Council answers 2020–2026 (search budget), PBOC English site.
 
 Next: author decision per row (`author_decision` column: accept / reject / companion), then download + SHA-256 + `REGISTRY_ADDITIONS_<date>.csv`, texts via `pdf_to_pages.py`, and a **second as-of date** for the manifest, because 109 candidates post-date the core freeze and many are the decisions the matrix needs.
+
+
+## Companion documents (rule added 13 Nov 2026; MB, ADR-005 section 9)
+
+**Whose voice the paper measures.** The paper is about what the makers of a CBDC say: the executive side of the project, in most cases led by the central bank (with the ministry where it co-leads). A legal text adopted by the legislature or by the government as law-maker is the act of another branch about the project, not the maker speaking.
+
+**COMPANION** = an official document of the project that is not evidence. It is not split into units and enters no talk measure or denominator. It is kept, listed and cited:
+1. for the project's **status and timeline** (decisions to issue, pause or stop; launches; legal acts coming into force);
+2. as the **record of a legal act or decision** that an evidence document refers to: in the contract's claim schema it may fill `endorsement_source` and `legal_state` of a claim that an evidence document makes. A companion never originates a claim on its own (pipeline author's reading of "cite and state"; to be confirmed by both authors);
+3. on the project page it is **linked to the evidence documents of the same project and year**, or of the nearest year where the year has none (`scripts/review/link_companions.py`, `data/manifest/COMPANION_LINKS_<date>.csv`).
+
+Typical companions: press releases and news that announce a document which is itself evidence, FAQ and explainer pages, landing pages, speeches without a position of their own, and legal texts of the legislature or government.
+
+Open point: eleven legal texts are still evidence (list in ADR-005 section 9). Proposed line, awaiting the authors: a binding text issued by the central bank itself (regulation, circular, guidelines) is the maker speaking and stays evidence; an act of parliament, a government decree or a bill is a companion.
