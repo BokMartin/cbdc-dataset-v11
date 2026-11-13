@@ -36,7 +36,8 @@ def main():
         pe = [s for s in Se if bt.PRIV.search(s)]; tot += len(pe); C = cosine_similarity(vec.transform(pe), Mt)
         for i, s in enumerate(pe):
             top = sorted(range(len(St)), key=lambda j: -C[i, j])[:3]
-            if round(float(C[i, top[0]]), 2) < 0.35:  # same boundary as the registered judgement sample of 11 Nov, which was drawn on similarities rounded to two decimals (163 matched, 84 unmatched; one pair at 0.3476 counts as matched there) un.append({"pair": p["label"], "E": s, "cands": [(St[j], round(float(C[i, j]), 2)) for j in top]})
+            # same boundary as the registered judgement sample of 11 Nov, which was drawn on similarities rounded to two decimals (163 matched, 84 unmatched; one pair at 0.3476 counts as matched there)
+            if round(float(C[i, top[0]]), 2) < 0.35: un.append({"pair": p["label"], "E": s, "cands": [(St[j], round(float(C[i, j]), 2)) for j in top]})
     rnd = random.Random(a.seed); un.sort(key=lambda u: (u["pair"], u["E"])); sample = rnd.sample(un, min(a.n, len(un))); rnd.shuffle(sample)
     wb = openpyxl.load_workbook(a.workbook); ins = wb["INSTRUCTIONS"]
     for t in ["", f"ADDED {a.date}: sheet UNMATCHED (after the independent audit). The automatic matcher found no partner for {len(un)} of the {tot} privacy sentences of the English editions; sheet JUDGE cannot say anything about them. UNMATCHED shows a random sample of {len(sample)} of these sentences (E), each with the three most similar sentences of the machine translation (T1, T2, T3).",
