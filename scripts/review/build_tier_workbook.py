@@ -30,7 +30,7 @@ def tier(n): return "T1" if n >= 8 else "T2" if n >= 5 else "T3"
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--manifest", required=True); ap.add_argument("--language", required=True)
     ap.add_argument("--out", required=True); ap.add_argument("--csv")
-    ap.add_argument("--issuers"); ap.add_argument("--units-manifest"); ap.add_argument("--candidates"); ap.add_argument("--not-unitised"); ap.add_argument("--sample")  # added 13 Nov 2026: issuer / voice and extraction status per document
+    ap.add_argument("--carry", help="an earlier copy of this workbook filled in by the authors"); ap.add_argument("--issuers"); ap.add_argument("--units-manifest"); ap.add_argument("--candidates"); ap.add_argument("--not-unitised"); ap.add_argument("--sample")  # added 13 Nov 2026: issuer / voice and extraction status per document
     a = ap.parse_args()
     rd = lambda f, k: {r[k]: r for r in csv.DictReader(open(f, encoding="utf-8"))} if f else {}
     ISS = rd(a.issuers, "id"); UM = rd(a.units_manifest, "id"); CA = rd(a.candidates, "doc_key"); NU = rd(a.not_unitised, "id"); SM = collections.Counter()
@@ -41,10 +41,24 @@ def main():
     W = [dict(zip(hdr, r)) for r in R[1:]]
     # author decisions recorded after the workbook was built (data/manifest/AUTHOR_DECISIONS_<date>.csv) override its pre-fill
     import glob, os
+    AD = {}
     for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(a.manifest)), "AUTHOR_DECISIONS_*.csv"))):
-        dec = {r["id"]: r for r in csv.DictReader(open(f, encoding="utf-8"))}
+        dec = {r["id"]: r for r in csv.DictReader(open(f, encoding="utf-8"))}; AD.update(dec)
         for w in W:
             if w["id"] in dec: w["decision_v12"] = dec[w["id"]]["decision_v12"]; w["decision_source"] = "author"
+    # the authors' own earlier inputs are shown in their columns (MB, 13 Nov 2026): recorded decisions pre-fill 'decision (authors)';
+    # --carry copies everything typed into an earlier copy of this workbook (decision, note, issuer / voice, tier) by document id
+    CARRY = {}; CARRY_T = {}
+    if a.carry:
+        cw = openpyxl.load_workbook(a.carry, read_only=True)
+        for sn in ("T1", "T2", "T3", "OUT_OF_FRAME"):
+            if sn not in cw.sheetnames: continue
+            rr = list(cw[sn].iter_rows(values_only=True)); hh = list(rr[0]); ci = {k: hh.index(k) for k in ("id", "decision (authors)", "note (authors)") if k in hh}; iv = hh.index("issuer / voice (authors)") if "issuer / voice (authors)" in hh else None
+            for r in rr[1:]:
+                v = (r[ci["decision (authors)"]], r[ci["note (authors)"]], r[iv] if iv is not None and iv < len(r) else None)
+                if any(x not in (None, "") for x in v): CARRY[r[ci["id"]]] = v
+        rr = list(cw["PROJECTS"].iter_rows(values_only=True)); ti = list(rr[0]).index("tier (authors)")
+        CARRY_T = {r[0]: r[ti] for r in rr[1:] if r[ti] not in (None, "")}
     P = {r[0]: dict(zip(list(wbi["PROJECTS"].iter_rows(min_row=1, max_row=1, values_only=True))[0], r)) for r in wbi["PROJECTS"].iter_rows(min_row=2, values_only=True)}
     lang = {r["sha256"]: r for r in csv.DictReader(open(a.language, encoding="utf-8"))}
     man = collections.defaultdict(list)
@@ -78,6 +92,7 @@ def main():
               f"CAUTION: decision_v12 is still a PRE-FILL (your v11 verdicts + model proposals). {len(move)} projects would move up a tier if their RECHECK documents are kept: {', '.join(sorted(move))}. Column 'tier if RECHECK kept' shows the upper bound. Decide the RECHECK rows first; the tier follows.",
               "How to check: sheets T1, T2, T3 list every document of the projects in that tier, sorted project -> year -> decision (evidence rows first, green/yellow). Change 'decision (authors)' where you disagree, and write the final tier in PROJECTS column 'tier (authors)'. The digital euro (EU) is tiered as the union project; euro-area members' own documents sit under EU.",
               "Columns 'language' / 'share EN' come from page-level detection (lingua) of the file in CBDC_MASTER_v12; 'scanned_or_image' = no text layer, OCR needed. Non-English evidence documents of T1/T2 projects are listed separately in TRANSLATION_QUEUE (data/translation/).",
+              "YOUR EARLIER INPUTS ARE CARRIED IN (13 Nov 2026): where you have already decided a document (12 on 11 Nov, 88 RECHECK rows on 13 Nov), 'decision (authors)' and 'note (authors)' show your decision, its date and your note; change them if you have changed your mind. Rows whose 'decision_source' is 'model pre-screen' or 'MB v11' and whose 'decision (authors)' is empty still wait for you: an empty cell means you accept decision_v12. No RECHECK row remains.",
               "ADDED 13 Nov 2026 (columns U to AD of the tier sheets). ISSUER AND VOICE: 'issuer', 'issuer type', 'voice of document' are a PRE-FILL (registry documents: proposed from the title page; gap-check documents: the recorded issuer, normalised); rows with something to check are orange in 'issuer check'; write corrections in 'issuer / voice (authors)'. Voice values: institutional, joint_with_government, joint_with_external, commissioned_external, staff_authored, official_speech, official_article, meeting_record, legal_text (definitions: scripts/review/record_issuers.py).",
               "EXTRACTION STATUS: 'English text for extraction' says from which text the privacy statements will be extracted (A English original, B issuer's English edition, D machine translation) or why the document has no English text yet (red). 'sentence units' = sentences after mechanical splitting; 'units to classify (L1)' = sentences pre-selected by the keyword dictionary, their neighbours and a 5 % random control; nothing has been classified yet. The prepared set is ALL evidence documents (KEEP + BORDERLINE) of the 43-frame with English text, in all three tiers; your decisions in 'decision (authors)' define the final set.",
               "Year = year of the document as recorded in the registry / pre-screen; 'n.d.' = undated (left off the time axis). Rule of record for inclusion: docs/SOURCE_RULE_D1.md."]:
@@ -86,7 +101,7 @@ def main():
     for row in ws.iter_rows():
         for c in row: c.alignment = WRAP
     pj = wb.create_sheet("PROJECTS")
-    ph = ["project", "tier", "tier if RECHECK kept", "tier (authors)", "in 43-frame", "status", "evidence docs", "KEEP", "BORDERLINE", "RECHECK", "all rows", "first year", "last year"] + YEARS + ["n.d.", "non-English evidence", "evidence w/o file or text", "unconfirmed rows (evidence+RECHECK)", "note"]
+    ph = ["project", "tier", "tier if RECHECK kept", "tier (authors)", "in analytic frame (44)", "status", "evidence docs", "KEEP", "BORDERLINE", "RECHECK", "all rows", "first year", "last year"] + YEARS + ["n.d.", "non-English evidence", "evidence w/o file or text", "unconfirmed rows (evidence+RECHECK)", "note"]
     pj.append(ph)
     go = {"T1": 0, "T2": 1, "T3": 2, "OUT_OF_FRAME": 3}
     for v in sorted(proj.values(), key=lambda v: (go[v["group"]], -v["ev"], v["project"])):
@@ -96,6 +111,7 @@ def main():
         if v["group"] in TFILL: pj.cell(i, 2).fill = PatternFill("solid", fgColor=TFILL[v["tier"]])
         if v["group"] != "OUT_OF_FRAME" and v["tier"] != v["tier_up"]: pj.cell(i, 3).fill = PatternFill("solid", fgColor="F4B084")
         pj.cell(i, 4).fill = PatternFill("solid", fgColor="FFF2CC")
+        if v["project"] in CARRY_T: pj.cell(i, 4).value = CARRY_T[v["project"]]
     for c, wd in enumerate([8, 6, 10, 9, 14, 14, 9, 6, 11, 9, 7, 7, 7] + [5] * 10 + [10, 10, 12, 24], 1): pj.column_dimensions[get_column_letter(c)].width = wd
     for c in range(1, len(ph) + 1): pj.cell(1, c).font = BOLD; pj.cell(1, c).fill = PatternFill("solid", fgColor="DDDDDD"); pj.cell(1, c).alignment = WRAP
     pj.freeze_panes = "B2"; pj.auto_filter.ref = f"A1:{get_column_letter(len(ph))}{pj.max_row}"
@@ -116,6 +132,12 @@ def main():
                 d.append([p, proj[p]["tier"] if g != "OUT_OF_FRAME" else "", x["y"], x["date"] or "", x["dec"], "", x["decision_source"] or "", x["title"], x["kind"] or "", x["lang"], x["share_en"], x["pages"], x["source"], x["MB verdict v11"] or "", x["model reason"] or "",
                           (x["master"] + (f" (+{x['nfiles']-1} linked)" if x["nfiles"] > 1 else "") if x["master"] else (x["downloaded"] or "")) + (" | EN edition: " + x["en_ed"] if x["en_ed"] else ""), x["lflag"], f'=HYPERLINK("{u}","open")' if u else "", x["id"], ""] + extra(x))
                 i = d.max_row
+                if x["id"] in AD: d.cell(i, 6).value = AD[x["id"]]["decision_v12"]; d.cell(i, 20).value = f'{AD[x["id"]]["decided_by"]} {AD[x["id"]]["date"]}' + (": " + AD[x["id"]]["note"] if AD[x["id"]].get("note") else "")
+                if x["id"] in CARRY:
+                    cd, cn, cv = CARRY[x["id"]]
+                    if cd not in (None, ""): d.cell(i, 6).value = cd
+                    if cn not in (None, ""): d.cell(i, 20).value = cn
+                    if cv not in (None, ""): d.cell(i, 26).value = cv
                 if x["dec"] in FILL: d.cell(i, 5).fill = PatternFill("solid", fgColor=FILL[x["dec"]])
                 d.cell(i, 6).fill = PatternFill("solid", fgColor="FFF2CC")
                 if x["lang"] and x["lang"] != "en": d.cell(i, 10).fill = PatternFill("solid", fgColor="F4B084")
