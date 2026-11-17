@@ -117,6 +117,7 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 | Decisions and why | `DECISIONS/ADR-001` to `ADR-005` |
 | Which document is evidence | `data/manifest/TIERS_<date>.csv`, `AUTHOR_DECISIONS_*.csv`, [source rule](docs/SOURCE_RULE_D1.md) |
 | Translation procedure and benchmark | [docs/TRANSLATION_PROCEDURE.md](docs/TRANSLATION_PROCEDURE.md) |
+| Models, prompts, inputs and settings of every run (what the paper states) | [docs/RUN_STATEMENT.md](docs/RUN_STATEMENT.md), rules in [docs/RUN_RECORD_SPEC.md](docs/RUN_RECORD_SPEC.md) |
 | Talk instrument | [ADR-004](DECISIONS/ADR-004-unit-based-privacy-talk-instrument-2026-11-12.md), `schema/talk_units_v13_DRAFT.json`, [codebook](docs/TALK_CODEBOOK_cs.tsv), `pipeline/prompts/talk_*.md` |
 | Who has seen which model output | [EXPOSURE_LEDGER.md](EXPOSURE_LEDGER.md) |
 | History before 3 Nov | `METHOD.md`, `docs/PROCESS_v12.md`, `PROGRESS_cs.md` (not updated since) |

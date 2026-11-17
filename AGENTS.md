@@ -22,6 +22,7 @@ Read [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) first: goal, pipeline, status, what 
 - Talk labels are descriptive and never set an F-cell. Commitments come only from located claims under contract rules A to C. No inference from silence.
 - Units, samples, thresholds and seeds are fixed and committed before anyone codes or any model labels. Human coders code before they see model output.
 - Never train or tune an encoder on LLM output. Never use the reference sample to tune prompts.
+- Every model run leaves a run record that meets [docs/RUN_RECORD_SPEC.md](docs/RUN_RECORD_SPEC.md) (exact model as returned, prompt hash, parameters, input hashes, per-call log). Production, replicate and cross-provider runs go through the provider API only, never through a chat or agent product (hidden system prompt, no fixed model). What the paper says about models is copied from the generated [docs/RUN_STATEMENT.md](docs/RUN_STATEMENT.md).
 - No causal language in results ("explains", "drives", "effect of").
 - Per-project results of the sealed model screens of 2 Nov stay sealed; only aggregates are reported ([EXPOSURE_LEDGER.md](EXPOSURE_LEDGER.md)). Every new exposure of an author to model output or to source text of a project is logged there.
 

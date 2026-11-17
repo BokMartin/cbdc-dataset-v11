@@ -19,5 +19,7 @@ jobs:
           git diff --stat -- data/frame/projects.csv
       - name: the numbers in PROJECT_BRIEF.md match the data files
         run: python scripts/pipeline/update_brief.py --check
+      - name: every model run has a complete run record and the run statement is current
+        run: python scripts/pipeline/run_statement.py --check
       - name: no secrets in tree
         run: "! grep -rIl 'sk-ant-\\|github_pat_\\|OPENAI_API_KEY=' --exclude-dir=.git --exclude-dir=.github . "
