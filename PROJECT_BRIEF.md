@@ -102,11 +102,12 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 
 ## 5. Next, in order
 
-1. MB: finish the translation judgement (sub-coding of 24 pairs, 30 unmatched sentences). MB and DS: development sample. DS: confirm ADR-004 and ADR-005.
-2. Score agreement; keep, repair or drop each facet by the rule fixed in [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md).
-3. Third audit of the post-13-Nov changes; freeze; register.
-4. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.
-5. F-cell extraction and blind reference on the v12 corpus; talk against commitment; paper.
+1. MB: finish the translation judgement (sub-coding of 24 pairs, 30 unmatched sentences); decide part B of [ADR-006](DECISIONS/ADR-006-validation-by-verification-and-run-design-2026-11-17.md) (run design). DS: blind relevance on the 120 development units; confirm ADR-004, ADR-005 and ADR-006.
+2. Development rounds with model-pre-filled labels (ADR-006 A): round 1 also tests request packing, the reasoning setting and the candidate models against MB's blind relevance labels.
+3. Facets: relevance validated independently; the others verified with planted errors (ADR-006 A, replacing the blind facet coding of [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md)).
+4. Third audit of the post-13-Nov changes; freeze; register.
+5. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.
+6. F-cell extraction and blind reference on the v12 corpus; talk against commitment; paper.
 
 **Risk to the deadline.** Steps 18 to 23 are all still ahead with six weeks left. If time runs short, the order of cuts proposed by audit A3 (item 18) and not yet decided by the authors is: fewer facets (relevance, voice, aspect only), then F-cells limited to F1 to F4, F7, F8, then project-level outputs limited to T1 and T2.
 
