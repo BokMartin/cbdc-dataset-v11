@@ -2,6 +2,8 @@
 
 Open dataset and working paper on **documented privacy and identifiability design in retail central bank digital currency (CBDC) projects**, built only from official central-bank and government documents, with every value traceable to a document, a page and a verbatim quote.
 
+> **Current goal, pipeline, status and audit coverage: [PROJECT_BRIEF.md](PROJECT_BRIEF.md)** (kept current; working rules for assistants in [AGENTS.md](AGENTS.md)). The paragraph below describes the state of 3 Nov 2026.
+>
 > **Status (3 Nov 2026): v12 in development.** v12 replaces the v11 line (tag `v11-dev-final`, files under `archive/v11/`) after an external methodological consultation (28 Oct), an independent audit (2 Nov) and a uniform source gap check (2 Nov). The website is a mock-up of the finished product: only the two development profiles (Norway, United Kingdom) carry real, citation-checked model output, labelled "development · not validated"; all other cell values are seeded placeholders. Nothing here is a finding yet.
 
 Authors: Martin Bok, Dominik Stroukal (Prague University of Economics and Business). Target: *Data & Policy* (measurement and data paper). Previous release (v1, vocabulary-based purpose categories): [cbdcdataset.org](https://cbdcdataset.org).

@@ -1,5 +1,7 @@
 # Method and progress — CBDC Dataset v12
 
+> **Not updated since 3 Nov 2026.** Current goal, pipeline, status and audit coverage: [PROJECT_BRIEF.md](PROJECT_BRIEF.md). The posture layer described below was retired on 13 Nov (ADR-005).
+
 Status as of 3 November 2026. For the supervisor and the authors. The v11 version of this file (18 Oct) is kept in git history; `site/method.html` mirrors this page.
 
 ## What the paper is now

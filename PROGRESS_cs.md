@@ -1,5 +1,7 @@
 # Kde jsme — krátce česky (3. 11. 2026, v12)
 
+> **Tento soubor není od 3. 11. aktualizován.** Aktuální cíl, postup, stav a přehled auditů: [PROJECT_BRIEF.md](PROJECT_BRIEF.md).
+
 **Od 3. 11. pracujeme pod označením v12.** Historie zůstává v jednom repozitáři (tag `v11-dev-final`, soubory jen k v11 v `archive/v11/`). Co se změnilo: zdroje podle pravidla autority a obsahu (D1) místo žánrové rubriky, jeden source manifest s URL, hashem, jazykem, routou a licencí; kontrakt v12 (endorsement, dva statusové osy, symetrická přípustnost, bez odvozování z mlčení); posture vrstva P0 až P3 a G1 až G9; jazykový ledger s routami A až D; pečetění a exposure allowlist v kódu; pipeline s verzovanými prompty.
 
 **Co je hotové (2. 11.):** audit druhým modelem zapracován (ADR-002); gap check všech 43 projektů (378 kandidátů, 354 mimo registr, major gaps u 27 projektů); Norsko přepočítáno z anglických vydání (route B); licence a oficiální URL u všech 125 core dokumentů; 24 testů.

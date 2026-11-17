@@ -1,5 +1,7 @@
 # The v12 process, step by step (for the consultation of 6 November 2026)
 
+> **Historical: the plan as of 3 Nov 2026.** The current pipeline and status are in [PROJECT_BRIEF.md](../PROJECT_BRIEF.md); the talk side was redesigned on 12 to 13 Nov (ADR-004, ADR-005).
+
 ## What the reader wants to know
 
 **Reader question 1 (the frame).** In what state are retail CBDC projects, and why do their issuers say they want them, according to their own documents? Path: source manifest → status decisions found by the gap check → F11 declared objectives with quotes → claim history. Output: status table of 43 projects with the deciding document; objectives table (eight atomic tags with status, one quote per tag); change map. Difference from trackers: every entry is a located, status-attached claim from the issuer; silence is reported as silence.

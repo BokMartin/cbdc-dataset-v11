@@ -17,5 +17,7 @@ jobs:
           python scripts/frame/project_frame.py
           python scripts/site/build_site_data.py
           git diff --stat -- data/frame/projects.csv
+      - name: the numbers in PROJECT_BRIEF.md match the data files
+        run: python scripts/pipeline/update_brief.py --check
       - name: no secrets in tree
         run: "! grep -rIl 'sk-ant-\\|github_pat_\\|OPENAI_API_KEY=' --exclude-dir=.git --exclude-dir=.github . "
