@@ -18,9 +18,22 @@ day = lambda f: re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(f)).group(1)
 
 def judgement(files):
     if not files: return "**not yet returned** (86 matched pairs + 30 unmatched sentences registered)"
-    d = json.load(open(sorted(files)[-1])); w = d["weighted_share_all_163_matched"]; un = d.get("unmatched_supplement"); un = un.get("status") if isinstance(un, dict) else un
-    return (f"matched pairs scored ({d.get('judge', '?')}, one judge): same meaning and strength {w['S']:.0%}, weaker {w['W']:.0%}, stronger {w['X']:.0%}, meaning differs {w['M']:.0%} "
-            f"(weighted to 163 matched sentences) · unmatched supplement: {'scored' if un == 'scored' else '**' + str(un) + '**'}")
+    parts = []
+    for f in sorted(files):
+        d = json.load(open(f)); w = d["weighted_share_all_163_matched"]
+        parts.append(f"{d.get('judge', '?')}: same meaning and strength {w['S']:.0%}, weaker {w['W']:.0%}, stronger {w['X']:.0%}, meaning differs {w['M']:.0%}")
+    ag = glob.glob(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_AGREEMENT_*.json"))
+    two = json.load(open(sorted(ag)[-1]))["two_judges"] if ag else None
+    return ("matched pairs, weighted to 163 matched sentences, judgeable pairs only · " + " · ".join(parts) +
+            (f" · **the two judges agree on {two['raw_agreement']:.0%} of the 86 pairs (Cohen's kappa {two['cohen_kappa']:.2f}); not adjudicated**" if two else " · one judge"))
+
+
+def dev_agreement():
+    f = sorted(glob.glob(os.path.join(ROOT, "data/units/DEV_AGREEMENT_RELEVANCE_*.json")))
+    if not f: return "scored: **not yet**"
+    d = json.load(open(f[-1])); a, b = d["all"], d["all_without_U_pairs"]
+    return (f"relevance coded blind by {d['coder_a']} and {d['coder_b']} ({d['both_coded']} units both coded): agreement {a['agreement']:.0%}, Krippendorff's alpha {a['alpha']:.2f} "
+            f"(below the 0.667 of the protocol); without the pairs that hold a U: {b['n']} units, agreement {b['agreement']:.0%}, alpha {b['alpha']:.2f}; facets not coded")
 
 
 def block():
@@ -50,7 +63,7 @@ def block():
          f"| English text for measurement | {len(U)} documents of {len({r['project'] for r in U})} projects: {route['A']} English originals, {route['B']} issuer English editions, {route['D']} machine translations; {len(nu)} evidence documents still without English text |",
          f"| Machine translation | {len(runs)} API runs, {calls} calls, {len(tdocs)} documents translated (benchmark translations excluded) |",
          f"| Sentence units | {n(sum(int(r['units']) for r in U))} units; {n(s('D') + s('N') + s('R'))} candidates for classification (dictionary hits {n(s('D'))}, neighbours {n(s('N'))}, random control {n(s('R'))}) |",
-         f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; scored: {'yes' if scored else '**not yet**'} · reference sample (400): {'drawn' if main else 'not drawn'} |",
+         f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; {dev_agreement()} · reference sample (400): {'drawn' if main else 'not drawn'} |",
          f"| Human judgement of translation | {judgement(judged)} |",
          f"| Model classification of units | {'run' if glob.glob(os.path.join(ROOT, 'data/units/L1_*')) else '**not started** (no unit has been labelled by a model)'} |",
          f"| Tests in CI | {tests} |", E]

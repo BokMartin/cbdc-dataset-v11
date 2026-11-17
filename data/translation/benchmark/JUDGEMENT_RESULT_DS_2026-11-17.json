@@ -1,0 +1,111 @@
+{
+ "n_rows": 86,
+ "strata": {
+  "flagged": {
+   "rows": 56,
+   "not_judgeable_D": 3,
+   "judgeable": 53,
+   "S": {
+    "count": 41,
+    "share": 0.774,
+    "wilson95": [
+     0.645,
+     0.865
+    ]
+   },
+   "W": {
+    "count": 4,
+    "share": 0.075,
+    "wilson95": [
+     0.03,
+     0.179
+    ]
+   },
+   "X": {
+    "count": 6,
+    "share": 0.113,
+    "wilson95": [
+     0.053,
+     0.226
+    ]
+   },
+   "M": {
+    "count": 2,
+    "share": 0.038,
+    "wilson95": [
+     0.01,
+     0.128
+    ]
+   }
+  },
+  "control": {
+   "rows": 30,
+   "not_judgeable_D": 4,
+   "judgeable": 26,
+   "S": {
+    "count": 24,
+    "share": 0.923,
+    "wilson95": [
+     0.759,
+     0.979
+    ]
+   },
+   "W": {
+    "count": 0,
+    "share": 0.0,
+    "wilson95": [
+     0,
+     0.129
+    ]
+   },
+   "X": {
+    "count": 1,
+    "share": 0.038,
+    "wilson95": [
+     0.007,
+     0.189
+    ]
+   },
+   "M": {
+    "count": 1,
+    "share": 0.038,
+    "wilson95": [
+     0.007,
+     0.189
+    ]
+   }
+  }
+ },
+ "weighted_share_all_163_matched": {
+  "S": 0.872,
+  "W": 0.026,
+  "X": 0.064,
+  "M": 0.038
+ },
+ "all_rows": {
+  "S": 65,
+  "D": 7,
+  "W": 4,
+  "M": 3,
+  "X": 7
+ },
+ "judge": "DS",
+ "workbook_sha256": "42ae63e9d7569f800479b315065b9c53f776cedfb6731fbeadab742559161e58",
+ "unmatched_supplement": {
+  "status": "scored",
+  "rows": 30,
+  "rendering_found": 29,
+  "share_found": 0.967,
+  "wilson95": [
+   0.833,
+   0.994
+  ],
+  "no_rendering_among_three": 1,
+  "codes_among_found": {
+   "S": 25,
+   "W": 3,
+   "X": 1,
+   "M": 0
+  }
+ }
+}

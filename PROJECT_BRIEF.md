@@ -61,8 +61,8 @@ State of the data files as of **2026-11-17** (dates are those of the files, not 
 | English text for measurement | 207 documents of 42 projects: 162 English originals, 15 issuer English editions, 30 machine translations; 22 evidence documents still without English text |
 | Machine translation | 3 API runs, 199 calls, 43 documents translated (benchmark translations excluded) |
 | Sentence units | 171 865 units; 19 570 candidates for classification (dictionary hits 7 849, neighbours 6 046, random control 5 675) |
-| Human coding | development sample: drawn, 120 units; scored: **not yet** · reference sample (400): not drawn |
-| Human judgement of translation | matched pairs scored (MB, one judge): same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% (weighted to 163 matched sentences) · unmatched supplement: **not filled in** |
+| Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
+| Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
 | Model classification of units | **not started** (no unit has been labelled by a model) |
 | Tests in CI | 43 |
 <!-- NUMBERS:END -->
@@ -89,7 +89,7 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 | 14 | Sentence units and candidate selection | done, version 2 | version 1 A3 (found too rough); version 2 **not re-audited** | n/a |
 | 15 | Talk codebook, schema, prompts | draft v0.3 | v0.2 A3 (found inconsistent with the contract); v0.3 **not re-audited** | to be tested in step 17 |
 | 16 | Issuer and voice of each document | pre-filled by the model | counts A3 | **pending** |
-| 17 | Development sample of 120 units | MB coded relevance blind on 17 Nov (118 valid labels; 2 rows to redo; 14 units are from documents since removed from evidence); facets not coded by decision of MB (ADR-006) | first design and scorer A3; A4: inputs not reconciled, "U" ambiguous (F03, F11) | DS relevance **pending**; MB fix file `TALK_DEV_FIX_MB_2026-11-17.xlsx` |
+| 17 | Development sample of 120 units | relevance coded blind by MB (118 valid) and DS (120) on 17 Nov: alpha 0.46, below the threshold; the disagreement sits in "U" (ADR-007 §6). Facets not coded by decision of MB (ADR-006) | first design and scorer A3; A4: inputs not reconciled, "U" ambiguous (F03, F11) | codebook for humans to repair; MB fix file `TALK_DEV_FIX_MB_2026-11-17.xlsx` |
 | 18 | Freeze codebook and document set; register (OSF, Zenodo) | not started | — | — |
 | 19 | Reference sample of 400 units | not drawn | — | — |
 | 20 | Model labels all candidate units | not started | — | — |

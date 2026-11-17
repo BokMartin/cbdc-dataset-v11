@@ -1,0 +1,175 @@
+{
+ "coder_a": "MB",
+ "coder_b": "DS",
+ "units_in_sample": 120,
+ "both_coded": 118,
+ "not_coded_by_a": [
+  "PE_PE_Peru_cbdc-presentation:p19:s321",
+  "TH_TH_Thailand_rCBDC_Conclusion_Report:p19:s238"
+ ],
+ "not_coded_by_b": [],
+ "all": {
+  "n": 118,
+  "agreement": 0.669,
+  "alpha": 0.456,
+  "alpha_ci95_conditional_on_sample": [
+   0.323,
+   0.583
+  ],
+  "ac1": 0.526,
+  "confusion_rows_a_cols_b": {
+   "R": {
+    "R": 46,
+    "N": 10,
+    "U": 2
+   },
+   "N": {
+    "R": 5,
+    "N": 27,
+    "U": 4
+   },
+   "U": {
+    "R": 10,
+    "N": 8,
+    "U": 6
+   }
+  }
+ },
+ "all_without_U_pairs": {
+  "n": 88,
+  "agreement": 0.83,
+  "alpha": 0.644,
+  "alpha_ci95_conditional_on_sample": [
+   0.463,
+   0.797
+  ],
+  "ac1": 0.674,
+  "confusion_rows_a_cols_b": {
+   "R": {
+    "R": 46,
+    "N": 10
+   },
+   "N": {
+    "R": 5,
+    "N": 27
+   }
+  }
+ },
+ "current_corpus_only": {
+  "n": 104,
+  "agreement": 0.683,
+  "alpha": 0.477,
+  "alpha_ci95_conditional_on_sample": [
+   0.334,
+   0.611
+  ],
+  "ac1": 0.546,
+  "confusion_rows_a_cols_b": {
+   "R": {
+    "R": 42,
+    "N": 8,
+    "U": 2
+   },
+   "N": {
+    "R": 5,
+    "N": 23,
+    "U": 3
+   },
+   "U": {
+    "R": 7,
+    "N": 8,
+    "U": 6
+   }
+  }
+ },
+ "by_stratum": {
+  "D": {
+   "n": 88,
+   "agreement": 0.659,
+   "alpha": 0.312,
+   "alpha_ci95_conditional_on_sample": [
+    0.126,
+    0.487
+   ],
+   "ac1": 0.548,
+   "confusion_rows_a_cols_b": {
+    "R": {
+     "R": 46,
+     "N": 9,
+     "U": 2
+    },
+    "N": {
+     "R": 5,
+     "N": 9,
+     "U": 0
+    },
+    "U": {
+     "R": 10,
+     "N": 4,
+     "U": 3
+    }
+   }
+  },
+  "N": {
+   "n": 15,
+   "agreement": 0.733,
+   "alpha": 0.445,
+   "alpha_ci95_conditional_on_sample": [
+    -0.11,
+    0.861
+   ],
+   "ac1": 0.653,
+   "confusion_rows_a_cols_b": {
+    "R": {
+     "R": 0,
+     "N": 1,
+     "U": 0
+    },
+    "N": {
+     "R": 0,
+     "N": 8,
+     "U": 3
+    },
+    "U": {
+     "R": 0,
+     "N": 0,
+     "U": 3
+    }
+   }
+  },
+  "R": {
+   "n": 15,
+   "agreement": 0.667,
+   "alpha": -0.16,
+   "alpha_ci95_conditional_on_sample": [
+    -0.381,
+    -0.036
+   ],
+   "ac1": 0.613,
+   "confusion_rows_a_cols_b": {
+    "R": {
+     "R": 0,
+     "N": 0,
+     "U": 0
+    },
+    "N": {
+     "R": 0,
+     "N": 10,
+     "U": 1
+    },
+    "U": {
+     "R": 0,
+     "N": 4,
+     "U": 0
+    }
+   }
+  }
+ },
+ "U_labels": {
+  "a": 24,
+  "b": 12,
+  "both": 6
+ },
+ "threshold_of_protocol_v2": 0.667,
+ "status": "development sample; not a reported validation"
+}
