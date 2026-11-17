@@ -1,5 +1,7 @@
 # Calibration of the talk prompts and of the run design: DRAFT for audit (17 Nov 2026)
 
+**Superseded in substance by audit A4 (`docs/audits/INDEPENDENT_AUDIT_2026-11-17.md`, question 13: a 24-step protocol), pending the authors' decisions in ADR-007. Rejected by the audit: the factor decision rule (F07), the two-occurrence change rule and the stop-on-no-change rule (F16), unit-level separation of the reference (F06). Do not run from this file.**
+
 Status: proposal of the pipeline author (Claude). **Nothing in this document has been run and no author has adopted it.** It is written to be attacked by the audit of 17 Nov (`docs/audits/PROMPT_AUDIT_2026-11-17.md`). Decisions it builds on: ADR-004, ADR-005, ADR-006.
 
 ## 1. What is calibrated, what is fixed

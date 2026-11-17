@@ -2,7 +2,7 @@
 
 Purpose (authors, 17 Nov 2026): for every number in the paper that comes from a model, the paper must be able to state the exact model,
 the exact prompt, the exact input data and the exact settings, and a reader must be able to check each of them against a hash.
-A run that does not meet this specification is not used in the paper. `scripts/pipeline/run_statement.py --check` enforces it in CI
+A run that does not meet this specification is not used in the paper. **Audit A4 (17 Nov, F05) showed that the CI check below verifies only that fields and columns are present, not that hashes, inventories and counts are true; a fictitious run passes it. Until it is rebuilt (typed schema, artifact and hash verification, legacy allowlist) a green check is not evidence of complete provenance.** `scripts/pipeline/run_statement.py --check` checks it in CI
 for every run whose record carries `"spec": "run-record v1"`; the runs made before this date are listed in `docs/RUN_STATEMENT.md`
 with the fields they have and the fields they lack.
 
@@ -40,7 +40,8 @@ with the fields they have and the fields they lack.
 
 - Classification (talk L1, L2): the responses hold only unit identifiers and labels, so they are committed in full (`RESPONSES.jsonl`).
 - Translation and extraction: responses hold source text; only their hashes are committed, the files are kept in the authors' archive
-  and are available on request, as are the source texts.
+  under an access procedure still to be specified in a rights and access manifest (issuer URL, retrieval date, version hash, locator, restriction).
+  "Available on request" is not an acceptable statement for Data & Policy (audit A4, F13); until the manifest exists this is an open item, not a promise.
 - Requests are never committed (source text); they are rebuilt from the inputs by the recorded script, and `user_sha256` proves the rebuild.
 
 ## What the paper states (generated, not typed)

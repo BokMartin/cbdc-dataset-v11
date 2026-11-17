@@ -24,7 +24,7 @@ flowchart TD
   A["Frame: 44 projects"] --> B["Official documents<br/>registry + gap check"]
   B --> C{"Authors decide<br/>each document"}
   C -->|evidence| D["English text<br/>A original / B issuer edition / D machine translation"]
-  C -->|companion| K["Cited for status and legal state<br/>linked to evidence of the same year"]
+  C -->|companion| K["Cited for status and legal state<br/>linked to evidence of the same or nearest year"]
   D --> E["Sentence units<br/>split before any model sees them"]
   E --> F["Candidates:<br/>dictionary + neighbours + 5 % random control"]
   F --> G{"Two authors code<br/>a development sample"}
@@ -56,7 +56,7 @@ State of the data files as of **2026-11-13** (dates are those of the files, not 
 | Analytic frame | **44 projects** = 43 national retail candidates + the digital euro |
 | Official documents collected | 777 files in the master folder; 772 document rows, each with an author or model decision |
 | Evidence documents (in the frame) | **230 publications** (234 rows); 234 of 234 decided or confirmed by an author |
-| Companion documents (in the frame) | 283, cited and linked to evidence of the same year; 64 reviewed by an author |
+| Companion documents (in the frame) | 283, cited for status and timeline; linked to evidence of the same year 194, of the nearest year 87, no link 2; 64 reviewed by an author |
 | Tiers by number of evidence publications | T1 (8+): 8 · EU, IL, JM, JP, KZ, SE, TW, UK<br>T2 (5 to 7): 8 · AU, BS, CA, HK, IN, NO, NZ, RU<br>T3 (4 or fewer): 28 |
 | English text for measurement | 208 documents of 42 projects: 163 English originals, 15 issuer English editions, 30 machine translations; 22 evidence documents still without English text |
 | Machine translation | 3 API runs, 199 calls, 43 documents translated (benchmark translations excluded) |
@@ -69,7 +69,7 @@ State of the data files as of **2026-11-13** (dates are those of the files, not 
 
 ## 4. Checklist, with what a second model has audited
 
-Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/ADR-001-consultation-2026-10-28-dispositions.md)) · **A2** independent audit, 2 Nov ([report](docs/audits/INDEPENDENT_AUDIT_OPENAI_2026-11-02.md), [ADR-002](DECISIONS/ADR-002-audit-2026-11-02.md)) · **A3** independent audit, 13 Nov, of the work of 3 to 13 Nov up to commit `4d4f142` ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-13.md), [ADR-005](DECISIONS/ADR-005-audit-2026-11-13-dispositions.md)). An auditor never sees source documents, translations or sealed results, so document content and search completeness are outside every audit.
+Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/ADR-001-consultation-2026-10-28-dispositions.md)) · **A2** independent audit, 2 Nov ([report](docs/audits/INDEPENDENT_AUDIT_OPENAI_2026-11-02.md), [ADR-002](DECISIONS/ADR-002-audit-2026-11-02.md)) · **A4** independent audit before the paid runs, 17 Nov ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md)) · **A3** independent audit, 13 Nov, of the work of 3 to 13 Nov up to commit `4d4f142` ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-13.md), [ADR-005](DECISIONS/ADR-005-audit-2026-11-13-dispositions.md)). An auditor never sees source documents, translations or sealed results, so document content and search completeness are outside every audit.
 
 | # | Step | Status | Audited by a second model | Checked by the authors |
 |---|---|---|---|---|
@@ -102,8 +102,8 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 
 ## 5. Next, in order
 
-1. **Audit A4 by a second model before any paid run** ([prompt](docs/audits/PROMPT_AUDIT_2026-11-17.md), [brief](docs/audits/AUDIT_BRIEF_2026-11-17.md)): acceptability in a journal, what each run stores, how to calibrate the prompts ([draft](docs/CALIBRATION_PROTOCOL_DRAFT_2026-11-17.md)), and whether everything needed exists ([readiness list](docs/READINESS_BEFORE_CALIBRATION_2026-11-17.md)). Part B of [ADR-006](DECISIONS/ADR-006-validation-by-verification-and-run-design-2026-11-17.md) is held until it reports. Meanwhile MB: translation judgement (24 + 30), accounts and credit for three providers; DS: blind relevance on the 120 development units, confirm ADR-004 to ADR-006. Target for all model runs: 30 November.
-2. Calibration on three models (claude-opus-5-5, gpt-6-astra, deepseek-v4-pro) by the protocol that comes out of A4: factor tests on the 120 development units, then rounds with model-pre-filled labels (ADR-006 A).
+1. **Audit A4 (17 Nov) returned NO-GO for calibration and for production** ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), 18 findings, 8 blockers; proposed dispositions in [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md), awaiting the authors). No paid call before the repairs.
+2. Repairs that need no author decision (pipeline author): translation ingest that fails closed, run-record check that verifies artifacts, canonical input identity and exposure registry, strict output parser, three-provider runner tested offline. Decisions that only the authors can make: scope for November (talk layer) against December (commitment layer), blank double coding of voice and aspect, the meaning of "U", issuer and voice metadata, translation of 14 T3 documents, the Israel duplicate.
 3. Facets: relevance validated independently; the others verified with planted errors (ADR-006 A, replacing the blind facet coding of [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md)).
 4. Third audit of the post-13-Nov changes; freeze; register.
 5. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.

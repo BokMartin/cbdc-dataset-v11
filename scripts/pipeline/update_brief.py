@@ -45,7 +45,7 @@ def block():
          f"| Analytic frame | **{n_frame} projects** = {n_nat} national retail candidates + the digital euro |",
          f"| Official documents collected | {len(master)} files in the master folder; {len(T)} document rows, each with an author or model decision |",
          f"| Evidence documents (in the frame) | **{len(pubs)} publications** ({len(ev)} rows); {by_author} of {len(ev)} decided or confirmed by an author |",
-         f"| Companion documents (in the frame) | {len(comp)}, cited and linked to evidence of the same year; {sum(r['decision_source'].startswith('author') for r in comp)} reviewed by an author |",
+         f"| Companion documents (in the frame) | {len(comp)}, cited for status and timeline; linked to evidence of the same year {sum(r['link_basis'] == 'same year' for r in comp)}, of the nearest year {sum(r['link_basis'].startswith('nearest') for r in comp)}, no link {sum(not (r['link_basis'] == 'same year' or r['link_basis'].startswith('nearest')) for r in comp)}; {sum(r['decision_source'].startswith('author') for r in comp)} reviewed by an author |",
          f"| Tiers by number of evidence publications | T1 (8+): {len(tiers['T1'])} · {', '.join(sorted(tiers['T1']))}<br>T2 (5 to 7): {len(tiers['T2'])} · {', '.join(sorted(tiers['T2']))}<br>T3 (4 or fewer): {len(tiers['T3'])} |",
          f"| English text for measurement | {len(U)} documents of {len({r['project'] for r in U})} projects: {route['A']} English originals, {route['B']} issuer English editions, {route['D']} machine translations; {len(nu)} evidence documents still without English text |",
          f"| Machine translation | {len(runs)} API runs, {calls} calls, {len(tdocs)} documents translated (benchmark translations excluded) |",

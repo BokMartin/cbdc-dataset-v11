@@ -1,5 +1,7 @@
 # Readiness before calibration and before the paid production runs (17 Nov 2026)
 
+**Audit A4 (17 Nov) found this list too permissive: verdict NO-GO for calibration until input identity, C0 reconciliation, issuer metadata, the U rule, reference exposure blocks, and tested runner, parser and provenance checks exist; row 20 overstated what CI enforces; row 11 understated the empty text cell of row 42. Dispositions: ADR-007.**
+
 Prepared by the pipeline author from the repository state at the commit of this file; every row can be recounted from the file named. "Blocks" says what cannot start while the row is open: **C** = calibration of the talk prompts, **P** = production runs of the talk classification, **F** = F-cell extraction, **Z** = freeze and registration.
 
 ## Verdict
