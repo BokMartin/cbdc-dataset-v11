@@ -102,8 +102,8 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 
 ## 5. Next, in order
 
-1. MB: finish the translation judgement (sub-coding of 24 pairs, 30 unmatched sentences); decide part B of [ADR-006](DECISIONS/ADR-006-validation-by-verification-and-run-design-2026-11-17.md) (run design). DS: blind relevance on the 120 development units; confirm ADR-004, ADR-005 and ADR-006.
-2. Development rounds with model-pre-filled labels (ADR-006 A): round 1 also tests request packing, the reasoning setting and the candidate models against MB's blind relevance labels.
+1. **Audit A4 by a second model before any paid run** ([prompt](docs/audits/PROMPT_AUDIT_2026-11-17.md), [brief](docs/audits/AUDIT_BRIEF_2026-11-17.md)): acceptability in a journal, what each run stores, how to calibrate the prompts ([draft](docs/CALIBRATION_PROTOCOL_DRAFT_2026-11-17.md)), and whether everything needed exists ([readiness list](docs/READINESS_BEFORE_CALIBRATION_2026-11-17.md)). Part B of [ADR-006](DECISIONS/ADR-006-validation-by-verification-and-run-design-2026-11-17.md) is held until it reports. Meanwhile MB: translation judgement (24 + 30), accounts and credit for three providers; DS: blind relevance on the 120 development units, confirm ADR-004 to ADR-006. Target for all model runs: 30 November.
+2. Calibration on three models (claude-opus-5-5, gpt-6-astra, deepseek-v4-pro) by the protocol that comes out of A4: factor tests on the 120 development units, then rounds with model-pre-filled labels (ADR-006 A).
 3. Facets: relevance validated independently; the others verified with planted errors (ADR-006 A, replacing the blind facet coding of [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md)).
 4. Third audit of the post-13-Nov changes; freeze; register.
 5. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.
@@ -118,6 +118,7 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 | Decisions and why | `DECISIONS/ADR-001` to `ADR-005` |
 | Which document is evidence | `data/manifest/TIERS_<date>.csv`, `AUTHOR_DECISIONS_*.csv`, [source rule](docs/SOURCE_RULE_D1.md) |
 | Translation procedure and benchmark | [docs/TRANSLATION_PROCEDURE.md](docs/TRANSLATION_PROCEDURE.md) |
+| Which documents are read, by project (208 documents, 42 of 44 projects) | [data/manifest/CORPUS_COVERAGE_2026-11-17.csv](data/manifest/CORPUS_COVERAGE_2026-11-17.csv), [CORPUS_DOCUMENTS_2026-11-17.csv](data/manifest/CORPUS_DOCUMENTS_2026-11-17.csv) |
 | Models, prompts, inputs and settings of every run (what the paper states) | [docs/RUN_STATEMENT.md](docs/RUN_STATEMENT.md), rules in [docs/RUN_RECORD_SPEC.md](docs/RUN_RECORD_SPEC.md) |
 | Talk instrument | [ADR-004](DECISIONS/ADR-004-unit-based-privacy-talk-instrument-2026-11-12.md), `schema/talk_units_v13_DRAFT.json`, [codebook](docs/TALK_CODEBOOK_cs.tsv), `pipeline/prompts/talk_*.md` |
 | Who has seen which model output | [EXPOSURE_LEDGER.md](EXPOSURE_LEDGER.md) |
