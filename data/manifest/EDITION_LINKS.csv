@@ -3,3 +3,4 @@ NO_Norway_nbmemo-1-2018,NO_NBPapers_1_2018_en,issuer_english_edition,"Norges Ban
 NO_Norway_nb_memo_2_19_dsp,NO_NBPapers_2_2019_en,issuer_english_edition,"Norges Bank Papers 2/2019 is the issuer's English edition of Memo 2/2019 (LANGUAGE_LEDGER, 2 Nov 2026)"
 NO_Norway_norges-bank-memo-1-2021,NO_NBPapers_1_2021_en,issuer_english_edition,"Norges Bank Papers 1/2021 is the issuer's English edition of Memo 1/2021 (LANGUAGE_LEDGER, 2 Nov 2026)"
 JP_BoJ_Pilot_JP,JP_BoJ_Pilot_EN,issuer_english_edition,"Bank of Japan published the pilot progress report in Japanese and English; both files were registry rows (audit of 13 Nov 2026, item 2)"
+IL_BoI_2024,CAND-111,same_text_duplicate,"Two files of the Bank of Israel Preliminary Design for the Digital Shekel System (March 2025) with identical extracted text (text_sha256 equal); found 17 Nov 2026, audit A4 F03; MB: link them (17 Nov). CAND-111 is kept because a development unit comes from it"

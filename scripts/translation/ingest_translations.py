@@ -23,14 +23,15 @@ def sha(s): return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--pack", required=True); ap.add_argument("--date", required=True); ap.add_argument("--run", required=True); ap.add_argument("--expect", nargs="*", help="doc_keys that must be present and pass; the script exits with an error otherwise"); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--pack", required=True); ap.add_argument("--date", required=True); ap.add_argument("--run", required=True); ap.add_argument("--expect", nargs="+", required=True, help="doc_keys that must be present and pass (mandatory since audit A4, 17 Nov 2026); the script exits with an error otherwise"); a = ap.parse_args()
     system = open(os.path.join(ROOT, "pipeline/prompts/translation.system.md"), encoding="utf-8").read()
     Q = {q["doc_key"]: q for q in csv.DictReader(open(os.path.join(a.pack, f"TRANSLATION_QUEUE_{a.date}.csv"), encoding="utf-8"))}
     reqs = collections.defaultdict(list)
     for r in csv.DictReader(open(os.path.join(a.pack, f"TRANSLATION_REQUESTS_{a.date}.csv"), encoding="utf-8")): reqs[r["doc_key"]].append(r)
     run = os.path.join(a.pack, "responses", a.run); rm = json.load(open(os.path.join(run, "RUN_META.json")))
     # fail closed (audit of 13 Nov 2026, item 3): a run made with another system prompt is not ingested
-    if rm.get("system_sha256") and rm["system_sha256"] != sha(system): raise SystemExit("RUN_META system_sha256 differs from pipeline/prompts/translation.system.md: this run was made with another prompt")
+    if not rm.get("system_sha256"): raise SystemExit("RUN_META has no system_sha256: a run without a recorded prompt hash is not ingested (audit A4, F04)")
+    if rm["system_sha256"] != sha(system): raise SystemExit("RUN_META system_sha256 differs from pipeline/prompts/translation.system.md: this run was made with another prompt")
     try:
         from lingua import LanguageDetectorBuilder; det = LanguageDetectorBuilder.from_all_languages().build()
     except Exception: det = None
@@ -38,7 +39,9 @@ def main():
     found = {}  # response files may sit in <run>/<doc_key>/ or anywhere below the run folder (a model that returns one flat folder)
     for d, _, fs in os.walk(run):
         for f in fs:
-            if f.endswith(".response.txt"): found[f[:-len(".response.txt")]] = os.path.join(d, f[:-len(".response.txt")])
+            if f.endswith(".response.txt"):
+                if f[:-len(".response.txt")] in found: raise SystemExit(f"two response files with the same name in the run folder: {f} (audit A4, F04)")
+                found[f[:-len(".response.txt")]] = os.path.join(d, f[:-len(".response.txt")])
     keys = sorted({k for k, rs in reqs.items() if any(os.path.basename(r["request_file"])[:-4] in found for r in rs)})
     for key in keys:
         q = Q[key]; layer = ""; problems = []; pages = collections.OrderedDict(); rsha = []; usha = []; src_chars = 0; out_chars = 0; models = set()
@@ -49,8 +52,11 @@ def main():
             tl = re.search(r"^text layer: (.*)$", user, re.M); layer = tl.group(1) if tl else ""
             if sha(user) != r["user_sha256"]: problems.append(f"chunk {r['chunk']}: request file changed")
             text = open(base + ".response.txt", encoding="utf-8").read().replace("\r\n", "\n"); rsha.append(sha(text))
-            if os.path.exists(base + ".meta.json"):
+            if not os.path.exists(base + ".meta.json"): problems.append(f"chunk {r['chunk']}: no call metadata (.meta.json); identity of the response cannot be checked")
+            else:
                 m = json.load(open(base + ".meta.json")); models.add(m.get("model_returned", ""))
+                miss = [k for k in ("response_sha256", "user_sha256", "system_sha256", "model_returned") if not m.get(k)]
+                if miss: problems.append(f"chunk {r['chunk']}: call metadata lacks {', '.join(miss)}")
                 if not m.get("complete", False): problems.append(f"chunk {r['chunk']}: not marked complete ({m.get('stop_reason')})")
                 if m.get("response_sha256") and m["response_sha256"] != sha(open(base + ".response.txt", encoding="utf-8").read()): problems.append(f"chunk {r['chunk']}: response file differs from the hash recorded at the call")
                 if m.get("user_sha256") and m["user_sha256"] != r["user_sha256"]: problems.append(f"chunk {r['chunk']}: response was made for another request (user_sha256)")
@@ -95,9 +101,8 @@ def main():
     print(dst, len(rows), "documents;", dict(collections.Counter(r["status"] for r in rows)))
     for r in rows:
         if r["status"] != "ok": print("  FAILED", r["doc_key"], "|", r["problems"][:200])
-    if a.expect is not None:
-        ok = {r["doc_key"] for r in rows if r["status"] == "ok"}; bad = [k for k in a.expect if k not in ok]
-        if bad: raise SystemExit("expected documents missing or failed: " + ", ".join(bad))
+    ok = {r["doc_key"] for r in rows if r["status"] == "ok"}; bad = [k for k in a.expect if k not in ok]
+    if bad: raise SystemExit("expected documents missing or failed: " + ", ".join(bad))
 
 
 if __name__ == "__main__": main()

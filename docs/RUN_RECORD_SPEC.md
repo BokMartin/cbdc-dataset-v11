@@ -2,7 +2,7 @@
 
 Purpose (authors, 17 Nov 2026): for every number in the paper that comes from a model, the paper must be able to state the exact model,
 the exact prompt, the exact input data and the exact settings, and a reader must be able to check each of them against a hash.
-A run that does not meet this specification is not used in the paper. **Audit A4 (17 Nov, F05) showed that the CI check below verifies only that fields and columns are present, not that hashes, inventories and counts are true; a fictitious run passes it. Until it is rebuilt (typed schema, artifact and hash verification, legacy allowlist) a green check is not evidence of complete provenance.** `scripts/pipeline/run_statement.py --check` checks it in CI
+A run that does not meet this specification is not used in the paper. Since 17 Nov 2026 (audit A4, F05) the check verifies artifacts, not only field names: the system prompt copy against its hash, every input file against its hash, the number of logical requests, completed and failed calls against `CALLS.csv`, token sums, returned model identifiers, and for classification runs every completed response text against its recorded hash. A run without `spec` that is not one of the three translation runs made before this date fails. Negative fixtures: `tests/test_run_record.py`. `scripts/pipeline/run_statement.py --check` checks it in CI
 for every run whose record carries `"spec": "run-record v1"`; the runs made before this date are listed in `docs/RUN_STATEMENT.md`
 with the fields they have and the fields they lack.
 
@@ -15,10 +15,10 @@ with the fields they have and the fields they lack.
 | `spec` | `run-record v1` |
 | `stage` | `talk_L1`, `talk_L2`, `translation`, `extraction_single`, `extraction_stage1`, `extraction_stage2` |
 | `purpose` | `development`, `production`, `replicate`, `cross_provider`; development runs are never a source of a number in the results |
-| `provider`, `interface` | e.g. `anthropic`, `Messages API, Message Batches`; a chat or agent product is not an admissible interface for a production run (hidden system prompt, no fixed model) |
+| `provider`, `interface` | `interface` is one of `anthropic.messages`, `anthropic.message_batches`, `openai.responses`, `openai.batch`, `openai.chat_completions`, `deepseek.chat_completions`, `deepseek.responses`. A chat or agent product is not an admissible interface (hidden system prompt, no fixed model) |
 | `model_requested`, `model_returned` | the identifier sent and every identifier the provider returned; if the provider offers a dated snapshot identifier, that one is requested |
 | `parameters` | every parameter sent, verbatim (max tokens, reasoning or thinking setting, effort, output format, tools = none); and for each parameter not sent: `provider default (not sent)` |
-| `system_prompt_file`, `system_prompt_version`, `system_sha256` | the file in `pipeline/prompts/` and its hash; the file at that hash is in the git history |
+| `system_prompt_file`, `system_prompt_version`, `system_sha256` | the file in `pipeline/prompts/` and its hash; **a byte copy of the prompt as sent is stored in the run folder as `SYSTEM_PROMPT.md`** and must have that hash |
 | `user_message_format` | how a request is built from the data (function and file, e.g. `scripts/units/context.py render()`), with `script_sha256` |
 | `packing` | units per request and the rule (one unit, one paragraph, one page) |
 | `inputs` | list of `{file, sha256, rows}`: the data files the requests were built from (units manifest, candidates, sample) |
@@ -32,13 +32,11 @@ with the fields they have and the fields they lack.
 
 ### CALLS.csv (one row per request)
 
-`request_key` (unit, page or document), `unit_ids` (for a packed request), `response_id` or `batch_id` + `custom_id`, `model_returned`,
-`stop_reason`, `started_utc`, `seconds`, `input_tokens`, `cached_input_tokens`, `output_tokens`, `reasoning_tokens`,
-`system_sha256`, `user_sha256`, `response_sha256`, `complete`, `parsed_ok`.
+`request_key` (the logical request: unit or document), `attempt` (1, 2, …; every attempt is a row, exactly one completed attempt per request), `unit_ids`, `response_id` (or batch id and custom id), `model_returned`, `stop_reason`, `started_utc`, `input_tokens`, `cached_input_tokens`, `output_tokens`, `reasoning_tokens`, `system_sha256`, `user_sha256`, `response_sha256`, `complete`, `parsed_ok`, `parse_error` (reason given by the strict parser `scripts/talk/parse_output.py`; a response that does not parse is a failed call, never a label).
 
 ### Responses
 
-- Classification (talk L1, L2): the responses hold only unit identifiers and labels, so they are committed in full (`RESPONSES.jsonl`).
+- Classification (talk L1, L2): the responses hold only unit identifiers and labels, so they are committed in full (`RESPONSES.jsonl`: one JSON object per attempt with `request_key`, `attempt`, `text`).
 - Translation and extraction: responses hold source text; only their hashes are committed, the files are kept in the authors' archive
   under an access procedure still to be specified in a rights and access manifest (issuer URL, retrieval date, version hash, locator, restriction).
   "Available on request" is not an acceptable statement for Data & Policy (audit A4, F13); until the manifest exists this is an open item, not a promise.
