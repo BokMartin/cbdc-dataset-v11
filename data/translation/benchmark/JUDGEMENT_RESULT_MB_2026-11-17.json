@@ -1,0 +1,99 @@
+{
+ "n_rows": 86,
+ "strata": {
+  "flagged": {
+   "rows": 56,
+   "not_judgeable_D": 12,
+   "judgeable": 44,
+   "S": {
+    "count": 19,
+    "share": 0.432,
+    "wilson95": [
+     0.297,
+     0.578
+    ]
+   },
+   "W": {
+    "count": 3,
+    "share": 0.068,
+    "wilson95": [
+     0.023,
+     0.182
+    ]
+   },
+   "X": {
+    "count": 4,
+    "share": 0.091,
+    "wilson95": [
+     0.036,
+     0.212
+    ]
+   },
+   "M": {
+    "count": 18,
+    "share": 0.409,
+    "wilson95": [
+     0.277,
+     0.556
+    ]
+   }
+  },
+  "control": {
+   "rows": 30,
+   "not_judgeable_D": 6,
+   "judgeable": 24,
+   "S": {
+    "count": 16,
+    "share": 0.667,
+    "wilson95": [
+     0.467,
+     0.82
+    ]
+   },
+   "W": {
+    "count": 1,
+    "share": 0.042,
+    "wilson95": [
+     0.007,
+     0.202
+    ]
+   },
+   "X": {
+    "count": 1,
+    "share": 0.042,
+    "wilson95": [
+     0.007,
+     0.202
+    ]
+   },
+   "M": {
+    "count": 6,
+    "share": 0.25,
+    "wilson95": [
+     0.12,
+     0.449
+    ]
+   }
+  }
+ },
+ "weighted_share_all_163_matched": {
+  "S": 0.586,
+  "W": 0.051,
+  "X": 0.059,
+  "M": 0.305
+ },
+ "all_rows": {
+  "M": 24,
+  "D": 18,
+  "S": 35,
+  "W": 4,
+  "X": 5
+ },
+ "judge": "MB",
+ "workbook_sha256": "c342e69fe2d6cc1ff85a0a667af07adecba4d7465fa6a541163c5c9153544b79",
+ "unmatched_supplement": {
+  "status": "not filled in",
+  "rows_filled": 0,
+  "rows": 30
+ }
+}

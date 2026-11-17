@@ -16,6 +16,13 @@ n = lambda x: f"{x:,}".replace(",", " ")
 day = lambda f: re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(f)).group(1)
 
 
+def judgement(files):
+    if not files: return "**not yet returned** (86 matched pairs + 30 unmatched sentences registered)"
+    d = json.load(open(sorted(files)[-1])); w = d["weighted_share_all_163_matched"]; un = d.get("unmatched_supplement"); un = un.get("status") if isinstance(un, dict) else un
+    return (f"matched pairs scored ({d.get('judge', '?')}, one judge): same meaning and strength {w['S']:.0%}, weaker {w['W']:.0%}, stronger {w['X']:.0%}, meaning differs {w['M']:.0%} "
+            f"(weighted to 163 matched sentences) · unmatched supplement: {'scored' if un == 'scored' else '**' + str(un) + '**'}")
+
+
 def block():
     C = collections.Counter
     fr = rows(os.path.join(ROOT, "data/frame/projects.csv")); n_frame = sum(r["analytic_frame"] == "True" for r in fr); n_nat = sum(r["retail_candidate"] == "True" for r in fr)
@@ -44,7 +51,7 @@ def block():
          f"| Machine translation | {len(runs)} API runs, {calls} calls, {len(tdocs)} documents translated (benchmark translations excluded) |",
          f"| Sentence units | {n(sum(int(r['units']) for r in U))} units; {n(s('D') + s('N') + s('R'))} candidates for classification (dictionary hits {n(s('D'))}, neighbours {n(s('N'))}, random control {n(s('R'))}) |",
          f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; scored: {'yes' if scored else '**not yet**'} · reference sample (400): {'drawn' if main else 'not drawn'} |",
-         f"| Human judgement of translation | {'scored' if judged else '**not yet returned**'} (86 matched pairs + 30 unmatched sentences registered) |",
+         f"| Human judgement of translation | {judgement(judged)} |",
          f"| Model classification of units | {'run' if glob.glob(os.path.join(ROOT, 'data/units/L1_*')) else '**not started** (no unit has been labelled by a model)'} |",
          f"| Tests in CI | {tests} |", E]
     return "\n".join(L)
