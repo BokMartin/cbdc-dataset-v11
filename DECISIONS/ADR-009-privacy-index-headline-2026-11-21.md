@@ -1,4 +1,4 @@
-# ADR-008 — Two-axis privacy index as a headline result of the article (21 Nov 2026)
+# ADR-009 — Two-axis privacy index as a headline result of the article (21 Nov 2026)
 
 **Status:** decision of MB, 21 Nov 2026 (two choices in the project thread: the index belongs in the article, 18:16; it is a key result, 18:17; form "B. two-axis index", 18:38). **DS to confirm.** Until DS confirms, the amendments in §4 are proposals and are not applied to `PROJECT_BRIEF.md` or the contract. **Related:** ADR-004 §4, ADR-005 §4, contract v12 §5, §7.7, §8; `docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md`; `scripts/derive_index.py`.
 
@@ -26,7 +26,7 @@ The sealed endorsement census of 2 Nov (model only, aggregate) found an admissib
 
 ## 4. Proposed amendments (not applied until DS confirms)
 
-- `PROJECT_BRIEF.md` §1, "What it will not claim": replace "No ranking of projects by amount of privacy talk" with "No ranking of projects by amount of privacy talk; projects are placed on the two-axis commitment-based privacy index (ADR-008), with intervals, and ordered only where the intervals do not overlap".
+- `PROJECT_BRIEF.md` §1, "What it will not claim": replace "No ranking of projects by amount of privacy talk" with "No ranking of projects by amount of privacy talk; projects are placed on the two-axis commitment-based privacy index (ADR-009), with intervals, and ordered only where the intervals do not overlap".
 - Contract v12, new §8.5 "Privacy index": the definition of §1 above, the sensitivity variants of the spec, and the rule that the definition is registered before F-cell production.
 - Contract v12 §7.7 unchanged: the type stays nominal; the index is a separate construct.
 

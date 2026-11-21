@@ -1,6 +1,6 @@
 # Privacy index: specification (DRAFT, 21 Nov 2026)
 
-Status: proposal implementing the decision of MB in [ADR-008](../DECISIONS/ADR-008-privacy-index-headline-2026-11-21.md); DS to confirm. Implementation: `scripts/derive_index.py`, tests `tests/test_derive_index.py` (synthetic cells only). Nothing here has been computed on project data.
+Status: proposal implementing the decision of MB in [ADR-009](../DECISIONS/ADR-009-privacy-index-headline-2026-11-21.md); DS to confirm. Implementation: `scripts/derive_index.py`, tests `tests/test_derive_index.py` (synthetic cells only). Nothing here has been computed on project data.
 
 ## 1. Construct
 
@@ -41,7 +41,7 @@ Strict vs status-attached; with F8 and F10; without route-D cells; without infer
 
 ## 8. Not done by the index
 
-No combination with talk labels; no difference of talk and commitment; no correlation with covariates in the article (proposal; open in ADR-008); no causal language.
+No combination with talk labels; no difference of talk and commitment; no correlation with covariates in the article (proposal; open in ADR-009); no causal language.
 
 ## 9. Literature to compare with (from memory, citation check pending)
 

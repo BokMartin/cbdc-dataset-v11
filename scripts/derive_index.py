@@ -1,4 +1,4 @@
-"""Two-axis CBDC privacy index (PROPOSAL; option B chosen by MB on 21 Nov 2026, DS to confirm; see docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md, ADR-008).
+"""Two-axis CBDC privacy index (PROPOSAL; option B chosen by MB on 21 Nov 2026, DS to confirm; see docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md, ADR-009).
 
 Axis 1, design privacy: how far the documented design keeps payments from being routinely attributed to persons,
 from the values of F1, F2, F4, F7 at any status (status-attached view, contract §5). Axis 2, commitment: how firmly
