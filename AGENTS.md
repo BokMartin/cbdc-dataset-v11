@@ -1,13 +1,14 @@
 # Working rules for any assistant on this repository
 
-Read [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) first: goal, pipeline, status, what has been audited. This file holds the rules that do not change from session to session. They were set by the authors (MB, DS) between October and November 2026; change them only on an author's instruction, and record the change in `DECISIONS/`.
+Read [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) first: goal, pipeline, status, what has been audited. Then [`HANDOFF.md`](HANDOFF.md): where the last session stopped, what waits for the authors, where the data outside the repository is. What the audits by a second model are for and what they found: [`docs/audits/README.md`](docs/audits/README.md). This file holds the rules that do not change from session to session. They were set by the authors (MB, DS) between October and November 2026; change them only on an author's instruction, and record the change in `DECISIONS/`.
 
 ## Every session
 
 1. **GitHub is the source of truth.** Start from `origin/main`. End by pushing, then wait for the `verify` workflow and confirm it is green before saying the work is done. A red run is reported to the authors the same day.
-2. **Update the brief.** Run `python scripts/pipeline/update_brief.py` and edit sections 4 and 5 of `PROJECT_BRIEF.md` if a step changed status. CI fails when the numbers block is stale.
-3. **Record decisions.** An author's decision goes into `data/manifest/AUTHOR_DECISIONS_<date>.csv` (documents) or an ADR (method), with who, when and the basis. A model proposal is labelled as a proposal until an author confirms it.
-4. **Dated files, never silent edits.** New state gets a new dated file or a dated row; superseded files leave through git, with the reason in the commit.
+2. **Update the handoff** (`HANDOFF.md`) when a session ends with work in progress or when the authors ask for it: state, open decisions, open engineering, location and hashes of data outside the repository.
+3. **Update the brief.** Run `python scripts/pipeline/update_brief.py` and edit sections 4 and 5 of `PROJECT_BRIEF.md` if a step changed status. CI fails when the numbers block is stale.
+4. **Record decisions.** An author's decision goes into `data/manifest/AUTHOR_DECISIONS_<date>.csv` (documents) or an ADR (method), with who, when and the basis. A model proposal is labelled as a proposal until an author confirms it.
+5. **Dated files, never silent edits.** New state gets a new dated file or a dated row; superseded files leave through git, with the reason in the commit.
 
 ## Roles
 

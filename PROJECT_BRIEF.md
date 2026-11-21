@@ -69,7 +69,7 @@ State of the data files as of **2026-11-17** (dates are those of the files, not 
 
 ## 4. Checklist, with what a second model has audited
 
-Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/ADR-001-consultation-2026-10-28-dispositions.md)) · **A2** independent audit, 2 Nov ([report](docs/audits/INDEPENDENT_AUDIT_OPENAI_2026-11-02.md), [ADR-002](DECISIONS/ADR-002-audit-2026-11-02.md)) · **A4** independent audit before the paid runs, 17 Nov ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md)) · **A3** independent audit, 13 Nov, of the work of 3 to 13 Nov up to commit `4d4f142` ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-13.md), [ADR-005](DECISIONS/ADR-005-audit-2026-11-13-dispositions.md)). An auditor never sees source documents, translations or sealed results, so document content and search completeness are outside every audit.
+Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/README.md). Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/ADR-001-consultation-2026-10-28-dispositions.md)) · **A2** independent audit, 2 Nov ([report](docs/audits/INDEPENDENT_AUDIT_OPENAI_2026-11-02.md), [ADR-002](DECISIONS/ADR-002-audit-2026-11-02.md)) · **A4** independent audit before the paid runs, 17 Nov ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md)) · **A3** independent audit, 13 Nov, of the work of 3 to 13 Nov up to commit `4d4f142` ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-13.md), [ADR-005](DECISIONS/ADR-005-audit-2026-11-13-dispositions.md)). An auditor never sees source documents, translations or sealed results, so document content and search completeness are outside every audit.
 
 | # | Step | Status | Audited by a second model | Checked by the authors |
 |---|---|---|---|---|
@@ -102,10 +102,10 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 
 ## 5. Next, in order
 
-1. **Audit A4 (17 Nov) returned NO-GO for calibration and for production** ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), 18 findings, 8 blockers; proposed dispositions in [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md), MB decided six points on 17 Nov, the rest awaits the authors). No paid call before the repairs. Target kept by MB: everything by the end of November, mid-December at the latest.
-2. Repairs that need no author decision (pipeline author): translation ingest that fails closed, run-record check that verifies artifacts, canonical input identity and exposure registry, strict output parser, three-provider runner tested offline. Decisions that only the authors can make: scope for November (talk layer) against December (commitment layer), blank double coding of voice and aspect, the meaning of "U", issuer and voice metadata, translation of 14 T3 documents, the Israel duplicate.
+1. **Audit A4 (17 Nov) returned NO-GO for calibration and for production** ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), 18 findings, 8 blockers; dispositions and MB's decisions of 17 Nov in [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md); state of each finding in [docs/audits/README.md](docs/audits/README.md), section 5). No paid call before the repairs. Target kept by MB: everything by the end of November, mid-December at the latest.
+2. **What waits for whom is listed in [HANDOFF.md](HANDOFF.md)**, sections 4 and 5. In short: the authors adjudicate their disagreements on relevance and on the translation benchmark (the codebook is repaired from that), decide on blank coding of voice and aspect, adopt contract v12 and review issuer metadata; the pipeline author builds the runner, the exposure registry and the v12 extraction instrument. Then a capability probe, development rounds, a confirmation set and audit A5.
 3. Facets: relevance validated independently; the others verified with planted errors (ADR-006 A, replacing the blind facet coding of [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md)).
-4. Third audit of the post-13-Nov changes; freeze; register.
+4. Audit A5 of everything changed since A4; freeze; register.
 5. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.
 6. F-cell extraction and blind reference on the v12 corpus; talk against commitment; paper.
 
@@ -117,6 +117,8 @@ Audits so far: **A1** external consultation, 28 Oct 2026 ([ADR-001](DECISIONS/AD
 |---|---|
 | Decisions and why | `DECISIONS/ADR-001` to `ADR-005` |
 | Which document is evidence | `data/manifest/TIERS_<date>.csv`, `AUTHOR_DECISIONS_*.csv`, [source rule](docs/SOURCE_RULE_D1.md) |
+| Where the last session stopped; what waits for the authors; data outside the repository | [HANDOFF.md](HANDOFF.md) |
+| What the audits are for, their rules, register and open findings | [docs/audits/README.md](docs/audits/README.md) |
 | Translation procedure and benchmark | [docs/TRANSLATION_PROCEDURE.md](docs/TRANSLATION_PROCEDURE.md) |
 | Which documents are read, by project (208 documents, 42 of 44 projects) | [data/manifest/CORPUS_COVERAGE_2026-11-17.csv](data/manifest/CORPUS_COVERAGE_2026-11-17.csv), [CORPUS_DOCUMENTS_2026-11-17.csv](data/manifest/CORPUS_DOCUMENTS_2026-11-17.csv) |
 | Models, prompts, inputs and settings of every run (what the paper states) | [docs/RUN_STATEMENT.md](docs/RUN_STATEMENT.md), rules in [docs/RUN_RECORD_SPEC.md](docs/RUN_RECORD_SPEC.md) |
