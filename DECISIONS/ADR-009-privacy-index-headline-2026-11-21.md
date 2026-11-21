@@ -10,36 +10,39 @@ The sealed endorsement census of 2 Nov (model only, aggregate) found an admissib
 
 ## Decision (MB)
 
+The current design is version 2 (MB, 21 Nov 21:31 and 21:44; spec §12). Where spec §2 to §4 describe the earlier version, spec §12 is the valid proposal.
+
 1. The article reports a **two-axis privacy index** per project as a key result:
-   - **Axis 1, stated design (any status):** how far the design that the documents describe keeps a retail payment from being routinely attributed to an identified person, from the values of F1, F2, F4 and F7 at any decision or implementation status (the status-attached view of contract §5). Reported as an interval [lower, upper]: undetermined components are bounded, never filled. *Revised after the review of 21 Nov (proposal):* lexicographic aggregation, F1 first, then the mean of F2, F4, F7, instead of a cap.
-   - **Axis 2, commitment:** the rung of each component (considered 1, tested 2, endorsed 3, operational 4), reported as a profile and as the number of components at rung 3 or above out of 4 (*revised: no mean of ranks*).
+   - **Axis 1, stated design (any status):** how far the design that the documents describe keeps a retail payment from being routinely attributed to an identified person, from the eight privacy cells **F1, F2, F3, F4, F7, F8, F9, F10** at any decision or implementation status (the status-attached view of contract §5). Aggregation is the **compensatory mean** of the eight cells (scores in spec §12.1), reported as an interval [lower, upper]: undetermined cells are bounded, never filled. The lexicographic rule (F1 first), the cap and the four-cell version (F1, F2, F4, F7) are sensitivity variants only.
+   - **Axis 2, commitment:** the rung of each of the eight cells (considered 1, tested 2, endorsed 3, operational 4), reported as a profile and as the number of cells at rung 3 or above out of 8. No mean of ranks.
    - Status never enters axis 1; the two axes are never multiplied or summed.
-2. The index on admissible cells only (rule C) is reported for every project as the robustness check. Whether to swap primary and robustness is open (review item 1).
-3. Talk labels never enter the index. ADR-004 §4 and the ban on a difference of a talk and a commitment index stand.
+2. The index on admissible cells only (rule C) is reported for every project as the robustness check. Whether to swap primary and robustness is open.
+3. **Privacy talk stays beside the index** (MB, 21 Nov 21:44). It is set against commitments on the six aspects that have a matching cell, as a gap by aspect: per project, the number of aspects talked about without an admissible commitment (a count of 2 × 2 cells, spec §12.2). Talk labels never enter the index; ADR-004 §4 and the ban on a difference of a talk and a commitment index stand.
+4. MB's expectation (much talk, little commitment) is registered before any data as hypotheses H-TC1 (talk against decided commitments, descriptive only) and H-TC2 (talk against stated design, the discriminating test); spec §12.3.
 
-## Revision of 21 Nov 21:31 (MB): all F-cells and talk against commitments
-
-MB: an index that rests on F1 alone is useless; all F-cells must matter, privacy statements must come in, and a key output is privacy talk against commitments, with the expectation that there is much talk and little commitment. Proposal in spec §12: the design index uses the eight privacy cells F1, F2, F3, F4, F7, F8, F9, F10 with a compensatory mean (lexicographic and cap only in sensitivity); talk is set against commitments on the six aspects with a matching cell, as counts of 2 × 2 cells per project; MB's expectation is registered as hypotheses H-TC1 (descriptive) and H-TC2 (the discriminating test) before any data. **MB decided on 21 Nov (21:44): talk stays beside the index, set against commitments as a gap by aspect; it does not become a component of the index.** This keeps ADR-004 §4 and ADR-005. DS to confirm. Spec §12.4 lists every earlier decision this touches; all need DS.
+*History.* MB chose the two-axis form on 21 Nov at 18:38, first on F1, F2, F4, F7 with F1 as a gate. After the review the gate became a lexicographic rule, and the mock dry run showed the index rested almost only on F1. MB then decided (21:31) that all F-cells must matter and that talk against commitments is a key output; spec §12.4 lists every earlier decision this touches.
 
 ## Open (for DS and MB before the freeze)
 
-- Lexicographic rule (proposal, replaces the cap of 0.5); equal weights of F2, F4, F7 (proposal); F8 and F10 only in sensitivity (proposal).
-- Blind double coding of F1, F2, F4, F7 for all 44 projects, 176 cells (proposal after the review; MB approved preparing it on 21 Nov), alpha per cell, disagreement widens the interval.
+- Compensatory mean with equal weights over the eight cells (proposal); lexicographic rule, cap and four-cell version as sensitivity only.
+- Direction of F3 and F9 (a documented access route or re-identification process can also be read as a safeguard); a sensitivity variant drops them.
+- Blind double coding of all eight cells for 44 projects, 352 cells (template ready); alternative: all 44 projects for F1, F2, F4, F7 and a sample of 16 for F3, F8, F9, F10. Alpha per cell; a disagreement widens the interval.
+- Talk layer for the gap: blind double coding of voice and aspect, and repair of relevance (alpha 0.46); spec §12.5.
 - Known cases and external measures for validity (spec §10.2); filling a known case for an unexposed project exposes it.
-- Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only.
-- Order of cuts if time runs short (audit A3 item 18): proposal to put F1 to F4, F7, F8 before the talk facets.
+- Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only (mock: about 4 % of pairs separated, so the index is a profile per project).
+- Order of cuts if time runs short (spec §12.5): keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10.
 - Whether the index is correlated with covariates in the article (proposal: no; H2 stays on Y1, exploratory).
 - Cells resting only on an "inclined but unconfirmed" document (LEANING, ADR-010 in PR 3): proposal in spec §12.6, bound only in the primary index, scored in the `with_leaning` variant, flag `rests_on_leaning`; never counted as a commitment.
 
 ## 4. Proposed amendments (not applied until DS confirms)
 
 - `PROJECT_BRIEF.md` §1, "What it will not claim": replace "No ranking of projects by amount of privacy talk" with "No ranking of projects by amount of privacy talk; projects are placed on the two-axis commitment-based privacy index (ADR-009), with intervals, and ordered only where the intervals do not overlap".
-- Contract v12, new §8.5 "Privacy index": the definition of §1 above, the sensitivity variants of the spec, and the rule that the definition is registered before F-cell production.
+- Contract v12, new §8.5 "Privacy index": the definition of the Decision above (version 2), the sensitivity variants of the spec, and the rule that the definition is registered before F-cell production.
 - Contract v12 §7.7 unchanged: the type stays nominal; the index is a separate construct.
 
 ## Consequences
 
 - The critical path moves from the talk layer to the F-cell instrument at v12 (HANDOFF §5 item 6), which waits for the adoption of contract v12 (HANDOFF §4 decision 4).
 - The index definition is part of the material of audit A5.
-- Tests MB asked for on 21 Nov (19:36) are prepared on synthetic data: uncertainty and sensitivity analysis (runs now), coding reliability and validity (scripts, input formats and a checklist V1 to V8 in spec §10, to run once the F-cells exist).
+- Tests MB asked for on 21 Nov (19:36) are prepared on synthetic data: uncertainty and sensitivity analysis (runs now), coding reliability and validity (scripts, input formats and a checklist V1 to V8 in spec §10, to run once the F-cells exist). Mock dry runs of version 2 are in `data/index/mock/`, labelled MOCK.
 - Cost of the index itself: none (deterministic script). Cost of the F-cells: as HANDOFF §8.
