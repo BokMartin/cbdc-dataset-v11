@@ -180,3 +180,13 @@ Per pair: **talk** = at least one own-voice relevant unit on the aspect; **commi
 - **Talk layer:** the gap needs relevance, voice and aspect to be valid. Relevance between the authors is at alpha 0.46 (below the 0.667 of the protocol) and is being repaired; voice and aspect have never been coded blind. So: adjudication and codebook repair, then blank double coding of voice and aspect on 80 to 120 units (HANDOFF decision 1), then the model run of the talk layer (paid, three providers, ADR-006).
 - **Commitment layer:** blind double coding of all eight cells for 44 projects is 352 cells (the template is ready), double the four-cell plan; alternative: all 44 projects for F1, F2, F4, F7 and a sample of 16 for F3, F8, F9, F10.
 - **Timeline:** both layers are now on the critical path. With the deadline of 31 Dec this is only feasible if contract v12 (with the F3/F9/F10 changes) and the talk codebook repair are both settled by early December. If time runs short, the order of cuts proposed is: keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10 (they stay in the index with a "model, verified" label).
+
+### 12.6 Cells resting on an "inclined" document (LEANING; proposal, follows ADR-010 in PR 3)
+
+MB (21 Nov 23:29) wants documents that strongly suggest a future retail CBDC without confirming it (for example the BoE and MIT report, Tourbillon, Helvetia, wholesale experiments) kept as "heavily inclined but unconfirmed". A cell whose only value comes from such a document carries the status LEANING (`decision_status = leaning` or `leaning = true`). Proposed handling, for MB and DS to confirm:
+
+- **Primary index:** a LEANING cell is not scored. It only bounds the interval, as an undetermined cell does (nothing is inferred from an inclined document).
+- **Variant `with_leaning`:** the LEANING cell is scored at its value. Reported as a sensitivity column (`with_leaning_lower`, `with_leaning_upper`).
+- **Flag `rests_on_leaning`:** set when LEANING cells are at least half of the determined cells; such a project is reported with a note.
+- **Commitment axis and talk gap:** LEANING never counts as stated or committed (rung 0); `pair_state` marks the pair with `leaning` so the table can show it.
+- A value from the project's own document always wins over a LEANING value.

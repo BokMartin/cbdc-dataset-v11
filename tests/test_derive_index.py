@@ -121,7 +121,7 @@ def test_known_cases_and_external():
 
 def test_talk_commitment_pairs_and_bounds():
     cells = {"F1": cell("no"), "F2": cell("no", dec="considered"), "F4": {**cell("yes", dec="considered"), "coder_disagreement": "true"}}
-    assert pair_state(5, cells, "CB_ACCESS") == {"talk": True, "commitment": "admissible", "max_rung": 3}
+    assert pair_state(5, cells, "CB_ACCESS") == {"talk": True, "commitment": "admissible", "max_rung": 3, "leaning": False}
     assert pair_state(5, cells, "INTERMEDIARY_DATA")["commitment"] == "stated"
     assert pair_state(0, cells, "ANONYMITY")["commitment"] == "none"
     assert pair_state(1, cells, "OFFLINE")["commitment"] == "uncertain"
@@ -181,3 +181,15 @@ def test_website_never_reads_index_mock():
             if f.endswith((".html", ".js", ".json", ".py")):
                 assert "data/index" not in open(os.path.join(d, f), encoding="utf-8", errors="ignore").read(), f
     assert "data/index" not in open(os.path.join(ROOT, "scripts/site/build_site_data.py")).read()
+
+
+def test_leaning_cells_bound_only_in_primary():
+    lean = {"value": "no", "evidence_state": "documented", "decision_status": "leaning"}
+    c = {"F1": lean, "F2": lean, "F4": cell("yes")}
+    r = privacy_index(c)
+    assert r["stated"]["determined"] == 1 and r["admissible"]["determined"] == 1
+    assert r["stated_with_leaning"]["determined"] == 3 and r["stated_with_leaning"]["rests_on_leaning"]
+    assert r["commitment"]["profile"]["F1"] == 0 and r["commitment"]["leaning"] == ["F1", "F2"]
+    assert pair_state(3, c, "CB_ACCESS")["commitment"] == "none" and pair_state(3, c, "CB_ACCESS")["leaning"]
+    own = dict(c, F1=cell("yes"))  # a value from the competent body's own documents replaces the leaning
+    assert privacy_index(own)["stated"]["components"]["F1"] == 0

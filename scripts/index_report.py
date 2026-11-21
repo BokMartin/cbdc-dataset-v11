@@ -78,7 +78,9 @@ def _table_rows(index, tiers):
                      "stated_lower": s["lower"], "stated_upper": s["upper"], "stated_width": s["width"],
                      "admissible_lower": ad["lower"], "admissible_upper": ad["upper"],
                      "rungs_" + "_".join(CORE): "-".join(str(cm["profile"][f]) for f in CORE), "decided": cm["decided"],
-                     "determined": s["determined"], "n_cells": s["n_components"]})
+                     "determined": s["determined"], "n_cells": s["n_components"],
+                     "with_leaning_lower": x["stated_with_leaning"]["lower"], "with_leaning_upper": x["stated_with_leaning"]["upper"],
+                     "rests_on_leaning": x["stated_with_leaning"]["rests_on_leaning"]})
     return rows
 
 

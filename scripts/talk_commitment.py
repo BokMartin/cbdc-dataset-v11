@@ -17,7 +17,7 @@ project-level quantity is then given as bounds (uncertain counted as committed: 
 import math
 import random
 
-from derive_index import rung
+from derive_index import is_leaning, rung
 
 ASPECT_CELLS = {  # talk aspect (codebook v0.3) -> F-cells that can carry a commitment on it
     "CB_ACCESS": ("F1",),
@@ -48,7 +48,8 @@ def pair_state(talk_units, cells, aspect):
         commitment = "stated"
     else:
         commitment = "none"
-    return {"talk": (talk_units or 0) > 0, "commitment": commitment, "max_rung": max(rungs)}
+    return {"talk": (talk_units or 0) > 0, "commitment": commitment, "max_rung": max(rungs),
+            "leaning": any(is_leaning(cells.get(f)) for f in mapped)}  # LEANING never counts as stated or committed
 
 
 def project_summary(talk, cells):

@@ -50,9 +50,20 @@ CAP = 0.5
 RUNG = {"considered": 1, "tested": 2, "endorsed": 3, "operational": 4}
 
 
-def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=False):
-    """1 protective, 0 not protective, None undetermined. view: 'stated' (any status) or 'admissible' (rule C)."""
+def is_leaning(cell):
+    """Cell status LEANING (ADR-010 draft, PR 3): a value taken from an INCLINED document, set only when no document of
+    the competent body gives one. Never a commitment."""
+    return bool(cell) and (str(cell.get("decision_status", "")).strip().lower() == "leaning"
+                           or str(cell.get("leaning", "")).strip().lower() in ("true", "1", "yes"))
+
+
+def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=False, include_leaning=False):
+    """1 protective, 0 not protective, None undetermined. view: 'stated' (any status) or 'admissible' (rule C).
+    A LEANING cell is undetermined in the primary index (it only bounds the interval); include_leaning=True scores it
+    at its value (sensitivity variant, never in the admissible view)."""
     if not cell:
+        return None
+    if is_leaning(cell) and (not include_leaning or view == "admissible"):
         return None
     if view == "admissible" and not admissible(cell, categorical=set(SCORE[fid]) if fid == "F3" else None):
         return None
@@ -74,6 +85,8 @@ def rung(cell, fid=None):
     valid = set(SCORE[fid]) if fid in SCORE else {"yes", "no"}
     if not cell or str(cell.get("value", "")).strip().lower() not in valid:
         return 0
+    if is_leaning(cell):
+        return 0  # below every status of the competent body's own documents
     dec, impl = _status(cell)
     if dec in ("rejected", "superseded"):
         return 0
@@ -112,22 +125,27 @@ def axis1(cells, rule="mean", weights=None, include=(), drop=(), cells_used=CORE
         lo, hi = _wmean(comp, w, 0), _wmean(comp, w, 1)
         if rule == "cap" and f1 == 0:  # only a DETERMINED non-protective F1 caps (fixes the bug found in review)
             lo, hi = min(lo, CAP), min(hi, CAP)
+    leaning = [f for f in comps if is_leaning(cells.get(f)) and comp[f] is not None]
+    determined = sum(v is not None for v in comp.values())
     return {"lower": round(lo, 4), "upper": round(hi, 4), "width": round(hi - lo, 4), "components": comp, "rule": rule,
-            "determined": sum(v is not None for v in comp.values()), "n_components": len(comp)}
+            "determined": determined, "n_components": len(comp), "leaning_scored": leaning,
+            "rests_on_leaning": bool(leaning) and len(leaning) * 2 >= determined}
 
 
 def axis2(cells, cells_used=CORE):
     """Commitment profile: rung per cell and the count at rung >= 3 (endorsed or operational) out of all cells."""
     profile = {f: rung(cells.get(f), f) for f in cells_used}
     return {"profile": profile, "decided": sum(r >= 3 for r in profile.values()), "n_cells": len(profile),
-            "stated_only": sum(1 <= r <= 2 for r in profile.values())}
+            "stated_only": sum(1 <= r <= 2 for r in profile.values()),
+            "leaning": [f for f in cells_used if is_leaning(cells.get(f))]}
 
 
 def privacy_index(cells, **kw):
     """Both axes plus the admissible-only robustness interval."""
     kw.pop("view", None)
     return {"stated": axis1(cells, view="stated", **kw), "commitment": axis2(cells),
-            "admissible": axis1(cells, view="admissible", **kw)}
+            "admissible": axis1(cells, view="admissible", **kw),
+            "stated_with_leaning": axis1(cells, view="stated", include_leaning=True, **kw)}
 
 
 # ---------- separation of projects (diagnostic until DS confirms ordering, review item 8) ----------
@@ -187,6 +205,7 @@ def uncertainty_analysis(projects, draws=500, seed=20261121, view="stated"):
     out["without_F3_F9_kept"] = kept({p: axis1(c, view=view, drop=AMBIGUOUS) for p, c in projects.items()})
     out["core4_only_kept"] = kept({p: axis1(c, view=view, cells_used=CORE4) for p, c in projects.items()})
     out["no_route_D_kept"] = kept({p: axis1(c, view=view, exclude_route_d=True) for p, c in projects.items()})
+    out["with_leaning_kept"] = kept({p: axis1(c, view=view, include_leaning=True) for p, c in projects.items()})
     out["no_inferred_kept"] = kept({p: axis1(c, view=view, exclude_inferred=True) for p, c in projects.items()})
     return out
 

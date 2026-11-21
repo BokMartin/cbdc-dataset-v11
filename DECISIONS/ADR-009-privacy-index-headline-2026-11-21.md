@@ -29,6 +29,7 @@ MB: an index that rests on F1 alone is useless; all F-cells must matter, privacy
 - Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only.
 - Order of cuts if time runs short (audit A3 item 18): proposal to put F1 to F4, F7, F8 before the talk facets.
 - Whether the index is correlated with covariates in the article (proposal: no; H2 stays on Y1, exploratory).
+- Cells resting only on an "inclined but unconfirmed" document (LEANING, ADR-010 in PR 3): proposal in spec §12.6, bound only in the primary index, scored in the `with_leaning` variant, flag `rests_on_leaning`; never counted as a commitment.
 
 ## 4. Proposed amendments (not applied until DS confirms)
 
