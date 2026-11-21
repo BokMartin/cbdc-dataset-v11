@@ -35,7 +35,7 @@ Proposed rule:
 
 1. **LEANING** is a cell status of its own, below every status the policy maker's own documents can give (contract v12 status axis). It records what an INCLINED document says about a cell; it is never a commitment.
 2. It is set only when no KEEP or BORDERLINE document of the competent body yields a value for that cell. A value from the policy maker's own documents always replaces it; a conflict between the two is listed, not resolved in favour of the leaning.
-3. It needs a located verbatim quote under the same rules A to C as any claim (no inference from silence); the claim record carries `source_status = INCLINED`.
+3. It needs a located verbatim quote under the same rules A to C as any claim (no inference from silence); the claim record carries `source_status = INCLINED` and the cell `decision_status = leaning`, the field the index script of PR 2 reads (`is_leaning()` in `scripts/derive_index.py`).
 4. Results and the website show it with its own label. Every cell count, table and figure of the commitment layer is reported twice: confirmed only, and confirmed plus LEANING, consistent with point A.
 
 ### Consequence for the privacy index (PR 2, ADR-009)
