@@ -52,11 +52,12 @@ def block():
     tdocs = {r["doc_key"] for r in tm if r["status"] == "ok" and r["priority"] != "BENCH"}
     dev = glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_SAMPLE_dev_*.csv")); main = glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_SAMPLE_main_*.csv"))
     scored = glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_RESULT_*.json")); judged = glob.glob(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_RESULT_*.json"))
+    ncand = sum(r["decision_v12"] == "CANDIDATE" for r in T); cand_note = f" or, for {ncand} candidates, awaiting one" if ncand else ""
     master = rows(latest("data/manifest/MASTER_MANIFEST_*.csv")); tests = sum(len(re.findall(r"(?m)^def test_", open(f, encoding="utf-8").read())) for f in glob.glob(os.path.join(ROOT, "tests/test_*.py")))
     L = [B, f"State of the data files as of **{max(day(tf), day(uf))}** (dates are those of the files, not of the day you read this).", "",
          "| | |", "|---|---|",
          f"| Analytic frame | **{n_frame} projects** = {n_nat} national retail candidates + the digital euro |",
-         f"| Official documents collected | {len(master)} files in the master folder; {len(T)} document rows, each with an author or model decision |",
+         f"| Official documents collected | {len(master)} files in the master folder; {len(T)} document rows, each with an author or model decision{cand_note} |",
          f"| Evidence documents (in the frame) | **{len(pubs)} publications** ({len(ev)} rows); {by_author} of {len(ev)} decided or confirmed by an author |",
          f"| Companion documents (in the frame) | {len(comp)}, cited for status and timeline; linked to evidence of the same year {sum(r['link_basis'] == 'same year' for r in comp)}, of the nearest year {sum(r['link_basis'].startswith('nearest') for r in comp)}, no link {sum(not (r['link_basis'] == 'same year' or r['link_basis'].startswith('nearest')) for r in comp)}; {sum(r['decision_source'].startswith('author') for r in comp)} reviewed by an author |",
          f"| Tiers by number of evidence publications | T1 (8+): {len(tiers['T1'])} · {', '.join(sorted(tiers['T1']))}<br>T2 (5 to 7): {len(tiers['T2'])} · {', '.join(sorted(tiers['T2']))}<br>T3 (4 or fewer): {len(tiers['T3'])} |",

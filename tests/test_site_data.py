@@ -15,7 +15,7 @@ def test_site_data_is_current():
 
 
 def test_every_document_of_the_manifest_is_listed_once():
-    tiers = list(csv.DictReader(open(os.path.join(ROOT, "data", "manifest", "TIERS_2026-11-17.csv"), encoding="utf-8")))
+    tiers = list(csv.DictReader(open(os.path.join(ROOT, "data", "manifest", "TIERS_2026-11-21.csv"), encoding="utf-8")))
     ids = [d["id"] for d in load("documents.json")["documents"]]
     assert sorted(ids) == sorted(t["id"] for t in tiers)
 
@@ -24,7 +24,7 @@ def test_frame_is_44_projects_and_counts_match_brief():
     projects = load("projects.json")["projects"]
     frame = [p for p in projects if p["frame"]]
     assert len(frame) == 44
-    assert sum(p["pubs"] for p in frame) == 229  # evidence publications, PROJECT_BRIEF section 3
+    assert sum(p["pubs"] for p in frame) == 218  # evidence publications after 11 moved to INCLINED (MB 21 Nov, ADR-010), PROJECT_BRIEF section 3
 
 
 def test_no_measurement_fields_leak():

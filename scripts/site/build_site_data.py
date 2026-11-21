@@ -3,7 +3,7 @@
 
 What the site shows, and only that:
   * the analytic frame (44 projects) and the official project status of 17 Oct 2026 with its source;
-  * every document the project holds (772 rows of TIERS), with the authors' decision on it
+  * every document the project holds (776 rows of TIERS, 4 of them candidates awaiting an author), with the authors' decision on it
     (evidence / companion / dropped / wholesale), who made the decision (an author, or a model proposal not yet
     confirmed), language, how an English text was obtained, the issuer's URL and the SHA-256 of the file we hold;
   * corpus counts per project (documents, years, tiers).
@@ -13,7 +13,8 @@ What it never shows (AGENTS.md): source text, unit texts, translations other tha
 Internal notes of the registry and of the pre-screen are not copied either.
 
 Inputs (all under data/):
-  manifest/TIERS_2026-11-17.csv               one row per document, decision of record, tier, language, SHA-256
+  manifest/TIERS_2026-11-21.csv               one row per document, decision of record, tier, language, SHA-256
+                                              (rows with decision CANDIDATE await an author: CANDIDATES_NIJSSE_PINTO_2026-11-21.csv)
   manifest/CORPUS_DOCUMENTS_2026-11-17.csv    evidence documents with English text: issuer, kind, text route
   manifest/ISSUERS_2026-11-13.csv             issuer and kind of evidence documents (model pre-fill, under review)
   manifest/COMPANION_LINKS_2026-11-13.csv     companions: kind, role, URL, linked evidence
@@ -38,7 +39,7 @@ import csv, hashlib, io, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 D = lambda *p: os.path.join(ROOT, "data", *p)
-TIERS = "TIERS_2026-11-17.csv"
+TIERS = "TIERS_2026-11-21.csv"
 CORPUS = "CORPUS_DOCUMENTS_2026-11-17.csv"
 
 
@@ -56,7 +57,7 @@ NAMES = {"EU": "Euro area", "ECCU": "Eastern Caribbean Currency Union", "BCEAO":
          "BIS": "Bank for International Settlements", "UN": "United Nations"}
 NOT_GEO = {"BIS", "UN"}
 STATUS_ORDER = ["LIVE", "PILOT", "PREPARATION", "EXPLORATION", "PAUSED", "DISCONTINUED", "UNRESEARCHED", "NONE", "BANNED", "NA"]
-CATEGORY = {"KEEP": "evidence", "BORDERLINE": "evidence", "COMPANION": "companion", "DROP": "dropped", "WHOLESALE": "wholesale"}
+CATEGORY = {"KEEP": "evidence", "BORDERLINE": "evidence", "COMPANION": "companion", "DROP": "dropped", "WHOLESALE": "wholesale", "CANDIDATE": "candidate", "INCLINED": "inclined"}
 LANG = {"en": "English", "es": "Spanish", "zh": "Chinese", "sl": "Slovenian", "ru": "Russian", "fr": "French", "de": "German",
         "nl": "Dutch", "fi": "Finnish", "cs": "Czech", "pt": "Portuguese", "nb": "Norwegian", "no": "Norwegian", "is": "Icelandic",
         "ja": "Japanese", "id": "Indonesian", "ne": "Nepali", "hr": "Croatian", "hu": "Hungarian", "tr": "Turkish", "sk": "Slovak",
@@ -140,6 +141,9 @@ def build():
         add(r["doc_id"], r["url"])
     for r in comp.values():
         add(r["id"], r["url"])
+    np_cand = {r["cand_id"]: r for r in read(D("manifest", "CANDIDATES_NIJSSE_PINTO_2026-11-21.csv"))}
+    for r in np_cand.values():
+        add(r["cand_id"], r["pdf_url"] or r["url"])
     by_sha = {}
     for r in read(D("manifest", "MANUAL_DOWNLOADS_2026-11-10.csv")):
         if r["sha256"] and r["url"].startswith("http"):
@@ -188,8 +192,8 @@ def build():
             title, title_from_file = read_titles[i]["title"], False
             title_read = 0 if read_titles[i]["checked_by_author"] == "yes" else 1
         lang = (t["language"] or "").replace("mixed:", "")
-        issuer = c.get("issuer") or s.get("issuer") or (g or {}).get("issuer") or lic_doc.get(i, {}).get("institution") or ""
-        kind = c.get("kind") or s.get("kind") or k.get("kind") or (g or {}).get("doc_type") or r.get("doc_kind") or ""
+        issuer = c.get("issuer") or s.get("issuer") or (g or {}).get("issuer") or np_cand.get(i, {}).get("issuer") or lic_doc.get(i, {}).get("institution") or ""
+        kind = c.get("kind") or s.get("kind") or k.get("kind") or (g or {}).get("doc_type") or np_cand.get(i, {}).get("doc_type") or r.get("doc_kind") or ""
         cat = CATEGORY[t["decision_v12"]]
         text = c.get("text_read", "")
         if cat == "evidence" and not text:
@@ -231,7 +235,7 @@ def build():
             "status": stat, "status_date": st.get("status_date", ""), "status_url": st.get("source_url", ""),
             "tier": tier if fr.get("analytic_frame") == "True" else "",
             "geo": ids, "members": members if code in MEMBERS else [],
-            "n": {c: sum(1 for d in mine if d["c"] == c) for c in ("evidence", "companion", "dropped", "wholesale")},
+            "n": {c: sum(1 for d in mine if d["c"] == c) for c in ("evidence", "inclined", "companion", "dropped", "wholesale", "candidate")},
             "pubs": len(pubs),
             "ev_years": [ev_years[0], ev_years[-1]] if ev_years else [],
             "ev_by_year": {str(y): len({d["same"] or d["id"] for d in ev if d["y"] == y}) for y in ev_years},
