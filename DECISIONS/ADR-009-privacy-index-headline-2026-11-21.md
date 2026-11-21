@@ -11,16 +11,18 @@ The sealed endorsement census of 2 Nov (model only, aggregate) found an admissib
 ## Decision (MB)
 
 1. The article reports a **two-axis privacy index** per project as a key result:
-   - **Axis 1, design privacy:** how far the documented design keeps a retail payment from being routinely attributed to an identified person, from the values of F1, F2, F4 and F7 at any decision or implementation status (the status-attached view of contract §5). Reported as an interval [lower, upper]: undetermined components are bounded, never filled. A determined F1 = yes caps the index.
-   - **Axis 2, commitment:** how firmly that design is held: considered 1, tested 2, endorsed 3, operational 4, averaged over the components that have a value.
+   - **Axis 1, stated design (any status):** how far the design that the documents describe keeps a retail payment from being routinely attributed to an identified person, from the values of F1, F2, F4 and F7 at any decision or implementation status (the status-attached view of contract §5). Reported as an interval [lower, upper]: undetermined components are bounded, never filled. *Revised after the review of 21 Nov (proposal):* lexicographic aggregation, F1 first, then the mean of F2, F4, F7, instead of a cap.
+   - **Axis 2, commitment:** the rung of each component (considered 1, tested 2, endorsed 3, operational 4), reported as a profile and as the number of components at rung 3 or above out of 4 (*revised: no mean of ranks*).
    - Status never enters axis 1; the two axes are never multiplied or summed.
-2. The strict index on admissible cells only (rule C) is reported as the robustness check.
+2. The index on admissible cells only (rule C) is reported for every project as the robustness check. Whether to swap primary and robustness is open (review item 1).
 3. Talk labels never enter the index. ADR-004 §4 and the ban on a difference of a talk and a commitment index stand.
 
 ## Open (for DS and MB before the freeze)
 
-- Cap of the F1 gate (proposal 0.5); equal weights of the four dimensions (proposal); F8 and F10 only in sensitivity (proposal).
-- Scope of the blind human reference for F2, F4, F7 in addition to F1 (all projects, or the 16-project sample of contract §10).
+- Lexicographic rule (proposal, replaces the cap of 0.5); equal weights of F2, F4, F7 (proposal); F8 and F10 only in sensitivity (proposal).
+- Blind double coding of F1, F2, F4, F7 for all 44 projects, 176 cells (proposal after the review; MB approved preparing it on 21 Nov), alpha per cell, disagreement widens the interval.
+- Known cases and external measures for validity (spec §10.2); filling a known case for an unexposed project exposes it.
+- Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only.
 - Order of cuts if time runs short (audit A3 item 18): proposal to put F1 to F4, F7, F8 before the talk facets.
 - Whether the index is correlated with covariates in the article (proposal: no; H2 stays on Y1, exploratory).
 
@@ -34,4 +36,5 @@ The sealed endorsement census of 2 Nov (model only, aggregate) found an admissib
 
 - The critical path moves from the talk layer to the F-cell instrument at v12 (HANDOFF §5 item 6), which waits for the adoption of contract v12 (HANDOFF §4 decision 4).
 - The index definition is part of the material of audit A5.
+- Tests MB asked for on 21 Nov (19:36) are prepared on synthetic data: uncertainty and sensitivity analysis (runs now), coding reliability and validity (scripts, input formats and a checklist V1 to V8 in spec §10, to run once the F-cells exist).
 - Cost of the index itself: none (deterministic script). Cost of the F-cells: as HANDOFF §8.
