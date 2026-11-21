@@ -17,13 +17,13 @@ Status: **proposal** written by the pipeline assistant from MB's answers of 21 N
 | | KEEP / BORDERLINE (evidence) | INCLINED (proposed) | COMPANION |
 |---|---|---|---|
 | Listed and cited on the website | yes | yes, with its own label | yes |
-| Split into sentence units | yes | **open point A** | no |
-| Counts in talk measures and denominators | yes | **open point A** | no |
+| Split into sentence units | yes | yes (A1) | no |
+| Counts in talk measures and denominators | yes | separate stratum; every result reported with and without (A1) | no |
 | Can establish an F-cell commitment | yes (contract rules A to C) | no | no |
 | Can corroborate an F-cell | yes | yes, like `staff_research = Y` | fills `endorsement_source` / `legal_state` only |
 | Tier count (T1 to T3) | yes | no | no |
 
-**Open point A** (decision for MB): either (A1, recommended) INCLINED documents are split into units and labelled, but every result is reported with and without them as a separate stratum, so the main measures keep the evidence base the authors have confirmed; or (A2) they count fully, like BORDERLINE; or (A3) they are cited only, like companions.
+**Point A, decided by MB on 21 Nov 2026, 22:32 (option A1; DS to confirm):** INCLINED documents are split into units and labelled, but every result is reported with and without them as a separate stratum, so the main measures keep the evidence base the authors have confirmed. Rejected alternatives: (A2) count fully, like BORDERLINE; (A3) cited only, like companions.
 
 Reason for A1: the paper can then show what the confirmed evidence says and how much the inclined documents add, without a reviewer being able to say the base was widened after the fact. It costs translation and units for the INCLINED documents that are not in English.
 
