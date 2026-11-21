@@ -1,0 +1,4 @@
+measure,role,expected_sign,source,vintage,note
+data_protection_law_in_force,convergent,+,UNCTAD Data Protection and Privacy Legislation Worldwide (tracker; never evidence for a cell),to fix before data,0/1 national data-protection law; weak positive expected
+cbdc_project_index,discriminant,0,"Auer, Cornelli and Frost (2023) CBDC project index (BIS data)",to fix before data,measures how advanced a project is not how private; no relation expected
+v2x_libdem,not used,,V-Dem,,reserved for H2 on Y1 (contract §8); not used for index validity to keep the two apart
