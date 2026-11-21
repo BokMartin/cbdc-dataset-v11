@@ -37,3 +37,7 @@ Candidates (author decision column empty):
 ## Next steps if the authors accept a candidate
 
 Download the file into `Dizertace all the PDFs` (check free disk space first), confirm the SHA-256 above, add a dated row to `REGISTRY_ADDITIONS_<date>.csv` and the author's decision to `AUTHOR_DECISIONS_<date>.csv`, then rebuild TIERS and the site data.
+
+## MB's answers (21 Nov 2026, 22:29) and the follow-up
+
+MB answered the five points: keep the BoE and MIT report in "as heavily inclined but unconfirmed", give Tourbillon and Helvetia the same treatment, the same for wholesale ("implies future use in retail"), keep Brazil if we have the documents, and for the Table 2 countries without official sources rely on our own extraction. The concrete proposal, the rows it touches and the points still open are in `DECISIONS/ADR-010-inclined-status-DRAFT-2026-11-21.md` and `data/manifest/PROPOSED_INCLINED_2026-11-21.csv`. Three further candidates were added: NP-CH-01 (Tourbillon), NP-BR-01 (Drex pilot report phase 1), NP-BR-02 (Gomes speech, BIS copy).
