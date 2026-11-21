@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documents · CBDC privacy dataset</title>
+<meta name="description" content="Every official document the CBDC privacy dataset holds: which ones are evidence, which are cited as companions and which were not used, each linked to its issuer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<main id="main">
+  <h1>Documents</h1>
+  <p class="lead">Every official document we collected for the 44 retail CBDC projects, and what we did with it. Each row links to the issuer's own copy and to an archived copy at the Internet Archive. For documents not in English there is a link to a translation service and, where the issuer's licence allows reuse, our own English machine translation. We do not host the documents themselves: they belong to their issuers.</p>
+  <div class="note" id="as-of"></div>
+
+  <div class="chips" id="cats" role="group" aria-label="Filter by decision"></div>
+
+  <form class="filters" id="filters" onsubmit="return false">
+    <label class="f wide">Search title, issuer or ID<input type="search" id="q" placeholder="e.g. consultation, Riksbank, CAND-101" autocomplete="off"></label>
+    <label class="f">Project<select id="project"><option value="">All projects</option></select></label>
+    <label class="f">Language<select id="lang"><option value="">Any language</option></select></label>
+    <label class="f">English text<select id="en">
+      <option value="">Any</option><option>English original</option><option>issuer's English edition</option><option>machine translation</option><option>no English text yet</option>
+    </select></label>
+    <label class="f">Decided by<select id="by"><option value="">Anyone</option><option value="author">An author</option><option value="model">Model proposal (unconfirmed)</option></select></label>
+    <label class="f">Kind<select id="kind"><option value="">Any kind</option></select></label>
+    <label class="f">Years<span class="years"><input type="number" id="y0" min="2010" max="2030" placeholder="from" aria-label="From year"><input type="number" id="y1" min="2010" max="2030" placeholder="to" aria-label="To year"></span></label>
+    <label class="f">Translate into<select id="tl"></select></label>
+    <span class="row"><button class="btn ghost sm" type="button" id="reset">Clear filters</button></span>
+  </form>
+
+  <div class="toolbar">
+    <div id="count" aria-live="polite"></div>
+    <div class="row"><a class="btn ghost sm" id="dl-filtered" href="#" download="cbdc_documents_filtered.csv">Download this list (CSV)</a><a class="btn ghost sm" href="data/documents.csv" download>All documents (CSV)</a></div>
+  </div>
+  <div class="table-wrap">
+    <table class="docs">
+      <thead><tr>
+        <th scope="col" data-k="y" aria-sort="descending"><button type="button">Year</button></th>
+        <th scope="col" data-k="t"><button type="button">Document</button></th>
+        <th scope="col" data-k="p"><button type="button">Project</button></th>
+        <th scope="col" data-k="c"><button type="button">Decision</button></th>
+        <th scope="col" data-k="l"><button type="button">Language</button></th>
+        <th scope="col">Links</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div class="row" style="justify-content:center;margin-top:14px"><button class="btn ghost" type="button" id="more" hidden>Show more</button></div>
+
+  <h2>What the decisions mean</h2>
+  <dl class="kv" style="font-size:.95rem" id="legend"></dl>
+  <p class="small muted" style="margin-top:12px">The rule is in <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/SOURCE_RULE_D1.md">SOURCE_RULE_D1</a>. Every decision on an evidence document was made or confirmed by an author. Most companion and "not used" rows still rest on a model's proposal and are labelled as such until an author confirms them. Titles marked "from file name" are placeholders until the title is checked against the document.</p>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script src="assets/documents.js"></script>
+</body>
+</html>

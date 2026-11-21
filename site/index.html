@@ -3,57 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home — CBDC Dataset</title>
-<meta name="description" content="Open dataset of documented privacy and identifiability design in retail CBDC projects, built from official central-bank documents.">
+<title>CBDC privacy dataset</title>
+<meta name="description" content="An open dataset, in development, of what the makers of retail central bank digital currencies say about privacy and what they have committed to, built only from official documents.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="layout">
-<aside class="side"></aside>
-<main class="content">
-<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
-<section class="hero"><div class="wrap">
-  <h1>Who can see a CBDC payment — and what did the central bank actually commit to?</h1>
-  <p class="lead">An open dataset of documented privacy and identifiability design in every retail central bank digital currency project with an official document. Each project is answered on ten design questions from its own documents — value, evidence, commitment status, quote, page, date — placed in one of six architecture categories, and tracked over time.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="map.html">Explore the map</a><a class="btn btn-outline" href="profiles.html">Country profiles</a><a class="btn btn-outline" href="paper.html">Read the paper</a></div>
-</div></section>
-<div class="wrap"><div class="stats">
-  <div class="stat-card"><div class="num" id="n-proj">70</div><div class="label">retail CBDC projects</div></div>
-  <div class="stat-card"><div class="num" id="n-countries">100</div><div class="label">countries covered</div></div>
-  <div class="stat-card"><div class="num" id="n-docs">387</div><div class="label">official documents, hashed and linked</div></div>
-  <div class="stat-card"><div class="num" id="n-typed">48</div><div class="label">projects with a full architecture type</div></div>
-</div></div>
-<section class="block"><div class="wrap">
-  <h2>Why this dataset</h2>
-  <p class="subtle">Status trackers say a project is "piloting". They don't say who can see the payments.</p>
-  <p>Within a single tracker status, central banks commit to radically different designs: some keep transaction identity away from the central bank by construction, some see everything, some offer an offline mode with cash-like privacy and some rule it out. Press releases talk about privacy; design documents commit to it or don't. We read the official documents and code the commitments, not the vocabulary — and we record for every value the document, the page, the quote and whether it is an option under study, a tested capability, an adopted decision or a live arrangement.</p>
-</div></section>
-<section class="block alt"><div class="wrap">
-  <h2>Three things the data lets you do</h2>
-  <div class="findings">
-    <div class="finding-card"><span class="n">1</span><p><strong>Place every project in one of six architecture categories.</strong> Can the central bank link an online payment to a person? Can the user's provider? Is a private offline mode adopted? Those three answers give A0 … C1 — a nominal map of designs, not a score. <a href="features.html">How the categories are defined →</a></p></div>
-    <div class="finding-card"><span class="n">2</span><p><strong>Watch designs change.</strong> Each value carries the year of its document, so the map can be read as of 2018, 2021 or today, and a project's path from option to commitment — or its reversal — is visible. <a href="map.html">Open the map and drag the year →</a></p></div>
-    <div class="finding-card"><span class="n">3</span><p><strong>Separate what is declared from what is built.</strong> Declared objectives (inclusion, modernisation, sovereignty, resilience, enforcement, innovation) are recorded as non-exclusive flags with quotes and shown next to the architecture — so you can see, for example, which inclusion-declaring projects actually adopt a low-identification route.</p></div>
-  </div>
-</div></section>
-<section class="block"><div class="wrap">
-  <h2>How it is measured</h2>
-  <p>A written <a href="features.html">measurement contract</a> defines each cell, its allowed values and the traps a coder must avoid; absence of mention is <em>unknown</em>, never <em>no</em>; a staff paper never establishes a commitment. Values are extracted by a reproducible two-provider API pipeline with a mechanical check that every quote is on its cited page, verified by the authors on development projects, and audited against an independent human reference on a sealed test set. Hypotheses and the smallest effect of interest were registered before any cell was computed. <a href="pipeline.html">The pipeline →</a> · <a href="method.html">Method &amp; progress →</a></p>
-</div></section>
-<section class="block alt"><div class="wrap">
-  <h2>Open by design</h2>
-  <p>Data (CC BY 4.0), contract, pipeline code (MIT) and the validation record are public. Every cell can be challenged with a document and a page. <a href="contribute.html">How to contribute →</a></p>
-</div></section>
-<footer class="site">
-  <div class="wrap">
-    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
-    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
-    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
-  </div>
-</footer>
-</main>
+<header class="site"></header>
+<main id="main">
+<section style="padding:18px 0 10px">
+  <h1>What do central banks say about CBDC privacy, and what have they committed to?</h1>
+  <p class="lead">An open dataset, in development, built only from official documents of the bodies that design retail central bank digital currencies. Every value will lead to a document, a page and a sentence. Two layers are kept apart: what a project <em>says</em> about users' privacy, and what it has <em>committed</em> to.</p>
+  <div class="row" style="margin-top:18px"><a class="btn" href="map.html">Explore the map</a><a class="btn ghost" href="documents.html">Browse the documents</a></div>
+</section>
+<div class="note" style="margin-top:26px"><strong>Work in progress.</strong> The corpus is assembled and every evidence document has been decided by an author. The coding of the documents has not been run, so this site shows the corpus and its provenance, not results.</div>
+<div class="grid" id="stats" style="margin:22px 0"></div>
+<h2>What is here now</h2>
+<div class="grid">
+  <div class="card"><h3 style="margin-top:0"><a href="map.html">Map of the 44 projects</a></h3><p class="small">43 national retail CBDC projects and the digital euro, coloured by official status or by the official documents we read, year by year.</p></div>
+  <div class="card"><h3 style="margin-top:0"><a href="documents.html">Every document</a></h3><p class="small">Which documents are evidence, which are cited as companions and which were not used, who decided, in which language, with links to the issuer and an archived copy.</p></div>
+  <div class="card"><h3 style="margin-top:0"><a href="method.html">How it is built</a></h3><p class="small">The source rule, the two layers, the checks, and what the dataset will not claim.</p></div>
 </div>
-<script src="assets/vendor/d3.v7.min.js"></script>
-<script src="assets/vendor/topojson-client.min.js"></script>
+<h2>What comes next</h2>
+<p class="narrow">Coding of privacy statements in the documents, then the commitment matrix (twelve design features per project, each with a located quote), then the tables per project and aspect. Results will appear here only after the instrument is frozen and registered.</p>
+</main>
+<footer class="site"></footer>
 <script src="assets/site.js"></script>
-<script>CBDC.load(function(D){ CBDC.stats(D); });</script></body></html>
+<script>
+SITE.get("assets/projects.json").then(function (PP) {
+  var f = PP.projects.filter(function (p) { return p.frame; }), pubs = 0, comp = 0, out = 0, mt = 0, orig = 0;
+  f.forEach(function (p) { pubs += p.pubs; comp += p.n.companion; out += p.n.dropped + p.n.wholesale; mt += p.english["machine translation"]; orig += p.english["English original"] + p.english["issuer's English edition"]; });
+  var S = [[f.length, "projects in the frame"], [pubs, "evidence publications, each decided by an author"], [comp, "companion documents, cited for status and law"], [out, "documents collected and not used (another issuer, off topic, or wholesale only)"]];
+  document.getElementById("stats").innerHTML = S.map(function (s) { return '<div class="card stat"><b>' + SITE.fmt(s[0]) + "</b><span>" + s[1] + "</span></div>"; }).join("");
+});
+</script>
+</body>
+</html>

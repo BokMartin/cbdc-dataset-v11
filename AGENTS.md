@@ -29,7 +29,7 @@ Read [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) first: goal, pipeline, status, what 
 
 ## What never goes into the repository
 
-- Source documents, their text, translations and unit texts (issuers' copyright): only hashes, locators and manifests.
+- Source documents, their text, translations and unit texts (issuers' copyright): only hashes, locators and manifests. One exception (MB, 21 Nov 2026, [ADR-008](DECISIONS/ADR-008-website-documents-and-published-translations-2026-11-21.md)): English machine translations of documents whose issuer publishes under an open licence that permits adaptation may be published on the website, listed in `data/site/PUBLISHED_TRANSLATIONS_<date>.csv`, byte-identical to the pinned translation record.
 - Credentials of any kind. Keys are passed in the environment for one run and never written to a file, a log or a commit. CI scans for them.
 
 ## Acting on the authors' computers and accounts

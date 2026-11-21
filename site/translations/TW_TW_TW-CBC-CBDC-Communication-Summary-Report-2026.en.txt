@@ -1,0 +1,849 @@
+# English machine translation (route D, provisional). doc_key: TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026 | source: CBDC_MASTER_v12/TW/TW_CBC_CBDC_Communication_Summary_Report_2026.pdf | source_sha256: 0f4b4a6f693d87dd65fb48f53376a141beab1afec0c30cf3fcc68f69dbf5530d
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+Central Bank Digital Currency (CBDC) External Communication Activities
+      Summary Report
+
+
+
+
+        Central Bank
+     CBDC Research Project Team
+       April, Year 115
+=== PAGE 2 ===
+
+=== PAGE 3 ===
+Abstract
+
+  To keep pace with the digital era and international development trends, the Bank began research and experimentation on central bank digital currency (CBDC) in Year 108. For retail CBDC, after completing the experimental project, the Bank established a prototype platform (with functions including transfers, shopping payments, and support for digital voucher payments), and has continued to improve the platform's information security technology and processing performance. For wholesale CBDC, a tokenized funds-flow experimental platform has been established, and the feasibility of using wholesale CBDC to support the clearing of various tokenized asset transactions is currently being tested, in response to the development trend of tokenized assets.
+
+  As CBDC involves a broad range of matters, and its related operations and mechanism design concern stakeholders such as financial institutions, payment businesses, enterprises, and the public, the Bank considers that, building on the current CBDC-related research and experimental projects, it should understand external needs and views regarding CBDC and increase awareness of CBDC across different sectors. Accordingly, extensive communication work has been carried out since Year 112, including a written questionnaire survey completed in Year 113 and face-to-face communication activities held in Year 114.
+
+  Regarding face-to-face communication activities, in Year 114 the Bank held a total of 9 public hearings, briefing sessions, and forums in the northern, central, and southern regions, broadly inviting people from different sectors to participate, listening to their views and exchanging relevant information. Invitees included industry (such as financial institutions, electronic payment institutions, and virtual asset businesses), civil society organizations, government agencies, and academia, and were representative. The Bank has compiled in this report the topics of concern raised by different sectors during the 9 communication activities and the Bank's responses (see pages 13~32 for details).
+
+  At present, the progress of CBDC development in our country is in step with that of major advanced countries, all of which continue to conduct research and experimentation steadily. Taiwan's existing payment system is diverse and convenient, and there is not yet an urgent need to issue retail CBDC. Therefore, funds-flow operations supporting the distribution of digital vouchers are being used first as a trial implementation item to support the government's various distribution policies. Meanwhile, the Bank continues research and experimentation on wholesale CBDC supporting tokenized assets, to ensure that central bank money continues to provide a foundation of trust for the future tokenized monetary system.
+
+                  i
+=== PAGE 4 ===
+Contents
+
+I. Background .................................................................................... 1
+
+II. Status of Central Bank Digital Currency (CBDC) Experimentation and Future Directions ................. 2
+
+    (I) Retail CBDC .............................................................. 2
+
+    (II) Wholesale CBDC .............................................................. 6
+
+III. External Communication Activities on CBDC-Related Projects ...................... 8
+
+    (I) Face-to-Face Communication Activities ......................................................... 8
+
+    (II) Content and Implementation ......................................................... 8
+
+IV. Communication and Responses on Issues of Concern to Different Sectors ......................................... 13
+
+    (I) CBDC's Positioning and Policy Objectives ....................................... 14
+
+    (II) Comparison of CBDC, Deposit Tokens [代幣], and Stablecoins ........................ 17
+
+    (III) Legal Basis and Regulatory Framework ............................................... 20
+
+    (IV) System Architecture and Selection of Technical Solutions ....................................... 22
+
+    (V) Risk Management, Security, and Privacy Protection [隱私保護] ............................... 24
+
+    (VI) Financial Inclusion and Social Communication ............................................... 28
+
+    (VII) Cross-Border Payments and Real World Asset (RWA) Tokenization Applications ....... 31
+
+V. Conclusion .................................................................................. 32
+
+Appendix: Collection of Activity Photographs ............................................................... 34
+=== PAGE 5 ===
+I. Background
+
+     In response to developments in the digital era, the Bank began researching central bank digital currency (Central Bank Digital Currency, CBDC) in Year 108. CBDC is divided into retail CBDC and wholesale CBDC. Retail CBDC is cash in digital form for the public's everyday transactions; wholesale CBDC is tokenized central bank reserves, used to handle transfers of deposit tokens between financial institutions1 or the clearing of other token assets.
+
+      To keep pace with international development trends and explore the feasibility and necessity of central bank issuance of CBDC, the Bank completed two stages of research and experimental projects in June of Year 109 and June of Year 111, respectively: the “Technical Research on the Feasibility of Wholesale CBDC” and the “Retail CBDC Experimental Project.” For retail CBDC, the Bank established a prototype platform and planned the related operational architecture, participating institutions, system security, and data protection [資料保護], and developed basic functions such as transfers, stored-value top-ups, and payments, as well as value-added functions such as digital voucher payments. As for wholesale CBDC, the recent emergence of tokenization technologies such as distributed ledger technology (DLT) [分散式帳本] and blockchain, combined with innovative applications such as smart contracts (Smart Contract), has given rise to many different tokenized assets. Their technological advantages have attracted international attention. In this regard, the Bank has also recently cooperated with Financial Information Service Co., Ltd., financial institutions, and the Taiwan Depository & Clearing Corporation, among other entities, to jointly explore the application potential of wholesale CBDC.
+
+      As retail CBDC involves a broad range of matters, its related operations and mechanism design also concern stakeholders such as financial institutions, payment businesses, enterprises, and the public; wholesale CBDC may also affect the monetary or financial system as new technologies develop. On this basis, the Bank considers that it should, building on the current CBDC-related research and experimental projects, further understand external needs and views regarding CBDC, in order to increase awareness of CBDC across different sectors. Accordingly, the Bank began extensive communication work in Year 112, divided into a written questionnaire survey and face-to-face communication activities.
+
+      The following first explains the background information for face-to-face communication, including the Bank's completed CBDC
+1
+    If the Financial Supervisory Commission permits financial institutions to issue stablecoins in the future, wholesale CBDC can also be used to handle transfers of stablecoins between financial institutions.
+                          1
+=== PAGE 6 ===
+experimentation and future directions, as follows.
+
+II. Status of Central Bank Digital Currency (CBDC) Experimentation and Future Directions
+
+(I) Retail CBDC
+
+     After completing the retail CBDC experimental project, the Bank established a “CBDC prototype platform,” planned the related operational architecture, participating institutions, system security, and data protection, and developed functions such as transfers, stored-value top-ups, payments, and support for digital voucher payments2. These have been used as background information for external communication, and are briefly explained below:
+
+1. Positioning and Core Principles
+
+     Retail CBDC is digital cash. In response to development needs in the digital era, and to maintain the role of central bank money as a foundation of trust in the economic and financial system, the Bank adheres to the basic principles of “do no harm,” “coexistence,” and “innovation and efficiency”3 in its related planning and design.
+
+2. Issuance through a Two-Tier Architecture [雙層式架構]
+
+     To maintain the operating model of the traditional monetary system's two-tier architecture and avoid financial disintermediation (disintermediation), if a decision is made to issue CBDC in the future, a two-tier architecture will also be adopted. That is, the Bank will provide a CBDC platform, issue CBDC on the platform and allocate it to intermediaries [中介機構], which will then provide CBDC to users (Figure 1)4. Intermediaries are responsible for opening wallets [錢包] for users, providing wallet interfaces (such as mobile Apps), and other value-added application services.
+
+
+
+2
+  A video of the experimental results is published on the Bank's official website: https://youtu.be/hwzawLq0UOA.
+3
+  Do no harm means that CBDC should meet public policy objectives and not impede the central bank's ability to implement monetary policy and maintain financial stability. Coexistence means that, in addition to existing money, the public can obtain a payment instrument free of credit risk and liquidity risk, and users can conveniently and freely convert between CBDC, bank deposits, and cash at any time. Innovation and efficiency means that the central bank integrates resources through public-private cooperation, expands the capacity for innovation in financial payments, and jointly promotes a payment environment of operational efficiency, innovation, and fair competition.
+4
+  The “CBDC dedicated vault,” “intermediary general vault,” and “user wallet” in the platform system are wallets belonging to the central bank, intermediaries, and end users, respectively, recording the amount of CBDC held. The “CBDC dedicated vault” refers to the central bank's dedicated wallet on the CBDC platform, used to issue and redeem CBDC. The “intermediary general vault” refers to a wallet opened by the central bank for an intermediary on the CBDC platform, used to receive CBDC issued by the central bank and to transfer CBDC between intermediaries.
+                                  2
+=== PAGE 7 ===
+[FIGURE]
+                      Figure 1 Overall Operational Architecture of Retail CBDC
+
+            Central bank                         Central Bank Interbank Funds Transfer System
+                                          Reserve account [帳戶]          CBDC dedicated account
+
+
+
+                                   Platform system
+                                             CBDC
+                                              dedicated vault
+                           API layer
+                                                              Supervisory
+                                     Intermediary           Intermediary
+                                       general vault            general vault       analysis
+                           Intermediary                               module
+
+
+                                     User wallet           User wallet
+                          Wallet interface
+                                       Issuance           Circulation         Redemption
+                                   Notes: 1. The “CBDC dedicated vault,” “intermediary
+                          End user
+                                        general vault,” and “user wallet” in the platform system are wallets belonging to the Bank,
+       Transfer        Transfer                     intermediaries, and end users, respectively, recording the
+                                        amount of CBDC held.
+                                      2. The CBDC in an intermediary's “general vault” is exchanged by its “head office”
+The diagram above illustrates the process of transfer transactions between end users. End users operate the wallet           using reserves in the Central Bank Interbank Funds Transfer System. In addition, the “head office” may,
+interface to send transfer instructions to intermediaries, which transmit transaction messages through the API        according to the needs of the bank's branches for allocating CBDC, establish additional
+to the platform system for processing. Messages indicating completion of processing are transmitted in the reverse direction.                 branch-vault wallets, centrally allocated by the “general vault.”
+
+
+
+
+    3. No Interest at the Initial Stage of Issuance, but Retaining the Interest-Bearing Function
+
+        As deposits taken by banks and other intermediaries are a source of credit creation, if CBDC replaces bank deposits on a large scale, this could affect financial stability and, in turn, the effectiveness of monetary policy transmission. To prevent the public from converting large amounts of deposits into CBDC, if a decision is made to issue it in the future, it will initially be issued on a non-interest-bearing basis to maintain the existing monetary policy transmission mechanism; however, the interest-bearing function will be retained to preserve future policy flexibility.
+
+    4. Wallet Tiers [錢包分級]
+
+        Taking risk management into consideration, CBDC wallets will be divided into unnamed [不記名] and named [記名] wallets according to the target users, opening method, and degree of verification of identity [身分驗證], and will have upper limits on wallet stored-value amounts [錢包儲值金額] and transaction amounts [交易金額上限]. Intermediaries may also set their own limits based on their own risk considerations, but these must not exceed the limits set by the plat-
+                              3
+=== PAGE 8 ===
+form (Table 1).
+
+           Table 1 Preliminary Plan for Wallet Tiers and Verification Methods
+                                              Unit: New Taiwan dollars
+
+Wallet tier | Balance upper limit [餘額上限] | Transaction limit [交易限額] | Opening method and conditions | Eligible users
+Legal person named wallet | 500 ten-thousand | 50 ten-thousand/transaction; 100 ten-thousand/day; 1000 ten-thousand/month | ⚫ Apply at a counter/online; ⚫ Open a named account; ⚫ Submit/upload basic information; ⚫ Receiving entity conducts customer due diligence (KYC) | Domestic legal persons
+Natural person named wallet | 10 ten-thousand | 5 ten-thousand/transaction; 10 ten-thousand/day; 20 ten-thousand/month | ⚫ Apply at a counter/online; ⚫ Open a named account; ⚫ Submit/upload basic information; ⚫ Receiving entity conducts KYC | Domestic natural persons (including foreigners residing in the country*)
+Natural person unnamed wallet | 3 ten-thousand | 2 ten-thousand/transaction; 3 ten-thousand/day; 10 ten-thousand/month | ⚫ Apply online; ⚫ Open an unnamed account; ⚫ Provide a domestic mobile phone number | Domestic natural persons
+Foreign visitor unnamed wallet | 3 ten-thousand | 2 ten-thousand/transaction; 3 ten-thousand/day; 10 ten-thousand/month | ⚫ Apply online; ⚫ Open an unnamed account; ⚫ Provide a foreign mobile phone number | Foreign visitors**
+
+* “Foreigners residing in the country” refers to foreigners holding residence permits who come to Taiwan for work, study, etc.
+** “Foreign visitors” refers to foreigners who come to Taiwan for short-term tourism, visits, etc., or who do not hold residence permits.
+
+
+
+   To balance risk and ease of use, the preliminary plan is that each user may open a total of no more than 3 named wallets at different intermediaries. In addition, members of the public who need only small-value payments may also conveniently apply for an unnamed wallet, needing only to provide a mobile phone number and verify its validity using OTP. However, only 1 unnamed wallet may be opened with 1 mobile phone number.
+
+   The mechanism for recovering a lost wallet also differs according to wallet tier. For a named wallet, even if the mobile phone is lost, the user may apply to the intermediary for a loss-recovery service to restore the wallet balance on a new wallet device. For an unnamed wallet, however, the wallet balance cannot be restored.
+
+
+                          4
+=== PAGE 9 ===
+5. Privacy [隱私] and Personal Data [個人資料] Protection
+
+    Users opening an unnamed wallet need only provide a mobile phone number, without having to provide other personal data, which can also accommodate the public's privacy needs. When users open a named wallet, the intermediary conducts the “Know Your Customer” [認識你的客戶] (Know Your Customer, KYC) procedure, and the intermediary must properly keep and manage users' personal data in accordance with the Personal Data Protection Act and other provisions. It may consult [查閱] relevant data of its own users only within the scope authorized under the terms agreed between it and the users (or laws and regulations). Government agencies such as prosecutors and investigators may request access to [調閱] transaction records and user data from intermediaries only where lawful and necessary. As for the Bank, it may only consult transaction data processed using de-identification [去識別化] technology, and user information that must be retained for wallet opening (such as hash values of national identity card numbers and mobile phone numbers). It is difficult for the Bank to reconstruct or identify [識別] users' personal data.
+
+6. Platform Functions
+
+    In addition to supporting basic functions such as transfers between wallets, shopping payments, exchange (meaning mutual exchange between cash, bank deposits, and CBDC), and automatic conversion/top-up5, the platform can also support value-added functions such as digital voucher payments6.
+
+    However, as payment instruments in our country are currently diverse and convenient, there is not yet an urgent need to issue retail CBDC. Therefore, the “CBDC prototype platform” is being used as the basis for establishing a “Digital Public Infrastructure Funds-Flow Platform” (abbreviated as the Digital Funds-Flow Platform), with support for digital voucher payment functions7 first being used as a trial implementation item, in order to verify the platform's technical feasibility and high-load capacity.
+
+    Since August of Year 114, the Digital Funds-Flow Platform has handled funds-flow operations for the Hakka Affairs Council's Hakka Coin distribution project, and has operated smoothly to date. In November of the same year, it collaborated in the universal cash distribution of 1 ten-thousand dollars,
+
+
+5
+  Automatic conversion means that when the amount transferred into a wallet exceeds the wallet limit, the platform automatically transfers the excess amount to a designated bank account. Automatic top-up is the reverse operation of the automatic conversion function.
+6
+  Users may authorize designated institutions or merchants through digital signatures to deduct amounts from their wallets under preset conditions (payment of utility bills on their behalf, or linking wallets for e-commerce online shopping, etc.).
+7
+  Digital voucher payment functions include: 1. Supporting the combined use of funds and vouchers; 2. Allowing multiple different digital vouchers to be stored in the same wallet; 3. After merchants receive digital vouchers, funds can be automatically credited to their accounts as early as the next day.
+                           5
+=== PAGE 10 ===
+effectively integrating resources from the financial system and relevant ministries and agencies to ensure that system processing performance8, stability, and security operate without problems. It can continue to support the government's various distribution policies in the future.
+
+7. Information Security
+
+       The platform's overall security adopts a defense in depth (defense in depth, DiD)9 architecture, with the Bank, intermediaries, and users jointly achieving security management objectives. Within this, the central bank maintains platform security; intermediaries establish information security management systems to ensure uninterrupted operations; and users comply with intermediaries' wallet management mechanisms. Transaction security uses a public-private key mechanism (Public Key Cryptography) to enhance transaction security and system resilience and security. In addition, the system platform has also introduced ISO standards to align the system with international standards in aspects such as related technologies (such as the deployment of firewalls and other information security equipment), operating procedures (such as permission management and abnormality alerts), and backup, in order to effectively improve system security.
+
+(II) Wholesale CBDC
+
+       In response to the development of Real World Asset (Real World Asset, RWA) tokenization, the latest survey by the Bank for International Settlements (BIS) shows10 that most central banks worldwide have already engaged in wholesale CBDC-related work. The main development directions include using wholesale CBDC to promote the development of cross-border payments and as a clearing instrument for tokenized assets.
+
+       Regarding cross-border payments, although the BIS considers that CBDC may be one of the solutions for promoting cross-border payments, it also presents many challenges, including technological, legal and regulatory, policy, and governance issues. In this regard, the Bank continues to monitor international developments and actively participates in exchanges at relevant international conferences, to ensure that future development keeps pace internationally.
+
+       As for the clearing of tokenized assets, the BIS has proposed a unified ledger [聯合帳本] (Unified Ledger)11
+8
+   According to data provided by Financial Information Service Co., Ltd., the platform system can support 20 ten-thousand people registering online simultaneously, with a processing capacity of approximately 2,505 transactions per second.
+9
+   A cybersecurity application strategy that mainly uses multiple layers of safeguards to protect an organization's networks and information.
+10
+   Illes, A., A. Kosse, and P. Wierts, (2025) “Advancing in Tandem - Results of the 2024 BIS Survey on Central
+   Bank Digital Currencies and Crypto,” BIS Papers, No.159.
+11
+   The architectural choices for a unified ledger can be viewed as a continuum (continuum), ranging from a single shared ledger [帳本] to multiple ledgers connected through cross-chain bridges, all of which are possible options. The design needs to strike a balance between the convenience of programmability and the governance needs of different ledgers. For details, see BIS (2025),
+    “The Next-Generation Monetary and Financial System,” BIS Annual Economic Report, 77–113.
+                                                       6
+=== PAGE 11 ===
+concept, in the future tokenized central bank reserves, tokenized commercial bank deposits and tokenized government bonds will be integrated on the same programmable platform to complete “Delivery versus Payment, DvP,” or even complete “Payment versus Payment, PvP” between different foreign-currency tokens [代幣], to realize the technological advantages and benefits of tokenization.
+
+To verify the above BIS perspective on a unified ledger [聯合帳本], the Bank, together with the Financial Information Service Co., Ltd. and participating banks, established a “Tokenized Money Flow Experimental Platform” through public-private collaboration in 113, and completed a test of the technical feasibility of supporting asset tokens with wholesale CBDC; in 114, it cooperated with the Taiwan Depository & Clearing Corporation to establish an interface, using corporate bond tokens as the subject of the test, to test the feasibility of completing DvP settlement of funds and securities on the same platform (Figure 2), and to avoid the problem of fragmentation of tokenization platforms.
+
+[FIGURE]
+Figure 2 Framework for the collaborative test of supporting delivery versus payment with wholesale CBDC
+
+Central Bank Interbank Funds Transfer System
+(Reserves)
+
+Depository clearing and settlement system
+(Securities custody)
+
+Tokenized reserves
+Tokenized corporate bonds
+
+Tokenized Money Flow Experimental Platform
+Asset Tokenization Experimental Platform
+
+Wholesale
+CBDC
+
+General ledger [總帳]
+
+Exchange wholesale CBDC
+1:1 for
+depository settlement tokens
+
+Subsidiary ledger [明細帳]
+
+Deposit tokens
+Depository omnibus account [統倉帳戶]
+Depository settlement tokens (funds)
+DvP
+Bond tokens (securities)
+
+Banks and investors establish funds wallets [錢包] on the platform
+Dealers and investors establish securities wallets on the platform
+
+Note: The framework for the collaborative test is as follows: (1) The Taiwan Depository & Clearing Corporation selects ordinary New Taiwan dollar corporate bonds as the subject of tokenization; (2) wholesale CBDC on the Central Bank’s Tokenized Money Flow Experimental Platform is used as collateral and exchanged 1：1 for depository settlement tokens on the depository’s tokenization experimental platform; (3) tokenized funds and securities are settled on the same platform to verify the technical feasibility of atomic settlement.
+
+7
+=== PAGE 12 ===
+The world of tokenized assets needs a tokenized monetary system to support money flow operations such as transactions, settlement and clearing. Even though the recent passage by the United States of the GENIUS Act (Guiding and Establishing National Innovation for U.S. Stablecoins Act) has increased global attention to the circulation, application and regulation on blockchains of privately issued stablecoins (mainly referring to those pegged 1：1 to fiat currency), in the tokenized world, tokenized central bank money will ultimately still be needed as the best cross-system and cross-institution clearing instrument (also called a clearing asset), in order to continue providing a foundation of trust for the tokenized system. Therefore, the Bank will continue its research and testing of wholesale CBDC.
+
+III. Conducting external communication activities concerning CBDC-related plans
+
+(I) Face-to-face communication activities
+
+To gain a preliminary understanding of views from various sectors concerning awareness, needs, design and other matters relating to retail CBDC, in 112 the Bank commissioned the Taiwan Institute of Economic Research to conduct a nationwide quantitative questionnaire survey, which was completed in month 4 of 113, with the survey results published on the Bank’s official website12.
+
+In addition, to engage in more concrete, in-depth exchanges and communication with various sectors, the Bank, on the basis of its existing CBDC experimental plans and with reference to the above questionnaire survey results, held public hearings, briefing sessions and forums in the northern, central and southern regions, to engage in face-to-face communication with a broad range of stakeholders as a reference for subsequently carrying out CBDC-related plans; it also used these activities to strengthen outreach and enhance public awareness of CBDC. To this end, the Bank also commissioned a contractor to produce an animated video13 to be shown during the activities, to make CBDC easier for outside parties to understand in a lively, vivid manner.
+
+(II) Content and implementation
+
+As matters relating to the face-to-face communication activities require professionalism and coordination, and involve numerous work details, to ensure smooth implementation, the Bank, following an open tender, commissioned the Taiwan Academy of Banking and
+
+12
+See Central Bank (2024), “Explanation of the Results of the Bank’s Outsourced Questionnaire Survey on Central Bank Digital Currency (CBDC) Issues,” reference materials for the press conference following the Central Bank’s Board of Directors and Supervisors meeting, month 6, day 13; URL: https://knowledge.cbc.gov.tw/front/references/inpage/D5766911-2329-
+EF11-9108-00505694F3B3.
+13
+Video URL: https://www.youtube.com/watch?v=pZwPwN_VtT8.
+
+8
+=== PAGE 13 ===
+Finance to assist in jointly planning and conducting them. Implementation was as follows (Table 2):
+
+Table 2 Implementation details of public hearings, forums and briefing sessions
+
+Type | Date | Location | Number of participants | Activity sequence
+Public hearing | 114.4.29 | Taipei City, Taiwan Academy of Banking and Finance | 198 people | 1. Play animated video before the opening; 2. Moderator’s introduction; 3. Brief introduction by a Bank representative*; 4. Listen to opinions and provide responses and explanations
+ | 114.5.21 | Kaohsiung City, Museum of Fine Arts | 102 people |
+ | 114.6.10 | Taichung City, Feng Chia University | 101 people |
+Forum | 114.7.2 | Taipei City, Taiwan Academy of Banking and Finance | 212 people | 1. Play animated video before the opening; 2. Moderator’s introduction; 3. Lectures by experts and scholars***; 4. Questions and answers with panelists****
+ | 114.8.6 | Taichung City, Feng Chia University | 67 people** |
+ | 114.8.26 | Kaohsiung City, Museum of Fine Arts | 207 people |
+Briefing session | 114.9.25 | Taipei City, Taiwan Academy of Banking and Finance | 302 people | 1. Moderator’s introduction; 2. Play animated video; 3. Brief introduction by a Bank representative; 4. Questions and answers
+ | 114.10.14 | Kaohsiung City, Museum of Fine Arts | 253 people |
+ | 114.11.5 | Taichung City, Feng Chia University | 272 people |
+
+*
+The brief introduction at the Taipei session was given by Hsieh Feng-ying, Director General of the Bank’s Department of Banking; at the Kaohsiung session by Wu Kuei-hua, Adviser of the Bank; and at the Taichung session by Chen Kung, Director General of the Bank’s Department of Information Management.
+**
+The Taichung forum was an additional session provided at no charge, and its number of participants was not subject to contractual restrictions.
+***
+Experts and scholars included Chen Kung, Director General of the Bank’s Department of Information Management; Wu Chung-shu, Chairman of the Taiwan Institute of Economic Research; Huang Chao-hsi, Professor in the Department of Economics at National Tsing Hua University; Yang Yueh-ping, Associate Professor in the Department of Law at National Taiwan University; and Cheng Ting-hsien, Associate Professor at the Graduate Institute of Industrial Economics at National Central University.
+****
+Panelists at the Taipei session: Hsieh Feng-ying, Director General of the Bank’s Department of Banking; Chen Kung, Director General of the Department of Information Management; Hsieh Chia-wen, Director of the Legal Affairs Office; Lin Kuo-liang, Chairman of the Financial Information Service Co., Ltd.; Associate Professor Cheng Ting-hsien; Hsieh Chun-hua, Deputy General Manager of CTBC Bank; and Chen Hsi-han, Deputy General Manager of Hua Nan Commercial Bank. Panelists at the Taichung session: Chen Kung, Director General of the Department of Information Management; Lin Nan-chi, Deputy Section Chief of the Legal Affairs Office; Chairman Lin Kuo-liang; Associate Professor Yang Yueh-ping; Chang Chih-hsing, Chief Technology Officer of E.SUN Bank; and Chang Shen, Chief Technology Officer of Taishin International Bank. Panelists at the Kaohsiung session: Chen Kung, Director General of the Department of Information Management; Cheng Ching-hsin, Deputy Section Chief of the Legal Affairs Office; Chairman Lin Kuo-liang; Associate Professor Yang Yueh-ping; Chen Kuan-hsueh, Chief Digital Officer of Cathay United Bank; and Hsieh Pi-fen, Department Director of The Shanghai Commercial & Savings Bank.
+
+9
+=== PAGE 14 ===
+1. Different types of activities were held in the northern, central and southern regions according to their purposes and communication audiences
+
+(1) Public hearings: To broadly gather opinions from stakeholders such as industry (e.g., financial institutions, electronic payment businesses and virtual asset businesses), interest groups (e.g., the Bankers Association and the Virtual Asset Service Provider Association), civil society organizations and academia, with an expected attendance of 100 people per session.
+
+(2) Forums: To invite representative experts and scholars to participate together and discuss CBDC-related issues in depth, with an expected attendance of 200 people per session.
+
+(3) Briefing sessions: To explain the architectural design and policy planning of CBDC to the general public and enhance their awareness of CBDC, with an expected attendance of 250 people per session.
+
+2. Implementation
+
+The cumulative total attendance at the 9 activities was 1,714 people (see the appendix for photographs of the activities). In addition, to enable more members of the public who could not attend in person to participate, the briefing sessions (Taipei and Taichung sessions) also provided simultaneous online livestreaming, and members of the public could submit questions online.
+
+To allow representatives of various sectors, such as government agencies, industry, interest groups, civil society organizations and academia, to fully express their views on CBDC in person, the Bank also took account of the representativeness of participating institutions when holding the public hearings. The total number of participating institutions at the 3 public hearings reached 219. Among them, industry, such as financial institutions, electronic payment institutions and virtual asset businesses, accounted for the highest proportion, 46%, because of their large number; civil society organizations, such as grassroots financial institutions or disadvantaged groups, followed at 29%. Others included government agencies (11%), academia (10%) and interest groups (4%) (Figure 3), providing representativeness.
+
+10
+=== PAGE 15 ===
+[FIGURE]
+Figure 3 Proportions of types of participating institutions
+
+Academia
+10%
+
+Government agencies
+11%
+
+Civil society organizations
+29%
+
+Industry
+46%
+
+Interest groups
+4%
+
+Note: Government agencies include representatives of central and local government agencies, etc.; industry includes representatives of financial institutions, electronic payment institutions, virtual asset businesses, etc.; interest groups include representatives of finance-related associations, the Virtual Asset Service Provider Association, etc.; civil society organizations include representatives of general civil society organizations (including farmers’ associations, fishermen’s associations and credit cooperatives), disadvantaged groups, etc.; academia includes relevant financial and economic research institutions, university and college professors, experts and scholars, etc.
+Source: Taiwan Academy of Banking and Finance
+
+3. Production of related promotional materials in conjunction with the activities
+
+(1) Animated video
+
+As mentioned above, to enable various sectors to understand CBDC more quickly, this project outsourced the production of a lively, vivid animated video as one means of external communication. During the period in which the external communication activities were held, the Bank uploaded the video to its official website so that participating institutions or members of the public could view it in advance, helping to focus exchanges and discussions on relevant issues.
+
+(2) Key visual design and related promotional materials
+
+To highlight the thematic style of the activities, the Taiwan Academy of Banking and Finance designed a CBDC key visual in accordance with the Bank’s needs and used it on posters, display boards, invitation cards and other materials for the activities. In addition, to improve the effectiveness of communication, the Bank and the Taiwan Academy of Banking and Finance jointly planned and produced CBDC introductory materials such as quick-reference graphics and folded leaflets, which participants could take home, helping to disseminate relevant information (Figure 4).
+
+11
+=== PAGE 16 ===
+[FIGURE]
+Figure 4 Key visual design and related promotional materials
+
+12
+=== PAGE 17 ===
+IV. Communication and responses concerning issues of concern to various sectors
+
+Looking across the issues of concern expressed by various sectors at the 9 face-to-face communication activities, these can mainly be divided into 7 topics: “CBDC’s positioning and policy objectives,” “Comparison of CBDC, deposit tokens and stablecoins,” “Legal basis and regulatory framework,” “System architecture and choice of technical solutions,” “Risk management, security and privacy [隱私] protection,” “Financial inclusion and communication with society,” and “Cross-border payments and real-world asset (RWA) tokenization applications.” The questions and consolidated responses are explained below by topic (Table 3).
+
+Table 3 Topics and questions of concern to various sectors
+
+Topic | Question
+1 CBDC’s positioning and policy objectives | Q1: What is CBDC’s positioning? Taiwan’s current payment system is already highly convenient; why does the Central Bank still need to research and test CBDC?
+ | Q2: Would the issuance of CBDC affect the monetary aggregate M2 or cause inflation?
+ | Q3: Would the issuance of CBDC have an impact on the banking system and cause financial disintermediation? How would the Central Bank control this risk?
+2 Comparison of CBDC, deposit tokens and stablecoins | Q1: What are the differences between CBDC, stablecoins and deposit tokens?
+ | Q2: What is the relationship between CBDC and private-sector money such as stablecoins and deposit tokens?
+3 Legal basis and regulatory framework | Q1: What is the legal basis for issuing CBDC? Does the Central Bank lean toward enacting a dedicated law or amending the Central Bank Act?
+ | Q2: Under a two-tier architecture [雙層式架構], what are the qualifications for becoming an intermediary [中介機構]? What are the legal relationship and regulatory model between the Central Bank and intermediaries?
+ | Q3: Is CBDC legal tender [法償貨幣]? Can merchants refuse to accept it?
+ | Q4: What is the legal nature of CBDC? Can it be subject to compulsory enforcement (seizure)?
+4 System architecture and choice of technical solutions | Q1: Under the current plans, why does retail CBDC use centralized technology? Why does wholesale CBDC use distributed ledger technology (DLT) [分散式帳本技術]?
+ | Q2: Is the CBDC wallet App developed centrally by the Central Bank, or independently by each intermediary?
+ | Q3: Will CBDC payment specifications (such as QR Code) be integrated with current standards? Will merchants need to install new hardware equipment?
+ | Q4: Is the Central Bank planning offline payments [離線支付] (Offline Payment) for CBDC?
+
+13
+=== PAGE 18 ===
+Topic | Question
+5 Risk management, security and privacy protection | Q1: Why must the holding amount [持有額度] of “registered wallets [記名錢包]” be restricted? Can the number of wallets be unrestricted rather than limited to 3? Might the allowance for legal persons be insufficient?
+ | Q2: As a digital currency, how would CBDC guard against information security risks (such as hacking, impersonation or data leaks)?
+ | Q3: If CBDC is issued, how would illegal acts such as fraud or money laundering be prevented? Would it increase the risk of older people or elderly people with dementia being defrauded?
+ | Q4: How would CBDC balance tracking of transaction money flows [交易金流追蹤] and transaction privacy? Would the Central Bank arbitrarily monitor the public’s transactions?
+ | Q5: If a user’s mobile phone is lost or malfunctions, can the CBDC in it be recovered?
+6 Financial inclusion and communication with society | Q1: How would CBDC implement financial inclusion and assist groups affected by the digital divide?
+ | Q2: What supporting measures are there for specific groups, such as people with disabilities or migrant workers?
+ | Q3: How would merchants’ (especially small merchants’) willingness to adopt CBDC be increased? What specific promotional or incentive measures are there?
+ | Q4: How will the Central Bank subsequently carry out education, outreach and communication with society?
+7 Cross-border payments and RWA tokenization applications | Q1: Can CBDC be used to improve the efficiency of cross-border payments?
+ | Q2: What is the positioning of wholesale CBDC? What is its relationship with RWA tokens? What is the current progress of testing?
+
+(I) CBDC’s positioning and policy objectives
+
+Q1: What is CBDC’s positioning? Taiwan’s current payment system is already highly convenient; why does the Central Bank still need to research and test CBDC?
+
+1. In response to national digital development policy and the public’s demand for digital payments, the Bank is advancing CBDC research and experimental plans. CBDC can be divided into retail and wholesale types. Retail CBDC is cash in digital form, for the public’s daily transactions; wholesale CBDC is tokenized reserves, used for clearing tokenized assets between financial institutions.
+
+2. The Bank’s considerations for continuing research and testing are as follows:
+
+(1) As regards retail CBDC, because Taiwan’s current payment system is comprehensive and its payment instruments are diverse and convenient (such as credit cards, debit cards, bank deposits and electronic payments),
+
+14
+=== PAGE 19 ===
+payments can already be made immediately and at low cost, and therefore there is no urgency to issue it14, but research and testing are still necessary:
+
+⚫ Retaining a public option: As the digital era develops, payment services provided by the private sector are becoming increasingly diverse and convenient. Even if payment services are provided entirely by the private sector in the future, the Central Bank still needs to retain the issuance of CBDC as a public option. This can effectively counterbalance potential private-sector monopolies and provide a safe, reliable means of payment outside private-sector payment systems, to safeguard the public’s rights and interests.
+
+⚫ Achieving interoperability: To avoid fragmentation of the payment market and a lack of interoperability, which results in merchants needing to deploy multiple QR Codes or acquiring devices. CBDC’s objective is to establish a common infrastructure so that various payment instruments can all interoperate with CBDC and, on this common basis, allow private-sector businesses to compete fairly.
+
+⚫ Serving as an efficient policy tool and supporting innovation:
+
+– G2C or C2G applications: CBDC can serve as an efficient policy tool. For example, the Bank has already applied the CBDC prototype platform to support the payment functions of digital vouchers (such as Hakka coins), which can eliminate the printing and distribution of physical vouchers, effectively integrate the resources of relevant ministries, agencies and institutions, and precisely and directly provide the public with voucher collection and spending functions (Government to Citizen, G2C); conversely, in the future it could also enable the public to pay taxes and fees to the government (Citizen to Government, C2G), improving administrative efficiency.
+
+– Filling market gaps: The existing payment market is driven by commercial interests and often overlooks less profitable application settings (such as government fees and medical institutions). CBDC can proceed from the perspective of the “public interest” to fill these market gaps and deepen financial inclusion.
+
+(2) As regards wholesale CBDC, central bank money is the best clearing instrument, and therefore wholesale
+
+14
+International development trends also show that in countries with well-developed electronic payments, promoting retail CBDC does not necessarily meet current needs; some countries, such as Australia, Canada and Switzerland, have even put it on hold.
+
+15
+=== PAGE 20 ===
+-type CBDC can serve as a cross-system, cross-institution clearing tool in a tokenized world, supporting fund-flow operations such as transactions, delivery, and settlement (clearing) in a tokenized monetary system, to respond to future trends in the development of tokenized assets.
+
+Q2: Will the issuance of CBDC affect the monetary aggregate M2 or cause inflation?
+
+      Like physical New Taiwan dollars, CBDC must be fully backed by issuance reserves (such as gold and foreign exchange reserves), and must be converted at an equivalent value of 1:1 with existing money. Therefore, the issuance of CBDC is merely a conversion between forms of money, will not increase the supply of the monetary aggregate M2, and poses no concern about affecting inflation:
+
+1. Retail CBDC: Members of the public exchange physical cash (deposited through an ATM) or bank deposits (converted through an App) for it at equivalent value. If exchanged using cash, this is a change in the form of central bank money, and M2 remains unchanged; if exchanged using deposits, the components of M2 change (deposits decrease and central bank money increases), but the quantity of M2 remains unchanged.
+
+2. Wholesale CBDC: Banks exchange reserves deposited with the central bank for it at equivalent value, which also does not affect the quantity of M215.
+
+Q3: If CBDC is issued, will it impact the banking system and cause financial disintermediation? How will the central bank control this risk?
+
+1. To avoid financial disintermediation caused by CBDC, the Bank sets a holding limit [持有餘額限制] on CBDC and does not pay interest on it, to avoid impacting the banking system:
+
+     (1) No interest in the initial implementation period: CBDC does not pay interest, which can reduce the public's incentive to use CBDC as a store of value (compared with interest-bearing bank deposits), returning it to its essential nature as a payment tool.
+
+     (2) Holding limit: An upper limit on holding balances is set for individuals and legal persons, to prevent the public from holding large amounts of CBDC and thereby causing an outflow of bank deposits.
+15
+     Monetary aggregates measure the stock of money in an economy, whereas reserves (or wholesale CBDC) are used for clearing or liquidity management, do not circulate in the economy, and are not included in the statistical scope of monetary aggregates.
+                          16
+=== PAGE 21 ===
+2. Since CBDC is a liability of the central bank, banks play the roles of “custodian” and “circulator” in the CBDC operating framework; in addition, CBDC can also become part of banks' additional services, for example, providing innovative services through programmability, thereby strengthening customer stickiness and increasing customers' incentives to do business with banks.
+
+(II) Comparison of CBDC, Deposit Tokens, and Stablecoins
+
+Q1: What are the differences between CBDC, stablecoins, and deposit tokens [存款代幣]?
+
+1. CBDC, stablecoins, and deposit tokens are all new forms of digital money. Their differences can be described as follows (Table 4):
+
+     (1) CBDC: Issued by the central bank, it is a direct liability of the central bank, has no credit risk or liquidity risk, must be fully backed by issuance reserves, and can be divided into two types: retail and wholesale.
+
+      ⚫   Retail CBDC: Cash in digital form, for the public's daily transactions, which can be widely used for transfers, shopping at merchants, P2B consumer payments, payment of taxes and fees, etc.
+
+      ⚫   Wholesale CBDC: Tokenized central bank reserves, used to process transfers of deposit tokens between financial institutions or the clearing of other token assets, supporting transactions in and the development of RWA tokens.
+
+     (2) Stablecoins: Mainly payment stablecoins, whose value is pegged to the US dollar or other fiat currencies and backed by fiat-currency assets. They are usually issued by the non-bank sector and are liabilities of that sector. They are currently the main medium of exchange in the virtual asset market, but their scope of application has gradually extended to payment services in the real economy16. However, because of factors such as the credit standing of the issuer, or the transparency or safety of reserve assets, stablecoins may carry risks of issuer failure, insufficient reserve assets, or unstable value. Therefore, major coun-
+
+
+16
+     In some emerging countries, such as countries with high inflation or a lack of payment infrastructure, residents convert local currency into US dollar stablecoins to use as US dollars and maintain purchasing power. Other uses also include international remittances, commercial activities, and salary payments. Visa (2024), “Stablecoins: The Emerging Market Story,” Sep.
+                                      17
+=== PAGE 22 ===
+tries have already begun bringing them under regulation; Taiwan's Financial Supervisory Commission has also drafted the “Virtual Asset Services Act” to bring stablecoins under regulation.
+
+                 Table 4 Comparison of Deposit Tokens, Stablecoins, and CBDC
+ | Deposit tokens | Stablecoins | CBDC |
+ |  |  | Retail CBDC | Wholesale CBDC
+Issuing entity | Commercial banks | Mostly non-bank institutions | Central bank |
+Existing form of money | Commercial bank money | Similar to electronic money* | Cash | Reserves deposited with the central bank by commercial banks in accordance with regulations**
+Potential users | General public |  |  | Financial institutions
+Basis of value | Deposits | Reserve assets | Issuance reserves |
+Technology | Tokenization*** |  | Tokenization or centralized system | Tokenization
+Application scenarios | Retail payments or fund transfers**** |  |  | Clearing of funds between financial institutions
+Regulation | Regulations relating to bank deposits may apply | Amend existing payment laws and regulations or enact a dedicated law | Amend the Central Bank of the Republic of China (Taiwan) Act or enact a separate dedicated law |
+*
+     Under current laws and regulations, funds received by electronic payment institutions must be placed in trust; stablecoins must comply with requirements concerning reserve assets under each country's regulatory framework or laws and regulations.
+**
+     Under Article 23 of the Central Bank of the Republic of China (Taiwan) Act and the Regulations Governing the Adjustment and Audit of Deposit and Other Liability Reserves of Financial Institutions, the Bank requires financial institutions to set aside reserves at a certain ratio of their liabilities to meet payment needs, and thereby build public confidence in the financial system's provision of sufficient liquidity.
+***
+     Tokenization refers to using technologies such as blockchain or DLT to convert assets into asset tokens.
+****
+     Stablecoins are currently used mainly as a medium of exchange in virtual markets; in addition to retail payments and fund transfers, deposit tokens currently also have experimental cases involving supply chain financing and financial investment.
+
+
+         (3) Deposit tokens: Tokenized bank deposits, which are liabilities of commercial banks, can serve as a medium of exchange for RWA tokens17, or be used for internal B2B cross-border fund settlement (clearing) within large multinational banks18. They serve as cross-border payment tools for their multinational corporate clients to allocate funds between domestic or overseas locations. In terms of regulation, existing deposit-related
+
+
+
+    17
+         For example, retail investors can hold deposit tokens and use them to invest in and purchase security tokens, enhancing the commonality and efficiency of transactions.
+    18
+         Such as the internal networks of JPMorgan and Citi.
+                                       18
+=== PAGE 23 ===
+regulations may apply19. In addition, commercial banks are subject to a high degree of supervision and must comply with strict requirements on minimum capital, liquidity, and risk management, and the central bank can act as lender of last resort (last resort) when necessary. They are therefore safer than stablecoins.
+
+2. Stablecoins and deposit tokens are both tokenized money issued by the private sector. The similarities and differences in their issuing entities, functions, means of acquisition, failure resolution mechanisms, etc. are further explained in Table 5.
+
+                            Table 5 Similarities and Differences between Stablecoins and Deposit Tokens
+
+ | Stablecoins | Deposit tokens
+Issuing entity |  Non-banks or bank subsidiaries |  Commercial banks or other depository institutions
+Functions |  Instant clearing |  Instant clearing
+ |  Round-the-clock operation (24/7) |  Round-the-clock operation (24/7)
+ |  Finality |  Finality
+ |  Programmability |  Programmability
+ |  Public blockchain |  Private blockchain, or public blockchain with built-in control mechanisms
+Basis of value |  Backed 1:1 by low-risk liquid assets, with appropriate capital, liquidity, and risk management standards |  Backed by bank balance sheets and governed by the banking regulatory framework; covered by deposit insurance and able to obtain liquidity support
+Means of acquisition |  Issued by issuing institutions, but acquired mainly in the secondary market |  Issued by commercial banks
+ |  Users must have a digital wallet [數位錢包] |  Users must have a deposit account [存款帳戶]
+Failure resolution mechanism |  Asset segregation and bankruptcy procedures |  Deposit insurance and related resolution mechanisms
+Use scenarios |  Virtual asset trading |  For institutions to use for corporate treasury and working capital management or cross-border payments
+ |  Retail remittances |  Collateral and margin
+ |  Potential for use by small merchants or for cross-border payments |
+ |  Collateral |
+Source: Liang, N., and W. Dudley (2026), “Next Steps for GENIUS Payment Stablecoins,” Brookings
+     Institution, Mar. 3.
+
+
+
+
+19
+     EBA (2024), “Report on Tokenised Deposits,” EBA/REP/2024/24; Bank of England (2024), “The Bank of
+     England’s Approach to Innovation in Money and Payments,” Discussion Paper, Jul. 30.
+                                                    19
+=== PAGE 24 ===
+Q2: What is the relationship between CBDC and private-sector money such as stablecoins and deposit tokens?
+
+  CBDC, stablecoins, and deposit tokens can coexist and complement one another at different tiers [層級]:
+
+1. The goal of retail CBDC is to establish a common infrastructure that can interoperate with other payment tools (such as deposit tokens and stablecoins), allowing the public to choose different payment methods according to their needs. In addition, to avoid impacting the banking system and causing financial disintermediation, retail CBDC may be non-interest-bearing, and wallet balances are subject to an upper limit; issuance adopts a two-tier architecture [雙層式架構] to maintain the operation of the existing monetary and financial systems.
+
+2. Wholesale CBDC serves as a cross-system, cross-institution, cross-platform final clearing tool, supporting interoperability between different deposit tokens or stablecoins, to prevent fragmentation in the RWA market arising from insufficient interoperability between platforms.
+
+(III) Legal Basis and Regulatory Framework
+
+Q1: What is the legal basis for issuing CBDC? Does the central bank lean toward enacting a dedicated law or amending the Central Bank of the Republic of China (Taiwan) Act?
+
+1. Although Article 13 of the current Central Bank of the Republic of China (Taiwan) Act authorizes the Bank to issue national currency, there are conflicts with other provisions. For example, Article 15 of the Central Bank of the Republic of China (Taiwan) Act uses terms such as the printing, minting, denominations, and forms of currency, which clearly concern physical currency and cannot fully cover CBDC in digital form. Therefore, the current legal basis for issuing CBDC appears insufficient.
+
+2. Considering the economic benefits of legislation and the completeness of regulations, if CBDC is to be issued, the Bank may lean more toward enacting a dedicated law rather than merely amending the Central Bank of the Republic of China (Taiwan) Act:
+
+(1) Basis for issuance and legal status: A dedicated law can comprehensively regulate CBDC's status as fiat currency, legal nature, and legal tender [法償] effect.
+
+(2) Management of intermediaries [中介機構]: A regulatory framework for intermediaries needs to be established, clearly specifying their qualifications and conditions, as well as the rights and obligations between the Bank and intermediaries.
+                20
+=== PAGE 25 ===
+(3) Civil law issues: CBDC may constitute an “intangible property right.” The effect and timing of the transfer of its property rights, as well as its legal status in bankruptcy or compulsory enforcement, all need to be clearly specified by law.
+
+     (4) Criminal law issues: The types of crime faced by CBDC in digital form (such as tampering with the ledger [帳本] and system attacks) are entirely different from counterfeiting physical currency. The offense of currency counterfeiting under the current Criminal Code is difficult to apply to these, and a dedicated law is needed to address them.
+
+3. Before CBDC is formally issued in the future, the relevant legal framework planning must first be completed, communication with the Ministry of Justice and other relevant agencies must take place, and relevant supporting measures must be formulated.
+
+Q2: Under the two-tier architecture, what are the qualifications for becoming an intermediary? What are the legal relationship and supervisory model between the central bank and intermediaries?
+
+1. Regarding qualifications for intermediaries, these could be banks or electronic payment institutions, as these institutions already have mature regulatory frameworks for operations, legal compliance, and information security, and are all suitable intermediaries.
+
+2. Intermediaries will bear anti-money laundering (Anti-Money Laundering, AML) and KYC responsibilities, serving as the first line of defense in implementing anti-money laundering and fraud detection, and will only be able to view transaction information relating to their customers, to protect users' privacy [隱私].
+
+3. The legal relationship between the Bank and intermediaries is currently still being formulated, and may be established through regulatory orders, contracts, or a combination of regulations and contracts.
+
+Q3: Is CBDC legal tender? Can merchants refuse to accept it?
+
+1. CBDC is issued by the central bank and is legal tender. In principle, merchants should not refuse to accept it, unless otherwise provided by law or regulation or as agreed by contract20.
+
+2. However, CBDC involves whether merchants deploy payment acceptance equipment (such as mobile phones and POS terminals) and network connections. If CBDC is to be issued in the future, the euro area's approach could be referenced, adopting
+
+20
+     Taking New Taiwan dollar cash as an example, in principle, merchants should not refuse payment in New Taiwan dollar cash for transactions, unless otherwise provided by law or regulation or as agreed by contract (such as in online transactions, unmanned sales, self-service, etc.) to use methods other than cash as payment tools.
+                           21
+=== PAGE 26 ===
+a gradual rollout in stages or differentiated by target group21; as for the specific scope of use, legislation (such as a dedicated law) could authorize the central bank to implement it progressively in stages.
+
+Q4: What is the legal nature of CBDC? Can it be subject to compulsory enforcement (attachment)?
+
+1. CBDC is cash in digital form and a type of property right, and should be able to be subject to attachment, possibly in a form similar to attachment of bank deposits. However, the scope of the current Compulsory Enforcement Act does not directly cover CBDC. Therefore, if CBDC is to be issued in the future, the Bank will work with the Ministry of Justice and other relevant agencies to adapt and plan laws and regulations, clearly specifying the relevant methods of enforcement.
+
+2. In planning the CBDC platform, the Bank will make provision for mechanisms to handle such exceptional situations, so that prosecutorial, investigative, or judicial agencies can carry out investigations or legal procedures such as freezing, attachment, or compulsory enforcement, provided that they are lawful and necessary.
+
+(IV) System Architecture and Choice of Technical Solutions
+
+Q1: Under current plans, why does retail CBDC use centralized technology, while wholesale CBDC uses distributed ledger technology (DLT) [分散式帳本技術]?
+
+1. Retail CBDC and wholesale CBDC are planned to adopt different technical architectures, mainly in consideration of two factors: transaction processing capacity and application scenarios:
+
+     (1) Retail CBDC: To meet the physical and online transaction needs of the population nationwide, transactions per second (TPS) must reach several thousand to tens of thousands; current DLT cannot yet meet the demand for high-frequency, large-volume real-time transactions, and still faces a trilemma22 and potential privacy concerns. Therefore, a centralized system is planned.
+
+     (2) Wholesale CBDC: Used for the clearing of tokenized asset transactions between financial institutions, with a relatively smaller transaction volume, and because DLT has advantages such as transaction verification by multiple parties and resistance to tampering,
+
+21
+   For example, in the initial period, government agencies (such as for payment of taxes, fines, fees, etc.) or public enterprises may be required to accept it; for ordinary merchants, an exemption list may be established at that time based on transaction amounts or merchant categories.
+22
+   That is, the difficulty of simultaneously ensuring security, decentralization, and scalability.
+                        22
+=== PAGE 27 ===
+DLT is therefore planned. The focus at the current experimental stage is on verifying technical feasibility and business processes, rather than pursuing the maximum TPS23.
+
+2. In the future, the Bank will continue to monitor developments in relevant technologies and assess the most suitable technology on a rolling basis.
+
+Q2: Will the CBDC wallet App be developed centrally by the central bank, or independently by each intermediary?
+
+1. For large financial institutions with system development capabilities, the Bank encourages independent development and integration with their existing Apps (such as mobile banking), to facilitate the provision of customized wallet services and enable innovation; the Bank will also formulate uniform technical and information security specifications, and set basic requirements for the user interface (UI) to ensure an interoperable experience.
+
+2. For some smaller financial institutions, in view of their limited resources, the system will therefore provide a “standard wallet” design for them to embed in their respective Apps, helping them provide services in a simpler way and promoting widespread use of CBDC.
+
+Q3: Will CBDC payment specifications (such as QR Code) be integrated with current standards? Will merchants need to install new hardware equipment?
+
+1. Efforts will be made to unify merchants' existing payment acceptance interfaces rather than create new specifications. It is therefore planned that future CBDC will continue to use and be integrated into TWQR's common payment standard, resolving the difficulty of merchants having to deploy multiple QR Codes.
+
+2. CBDC acceptance methods will follow current electronic payment practices, and merchants will not need to purchase additional hardware equipment. For example, small vendors can simply use QR Code display stands (payer scans), which are low-cost; large merchants can integrate acceptance into existing POS terminal scanners (payer's code is scanned) or support NFC contactless payments.
+
+Q4: Is the central bank planning offline payments [離線支付] (Offline Payment) for CBDC?
+
+
+23
+     The experimental stage uses the Hyperledger Besu platform, with PBFT (Byzantine fault tolerance) as the consensus algorithm. This is also the technology used by central banks in the European Union, Australia, Thailand, etc. in their experiments.
+                                    23
+=== PAGE 28 ===
+1. Considering the digital divide and the need for digital payments without network connectivity, the Bank has already conducted experiments on offline payment technology24, enabling people who do not use mobile phones to make offline payments using cards, and enabling members of the public or merchants to choose to use mobile phones or cards to receive and make offline payments when there is no network connection, making digital payments more resilient and widely accessible.
+
+2. At present, technologies relating to offline payments are not yet mature, and there are no common international specifications. The Bank will continue its research.
+
+3. If CBDC is issued in the future, cash issuance will also be retained. Therefore, even without offline payments, it can still be ensured that those affected by the digital divide can use money issued by the central bank.
+
+Q5: How will CBDC's programmability (Programmable Payments) be developed?
+
+      The Bank will encourage intermediaries such as banks and electronic payment service businesses to develop innovative applications. During development, intermediaries may also bring in external resources for shared use, or information technology businesses may develop general-purpose modules for financial institutions to use; that is, innovation and efficiency will be achieved through public-private collaboration.
+
+(V) Risk Management, Security, and Privacy Protection
+
+Q1: Why is it necessary to restrict the holding limit for “registered wallets” [記名錢包]? Can the number of wallets be unrestricted rather than limited to 3? Might the limit for legal persons be insufficient?
+
+1. The retail CBDC system has holding limits for the public and limits on the number of wallets, mainly to avoid financial disintermediation and maintain financial stability. If the CBDC holding limit is too high or there is no upper limit, bank deposits may flow into CBDC, causing financial disintermediation and affecting banks' credit creation function; moreover, since CBDC is characterized by convenient conversion, if a digital run (digital run) occurs, bank deposits will rapidly flow out in large amounts, thereby impacting financial stability. To avoid the above phenomena, the Bank adopts prudent risk management measures in its design. In addition to possibly not paying interest, it also sets limits on holdings, transaction amounts, and
+
+24
+     The Bank has already tested three offline payment scenarios: mobile phone to mobile phone, mobile phone to card, and card to card; among these, the card-to-card application scenario requires a mobile phone as an intermediary to complete the transaction.
+                         24
+=== PAGE 29 ===
+an upper limit on the number of wallets [錢包] held, so as not to affect the operation of the existing financial system.
+
+2. Each user may open at most only 3 wallets. This is a preliminary plan and may be adjusted according to needs in the future. However, this restriction is intended to prevent the above-mentioned situation in which large amounts of bank deposits flow into CBDC. Therefore, if adjustments are made in the future, the number of wallets should still not be too large.
+
+3. Some enterprises have also indicated that the limit for legal persons (such as 500 ten-thousand yuan) may be insufficient. The current limit design is only a preliminary plan, not a final decision. If a decision is made to issue it in the future, the Bank will review on an ongoing basis, according to circumstances, whether adjustments should be made.
+
+Q2: As a digital currency, how does CBDC guard against information security risks (such as hacking, impersonation or data leaks)?
+
+1. All CBDC transactions must involve members of the public signing with private keys and the platform verifying the signatures to ensure the expression of their intent and prevent impersonation.
+
+2. The CBDC platform follows the requirements below to ensure security:
+
+(1) The three elements of information security (CIA) proposed by the National Institute of Standards and Technology (NIST) of the United States: confidentiality [機密性] (C), integrity (I), and availability (A).
+
+(2) System development and environment establishment are carried out according to the highest-level requirements of the Ministry of Digital Affairs' “Information and Communications System Protection Baselines.”
+
+(3) It follows international standards such as ISO 27001 (information security management), ISO 27701 (privacy protection management [隱私保護管理]), and ISO 22301 (business continuity management), and regularly commissions an impartial third-party organization to conduct audits each year and obtains certification.
+
+3. Measures taken by the CBDC platform to ensure security:
+
+(1) Externally, a traffic-scrubbing mechanism from telecommunications operators is introduced, which can effectively guard against hackers' DDoS distributed denial-of-service attacks.
+
+(2) Internally, a defense-in-depth architecture is adopted. In addition to adopting a whitelist mechanism to control legitimate sources, it also uses
+
+25
+=== PAGE 30 ===
+related network and security control equipment to provide layer-by-layer barriers.
+
+(3) The platform has an endpoint detection and response mechanism that can automatically monitor abnormal behavior and issue timely warnings to prevent hackers from intruding and stealing data.
+
+(4) Vulnerability scanning, penetration testing and red-team exercises are conducted regularly.
+
+(5) Financial information security joint-defense intelligence messages from the Financial Information Sharing and Analysis Center (F-ISAC) are continuously received to quickly grasp the latest vulnerability threats, attack methods, scope of impact and response measures.
+
+Q3: If CBDC is issued, how will illegal acts such as fraud or money laundering be prevented? Will it increase the risk of older people or older people with dementia being defrauded?
+
+1. Anti-money laundering (AML): This has already been taken into consideration in the CBDC wallet design. The application process for registered wallets [記名錢包] follows the current process for opening a bank account, with intermediaries [中介機構] carrying out KYC and AML procedures as the first line of defense. Unregistered wallets [不記名錢包] are controlled through wallets with small limits, to increase the cost of crime25 and reduce incentives for money laundering.
+
+2. Fraud prevention:
+
+(1) No payment instrument can completely eliminate fraud. Older people or older people with dementia can easily become targets of fraud, which is not necessarily related to whether CBDC is issued. In other words, CBDC is not the reason for an increase in fraud risk.
+
+(2) In the future, CBDC might help reduce fraud risk through the following practices:
+
+⚫ Compared with cash, CBDC registered wallets have traceability [可追溯性], which helps prosecutorial and investigative authorities trace backwards and can clarify the ownership of funds belonging to multiple victims in the same account [帳戶].
+
+⚫ In the future, the CBDC platform could consider interfacing with relevant organizations (such as 165). It could also follow current banks in establishing a mechanism with a “flagged account” function, to promptly freeze reported wallets when necessary; or include emergency suspension or wallet-freezing
+
+25
+For example, a large number of accounts would need to be used.
+
+26
+=== PAGE 31 ===
+functions in its programmability functions; wallet limits [錢包限額] also help reduce losses suffered from fraud.
+
+Q4: How does CBDC balance the tracking of transaction fund flows with transaction privacy [隱私]? Will the central bank arbitrarily monitor the public's transactions?
+
+CBDC uses a data governance mechanism under a “two-tier architecture [雙層式架構]” to safeguard the privacy of the public's lawful transactions:
+
+1. Privacy design:
+
+(1) The CBDC platform does not retain customers' direct personal data [直接個資]. Personal data [個人資料] (data subjected to KYC by intermediaries) are retained only by intermediaries. All data transmitted to the CBDC platform are necessary for risk control and are processed using de-identification [去識別化] technology. The central bank cannot identify individuals and would find it difficult to restore the data, so as to protect personal privacy and reduce the risk of personal data leaks.
+
+(2) Unregistered wallets set small-value thresholds, such as 1,000 US dollars or 3 ten-thousand New Taiwan dollars or less, with reference to the transaction limits [交易限額] of international anti-money laundering organizations (such as FATF) and the EU's digital euro. Members of the public who need only small-value payments need only confirm the corresponding relationship of the “mobile phone number” through telecommunications company certification (TWCA). It will not be directly linked to the holder's identity, thereby accommodating both the public's small-value payment needs and their privacy needs.
+
+2. Tracking transaction fund flows: The Bank will not conduct routine checks. Only when abnormal transactions are discovered, or when prosecutorial, investigative or tax authorities comply with laws such as the Personal Data Protection Act and the Code of Criminal Procedure, and subject to explicit provisions in any dedicated legislation that may exist in the future, may data be requested from intermediaries according to statutory procedures and transaction records (excluding personal data) be requested from the Bank for comparison. In addition, the strength of data protection for CBDC holders will in no case be lower than the protection standards for financial consumers under current laws and regulations.
+
+Q5: If a user's mobile phone is lost or malfunctions, can the CBDC in it be recovered?
+
+Whether CBDC in a lost or malfunctioning mobile phone can be recovered depends on the type of wallet:
+
+27
+=== PAGE 32 ===
+1. Registered wallet (recoverable): If a mobile phone is lost or malfunctions, the user can immediately contact their intermediary. The intermediary will send an instruction in real time through an API to the CBDC platform to “temporarily disable” (Disable) the wallet. Once the user has completed verification of identity [身份驗證] and the new device is ready, the wallet can be restored and the CBDC recovered.
+
+2. Unregistered wallet (not recoverable): As the account is not linked to the user's identity, the wallet cannot be restored after the mobile phone is lost.
+
+(6) Financial inclusion and public communication
+
+Q1: How does CBDC implement financial inclusion and assist groups affected by the digital divide?
+
+The Bank attaches great importance to financial inclusion and regards it as one of CBDC's core values:
+
+1. Taking care of small minority groups: The existing electronic payment market is driven by commercial interests and may overlook less profitable small minority groups. CBDC starts from the public interest. As more and more merchants introduce CBDC in the future, financial inclusion can be expected to be strengthened.
+
+2. A CBDC wallet can be opened without a bank account: Even if members of the public do not have a bank account, they can still open a CBDC wallet. Registered wallets must undergo KYC by an intermediary, while for unregistered wallets it is sufficient to provide a mobile phone number and verify its validity.
+
+3. Studying the feasibility of hardware devices other than mobile phones: Mobile phones are the main medium for CBDC payments. Whether to provide payment devices other than mobile phones, such as physical cards, for use by members of the public who do not use mobile phones (such as some older people) will be studied and discussed.
+
+4. The Bank will continue to provide cash: If CBDC is to be issued in the future, the Bank will still issue physical cash. That is, physical cash will not disappear but will coexist with CBDC, to ensure that groups that do not use digital payment instruments (such as some older people) can still use cash for transactions. This not only takes care of older people or people in remote areas and ensures financial inclusion, but also serves as a backup instrument when systemic risks occur in electronic payments or digital payments, helping the resilience of the payment environment.
+
+28
+=== PAGE 33 ===
+Q2: What supporting measures are there for specific groups, such as people with disabilities or migrant workers?
+
+1. Accessibility and ease of use will be strengthened in user interface or operational design:
+
+(1) Intermediaries' wallet Apps must pass the Ministry of Digital Affairs' “accessibility testing (WCAG)” to ensure that groups such as people with visual impairments can easily carry out transactions.
+
+(2) The user interface (UI) and user experience (UX) developed and designed by intermediaries must take into account the needs of different groups. For example, an operating mode with large fonts and simplified operation should be developed for older people.
+
+(3) Intermediaries may assess the provision of diverse forms of outreach, such as developing “easy-to-read versions” of relevant teaching materials, adding sign-language interpretation, and establishing multiple consultation channels (such as sign-language video services), to help the public become familiar with using CBDC.
+
+2. Migrant workers currently face problems in cross-border remittances such as relatively high barriers to obtaining financial services and bank business hours that do not meet their needs. In the future, CBDC could be used for cross-border payments. However, there are currently no common international standards for CBDC. Common standards for cross-border payment applications must first be established before they can actually be put into use. The BIS considers cross-border interlinking of countries' existing Fast Payment Systems (FPS) to be a goal more likely to be achieved first in the short term. The Bank will continue to closely follow international developments concerning cross-border payments to facilitate alignment with international practices.
+
+3. In addition, to safeguard the rights and interests of older or disadvantaged people in using banknotes, even if the Bank decides to issue retail CBDC, physical cash will continue to be provided, and the feasibility of issuing physical cards will be studied.
+
+Q3: How can merchants' (especially small merchants') willingness to adopt CBDC be increased? What specific promotion or incentive measures are there?
+
+Increasing merchants' willingness to adopt it will be key to the widespread use of CBDC. Efforts can start with aspects such as reducing introduction costs and providing incentives:
+
+29
+=== PAGE 34 ===
+1. Reducing introduction costs: As stated above, the method of accepting CBDC will follow current electronic payment practices, and merchants will not need to purchase special hardware. For example, small stallholders can use QR Code display stands at extremely low cost. In the future, CBDC QR Code payments will be integrated into the TWQR common payment standard, so merchants will not need to add new payment display stands. For large merchants, integration with existing POS scanners is possible.
+
+2. Providing inducements or incentive measures:
+
+(1) Handling fees:
+
+⚫ In principle, no handling fees are charged for basic-function services (such as transfers, topping up and exchange). If intermediaries (such as banks) provide “value-added services” needed by merchants (such as assisting with collection and reconciliation, or providing CBDC financial management services for merchants), intermediaries may charge handling fees as appropriate. Intermediaries can also increase customer stickiness through this.
+
+⚫ For merchants, intermediaries charging handling fees as appropriate only for “value-added services” may help reduce the fees they need to pay. Merchants can also consider whether to offer the saved fees to customers as discounts, increasing incentives for use.
+
+(2) Other measures:
+
+⚫ If CBDC is to be promoted in the future, the Bank will discuss with the Ministry of Finance whether to provide tax incentives following those currently provided for mobile payments26.
+
+⚫ If issuance is confirmed in the future, it might be possible to allocate a budget or turn part of the savings in costs such as the printing and circulation of physical banknotes into incentive measures such as subsidies.
+
+3. In addition, the digital fund-flow platform established by the Bank based on the retail CBDC prototype platform architecture initially uses support for government agencies' distribution of digital vouchers for payment as a trial implementation project. It has successfully assisted the Hakka Affairs Council's Hakka Coin project. Small and medium-sized merchants can take this opportunity to join
+
+26
+According to the Ministry of Finance's “Operating Rules for the Application of Tax Incentives to Business Entities Subject to Assessed Taxation Using Mobile Payments and Multimedia Information Service Kiosks,” our country currently provides a 1% business tax incentive to small-scale business entities that introduce mobile payments, meet certain requirements and have their applications approved. This is expected to remain in effect until the end of year 117.
+
+30
+=== PAGE 35 ===
+the platform to accept digital voucher payments. Financial institutions can also actively interface with the platform and become familiar with its operation. If retail CBDC is to be issued in the future, merchants and financial institutions will then be able to make a seamless transition.
+
+Q4: How will the central bank subsequently carry out educational outreach and public communication?
+
+CBDC is currently still at the research and experimentation stage, and there is no timetable for issuance yet. Once the issuance policy is established, educational outreach to the public is indeed an indispensable part of the policy implementation stage. Therefore, the Bank will continue to communicate externally in the following ways:
+
+1. Publishing explanatory documents on relevant policies: The Bank will continue to release relevant information through channels such as its official website, press releases, and reference materials issued after meetings of the Board of Directors and Supervisors.
+
+2. Gaining experience through practical operations and continuing to understand public needs: The Bank's digital fund-flow platform can already support government agencies' various distribution policies, such as Hakka Coin. Through this, the needs and opinions of all parties (including intermediaries) can be understood, helping to identify problems and continuously refine system functions.
+
+(7) Cross-border payments and real-world asset (RWA) tokenization applications
+
+Q1: Can CBDC be used to improve the efficiency of cross-border payments?
+
+CBDC is one of the possible improvement options for facilitating cross-border payments, but cross-border interlinking of countries' existing FPS is a more feasible improvement option in the short term:
+
+1. CBDC cross-border payments still present challenges, including issues involving technology, laws and regulations, policy and governance that remain to be resolved. Therefore, countries' CBDCs are still undergoing research and experimentation.
+
+2. The BIS considers FPS cross-border interlinking to be a potentially more feasible option for improving cross-border payments in the near term, and has therefore listed it as a priority initiative, hoping that countries' FPS will adopt consistent data exchange and communications standards. Our country's interbank financial information system is an FPS. In this regard, the Bank continues to participate in exchanges at relevant meetings of international financial organizations and urges the Financial Information Service Co., Ltd. to make preparations to facilitate future alignment with international systems.
+
+31
+=== PAGE 36 ===
+Q2: What is the positioning of wholesale CBDC? What is its relationship with RWA tokens? What is the current progress of experimentation?
+
+1. Wholesale CBDC is tokenized central bank reserves. It can serve as a settlement instrument for handling interbank transfers of deposit tokens or other asset tokens, thereby supporting innovative applications in financial markets, including the development of RWA tokens.
+
+2. Since the end of year 113, the Bank has established a “tokenized fund-flow experimentation platform” and completed proofs of concept for deposit tokens, delivery versus payment (DvP), and special-purpose tokens (such as bid-bond tokens)27. In year 114, it cooperated with the Taiwan Depository & Clearing Corporation to complete a DvP experiment for corporate bond tokens. In addition, the Financial Supervisory Commission is also bringing together securities-related institutions and financial institutions to establish an RWA tokenization platform. However, the world of tokenized assets still needs tokenized money as a transaction instrument. If settlement (clearing) across institutions, systems or platforms is involved, wholesale CBDC is still needed as the final settlement instrument.
+
+3. To avoid fragmented development of tokenization platforms, the Bank will subsequently continue to cooperate with the Taiwan Depository & Clearing Corporation in experimentation, exploring the feasibility of jointly building tokenized financial market infrastructure.
+
+V. Conclusion
+
+Most countries that have currently issued CBDC have relatively insufficient financial infrastructure, such as the Bahamas, Jamaica and Nigeria. Their main objective is to promote financial inclusion, but developments since issuance have all fallen short of expectations28, while major advanced countries such as the EU and Japan remain at the research and experimentation stage.
+
+Our country's CBDC development progress is in step with that of major advanced countries, with research and experimentation continuing steadily. As regards retail CBDC, because Taiwan's existing payment system is already quite conven-
+
+27
+Government tendering units currently still use paper-based and manual procedures to collect bid bonds from bidding firms. If deposit tokens are combined with smart contracts, they can become bid-bond tokens with bid-bond functions. Once bid opening is completed, the tokenization experimentation platform automatically converts bid-bond tokens back into deposit tokens for unsuccessful bidders. The successful bidder's bid-bond tokens are automatically converted into performance-bond tokens, which are converted back into the successful bidder's deposit tokens once the tender project is completed.
+
+28
+The ratios of CBDC to currency in circulation in the Bahamas, Jamaica and Nigeria are all far below 1%.
+
+32
+=== PAGE 37 ===
+ient29, there is currently no urgency to issue retail CBDC. However, to help integrate relevant resources in government departments and the private sector, the digital fund-flow platform established by the Bank based on the CBDC prototype platform architecture initially uses support for digital voucher payment functions as a trial implementation project. This is used to verify the feasibility of the platform's technology and its high load-handling capacity. In the future, it can continue to support the government's various distribution policies, while the functions and performance of the digital fund-flow platform continue to be refined to improve the effectiveness of government distribution policies.
+
+As regards wholesale CBDC, because wholesale CBDC helps maintain central bank money as a settlement instrument in the tokenized world, the Bank established a tokenized fund-flow experimentation platform in year 113 together with the Financial Information Service Co., Ltd. and participating banks. It is currently continuing to cooperate with the Taiwan Depository & Clearing Corporation in experimenting with the use of wholesale CBDC to support transactions in various tokenized assets, exploring the feasibility of jointly building tokenized financial infrastructure in the future.
+
+In addition, although CBDC is one of the possible improvement options for facilitating cross-border payments, countries' CBDCs are still undergoing research and experimentation, and there are not yet common international standards for CBDC cross-border payments. Nevertheless, the Bank will continue to monitor and study the subject to ensure that future developments remain in step with international developments.
+
+29
+There are diverse and convenient payment instruments, such as credit cards, debit cards, bank deposits or electronic payments.
+
+33
+=== PAGE 38 ===
+Appendix: Collection of Activity Photographs
+
+(1) Public hearing
+
+34
+=== PAGE 39 ===
+(2) Forum
+
+35
+=== PAGE 40 ===
+(3) Briefing sessions
+
+36

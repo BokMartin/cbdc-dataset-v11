@@ -1,262 +1,278 @@
 #!/usr/bin/env python3
-"""Build site/assets/data.json for the v11 website (mock-up of the finished product).
+"""Build the data files of the website from the committed manifests (no network, no model, deterministic).
 
-REAL inputs
-  data/registry/REGISTRY_v2_2.csv                    document registry (391 documents, 92 registry codes)
-  data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv  official project status with sources
-  archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md       feature definitions (parsed from §4)
-  data/worked_profiles/<JUR>_api_single_v1_1.csv     development fills (the only real cell values so far)
-MOCK
-  Every other cell value, trajectory and decisive page is generated here with a fixed seed. Values are drawn
-  from realistic distributions but are NOT tied to what is publicly known about any project (no LLM prior),
-  so they cannot anchor later coding. Each mock cell carries provenance = "MOCK". Decisive documents cited
-  by mock cells are real registry rows (title, year, URL) but the page and the (empty) quote are placeholders.
+What the site shows, and only that:
+  * the analytic frame (44 projects) and the official project status of 17 Oct 2026 with its source;
+  * every document the project holds (772 rows of TIERS), with the authors' decision on it
+    (evidence / companion / dropped / wholesale), who made the decision (an author, or a model proposal not yet
+    confirmed), language, how an English text was obtained, the issuer's URL and the SHA-256 of the file we hold;
+  * corpus counts per project (documents, years, tiers).
 
-Unit of analysis follows the contract: euro area, ECCU and WAEMU are one project each; national euro-area
-documents are attached to the euro-area project. BIS and UN rows are not projects.
+What it never shows (AGENTS.md): source text, unit texts, translations other than those listed under ADR-008, dictionary or candidate counts per project
+(no ranking by amount of talk), any model label, any result of the sealed screens of 2 Nov, any F-cell value.
+Internal notes of the registry and of the pre-screen are not copied either.
 
-usage: python3 scripts/site/build_site_data.py        (from the repository root; needs pycountry)
+Inputs (all under data/):
+  manifest/TIERS_2026-11-17.csv               one row per document, decision of record, tier, language, SHA-256
+  manifest/CORPUS_DOCUMENTS_2026-11-17.csv    evidence documents with English text: issuer, kind, text route
+  manifest/ISSUERS_2026-11-13.csv             issuer and kind of evidence documents (model pre-fill, under review)
+  manifest/COMPANION_LINKS_2026-11-13.csv     companions: kind, role, URL, linked evidence
+  manifest/GAP_CHECK_2026-11-02.csv           gap-check candidates (CAND-<row>): issuer, type, URL
+  manifest/MANUAL_DOWNLOADS_2026-11-10.csv    download provenance (URL by SHA-256)
+  registry/REGISTRY_v2_2.csv, registry/SOURCE_URL_AMENDMENT_2026-11-02.csv, registry/REGISTRY_ADDITIONS_2026-11-02.csv
+  registry/DOC_LICENCES_2026-11-02.csv, registry/LICENCES_BY_INSTITUTION_2026-11-02.csv
+  translation/ENGLISH_EDITIONS_2026-11-10.csv issuer English editions (route B) with URL
+  frame/projects.csv, jurisdictions/JURISDICTION_STATUS_2026-10-17.csv
+  site/PUBLISHED_TRANSLATIONS_2026-11-21.csv   machine translations an author chose to publish (ADR-008: only where the
+                                              issuer's licence allows reuse); each file in site/translations/ must match
+                                              the SHA-256 of its translation manifest, or the build fails
+
+Outputs:
+  site/assets/projects.json, site/assets/documents.json   read by the site
+  site/data/documents.csv                                  the same document list for download
+
+usage: python scripts/site/build_site_data.py [--check]   (--check: fail if the committed outputs are stale)
 """
-import sys, csv, json, os, random, re
-import pycountry
+import csv, hashlib, io, json, os, re, sys
+
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.insert(0, os.path.join(ROOT, "scripts")); import derive  # single derivation module (ADR-001 E17)
-AS_OF = "2026-10-18"
-rng = random.Random(1101)
-def read_csv(p): return list(csv.DictReader(open(os.path.join(ROOT, p), encoding="utf-8")))
+D = lambda *p: os.path.join(ROOT, "data", *p)
+TIERS = "TIERS_2026-11-17.csv"
+CORPUS = "CORPUS_DOCUMENTS_2026-11-17.csv"
 
-# ---------- contract: feature definitions ----------
-contract = open(os.path.join(ROOT, "archive/v11/docs/MEASUREMENT_CONTRACT_v1_1_2026-10-18.md"), encoding="utf-8").read()
-features = []
-for line in contract.split("\n"):
-    m = re.match(r"\| \*\*(F\d+) ([A-Z_]+)\*\*[^|]*\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|$", line)
-    if m: features.append({"id": m.group(1), "name": m.group(2), "question": m.group(3), "values": m.group(4), "qualifiers": m.group(5), "traps": m.group(6)})
-CELLS = ["F1", "F2", "F3", "F4", "F7", "F8", "F9", "F10", "F12"]
-OBJ = ["payment_modernisation", "financial_inclusion", "monetary_sovereignty_transmission", "cash_substitute_resilience", "aml_cft_tax_enforcement", "innovation_competitiveness"]
-VALS = {"F1": ["yes", "no"], "F2": ["yes", "no"], "F3": ["via_PSP", "via_CB", "via_both", "none_stated"], "F4": ["yes", "no"], "F7": ["yes", "no"],
-        "F8": ["yes", "no"], "F9": ["yes", "no"], "F10": ["yes", "no"], "F12": ["conventional_centralised", "permissioned_DLT", "hybrid", "undecided"]}
-# marginal probabilities for a determined value (mock, deliberately not tied to real projects)
-P = {"F1": {"yes": .35, "no": .65}, "F2": {"yes": .85, "no": .15}, "F3": {"via_PSP": .55, "via_CB": .15, "via_both": .1, "none_stated": .2},
-     "F4": {"yes": .3, "no": .7}, "F7": {"yes": .4, "no": .6}, "F8": {"yes": .9, "no": .1}, "F9": {"yes": .75, "no": .25}, "F10": {"yes": .15, "no": .85},
-     "F12": {"conventional_centralised": .35, "permissioned_DLT": .35, "hybrid": .15, "undecided": .15}}
-P_OBJ = {"payment_modernisation": .8, "financial_inclusion": .5, "monetary_sovereignty_transmission": .45, "cash_substitute_resilience": .6, "aml_cft_tax_enforcement": .15, "innovation_competitiveness": .55}
-def draw(d): r = rng.random(); acc = 0
-def draw(d):
-    r = rng.random(); acc = 0
-    for k, p in d.items():
-        acc += p
-        if r <= acc: return k
-    return list(d)[-1]
 
-# ---------- jurisdictions → projects ----------
+def read(path):
+    with open(path, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
 EURO = ["AT", "BE", "BG", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PT", "SK", "SI", "ES"]
 ECCU = ["AG", "DM", "GD", "KN", "LC", "VC"]
 WAEMU = ["BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG"]
-UNION = {"EU": ("Euro area (Eurosystem)", EURO), "ECCU": ("Eastern Caribbean Currency Union (ECCB)", ECCU), "BCEAO": ("West African Economic and Monetary Union (BCEAO)", WAEMU)}
-NOT_PROJECTS = {"BIS", "UN"}
-NAMES = {"UK": "United Kingdom", "HK": "Hong Kong SAR", "MO": "Macao SAR", "TW": "Taiwan", "RU": "Russia", "US": "United States", "BO": "Bolivia", "SZ": "Eswatini", "TR": "Türkiye", "XK": "Kosovo", "VE": "Venezuela", "IR": "Iran", "KR": "Korea", "CZ": "Czechia"}
-def numeric(a2):
-    if a2 == "XK": return "383"
-    c = pycountry.countries.get(alpha_2=("GB" if a2 == "UK" else a2)); return str(int(c.numeric)) if c else None
-def name(a2):
-    if a2 in NAMES: return NAMES[a2]
-    c = pycountry.countries.get(alpha_2=a2); return getattr(c, "common_name", None) or (c.name if c else a2)
+MEMBERS = {"EU": EURO, "ECCU": ECCU, "BCEAO": WAEMU}
+NAMES = {"EU": "Euro area", "ECCU": "Eastern Caribbean Currency Union", "BCEAO": "West African Economic and Monetary Union",
+         "HK": "Hong Kong SAR", "MO": "Macao SAR", "XK": "Kosovo",
+         "BIS": "Bank for International Settlements", "UN": "United Nations"}
+NOT_GEO = {"BIS", "UN"}
+STATUS_ORDER = ["LIVE", "PILOT", "PREPARATION", "EXPLORATION", "PAUSED", "DISCONTINUED", "UNRESEARCHED", "NONE", "BANNED", "NA"]
+CATEGORY = {"KEEP": "evidence", "BORDERLINE": "evidence", "COMPANION": "companion", "DROP": "dropped", "WHOLESALE": "wholesale"}
+LANG = {"en": "English", "es": "Spanish", "zh": "Chinese", "sl": "Slovenian", "ru": "Russian", "fr": "French", "de": "German",
+        "nl": "Dutch", "fi": "Finnish", "cs": "Czech", "pt": "Portuguese", "nb": "Norwegian", "no": "Norwegian", "is": "Icelandic",
+        "ja": "Japanese", "id": "Indonesian", "ne": "Nepali", "hr": "Croatian", "hu": "Hungarian", "tr": "Turkish", "sk": "Slovak",
+        "sv": "Swedish", "th": "Thai", "lt": "Lithuanian", "rw": "Kinyarwanda", "uk": "Ukrainian", "ar": "Arabic", "mk": "Macedonian",
+        "it": "Italian", "el": "Greek", "lv": "Latvian", "et": "Estonian", "pl": "Polish", "ro": "Romanian", "bg": "Bulgarian",
+        "ko": "Korean", "kk": "Kazakh", "he": "Hebrew", "da": "Danish", "sr": "Serbian", "hy": "Armenian", "mt": "Maltese"}
+ISO = {  # code -> (ISO 3166 numeric = id in site/assets/vendor/countries-50m.json, English short name); Kosovo has no numeric code
+    "AE": ("784", "United Arab Emirates"), "AG": ("028", "Antigua and Barbuda"), "AM": ("051", "Armenia"), "AT": ("040", "Austria"),
+    "AU": ("036", "Australia"), "AW": ("533", "Aruba"), "BB": ("052", "Barbados"), "BE": ("056", "Belgium"),
+    "BF": ("854", "Burkina Faso"), "BG": ("100", "Bulgaria"), "BJ": ("204", "Benin"), "BO": ("068", "Bolivia"),
+    "BR": ("076", "Brazil"), "BS": ("044", "Bahamas"), "BT": ("064", "Bhutan"), "BY": ("112", "Belarus"),
+    "CA": ("124", "Canada"), "CH": ("756", "Switzerland"), "CI": ("384", "Côte d'Ivoire"), "CL": ("152", "Chile"),
+    "CN": ("156", "China"), "CO": ("170", "Colombia"), "CR": ("188", "Costa Rica"), "CY": ("196", "Cyprus"),
+    "CZ": ("203", "Czechia"), "DE": ("276", "Germany"), "DK": ("208", "Denmark"), "DM": ("212", "Dominica"),
+    "DO": ("214", "Dominican Republic"), "EC": ("218", "Ecuador"), "EE": ("233", "Estonia"), "EG": ("818", "Egypt"),
+    "ES": ("724", "Spain"), "FI": ("246", "Finland"), "FR": ("250", "France"), "GD": ("308", "Grenada"),
+    "GH": ("288", "Ghana"), "GN": ("324", "Guinea"), "GR": ("300", "Greece"), "GW": ("624", "Guinea-Bissau"),
+    "HK": ("344", "Hong Kong"), "HR": ("191", "Croatia"), "HT": ("332", "Haiti"), "HU": ("348", "Hungary"),
+    "ID": ("360", "Indonesia"), "IE": ("372", "Ireland"), "IL": ("376", "Israel"), "IN": ("356", "India"),
+    "IS": ("352", "Iceland"), "IT": ("380", "Italy"), "JM": ("388", "Jamaica"), "JP": ("392", "Japan"),
+    "KE": ("404", "Kenya"), "KN": ("659", "Saint Kitts and Nevis"), "KZ": ("398", "Kazakhstan"), "LC": ("662", "Saint Lucia"),
+    "LT": ("440", "Lithuania"), "LU": ("442", "Luxembourg"), "LV": ("428", "Latvia"), "MA": ("504", "Morocco"),
+    "MG": ("450", "Madagascar"), "MK": ("807", "North Macedonia"), "ML": ("466", "Mali"), "MO": ("446", "Macao"),
+    "MT": ("470", "Malta"), "MU": ("480", "Mauritius"), "NA": ("516", "Namibia"), "NE": ("562", "Niger"),
+    "NG": ("566", "Nigeria"), "NL": ("528", "Netherlands"), "NO": ("578", "Norway"), "NP": ("524", "Nepal"),
+    "NZ": ("554", "New Zealand"), "PE": ("604", "Peru"), "PH": ("608", "Philippines"), "PL": ("616", "Poland"),
+    "PT": ("620", "Portugal"), "PW": ("585", "Palau"), "PY": ("600", "Paraguay"), "RO": ("642", "Romania"),
+    "RS": ("688", "Serbia"), "RU": ("643", "Russia"), "RW": ("646", "Rwanda"), "SE": ("752", "Sweden"),
+    "SG": ("702", "Singapore"), "SI": ("705", "Slovenia"), "SK": ("703", "Slovakia"), "SN": ("686", "Senegal"),
+    "SZ": ("748", "Eswatini"), "TG": ("768", "Togo"), "TH": ("764", "Thailand"), "TR": ("792", "Türkiye"),
+    "TT": ("780", "Trinidad and Tobago"), "TW": ("158", "Taiwan"), "UA": ("804", "Ukraine"), "UK": ("826", "United Kingdom"),
+    "US": ("840", "United States"), "UY": ("858", "Uruguay"), "VC": ("670", "Saint Vincent and the Grenadines"), "VE": ("862", "Venezuela"),
+    "ZA": ("710", "South Africa"),
+}
 
-sys.path.insert(0, os.path.join(ROOT, "scripts", "frame")); from registry import load_registry
-registry = load_registry(ROOT)  # frozen registry + dated amendments (language labels, years, source URLs)
-status = {r["jur"]: r for r in read_csv("data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv")}
-projects = {}
-def proj(code):
-    if code in UNION: nm, members = UNION[code]; ids = [numeric(c) for c in members]
-    else: nm, members, ids = name(code), [code], [numeric(code)]
-    return projects.setdefault(code, {"code": code, "name": nm, "members": members, "map_ids": [i for i in ids if i], "docs": []})
-for r in registry:
-    code = r["jur"]
-    if code in NOT_PROJECTS: continue
-    if code in EURO: code = "EU"
-    p = proj(code)
-    p["docs"].append({"doc_id": r["doc_id"], "year": int(r["year"]) if r["year"].isdigit() else None, "title": r["title"][:160] or r["fname"], "url": r["url"],
-                      "layer": "core_v1" if r["core_v1"] else ("core_v2" if r["core_v2"] else "registry"), "verdict": r["core_v1"] or r["core_v2"] or "",
-                      "staff_research": r["staff_research"] in ("Y", "yes", "True", "true"), "source_jur": r["jur"]})
-for code, p in projects.items():
-    p["docs"].sort(key=lambda d: (d["year"] or 0, d["doc_id"]))
-    p["years"] = sorted({d["year"] for d in p["docs"] if d["year"] and d["year"] >= 2014})
-    s = status.get(code, {})
-    st = s.get("status", "EXPLORATION")
-    if st.startswith("UNRESEARCHED"): st = "EXPLORATION"; p["status_mock"] = True
-    p["status"] = st; p["status_date"] = s.get("status_date", ""); p["project_name"] = s.get("project_name", ""); p["pause_kind"] = s.get("pause_kind", "")
-    p["status_source"] = s.get("source_url", "")
-    p["retail"] = st not in ("NONE", "NA", "BANNED") and not (code in ("BO", "BR"))
-    p["n_core"] = sum(1 for d in p["docs"] if d["layer"] != "registry")
 
-# ---------- real development fills ----------
-def load_fill(path, label, p):
-    rows = {r["cell"]: r for r in csv.DictReader(open(path, encoding="utf-8"))}
-    cells = {}
-    docs_by_no = {}
-    for key, cell in [("F1", "F1 CB_LINK_ONLINE"), ("F2", "F2 PSP_LINK_ONLINE"), ("F3", "F3 LAWFUL_ACCESS_ROUTE"), ("F4", "F4 PRIVATE_OFFLINE_AVAILABLE"), ("F7", "F7 LOW_ID_ROUTE"),
-                      ("F8", "F8 ONBOARDING_ID"), ("F9", "F9 TARGETED_REIDENTIFICATION"), ("F10", "F10 PROGRAMMABLE_RESTRICTIONS"), ("F12", "F12 LEDGER_TECHNOLOGY")]:
-        r = rows.get(cell)
-        if not r: continue
-        v = r["value"].replace("via_psp", "via_PSP").replace("permissioned_dlt", "permissioned_DLT").replace("unknown", "n/d")
-        cells[key] = {"value": v, "evidence_state": r["evidence_state"], "claim_status": r["claim_status"], "derivation": r.get("derivation", ""),
-                      "doc_no": r.get("doc", ""), "page": r.get("page", ""), "quote": r.get("quote", ""), "justification": r.get("justification", ""),
-                      "counter_evidence": r.get("counter_evidence", ""), "quote_verified": r.get("quote_verified", ""), "provenance": label}
-    flags = {o: rows.get(f"F11 {o}", {}).get("value", "n/d").lower() in ("yes", "1", "true") for o in OBJ}
-    cells["F11"] = {"flags": flags, "primary_status": rows.get("F11 primary_status", {}).get("value", "n/d"), "primary_objectives": rows.get("F11 primary_objectives", {}).get("value", ""),
-                    "evidence_state": rows.get("F11 primary_status", {}).get("evidence_state", ""), "claim_status": rows.get("F11 primary_status", {}).get("claim_status", ""),
-                    "doc_no": rows.get("F11 primary_status", {}).get("doc", ""), "page": rows.get("F11 primary_status", {}).get("page", ""), "quote": rows.get("F11 primary_status", {}).get("quote", ""), "provenance": label}
-    return cells
+def iso(code):
+    n, name = ISO.get(code, (None, code))
+    return n, NAMES.get(code, name)
 
-def typ(c):
-    f1, f2, f4 = c["F1"]["value"], c["F2"]["value"], c["F4"]["value"]
-    on = "A" if f1 == "yes" else ("B" if (f1 == "no" and f2 == "yes") else ("C" if (f1 == "no" and f2 == "no") else ("B/C" if f1 == "no" else "?")))
-    off = "0" if f4 == "no" else ("1" if f4 == "yes" else "?")
-    return "?" if on == "?" else on + off
-def primary(f11):
-    ps = f11.get("primary_status", "n/d")
-    if ps == "one_primary":
-        po = f11.get("primary_objectives", "") or ""
-        for o in OBJ:
-            if o in po: return o
-        on = [o for o in OBJ if f11["flags"].get(o)]
-        return on[0] if on else "n/d"
-    return ps if ps in ("several_joint", "unranked", "conflict") else "n/d"
 
-# ---------- mock generation with trajectories ----------
-STATUS_CS = {"LIVE": "operational", "PILOT": "tested", "PREPARATION": "adopted", "EXPLORATION": "option", "PAUSED": "option", "DISCONTINUED": "option"}
-def mock_project(p):
-    years = p["years"] or [2024]
-    cur = {f: "n/d" for f in CELLS}; cs = {f: "option" for f in CELLS}
-    flags = {o: False for o in OBJ}
-    snaps = []; final_cs = STATUS_CS.get(p["status"], "option")
-    det_target = {"LIVE": .98, "PILOT": .97, "PREPARATION": .95, "EXPLORATION": .85, "PAUSED": .85, "DISCONTINUED": .8}.get(p["status"], .8)
-    if len(years) == 1: det_target = min(det_target, .75)
-    for i, y in enumerate(years):
-        last = i == len(years) - 1
-        changes = []
-        for f in CELLS:
-            if cur[f] == "n/d":
-                p_det = det_target if last else (0.35 + 0.5 * i / max(1, len(years) - 1))
-                if rng.random() < p_det: cur[f] = draw(P[f]); cs[f] = "option"; changes.append(f"{f} first documented: {cur[f]}")
-            else:
-                if rng.random() < 0.08:
-                    old = cur[f]; cur[f] = draw(P[f])
-                    if cur[f] != old: changes.append(f"{f} {old} → {cur[f]}")
-                if cs[f] == "option" and rng.random() < 0.35: cs[f] = "tested" if p["status"] in ("PILOT", "LIVE") or rng.random() < .5 else "adopted"; changes.append(f"{f} {cs[f]}")
-        if last:
-            for f in CELLS:
-                if cur[f] != "n/d" and final_cs in ("operational", "adopted", "tested"): cs[f] = final_cs if rng.random() < .8 else cs[f]
-        for o in OBJ:
-            if not flags[o] and rng.random() < (P_OBJ[o] * (0.5 if i == 0 else 0.35)): flags[o] = True; changes.append(f"objective declared: {o}")
-        if last and not any(flags.values()): flags["payment_modernisation"] = True
-        ps = draw({"one_primary": .4, "several_joint": .3, "unranked": .25, "n/d": .05}) if i == 0 else snaps[-1]["f11"]["primary_status"]
-        if i > 0 and rng.random() < .15: ps = draw({"one_primary": .5, "several_joint": .3, "unranked": .2})
-        on = [o for o in OBJ if flags[o]]
-        po = rng.choice(on) if (ps == "one_primary" and on) else ""
-        if i > 0 and ps == "one_primary" and snaps[-1]["f11"]["primary_objectives"] in on and rng.random() < .8: po = snaps[-1]["f11"]["primary_objectives"]
-        f11 = {"flags": dict(flags), "primary_status": ps, "primary_objectives": po}
-        c = {f: {"value": cur[f]} for f in CELLS}
-        snaps.append({"year": y, "cells": dict(cur), "claim_status": dict(cs), "f11": f11, "type": typ(c), "primary": primary(f11), "changes": changes})
-    # decisive documents: for each cell, the most recent document (≤ last year) — mock page
-    docs_sorted = [d for d in p["docs"] if d["year"]]
-    def decisive(y):
-        cand = [d for d in docs_sorted if d["year"] <= y] or docs_sorted
-        return rng.choice(cand[-3:]) if cand else None
-    cells = {}
-    last = snaps[-1]
-    for f in CELLS:
-        d = decisive(last["year"])
-        cells[f] = {"value": last["cells"][f], "evidence_state": ("unknown" if last["cells"][f] == "n/d" else draw({"documented": .75, "partial": .2, "conflict": .05})),
-                    "claim_status": "" if last["cells"][f] == "n/d" else last["claim_status"][f], "derivation": "explicit" if rng.random() < .9 else "inferred",
-                    "doc_id": d["doc_id"] if d else "", "doc_title": d["title"] if d else "", "doc_year": d["year"] if d else "", "doc_url": d["url"] if d else "",
-                    "page": rng.randint(3, 60) if (d and last["cells"][f] != "n/d") else "", "quote": "", "provenance": "MOCK"}
-    d = decisive(last["year"])
-    cells["F11"] = {**last["f11"], "evidence_state": "documented", "claim_status": last["claim_status"]["F1"] or "option", "doc_id": d["doc_id"] if d else "", "doc_title": d["title"] if d else "",
-                    "doc_year": d["year"] if d else "", "doc_url": d["url"] if d else "", "page": rng.randint(2, 20), "quote": "", "provenance": "MOCK"}
-    return cells, snaps
+def decided_by(src):
+    s = (src or "").lower()
+    if "author" in s or s.startswith("mb"):
+        return "author"
+    return "model"
 
-KEY2CELL = {"F1 CB_LINK_ONLINE": "F1", "F2 PSP_LINK_ONLINE": "F2", "F3 LAWFUL_ACCESS_ROUTE": "F3", "F4 PRIVATE_OFFLINE_AVAILABLE": "F4", "F7 LOW_ID_ROUTE": "F7",
-            "F8 ONBOARDING_ID": "F8", "F9 TARGETED_REIDENTIFICATION": "F9", "F10 PROGRAMMABLE_RESTRICTIONS": "F10", "F12 LEDGER_TECHNOLOGY": "F12"}
-NORM = {"1": "yes", "0": "no", "true": "yes", "false": "no", "via_psp": "via_PSP", "via_cb": "via_CB", "permissioned_dlt": "permissioned_DLT", "permissionless_dlt": "permissionless_DLT", "unknown": "n/d", "undetermined": "n/d"}
-def real_history(p, cells, hist_path):
-    """Development profiles: trajectory derived from the pipeline's history.json (stage-1 findings per document and year):
-    for each document year, the last 'for' finding per cell up to that year; the final year carries the synthesis values."""
-    H = json.load(open(hist_path, encoding="utf-8")) if hist_path and os.path.exists(hist_path) else {}
-    years = p["years"]; snaps = []; last_year = years[-1]
-    for i, y in enumerate(years):
-        last = i == len(years) - 1
-        c = {}; cs = {}; changes = []
-        for key, f in KEY2CELL.items():
-            if last: c[f] = cells[f]["value"]; cs[f] = cells[f]["claim_status"]; continue
-            found = [h for h in H.get(key, []) if h["year"] and int(h["year"]) <= y]
-            if found:
-                v = str(found[-1]["value"]).strip(); v = NORM.get(v.lower(), v); c[f] = v; cs[f] = found[-1].get("claim_status", "")
-                if found[-1]["year"] == y and (not snaps or snaps[-1]["cells"].get(f) != v): changes.append(f"{f}: {v} ({cs[f]})")
-            else: c[f] = "n/d"; cs[f] = ""
-        flags = {}
-        for o in OBJ:
-            found = [h for h in H.get(f"F11 {o}", []) if h["year"] and int(h["year"]) <= y]
-            flags[o] = cells["F11"]["flags"][o] if last else (str(found[-1]["value"]).lower() in ("yes", "1", "true") if found else False)
-        f11 = {"flags": flags, "primary_status": cells["F11"]["primary_status"] if last else ("n/d" if not any(flags.values()) else "unranked"), "primary_objectives": cells["F11"]["primary_objectives"] if last else ""}
-        snaps.append({"year": y, "cells": c, "claim_status": cs, "f11": f11, "type": typ({f: {"value": c[f]} for f in CELLS}), "primary": primary(f11),
-                      "changes": changes if not last else ["synthesis values (contract v1.1 run)"]})
-    return snaps
 
-dev_dir = os.path.join(ROOT, "data/worked_profiles")
-for code, p in projects.items():
-    dev = os.path.join(dev_dir, f"{code}_api_single_v1_1.csv")
-    if os.path.exists(dev):
-        p["cells"] = load_fill(dev, "development:api_single:claude-opus-5-5:contract_v1.1", p); p["mock"] = False
-        docs_csv = os.path.join(dev_dir, f"{code}_DOCS.csv")  # the run's own document list: local number -> stable doc_id
-        no2id = {r["doc"]: r["doc_id"] for r in csv.DictReader(open(docs_csv, encoding="utf-8"))} if os.path.exists(docs_csv) else {}
-        by_id = {d["doc_id"]: d for d in p["docs"]}
-        for f, c in p["cells"].items():
-            try: did = no2id[str(int(float(c.get("doc_no", ""))))]; d = by_id[did]; c.update({"doc_id": did, "doc_title": d["title"], "doc_year": d["year"], "doc_url": d["url"]})
-            except Exception: c["doc_join"] = "unresolved"
-        p["history"] = real_history(p, p["cells"], os.path.join(dev_dir, f"{code}_history_two_stage_v1_1.json"))
-    # documented statements (privacy-posture survey), released for exposed projects only (data/statements/<code>_statements.csv)
-    st_csv = os.path.join(ROOT, "data/statements", f"{code}_statements.csv")
-    if os.path.exists(st_csv):
-        by_id = {d["doc_id"]: d for d in p["docs"]}; st = []
-        for r in csv.DictReader(open(st_csv, encoding="utf-8")):
-            d = by_id.get(r["doc_id"], {})
-            st.append({"type": r["type"], "status": r["status"], "basis": r["basis"], "actor": r["actor"], "doc_id": r["doc_id"], "doc_title": d.get("title", r["doc_id"]), "doc_year": d.get("year", r["year"]),
-                       "doc_url": d.get("url", ""), "page": r["page"], "found_page": r.get("quote_found_page", ""), "quote": r["quote"], "label": r["label"], "verified": r["quote_verified"]})
-        p["statements"] = st; p["statements_note"] = "model-only survey, development extraction, citation-checked"
-        p["posture"] = derive.posture_summary([{"type": x["type"], "status": x["status"], "basis": x["basis"], "quote_verified": x["verified"]} for x in st])
-    elif p["retail"]:
-        p["cells"], p["history"] = mock_project(p); p["mock"] = True
-    else:
-        p["cells"] = None; p["history"] = []; p["mock"] = True
-    if p["cells"]:
-        dv = derive.summary(p["cells"]); p["derivation"] = dv
-        p["type"] = dv["type_commitment"]; p["type_permissive"] = dv["type_permissive"]; p["primary"] = primary(p["cells"]["F11"])
-        p["y1"] = dv["y1_commitment"]; p["y3"] = dv["y3_commitment"]; p["y1_permissive"] = dv["y1_permissive"]; p["y3_permissive"] = dv["y3_permissive"]
-    else: p["type"] = "n.a."; p["primary"] = "n.a."; p["y1"] = None; p["y3"] = None
+def clean_title(row_title, fname, did):
+    t = (row_title or "").strip()
+    if t and t != did and not re.fullmatch(r"[A-Z]{2,5}_[A-Za-z0-9_\-\.]+", t):
+        return t, False
+    base = os.path.splitext(fname or did)[0]
+    base = re.sub(r"^[A-Z]{2,5}_+([A-Za-z]+_)?", "", base)
+    base = re.sub(r"[_\-]+", " ", base).strip()
+    return (base or did), True
 
-# ---------- aggregate time series (for the chart under the map) ----------
-YEARS = list(range(2016, 2027))
-def as_of(p, y):
-    s = None
-    for h in p["history"]:
-        if h["year"] <= y: s = h
-    return s
-series = {"type": {}, "primary": {}}
-for y in YEARS:
-    ct, cp = {}, {}
-    for p in projects.values():
-        s = as_of(p, y)
-        if not s: continue
-        ct[s["type"]] = ct.get(s["type"], 0) + 1; cp[s["primary"]] = cp.get(s["primary"], 0) + 1
-    series["type"][y] = ct; series["primary"][y] = cp
 
-out = {"as_of": AS_OF, "contract": "MEASUREMENT_CONTRACT_v1_1_2026-10-18", "mock": True,
-       "mock_note": "Illustrative mock-up of the finished dataset: all cell values, trajectories and decisive pages are seeded placeholders (not tied to any real project) except the development profiles, which are development extraction output, not validated data. Types and outcomes follow the commitment rule (only documented, endorsed/operational cells count); the permissive view is shown in the profile for comparison.",
-       "features": features, "objectives": OBJ, "types": ["A0", "A1", "B0", "B1", "C0", "C1"], "years": YEARS, "series": series,
-       "projects": sorted(projects.values(), key=lambda p: p["name"])}
-os.makedirs(os.path.join(ROOT, "site/assets"), exist_ok=True)
-json.dump(out, open(os.path.join(ROOT, "site/assets/data.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-n = len(projects); retail = sum(1 for p in projects.values() if p["retail"]); dev = sum(1 for p in projects.values() if not p["mock"])
-print(f"data.json: {n} projects ({retail} retail), {sum(len(p['docs']) for p in projects.values())} documents, {len(features)} features; development: {dev}; types now:",
-      {k: sum(1 for p in projects.values() if p['type'] == k) for k in ["A0", "A1", "B0", "B1", "C0", "C1"]})
+def build():
+    tiers = read(D("manifest", TIERS))
+    corpus = {r["id"]: r for r in read(D("manifest", CORPUS))}
+    issuers = {r["id"]: r for r in read(D("manifest", "ISSUERS_2026-11-13.csv"))}
+    comp = {r["id"]: r for r in read(D("manifest", "COMPANION_LINKS_2026-11-13.csv"))}
+    gap = read(D("manifest", "GAP_CHECK_2026-11-02.csv"))
+    reg = {r["doc_id"]: r for r in read(D("registry", "REGISTRY_v2_2.csv"))}
+    lic_doc = {r["doc_id"]: r for r in read(D("registry", "DOC_LICENCES_2026-11-02.csv"))}
+    editions = {}
+    for r in read(D("translation", "ENGLISH_EDITIONS_2026-11-10.csv")):
+        if r["url"].startswith("http"):
+            editions.setdefault(r["parallel_of"], r["url"])
+
+    url = {}
+    def add(i, u):
+        if i and u and u.startswith("http"):
+            url.setdefault(i, u.strip())
+    for r in read(D("registry", "SOURCE_URL_AMENDMENT_2026-11-02.csv")):
+        add(r["doc_id"], r["url"])
+    for r in reg.values():
+        add(r["doc_id"], r["url"] or r["source_landing_url"])
+    for r in read(D("registry", "REGISTRY_ADDITIONS_2026-11-02.csv")):
+        add(r["doc_id"], r["url"])
+    for r in comp.values():
+        add(r["id"], r["url"])
+    by_sha = {}
+    for r in read(D("manifest", "MANUAL_DOWNLOADS_2026-11-10.csv")):
+        if r["sha256"] and r["url"].startswith("http"):
+            by_sha.setdefault(r["sha256"], r["url"])
+
+    def cand(i):
+        if i.startswith("CAND-") and i[5:].isdigit() and int(i[5:]) <= len(gap):
+            return gap[int(i[5:]) - 1]
+        return None
+
+    published = {}
+    man = {}
+    for f in sorted(os.listdir(D("translation"))):
+        if f.startswith("TRANSLATION_MANIFEST_") and f.endswith(".csv"):
+            for r in read(D("translation", f)):
+                man.setdefault(r["id"], set()).add(r["translation_sha256"])
+    for r in read(D("site", "PUBLISHED_TRANSLATIONS_2026-11-21.csv")):
+        fp = os.path.join(ROOT, "site", "translations", r["file"])
+        if not os.path.exists(fp):
+            raise SystemExit(f"published translation missing: site/translations/{r['file']}")
+        h = hashlib.sha256(open(fp, "rb").read()).hexdigest()
+        if h != r["translation_sha256"] or h not in man.get(r["id"], set()):
+            raise SystemExit(f"{r['file']}: SHA-256 {h} does not match the listed hash or any translation manifest of {r['id']}")
+        published[r["id"]] = {"f": "translations/" + r["file"], "lic": r["issuer_licence"], "lu": r["licence_url"], "run": r["run"]}
+    stray = set(os.listdir(os.path.join(ROOT, "site", "translations"))) - {v["f"].split("/")[1] for v in published.values()}
+    if stray:
+        raise SystemExit("files in site/translations/ not listed for publication: " + ", ".join(sorted(stray)))
+
+    docs = []
+    for t in tiers:
+        i = t["id"]
+        g = cand(i)
+        if g and g["project"] != t["project"]:
+            raise SystemExit(f"{i}: gap-check row {i[5:]} belongs to {g['project']}, not {t['project']}")
+        if g:
+            add(i, g["url"])
+        if i not in url and t["sha256"] in by_sha:
+            add(i, by_sha[t["sha256"]])
+        c, s, k, r = corpus.get(i, {}), issuers.get(i, {}), comp.get(i, {}), reg.get(i, {})
+        title, title_from_file = clean_title(t["title"], r.get("fname") or os.path.basename(t["master_path"]), i)
+        lang = (t["language"] or "").replace("mixed:", "")
+        issuer = c.get("issuer") or s.get("issuer") or (g or {}).get("issuer") or lic_doc.get(i, {}).get("institution") or ""
+        kind = c.get("kind") or s.get("kind") or k.get("kind") or (g or {}).get("doc_type") or r.get("doc_kind") or ""
+        cat = CATEGORY[t["decision_v12"]]
+        text = c.get("text_read", "")
+        if cat == "evidence" and not text:
+            text = "no English text yet"
+        docs.append({
+            "id": i, "p": t["project"], "y": int(t["year"]) if t["year"].isdigit() else None,
+            "t": title, "tf": 1 if title_from_file else 0,
+            "iss": issuer, "k": kind.replace("_", " "),
+            "c": cat, "bl": 1 if t["decision_v12"] == "BORDERLINE" else 0,
+            "by": decided_by(t["decision_source"]),
+            "l": lang, "pg": int(t["pages"]) if (t["pages"] or "").isdigit() else None,
+            "en": text, "u": url.get(i, ""), "ue": editions.get(i, ""),
+            "same": t["same_publication_as"], "role": k.get("role", "").replace("_", " "),
+            "link": [x for x in (k.get("linked_evidence_ids") or "").split(";") if x],
+            "sha": t["sha256"], "tr": published.get(i), "ext": os.path.splitext(t["master_path"])[1].lstrip(".").lower(),
+        })
+    docs.sort(key=lambda d: (d["p"], -(d["y"] or 0), d["t"].lower()))
+
+    # ---------- projects ----------
+    frame = {r["project"]: r for r in read(D("frame", "projects.csv"))}
+    status = {r["jur"]: r for r in read(D("jurisdictions", "JURISDICTION_STATUS_2026-10-17.csv"))}
+    codes = sorted({d["p"] for d in docs} | {c for c, r in frame.items() if r["analytic_frame"] == "True"})
+    projects = []
+    for code in codes:
+        fr = frame.get(code, {})
+        st = status.get(code, {})
+        mine = [d for d in docs if d["p"] == code]
+        ev = [d for d in mine if d["c"] == "evidence"]
+        pubs = {d["same"] or d["id"] for d in ev}
+        tier = next((t["tier"] for t in tiers if t["project"] == code and t["tier"]), "")
+        members = MEMBERS.get(code, [] if code in NOT_GEO else [code])
+        ids = [n for n in (iso(m)[0] for m in members) if n]
+        stat = (st.get("status") or fr.get("status") or "").split(" ")[0]
+        ev_years = sorted({d["y"] for d in ev if d["y"]})
+        projects.append({
+            "code": code, "name": iso(code)[1],
+            "project_name": st.get("project_name", ""),
+            "frame": fr.get("analytic_frame") == "True",
+            "status": stat, "status_date": st.get("status_date", ""), "status_url": st.get("source_url", ""),
+            "tier": tier if fr.get("analytic_frame") == "True" else "",
+            "geo": ids, "members": members if code in MEMBERS else [],
+            "n": {c: sum(1 for d in mine if d["c"] == c) for c in ("evidence", "companion", "dropped", "wholesale")},
+            "pubs": len(pubs),
+            "ev_years": [ev_years[0], ev_years[-1]] if ev_years else [],
+            "ev_by_year": {str(y): len({d["same"] or d["id"] for d in ev if d["y"] == y}) for y in ev_years},
+            "first_year": min((d["y"] for d in mine if d["y"]), default=None),
+            "english": {k: sum(1 for d in ev if d["en"] == k) for k in ("English original", "issuer's English edition", "machine translation", "no English text yet")},
+        })
+    meta = {
+        "as_of": TIERS.split("_")[1].split(".")[0],
+        "status_as_of": "2026-10-17",
+        "sources": [f"data/manifest/{TIERS}", f"data/manifest/{CORPUS}", "data/manifest/COMPANION_LINKS_2026-11-13.csv",
+                    "data/jurisdictions/JURISDICTION_STATUS_2026-10-17.csv"],
+        "languages": LANG,
+        "status_order": STATUS_ORDER,
+    }
+    proj_json = json.dumps({"meta": meta, "projects": projects}, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    doc_json = json.dumps({"meta": meta, "documents": docs}, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    w.writerow(["id", "project", "year", "title", "title_from_filename", "issuer", "kind", "decision", "borderline", "decided_by",
+                "language", "pages", "english_text", "published_translation", "url", "issuer_english_edition_url", "same_publication_as", "companion_role",
+                "linked_evidence", "sha256"])
+    for d in docs:
+        w.writerow([d["id"], d["p"], d["y"] or "", d["t"], d["tf"], d["iss"], d["k"], d["c"], d["bl"], d["by"], d["l"], d["pg"] or "",
+                    d["en"], d["tr"]["f"] if d["tr"] else "", d["u"], d["ue"], d["same"], d["role"], ";".join(d["link"]), d["sha"]])
+    return {"site/assets/projects.json": proj_json + "\n", "site/assets/documents.json": doc_json + "\n",
+            "site/data/documents.csv": buf.getvalue()}, docs, projects
+
+
+def main():
+    outs, docs, projects = build()
+    check = "--check" in sys.argv
+    stale = []
+    for rel, content in outs.items():
+        p = os.path.join(ROOT, rel)
+        old = open(p, encoding="utf-8").read() if os.path.exists(p) else None
+        if old != content:
+            stale.append(rel)
+            if not check:
+                os.makedirs(os.path.dirname(p), exist_ok=True)
+                with open(p, "w", encoding="utf-8", newline="") as f:
+                    f.write(content)
+    frame = [p for p in projects if p["frame"]]
+    from collections import Counter
+    print(f"site data: {len(docs)} documents ({dict(Counter(d['c'] for d in docs))}), {len(frame)} projects in the frame, "
+          f"{sum(1 for d in docs if d['u'])} with an issuer URL")
+    if check and stale:
+        raise SystemExit("stale site data, run python scripts/site/build_site_data.py: " + ", ".join(stale))
+
+
+if __name__ == "__main__":
+    main()

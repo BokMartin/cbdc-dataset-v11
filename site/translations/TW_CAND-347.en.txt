@@ -1,0 +1,340 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-347 | source: CBDC_MASTER_v12/TW/TW__2024-07__Special-report-to-Legislative-Yuan-Finance-Committee-planning-of-digit.pdf | source_sha256: d23a35baa48aa46143cb3a5fde8313dfaedde3c9e83d715548865c508513613d
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+11th Legislative Yuan, 1st Session
+
+Special Report to a Meeting of the Finance Committee
+
+
+
+
+Planning for the Issuance of Digital Currency and the Digital Transformation of Money
+
+
+
+
+Central Bank of the Republic of China (Taiwan)
+
+8 July, Year 113
+=== PAGE 2 ===
+
+=== PAGE 3 ===
+Chair, Committee Members, Ladies and Gentlemen:
+
+It is a great honor to have been invited to your Committee today to report on the topic of “Planning for the Issuance of Digital Currency and the Digital Transformation of Money.” The report on this topic is respectfully presented below, and your guidance is welcome.
+
+The modern monetary system consists primarily of central bank money (Central Bank Money) and commercial bank money (Commercial Bank Money), forming a two-tier system structure [雙層體系架構] in which the central bank and commercial banks operate in connection with one another (Figure 1). Central bank money is not only the anchor (Anchor)1 of the monetary system and the best settlement asset (Settlement Asset)2 for financial transactions, but also the foundation for maintaining financial stability and the effectiveness of monetary policy3.
+
+[FIGURE]
+Figure 1 Modern Monetary System
+• Central bank money includes the following two categories:
+1. Reserves deposited by commercial banks at the central bank (used as settlement assets)
+2. Cash issued by the central bank
+
+• Commercial bank money:
+Refers to deposits placed by the public at commercial banks
+
+General public
+Holds cash (central bank money)
+and bank deposits
+(commercial bank money)
+
+Central bank
+Commercial banks
+
+1. Allows commercial banks to draw on reserves (wholesale central bank money) to process various interbank funds transfer transactions and settlement between financial institutions
+2. Provides the public, through commercial banks, with a safe national payment instrument—cash (retail central bank money)
+
+1. Commercial banks are highly supervised financial institutions
+2. Commercial bank money maintains a 1：1 conversion ratio with central bank money
+3. Commercial banks provide the public with various financial payment services through commercial bank money:
+   • Credit cards/debit cards/ATM withdrawals and transfers
+   • Payment of fees and taxes
+   • Corporate funds transfers
+4. Provides cash withdrawal services to the public
+
+1
+Commercial bank money is anchored to the value of central bank money, permanently maintaining a 1:1 conversion ratio to ensure the singleness of money (singleness of money), so as to maintain monetary and financial stability.
+2
+Central bank money can be divided into central bank reserves and cash. Cash is currently the only central bank money directly available to the general public, for use in retail payments; central bank reserves serve as the best settlement assets for payment systems, supporting the smooth operation of large-value (wholesale) payment systems and retail payment systems. In 2023, the former had an operating value as high as 547 trillion yuan, and the latter 267 trillion yuan.
+3
+In addition to providing payment and settlement functions, if a financial crisis causes insufficient market liquidity, the central bank plays the role of lender of last resort, providing central bank money through the discount window to inject funds and ensure the stable operation of the financial system. In addition, the central bank also proactively responds to market funding conditions by adjusting the quantity of central bank money through open market operations, thereby influencing the financial system’s funding positions and ensuring the effectiveness of monetary policy implementation.
+
+1
+=== PAGE 4 ===
+In response to the evolution of digital technologies4, the Bank is promoting the digital transformation of money and conducting research and experiments on central bank digital currency (CBDC), in the hope that the issuance of CBDC in the future can play a role and function in stabilizing money and finance. The current progress and future plans are described below:
+
+I. Current progress:
+
+(1) A CBDC prototype platform has been built
+
+In response to digital developments in retail payments, the operating structure and functions5 of a retail (Retail) CBDC have been designed (Figure 2), and a prototype platform has been built. In the future, digital cash can be issued to provide the public with a means for everyday payments.
+
+[FIGURE]
+Figure 2 Operating Structure of the CBDC Prototype Platform
+
+Note: The “CBDC dedicated vault,” “intermediary [中介機構] general vault,” and “user wallet [錢包]” in the platform system are wallets belonging respectively to the central bank, intermediaries, and end users, recording the amount of CBDC held.
+
+Notes: 1. The “CBDC dedicated vault” refers to the central bank’s dedicated wallet on the CBDC platform, used to issue and redeem CBDC; the “intermediary general vault” refers to a wallet opened by the central bank for an intermediary on the CBDC platform, used to receive CBDC issued by the central bank and to transfer funds between intermediaries.
+2. Explanation of the operating process: At an intermediary’s request, the central bank converts reserves into CBDC in the Central Bank Interbank Funds Transfer System and transfers them into the dedicated CBDC account [專戶]. At the same time, the platform credits an equivalent amount of CBDC to the CBDC dedicated vault, and then allocates it to the intermediary general vault; at a user’s request to convert deposits into CBDC, the intermediary provides CBDC to the user’s wallet.
+
+4
+Including distributed ledger technology (DLT) [分散式帳本技術], encryption technology, and artificial intelligence (AI).
+5
+The experimental results have been demonstrated and a video has been recorded and published on the Bank’s official website: https://www.youtube.com/watch?v=hwzawLq0UOA.
+
+2
+=== PAGE 5 ===
+1. Issuance using a two-tier structure [雙層式架構]: To avoid affecting the financial intermediation function, a two-tier structure is adopted, under which the Bank issues CBDC on the CBDC platform and allocates it to intermediaries (such as banks and electronic payment institutions), and the intermediaries then provide CBDC to users.
+
+2. No interest in the initial stage of issuance, but the interest-bearing function is retained: To prevent the public from converting large amounts of deposits into CBDC, if a decision is made in the future to issue it, it will be treated as digital cash in the initial stage and issued without interest; however, the interest-bearing function is retained to maintain future policy flexibility6.
+
+3. Wallet tiers [錢包分級]: Based on risk management considerations and convenience for public use, CBDC wallets will be divided into unnamed wallets [不記名錢包] and named wallets [記名錢包]; the CBDC platform has wallet transaction limits [交易金額上限] and holding limits [持有金額上限]; intermediaries may also set their own limits based on their own risk considerations, but these must not exceed the limits set by the platform; in accordance with anti-money laundering requirements, the relevant amount limits for unnamed wallets will be lower than those for named wallets.
+
+4. Privacy [隱私] and personal data [個人資料] protection: Users may choose to open named or unnamed wallets. For named wallets, intermediaries are required to perform customer due diligence (KYC), and to properly keep and manage users’ personal data in accordance with the existing provisions on data privacy protection. Intermediaries may only view the data of their own users; the Bank, for its part, uses de-identification [去識別化] technology to process the relevant transactions and does not retain users’ detailed data.
+
+6
+The payment of interest on CBDC could give rise to a new monetary policy operating instrument; that is, the central bank might be able to influence market interest rates by adjusting the CBDC interest rate. In addition, under severe deflation, it could serve as an instrument for breaking through the zero lower bound on interest rates.
+
+3
+=== PAGE 6 ===
+5. Information security management: The overall security of the platform adopts a defense-in-depth (Defense in Depth, DiD)7 structure, with the Bank, intermediaries, and users jointly achieving security management objectives8. Transaction security uses a public/private key mechanism (Public Key Cryptography，PKC); all user transactions must be digitally signed and verified by the platform system to ensure transaction security.
+
+6. Multiple retail payment functions: The CBDC prototype platform already has various functions, including the issuance, circulation, and transfer of retail CBDC, payment of fees and taxes, debiting for purchases, conversion and redemption between cash/bank deposits/CBDC, automatic conversion9, and automatic top-up10.
+
+(2) Three projects are currently being advanced:
+
+1. Conducting broad communication:
+
+(1) CBDC issuance involves a broad range of stakeholders, so it is necessary to conduct broad and prudent communication in advance. First, written communication through a commissioned questionnaire survey was completed in April of this (2024) year, and the report on the survey results has been published on the Bank’s official website11.
+
+(2) Subsequently, several public hearings, briefing sessions, and forums will be held in 2025 to conduct broader and more concrete exchanges with stakeholders, and thereby strengthen communication about CBDC and raise public awareness.
+
+7
+This is a cybersecurity strategy that mainly adopts a multilayered approach to safeguards to protect an organization’s networks and information.
+8
+The central bank maintains platform security; intermediaries establish information security management systems to ensure uninterrupted operations; users comply with intermediaries’ rules for the secure use of wallet interfaces.
+9
+Amounts exceeding the limit set for the wallet itself are automatically transferred to a bank deposit account.
+10
+When the wallet balance is insufficient, funds are automatically transferred from a bank deposit account to the CBDC wallet.
+11
+See the Bank’s official website https://www.cbc.gov.tw/dl-206166-4db7b214888a4a68ab19d7a0db95f3b2.html.
+
+4
+=== PAGE 7 ===
+2. Refining platform technology:
+
+(1) Considering the digital divide, relevant experiments are currently being conducted to allow members of the public who do not use mobile phones to use cards for offline payments [離線支付]; these experiments include allowing the public to choose to use mobile phones or cards to make offline payments when there is no network connection.
+
+(2) At the same time, work is being initiated on cooperation to connect the “CBDC prototype platform” with the Ministry of Digital Affairs’ “Shared Platform for Government Agency Disbursements.” In the future, government agencies can issue digital vouchers through the Ministry of Digital Affairs’ platform, while the Bank’s platform will handle the disbursement of funds, settlement, and clearing involved after digital vouchers in users’ wallets have been spent.
+
+3. Studying and discussing the legal framework:
+
+(1) Continuing to collect information on the relevant legal systems of major countries, and taking stock of the relevant laws and regulations that may need to be enacted or amended in connection with the issuance of CBDC in our country, including the legal basis for issuing CBDC, anti-money laundering, information security, and privacy protection requirements.
+
+(2) When public hearings or forums are held subsequently, broadly exchanging views on the relevant legal framework with all sectors.
+
+II. Future plans
+
+Recently, with the development of tokenization technology, the topic of asset tokenization has attracted considerable attention. In a tokenized world, central bank money is still needed as the anchor of the monetary system and as a settlement asset, and to build, together with commercial bank money, a safe,
+
+5
+=== PAGE 8 ===
+efficient monetary system. Therefore, developing wholesale (Wholesale) CBDC and bank deposit tokens (Deposit Token) [銀行存款代幣] will be a focus of efforts to promote the digital transformation of money in the future.
+
+(1) Virtual assets such as Bitcoin and stablecoins are not part of the digital monetary system
+
+Money should have the three basic functions of a medium of exchange, a unit of account, and a store of value. Bitcoin and stablecoins do not possess the above monetary functions; Bitcoin has no anchoring effect because of hype, speculation, and large price fluctuations (Figure 3). Although stablecoins are currently the main medium of exchange in virtual markets, stress events may still cause their exchange value to deviate from face value (Figure 4), and their prices cannot remain stable at all times12. Therefore, these virtual assets can only be considered risky assets arising from the development of digital technology, and are not money.
+
+[FIGURE]
+Figure 3 Recent Bitcoin Price and Volume Trends
+US dollars
+Units
+80,000
+2024/3/13
+73,084
+2,500,000
+Trading volume (right axis)
+
+70,000
+Price (left axis)
+2,000,000
+
+60,000
+2024/3/5
+1,611,301
+1,500,000
+
+50,000
+2024/7/6
+56,463
+1,000,000
+
+40,000
+
+500,000
+30,000
+
+20,000
+0
+2023/10
+2023/11
+2023/12
+2024/1
+2024/2
+2024/3
+2024/4
+2024/5
+2024/6
+2024/7
+
+Explanation: After spot Bitcoin ETFs were approved for listing on 11 January of this year, both prices and volumes increased in March due to factors such as inflows of some funds from traditional financial markets into ETFs and the approaching halving of mining rewards. However, since April, prices have fluctuated downward and trading volume has also declined significantly.
+Source: Yahoo Finance
+
+12
+In addition to the Silicon Valley Bank failure in 2023, events including the failure of the mechanism for maintaining stable value for the algorithmic stablecoin UST and its sister coin LUNA in May 2022, and the bankruptcy of FTX in November 2022, all caused large price fluctuations in the three largest stablecoins by market share at those times.
+
+6
+=== PAGE 9 ===
+[FIGURE]
+Figure 4 Stress Events Cause Stablecoin Price Fluctuations
+US dollars
+1.03
+
+1.00
+
+0.97
+
+0.94
+USDT
+
+BUSD
+0.91
+USDC
+Period of the SVB failure event
+0.88
+2023/3/8
+2023/3/9
+2023/3/10
+2023/3/11
+2023/3/12
+2023/3/13
+2023/3/14
+
+Explanation: 1. Last (2023) year, the three largest asset-backed stablecoins were USDT, USDC, and BUSD. When stablecoins are issued in the primary market, their conversion ratio with the US dollar is 1：1, but when traded in the secondary market, their prices cannot always maintain a 1：1 conversion ratio with the US dollar, and market events may even cause large price fluctuations.
+2. For example, on 10 March of last year, Silicon Valley Bank (SVB) announced its failure and was taken over by the U.S. Federal Deposit Insurance Corporation (FDIC). Circle, the USDC issuer [發行機構], had approximately 33 hundred million US dollars in backing assets deposited at that bank, accounting for approximately 7% of the company’s total backing assets, causing USDC’s value to fall.
+3. In addition, USDT’s backing assets and transparency have been questioned by the market, and USDT’s issuer, Tether, and its affiliated exchange, Bitfinex, were also accused by the New York State Office of the Attorney General (OAG) in 2019 of commingling customer and company funds, which at one point led the market to question their credibility in maintaining stable value.
+Source: CoinMarketCap
+
+(2) With the rise of asset tokenization technology, central bank money is still needed as the anchor of the monetary system and as a settlement asset
+
+Asset tokenization refers to linking the economic value and rights derived from real-world (Real World Asset，RWA) assets to tokens [代幣] on a blockchain (Figure 5, Figure 6), and conducting transaction settlement on-chain, thereby connecting the real economy and virtual markets.
+
+7
+=== PAGE 10 ===
+[FIGURE]
+Figure 5 Tokenisation of Assets Existing Off-chain
+Real world                                              On-chain world
+
+Real-world assets                         Blockchain or distributed ledger technology (DLT) [分散式帳本技術]                         Tokens [代幣] representing economic value and rights
+
+Issuer [發行人]                                              Investor
+
+Assets locked in a vault
+or entrusted to a third party for custody
+
+For example: gold, real estate,
+works of art, etc.
+
+Explanation: Tokenisation of off-chain real-world assets means that the issuer locks real-world assets in a vault or entrusts them to a third party for custody, and issues tokens on a blockchain to represent the economic value and rights of those real-world assets; the real-world assets still exist in the off-chain world.
+Source: OECD (2020), “The Tokenisation of Assets and Potential Implications for Financial Markets,”
+     OECD Blockchain Policy Series.
+
+[FIGURE]
+Figure 6 Tokenisation of On-chain Native Assets
+On-chain world
+
+Blockchain or distributed
+ledger technology
+Technology
+
+Specify the rights
+associated with the tokens
+
+Issuer                                              Investor
+
+Explanation: Tokenisation of on-chain native assets means that the issuer issues tokens directly on a blockchain and specifies the various rights of those tokens in the real world. Thus, the tokens themselves have value and do not require backing by other off-chain assets. Financial assets (such as stocks and bonds) are more common.
+Source: OECD (2020), “The Tokenisation of Assets and Potential Implications for Financial Markets,”
+      OECD Blockchain Policy Series.
+
+As asset tokenisation can provide round-the-clock, cross-border and cross-time-zone transaction services, it can improve operational efficiency. It also has potential advantages such as dividing assets into multiple small-value tokens, lowering investment thresholds and increasing liquidity, as well as programmability [可程式化] functionality, and may have potential for future development.
+
+To ensure that transactions and settlement in a tokenised world remain safe and efficient,
+
+8
+=== PAGE 11 ===
+jointly constructing the monetary system with central bank money and commercial bank money, and using central bank money as the anchor and settlement asset of the monetary system, will still be the best policy option (Figure 7).
+
+[FIGURE]
+Figure 7 Supporting the Development of Various Types of Asset Tokens with Central Bank Money
+
+Private sector: deposit tokens,
+asset tokenisation…
+
+Payment service providers [支付服務提供商]
+(PSPs)
+
+APIs
+
+Central bank money*                         Ensuring payment finality
+                                            through central bank settlement
+
+*In response to the future trend of tokenisation, central bank money refers to wholesale CBDC.
+Source: BIS (2022), “The Future Monetary System,” BIS Annual Economic
+                  Report, pp.75-115, Jun. 21.
+
+(III) The Bank will apply tokenisation technology to carry out the digital transformation of wholesale central bank money and commercial bank money, to support the development of various types of asset tokens
+
+The Bank for International Settlements (BIS) and major countries are all studying and discussing the issue of tokenising wholesale central bank money and bank deposits13. The Bank is also conducting
+
+13 In May this year, BIS announced the launch of Project Agorá, exploring how tokenised CBDC and deposit tokens could improve cross-border payment efficiency and simplify and accelerate the global circulation of money. The central banks of 7 countries—France, Japan, South Korea, Mexico, Switzerland, the United Kingdom and the United States—are jointly participating in this project. Regarding other countries, in October last year, the Bank of Korea (BoK), together with the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS), established a CBDC testing platform for financial institutions to issue deposit tokens on the platform and conduct delivery versus payment (DVP) between deposit tokens and tokenised assets; in November last year, the Monetary Authority of Singapore (MAS) stated that future digital money might encompass CBDC and deposit tokens, among others, and worked with banks to explore the feasibility of using deposit tokens for interbank retail payments.
+
+9
+=== PAGE 12 ===
+a related proof of concept [概念驗證], and will work with participating banks to establish a shared tokenisation platform to conduct experiments in the following three scenarios:
+
+1. Interbank transfers of bank deposit tokens: Banks can use the shared tokenisation platform to convert deposits into deposit tokens according to customer needs, conduct interbank transfers, and use wholesale CBDC as the settlement asset.
+
+2. Delivery versus payment (DVP) of asset tokens: Using security tokens (Security Token Offering) issued by financial institutions as the subject matter, conduct delivery versus payment with deposit tokens, and carry out settlement assets through wholesale CBDC.
+
+3. Special-purpose tokens (Special Purpose Digital Money):
+
+(1) At present, government tendering entities still use paper-based and manual operations to collect bid bonds from bidding firms. If these are handled in the form of special-purpose tokens, there is potential to improve operational efficiency.
+
+(2) The improvement approach is to combine deposit tokens with smart contracts [智能合約] to create bid bond tokens with bid bond functions. Once bid opening is completed, the shared tokenisation platform automatically converts the bid bond tokens back into deposit tokens for unsuccessful bidders; on the other hand, the successful bidder’s bid bond tokens will automatically be converted into performance bond tokens until the tendered project is completed, and then converted back into deposit tokens for the successful bidder.
+
+10
+=== PAGE 13 ===
+III. Conclusion
+
+(I) Promoting CBDC is not an international competition:
+
+CBDC does not confer an advantage simply by being first. For example, in countries that have already issued CBDC or are conducting pilots [試點]14, development to date has fallen short of expectations. Like advanced countries, our country has diverse and convenient payment options, and therefore takes a more cautious attitude toward issuing CBDC. The main expectation is that the introduction of CBDC can meet the public’s digital payment needs and the government’s digital policy development objectives, so as to deliver substantive benefits.
+
+(II) In the course of research and experimentation, the Bank is also improving domestic payment efficiency and innovation:
+
+Although the Bank currently has no timetable for issuing CBDC, in the course of continued research and experimentation it has already been improving payment system processing efficiency and innovative applications. For example, the CBDC prototype [雛型] platform developed for retail payments can already support the fund-flow operations of digital vouchers, and the number of transactions accepted per second (TPS) has increased to 20,000; in addition, a proof of concept for wholesale CBDC is being planned, using wholesale CBDC as the settlement asset for asset tokenisation and combining it with the functions of bank deposit tokens to jointly construct the future digital monetary system.
+
+14 For example, the countries most actively promoting CBDC globally are mostly Third World countries, such as the Eastern Caribbean Currency Union and the Bahamas. Because of insufficient infrastructure, they urgently issued CBDC, but issuance to date has fallen short of expectations; as for mainland China, it has promoted CBDC pilots for many years to address problems such as the monopolisation of domestic payments by private-sector systems and counterfeit banknotes, but has not issued it comprehensively, and usage also appears to fall short of expectations.
+
+11
+=== PAGE 14 ===
+(III) Issuing CBDC is an enormous and long-term undertaking. The Bank will continue steadily exploring and experimenting with its potential for future development, and will continue to monitor international development trends:
+
+Promoting CBDC is an enormous and complex undertaking that requires long-term work; the Bank will continue to advance it steadily, ensuring the thoroughness of digital payment policy, so that digitally transformed money in the future will contribute to the development of the country’s digital economy and digital finance.
+
+The above report is respectfully submitted to all distinguished committee members for your guidance. Thank you.
+
+12

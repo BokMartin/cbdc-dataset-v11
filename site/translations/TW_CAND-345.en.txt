@@ -1,0 +1,2777 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-345 | source: CBDC_MASTER_v12/TW/TW__2023-03__Business-report-to-Legislative-Yuan-Finance-Committee-Mar-2023.pdf | source_sha256: 7cb6fefa7b6ff10f087545a24687da7dbf6dd0f7de16e5f3ab68fc8efa04a25d
+# provider: openai | model: gpt-6-astra | interface: API | run: openai_gpt-6-astra_api_20261113 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# source text layer: pdftotext reading order, no -layout, no OCR (layout text had column gaps on 23% of long lines)
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+March 1, Republic of China Year 112
+Meeting of the Finance Committee of the Legislative Yuan
+
+Central Bank Business Report
+
+Governor of the Central Bank
+
+Yang Chin-long
+=== PAGE 2 ===
+Table of Contents
+
+Summary………………………………………….…………… I
+I. Introduction……………………………….…………………..1
+II. International Economic and Financial Conditions…………………….…………….. 2
+III. Domestic Economic and Financial Conditions…………………………………..9
+IV. Explanation of the Bank’s Main Operations…………………………………18
+V. Conclusion…………………………………………………35
+Appendix: Overview of the Bank’s Operations.……………………………………36
+=== PAGE 3 ===
+Summary
+I. International economic and financial conditions
+(1) Global economic growth is expected to slow this year, and inflation is expected to decline
+1. Most central banks have simultaneously adopted tight monetary policies to combat high inflation. Since October of last year (2022), global economic growth has slowed. Since the beginning of this year (2023), the global economic outlook has become slightly more optimistic. S&P Global Markit Intelligence (hereinafter referred to as S&P Global) has raised its forecast for global economic growth this year from 1.4% in October of last year to 2.0%, which is nevertheless still below last year’s 3.0%.
+2. With prices of commodities such as crude oil falling, S&P Global forecasts that global inflation will fall from 7.6% last year to 5.3% this year.
+(2) Most economies, including the United States and Europe, maintain their pace of interest rate increases, while Japan and China continue monetary easing
+1. In recent months, economies including the United States and Europe have maintained their pace of interest rate increases. However, as inflation has declined, the Federal Reserve System (Fed) of the United States has reduced the size of its interest rate increases. The European Central Bank (ECB) and the Bank of England (BoE) have only slightly reduced the size of their interest rate increases, as inflationary pressures remain high.
+2. Although the Bank of Japan (BoJ) has widened the fluctuation range for 10-year government bond yields, it has maintained an accommodative monetary policy; the People’s Bank of China has also eased monetary policy to stimulate economic recovery.
+(3) In recent months, the US Fed has slowed the pace of interest rate increases, and the economic performance of the United States and the euro area has been better than expected. Global stock markets rebounded sharply, then softened as the Fed might again tighten monetary policy aggressively. The US dollar index first declined and then rebounded. Recently, 10-year government bond yields in the United States, Germany and Japan have fluctuated upward.
+(4) The global economy faces multiple downside risks: (1) Tight labor markets in the United States and Europe and the reshoring of supply chains could cause inflation to rise again; (2) If US and European central banks tighten further because inflation does not cool as
+
+I
+=== PAGE 4 ===
+expected, this could increase the extent of the slowdown in economic growth; (3) Downside risks to mainland China’s economy remain and could affect the global economic recovery; (4) Climate change is exacerbating uncertainty over commodity supplies, and geopolitical risks are also increasing.
+II. Domestic economic and financial conditions
+(1) The economy will grow moderately this year
+1. In the 4th quarter of last year, private consumption recovered; however, global final demand declined and businesses continued to reduce inventories. Taiwan’s exports turned to negative growth of 8.65%, which also affected willingness to undertake private investment. The economic growth rate fell to -0.41%, and the full-year economic growth rate also fell to 2.45%, the lowest since 2017.
+2. Last year, Taiwan’s real GDP grew by 12.84% compared with 2019, significantly outperforming major economies such as South Korea (6.08%), the United States (5.12%), the euro area (2.09%), Japan (-1.08%) and the United Kingdom (-0.39%).
+3. The momentum of global economic and trade growth is expected to slow this year, which will restrain Taiwan’s export growth. Businesses also have a cautious view of future economic conditions, and private investment momentum will slow. However, domestic epidemic prevention measures and border controls have been relaxed, and people’s willingness to consume has increased. The economy is expected to grow moderately this year. Major domestic and foreign institutions’ forecasts for Taiwan’s economic growth rate this year average 2.21%.
+(2) The unemployment rate continues to decline, and real wages grow slightly
+1. With the domestic epidemic under control, commercial activity has gradually recovered, and the unemployment rate has continued to decline, reaching 3.50% in January of this year, the lowest since February 2001.
+2. Last year, regular earnings of all employees increased by an average of 2.80% year on year, the highest since 2000, and total earnings grew by an average of 3.45%, the highest since 2019. Excluding price factors, real regular earnings declined by 0.15% year on year, while real total earnings grew only slightly, by 0.48%.
+
+II
+=== PAGE 5 ===
+(3) The year-on-year CPI growth rate is expected to fall to about 2% this year
+1. Last year, the year-on-year CPI growth rate was 2.95%, the highest since 2009, mainly affected by supply-side factors such as rising costs of imported raw materials, including crude oil and food. The year-on-year core CPI growth rate was 2.61%, also the highest since 2009.
+2. Last year, Taiwan’s CPI rose by 4.73% compared with 2019, still far below major economies such as the United States (14.49%), the United Kingdom (12.83%), the euro area (11.46%) and South Korea (7.87%).
+3. Taiwan’s price increases have been relatively moderate, mainly because Taiwan has actively adopted supply-side measures to respond to fluctuations in energy and food prices and reduce their spillover effects, which has greatly helped overall price stability. In addition, the Bank’s gradual tightening of monetary policy has helped restrain domestic inflation expectations.
+4. In January of this year, the year-on-year CPI and core CPI growth rates rose to 3.04% and 2.98%, respectively, mainly because the Lunar New Year fell earlier this year than last year, bringing forward purchasing demand and the customary price increases for some service fees.
+5. Looking ahead to this year, global supply-chain bottlenecks are easing and international freight rates are declining. In addition, prices of raw materials such as crude oil are expected to be lower than last year. Taiwan’s year-on-year CPI growth rate is expected to fall to about 2% this year; forecasts by major domestic and foreign institutions range from 1.40% to 2.60%, with an average of 1.94%.
+(4) M2 year-on-year growth first rose and then fell, while long- and short-term interest rates increased
+1. After rising to 7.37% in November of last year, M2 year-on-year growth fell back to 7.06% in December because of a decline in the growth of bank loans and investments, together with net outflows of foreign capital; the full-year average was 7.48%.
+2. Since October of last year, as the Bank raised bank reserve requirement ratios and interest rates, the secondary-market interest rate on 1-month
+
+III
+=== PAGE 6 ===
+commercial paper has risen. The average interest rate in February of this year to date (2/22) was 1.191%; the yield on 5-year investment-grade corporate bonds rose to an average interest rate of 2.014% in November of last year and then fell, reaching an average interest rate of 1.834% in January of this year.
+III. The Bank’s main operations
+(1) The Bank has adopted moderate and gradual monetary tightening, helping restrain domestic inflation expectations and maintain price stability
+1. Since last year, affected by supply-side factors such as rising costs of imported crude oil and food, Taiwan’s price increases have remained high. To restrain domestic inflation expectations and achieve the policy objectives of promoting price stability and assisting sound overall economic and financial development, the Bank has continued to adopt tight monetary policy, raising policy interest rates four times by a total of 0.625 percentage points, together with two increases in the New Taiwan dollar reserve requirement ratios totaling 0.5 percentage points.
+2. Compared with economies such as the United States and Europe, Taiwan’s degree of monetary tightening has been relatively moderate. The main considerations are:
+(1) Economies such as the United States and Europe have aggressively tightened monetary policy, international financial conditions have tightened, and the global economy has slowed markedly. As a small open economy, Taiwan is affected by spillovers through 3 channels: the real sector, prices and finance.
+(2) Since last year, domestic price increases have mainly been affected by supply-side factors such as rising costs of imported crude oil and food; the government has continued to use supply-side measures to respond to fluctuations in energy and food prices, which has greatly helped overall price stability.
+(3) Although domestic inflation shocks mainly stem from supply-side cost pressures, it is still necessary for the Bank to adopt appropriately tight monetary policy to constrain inflation expectations and maintain price stability. The Bank has raised policy interest rates and reserve requirement ratios, using both price and quantity measures, which helps restrain domestic inflation expectations.
+
+IV
+=== PAGE 7 ===
+(4) Since last year, Taiwan’s price increases have been lower than those in the United States, Europe, the United Kingdom and some parts of the Asia-Pacific region, and its monetary tightening has also been more moderate.
+(2) Since the implementation of the Bank’s selective credit control measures, banks’ real estate credit risks have been well controlled; the Bank maintains the current selective credit control measures to promote domestic financial stability. Going forward, it will continue to monitor real estate lending and developments in the property market, review the effectiveness of the implementation of the control measures, and review and adjust the content of relevant measures in a timely manner.
+(3) The Bank regulates the foreign exchange market to maintain its smooth operation
+1. The New Taiwan dollar depreciated against the US dollar last year and has stabilized since the beginning of this year
+(1) Last year, foreign investors were net sellers of Taiwan stocks and remitted large amounts of funds out. At the end of last year, the New Taiwan dollar had depreciated by 9.83% against the US dollar compared with the end of 2021; since the beginning of this year, as foreign investors have been net buyers of Taiwan stocks, the New Taiwan dollar has appreciated by about 0.67% against the US dollar to date (2023/2/22).
+(2) Last year, foreign investors’ cumulative net sales of Taiwan stocks totaled 1.14 trillion New Taiwan dollars (equivalent to about 391 hundred million US dollars), which were remitted out along with some dividends received, resulting in excess demand for US dollars in the domestic foreign exchange market. In the first and second halves of last year, the Bank’s net foreign exchange sales were 82.5 hundred million US dollars and 47.5 hundred million US dollars, respectively, totaling 130 hundred million US dollars.
+(3) Taiwan is a small open economy with high trade dependence, and its foreign exchange market is shallow, making it necessary to maintain relative stability in the New Taiwan dollar exchange rate. Over the long term, the volatility of the New Taiwan dollar exchange rate against the US dollar has been lower than that of major currencies such as the Singapore dollar, euro, Japanese yen and Korean won. This benefits businesses’ pricing and operations and also helps domestic financial stability and economic growth.
+2. The Bank has ample foreign currency liquidity
+(1) At the end of January of this year, the Bank’s foreign exchange reserves were 5,571 hundred million US dollars, an increase of 22 hundred million US dollars compared with the end of last year, mainly reflecting returns from the investment and management of the Bank’s foreign exchange reserves and the appreciation of major currencies against the US dollar, which increased their value when expressed in US dollars.
+
+V
+=== PAGE 8 ===
+(2) At the end of last year, the Bank’s foreign currency liquidity was approximately 6,901 hundred million US dollars, including official reserve assets of 5,600 hundred million US dollars, other foreign currency assets of 379 hundred million US dollars, and other foreign currency liquidity available within the coming year of 922 hundred million US dollars.
+(4) Improve the payment and settlement system and provide final settlement services for interbank New Taiwan dollar fund transfers
+Last year, the value of transactions processed by the CBC Interbank Funds Transfer System reached 535 trillion yuan; in retail payment systems, the Interbank Financial Information System operated by the Financial Information Service Co., Ltd. (hereinafter referred to as the FISC system) recorded a transaction value of 197 trillion yuan, an increase of 5% over 2021.
+(5) Assist in promoting mobile payments
+1. Promote the common QR Code payment standard for mobile payments
+To establish a more complete mobile payment environment, the Bank has continued to urge the Financial Information Service Co., Ltd. to work with banks to promote the common QR Code payment standard; last year, the transaction value and number of transactions were 2,821 hundred million yuan and 7,303 ten thousand transactions, respectively, increasing by 56% and 49%, respectively, compared with 2021.
+2. Establish a shared cross-institution platform for electronic payments
+To facilitate the interconnection and interoperability of transaction information among electronic payment institutions, and between electronic payment institutions and financial institutions, the Bank urged the Financial Information Service Co., Ltd. to establish a shared cross-institution platform for electronic payments. In addition to providing cross-institution transfer services, the “tax payment” and “bill payment” functions went live in April and December of last year, respectively. The business plan for the “shopping” function was also approved by the Financial Supervisory Commission in December of last year.
+(6) Continue to advance the central bank digital currency (CBDC) research project
+1. The first phase, “Technical Research on the Feasibility of Wholesale CBDC,” was completed in June 2020, and the second phase, “General-Purpose CBDC Experimental Project,” was completed in June of last year, with the experimental results demonstrated on June 29.
+
+VI
+=== PAGE 9 ===
+2. Subsequent work will build on the results of the second-phase experiment to conduct opinion surveys and plan three main matters: (1) Communicate widely to gain public support; (2) Refine the platform design and adopt more robust and mature technologies; (3) Study a solid legal framework and formulate legal rules; so as to advance the CBDC research project comprehensively.
+(7) The Bank issued its strategic plan for responding to climate change
+1. To follow international development trends and align with our government’s planning for the 2050 net-zero transition, the Bank issued the “Central Bank Strategic Plan for Responding to Climate Change” on December 30 of last year. It plans to gradually implement five main categories and 11 specific policy measures from five main perspectives: monetary policy, monetary policy operational instruments, macroprudential policy, foreign exchange reserve management, and international exchanges.
+2. The Bank will continue to draw on experience through international organizations and devote its own research capacity to adjusting the above five main categories of policy measures on a rolling basis. It will also strengthen supervisory cooperation with the Financial Supervisory Commission on climate change issues to reduce the impact of climate risks on our economy and finances and strengthen the financial system’s resilience in responding to climate risks.
+
+VII
+=== PAGE 10 ===
+I. Introduction
+Chair, Committee Members, Ladies and Gentlemen:
+I am deeply honored to be invited to your Committee today to report on the Bank’s operations.
+The Bank’s operational objectives are to promote financial stability, ensure sound banking operations, maintain the stability of the internal and external value of the currency, and also assist economic development. The following report addresses domestic and international economic and financial conditions and the Bank’s main operations, including the implementation of monetary and foreign exchange policies since the previous session of the Legislative Yuan. Your guidance would be appreciated.
+
+1
+=== PAGE 11 ===
+II. International Economic and Financial Conditions
+I. The global economy is cooling, and inflationary pressures are declining but remain high
+(1) Global economic growth is expected to continue slowing this year
+Most central banks have simultaneously adopted tight monetary policies to combat high inflation. Since October of last year (2022), global economic growth has gradually slowed. Since the beginning of this year (2023), with expectations of mainland China reopening its economy, an increased likelihood of a soft landing for the US economy, and an easing of the euro area’s energy crisis, the global economic outlook has become slightly more optimistic. S&P Global Markit Intelligence (hereinafter referred to as S&P Global) has raised its forecast for global economic growth this year from 1.4% in October of last year to 2.0%, which is nevertheless still below last year’s 3.0%, with economic growth momentum continuing to weaken.
+[FIGURE]
+Economic growth rates of the world and major economies
+%
+
+2021
+
+2022
+
+2023 f
+
+9
+
+8.4
+7.6
+
+8
+7
+
+6.53
+
+6.0
+
+5.9
+
+6
+
+5.3
+4.1
+
+4
+3
+
+4.1
+
+3.5
+
+3.0
+
+3.0
+
+2.0
+
+2.1
+
+1.4
+
+0.7
+
+0.5
+
+World
+
+2.452.3
+
+-0.5
+
+-0.6
+
+United States
+
+Euro area
+
+-0.7
+
+4.3
+4.2
+
+2.6
+2.2
+
+1.8
+1.7
+
+1.1 1.2 1.2
+
+0
+-1
+
+3.5
+
+4.4
+
+2.1
+
+2
+1
+
+5.6
+
+5.2
+
+5
+
+-0.4
+
+United Kingdom
+
+Japan
+
+Mainland China
+
+Taiwan*
+
+South Korea
+
+ASEAN 10 countries
+
+Notes: 1. The [ILLEGIBLE] and italic red figures in the chart are the forecasts for 2023 economic growth rates made in October 2022.
+2. The figures for the world and ASEAN 10 countries in 2021, the world, United Kingdom and ASEAN 10 countries in 2022, and the world and each economy in 2023 are forecasts by S&P Global Market Intelligence.
+3. *: The Directorate-General of Budget, Accounting and Statistics’ forecast for this year is 2.12% (2023/2/22).
+Sources: Official websites of each economy, S&P Global Market Intelligence (2023/2/15)
+
+(2) Global trade volume growth continues to decline this year
+With global economic growth slowing and trade protectionism rising, international institutions forecast that global trade volume growth will continue to decline this year.
+Global trade volume growth
+
+Unit: %
+
+International institution | Forecast date | 2021 | 2022 | 2023 f
+International Monetary Fund (IMF) | 2023/1/30 | 10.4 | 5.4↓ | 2.4↓
+United Nations (UN) | 2023/1/25 | 10.5 | 6.0↓ | -0.4↓
+World Bank (World Bank) | 2023/1/10 | 10.6 | 4.0↓ | 1.6↓
+
+Notes: Includes trade in goods and services; f denotes a forecast; ↓ denotes a decline compared with the previous 1 year.
+Sources: Respective institutions
+2
+=== PAGE 12 ===
+(3) Prices of commodities such as crude oil have fallen, and high global inflationary pressures are expected to ease
+From October to December of last year, global economic growth slowed, and factors such as the spread of the epidemic following mainland China’s relaxation of epidemic prevention measures affected crude oil demand. Oil prices briefly fell below the level before the outbreak of the Russia–Ukraine war. Since the beginning of this year, mainland China has lifted post-epidemic restrictions and its economy is expected to recover, which is expected to drive crude oil demand. Oil prices stopped falling and consolidated. The R/J CRB Futures Price Index, which represents overall international commodity prices, has fluctuated with prices of commodities such as crude oil, grains and natural gas, and has recently fluctuated within a relatively low range.
+[FIGURE]
+R/J CRB Futures Price Index
+
+Brent crude oil spot price
+Index
+340
+
+329.59
+6/9
+2023
+
+310
+
+280.25
+1/23
+
+277.75
+12/30
+
+280
+263.69
+250 1/5
+
+220
+
+266.10
+2/22
+
+2022
+
+233.00
+1/3
+1
+2
+3
+4
+5
+6
+7
+8
+9 10 11 12 Month
+Note: The R/J CRB Futures Price Index is compiled from the futures prices of 19 commodities in 6 main categories: energy, soft commodities, grains, industrial metals, precious metals and livestock. Energy has the highest weighting.
+Source: Refinitiv Datastream
+
+Source: Refinitiv Datastream
+
+As the effects of monetary tightening become apparent, global consumer demand is cooling. Together with the fall in international energy prices, global inflation has declined from its peak as economic growth slows. However, demand for services has increased sharply following the lifting of post-epidemic restrictions, labor markets are tight, and wages continue to grow. Core prices excluding energy and food are not easily brought down, and global inflationary pressures remain high. Although S&P Global forecasts that global inflation this year will be lower than last year’s 7.6%, it has raised the forecast from 5.1% in October of last year to 5.3%.
+
+3
+=== PAGE 13 ===
+[FIGURE]
+Year-on-year CPI growth rates of the world and major economies
+%
+10
+
+2021
+
+2022
+
+2023 f
+
+9.1
+8.0
+
+7.6
+
+8
+
+8.4
+
+5.9
+6
+4
+
+5.3
+3.9
+
+4.7
+
+5.1
+
+5.5
+
+5.2
+
+4.2
+
+5.1
+
+5.5
+
+5.0
+
+4.2
+4.0
+2.6
+
+2.6
+
+2.5 2.5
+
+2
+1.5
+
+3.4
+
+2.95
+2.0 2.1
+2.0
+0.9
+
+1.97
+
+3.7
+
+2.5
+
+3.2
+
+2.1
+
+2.1
+
+1.9
+
+0
+-0.2
+-2
+
+World
+
+United States
+
+Euro area
+
+United Kingdom
+
+Japan
+
+Mainland China
+
+Taiwan*
+
+South Korea
+
+ASEAN 10 countries
+
+Notes: 1. The [ILLEGIBLE] and italic red figures in the chart are the forecasts for 2023 year-on-year CPI growth rates made in October 2022.
+2. The figures for the world and ASEAN 10 countries in 2021, the world and ASEAN 10 countries in 2022, and the world and each economy in 2023 are forecasts by S&P Global Market Intelligence.
+3. *: The Directorate-General of Budget, Accounting and Statistics’ forecast for this year is 2.16% (2023/2/22)
+Sources: Official websites of each economy, S&P Global Market Intelligence (2023/2/15)
+
+II. Most economies, including the United States and Europe, maintain their pace of interest rate increases, while Japan and China continue monetary easing
+Last year, the Russia–Ukraine war pushed up global energy and food prices, and economies including the United States and Europe aggressively tightened monetary policy. Although they have maintained their pace of interest rate increases since the beginning of this year, as inflation has declined, the Federal Reserve System (Fed) of the United States has reduced the size of its interest rate increases. The European Central Bank (ECB) and the Bank of England (BoE) have only slightly reduced the size of their interest rate increases, as inflationary pressures remain high.
+The Bank of Japan (BoJ) considers that wages have not yet risen significantly alongside prices and that inflation has not remained steadily above the 2% target. It has maintained an accommodative monetary policy, but widened the fluctuation range for 10-year government bond yields; the People’s Bank of China (hereinafter referred to as the PBoC) has also eased monetary policy to stimulate economic recovery.
+[FIGURE]
+Changes in policy interest rates of major economies since last year
+%
+
+◆ Current
+
+▓ Size of interest rate increases (cuts) in 2023 to date
+
+5
+
+◆ End of 2022
+
+▓ Size of interest rate increases (cuts) in 2022
+
+◆ End of 2021
+
+4.50~4.75
+4.25~4.50
+
+4
+
+4.00
+3.50
+
+3
+
+3.00
+
+3.80
+3.65
+
+3.50
+3.25
+
+2.50
+
+2
+
+1.750
+
+1
+0
+
+1.00
+
+0.00~0.25
+
+0.00
+
+1.125
+
+0.25
+-0.10
+
+-1
+United States
+
+Euro area
+
+United Kingdom
+
+South Korea
+
+Taiwan
+
+Japan
+
+Note: Mainland China’s policy interest rate is represented by the 1-year loan prime rate (LPR).
+Sources: Central bank websites (data as of February 22 of this year)
+
+4
+
+Mainland China
+=== PAGE 14 ===
+Monetary policies of major central banks since October of last year
+Central bank | Description
+Fed |  The Fed raised the federal funds rate target range by 0.75, 0.50 and 0.25 percentage points in November and December of last year and February of this year, respectively, to 4.50%~4.75%.
+ |  It continues to implement its balance-sheet reduction plan. Since September of last year, it has reduced holdings of US Treasury securities, agency debt and agency mortgage-backed securities (agency MBS) by up to a total of 950 hundred million US dollars per month.
+ |  At the press conference following the policy meeting in February of this year, Chair Powell stated that, because the effects of monetary policy operate with a lag, the cumulative effects of the earlier aggressive tightening have not yet fully appeared. It therefore decided to slow the pace of interest rate increases, but considered that interest rate cuts would not be appropriate this year.
+ECB |  The ECB raised policy interest rates by 0.75, 0.50 and 0.50 percentage points in October and December of last year and February of this year, respectively. Following the increases, the main refinancing operations rate, marginal lending rate and overnight deposit rate were 3.00%, 3.25% and 2.50%.
+ |  Starting in March of this year, principal repayments from maturing assets held under the Asset Purchase Programmes (APP) will no longer be reinvested in full, and the size of the APP will be reduced at an average pace of 150 hundred million euros per month through the end of June.
+ |  At the press conference following the policy meeting in February of this year, President Lagarde stated that inflationary pressures remained high, that there was an inclination toward another interest rate increase of 0.50 percentage points at the March policy meeting, and that policy interest rates would remain at a relatively high level for some time.
+BoE |  The BoE raised its policy interest rate by 0.75, 0.50 and 0.50 percentage points in November and December of last year and February of this year, respectively, to 4.00%.
+ |  Since November of last year, it has gradually reduced its holdings of government bonds under the Asset Purchase Facility (APF) through an auction mechanism, becoming the first major central bank to actively sell government bond holdings to conduct quantitative tightening (QT).
+ |  The BoE stated that if inflationary pressures remain high, it will further tighten monetary policy to bring inflation back down to the 2% target.
+BoJ |  In December of last year, it decided to continue to maintain the short-term policy interest rate (the interest rate on banks’ additional excess reserves deposited at the central bank) at -0.10% and the long-term interest rate target (the 10-year government bond yield) at around 0%, unchanged; however, it widened the fluctuation range for 10-year government bond yields from ±0.25% to ±0.50% to enhance the sustainability of accommodative monetary policy centered on the Yield Curve Control (YCC) framework. In addition, to promote the smooth formation of the bond yield curve, it will more flexibly increase purchases of government bonds of various maturities and conduct fixed-rate purchase operations.
+ |  On January 18 of this year, it decided to extend the provision of funds to support financial institutions’ lending by 1 year and revise the rules for “Funds-Supplying Operations Against Pooled Collateral” to encourage financial institutions to purchase government bonds and ease upward pressure on yields.
+PBoC |  On December 5 of last year, it lowered financial institutions’ reserve requirement ratios across the board by 0.25 percentage points (excluding financial institutions already subject to a reserve requirement ratio of 5%), which could release approximately 5,000 hundred million renminbi in long-term funds, providing ample market liquidity and supporting economic development.
+ |  It continues to use instruments such as open-market reverse repurchase operations and the medium-term lending facility (MLF) to maintain reasonably ample market liquidity, and provides funding support to policy financial institutions through pledged supplementary lending (PSL), guiding them to increase support for the financing needs of the real economy and real estate.
+
+Sources: Official websites and relevant reports (data as of February 22 of this year)
+
+5
+=== PAGE 15 ===
+III. Recently, government bond yields in major economies have mostly risen, the US dollar has rebounded, and stock markets have softened
+(1) Recently, 10-year government bond yields in the US, Germany and Japan have risen
+Since October of last year, inflation in the US and the euro area moderated, and markets expected the Fed and ECB to slow the pace of rate increases, causing US and German 10-year government bond yields to fall. Subsequently, as the decline in US inflation fell short of expectations, inflationary pressure in the euro area remained high, and US and European labor markets remained tight, expectations of aggressive monetary tightening by the Fed and ECB rose again, causing US and German 10-year government bond yields to fluctuate upward. In mainland China, with the easing of lockdown measures and the successive introduction of economic stimulus policies, the economy was expected to recover, and 10-year government bond yields gradually rose. Recently, they fell slightly as the People's Bank of China injected large amounts of funds to increase market liquidity. In Japan, as the BoJ widened the fluctuation band for yield control, 10-year government bond yields rose to fluctuate at the upper limit of the band of 0.5%.
+
+[FIGURE]
+10-year government bond yields in major economies
+
+%
+5.0
+
+2023/2/22
+US
+3.93
+Mainland
+China
+2.92
+Germany
+2.51
+
+4.0
+3.0
+2.0
+
+1.0
+
+Japan
+0.50
+
+0.0
+-1.0
+1
+2022
+
+4
+
+7
+
+10
+
+1
+2023
+
+Month
+Year
+
+Sources: Refinitiv Datastream, US Department of the Treasury
+
+(2) The US dollar index rebounded slightly after a sharp decline; most major countries' currencies rose against the US dollar
+Since October of last year, markets expected the Fed to slow the pace of rate hikes, and the US dollar index fell sharply from its high. Since February of this year, it has rebounded slightly because the Fed may continue aggressive monetary tightening. Comparing February 22 of this year with the end of September of last year, most major economies' currencies rose against the US dollar. Because of its larger previous depreciation, the Korean won rebounded more strongly, and against the US dollar
+
+6
+=== PAGE 16 ===
+appreciated sharply by 10.5%; the Indian rupee, however, depreciated slightly by 1.6% as commodity prices remained high and the trade deficit widened.
+
+[FIGURE]
+Appreciation/depreciation of major currencies against the US dollar
+
+US dollar index (DXY)
+Index
+
+(Comparison of February 22 of this year with the end of September of last year)
+
+Highest since May 2002
+2022/9/26
+114.10
+
+116
+114
+112
+110
+108
+106
+104
+102
+100
+98
+96
+94
+92
+90
+88
+
+%
+
+12
+
+10.5
+9.3
+
+10
+8
+
+Latest
+2023/2/22
+104.59
+
+8.2 7.9
+7.3 7.1
+6.5
+
+6
+
+4.4 4.1
+
+4
+
+2.9
+
+2
+
+0.3 0.2
+
+0
+-2
+
+-1.6
+
+-4
+
+1
+2022
+
+4
+
+7
+
+10
+
+1
+2023
+
+Thai
+baht
+
+Korean
+won
+
+Month
+Year
+
+Note: The base period of the DXY index is March 1973 (=100)
+Source: Refinitiv Datastream
+
+Euro
+
+Pound
+sterling
+
+Japanese
+yen
+
+Singapore
+dollar
+
+Philippine
+peso
+
+Malaysian
+currency
+
+New Taiwan
+dollar
+
+Renminbi
+
+Vietnamese
+dong
+
+Indonesian
+rupiah
+
+Indian
+rupee
+
+Sources: Refinitiv Datastream, Taipei Forex Inc.
+
+(3) Recently, stock markets in major economies have softened after a sharp rebound
+In October of last year, expectations that the Fed would reduce the magnitude of rate increases grew, and economic performance in the US and euro area was better than expected, causing major global stock markets to rebound sharply from last year's lows. Since February of this year, they have softened because the Fed may again engage in aggressive monetary tightening. Comparing February 22 of this year with the end of September of last year, the German stock market rose by 27.1%, mainly because a warm winter in the euro area eased the energy supply crisis and improved the economic outlook. The Indonesian stock market, however, fell by 3.3% because weakening global demand adversely affected commodity exports.
+
+[FIGURE]
+Changes in stock price indices in major global economies
+
+MSCI global stock price index
+
+(Comparison of February 22 of this year with the end of September of last year)
+
+%
+
+Index
+
+30
+
+800
+
+27.1
+24.9
+
+25
+750
+
+18.6
+
+20
+
+15.0
+
+15
+
+14.9
+
+14.5
+
+12.2
+
+700
+
+8.8
+
+Latest
+10
+2023/2/22
+5
+633.68
+
+650
+
+8.8
+5.4
+
+4.5
+
+4.0
+
+Singapore
+
+Japan
+
+India
+
+0
+600
+
+-5
+
+550
+2022/10/12
+550.37
+
+500
+1
+
+4
+
+7
+
+2022
+
+Source: Refinitiv Datastream
+
+10
+
+1
+
+2023
+
+Month
+Year
+
+Pan-euro area
+Dow Jones
+
+Hong Kong
+
+US
+Dow Jones
+Industrial
+
+Taiwan
+
+MSCI
+
+Germany
+
+South Korea
+
+Global
+stock price
+index
+
+Source: Refinitiv Datastream
+
+7
+
+Mainland China
+Shanghai
+Composite
+
+US
+Nasdaq
+
+-3.3
+Indonesia
+=== PAGE 17 ===
+IV. The global economic outlook faces many downside risks
+Global economic growth is expected to continue slowing this year, and the outlook faces many downside risks. Close attention should be paid to subsequent developments in the relevant circumstances.
+
+Tight labor markets in the US and Europe and the reshoring of supply chains could cause inflation to rise again
+
+If US and European central banks tighten further because inflation does not moderate as expected, the slowdown in economic growth could become greater
+
+• Continued tightness in US and European labor markets could trigger a wage-price spiral. In addition, mainland China's post-pandemic recovery and the continuing Russia-Ukraine war could also push up commodity prices, all of which could again induce a rise in global inflation.
+
+• The effects of aggressive interest rate increases by US, European and other central banks last year have continued to emerge. If inflation rises again, major central banks will inevitably tighten monetary policy further, and spillover effects through trade, finance and exchange-rate channels will intensify further, potentially increasing the extent of the global economic slowdown.
+
+• In recent years, countries have strengthened the resilience of their own supply chains. As supply chains return to high-income countries, production costs may increase, which is also unfavorable to the moderation of global inflation.
+
+• The US is expected to maintain high interest rates for a period of time, which could cause economies with large US dollar-denominated external debts to fall into debt distress. If this leads to substantial capital outflows, it could trigger turmoil in international financial markets.
+•
+
+Climate change increases uncertainty in commodity supplies, while geopolitical risks are also rising
+
+Downside risks to mainland China's economy remain and could affect the global economic recovery
+• The lack of reform in mainland China's real estate market and the continuing risk of default, high fiscal risks for local governments, and US restrictions on semiconductors constitute downside risks to its economy. They could constrain its economic performance and, in turn, affect the global economic recovery.
+
+• Climate change has caused frequent natural disasters around the world, increasing uncertainty in supplies of energy, food and other items. Europe may also still face the risk of energy shortages in future winters. These all affect global economic and inflation conditions.
+• The Russia-Ukraine war has intensified the global geopolitical trend toward confrontation between blocs. In addition to the continuing US-China rivalry, risks of conflict in North and South Korea, India and Pakistan, the Middle East and other regions are also rising, affecting global economic development and social stability.
+•
+
+8
+=== PAGE 18 ===
+Part III. Domestic Economic and Financial Conditions
+I. Economic growth last year fell short of expectations; the economy will grow moderately this year
+(1) Economic growth turned negative in the 4th quarter of last year, and full-year economic growth was the lowest in nearly 6 years
+In the 4th quarter of last year, the impact of the domestic pandemic eased, and pandemic prevention measures were gradually relaxed, allowing private consumption to continue recovering. However, as global end demand declined and firms continued to reduce inventories, Taiwan's exports turned to negative growth of 8.65%, which also affected willingness to make private investment. Economic growth was -0.41%, and full-year economic growth also declined to 2.45%, the lowest since 2017.
+
+[FIGURE]
+Export annual growth rate and economic growth rate (yoy)
+%
+
+%
+
+12
+
+5.39
+
+30
+
+25.97
+
+7.85
+
+6
+
+Export annual growth rate (right axis)
+
+30.10
+
+9.29
+
+9
+
+3
+
+40
+
+37.33
+
+23.50
+
+24.55
+
+5.23
+
+4.44
+
+4.14
+
+2.88
+
+20
+
+15.39
+
+3.87
+
+3.64
+
+2.95
+
+10
+
+11.65
+3.61
+
+0.62
+
+3.36
+
+5.97
+
+0
+
+0
+-0.41
+
+Economic growth rate (left axis)
+
+-2.44
+
+-3
+
+-8.65
+
+Q1
+2020
+
+Q2
+
+Q3
+
+Q4
+
+Q1
+2021
+
+Q2
+
+Q3
+
+Q4
+
+Q1
+2022
+
+Q2
+
+Q3(r)
+
+-10
+
+Q4(p) Quarter
+Year
+
+Note: r denotes revised figures, and p denotes preliminary statistics; the export annual growth rate is denominated in US dollars.
+Sources: Directorate-General of Budget, Accounting and Statistics, Ministry of Finance
+
+(2) Although last year's economic growth rate was below the pre-pandemic (2019) rate of 3.06%, it was significantly better than that of major economies, and performance remained steady
+Taiwan's real GDP last year increased by 12.84% compared with 2019, significantly outperforming South Korea (6.08%), the US (5.12%) and the euro area (2.09%), while Japan (-1.08%) and the UK (-0.39%) had not yet returned to their pre-pandemic levels.
+
+9
+=== PAGE 19 ===
+[FIGURE]
+Indexed real GDP trends in major economies, 2019~2022
+2019 = 100
+115
+
+Taiwan 112.84
+
+110
+
+South Korea 106.08
+Global 105.71
+US 105.12
+Euro area 102.09
+UK 99.61
+Japan 98.92
+
+105
+100
+95
+90
+85
+80
+2019
+
+2020
+
+2021
+
+2022
+
+Sources: S&P Global Market Intelligence, official websites of the respective countries
+
+(3) Taiwan's economy will grow moderately this year
+Major institutions expect global economic and trade growth momentum to slow substantially this year. Together with firms' continuing inventory reductions, this will restrain Taiwan's export growth. Firms also have a conservative view of future business conditions and could postpone investment plans or reduce capital expenditures, and private investment momentum will slow. However, domestic pandemic prevention measures and border controls have been relaxed, and the public's willingness to consume has increased. In addition, the government will distribute 6,000 yuan in cash to each person, which is expected to boost private consumption. Moderate economic growth is expected this year, and the average forecast by major domestic and overseas institutions for Taiwan's economic growth this year is 2.21%.
+
+[FIGURE]
+Domestic and overseas institutions' forecasts for Taiwan's economic growth rate this year
+%
+
+3.5
+3.0
+
+2.58
+2.5
+
+2.24
+
+2.12
+
+2.40
+2.20
+
+2.20
+2.00
+
+1.95
+
+2.0
+1.5
+1.0
+0.5
+0.0
+
+Release
+date
+
+Directorate-General of Budget, Accounting and Statistics
+
+Taiwan Institute of Economic Research
+
+S&P Global
+Market
+Intelligence
+
+Citi
+
+EIU
+
+UBS
+
+Standard
+Chartered
+
+BofA Merrill
+Lynch
+
+(2023/2/22)
+
+(2023/1/31)
+
+(2023/2/15)
+
+(2023/2/13)
+
+(2023/2/10)
+
+(2023/2/10)
+
+(2023/2/10)
+
+(2023/2/10)
+
+10
+
+Average
+2.21%
+=== PAGE 20 ===
+II. The unemployment rate continued to decline, and real earnings grew slightly
+(1) The unemployment rate continued to decline, while the number of employed persons first fell and then rose; the number of enterprises implementing reduced working hours and rest days and the number of persons affected declined
+Since September of last year, the domestic pandemic has been under control and business activity has gradually recovered. The unemployment rate declined month by month to 3.50% in January of this year, the lowest since February 2001. The number of employed persons recovered month by month to 1,147.1 ten thousand persons in January of this year, down 0.03% year on year.
+
+[FIGURE]
+Unemployment rate and number of employed persons
+%
+5.0
+
+Ten thousand persons
+
+1,160
+
+4.8
+Number of employed persons (left axis)
+
+1,150
+
+1,147.1
+
+4.6
+4.4
+
+4.2
+
+1,140
+
+4.0
+3.8
+
+1,130
+
+3.6
+Unemployment rate (right axis)
+
+3.50
+
+1,120
+
+3.4
+3.2
+
+1
+4
+7
+2021
+Source: Directorate-General of Budget, Accounting and Statistics
+
+10
+
+1
+2022
+
+4
+
+7
+
+10
+
+Month
+1
+2023 Year
+
+As of February 16 of this year, 2,315 enterprises were implementing reduced working hours and rest days (i.e., unpaid leave), affecting 16,495 persons, down by 419 enterprises and 1,555 persons from the end of September of last year. Among these, support services recorded the largest decrease, at 2,202 persons, followed by accommodation and food services, with a decrease of 885 persons. This was mainly because recovering domestic demand and the reopening of borders eased the unpaid-leave situation. Manufacturing, however, increased by 2,832 persons, mainly because the slowdown in the global economy reduced firms' orders.
+(2) Real total earnings grew slightly
+For the full year last year, the average total number of employees was 817.1 ten thousand persons. Regular earnings increased by an average of 2.80% year on year, the highest since 2000; total earnings increased by an average of 3.45% year on year, the highest since 2019. Among these, the industrial sector benefited from strong exports in the first half of the year, with earnings growing by 4.69%, while the services sector was affected by the domestic pandemic and grew by only 2.55%.
+
+11
+=== PAGE 21 ===
+After deducting changes in the consumer price index (CPI) over the same period, because of the larger increase in prices, real regular earnings last year turned to a year-on-year decline of 0.15%. Real total earnings grew only slightly, by 0.48%; among these, real total earnings in industry grew by 1.69%, while services recorded negative growth of 0.39%.
+
+[FIGURE]
+Annual growth rates of earnings in industry and services
+%
+
+8
+6
+
+Nominal total earnings
+
+4
+
+3.45
+
+2
+0.48
+
+0
+Real total earnings
+-2
+-4
+
+2010
+
+2012
+
+2014
+
+2016
+
+2018
+
+2020
+
+2022
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+III. Price increases remained high last year and are expected to fall back to around 2% this year
+(1) Taiwan's price increases remained high last year, mainly because of supply-side factors such as imported crude oil and food prices
+1. From the second half of last year, as international prices of crude oil, grains and other raw materials softened, and increases in domestic food prices such as vegetables and fruit moderated, the CPI annual growth rate trended downward, reaching 2.35% in November. In December, as prices of vegetables and fuel turned upward, the CPI annual growth rate rose again to 2.71%, while the annual growth rate of core CPI, excluding vegetables, fruit and energy, fell to 2.72%.
+
+12
+=== PAGE 22 ===
+[FIGURE]
+Annual growth rates of CPI, core CPI and food prices
+%
+8
+
+Food
+
+6
+
+4
+
+CPI
+
+2
+
+Core CPI
+
+5.27
+
+3.04
+2.98
+(2023/1)
+
+0
+
+-2
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+4
+
+7
+
+10
+
+1
+2023
+
+Month
+Year
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+2. Last year's CPI annual growth rate was 2.95%, the highest since 2009. It was mainly affected by supply-side factors such as rising costs of imported crude oil, food and other raw materials, which caused prices of food, fuel and durable consumer goods to rise, along with increases in rents. These four items together raised the CPI annual growth rate by 2.09 percentage points, contributing 71% of the CPI annual growth rate. The core CPI annual growth rate was 2.61%, also the highest since 2009.
+
+Main items affecting last year's CPI annual growth rate
+Item | Weight (per thousand) | Annual rate of change (%) | Effect on CPI annual growth rate (percentage points)
+CPI | 1000 | 2.95 | 2.95
+Food | 248 | 5.66 | 1.39
+Eating out expenses | 96 | 5.77 | 0.56
+Fruit | 20 | 10.40 | 0.22
+Meat | 24 | 5.70 | 0.14
+Eggs | 3 | 26.39 | 0.08
+Grains and grain products | 15 | 4.29 | 0.07
+Aquatic products | 11 | 6.30 | 0.07
+Prepared food | 8 | 6.25 | 0.05
+
+Together raised the CPI annual growth rate by 2.09 percentage points, contributing approximately 71%.
+
+Rent | 152 | 1.68 | 0.25
+Fuel expenses | 24 | 8.40 | 0.24
+Durable consumer goods | 107 | 2.00 | 0.21
+Vehicle parts and maintenance expenses | 18 | 4.97 | 0.09
+Ready-made clothing | 38 | 2.23 | 0.08
+Housing maintenance expenses | 11 | 5.83 | 0.07
+Beauty and hygiene products | 29 | 1.99 | 0.06
+Personal effects | 23 | 2.56 | 0.06
+Recreational services | 36 | 1.91 | 0.06
+Total | | | 2.51
+Other | | | 0.44
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+13
+=== PAGE 23 ===
+3. Taiwan's CPI increases have been relatively high in recent years, but remain moderate compared with major economies
+Since 2020, successive unexpected events, including the slowdown in globalization caused by US-China conflict, the COVID-19 pandemic, and the Russia-Ukraine war, have caused sharp fluctuations in international commodity prices (supply-side factors). As a result, Taiwan's price increases have been relatively high in recent years, and inflationary pressure has continued to accumulate. However, Taiwan's CPI last year rose by 4.73% compared with 2019, still far below that of major economies such as the US (14.49%), the UK (12.83%), the euro area (11.46%) and South Korea (7.87%).
+Taiwan's relatively moderate price increases are mainly attributable to its active adoption of supply-side measures in response to fluctuations in energy and food prices1, reducing their spillover effects and greatly helping overall price stability. In addition, the Bank's adoption of gradual monetary tightening has helped to restrain domestic inflation expectations.
+
+[FIGURE]
+CPI trends in major economies, 2019~2022
+2019 = 100
+
+120
+US 114.49
+Global 114.24
+UK 112.83
+Euro area 111.46
+
+115
+110
+
+South Korea 107.87
+105
+
+Taiwan 104.73
+Japan 102.55
+
+100
+95
+90
+2019
+
+2020
+
+2021
+
+2022
+
+Sources: S&P Global Market Intelligence, official websites of the respective countries
+
+1
+
+The government's supply-side response measures to stabilize prices include: (1) adopting the two mechanisms of “oil price stabilization measures” and “lowest prices among neighboring Asian countries” to moderate oil price increases; (2) reducing commodity taxes on gasoline, diesel and other items; (3) exempting imported soybeans, corn, wheat and other items from business tax; (4) reducing or exempting tariffs on wheat, beef, butter, milk powder for baking and other items; (5) maintaining prices of liquefied natural gas and bottled gas without increases; (6) maintaining stable electricity rates for household use, and other measures.
+
+14
+=== PAGE 24 ===
+(2) Inflation rose again in January of this year, mainly because of the Lunar New Year factor
+1. In January of this year, the annual growth rates of CPI and core CPI rose to 3.04% and 2.98%, respectively, mainly because the Lunar New Year fell earlier this year than last year, bringing forward purchasing demand and the customary surcharges for certain services.
+2. Prices of frequently purchased items rose more, and the public felt the increases more strongly
+In January of this year, the annual growth rate of the CPI for items purchased at least 1 time per month and that of the CPI for 17 important daily necessities2 were 4.47% and 5.90%, respectively, both higher than the overall CPI annual growth rate of 3.04%. The public felt price increases more strongly.
+
+[FIGURE]
+Annual growth rates of CPI, CPI for items purchased at least 1 time per month, and CPI for 17 important daily necessities
+%
+8
+
+Purchased at least 1 time per month
+
+17 important daily necessities
+
+7
+6
+
+5.90
+
+5
+4.47
+4
+3.04
+
+3
+2
+
+CPI
+
+(2023/1)
+
+10
+
+Month
+1
+2023 Year
+
+1
+0
+-1
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+4
+
+7
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+(3) Inflation is expected to fall back to around 2% this year
+1. Looking ahead to this year, although the domestic minimum wage continues to rise, and the normalization of life after the pandemic has greatly increased demand for recreational services and pushed prices higher, global supply chain bottlenecks are easing and international freight rates are declining. In addition, international institutions expect prices of crude oil and other raw materials to fall from last year. Taiwan's CPI annual growth rate is expected to decline to around 2%; forecasts by major domestic and overseas institutions range from 1.40% to 2.60%, with an average of 1.94%.
+
+2
+
+The CPI for items purchased at least 1 time per month and the CPI for 17 important daily necessities account for 22.62% and 5.67% of the overall CPI weight, respectively.
+
+15
+=== PAGE 25 ===
+2. Risks of geopolitical conflict and weather are the main uncertainties affecting Taiwan's future inflation trends.
+
+[FIGURE]
+Major institutions' forecasts for Taiwan's CPI annual growth rate this year
+%
+3.0
+
+2.60
+2.5
+
+2.16
+
+2.06
+
+2.00
+
+1.95
+
+2.0
+
+1.73
+
+Average
+1.94%
+
+1.60
+1.40
+
+1.5
+
+1.0
+
+0.5
+
+0.0
+Directorate-General of Budget, Accounting and Statistics
+Release
+date
+
+(2023/2/22)
+
+Taiwan Institute of Economic Research
+
+S&P Global
+Market
+Intelligence
+
+Citi
+
+EIU
+
+UBS
+
+Standard
+Chartered
+
+BofA Merrill
+Lynch
+
+(2023/1/31)
+
+(2023/2/15)
+
+(2023/2/13)
+
+(2023/2/13)
+
+(2023/2/10)
+
+(2023/2/10)
+
+(2023/2/10)
+
+IV. M2 annual growth first rose and then fell
+In September of last year, affected by net outward remittances of funds, M2 annual growth fell to 6.83%. Subsequently, as growth in bank loans and investments increased and foreign capital shifted to net inward remittances, M2 annual growth rebounded, reaching 7.37% in November. In December, as growth in bank loans and investments declined and foreign capital recorded net outward remittances, the annual growth rate fell to 7.06%; the full-year average annual growth rate of M2 was 7.48%.
+
+[FIGURE]
+M2 annual growth rate
+%
+
+10
+9
+8
+7
+7.06
+(2022/12)
+
+6
+5
+4
+3
+2
+1
+2020
+
+4
+
+7
+
+10
+
+1
+2021
+
+4
+
+7
+
+Source: the Bank
+
+16
+
+10
+
+1
+2022
+
+4
+
+7
+
+10
+
+Month
+Year
+=== PAGE 26 ===
+V. Long- and short-term interest rates rose
+As regards short-term interest rates, since October of last year, the Bank's increase in banks' deposit reserve requirement ratios reduced banks' lendable funds. In addition, the Bank raised interest rates by 0.125 percentage points in December. The secondary market interest rate on 1-month commercial paper rose from an average of 1.009% in September of last year to 1.205% in January of this year, and the average interest rate in February to date (2/22) was 1.191%.
+As regards long-term interest rates, since October of last year, affected by factors including the Bank's interest rate increases, yields on 5-year investment-grade corporate bonds rose, with the average interest rate reaching 2.014% in November. Subsequently, as US Treasury yields fell back, the average interest rate was 1.834% in January of this year.
+
+[FIGURE]
+Long- and short-term interest rates
+%
+
+2.2
+
+2.014
+(2022/11)
+
+2.0
+1.8
+
+1.834
+(2023/1)
+
+1.6
+1.4
+
+5-year investment-grade corporate bond yield
+
+1.2
+1.191
+
+1.0
+
+(2023/2)
+
+0.8
+
+0.6
+
+Secondary market interest rate on 1-month commercial paper
+
+0.4
+0.2
+0.0
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+Sources: the Bank, Taipei Exchange
+
+17
+
+4
+
+7
+
+10
+
+1
+2023
+
+Month
+Year
+=== PAGE 27 ===
+Part IV. Explanation of the Bank's Main Operations
+I. The Bank's adoption of moderate and gradual monetary tightening helps restrain domestic inflation expectations and maintain price stability
+(1) In December of last year, the Bank's Board of Directors resolved to raise policy interest rates by 0.125 percentage points, mainly considering: (1) the CPI annual growth rate had declined in recent months, but would still be above 2% for the full year, and was expected to fall below 2% this year; (2) the global economy would slow this year and downside risks would continue to increase, affecting domestic export and investment momentum, and domestic economic growth was expected to moderate.
+Currently, the Bank's discount rate, rate on accommodations with collateral, and rate on accommodations without collateral are 1.75%, 2.125% and 4.0%, respectively.
+
+[FIGURE]
+The Bank's policy interest rates
+%
+5
+
+Rate on accommodations without collateral
+
+4.0
+
+Rate on accommodations with collateral
+
+2.125
+
+4
+3
+2
+
+1.75
+
+(2023/2)
+
+1
+
+Discount rate
+
+0
+1
+
+2018
+
+7
+
+1
+
+2019
+
+7
+
+1
+
+7
+
+1
+
+2021
+
+2020
+
+7
+
+1
+
+2022
+
+7
+
+1
+
+Month
+
+2023 Year
+
+Source: the Bank
+
+(2) Since last year, affected by supply-side factors such as rising costs of imported crude oil and food, Taiwan's price increases have remained high. To restrain domestic inflation expectations and achieve the policy objectives of promoting price stability and assisting sound overall economic and financial development, the Bank has continued to adopt monetary tightening policies, raising policy interest rates four times by a total of 0.625 percentage points, together with two increases in New Taiwan dollar deposit reserve requirement ratios totaling 0.5 percentage points.
+
+18
+=== PAGE 28 ===
+(III) Compared with economies such as the United States and Europe, Taiwan's degree of monetary policy tightening is relatively moderate. The main considerations are as follows:
+1. Economies such as the United States and Europe have actively tightened monetary policy, international financial conditions have tightened, and global economic activity has slowed markedly. Taiwan, as a small open economy, is affected by spillovers through 3 channels:
+(1) Real-sector channel: Cooling global final demand, together with inventory adjustments by firms, has caused Taiwan's exports to register negative growth for several consecutive months since September of last year. This has also affected willingness to undertake private investment, constraining domestic economic growth; however, it also helps reduce domestic inflationary pressures.
+(2) Price channel: Since the second half of last year, prices of raw materials such as crude oil have fallen as global demand declined. Together with continued improvement in global supply chain bottlenecks and a sharp drop in international freight rates, this will continue to ease domestic imported inflationary pressures. The annual growth rate of import prices denominated in US dollars has declined for several consecutive months; the annual growth rate of import prices denominated in New Taiwan dollars has also trended downward, declining for several consecutive months.
+(3) Financial channel: Affected by the Fed's continued interest rate hikes and pessimism about the global economic outlook, foreign investors recorded net outward remittances last year, and Taiwan's stock market fluctuated downward along with international stock markets.
+2. The rise in domestic prices since last year has mainly been affected by supply-side factors, such as increases in the costs of imported crude oil and food. The government's continued use of supply-side measures to respond to fluctuations in energy and food prices has been of considerable help in stabilizing overall prices.
+3. Although the domestic inflation shock has mainly come from supply-side cost pressures, it is still necessary for the Bank to adopt moderately tight monetary policy to restrain inflation expectations and maintain price stability. The Bank's increases in policy interest rates and reserve requirement ratios, using both price and quantity measures, help curb domestic inflation expectations.
+4. Since last year, price increases in Taiwan have been relatively low compared with those in the United States, Europe, the United Kingdom, and parts of the Asia-Pacific region,
+19
+=== PAGE 29 ===
+and the degree of monetary policy tightening has also been more moderate.
+(IV) In December of last year, the Bank's Board of Directors emphasized that, given the many downside risks facing the global economy and the uncertainty about subsequent developments despite a slight easing of global inflationary pressures, the Bank will closely monitor the effects of monetary policy developments in major economies, changes in international raw material prices, geopolitical risks, extreme weather, and other factors on domestic prices and economic and financial conditions, and adjust the Bank's monetary policy in a timely manner to fulfill its statutory duties of maintaining price stability and financial stability.
+II. The Bank maintains the current selective credit control measures to promote domestic financial stability
+(I) To implement the effective allocation and reasonable use of credit resources under the government's “Program to Improve the Real Estate Market,” the Bank has adjusted its selective credit control measures four times since December 2020.
+(II) Since the implementation of the Bank's selective credit control measures, banks' real estate credit risks have been well controlled
+1. The loan-to-value ratios of restricted loans have declined, and the prohibition on grace periods for restricted loans helps curb speculation in the housing market.
+2. Real estate loan concentration has declined slightly; growth in construction loans and home purchase loans at all banks has slowed, and the quality of banks' real estate credit remains good
+(1) At the end of last year, the ratio of outstanding real estate loans to total loans at all banks declined slightly from 37.2% at the end of 2021 to 36.8%, also below the historical high of 37.9% (at the end of October 2009).
+(2) The ratio for residential construction and corporate construction loans extended by domestic banks under Article 72-2 of the Banking Act also declined slightly from 26.8% at the end of 2021 to
+20
+=== PAGE 30 ===
+26.6% at the end of last year, not exceeding the regulatory ceiling of 30%3.
+[FIGURE]
+Banks' real estate loan concentration and average ratio under Article 72-2 of the Banking Act
+
+%
+
+45
+
+37.2
+
+36.8
+
+26.8
+
+26.6
+
+35
+
+Ratio of real estate loans to total loans at all banks
+
+(2021/12) (2022/12)
+
+25
+
+Ratio subject to the limit under Article 72-2 of the Banking Act for domestic banks
+
+15
+2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022
+
+Year
+
+Note: Real estate loans refer to the sum of home purchase, home improvement, and construction loans; figures for each year are year-end figures.
+Sources: The Bank, Financial Supervisory Commission
+
+(3) The annual growth rate of real estate loans at all banks declined from 10.41% at the end of 2021 to 7.34% at the end of last year. Of these, the annual growth rates of home purchase loans and construction loans declined from 9.46% and 14.11%, respectively, at the end of 2021 to 6.52% and 10.31%.
+
+[FIGURE]
+%
+
+Annual growth rates of banks' real estate loans, home purchase loans, and construction loans
+
+20
+
+Annual growth rate of construction loans
+
+16
+12
+
+14.11
+Annual growth rate of real estate loans
+
+10.41
+
+8
+4
+
+10.31
+7.34
+6.52
+
+9.46
+(2021/12)
+
+Annual growth rate of home purchase loans
+
+(2022/12)
+
+0
+1
+4
+7
+10
+2020
+Source: The Bank
+
+3
+
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+4
+
+7
+
+10
+
+End of month
+Year
+
+Article 72-2 of the Banking Act stipulates that the total amount of residential construction and corporate construction loans extended by commercial banks shall not exceed 30% of the sum of the total outstanding deposits received and financial bonds issued at the time the loans are extended.
+
+21
+=== PAGE 31 ===
+(4) At the end of last year, the non-performing loan ratios for home purchase loans and construction loans were 0.07% and 0.08%, respectively, both below the non-performing loan ratio of 0.15% for all loans at domestic banks.
+[FIGURE]
+Non-performing loan ratios for domestic banks' loans, home purchase loans, and construction loans
+%
+
+0.30
+0.25
+
+All loans
+
+0.20
+0.15
+
+0.15
+Construction loans
+
+0.10
+
+0.08
+
+Home purchase loans
+
+0.07
+(2022/12)
+
+0.05
+0.00
+1
+4
+7
+10
+2020
+Source: Financial Supervisory Commission
+
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+4
+
+7
+
+Month
+Year
+
+10
+
+(III) Since the implementation of selective credit control measures, housing market transaction volume has contracted, while housing prices remain high
+1. With the Bank raising interest rates four times, and the relevant ministries and agencies continuing to curb speculation in presale homes and completing amendments to the Equalization of Land Rights Act, housing market buyers have tended to wait and see. In December of last year, the number of buildings transferred through sale nationwide declined by 26.0% year on year, while the full-year decline was 8.6%. In January of this year, affected by fewer working days, transaction volume in the six special municipalities continued to decline by 47.5% year on year.
+[FIGURE]
+Annual growth rates in the number of buildings registered as transferred through sale nationwide and in the six special municipalities
+%
+60
+50
+40
+30
+20
+10
+0
+-10
+-20
+-30
+-40
+-50
+
+Annual growth rate (%) | 2021 | 2022
+Nationwide | 6.6 | -8.6
+Six special municipalities | 7.0 | -9.0
+
+Nationwide -26.0
+(2022/12)
+
+Six special municipalities -47.5
+(2023/1)
+
+1
+2021
+
+4
+
+7
+
+10
+
+1
+2022
+
+Source: Ministry of the Interior
+
+22
+
+4
+
+7
+
+10
+
+Month
+Year
+=== PAGE 32 ===
+2. Driven up by land prices and construction costs, housing prices for newly launched projects mostly continued to reach new highs. In the 3rd quarter of last year, the Ministry of the Interior's Residential Price Index continued to reach a new high, while its annual growth rate declined slightly to 10.0%. In the 4th quarter of last year, the Cathay Housing Price Index (prices of newly launched projects) reached a new high, but its annual growth rate declined to 24.9%; the Sinyi Housing Price Index (prices of existing homes) declined, and its annual growth rate also fell from 15.6% in the previous quarter to 7.6%.
+[FIGURE]
+Ministry of the Interior Residential Price Index, Cathay Housing Price Index, and Sinyi Housing Price Index
+2016=100
+190
+180
+170
+160
+
+Annual growth rate (%) | 2021 Q1 | Q2 | Q3 | Q4 | 2022 Q1 | Q2 | Q3 | Q4
+Ministry of the Interior residential prices | 5.7 | 6.7 | 7.4 | 8.6 | 9.4 | 10.3 | 10.0 | -
+Cathay housing prices | 6.7 | 2.6 | 4.4 | 12.9 | 27.2 | 34.7 | 33.7 | 24.9
+Sinyi housing prices | 10.8 | 10.5 | 10.2 | 14.6 | 14.1 | 14.8 | 15.6 | 7.6
+
+Cathay Housing Price Index
+
+150
+
+Sinyi Housing Price Index
+
+140
+130
+120
+
+Ministry of the Interior Residential Price Index
+
+110
+100
+Q1
+2020
+
+Q2
+
+Q3
+
+Q4
+
+Q1
+2021
+
+Q2
+
+Q3
+
+Q4
+
+Q1
+2022
+
+Q2
+
+Q3
+
+Q4 Quarter
+Year
+
+Notes: 1. To facilitate comparison, all indices have been converted to the same base period (2016=100).
+2. The Cathay Housing Price Index is compiled on the basis of potential transaction prices for newly launched projects (not actual transaction prices), reflecting developers' views on the prices of newly launched projects.
+Sources: Ministry of the Interior, Sinyi Real Estate Review Quarterly, Cathay Real Estate Index Quarterly
+
+3. Affected by slowing domestic economic activity, high construction costs, and measures to improve the housing market, the Purchasing Managers' Index (NMI) for the construction and real estate industries declined to 44.4%4 in January of this year. The index for business conditions over the next 6 months was 35.5%, reflecting an increasingly cautious housing market outlook among businesses.
+
+4
+
+Taiwan's Non-manufacturing Purchasing Managers’Index (Non-manufacturing Purchasing Managers’Index, NMI) is compiled through a monthly survey of purchasing managers at respondent enterprises, combining 4 diffusion indices: business activity, quantity of new orders, number of employees, and supplier delivery times. A reading above 50 represents economic expansion, and a reading below 50 represents economic contraction.
+
+23
+=== PAGE 33 ===
+[FIGURE]
+NMI for the construction and real estate industries
+
+Source: National Development Council
+
+(IV) The Bank's monetary policy tightening since March of last year has also helped strengthen the effectiveness of selective credit control measures. As government ministries and agencies implement measures under the “Program to Improve the Real Estate Market,” complete amendments to the Equalization of Land Rights Act, and continue to curb speculation in presale homes, housing market transactions have slowed since last year. Going forward, the Bank will continue to monitor real estate lending, review the effectiveness of the implementation of control measures, and review and adjust the content of relevant measures in a timely manner to promote financial stability.
+III. The New Taiwan dollar depreciated against the US dollar last year, but its exchange rate was stable relative to major currencies
+(I) Last year, foreign investors made large net sales of Taiwan stocks and remitted funds out, causing the New Taiwan dollar to depreciate against the US dollar. The Bank entered the market to make adjustments, with cumulative net foreign exchange sales of 130 hundred million US dollars
+1. Last year, the United States faced a severe inflation problem and a tight labor market. In addition to raising interest rates by 17 increments to 4.25%~4.50%, the Fed began balance sheet reduction (QT) in June of last year, driving sharp increases in US 2-year and 10-year Treasury yields5. Together with the outbreak of the Ukraine-Russia war, funds flowed into safe-haven currencies such as the US dollar, driving the US dollar index from 95.670 at the end of 2021
+
+5
+
+From the end of 2021 to the end of 2022, US 2-year and 10-year Treasury yields rose by 369bps and 236bps to 4.45% and 3.87%, respectively.
+
+24
+=== PAGE 34 ===
+sharply upward to 103.522 at the end of last year, an increase of approximately 8.21%.
+2. Last year, US technology stocks plunged under the impact of rising US Treasury yields6, and Taiwan stocks, which are closely linked to US stocks, also fell. In addition, foreign investors received substantial dividends from domestic listed and OTC companies. Based on considerations such as global asset allocation and funding needs for fund redemptions, they made net sales of Taiwan stocks to realize large book gains and remitted substantial amounts out. At the end of last year, the New Taiwan dollar had depreciated against the US dollar by 9.83% compared with the end of 2021.
+3. Last year, foreign investors' cumulative net sales of Taiwan stocks amounted to 1.14 trillion New Taiwan dollars (equivalent to approximately 391 hundred million US dollars). These funds were remitted out together with some of the dividends received, creating excess demand for US dollars in the domestic foreign exchange market. To maintain order in the foreign exchange market, the Bank made net foreign exchange sales of 82.5 hundred million US dollars and 47.5 hundred million US dollars in the first and second halves of last year, respectively, for total net foreign exchange sales of 130 hundred million US dollars (approximately 1.7% of GDP).
+(II) Since the beginning of this year, foreign investors have made net purchases of Taiwan stocks, and the New Taiwan dollar has stabilized and rebounded against the US dollar
+Since the beginning of this year, US inflation has shown signs of easing, and the Fed has accordingly slowed its pace of interest rate hikes7. In February of this year, it raised interest rates by 1 increment to 4.50~4.75%. With the market expecting that the Fed's interest rate hike cycle might be nearing its end, foreign investors shifted to net inward remittances. As of February 22, foreign investors' net purchases of Taiwan stocks amounted to approximately 2,490 hundred million New Taiwan dollars (equivalent to approximately 82 hundred million US dollars). So far this year (2/22), the New Taiwan dollar has appreciated against the US dollar by approximately 0.67%.
+
+Last year, the Fed accelerated monetary policy tightening, weighing on US technology stock valuations: (1) the risk-free interest rate (short-term US Treasury yields) rose as a result of the Fed's monetary policy tightening; (2) this triggered market concerns about a weakening economic outlook and possible declines in firms' future dividends; and (3) increased macroeconomic uncertainty also raised the risk premium for stock investment. According to the stock discount model, these three factors led to substantial downward revisions in stock valuations, and investors tended to reduce their holdings of US technology stocks.
+7
+The Fed raised interest rates by 3 increments on 4 occasions from June to November of last year, then raised rates by 2 increments and 1 increment in December of last year and February of this year, respectively.
+6
+
+25
+=== PAGE 35 ===
+[FIGURE]
+New Taiwan dollar exchange rate against the US dollar from last year to date (2023/2/22)
+NTD/USD
+33
+
+New Taiwan dollar depreciation
+
+32.319
+(2022/10/25)
+
+32
+
+30.504
+(2023/2/22)
+
+31
+
+30
+
+New Taiwan dollar appreciation
+
+30.708
+(2022/12/30)
+
+29
+27.632
+(2022/1/1)
+28
+27
+
+27.607
+(2022/1/17)
+
+2022/ 1
+
+2022/ 3
+
+2022/ 5
+
+2022/ 7
+
+2022/ 9
+
+2022/ 11
+
+2023/ 1
+
+Source: The Bank
+
+(III) International capital movements affect foreign exchange market stability in small open economies; the Bank is committed to maintaining the dynamic stability of the New Taiwan dollar exchange rate
+1. For a long time, large and frequent international capital movements have posed a major challenge to foreign exchange market stability in small open economies, while also affecting their financial stability, real economies, and prices. In addition, short-term cross-border capital movements have become an important factor affecting the New Taiwan dollar exchange rate, which also frequently fluctuates as a result of uncertainty about the direction of monetary policy in major economies and changes in the international value of the US dollar.
+2. As the US dollar is the most important international reserve currency, there is a clear relationship between the US Fed's monetary policy, US dollar movements, and expansion or contraction of the global financial cycle8. For example, since last year, the Fed has accelerated monetary policy tightening to curb high inflation. US Treasury yields rose sharply and the US dollar appreciated substantially, leading to deleveraging in global financial markets. The financial cycle shifted to contraction, prices of risky assets such as stocks underwent substantial corrections, and most countries' currencies
+
+8
+
+The global financial cycle refers to the common co-movements in risky asset prices, capital flows, leverage, and other factors around the world resulting from the wave of free capital movements and financial globalization since 1990. This phenomenon has become more pronounced since 2000.
+
+26
+=== PAGE 36 ===
+depreciated against the US dollar.
+3. In principle, the New Taiwan dollar exchange rate is determined by supply and demand in the foreign exchange market. However, if irregular factors (such as large short-term capital inflows and outflows) and seasonal factors cause excessive exchange rate fluctuations or disorderly movements that could adversely affect economic and financial stability, the Bank will fulfill its duty to maintain order in the foreign exchange market. For example, last year, large net sales of Taiwan stocks and outward remittances by foreign investors created excess demand for US dollars in the domestic foreign exchange market. The Bank entered the market with net foreign exchange sales to resist New Taiwan dollar depreciation and maintain the dynamic stability of the New Taiwan dollar exchange rate.
+(IV) So far this year, the New Taiwan dollar has appreciated against the US dollar more than most major currencies, and its volatility has been lower
+1. From the end of last year to date (2023/2/22), the New Taiwan dollar appreciated against the US dollar by 0.67%, second only to the renminbi (0.81%). Over the same period, the Singapore dollar, Australian dollar, pound sterling, Swiss franc, euro, Japanese yen, and Korean won depreciated against the US dollar by 0.07%, 0.13%, 0.31%, 0.74%, 0.93%, 2.76%, and 3.10%, respectively.
+Appreciation/depreciation of major currencies against the US dollar
+
+Currency | (1) | (2) | (3) | (3) compared with (1) | (3) compared with (2)
+ | 2021/12/31 | 2022/12/30 | 2023/2/22 | Appreciation/depreciation (%) | Appreciation/depreciation (%)
+Renminbi | 6.3730 | 6.9514 | 6.8953 | -7.57 | 0.81
+New Taiwan dollar | 27.690 | 30.708 | 30.504 | -9.23 | 0.67
+Singapore dollar | 1.3490 | 1.3395 | 1.3405 | 0.63 | -0.07
+Australian dollar | 0.7263 | 0.6813 | 0.6804 | -6.32 | -0.13
+Pound sterling | 1.3532 | 1.2083 | 1.2046 | -10.98 | -0.31
+Swiss franc | 0.9129 | 0.9245 | 0.9314 | -1.99 | -0.74
+Euro | 1.1370 | 1.0705 | 1.0605 | -6.73 | -0.93
+Japanese yen | 115.08 | 131.12 | 134.84 | -14.65 | -2.76
+Korean won | 1188.8 | 1264.5 | 1304.9 | -8.90 | -3.10
+
+Note: Except for the New Taiwan dollar, Korean won, and renminbi, for which exchange rates at local closing times are used, the figures are closing exchange rates at 5 p.m. New York time. The foreign exchange markets in Taiwan and South Korea were closed on December 31, 2021; the South Korean foreign exchange market was closed on December 30, 2022. The previous trading day's closing exchange rates are used instead.
+Source: Bloomberg
+
+27
+=== PAGE 37 ===
+2. In addition, BIS data show that from the end of 2022 to date (2023/2/14), the New Taiwan dollar's nominal effective exchange rate index (NEER) rose by 0.7%, second only to the Australian dollar and pound sterling.
+[FIGURE]
+Appreciation/depreciation in nominal effective exchange rate indices of major currencies
+(2023/2/14 compared with the end of 2022)
+%
+3
+
+2
+1
+
+1.9
+0.8
+
+0.7
+
+0.6
+0.3
+
+0.1
+
+0
+-0.1
+-1
+-1.1
+-2
+Australian dollar
+Pound sterling
+Source: BIS
+
+New Taiwan dollar
+
+Renminbi Singapore dollar
+
+Euro
+
+Swiss franc
+
+Japanese yen
+
+-1.4
+
+-1.5
+
+Korean won
+
+US dollar
+
+3. Taiwan is a small open economy with high trade dependence and a shallow foreign exchange market, making it necessary to maintain relative stability in the New Taiwan dollar exchange rate. For a long time, the volatility of the New Taiwan dollar against the US dollar has been lower than that of major currencies such as the Singapore dollar, euro, Japanese yen, Korean won, and Australian dollar. This benefits firms' price quotations and operations and also helps domestic financial stability and economic growth.
+Average volatility of major currencies' exchange rates against the US dollar
+Unit: %
+
+Period / Exchange rate volatility of each currency | From the beginning of 2021 to date (2023/2/22) | Multiple
+New Taiwan dollar (NT$/US$) | 3.3 | 1.0
+Singapore dollar (S$/US$) | 4.7 | 1.4
+Euro (US$/EUR) | 7.7 | 2.4
+Korean won (KRW/US$) | 8.3 | 2.5
+Japanese yen (YEN/US$) | 8.5 | 2.6
+Australian dollar (US$/AUD) | 11.2 | 3.4
+
+Note: The volatility of each currency is calculated as the standard deviation over the past 20 days based on exchange rate changes (and annualized).
+Sources: Taipei Forex Inc., Refinitiv
+
+(V) At the end of January of this year, the Bank's foreign exchange reserves increased from the end of last year, mainly reflecting returns on the investment and management of the Bank's foreign exchange reserves and the appreciation of major currencies against the US dollar, which increased their US dollar-equivalent value
+28
+=== PAGE 38 ===
+1. Taking into account the principles of safety, liquidity, and returns, the Bank assesses developments in international financial conditions in a timely manner and dynamically adjusts the investment portfolio of its foreign exchange reserves. As international foreign exchange markets change rapidly, the Bank's foreign currency asset investments focus on long-term interest income. At the end of January of this year, the Bank's foreign exchange reserves amounted to 5,571 hundred million US dollars, an increase of 22 hundred million US dollars from 5,549 hundred million US dollars at the end of last year. This mainly reflected returns on the investment and management of the Bank's foreign exchange reserves and the appreciation of major currencies against the US dollar, which increased their US dollar-equivalent value.
+2. For a long time, to develop the Taipei foreign exchange market, the Bank has participated in domestic foreign exchange swaps, foreign currency deposits with domestic banks, foreign currency lending, and other markets to provide foreign currency liquidity to domestic banks and reduce foreign currency funding costs for banks and enterprises. In addition, the Bank's New Taiwan dollar foreign exchange swaps can also absorb surplus New Taiwan dollar funds from the market.
+(VI) The Bank publishes international reserves and foreign currency liquidity with reference to the template format for “International Reserves and Foreign Currency Liquidity” (IRFCL) under the International Monetary Fund's (IMF) Special Data Dissemination Standard (SDDS)
+1. The Bank refers to the Data Template on International Reserves and Foreign Currency Liquidity (Data Template on International Reserves and Foreign Currency Liquidity, IRFCL) under the IMF's “Special Data Dissemination Standard (Special Data Dissemination Standard, SDDS)” and compiles information on the Bank's international reserves and foreign currency liquidity based on book amounts.
+2. At the end of last year, the Bank's foreign currency liquidity was approximately 6,901 hundred million US dollars9, including official reserve assets of 5,600 hundred million US dollars, other foreign currency assets of 379 hundred million US dollars, and other foreign currency liquidity available within the next year of 922 hundred million US dollars. Details are shown in the following table:
+
+9
+
+According to the IRFCL template, “foreign currency liquidity” mainly reflects foreign currency funds available to the central bank within the next year. The items covered include: (1) official reserve assets, (2) other foreign currency assets, and (3) net foreign currency cash flows falling due within one year.
+
+29
+=== PAGE 39 ===
+Central Bank foreign currency liquidity
+December 31, 2022
+Unit: hundred million US dollars
+
+1. Official reserve assets | 5,600
+(1) Foreign exchange reserves | 5,549
+(a) Securities | 5,186
+(b) Foreign currency deposits with foreign banks | 363
+(2) Gold | 51
+2. Other foreign currency assets | 379
+(1) Foreign currency deposits with domestic banks | 349
+(2) Other | 30
+3. Other foreign currency liquidity available within the next year | 922
+(1) Foreign currency lending to domestic banks | 77
+(2) US dollar positions in New Taiwan dollar foreign exchange swaps | 850
+(3) Other fund outflows (bank deposits) | -5
+Foreign currency liquidity | 6,901
+Source: The Bank
+
+IV. Overview of the operations of important domestic payment systems
+(I) Operation of large-value and retail payment systems in the domestic financial system
+1. Our country's Central Bank Interbank Funds Transfer System (abbreviated as the CIFS) is national critical infrastructure and serves as the hub of the payment and clearing framework. In addition to processing transfers for large-value fund transactions such as interbank lending and the Bank's open market operations, and linking important domestic settlement systems to provide large-value payment settlement and clearing for financial market transactions (such as foreign exchange, bonds and bills, and stocks), it also provides the clearing funds required for the 24-hour operation of the retail interbank payment system. Last year, the value of transactions through the CIFS reached 535 trillion yuan, 23.4 times GDP.
+30
+=== PAGE 40 ===
+2. The domestic retail interbank payment system is mainly operated by Financial Information Service Co., Ltd. (FISC), processing corporate fund transfers and the public's daily payment transactions, including interbank remittances, ATM withdrawals, transfers (including online and mobile transfers), and payments of fees and taxes. Last year, the value of transactions processed through the FISC system was approximately 197 trillion yuan, an increase of 5% from 2021 and 8.6 times GDP.
+[FIGURE]
+Value of transactions through the FISC system
+
+Value of transactions through the CIFS
+
+Transaction value (left axis)
+Transaction value/GDP (right axis)
+
+Transaction value (left axis)
+Multiple
+
+Trillion yuan
+900
+
+600
+
+25.5
+
+25.5
+
+24.5
+
+23.4
+
+482
+
+505
+
+533
+
+535
+
+300
+
+0
+
+2020
+
+2021
+
+Multiple
+
+30
+
+900
+
+30
+
+20
+
+600
+
+20
+
+10
+
+300
+
+0
+
+2019
+
+Trillion yuan
+
+8.5
+
+8.8
+
+8.7
+
+8.6
+
+161
+
+175
+
+188
+
+197
+
+2019
+
+2020
+
+2021
+
+2022*
+
+0
+
+2022*
+
+0
+*2022 GDP figures are preliminary statistics
+Sources: The Bank, Directorate-General of Budget, Accounting and Statistics
+
+*2022 GDP figures are preliminary statistics
+Sources: The Bank, Directorate-General of Budget, Accounting and Statistics
+
+(II) The Bank continues to urge FISC to assist in promoting mobile payments
+1. To enhance the convenience of mobile payments for the public, the Bank previously urged FISC to establish a common QR Code payment standard and promote it jointly with banks. As of the end of last year, a total of 38 institutions participated in the common QR Code payment standard, with over 25 ten thousand cooperating contracted merchants and over 7,500 types of fee and tax bills incorporated. Last year, transaction value and volume were 2,821 hundred million yuan and 7,303 ten thousand transactions, respectively, increases of 56% and 49% from 2021.
+[FIGURE]
+Hundred million yuan
+
+Common QR Code payment standard
+Transaction value
+
+Ten thousand transactions
+
+Common QR Code payment standard
+Transaction volume
+
+8,000
+
+Growth rate
+49%
+
+4,000
+3,000
+
+Growth rate
+56%
+
+2,000
+
+1,807
+
+1,000
+
+6,000
+
+2,821
+
+7,303
+
+4,908
+
+4,000
+
+2,529
+868
+
+2,000
+
+498
+
+1,094
+
+0
+
+0
+
+2019
+2020
+Source: FISC
+
+2021
+
+2019
+2020
+Source: FISC
+
+2022
+
+31
+
+10
+
+2021
+
+2022
+=== PAGE 41 ===
+2. To enable interoperability of information flows and fund flows among Taiwan's electronic payment institutions and between electronic payment institutions and financial institutions, the Bank has supervised the Financial Information Service Co., Ltd. in establishing the “Shared Platform for Inter-institutional Electronic Payments.” In addition to providing inter-institutional transfer services, the “tax payment” and “bill payment” functions went live in April and December of last year, respectively. The business plan for the “shopping” function was also approved by the Financial Supervisory Commission in December of last year.
+(3) The Bank continues to advance its CBDC research project
+1. To respond to possible future changes in the payments market, the Bank is advancing its central bank digital currency (CBDC) research project in stages, continuing to explore the future prospects of a digital New Taiwan dollar to ensure the comprehensiveness of future payment policies.
+2. The Bank completed the first-stage “Technical Feasibility Study of Wholesale CBDC”10 in June 2020, and completed the second-stage “General-purpose CBDC Experiment Project” in June of last year, simulating CBDC retail payment scenarios in a closed environment. It demonstrated the experimental results at the Financial Information Service Co., Ltd.'s “111 Annual Conference on Financial Information Systems” on June 29. Related demonstration videos have been posted on the Bank's official website for the public to view11.
+3. The Bank will subsequently conduct an opinion survey based on the second-stage experimental results and plan three major matters: (1) communicate extensively to obtain public support12; (2) refine the platform design and adopt more robust and mature technology13; (3) study a solid legal framework and establish legal rules; so as to advance the CBDC research project comprehensively14.
+
+Items including privacy protection [隱私保護], performance, security, traceability [溯源性] and resilience were evaluated. Distributed ledger technology (DLT) [分散式帳本技術] was found not to be superior to the existing centralized system.
+11
+URL: https://youtu.be/hwzawLq0UOA.
+12
+Developing CBDC requires the participation and support of government agencies, users, industry (financial institutions and electronic payment institutions, etc.) and academia.
+13
+Regarding system construction, in addition to meeting transaction capacity requirements, extensive technical development and evaluation work is also required in terms of system integrity, operational soundness and resilience.
+14
+In the process of completing the opinion survey and system construction assessment, a legal framework must be studied to give CBDC a clear legal basis as legal tender [法償貨幣], and rules must be formulated on anti-money laundering, counter-terrorist financing, privacy protection, information security protection and the allocation of liability in disputes, to strengthen market trust in CBDC.
+10
+
+32
+=== PAGE 42 ===
+V. The Bank releases a strategic plan for responding to climate change
+(1) The Bank plans five major categories of policy measures to respond to the impact of climate change on the economy and finance
+1. Given that climate change risks may affect financial stability and the effectiveness of monetary policy, major central banks are actively assessing the impact of climate change risks on the economy and finance, gradually incorporating climate change issues into areas such as central bank monetary policy, prudential supervisory regulations and foreign exchange reserve management, and taking response measures to ensure that their operational objectives are achieved.
+2. Although the Bank is not the principal driver of climate action in Taiwan, in order to follow international development trends and coordinate with the government's 2050 net-zero transition plan, the Bank referred to the experiences and practices of central banks internationally in addressing climate change issues and released the “Central Bank Strategic Plan for Responding to Climate Change” on December 30 of last year. It establishes two major policy objectives and three core strategies as the basis for developing the Bank's policy framework for responding to climate change, and gradually advances five major categories of policy measures to achieve the Bank's policy objectives for responding to climate change.
+[FIGURE]
+The Bank's policy framework for responding to climate change
+Policy
+objectives
+
+Core
+strategies
+
+˙ Strengthen the resilience of the economic and financial system in responding to climate change risks
+˙ Assist the economic system in transitioning smoothly to a sustainable green economy
+
+˙ Assist in developing an environment for green and sustainable investment and financing
+˙ Actively build the Bank's expertise on climate issues
+˙ Incorporate climate risk considerations into the Bank's operations and the management and use of foreign exchange reserves
+
+Monetary policy
+
+Policy
+measures
+
+Monetary policy
+operating instruments
+
+Macroprudential
+
+Foreign exchange reserve
+management
+
+Study the effects of climate change on monetary policy | Use monetary policy operating instruments to help promote sustainable finance development | Study macroprudential instruments for responding to climate change risks | Include green bonds in considerations for the management and use of foreign exchange reserves
+
+33
+
+International exchanges
+Actively participate in international exchanges related to climate change risks
+=== PAGE 43 ===
+(2) The Bank will adjust measures on a rolling basis in the future and strengthen related supervisory cooperation
+Given the high uncertainty surrounding the impact of climate change on the economy and finance, and that related international research is still at an early stage of development, the Bank will advance relevant policy measures through rolling adjustments, draw on experience through international organizations, and strengthen supervisory cooperation with the Financial Supervisory Commission on climate change issues. The aim is to jointly help reduce the impact of climate risks on Taiwan's economy and strengthen the financial system's resilience in responding to climate risks, to ensure sound financial development and sustainable economic growth in Taiwan.
+
+34
+=== PAGE 44 ===
+V. Conclusion
+The above is a brief report on domestic and international economic and financial conditions and the Bank's principal operations. An overview of the Bank's operations in monetary regulation, currency issuance, foreign exchange management and management of the national treasury is provided in the appendix for your reference.
+The Bank bears the statutory responsibilities of promoting financial stability, ensuring sound banking operations and maintaining the stability of the currency's internal and external value, while also assisting economic development. It closely monitors domestic and international economic and financial developments at all times and makes appropriate use of various policy instruments to achieve its policy objectives. The Bank's operations have long benefited from the assistance and support of all committee members. I would like to take this opportunity to express my sincere gratitude and ask that all committee members continue to offer their guidance in the future. Thank you!
+
+35
+=== PAGE 45 ===
+Appendix: Overview of the Bank's Operations
+I. Monetary Regulation
+1. Continuing to conduct open market operations to regulate monetary conditions
+In conjunction with monetary policy implementation, the Bank regulates market funds by issuing certificates of deposit. On February 22 of this year, the outstanding amount of certificates of deposit issued was 8 trillion 6,434 hundred million yuan.
+2. Accepting redeposits from financial institutions
+At the end of January of this year, the balance of redeposits from financial institutions accepted by the Bank was 1 trillion 9,865 hundred million yuan.
+(1) Redeposits of postal savings from Chunghwa Post Co., Ltd. were 1 trillion 6,237 hundred million yuan.
+(2) Redeposits from banks were 3,628 hundred million yuan.
+3. Accepting and inspecting deposit reserves
+In January of this year, the required reserves of all deposit-taking institutions were 2 trillion 8,860 hundred million yuan; actual reserves were 2 trillion 9,616 hundred million yuan, and excess reserves were 756 hundred million yuan.
+4. Inspecting financial institutions' liquidity conditions
+(1) Last year, the liquid reserve ratios of the vast majority of financial institutions met the daily minimum requirement of 10%, with an average ratio of 30.98%.
+(2) Last year, the “New Taiwan dollar cash flow maturity gap for the next 0~30 days” of the vast majority of financial institutions met the requirements (the statutory minimum ratio is -5％), with an overall average ratio of 9.36%.
+(3) Last year, the liquidity coverage ratios15 of all domestic banks averaged 131.33%, and all met the requirements (the statutory minimum ratio is 100%).
+15
+
+The liquidity coverage ratio is total high-quality liquid assets divided by total net cash outflows over the next 30 days. The statutory minimum ratio is 100%. This ratio requires banks to hold sufficient high-quality liquid assets to meet short-term funding needs, helping to strengthen banks' short-term liquidity risk management.
+
+36
+=== PAGE 46 ===
+(4) In the first 3 quarters of last year, domestic banks' net stable funding ratios16 averaged 135.74%, and all met the requirements (the statutory minimum ratio is 100%).
+II. Currency Issuance
+1. Issuance conditions
+(1) The amount of New Taiwan dollars issued rose to a historical high of 3 trillion 6,873 hundred million yuan before the Lunar New Year (January 19 of this year), an increase of 2,972 hundred million yuan or 8.77% over last year's peak issuance of 3 trillion 3,901 hundred million yuan.
+(2) Circulation of the various banknotes at the end of January of this year: 2,000-yuan notes accounted for 2.90% of total banknote issuance, 1,000-yuan notes for 88.18%, 500-yuan notes for 3.81%, 200-yuan notes for 0.14%, and 100-yuan notes for 4.81%. Small-denomination banknotes of 50 yuan and below and notes bearing the names of offshore islands, etc., together accounted for 0.16%.
+(3) On January 14 of this year, the seventh set in the third round of the Chinese zodiac commemorative coin set series, the “Gui-mao Year of the Rabbit Chinese Zodiac Commemorative Coin Set,” was offered for sale, using both “online pre-orders” and “over-the-counter sales” in parallel.
+2. Inspection of issuance reserves and banknotes and coins in storage
+The Bank fully backs New Taiwan dollar issuance reserves with the equivalent value of gold, foreign exchange, etc., held separately in custody. Under Article 8 of the Central Bank of the Republic of China (Taiwan) Act, the Bank's Board of Supervisors inspects currency issuance reserves and issuance amounts, and announcements are made under Article 17 of the Central Bank of the Republic of China (Taiwan) Act to demonstrate the currency's credibility. Last year, the Bank of Taiwan's issuance vaults were inspected 41 times, and in January of this year they were inspected 1 time. The recorded amounts matched the amounts in storage.
+
+16
+
+The net stable funding ratio is available stable funding divided by required stable funding. The statutory minimum ratio is 100%. This ratio requires banks to have sufficient sources of stable funding with maturities of 1 year or more to meet medium- and long-term funding needs such as housing loans, helping to strengthen banks' medium- and long-term liquidity risk management.
+
+37
+=== PAGE 47 ===
+III. Foreign Exchange Management
+1. Foreign exchange reserves and gold
+At the end of January of this year, the Bank held foreign exchange reserves of 5,571.43 hundred million US dollars17, an increase of 22.11 hundred million US dollars from the end of last year, mainly due to returns on the investment and use of foreign exchange reserves and changes in the exchange rates of major currencies against the US dollar.
+At the end of January, the Bank held 1,362 ten thousand ounces of gold, mainly as issuance reserves for the New Taiwan dollar.
+2. Managing designated foreign exchange banks to fully meet the public's need for convenient foreign exchange services
+As of the end of January of this year, there were 3,453 approved designated foreign exchange banking locations, sufficient to fully meet the public's needs for foreign exchange services.
+To promote the development of digital financial services at banks, the Bank has allowed designated banks to accept customers' online opening of digital foreign exchange deposit accounts [帳戶], and they may install automated service equipment to provide exchange services between Taiwan dollar and foreign currency cash, enabling the public to enjoy more diverse and convenient financial services.
+3. Diversification of financial products
+(1) With financial stability as a prerequisite, the Bank has gradually allowed designated banks, securities firms and bills finance companies, etc., to conduct foreign exchange financial product business, provide diversified financial product services and continue to promote the sound development of financial markets.
+(2) Last year, the foreign exchange derivatives trading volume of all banks was 5 trillion 328 hundred million US dollars.
+
+17
+
+As of the end of January of this year, foreign investors' holdings of domestic stocks and bonds, calculated at market prices on that day, together with their New Taiwan dollar deposit balances, totaled the equivalent of 5,517 hundred million US dollars, approximately 99% of foreign exchange reserves.
+
+38
+=== PAGE 48 ===
+[FIGURE]
+Foreign exchange derivatives trading volume of all banks
+Foreign currencies
+
+New Taiwan dollar against foreign currencies
+
+Hundred million US dollars
+60,000
+49,991
+
+50,000
+
+45,355
+
+40,000
+
+35,976
+
+37,635
+
+43,848
+
+26,592
+9,468
+
+27,888
+11,609
+
+43,367
+
+20,038 17,517
+18,335
+
+31,180
+
+30,000
+
+50,328
+49,877 50,229 49,294
+47,010
+
+48,549
+
+20,514
+
+25,216
+
+26,694 26,537 26,690
+
+2018
+
+2019
+
+22,757
+
+20,320
+
+22,780
+
+14,425
+
+29,953
+
+31,032
+
+27,020
+
+0
+
+23,535
+
+15,952 18,114
+
+20,000
+
+10,000
+
+22,491
+
+24,661
+
+20,024
+17,124
+
+16,279 16,755
+
+2008
+
+2009
+
+2010
+
+2011
+
+23,334
+20,587
+
+19,521
+
+2012
+
+27,837
+
+2013
+
+2014
+
+2015
+
+2016
+
+2017
+
+2020
+
+2021
+
+2022
+
+4. Trading volume in the Taipei foreign currency call loan and foreign exchange swap markets
+(1) Continue to use foreign currency call loans to provide banks with ample foreign currency funding needed for firms' operations, effectively maintaining foreign currency liquidity in the domestic banking system. Last year, trading volume in the Taipei foreign currency call loan market was 2 trillion 2,292 hundred million US dollars, and the Bank's outstanding balance at the end of last year was 77 hundred million US dollars. In January of this year, trading volume in the Taipei foreign currency call loan market was 1,367 hundred million US dollars, and the Bank's outstanding balance at the end of January was 77 hundred million US dollars.
+[FIGURE]
+Call loan market trading volume
+
+(2) Use foreign exchange swap transactions to provide domestic designated banks with US dollar funding, thereby financing foreign currency funding needs for firms' operations and overseas investments by the life insurance industry, etc., reducing their borrowing costs while absorbing excess New Taiwan dollar funds from the market. Last year, in the Taipei interbank foreign exchange
+39
+=== PAGE 49 ===
+swap market, the volume of swap transactions between the New Taiwan dollar and foreign currencies was 1 trillion 1,373 hundred million US dollars, and the Bank's outstanding balance at the end of last year was 850 hundred million US dollars. In January of this year, the volume of swap transactions between the New Taiwan dollar and foreign currencies in the Taipei interbank foreign exchange swap market was 967 hundred million US dollars, and the Bank's outstanding balance at the end of January was 850 hundred million US dollars.
+[FIGURE]
+Foreign exchange swap market trading volume
+
+5. Operations of Taiwan's offshore renminbi market and the foreign currency settlement platform
+(1) Operations of Taiwan's offshore renminbi market
+At the end of January of this year, the numbers of domestic designated foreign exchange banks (DBU) and offshore banking units (OBU) conducting renminbi business were 66 and 57, respectively. An overview of their operations is as follows:
+Unit: hundred million renminbi
+
+Business item | Amount
+Deposit balance (including NCD, end of January 2023) | DBU: 1,577; OBU: 283; 1,860
+Total remittances (February 2013 to January 2023) | 171,694
+Total amount settled through Bank of China, Taipei Branch (February 2013 to January 2023) | 438,760
+Total issuance amount of 203 renminbi-denominated bonds (March 2013 to January 2023) | 1,353
+40
+=== PAGE 50 ===
+[FIGURE]
+Renminbi deposit balances of all banks
+Hundred million renminbi
+
+Offshore banking units (OBU)
+Domestic designated foreign exchange banks (DBU)
+
+4,000
+3,500
+3,000
+
+1,860
+2023/1
+
+2,500
+2,000
+
+1,500
+1,000
+390
+
+500
+0
+
+2
+2013
+
+8
+
+2
+2014
+
+8
+
+2
+2015
+
+8
+
+2
+2016
+
+8
+
+2
+2017
+
+8
+
+2
+2018
+
+8
+
+2
+8
+2019
+
+2
+2020
+
+8
+
+2
+2021
+
+8
+
+2
+2022
+
+8
+
+Month
+Year
+
+[FIGURE]
+Cumulative issuance amount of renminbi-denominated bonds
+
+Hundred million renminbi
+1,600
+
+1,353
+2023/1
+
+1,400
+1,200
+1,000
+800
+600
+400
+200
+0
+3
+2013
+
+9
+
+3
+2014
+
+9
+
+3
+2015
+
+9
+
+3
+2016
+
+9
+
+3
+2017
+
+9
+
+3
+2018
+
+9
+
+3
+2019
+
+9
+
+3
+2020
+
+9
+
+3
+2021
+
+9
+
+3
+2022
+
+9
+
+Month
+Year
+
+(2) Operations of the foreign currency settlement platform
+1. The foreign currency settlement platform, planned and built by the Financial Information Service Co., Ltd. under the Bank's supervision, began operations in March 2013. It currently provides domestic and cross-border renminbi and Japanese yen remittances, as well as domestic US dollar, euro and Australian dollar remittances. It also has a payment-versus-payment (PVP) mechanism, a liquidity-saving mechanism for foreign currency remittances and a delivery-versus-payment (DVP) mechanism for foreign currency bonds and bills. The foreign currency settlement platform has comprehensive functions and operates smoothly.
+
+41
+=== PAGE 51 ===
+2. Operations of domestic foreign currency clearing business (December 2022):
+Currency | Participating units | Average daily number of transactions | Average daily amount
+US dollar | 71 | 5,328 | 83.66 hundred million US dollars
+Renminbi | 61 | 1,029 | 20.38 hundred million renminbi
+Japanese yen | 39 | 158 | 68.27 hundred million Japanese yen
+Euro | 40 | 85 | 41.69 million euros
+Australian dollar | 30 | 100 | 5.01 million Australian dollars
+
+6. Widespread availability of New Taiwan dollar cash exchange services for inbound foreign travelers
+Domestic financial institutions have a dense network of branches and locations. After arriving in Taiwan, foreign travelers can already obtain New Taiwan dollar cash exchange services at more than 34,000 locations throughout Taiwan, including banks, post offices, foreign currency exchange counters and ATMs.
+7. Current state of offshore financial business
+(1) Offshore banking units (OBU)
+At the end of last year, 59 OBUs were in operation, with total assets of 2,661.32 hundred million US dollars, an increase of 162.11 hundred million US dollars or 6.5% from the end of 2021.
+Last year, the net after-tax profit of all OBUs was 23.47 hundred million US dollars, a decrease of 8.75 hundred million US dollars or 27.2% from 2021.
+(2) Offshore securities units (OSU)
+At the end of last year, 19 OSUs were in operation, with total assets of 45.36 hundred million US dollars, a decrease of 0.08 hundred million US dollars or 0.2% from the end of 2021.
+Last year, all OSUs recorded a net after-tax loss of 26.97 million US dollars, a decrease of 79.92 million US dollars from the net profit of 52.95 million US dollars in the same period of the previous year.
+42
+=== PAGE 52 ===
+(3) Offshore insurance units (OIU)
+At the end of last year, 20 OIUs were in operation, with total assets of 9.85 hundred million US dollars, a decrease of 0.13 hundred million US dollars or 1.3% from the end of 2021.
+Last year, the net after-tax profit of all OIUs was 29.92 million US dollars, an increase of 48.20 million US dollars from 2021.
+IV. Management of the National Treasury
+1. National treasury receipts and payments
+(1) Collection of national treasury revenue
+Last year, national treasury revenue collected by all treasury agent institutions totaled 4 trillion 6,368 hundred million yuan, an increase of 4,389 hundred million yuan or 10.46% from 2021. In January of this year, 3,573 hundred million yuan was collected, a decrease of 1,304 hundred million yuan or 26.74% from the same period of last year.
+(2) Disbursement of national treasury expenditures
+Last year, national treasury expenditures disbursed by all treasury agent institutions totaled 4 trillion 5,604 hundred million yuan, an increase of 3,769 hundred million yuan or 9.01% from 2021. In January of this year, 4,359 hundred million yuan was disbursed, a decrease of 858 hundred million yuan or 16.45% from the same period of last year.
+(3) National treasury deposit balance
+At the end of last year, the national treasury deposit balance under management was 1,441 hundred million yuan, an increase of 764 hundred million yuan or 112.85% from the end of 2021. At the end of January of this year, the balance was 655 hundred million yuan, an increase of 318 hundred million yuan or 94.36% from the same period of last year.
+2. Issuance of government bonds and treasury bills and repayment of principal and interest
+(1) Government bonds
+1. Issuance
+43
+=== PAGE 53 ===
+Last year, 19 issues of central government bonds totaling 5,201 hundred million yuan were issued, a decrease of 969 hundred million yuan or 15.71% from 2021. In January of this year, 2 issues of central government bonds totaling 480 hundred million yuan were issued, a decrease of 50 hundred million yuan or 9.43% from the same period of last year.
+2. Repayment of principal and interest
+Last year, payments of principal on matured government bonds amounted to 3,950 hundred million yuan, and payments of interest due on government bonds amounted to 802 hundred million yuan. Total principal and interest payments were 4,752 hundred million yuan, a decrease of 799 hundred million yuan or 14.39% from 2021. In January of this year, payments of principal on matured government bonds amounted to 250 hundred million yuan, and payments of interest due on government bonds amounted to 94 hundred million yuan. Total principal and interest payments were 344 hundred million yuan, an increase of 3 hundred million yuan or 0.88% from the same period of last year.
+3. Outstanding balance
+At the end of last year, the outstanding balance of central government bonds was 5 trillion 7,995 hundred million yuan, an increase of 1,250 hundred million yuan or 2.20% from 2021. At the end of January of this year, the outstanding balance of central government bonds was 5 trillion 8,225 hundred million yuan, an increase of 1,200 hundred million yuan or 2.10% from the same period of last year.
+(2) Treasury bills
+1. Issuance
+Last year, 7 issues of treasury bills totaling 2,300 hundred million yuan were issued, a decrease of 900 hundred million yuan or 28.13% from 2021. In January of this year, 1 issue of treasury bills totaling 300 hundred million yuan was issued, a decrease of 400 hundred million yuan or 57.14% from the same period of last year.
+2. Repayment of principal and interest
+Last year, payments of principal on matured treasury bills amounted to 3,145 hundred million yuan and interest due amounted to 5 hundred million yuan. Total principal and interest payments were 3,150 hundred million yuan, a decrease of 150 hundred million yuan or 4.55% from 2021. In January of this year, no principal or interest due on treasury bills was paid.
+3. Outstanding balance
+44
+=== PAGE 54 ===
+At the end of last year, the outstanding balance of treasury bills was 300 hundred million yuan, a decrease of 850 hundred million yuan or 73.91% from the end of 2021. At the end of January of this year, the outstanding balance of treasury bills was 600 hundred million yuan, a decrease of 1,250 hundred million yuan or 67.57% from the same period of last year.
+3. Raising the Bank's posted deposit interest rates for special accounts of treasury agencies
+In accordance with the resolution of the Bank's Board of Directors in the 4th quarter of last year, the Bank raised its posted deposit interest rates for special accounts of treasury agencies in December of last year.
+
+45

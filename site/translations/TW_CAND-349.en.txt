@@ -1,0 +1,1473 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-349 | source: CBDC_MASTER_v12/TW/TW__2025-10__Business-report-to-Legislative-Yuan-Finance-Committee-Oct-2025.pdf | source_sha256: 34aeee0e7e572882186ad874facc1654532f4718acadf9ba2d4c6eb2adf8cc82
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+23 October, Republic of China year 114
+Meeting of the Finance Committee of the Legislative Yuan
+
+
+
+
+Central Bank Business Report
+
+
+
+
+Governor of the Central Bank      Yang Chin-long
+=== PAGE 2 ===
+Contents
+
+Summary………………………………………………………..I
+
+I. Foreword…………………………………………………..1
+
+II. International Economic and Financial Conditions…………………………………..2
+
+III. Domestic Economic and Financial Conditions…………………………………..8
+
+IV. Explanation of the Bank's Main Operations…………………………………18
+
+V. Conclusion…………………………………………………40
+
+Appendix: Overview of the Bank's Operations……………………………………41
+=== PAGE 3 ===
+Summary
+
+I. International economic and financial conditions
+
+(1) Global economic growth this year is expected to be slightly lower than last year and to slow further next year; the inflation rate will continue to decline
+
+1. Since April of this year (2025), although the United States' reciprocal tariff rates have been preliminarily determined, reciprocal tariffs and fentanyl tariffs face disputes over their legality. In addition, the recent renewed escalation of the US–China trade war has affected markets, and many variables remain in the global economic outlook. S&P Global Market Intelligence (hereinafter referred to as S&P Global) expects the global economic growth rate to decline slightly from 2.8% last year (2024) to 2.7% this year, and to decline further to 2.6% next year (2026).
+
+2. As uncertainty about the global economic outlook remains high, restraining demand growth, and international commodity prices, including crude oil, have declined, the global inflation rate is expected to continue to fall. S&P Global forecasts that the global inflation rate will decline from 4.5% last year to 3.3% this year, and decline further to 3.1% next year.
+
+(2) Through the end of this year, the Fed is expected to continue cutting interest rates, the ECB to keep policy rates unchanged, the BoJ has prospects of raising interest rates, and the People's Bank of China to maintain its accommodative stance
+
+1. In September of this year, the US Federal Reserve System (Fed) lowered its policy rate by 0.25 percentage points because downside risks to employment conditions had increased, leading markets to expect that the Fed would continue cutting interest rates. In addition, Fed Chair Powell stated in October that signs of a gradual tightening of liquidity were currently appearing, and that the Fed might stop reducing its balance sheet in the coming months. The European Central Bank (ECB) kept its policy rates unchanged in July and September of this year, and markets expect policy rates to remain unchanged through year-end.
+
+2. Considering that uncertainty about the impact of tariffs on the economy and prices remained high, the Bank of Japan (BoJ) decided in May, June, July and September to keep its policy rate unchanged; however, if tariff uncertainty declines and the virtuous cycle of wage growth and inflation meets expectations, it will still maintain its stance of raising
+
+                    I
+=== PAGE 4 ===
+interest rates. Economic growth in mainland China is slowing and inflation is subdued. The People's Bank of China cut interest rates and reserve requirement ratios in May and used a variety of policy tools to promote a recovery in the economy and prices. Monetary policy is expected to remain accommodative.
+
+(3) Since April of this year, as uncertainty over US trade policy first increased and then declined, the US dollar index fell sharply and then recovered. Subsequently, as market expectations of Fed interest rate cuts increased, the US dollar index fluctuated downward, and most currencies of major economies appreciated against the US dollar. Yields on 10-year government bonds in the United States, Germany and mainland China fluctuated, while those in Japan first fell and then rose. Global stock price indices continued to reach new highs, and major stock markets rose.
+
+(4) The global economy faces the impact of many uncertainties: (1) developments in US trade policy and their impact remain uncertain; (2) monetary policy directions among major central banks are diverging and fiscal risks are rising; (3) the risk of excessive optimism about AI and climate change; (4) weak domestic demand and overproduction in mainland China remain problems.
+
+II. Domestic economic and financial conditions
+
+(1) Taiwan's economy is expected to grow steadily this year and moderately next year
+
+1. In the first half of this year, demand for applications of emerging technologies such as AI was strong, and export and private investment growth exceeded expectations, with the economic growth rate reaching 6.75%. In the second half of the year, because of the higher base for private investment and subdued momentum in private consumption due to uncertainty over US tariff measures, the Bank forecasts that the economic growth rate will decline to 2.51%, with growth for the full year at 4.55%.
+
+2. Since the Bank's Board of Directors meeting in September of this year, Taiwan's exports and private investment have performed better than expected. In addition, active trading in Taiwan stocks and successive new highs have added momentum to private consumption. In recent months, most major institutions have revised upward their forecasts for Taiwan's economic growth rate this year, with an average of 5.02%. The Bank will continue to examine the impact of the latest factors on Taiwan's economic growth this year and will publicly announce its latest forecast for economic growth this year after the Bank's Board of Directors meeting in December.
+
+3. Looking ahead to next year, growth in Taiwan's exports and private investment is expected to slow, but private consumption
+
+                 II
+=== PAGE 5 ===
+growth is expected to recover. The Bank forecasts an economic growth rate of 2.68%.
+
+(2) The unemployment rate has risen seasonally, the number of enterprises implementing reduced working hours and furloughs and the number of people affected have increased, and wages have grown steadily
+
+1. Since June of this year, the unemployment rate has risen seasonally, reaching 3.45% in August, but it was still the lowest for the same month since 2001.
+
+2. As of 15 October of this year, 432 enterprises were implementing reduced working hours and furloughs, affecting 8,543 people, the highest since mid-February of last year and an increase of 309 enterprises and 6,554 people compared with the end of March of this year. Of these, manufacturing had the largest increase, at 6,592 people, mainly because the impact of US tariff policy led to reduced orders and the implementation of reduced working hours and furloughs.
+
+3. From January to August of this year, nominal regular earnings of employees in industry and services increased by 2.98% year-on-year, the largest increase for the same period since 2001, while total earnings increased by 3.87% year-on-year. After adjusting for prices, real regular earnings increased by 1.12% year-on-year, the highest for the same period in the past 5 years; real total earnings increased by 2.00% year-on-year, the highest for the same period in the past 7 years.
+
+(3) Taiwan's annual CPI growth rate is expected to decline below 2% this year and decline further next year
+
+1. In June of this year, the annual CPI growth rate declined to 1.36%; starting in July, the impact of typhoons and heavy rain widened food price increases, and the annual CPI growth rate rose, reaching 1.60% in August. In September, it fell back to 1.25%, the lowest increase since April 2021, mainly because automobile and motorcycle prices fell and food price increases narrowed. The annual growth rate of core CPI, excluding fruit, vegetables and energy, also declined to 1.46%.
+
+2. Prices of food such as fruit and vegetables are expected to remain high in the second half of this year, but international commodity prices, including crude oil, have fluctuated downward, import prices have declined substantially, and some goods have been exempted from commodity tax or had the tax reduced. In September of this year, the Bank forecast Taiwan's annual CPI and core CPI growth rates for this year at 1.75% and 1.67%, respectively.
+
+
+                   III
+=== PAGE 6 ===
+3. For next year, international institutions forecast oil prices to be lower than this year, while domestic services inflation is expected to maintain its gradual downward trend. In September of this year, the Bank forecast that the annual CPI and core CPI growth rates would decline further to 1.66% and 1.64%, respectively.
+
+4. Risks of international geopolitical conflicts and weather factors are the main uncertainties affecting the future course of inflation in Taiwan.
+
+(4) Bank credit growth has declined, growth in monetary aggregates is within the reference range, and bank and money market interest rates have fluctuated slightly
+
+1. Since the beginning of this year, as housing market transactions slowed, annual growth rates of housing loans and loans for financial management and working capital declined. In addition, the high uncertainty surrounding US tariff policy and geopolitical conflicts led enterprises to repay borrowings and reduce liabilities. The annual growth rate of bank loans and investments has trended downward, reaching 6.60% at the end of August. The annual growth rate of loans and investments from January to August was 6.99%, slightly below the 7.72% for the same period last year.
+
+2. Since the beginning of this year, as the annual growth rate of bank loans and investments declined, the annual growth rate of M2 declined, reaching 3.42% in July; in August, as Taiwan stocks recovered, the annual growth rate of M2 rebounded to 4.76%. The average annual growth rate of M2 from January to August was 4.24%, within the growth reference range of 2.5% to 6.5%.
+
+3. Since May of this year, foreign investors have continued to remit funds into Taiwan and make net purchases of Taiwan stocks. Although cash dividend payments by enterprises in July and August caused a slightly uneven distribution of funds among banks, with the Bank's open market adjustments, funds in the domestic market were ample, and most money market interest rates declined.
+
+III. The Bank's main operations
+
+(1) The Bank kept policy rates unchanged in September of this year, helping the overall economy and financial system to develop steadily
+
+At the Bank's Board of Directors meeting in September of this year, policy rates were kept unchanged. The main considerations were: (1) domestic inflation will decline below 2% this year and is expected to decline further next year; (2) the domestic
+
+                     IV
+=== PAGE 7 ===
+economy is expected to grow steadily this year, while the momentum of economic growth next year remains moderate; (3) to respond prudently to uncertainty about the global economic outlook and the possible impact of US economic and trade policies on the domestic economy.
+
+(2) The Bank continues to implement selective credit control measures, the effects of which have gradually become apparent since implementation
+
+1. Since December 2020, the Bank has adjusted its selective credit control measures seven times. In August of last year, it also called on banks to manage independently their total real estate lending from the 4th quarter of last year to the 4th quarter of this year.
+
+2. The effects of implementing the Bank's credit control measures have gradually become apparent:
+
+(1) Housing market transactions have cooled, public expectations of rising housing prices have declined, and housing price increases have slowed: Since October of last year, the annual growth rate of the number of buildings transferred through sales nationwide has turned negative, with a year-on-year decline of 27.6% from January to August of this year. An online survey by Yung-Ching Realty showed that the proportion of the public expecting housing prices to fall in the 4th quarter of this year was 50%, higher than the 20% expecting prices to rise. Since the beginning of this year, annual growth rates of the Ministry of the Interior's residential price index and the Cathay, Sinyi and NCCU–Yung-Ching housing price indices have all slowed.
+
+(2) Bank credit resources are provided on a priority basis for home purchase loans to people without owner-occupied housing and for funding uses aligned with government policies, such as urban renewal and reconstruction of unsafe and old buildings: At the end of August of this year, the ratio of the outstanding balance of home purchase loans made by domestic banks to people without owner-occupied housing to the outstanding balance of loans for house purchases continued to rise, from 57.0% at the end of January 2023 to 63.1%. The ratio of loans for urban renewal and reconstruction of unsafe and old buildings to construction loans of all banks also rose from 19.5% at the end of September of last year to 24.0%.
+
+(3) Both growth in real estate lending and the concentration of real estate lending have declined: Annual growth rates of the outstanding balances of real estate loans, loans for house purchases and construction loans of all banks have declined from their recent highs of 9.4% and 11.3% at the end of September of last year and 4.7% at the end of October, respectively, to 4.9%, 6.3% and 0.7% at the end of August of this year. The concentration of real estate lending of all banks declined from last year's high of 37.61% to 36.71% at the end of August of this year.
+
+3. Directions for future refinement of the Bank's real estate credit control measures:
+
+                  V
+=== PAGE 8 ===
+(1) Continue to closely monitor the concentration of bank credit resources in real estate lending, with a view to directing credit resources toward funding needs for purposes aligned with government policies, such as home purchases by people without owner-occupied housing, urban renewal and reconstruction of unsafe and old buildings, and social housing, as well as real investment by productive enterprises.
+
+(2) Review the effectiveness of implementing selective credit control measures, closely monitor the possible impact of real estate-related policies on the housing market, and adjust the content of relevant measures in a timely manner to promote financial stability and sound banking operations.
+
+(3) Through open market operations and by providing banks with room for flexible adjustments in their independent management of real estate lending, the Bank creates an environment of ample funds to support traditional industries and help alleviate queues for disbursement of housing loans applied for by the public
+
+1. Domestically, there are 2 problems: (1) weak exports by traditional industries and an increase in the number of people on reduced working hours and furloughs; (2) the large number of New Youth Housing Loan applications handled by banks, resulting in queues for disbursement of housing loans applied for by the public.
+
+2. To help alleviate the above problems, the Bank has taken the following 2 measures to create an environment of ample funds.
+
+(1) Through open market operations, the Bank releases funds by reducing the issuance of negotiable certificates of deposit (NCD) to help government industrial support programs operate.
+
+(2) Where banks independently managing their real estate lending failed to meet their self-set control targets because they gave priority to loans aligned with government policies, such as home purchases by people without owner-occupied housing and projects for urban renewal and reconstruction of unsafe and old buildings, the Bank has provided banks with room for independent, flexible adjustments since the 2nd quarter of this year.
+
+(4) The Bank makes adjustments in the foreign exchange market to maintain its smooth operation
+
+1. In the first half of this year, there was an excess supply of US dollars in the domestic foreign exchange market, and the Bank's net foreign exchange purchases amounted to 132.5 hundred million US dollars
+
+(1) In the first half of this year, markets were concerned about increasing uncertainty surrounding the US President's new policies, the US dollar weakened internationally, and the US dollar index (DXY) fell by 10.70%. Domestically, foreign investors remitted funds to invest
+
+                VI
+=== PAGE 9 ===
+in Taiwan stocks, and domestic firms benefited from demand for advance shipments arising from the suspension of reciprocal tariffs. An excess supply of US dollars emerged in the domestic foreign exchange market, and the New Taiwan dollar appreciated by 9.63% against the US dollar. In the first half of this year, the Bank entered the market and made cumulative net foreign exchange purchases of 132.5 hundred million US dollars (in the second half of last year, the Bank made net foreign exchange sales of 73.5 hundred million US dollars) to maintain stability in the domestic foreign exchange market.
+
+(2) From July of this year to date (as of 20 October), the US dollar index rose slightly by 1.77%, while the New Taiwan dollar depreciated by 2.44% against the US dollar.
+
+(3) This year to date (20 October), with substantial net purchases of Taiwan stocks by foreign investors since May and the good performance of Taiwan's economic fundamentals, the New Taiwan dollar appreciated by 6.95% against the US dollar. However, fluctuations in the New Taiwan dollar exchange rate against the US dollar were smaller than those of major currencies such as the euro, Korean won and Japanese yen.
+
+2. The Bank has ample foreign currency liquidity
+
+(1) At the end of September of this year, the Bank's foreign exchange reserves were 6,029 hundred million US dollars, an increase of 262 hundred million US dollars from the end of last year, mainly due to returns on the investment and management of foreign exchange reserves, changes in the exchange rates of major currencies against the US dollar, and the Bank's entry into the market to make adjustments to maintain order in the foreign exchange market.
+
+(2) At the end of June of this year, the Bank's foreign currency liquidity was approximately 7,235 hundred million US dollars, including official reserve assets of 6,037 hundred million US dollars, other foreign currency assets of 335 hundred million US dollars, and other foreign currency liquidity available for use within the next year of 863 hundred million US dollars.
+
+(5) The Bank has initiated the redesign of New Taiwan dollar banknotes
+
+1. Banknote redesigns in major countries are mainly intended to strengthen anti-counterfeiting measures. Our country's current banknotes have been in use for approximately 24 years, and it is necessary to upgrade their anti-counterfeiting functions in a timely manner. More intuitive and more noticeable advanced security and anti-counterfeiting features with rapid changes and color-switching effects will be adopted. The new banknotes will take account of international developments in “green banknotes,” use more environmentally friendly raw materials, and strengthen green manufacturing processes to better meet ESG sustainable development goals. Because coins have low values and are numerous, redesign would not be cost-effective, and redesign is not being considered.
+
+                    VII
+=== PAGE 10 ===
+2. To accommodate the public's usage habits and reduce the social costs of adjusting automated banknote equipment in response to the redesign, the material, principal ink colors and dimensions of the new banknotes will remain unchanged. In addition, to improve the ability of people with visual impairments to recognize banknote denominations, the denomination numerals on the new banknotes will be enlarged and tactile recognition functions will be strengthened.
+
+3. Incorporating mechanisms for civic participation into the banknote redesign process has been an international trend in recent years. Therefore, the Bank will broadly solicit opinions from all sectors on themes for the new banknotes through the “New Taiwan Dollar Banknote Theme Advisory Committee.” The objective is to recommend themes for the new New Taiwan dollar banknotes and methods of civic participation in an open and transparent manner, to enhance public identification with them.
+
+4. Following the Bank's initiation of the New Taiwan dollar banknote redesign process, the first new banknote is expected to be issued 2 and a half years after the theme is selected, with other denominations introduced successively. The average unit cost of the new banknotes is estimated to be 1.5 yuan higher than that of banknotes currently in circulation.
+
+5. To ensure that banknote anti-counterfeiting functions keep pace with the latest international technologies, safeguard national currency credibility, and make the new banknotes better meet ESG sustainable development goals, we respectfully request the assistance and support of all Committee members for the Bank's initiation of the redesign of New Taiwan dollar banknotes.
+
+(6) Improving the payment and settlement system and providing final settlement services for interbank transfers of New Taiwan dollar funds
+
+From January to August of this year, the value of transactions processed by the CBC Interbank Funds Transfer System reached 396 trillion yuan, an increase of 1.7% from the same period last year. With regard to retail payment systems, the Interbank Financial Information System operated by the Financial Information Service Co., Ltd. (abbreviated as the FISC system) processed transactions amounting to 160 trillion yuan, an increase of 0.5% from the same period last year.
+
+(7) Assisting in the promotion of mobile payments
+
+1. The Financial Information Service Co., Ltd. has established TWQR, a common QR Code payment standard, and is promoting it jointly with banks to enhance the common usability and convenience of scan-to-pay payments. From January to August of this year, the value and number of transactions under the common QR Code payment standard were 4,691 hundred million yuan and 9,382 ten thousand transactions, respectively, increases of 49% and 32% over the same period last year.
+
+                 VIII
+=== PAGE 11 ===
+2. The Financial Information Service Co., Ltd. has established the “Shared Platform for Cross-Institution Electronic Payments,” enabling information flows and fund flows to interconnect among domestic electronic payment institutions and between electronic payment institutions and financial institutions, and providing cross-institution services such as “transfers,” “tax payments,” “bill payments” and “shopping.” As of the end of last year, all 9 electronic payment institutions that had joined TWQR were providing shopping services.
+
+(8) Continuing to advance the CBDC research program
+
+1. The Bank has completed the CBDC experimental program and established the “Digital Public Infrastructure Funds Flow Platform.” The issuance of government digital vouchers will first be used as a trial implementation project. In August of this year, a trial implementation of the Hakka Affairs Council's Hakka Coin was carried out first, and use for the universal cash distribution is expected in November.
+
+2. To enable all sectors to understand CBDC planning, communicate broadly with the public on the direction of CBDC development, and continue to refine CBDC-related design, the Bank completed a written opinion survey in 2024, followed this year by a total of 9 public hearings, information sessions and forums in northern, central and southern Taiwan. To date, 3 public hearings, 3 forums and 2 information sessions have been completed.
+
+3. Continue studying and discussing the relevant legal rules if CBDC is issued in the future, including the legal basis for CBDC issuance, privacy [隱私] protection, and other matters related to issuance and management.
+
+4. The Bank for International Settlements (BIS) considers that CBDC or the interconnection of countries' fast payment systems (FPS) might be solutions for improving cross-border payments in the future. However, there are currently no common international standards, and international organizations still need to formulate them for countries to follow in order to resolve interoperability problems. The Bank will continue to closely monitor international developments and actively participate in exchanges at relevant meetings of international organizations to ensure that the future cross-border payment system aligns with international arrangements.
+
+
+
+
+                     IX
+=== PAGE 12 ===
+I. Foreword
+
+Chair, Committee members, ladies and gentlemen:
+
+It is a great honor to be invited to your Committee today to report on the Bank's operations.
+
+The Bank's operating objectives are to promote financial stability, foster sound banking operations, and maintain the stability of the internal and external value of the currency, while also assisting economic development. Below, I respectfully present a report on domestic and international economic and financial conditions, as well as the Bank's main operations since the previous session of the Legislative Yuan, including the implementation of monetary, credit and foreign exchange policies. Your guidance is respectfully requested.
+
+
+
+
+             1
+=== PAGE 13 ===
+II. International Economic and Financial Conditions
+I. Global economic growth is slowing, and the inflation rate continues to decline
+
+(1) Global economic growth this year is expected to be slightly lower than last year and to slow further next year
+
+Since April of this year (2025), although US reciprocal tariff rates on various countries have been preliminarily determined, reciprocal tariffs and fentanyl tariffs face disputes over their legality. In addition, the recent renewed escalation of the US–China trade war has affected markets, and many variables remain in the global economic outlook. S&P Global Market Intelligence (hereinafter referred to as S&P Global) expects the global economic growth rate to be 2.7% this year, slightly lower than the 2.8% last year (2024), and the global economic growth rate to decline further to 2.6% next year (2026).
+
+[FIGURE]
+                         Economic growth rates of the world and major economies
+%
+6
+2024    2025(f)    2026(f)
+5
+4
+3
+2
+1
+0
+
+ | World | United States | Euro area | United Kingdom | Japan | South Korea | Taiwan* | Mainland China | ASEAN ten countries
+2024 | 2.8 | 2.8 | 0.8 | 1.1 | 0.1 | 2.0 | 4.84 | 5.0 | 4.8
+2025(f) | 2.7 | 2.0 | 1.3 | 1.4 | 1.2 | 0.9 | 4.52 | 4.8 | 4.5
+2026(f) | 2.6 | 2.2 | 0.9 | 1.0 | 0.7 | 1.9 | 1.79 | 4.3 | 4.3
+
+Notes: 1. The 2024 figure for Taiwan is an official statistic; figures for other economies are S&P Global values. f denotes S&P Global forecasts (2025/10/15).
+       2. *The Bank's forecast for 2025 is 4.55%, and its forecast for 2026 is 2.68% (2025/9/18).
+Sources: Directorate-General of Budget, Accounting and Statistics, S&P Global (2025/10/15)
+
+
+(2) International oil prices fluctuate at low levels, and the global inflation rate continues to decline
+
+Since April of this year, concerns that US trade policy might affect the global economy have driven oil prices lower. Subsequently, as the United States suspended reciprocal tariff measures, oil prices stopped falling, but disruption from the war in the Middle East caused oil prices to fluctuate at low levels. Since July, weak US employment data, together with continued production increases by OPEC+, have raised concerns about excess supply, and oil prices have moved downward. Since late September, OPCE+ has continued to increase production, and concerns about the US–China trade war have re-emerged, causing oil prices to turn downward. As for other commodities, overall metal
+
+                                        2
+=== PAGE 14 ===
+metal prices rose as the market expected the United States to continue cutting interest rates, while grain prices fell as production continued to increase. The R/J CRB Futures Price Index, which represents overall international commodity prices, broadly followed the movement of crude oil prices and turned downward.
+
+[FIGURE]
+Brent Crude Oil Spot Prices
+USD/barrel
+100
+90
+80
+70
+60
+50
+2024
+2025
+4/5 | 94.40
+1/15 | 83.48
+12/31 | 74.58
+9/10 | 70.34
+10/20 | 60.71
+5/7 | 60.31
+Month | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+Source: LSEG Datastream
+
+[FIGURE]
+R/J CRB Futures Price Index
+Index
+330
+320
+310
+300
+290
+280
+270
+260
+250
+240
+2025
+2024
+2/19 | 316.63
+5/28 | 300.24
+12/31 | 296.72
+10/20 | 296.49
+4/8 | 279.79
+1/8 | 261.65
+Month | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+Note: The R/J CRB Futures Price Index is compiled from the futures prices of a total of 19 commodities in 6 major categories: energy, soft commodities, grains, industrial metals, precious metals, and livestock. Energy has the highest weight.
+Source: LSEG Datastream
+
+Regarding prices, uncertainty surrounding the global economic outlook remains high this year, restraining demand growth. Together with declining international commodity prices, including crude oil, this is expected to bring a continued decline in global inflation. Apart from the United States, where tariffs are exerting upward pressure on inflation, inflation rates in major economies such as the euro area are falling. S&P Global forecasts that global inflation will decline from 4.5% last year to 3.3% this year, and decline further to 3.1% next year.
+
+[FIGURE]
+Annual CPI Growth Rates for the World and Major Economies
+%
+6
+4
+2
+0
+2024 | 2025(f) | 2026(f)
+
+ | World | United States | Euro area | United Kingdom | Japan | South Korea | Taiwan* | Mainland China | ASEAN 10
+2024 | 4.5 | 3.0 | 2.4 | 2.5 | 2.7 | 2.3 | 2.18 | 0.2 | 2.6
+2025(f) | 3.3 | 2.8 | 2.1 | 3.5 | 3.1 | 2.0 | 1.64 | 0.0 | 2.0
+2026(f) | 3.1 | 2.9 | 1.8 | 2.5 | 1.8 | 1.8 | 1.53 | 0.6 | 2.4
+
+Notes: 1. The 2024 figure for Taiwan is an official statistical figure; figures for other economies are from S&P Global. f denotes S&P Global forecasts (2025/10/15).
+2. *The Bank's forecast for 2025 is 1.75%, and its forecast for 2026 is 1.66% (2025/9/18).
+Sources: Directorate-General of Budget, Accounting and Statistics, S&P Global (2025/10/15)
+
+3
+=== PAGE 15 ===
+II. Through the end of this year, the Fed is expected to continue cutting interest rates, the ECB to keep policy rates unchanged, the BoJ is likely to raise interest rates, and the People's Bank of China to maintain its accommodative stance
+
+Since April this year, in view of continuing uncertainty surrounding U.S. trade policy and its effects, the Federal Reserve System (Fed) kept its policy rate unchanged at its May, June, and July meetings. In September, it lowered its policy rate by 0.25 percentage points because of increased downside risks to employment conditions, leading the market to expect that the Fed would continue cutting interest rates. In addition, Fed Chair Powell stated in October that signs of gradually tightening liquidity were currently emerging, and that the reduction of the balance sheet might stop in the coming months. The European Central Bank (ECB) cut interest rates in both April and June this year, and kept its policy rates unchanged in July and September. Given that inflation has reached the Bank's 2% target and economic activity has picked up, policy rates are expected to remain unchanged through the end of the year.
+
+Since April this year, considering that uncertainty about the effects of tariffs on the economy and prices remained high, the Bank of Japan (BoJ) decided to keep its policy rate unchanged in May, June, July, and September. However, BoJ Governor Ueda has stated on several occasions that if tariff uncertainty declines and the virtuous cycle of wage growth and inflation is in line with expectations, the Bank will maintain its stance of raising interest rates. In addition, in September it decided to sell its holdings of exchange-traded funds (ETFs) and Japanese real estate investment trusts (J-REITs) in the market after the necessary preparations have been completed. With economic growth in mainland China slowing and inflation remaining subdued, the People's Bank of China (hereinafter referred to as the PBoC) cut interest rates and reserve requirement ratios in May, and used a variety of policy tools to promote a recovery in the economy and prices. Monetary policy is expected to remain accommodative.
+
+III. Government bond yields in major economies mostly fluctuated, the U.S. Dollar Index fluctuated downward, and global stock price indices continued to reach new highs
+
+(1) U.S., German, and Chinese 10-year government bond yields fluctuated, while those in Japan first fell and then rose
+
+In early April this year, the reciprocal tariff rates announced by the United States were higher than expected, and 10-year government bond yields in the United States, Germany, Japan, and China all fell sharply. Subsequently, the United States postponed implementation of the reciprocal tariffs, but concerns about fiscal deterioration intensified, and U.S. 10-year government bond yields rose,
+
+4
+=== PAGE 16 ===
+driving a rebound in German and Japanese 10-year government bond yields. Since July, expectations of Fed rate cuts have intensified, and U.S. 10-year government bond yields have turned downward. Germany's large-scale fiscal spending plan has continued to exert upward pressure on its government bond yields. In mainland China, funds shifted from the bond market to the stock market, and government bond yields rebounded from their lows. Recently, however, with the resurgence of U.S.–China trade disputes, German and Chinese 10-year government bond yields have fallen again alongside U.S. Treasury yields. Japan's economic growth was better than expected, the BoJ maintained its stance of raising interest rates, and the market expected the new prime minister to adopt expansionary fiscal policy. Japanese 10-year government bond yields continued to rise.
+
+[FIGURE]
+10-Year Government Bond Yields in Major Economies
+%
+5
+4
+3
+2
+1
+0
+2025/10/20
+United States | 4.00
+Germany | 2.58
+Mainland China | 1.78
+Japan | 1.67
+Month | 1 | 4 | 7 | 10 | 1 | 4 | 7 | 10
+Year | 2024 | 2025
+Sources: LSEG Datastream, U.S. Department of the Treasury
+
+(2) The U.S. Dollar Index fluctuated downward, and most major economies' currencies appreciated against the U.S. dollar
+
+Since April this year, uncertainty surrounding U.S. trade policy has increased, investors' concerns about the U.S. economic outlook have intensified, and the U.S. Dollar Index has fallen sharply. However, progress in trade negotiations with some countries reduced uncertainty surrounding U.S. trade policy, supporting a rise in the U.S. Dollar Index for a time. Subsequently, the U.S. Dollar Index fluctuated as market expectations of Fed rate cuts changed. Comparing October 20 with the end of last year, most major economies' currencies appreciated against the U.S. dollar. Among them, the euro appreciated by 12.4% against the U.S. dollar, a relatively large increase, as expanded fiscal spending in the euro area supported economic growth, some international funds were reallocated into euro-denominated assets, and the market interpreted the ECB's rate-cutting cycle as nearing its end. The Indian rupee, by contrast, depreciated by 2.6% against the U.S. dollar, as the high additional tariffs of 50% imposed by the United States on India raised concerns about effects on its economy, and market funds continued to flow out.
+
+5
+=== PAGE 17 ===
+[FIGURE]
+US Dollar Index (DXY)
+Index
+110
+108
+106
+104
+102
+100
+98
+96
+94
+92
+
+2025/1/13
+109.96
+
+Latest
+2025/10/20
+98.59
+
+This year's low
+2025/9/16
+96.63
+
+1 4 7 10 1 4 7 10 Month
+2024 2025 Year
+
+Note: The base period of the DXY index is March 1973 (=100)
+Source: LSEG Datastream
+
+[FIGURE]
+Appreciation and depreciation of major currencies against the US dollar
+(Comparison of October 20 this year with the end of last year)
+%
+16
+14
+12
+10
+8
+6
+4
+2
+0
+-2
+-4
+
+Swiss franc 14.5
+Euro 12.4
+Pound sterling 7.1
+New Taiwan dollar 7.0
+Malaysian currency 5.8
+Singapore dollar 5.5
+Japanese yen 4.3
+Korean won 4.0
+Renminbi 2.5
+Philippine peso -0.1
+Indian rupee -2.6
+
+Sources: LSEG Datastream, Taipei Forex Inc.
+
+(III) Global stock price index continues to reach new highs; major stock markets rise
+
+Since April this year, the United States announced reciprocal tariffs, and the United States and China imposed high tariffs on each other, causing global stock markets to plunge. Subsequently, as the United States postponed the implementation of reciprocal tariffs and the United States and China reached an agreement to temporarily suspend the imposition of high tariffs on each other, panic in financial markets eased, and global stock markets turned upward. Since late July, the negative impact of tariff uncertainty on the world has eased, and growing expectations of Fed interest rate cuts have boosted investor optimism. Together with the continuing artificial intelligence (AI) wave, the global stock price index has continued to reach new highs. Comparing October 20 with the end of last year, South Korea's stock market attracted continued inflows of foreign capital as the government introduced policies favorable to the development of AI technology and the strengthening of corporate governance, and surged 59.0%, led by technology stocks; the US Nasdaq index also rose 17.4%, as strong demand for AI infrastructure is expected to drive capital expenditure and large technology companies reported outstanding financial results.
+
+[FIGURE]
+MSCI Global Stock Price Index
+Index
+1050
+1000
+950
+900
+850
+800
+750
+700
+
+Latest
+2025/10/20
+995.69
+
+1 4 7 10 1 4 7 10 Month
+2024 2025 Year
+
+Source: LSEG Datastream
+
+[FIGURE]
+Changes in stock price indices of major economies
+(Comparison of October 20 this year with the end of last year)
+%
+70
+60
+50
+40
+30
+20
+10
+0
+
+South Korea 59.0
+Hong Kong 28.9
+Japan 23.3
+Taiwan 20.2
+MSCI Global Stock Price Index 18.3
+Pan-European Dow Jones 18.1
+US Nasdaq 17.4
+Mainland China Shanghai Composite 15.3
+Singapore 14.3
+US Dow Jones Industrial 9.8
+
+Source: LSEG Datastream
+
+6
+=== PAGE 18 ===
+IV. The global economic outlook faces many uncertainties
+
+Global economic growth and inflation are slowing this year. The economic outlook faces many uncertainties, including continuing uncertainty over developments in US trade policy and their effects, diverging monetary policy directions among major central banks and rising fiscal risks, risks of excessive optimism about AI and climate change, and persistent weak domestic demand and overcapacity in mainland China. Continued attention to subsequent developments and their effects is still needed.
+
+Developments in US trade policy and their effects remain uncertain
+⚫ Details of US tariff policy are not yet clear, and reciprocal tariffs and fentanyl tariffs face domestic disputes over their legality in the United States. If they are ruled unconstitutional or beyond the scope of authority in the future, this could trigger disputes and add uncertainty to the global trading system.
+⚫ Recently, mainland China introduced rare-earth export controls, and the United States threatened to impose additional high tariffs on mainland China. The United States and China have also imposed maritime port fees on each other. The renewed escalation of the trade war has affected markets; the effectiveness of US tariff implementation and the direction of policy remain highly uncertain.
+
+Diverging monetary policy directions among major central banks and rising fiscal risks
+⚫ Major central banks are adjusting the direction of monetary policy, with divergent stances. This will influence future international capital flows, thereby affecting the stability of global stock, foreign exchange and bond markets.
+⚫ Recent political instability in France and a downgrade of its sovereign credit rating have raised concerns across various sectors about whether a European sovereign debt crisis will recur; rapid changes in global political and economic conditions could affect the global economy and international financial stability.
+
+Risks of excessive optimism about the AI industry and climate change
+⚫ Market optimism about the AI industry has fueled a technology-centered investment boom and pushed up share prices. If subsequent productivity and profitability fall short of expectations, this could trigger substantial financial market volatility, thereby dragging down overall economic growth.
+⚫ The world faces future risks of extreme weather events under climate change, which could exacerbate uncertainty about global economic growth and inflation.
+
+Weak domestic demand and overcapacity in mainland China persist
+⚫ Domestic demand in mainland China is weak and consumer confidence is insufficient, while deflationary pressures persist in some regions and industries. The stimulative effects of fiscal expansion and monetary easing policies have yet to materialize, and economic recovery remains challenging.
+⚫ Overcapacity in mainland China remains severe. If surplus goods are exported in large quantities, this could increase deflationary pressures in other economies and affect related industries, exacerbating risks of trade friction and protectionism.
+
+References: IMF (2025), “Global Economy in Flux, Prospects Remain Dim,” World Economic Outlook, Oct. 14; OECD
+(2025), “Interim Report September 2025: Finding the Right Balance in Uncertain Times,” OECD Economic
+Outlook, Sep. 23; BIS (2025), “Sustaining Stability amid Uncertainty and Fragmentation,” Annual Economic
+Report, Chapter 1, Jun. 29.
+
+7
+=== PAGE 19 ===
+Part III. Domestic Economic and Financial Conditions
+
+I. Taiwan's economy is expected to grow steadily this year and moderately next year
+
+(1) Growth in exports and private investment has exceeded expectations since the beginning of this year; in September this year, the Bank revised its forecast for this year's economic growth rate upward to 4.55%
+
+1. In the first half of this year, strong demand for applications of emerging technologies such as AI drove substantial growth in exports of electronic components and information, communications and audiovisual products. In addition, domestic semiconductor firms continued to expand capacity for advanced processes and high-end packaging and testing, prompting related supply-chain firms to increase investment. Growth in exports and private investment exceeded expectations, and the economic growth rate reached 6.75%.
+
+2. Looking ahead to the second half of the year, AI demand is expected to remain strong, sustaining Taiwan's export growth momentum and adding to investment momentum. However, the base for private investment in the second half of last year was relatively high, and private consumption momentum is subdued owing to uncertainty over US tariff measures. The economic growth rate is expected to decline to 2.51% in the second half of the year and to be 4.55% for the full year.
+
+－ In September this year, exports of electronic, information and communications products grew by 48.7%, driving growth of 33.8% in merchandise exports; exports of traditional-industry goods grew by only 2.3%. From January to September this year, merchandise exports grew by 29.7%, of which exports of electronic, information and communications products grew by 45.3%, while exports of traditional goods grew by only 0.8%.
+
+[FIGURE]
+Year-on-year growth rates of exports of merchandise, electronic, information and communications products, and traditional-industry goods
+
+Note: Denominated in US dollars; traditional-industry goods are all goods excluding live animals, animal products, vegetable products, animal and vegetable fats and oils, prepared foodstuffs, beverages, tobacco and alcoholic beverages, electronic components, information, communications and audiovisual products, and optical and precision instruments; electronic, information and communications products include electronic components and information, communications and audiovisual products.
+Sources: Ministry of Finance; the Bank's own calculations
+
+8
+=== PAGE 20 ===
+[FIGURE]
+Taiwan's economic growth rate (yoy)
+
+Notes: 1. r denotes revised figures, p denotes preliminary statistics, and f denotes forecasts.
+2. Actual figures are from the Directorate-General of Budget, Accounting and Statistics; forecasts are from the Bank.
+Sources: Directorate-General of Budget, Accounting and Statistics; the Bank
+
+3. Since the Bank's Board of Directors meeting in September this year, Taiwan's exports and private investment have performed better than expected. In addition, active trading in Taiwan stocks in September and October, with repeated record highs, has added to private consumption momentum. In recent months, most major institutions have revised their forecasts for Taiwan's economic growth rate this year upward, with an average of 5.02%. The Bank will continue to examine the effects of the latest factors on Taiwan's economic growth this year and will publicly release its latest forecast for this year's economic growth after the Bank's Board of Directors meeting in December.
+
+Domestic and international institutions' forecasts of Taiwan's economic growth rates for this year and next year
+Unit: %
+
+Forecasting institution | Chung-Hua Institution for Economic Research | Central Bank | National Taiwan University–Cathay | Directorate-General of Budget, Accounting and Statistics | Barclays Capital | BofA Merrill Lynch | Morgan Stanely | Nomura | J.P. Morgan | S&P Global | Citi | Goldman Sachs | Average
+Release date | 2025.10.17 | 2025.9.18 | 2025.9.15 | 2025.8.15 | 2025.10.10 | 2025.10.10 | 2025.10.10 | 2025.10.10 | 2025.10.10 | 2025.10.15 | 2025.10.17 | 2025.10.17 |
+2025 | 5.45 | 4.55 | 4.50 | 4.45 | 5.00 | 5.20 | 4.90 | 6.20 | 6.10 | 4.52 | 4.40 | 4.99 | 5.02
+2026 | 2.55 | 2.68 | 2.00 | 2.81 | 1.00 | 2.00 | 3.70 | 2.70 | 2.40 | 1.79 | 2.70 | 2.04 | 2.36
+
+(2) Growth in exports and private investment is expected to slow next year, with moderate growth in the domestic economy
+
+Looking ahead to next year, global trade growth momentum will decline as the effects of US reciprocal tariffs unfold, affecting Taiwan's export performance. Together with a relatively high base, growth in Taiwan's exports and private investment is expected to slow. However, private consumption growth is expected to pick up, and the Bank forecasts an economic growth rate of 2.68%. Major institutions' forecasts for Taiwan's economic growth rate next year average 2.36%.
+
+9
+=== PAGE 21 ===
+II. The unemployment rate has risen seasonally, and real wages have recorded positive growth
+
+(1) The unemployment rate has risen seasonally, and employment has grown slowly; the number of enterprises implementing reduced working hours and rest days and the number of people affected have increased
+
+Since the beginning of this year, the domestic labor market has remained stable, with the unemployment rate falling to 3.30% in May. From June, seasonal factors, including some new graduates or summer student workers entering the job market, led to a rise in the unemployment rate, which reached 3.45% in August. However, it was 0.03 percentage points lower than in the same month last year and was the lowest for the same month since 2001. Employment in August was 1,164.1 ten thousand people, a year-on-year increase of 0.24%.
+
+[FIGURE]
+Taiwan's unemployment rate and employment
+
+As of October 15 this year, 432 enterprises were implementing reduced working hours and rest days, affecting 8,543 people, the highest since mid-February last year, and an increase of 309 enterprises and 6,554 people compared with the end of March this year. Among these, manufacturing recorded the largest increase, of 6,592 people, mainly concentrated in the metal and machinery industries (an increase of 5,377 people). The main reason was that the effects of US tariff policy led to reduced orders and the implementation of reduced working hours and rest days.
+
+10
+=== PAGE 22 ===
+Number of people subject to reduced working hours and rest days
+Unit: persons
+
+ | October 15 this year | Change from the end of March this year
+Total | 8,543 | +6,554
+ Manufacturing | 8,130 | +6,592
+  Metal and machinery industries | 6,520 | +5,377
+  Information and electronics industries | 500 | +305
+  Chemical industries | 555 | +462
+  Consumer goods industries | 555 | +448
+
+Source: Ministry of Labor
+
+(2) Steady wage growth
+
+1. Since the beginning of this year, nominal regular wages of employees in industry¹ and services have grown moderately, reaching year-on-year growth of 2.92% in August, while total wages grew by 4.38% year on year. Average regular wages from January to August this year grew by 2.98% year on year, the highest increase for the same period since 2001, while total wages grew by 3.87% year on year. Of these, total wages in the industrial sector grew by 5.64% year on year, higher than the 4.08% for the same period last year. This was mainly because continued substantial growth in exports of electronic, information and communications products drove year-on-year growth of 8.09% in total wages in the electronic, information and communications industries, higher than the 3.42% in traditional industries². The year-on-year growth rate of total wages in the service sector slowed from 4.33% in the same period last year to 2.60%, mainly because the real estate industry turned to a year-on-year decline of 2.90%, and because year-on-year growth rates in total wages in finance and insurance, support services (such as travel agencies), and accommodation and food services slowed to 1.65%, 1.54% and 0.88%, respectively.
+
+1 Industry includes manufacturing, electricity and gas supply, water supply and pollution remediation, construction, and mining and quarrying.
+2 Refers to industries within manufacturing other than the electronic, information and communications industries.
+
+11
+=== PAGE 23 ===
+[FIGURE]
+Year-on-year growth rates of nominal total wages in Taiwan's industry and services from January to August in the past three years
+
+2. After deducting the change in the CPI over the same period, real regular wages from January to August this year grew by 1.12% year on year, the highest for the same period in the past 5 years; real total wages grew by 2.00% year on year, the highest for the same period in the past 7 years. Of these, real total wages in the industrial sector grew by 3.74% year on year, higher than the 1.73% in the same period last year; in the service sector, growth slowed from 1.98% in the same period last year to 0.75%.
+
+[FIGURE]
+Year-on-year growth rates of real total wages in Taiwan's industry and services from January to August in the past three years
+
+III. Taiwan's year-on-year CPI growth rate is expected to fall below 2% this year and decline further next year
+
+(1) Taiwan's inflation rate has gradually declined since the beginning of this year
+
+1. From April this year, owing to smaller increases in food prices and a decline in fuel costs, the CPI
+
+12
+=== PAGE 24 ===
+year-on-year growth rate declined, reaching 1.36% in June. From July, under the effects of typhoons and heavy rain, food price increases widened, and the year-on-year CPI growth rate rose, reaching 1.60% in August. In September, it fell again to 1.25%, the lowest increase since April 2021, mainly because of declining car and motorcycle prices and smaller increases in food prices. The year-on-year growth rate of the core CPI, excluding fruit, vegetables and energy, also fell to 1.46%.
+
+[FIGURE]
+Year-on-year growth rates of Taiwan's CPI, core CPI and food prices
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+2. From January to September this year, Taiwan's average year-on-year CPI growth rate was 1.77%. The increase was mainly due to rising food prices, including dining out, fruit and meat, higher rents, and higher prices for personal effects such as gold ornaments and jewelry. Together, these raised the year-on-year CPI growth rate by 1.47 percentage points, contributing approximately 83% of the year-on-year CPI growth rate. The year-on-year growth rate of the core CPI, excluding fruit, vegetables and energy, was 1.62%, maintaining a gradual downward trend.
+
+13
+=== PAGE 25 ===
+Main items affecting Taiwan's year-on-year CPI growth rate from January to September this year
+
+Item | Weight (per thousand) | Year-on-year rate of change (%) | Effect on the year-on-year CPI growth rate (percentage points)
+CPI | 1,000 | 1.77 | 1.77
+Food | 256 | 3.51 | 0.95
+ Dining out | 106 | 3.39 | 0.37
+ Fruit | 21 | 12.03 | 0.28
+ Meat | 23 | 4.40 | 0.10
+ Vegetables | 15 | 5.85 | 0.09
+ Cereals and cereal products | 15 | 2.32 | 0.04
+ Eggs | 4 | -9.43 | -0.04
+Rent | 148 | 2.38 | 0.35
+Personal effects | 19 | 7.64 | 0.17
+Recreational services | 60 | 1.48 | 0.09
+Medical expenses | 28 | 2.75 | 0.07
+Cigarettes and betel nuts | 16 | 3.92 | 0.07
+Educational and care services | 30 | 2.11 | 0.07
+Vehicle parts and maintenance costs | 19 | 2.92 | 0.06
+Household management expenses | 11 | 3.92 | 0.04
+Total | | | 1.87
+Fuel costs | 24 | -4.57 | -0.11
+Ready-made clothing | 38 | -1.13 | -0.05
+Total | | | -0.16
+Other | | | 0.06
+
+Together raised the year-on-year CPI growth rate by 1.47 percentage points, contributing approximately 83%.
+
+Source: Directorate-General of Budget, Accounting and Statistics
+
+(2) Declining domestic import prices help ease domestic inflationary pressures
+
+In September this year, import prices denominated in US dollars fell by 1.90% year on year, marking 35 consecutive months of decline. Because the New Taiwan dollar appreciated against the US dollar compared with the same period last year, import prices denominated in New Taiwan dollars fell by 6.83% year on year.
+
+From January to September this year, import prices denominated in US dollars and in New Taiwan dollars fell by 2.41% and 4.88% year on year, respectively, helping to ease domestic inflationary pressures.
+
+[FIGURE]
+Year-on-year growth rates of import prices
+
+Unit: %
+ | Denominated in US dollars | Denominated in New Taiwan dollars
+2025/9 | -1.90 | -6.83
+2025/1-9 | -2.41 | -4.88
+
+14
+=== PAGE 26 ===
+(III) Taiwan's annual CPI growth rate is expected to fall below 2% this year and decline further next year
+
+1. Affected by weather factors such as successive typhoons and torrential rains, prices of food such as vegetables and fruit are expected to remain high in the second half of this year. However, international commodity prices, including crude oil, have fluctuated downward, import prices have fallen substantially, and commodity taxes on some goods have been exempted or reduced. In September this year, the Bank forecast Taiwan's annual CPI and core CPI growth rates for this year at 1.75% and 1.67%, respectively, lower than last year's 2.18% and 1.88%. Major institutions' forecasts for Taiwan's annual CPI growth rate this year range from 1.54% to 1.90%, with an average of 1.73%.
+
+2. For next year, international institutions forecast oil prices to be lower than this year, and domestic services inflation is expected to maintain a gradual downward trend. In September this year, the Bank forecast annual CPI and core CPI growth rates to decline further to 1.66% and 1.64%, respectively. Major institutions' forecasts for Taiwan's annual CPI growth rate next year range from 1.00% to 1.90%, with an average of 1.56%.
+[FIGURE]
+Domestic and foreign institutions' forecasts for Taiwan's annual CPI growth rates this year and next year
+
+Average
+1.73% (2025)
+1.56% (2026)
+
+3. Risks of international geopolitical conflicts and weather factors are the main uncertainties affecting Taiwan's future inflation trend.
+
+IV. Growth in bank loans and investments declined, while the annual growth rate of the monetary aggregate fell and then rose
+
+In terms of bank credit, since the beginning of this year, the annual growth rates of housing loans and wealth-management revolving loans have declined as housing market transactions slowed. In addition, the high
+
+15
+=== PAGE 27 ===
+degree of uncertainty over US tariff policies and geopolitical conflicts led enterprises to repay borrowings and reduce liabilities. The annual growth rate of bank loans and investments has generally trended downward, reaching 6.60% at the end of August. The annual growth rate of loans and investments from January to August was 6.99%, slightly lower than the 7.72% in the same period last year.
+[FIGURE]
+Annual growth rate of bank loans and investments
+
+In terms of the monetary aggregate, since the beginning of this year, the annual growth rate of M2 declined as the annual growth rate of bank loans and investments declined, reaching 3.42% in July. In August, as Taiwan's stock market recovered, the annual growth rate of M2 rebounded to 4.76%. The average annual growth rate of M2 from January to August was 4.24%, within the reference range for growth of 2.5% to 6.5%. The Bank estimates that the annual growth rate of M2 this year will fall within the reference range for growth of 2.5% to 6.5%. M2, output and prices have a stable relationship over a longer period, and maintaining moderate M2 growth helps achieve the ultimate objective of price stability.
+
+[FIGURE]
+Annual growth rate of M2
+
+Note: 2.5%~6.5% is the reference range for M2 growth.
+Source: The Bank
+16
+=== PAGE 28 ===
+V. Bank and money market interest rates fluctuated slightly
+
+In March this year, foreign investors were net sellers of Taiwan stocks and remitted funds out. In April, affected by US reciprocal tariff policies, global financial markets fluctuated, and banks became more cautious in managing funds. However, with the Bank's open market adjustments, market funding conditions remained generally stable. From May, foreign investors continued to remit funds in and were net buyers of Taiwan stocks. Although the distribution of funds among banks was slightly uneven in July and August due to enterprises' payments of cash dividends, with the Bank's open market adjustments, funding in the domestic market was ample, and money market interest rates mostly declined.
+
+[FIGURE]
+Long- and short-term interest rates
+
+Note: The interest rate on newly extended loans by the 5 major banks is based on data through August this year; the other interest rates are based on data through September this year.
+Sources: The Bank, Taipei Exchange
+
+17
+=== PAGE 29 ===
+IV. Explanation of the Bank's Main Operations
+I. The Bank kept policy rates unchanged in September this year, helping the sound development of the overall economy and financial system
+
+(I) In September this year, the Bank's Board of Directors kept policy rates unchanged, with the main considerations being:
+(1) Domestic inflation will fall below 2% this year and is expected to decline further next year; (2) the domestic economy is expected to grow steadily this year, while the momentum of economic growth next year remains moderate; (3) the need to respond prudently to uncertainty in the global economic outlook and the possible impact of US economic and trade policies on the domestic economy.
+
+The Bank's current discount rate, rate on accommodations with collateral, and rate on accommodations without collateral are 2%, 2.375% and 4.25%, respectively.
+[FIGURE]
+The Bank's policy rates
+
+Source: The Bank
+
+(II) Going forward, the Bank will continue to pay attention to the effects of uncertainties, including (1) the impact of US tariff policies, (2) the pace of monetary policy adjustments in major economies, (3) the risk of a slowdown in mainland China's economic growth, and (4) geopolitical conflicts and extreme weather, on domestic economic and financial conditions and prices. It will adjust monetary policy in a timely manner to fulfil its statutory duties of maintaining price stability and financial stability and, within the scope of the above objectives, assisting economic development.
+
+II. The Bank continues to implement selective credit control measures
+
+(I) Continuing to implement selective credit control measures
+
+18
+=== PAGE 30 ===
+To promote financial stability and sound banking operations, and to implement the assigned task of “effective allocation and reasonable use of credit resources” under the government's “Program to Foster a Sound Real Estate Market,” so as to prevent excessive flows of bank credit resources into the real estate market, the Bank has adjusted its selective credit control measures seven times since December 2020. In August last year, it also called on banks to manage their total real estate lending autonomously from the 4th quarter of last year to the 4th quarter of this year. Since implementation, housing market transaction volumes have contracted, the public's expectations of rising housing prices have moderated, and the ratios of banks' loans for home purchases by people without owner-occupied homes and loans for urban renewal and reconstruction of unsafe and old buildings have both trended upward.
+
+In addition, to strengthen the effectiveness of selective credit control measures, the Bank has adopted related supporting measures. These include regularly compiling statistics on real estate lending by financial institutions and publishing them on the Bank's website, as well as sending personnel to conduct on-site financial examinations and urging banks to implement regulatory compliance. These measures help strengthen policy effectiveness.
+
+(II) The effects of implementing the Bank's control measures have gradually become evident, as follows:
+
+1. Housing market transactions have cooled, the public's expectations of rising housing prices have declined, and the pace of housing price increases has moderated
+
+(1) Housing market transactions have cooled: Since October last year, the annual growth rate of the number of buildings transferred through sales nationwide has turned negative, with a year-on-year decrease of 27.6% from January to August this year.
+
+[FIGURE]
+Number of buildings transferred through sales nationwide and annual growth rate
+
+Source: Ministry of the Interior, “Monthly Bulletin of Interior Statistics”
+
+(2) The public's expectations of rising housing prices have declined: A Yung-Ching Realty online survey showed that in the 4th quarter of this year, the proportion of the public expecting housing prices to fall was 50%, higher than the 20% expecting prices to rise.
+19
+=== PAGE 31 ===
+[FIGURE]
+Yung-Ching Realty: The public's views on housing price trends
+
+Source: Yung-Ching online survey analysis
+
+(3) Housing price increases have continued to moderate: Since the beginning of this year, annual growth rates of the Ministry of the Interior's residential price index, as well as the Cathay, Sinyi and National Chengchi University–Yung-Ching housing price indices, have all moderated.
+[FIGURE]
+Annual growth rates of housing price indices
+
+Note: The Ministry of the Interior's residential price index, the Sinyi housing price index (compiled using transaction data for existing homes from Sinyi Realty as its basic data), and the National Chengchi University–Yung-Ching housing price index (compiled using transaction data for existing homes from Yung-Ching Realty Group as its basic data) all reflect prices of existing homes. The Cathay housing price index reflects prices of newly launched projects.
+Sources: Ministry of the Interior Real Estate Information Platform, Sinyi Real Estate Review, Yung-Ching Realty website, Cathay Real Estate Index Quarterly Report
+
+2. Bank credit resources have been given priority for home purchase loans to people without owner-occupied homes and uses of funds aligned with government policies, such as urban renewal and reconstruction of unsafe and old buildings
+
+(1) The ratio of home purchase loans to people without owner-occupied homes has continued to rise: At the end of August this year, the ratio of domestic banks' outstanding home purchase loans to people without owner-occupied homes to outstanding loans for residential purchases continued to rise to 63.1%, from 57.0% at the end of January 2023.
+
+20
+=== PAGE 32 ===
+[FIGURE]
+Ratio of domestic banks' home purchase loans to people without owner-occupied homes to loans for residential purchases
+
+Sources: Financial Supervisory Commission, the Bank's own calculations
+
+(2) The ratio of loans for urban renewal and reconstruction of unsafe and old buildings has continued to increase: At the end of August this year, the ratio of domestic banks' loans for urban renewal and reconstruction of unsafe and old buildings to construction loans of all banks rose to 24.0%, from 19.5% at the end of September last year.
+[FIGURE]
+Domestic banks' loans for urban renewal and reconstruction of unsafe and old buildings and their ratio to construction loans of all banks
+
+Note: Loans for urban renewal and reconstruction of unsafe and old buildings are the total of loans that comply with the relevant laws and regulations on urban renewal or reconstruction of unsafe and old buildings among the items exempted from inclusion in the numerator of the statutory ratio under Article 72-2 of the Banking Act.
+Sources: Financial Supervisory Commission, the Bank's own calculations
+
+3. Growth rates of real estate loans of all banks have declined: The annual growth rates of outstanding real estate loans, outstanding loans for residential purchases and outstanding construction loans have declined from their recent highs of 9.4% and 11.3% at the end of September last year and 4.7% at the end of October last year, respectively, to 4.9%, 6.3% and 0.7% at the end of August this year.
+
+21
+=== PAGE 33 ===
+[FIGURE]
+Annual growth rates of outstanding real estate loans, loans for residential purchases and construction loans of all banks
+
+Source: The Bank
+
+4. Real estate loan concentration has declined: The concentration of real estate loans of all banks declined from last year's high of 37.61% to 36.71% at the end of August this year. The excessive concentration of credit resources in real estate loans has gradually improved.
+[FIGURE]
+Real estate loan concentration of all banks
+
+Note: Real estate loans = loans for residential purchases + home repair loans + construction loans.
+Source: The Bank
+
+(III) Strengthening external policy communication and outreach
+
+To ensure that all sectors properly understand the implementation and effectiveness of selective credit control measures, the Bank continues to strengthen external communication and outreach through the following diverse methods:
+
+1. Issuing press releases and presentations for press conferences following meetings of the Board of Directors and Supervisors to provide policy explanations;
+22
+=== PAGE 34 ===
+2. Providing business reports and special reports to the Legislative Yuan;
+
+3. Strengthening policy outreach through public speeches and social media;
+
+4. Establishing a “Special Section on the Central Bank's Implementation of the Program to Foster a Sound Real Estate Market” on the Bank's website for consultation by all sectors;
+
+5. Setting up a consultation hotline to provide the public with assistance on individual cases.
+
+(IV) Regarding selective credit control measures, the Bank will continue to:
+
+1. Monitor the concentration of bank credit resources in real estate loans, with a view to guiding credit resources toward funding uses related to government policies, including home purchases by people without owner-occupied homes, urban renewal and reconstruction of unsafe and old buildings, and social housing, as well as the funds needed for real investment by productive enterprises.
+
+(1) Excessive flows of credit resources into real estate loans are detrimental to financial stability and sustainable economic development.
+
+− In August last year, the Bank asked banks to manage real estate lending autonomously to improve the excessive concentration of credit resources in real estate loans. It has also repeatedly called on banks to give priority in providing credit resources to the funding needs of home purchases by people without owner-occupied homes (including New Youth Housing Loans) and urban renewal and reconstruction of unsafe and old buildings.
+
+(2) Real estate loan concentration is a reference indicator for observing whether banks' overall credit resources are concentrated in the real estate market. If New Youth Housing Loans and loans for urban renewal and reconstruction of unsafe and old buildings, among others, were excluded, the concentration measure would lose its meaning for observation. Therefore, for real estate loan concentration, there is no question of so-called exclusion or non-exclusion.
+
+2. Review the effectiveness of implementing selective credit control measures, closely monitor the possible effects of real estate-related policies on the housing market, and adjust the content of related measures in a timely manner to promote financial stability and sound banking operations.
+
+III. Through open market operations and providing banks with room for flexible adjustments in their autonomous management of real estate lending, the Bank creates an ample funding environment to support traditional industries and help alleviate queues for disbursement of housing loans applied for by the public
+
+23
+=== PAGE 35 ===
+(I) Divergence in export and labor market performance between traditional industries and the electronics, information and communications industries
+
+1. Current steady growth in the overall economy is mainly driven by buoyant exports from the electronics, information and communications industries. However, traditional industries have been affected by US tariff policies, with weak exports and an increase in the number of people on reduced working hours and furlough.
+
+2. To respond to the pressure that US reciprocal tariff measures have brought to Taiwan's export supply chains, the government has introduced industry support programs, including the “Special Act for Strengthening Economic, Social, Livelihood and National Security Resilience in Response to International Developments.”
+
+(II) Banks have accepted many New Youth Housing Loan applications, and queues for disbursement of housing loans applied for by the public remain to be resolved
+
+1. The current queues for disbursement of loans applied for by the public are mainly due to the large number of New Youth Housing Loans handled by government-owned banks, which has kept the ratio under Article 72-2 of the Banking Act high since September last year.
+
+(1) After the New Youth Housing Loans were launched in August 2023, the number of households receiving loan disbursements each month from government-owned banks and the amounts disbursed rose sharply from the pre-launch levels (averages from January 2013 to July 2023) of 2,110 households and 93 hundred million yuan to 8,273 households and 636 hundred million yuan in May last year.
+
+(2) Subsequently, with the Ministry of Finance's introduction of measures to optimize New Youth Housing Loans and the Bank's strengthening of credit controls, these declined to 3,467 households and 279 hundred million yuan in September this year, but remained above pre-launch levels.
+[FIGURE]
+Monthly disbursement amounts of Youth Housing Loans
+
+Source: National Treasury Administration, Ministry of Finance
+
+24
+=== PAGE 36 ===
+2. Methods to help alleviate queues for housing loan disbursements are as follows:
+
+(1) The Financial Supervisory Commission announced that, from September 1 this year, newly extended New Youth Housing Loans would be excluded from the ratio under Article 72-2 of the Banking Act, which should help alleviate queues for disbursement of loans applied for by the public.
+
+(2) In the future, government-owned banks can also attract more deposits (increasing the denominator of the ratio under Article 72-2 of the Banking Act) to increase their capacity to extend home purchase loans to people without owner-occupied homes.
+
+(3) Private banks have relatively lower ratios under Article 72-2 of the Banking Act and still have capacity to extend loans. They should increase home purchase lending to people without owner-occupied homes to help alleviate the current queues for disbursement of loans applied for by the public.
+
+(III) The Bank adopts 2 measures to create an ample funding environment and help alleviate the above 2 problems
+
+1. The Bank can release funds through open market operations by reducing the issuance of negotiable certificates of deposit (NCDs)
+
+(1) Interest rate decisions mainly take into consideration the development of the “overall” economy. However, given the current large differences in operating conditions across domestic industries, it remains necessary to create an ample funding environment to assist the operation of the government's industry support programs.
+
+(2) Compared with lowering the reserve requirement ratio, if the Bank does not renew NCDs upon maturity, it likewise
+
+25
+=== PAGE 37 ===
+has the “initiative” in releasing funds. Such open market operations can be conducted daily to adjust market funding rapidly and offer greater “flexibility.”
+
+2. For banks that, in autonomously managing real estate lending, have not met their self-set control targets because they gave priority to loans aligned with government policies, such as home purchases by people without owner-occupied homes and urban renewal and reconstruction of unsafe and old buildings, the Bank has provided room for autonomous, flexible adjustments since the 2nd quarter of this year. The same principle continues to apply in the 3rd and 4th quarters to help alleviate queues for disbursement of loans applied for by the public.
+
+26
+=== PAGE 38 ===
+IV. The New Taiwan dollar has appreciated against the US dollar so far this year, but its exchange rate has been stable relative to major currencies
+
+(I) Excess supply of US dollars emerged in the domestic foreign exchange market in the first half of this year; the Bank's net foreign exchange purchases amounted to 132.5 hundred million US dollars
+
+1. In the first half of this year, markets were concerned about rising uncertainty over the US President's new policies, which weakened the economic confidence of enterprises and the public. The US dollar weakened internationally, and the US Dollar Index (DXY)3 fell by 10.70%. On the other hand, as President Trump announced in April this year a 90-day suspension of the implementation of reciprocal tariffs, global stock markets recovered. During this period, foreign investors remitted funds in to invest in Taiwan stocks, and domestic firms benefited from demand for early shipments arising from the suspension of reciprocal tariffs. In addition, media speculation and amplification that the US government might require its trading partners' currencies to appreciate led to strong expectations of New Taiwan dollar appreciation in the domestic foreign exchange market. Firms' supply of US dollars increased, and the New Taiwan dollar appreciated by 9.63% against the US dollar.
+
+2. As excess supply of US dollars emerged in the domestic foreign exchange market in the first half of the year, the Bank entered the market and made cumulative net foreign exchange purchases of 132.5 hundred million US dollars (compared with net foreign exchange sales of 73.5 hundred million US dollars in the second half of last year) to maintain stability in the domestic foreign exchange market.
+[FIGURE]
+New Taiwan dollar exchange rate against the US dollar so far this year (2025/10/20)
+NTD/USD
+34
+32.78
+33
+New Taiwan dollar depreciation
+32
+33.007
+(2025/4/8)
+29.902
+(2025/6/30)
+31
+
+30
+30.650
+(2025/10/20)
+New Taiwan dollar appreciation
+29
+28.828
+(2025/7/3)
+28
+2024/12/31    2025/2/28    2025/4/30    2025/6/30    2025/8/31
+Source: The Bank
+3
+The component weights of the US Dollar Index (DXY) are the euro (57.6%), Japanese yen (13.6%), pound sterling (11.9%), Canadian dollar (9.1%), Swedish krona (4.2%) and Swiss franc (3.6%); the base period is March 1973 (=100).
+27
+=== PAGE 39 ===
+(II) Since July this year, the US dollar index has rebounded slightly, and the New Taiwan dollar first depreciated and then appreciated against the US dollar
+
+Since July this year (as of October 20), owing to the interaction of factors such as continuing uncertainty over US tariff policy, signs of cooling in the labor market4, and market expectations of Fed interest rate cuts5, market investment sentiment has fluctuated. During this period, the US dollar index rose slightly by 1.77%, while the New Taiwan dollar depreciated by 2.44% against the US dollar.
+
+1. In August this year, foreign investors reduced their equity holdings by NT$918 hundred million (equivalent to approximately US$31 hundred million), and remitted out most of the funds from Taiwan stock dividends received in July and August (approximately NT$2,761 hundred million). The New Taiwan dollar exchange rate against the US dollar depreciated back to 30.728 in early September, its lowest since May.
+
+2. Since September this year, foreign investors have substantially bought back Taiwan stocks, amounting to NT$1,559 hundred million (equivalent to approximately US$52 hundred million), and remitted funds in, driving Taiwan stocks up by 14.26%. However, the New Taiwan dollar exchange rate against the US dollar depreciated by 0.15%.
+
+[FIGURE]
+New Taiwan dollar exchange rate and foreign investors' net purchases and sales since July this year (2025/10/20)
+NT$ hundred million
+NTD/USD
+Foreign investors' net purchase amount (left axis)
+New Taiwan dollar exchange rate (right axis)
+Foreign investors' net sale amount (left axis)
+800
+28.5
+29
+600
+Foreign investors' net purchases
+29.5
+New Taiwan dollar appreciation
+400
+29.902
+30
+30.728
+200
+(9/3)
+30.5
+30.650
+0
+31
+31.5
+-200
+Foreign investors' net sales
+2025/7/1-2025/10/20
+New Taiwan dollar depreciation
+32
+-400
+Foreign investors' net purchases of US$100 hundred million
+32.5
+US dollar index rose 1.77%
+-600
+New Taiwan dollar depreciated 2.44%
+33
+-800
+33.5
+6/30
+7/31
+8/31
+9/30
+2025
+Note: Net purchase and sale data come from the Securities and Futures Bureau's table on foreign investors' purchases and sales of stocks of exchange-listed and OTC-listed companies (excluding ETFs and warrants).
+Sources: Compiled by the Bank, Bloomberg, Securities and Futures Bureau, Taiwan Stock Exchange
+
+4
+In July this year, the US unemployment rate was 4.2%, and the preliminary figure for the increase in nonfarm payroll employment was 7.3 ten thousand persons. Nonfarm payroll employment for May and June this year was revised down by a total of 25.8 ten thousand persons, the largest downward revision during a non-recession period since 1968 (also the largest downward revision since April 2020). In August this year, the unemployment rate rose to 4.3%, and the increase in nonfarm payroll employment fell to 2.2 ten thousand persons.
+5
+In September this year, the FOMC cut interest rates by 1 quarter-point, lowering the policy rate target range to 4.00%~4.25%; the economic projections this time indicate an expected total reduction of 3 quarter-points this year to 3.625%, a further reduction of 1 quarter-point in 2026 to 3.375%, and a further reduction of 1 quarter-point in 2027 to 3.125%.
+28
+=== PAGE 40 ===
+(III) So far this year, the New Taiwan dollar has appreciated by 6.95% against the US dollar, less than the Swiss franc and the euro, but more than the Japanese yen and the Korean won
+
+1. So far this year (as of October 20), the US dollar index (DXY) has fallen by 9.20%; the New Taiwan dollar has appreciated by 6.95% against the US dollar, but less than the Swiss franc (13.90%) and the euro (12.44%). Over the same period, the Japanese yen and the Korean won appreciated against the US dollar by 3.64% and 3.54%, respectively; the gaps between the appreciation of the New Taiwan dollar and those of the Japanese yen and the Korean won were 3.31 and 3.41 percentage points, respectively.
+
+2. The appreciation of the New Taiwan dollar against the US dollar so far this year mainly reflects substantial net purchases of Taiwan stocks by foreign investors since May, as well as the good performance of Taiwan's economic fundamentals. For example, Taiwan's exports were strong from January to September this year, increasing by 29.7% year on year, with a trade surplus of nearly US$993 hundred million, also better than South Korea's US$505 hundred million; Japan, by contrast, had a trade deficit of US$167 hundred million (January to August). In addition, Taiwan's economic growth rate in the first half of this year was 6.75%, higher than those of mainland China (5.3%), Singapore (4.25%), the United States (2.0%), Japan (1.5%), and South Korea (0.25%), among others6.
+
+Appreciation and depreciation of major currencies against the US dollar so far this year (2025/10/20)
+ | (1) | (2) | (2) compared with (1)
+ | 2024/12/31 | 2025/10/20 | Year to date (%)
+Swiss franc | 0.9032 | 0.7930 | 13.90
+Mexican peso | 20.674 | 18.388 | 12.44
+Euro | 1.0412 | 1.1663 | 12.01
+New Taiwan dollar | 32.781 | 30.650 | 6.95
+Pound sterling | 1.2562 | 1.3416 | 6.80
+Singapore dollar | 1.3589 | 1.2948 | 4.95
+Thai baht | 34.260 | 32.760 | 4.58
+Australian dollar | 0.6222 | 0.6496 | 4.40
+Japanese yen | 156.22 | 150.74 | 3.64
+Korean won | 1,472.3 | 1,421.9 | 3.54
+Onshore renminbi | 7.2988 | 7.1232 | 2.47
+US dollar index | 108.487 | 98.505 | -9.20
+
+Note: The exchange rates for December 31, 2024 and October 20, 2025 are those at 4 p.m. Taipei time. If the market was closed, the closing exchange rate of the preceding trading day is used instead.
+Sources: Compiled by the Bank, Bloomberg
+
+6
+The economic growth rates of the economies in the first half of this year are estimated using the arithmetic average of their economic growth rates in the 1st and 2nd quarters of this year.
+29
+=== PAGE 41 ===
+3. Viewed against a basket of currencies, so far this year (October 14), as the major currencies have also appreciated against the US dollar, the New Taiwan dollar's nominal effective exchange rate7 (NEER) has risen by 2.79%, showing relatively stable performance. This is greater than the Japanese yen (-0.75%) and the Korean won (-1.11%), and less than the euro (5.64%) and the Swiss franc (5.23%).
+
+[FIGURE]
+Appreciation and depreciation of major currencies' exchange rates against the US dollar and their NEER
+%
+Appreciation and depreciation of exchange rates against the US dollar (2024/12/31~2025/10/20)
+NEER changes (2024/12/31~2025/10/14)
+16
+13.90
+14
+12.01
+12
+10
+8
+6.95
+5.64
+5.23
+6
+4.58
+4.95
+4
+3.64
+3.54
+2.47
+2.79
+2
+1.05
+1.01
+0
+-2
+-0.75
+-1.11
+-4
+-2.60
+Euro
+Swiss franc
+New Taiwan dollar
+Thai baht
+Singapore dollar
+Japanese yen
+Korean won
+Renminbi
+
+Sources: Compiled by the Bank, Bloomberg, BIS
+
+(IV) The range of New Taiwan dollar fluctuations is relatively stable
+
+1. Taiwan is a small open economy with high trade dependence and a shallow foreign exchange market, making it necessary to maintain relative stability in the New Taiwan dollar exchange rate. Over the long term, the volatility of the New Taiwan dollar against the US dollar has been lower than that of major currencies such as the euro, the Korean won, and the Japanese yen. This benefits firms' price quotations and operations, and also contributes to domestic financial stability and economic growth.
+
+2. In principle, the New Taiwan dollar exchange rate is determined by supply and demand in the foreign exchange market. However, if irregular factors (such as large short-term capital inflows and outflows) and seasonal factors cause excessive exchange rate fluctuations or disorderly movements, posing a risk of adverse effects on economic and financial stability, the Bank will, in accordance with its responsibilities, maintain order in the foreign exchange market.
+
+7
+The NEER here, compiled by the Bank for International Settlements (BIS), refers to a weighted average exchange rate index of a country's currency against the currencies of its other major trading partners. A rise (fall) in the index indicates that the country's currency has appreciated (depreciated) against a basket of its major trading partners' currencies.
+30
+=== PAGE 42 ===
+[FIGURE]
+Average annual volatility of major currencies' exchange rates against the US dollar
+%
+25
+20
+15
+Australian dollar 10.20
+Japanese yen 9.99
+10
+Korean won 8.87
+Euro 8.70
+New Taiwan dollar 6.21
+5
+Singapore dollar 4.82
+0
+2000
+2005
+2010
+2015
+2020
+2025
+Notes: 1. The volatility of each currency is the standard deviation calculated from exchange rate changes over the preceding 20 days (and annualized).
+2. Average volatility for 2025 is the average of the data from January 2 to October 20 of that year.
+Sources: Compiled by the Bank, Taipei Forex Inc.
+
+(V) At the end of September this year, the Bank's foreign exchange reserves had increased compared with the end of last year, mainly reflecting returns from investment and management of the Bank's foreign exchange reserves
+
+1. The Bank's foreign exchange reserves are used to adjust the balance of payments and stabilize financial and foreign exchange markets. At the end of September this year, the Bank's foreign exchange reserves were US$6,029 hundred million, an increase of US$262 hundred million from US$5,767 hundred million at the end of last year. This was mainly attributable to returns from investment and management of foreign exchange reserves, changes in the exchange rates of major currencies against the US dollar, and the Bank's intervention to maintain order in the foreign exchange market.
+
+2. To develop the Taipei foreign exchange market, the Bank participates in markets such as domestic foreign exchange swaps, foreign currency deposits with domestic banks, and foreign currency interbank lending, to provide domestic banks with foreign currency liquidity and reduce the cost of foreign currency funds for banks and enterprises; in addition, the Bank's New Taiwan dollar foreign exchange swap transactions can also absorb surplus New Taiwan dollar funds in the market.
+
+(VI) The Bank publishes international reserves and foreign currency liquidity with reference to the template format for “International Reserves and Foreign Currency Liquidity” (IRFCL) under the International Monetary Fund's (IMF) Special Data Dissemination Standard (SDDS)
+
+31
+=== PAGE 43 ===
+1. The Bank refers to the data template format for International Reserves and Foreign Currency Liquidity (IRFCL9) under the IMF's “Special Data Dissemination Standard (SDDS8),” and compiles information on the Bank's international reserves and foreign currency liquidity based on book amounts10.
+
+2. At the end of June this year, the Bank's foreign currency liquidity was approximately US$7,235 hundred million, including official reserve assets of US$6,037 hundred million, other foreign currency assets of US$335 hundred million, and other foreign currency liquidity available for use within the coming year of US$863 hundred million. A summary table follows:
+
+Central Bank foreign currency liquidity
+June 30, 2025
+
+Unit: US$ hundred million
+
+1. Official reserve assets | 6,037
+(1) Foreign exchange reserves | 5,984
+(a) Securities | 5,547
+(b) Foreign currency deposits with banks abroad | 437
+(2) Gold | 53
+2. Other foreign currency assets | 335
+(1) Foreign currency deposits with domestic banks | 264
+(2) Other | 71
+3. Other foreign currency liquidity available for use within the coming year | 863
+(1) Foreign currency lending to domestic banks (including interest receivable) | 76
+(2) US dollar positions in New Taiwan dollar foreign exchange swap transactions | 792
+(3) Other fund outflows (bank deposits) | -5
+Foreign currency liquidity | 7,235
+Source: The Bank
+
+8
+The full name is Special Data Dissemination Standard.
+9
+The full name is Data Template on International Reserves and Foreign Currency Liquidity.
+10
+According to the IRFCL template, “foreign currency liquidity” mainly reflects the foreign currency funds that the central bank can use within the coming year. The items covered include: (1) official reserve assets, (2) other foreign currency assets, and (3) net foreign currency cash flows maturing within one year.
+32
+=== PAGE 44 ===
+V. The Bank launches the redesign of New Taiwan dollar banknotes
+
+(I) Even as electronic payments become increasingly widespread, cash remains very important
+1. In most countries, cash and electronic payments show a trend of simultaneous growth
+Despite the rapid development of electronic payments in recent years, actual observation of currency in circulation in major countries shows that most still exhibit a growth trend, as does our country, indicating that cash remains important. Some countries where electronic payments are widespread even ensure the status of cash through agreements or legislation, and protect the public's rights and interests in using cash.
+
+2. Cash is irreplaceable in protecting privacy and vulnerable people, and in responding to extreme situations
+Cash transactions do not require records to be left, giving cash a unique advantage in protecting privacy [隱私]. Its characteristic of not needing to rely on electronic devices or network connections makes it the only reliable payment instrument when electronic payment services are interrupted; in terms of financial inclusion, for the small number of vulnerable groups unable to obtain financial services, cash is the only payment instrument.
+
+3. Central bank digital currency (CBDC) will not replace cash
+As electronic payments are diverse and convenient, and cash usage is in good condition, central banks in various countries are relatively cautious about issuing CBDC. At present, most are at the study and evaluation stage, and research progress on the digital New Taiwan dollar is also in step with advanced countries; moreover, the basic international principle for designing CBDC is to complement rather than replace cash. Only by accommodating both cash and diverse electronic payment instruments can a competitive, inclusive, and resilient payment system be fostered.
+
+(II) Banknote redesign is mainly intended to strengthen anti-counterfeiting and conform to the trend of ESG sustainable development
+1. The current banknotes have been in use for approximately 24 years, making it necessary to upgrade their anti-counterfeiting features at an appropriate time
+(1) With technological progress, anti-counterfeiting technologies are also continually improving. In countries that have redesigned their banknotes in recent years, the main purpose has been to strengthen anti-counterfeiting, to ensure that technology stays ahead of counterfeiters and make it easier for the public to distinguish genuine banknotes from counterfeits, so as to effectively eliminate counterfeit banknotes and safeguard the credibility of the national currency and the security of the public's transactions. It is also necessary for the Bank to take a forward-looking approach and begin planning the issuance of a new series of banknotes, to keep pace with international development trends.
+
+33
+=== PAGE 45 ===
+(2) To ensure that anti-counterfeiting technology continues to stay ahead of potential counterfeiters, many countries’ central banks redesign their banknotes at intervals of approximately 16 to 24 years. Our country’s current banknotes have now been in use for 24 years, exceeding the interval between redesigns in most countries. Accordingly, the Bank and the Central Engraving and Printing Plant began research on issues related to redesign in 2017 (when the current banknotes had been in circulation for approximately 16 years).
+
+Reasons, Intervals and Completion Times for Banknote Redesigns in Major Countries
+Country | Reasons for banknote redesign | Year of most recent redesign, Note | Interval from previous redesign (years) | From announcement to completion of redesign (years)
+Japan | Strengthening anti-counterfeiting | 2024 | 20 | 5
+Switzerland | Strengthening anti-counterfeiting, changing banknote paper material | 2016 | 21 | 14
+Norway | Strengthening anti-counterfeiting | 2017 | 20 | 7
+United Kingdom | Strengthening anti-counterfeiting, changing banknote paper material | 2016 | 16 | 8
+Australia | Strengthening anti-counterfeiting | 2016 | 24 | 8
+New Zealand | Strengthening anti-counterfeiting and machine readability | 2015 | 16 | 5
+Euro area | Strengthening anti-counterfeiting, extending service life | 2013 | 11 | 7
+South Korea | Strengthening anti-counterfeiting | 2006 | 23 | 4
+Note: The year of the most recent redesign refers to the year in which the first denomination of that series was issued.
+Source: Compiled by the Bank
+
+2. The new banknotes will better meet ESG sustainable development goals
+The new banknotes will take into account international trends in the development of “green banknotes,” align with net-zero transition policies, adopt raw materials that better meet environmental requirements, and strengthen green manufacturing processes. Examples include introducing sustainable cotton substrates, environmentally friendly inks, low-energy-consumption machinery and various recycling systems for inks and other materials, as well as optimizing packaging and transportation methods, to improve sustainable development performance.
+
+3. Redesigning coins is not cost-effective, and redesign is not being considered
+(1) Gradually withdrawing the coins currently in circulation and replacing them with newly designed coins would entail high costs and use of social resources, consume large amounts of energy, and increase carbon emissions, which would be unfavorable to environmental protection.
+
+34
+=== PAGE 46 ===
+(2) Coins have low values and are mainly used for giving change. As electronic payments become increasingly widespread, demand may gradually decrease.
+
+(III) Plans for redesigning New Taiwan dollar banknotes
+
+1. The new banknotes will adopt dynamic security and anti-counterfeiting features that are easier to recognize
+The future new banknotes will take into account redesign trends at central banks in various countries and the latest international anti-counterfeiting technologies, adopting advanced security and anti-counterfeiting features that are more intuitive and more conspicuous, with rapid changes and color-switching effects, such as dynamic color-shifting inks, foils with dynamic light-and-shadow effects, and dynamic windowed security threads. This will enable the public to quickly distinguish genuine banknotes from counterfeits, prevent counterfeit banknotes from entering circulation in the first place to a very great extent, and substantially increase the difficulty of counterfeiting, making cash transactions safer.
+
+2. The theme selection process will incorporate a mechanism for citizen participation to build social consensus
+(1) Incorporating mechanisms for citizen participation into the banknote redesign process has become an international trend in recent years. In the future process of selecting themes for the new banknotes, opinions from all sectors will be broadly solicited through the “New Taiwan Dollar Banknote Theme Advisory Committee,” and a mechanism for citizen participation will be established to increase public acceptance.
+(2) The advisory committee is established for a temporary task11. Its main objective is to recommend themes for the new New Taiwan dollar banknotes and methods of citizen participation in an open and transparent manner, and to submit related recommendations for the Bank’s consideration. It will be dissolved once its stage-specific tasks are completed.
+
+3. The material, principal ink colors and dimensions of the new banknotes will remain unchanged, and accessible design will be strengthened
+To accommodate the public’s usage habits and reduce the social costs of adjusting automated banknote equipment in response to the redesign, the material, principal ink colors and dimensions of the new banknotes will remain unchanged. In addition, to improve the ability of people with visual impairments to recognize banknote denominations, the new banknotes will have enlarged denomination numerals and enhanced tactile recognition features.
+
+(IV) Timetable and cost assessment for redesigning New Taiwan dollar banknotes
+
+11 The committee is expected to consist of 11 to 15 members, with a Deputy Governor of the Bank serving as convener. The other members will be outstanding individuals and representatives from various fields selected by the Bank, serving together with representatives of the Bank.
+
+35
+=== PAGE 47 ===
+1. Following the Bank’s initiation of the redesign process, the first new banknote is expected to be issued 2 and a half years after theme selection
+Internationally, central banks generally spend several years preparing between announcing the initiation of a banknote redesign process and formally issuing the new banknotes, to ensure that the new banknotes can be mass-produced and issued smoothly. For example, after the Bank of Japan announced a redesign on 9 April 2019, the new banknotes formally entered circulation on 3 July 2024.
+
+The Bank’s redesign preparations need to proceed sequentially. The main operating procedures include establishing an advisory committee, conducting citizen participation, designing banknote images, procuring new banknote paper, plate-making and proofing, formal mass production and inventory accumulation, equipment calibration, and public outreach. The first new banknote is expected to be issued 2 and a half years after theme selection, with the remaining denominations introduced successively. During this period, the new and old banknotes will circulate concurrently for several years, in line with international practice.
+
+2. The estimated average unit cost of the new banknotes is 1.5 yuan higher than that of the banknotes currently in circulation
+As the banknotes currently in circulation were issued approximately 24 years ago, once they are redesigned, in addition to redesigning and plate-making, adopting the most advanced security and anti-counterfeiting technologies, and using substrates, inks and solvents that better conform to sustainability principles, the production process will also be adjusted accordingly. The estimated average unit cost of the new banknotes is 1.5 yuan higher than the average unit cost of 3.5 yuan for the banknotes currently in circulation.
+
+(V) To ensure that banknote anti-counterfeiting functions keep pace with the latest international technologies, safeguard confidence in the national currency, and make the new banknotes better meet ESG sustainable development goals, we respectfully request the assistance and support of all Committee members for the Bank’s initiation of the redesign of New Taiwan dollar banknotes.
+
+VI. Overview of the Operation of Important Domestic Payment Systems
+
+(I) Operation of large-value and retail payment systems in the domestic financial system
+
+1. The Central Bank Interbank Funds Transfer and Settlement System (hereinafter the “CIFS”) is the hub of our country’s payment and settlement infrastructure. It handles funds transfers for large-value transactions such as interbank lending and the Bank’s open market operations, and connects important domestic retail payment systems and securities settlement systems to provide final settlement services. From January to August this year, the CIFS
+
+36
+=== PAGE 48 ===
+processed transactions totaling 396 trillion yuan, an increase of 1.7% over the same period of the previous year.
+
+2. Retail payments are mainly processed through the Interbank Financial Information System operated by Financial Information Service Co., Ltd. (hereinafter the “FISC system”), to complete corporate funds management and the public’s daily payment transactions, including interbank remittances, ATM withdrawals and transfers (including internet and mobile banking transfers), and payments of bills and taxes. From January to August this year, the FISC system processed transactions totaling approximately 160 trillion yuan, an increase of 0.5% over the same period of the previous year.
+
+[FIGURE]
+CIFS Transaction Value
+Trillion yuan
+600
+500
+400
+300
+2022 | 535
+2023 | 547
+2024 | 582
+2024 (1~8 months) | 389
+2025 (1~8 months) | 396
+Growth rate
+1.7%
+Source: The Bank
+
+[FIGURE]
+FISC System Transaction Value
+Trillion yuan
+250
+200
+150
+100
+2022 | 197
+2023 | 202
+2024 | 240
+2024 (1~8 months) | 159
+2025 (1~8 months) | 160
+Growth rate
+0.5%
+Source: Financial Information Service Co., Ltd.
+
+(II) Continuing to urge Financial Information Service Co., Ltd. to assist in promoting mobile payments
+
+1. Financial Information Service Co., Ltd. has established TWQR, a common QR Code payment standard12, and is promoting it jointly with banks to enhance the interoperability and convenience of scan-to-pay payments13. As of July this year, a total of 43 financial institutions and 9 electronic payment institutions14 participated in the common QR Code payment standard, with 63.4 ten thousand cooperating contracted merchants. From January to August this year, transaction value and volume were 4,691 hundred million yuan and 9,382 ten thousand transactions, respectively, increases of 49% and 32% over the same period of the previous year.
+
+12 To resolve problems caused by the differing specifications and lack of interoperability among payment QR Codes on the market, which result in stores being filled with QR Code display stands and inconvenience the public at checkout, Financial Information Service Co., Ltd. links the two major payment systems of “financial institutions” and “electronic payment institutions,” using “TWQR” as a common identifier to jointly promote QR Code payment services. Regardless of which payment APP members of the public use, they can complete a scan-to-pay payment by scanning the same “TWQR,” improving the interoperability and convenience of payments.
+13 Financial Information Service Co., Ltd. continues to expand TWQR usage scenarios. These include the current availability of TWQR transit codes on the Kaohsiung Metro, Kaohsiung Light Rail, Taichung Metro, New Taipei Light Rail, and buses and ferries cooperating with various county and city governments, as well as TWQR cross-border purchase payment services for our citizens traveling to Japan and South Korea.
+14 These include 9 institutions: Plus Pay, iPASS, Gamania Pay, O’Pay, PXPay Plus, icash Pay, JKOPay, ezPay and Easy Wallet. In addition, LINE Pay Money Co., Ltd. was issued an electronic payment institution business license by the Financial Supervisory Commission in August this year and will also join TWQR after commencing operations.
+
+37
+=== PAGE 49 ===
+[FIGURE]
+Common QR Code Payment Standard
+Transaction Value
+Hundred million yuan
+6,000
+4,500
+3,000
+1,500
+0
+2022 | 3,149
+2023 | 3,970
+2024 | 4,895
+2024 (1~8 months) | 3,150
+2025 (1~8 months) | 4,691
+Growth rate
+49%
+Source: Financial Information Service Co., Ltd.
+
+[FIGURE]
+Common QR Code Payment Standard
+Transaction Volume
+Ten thousand transactions
+12,000
+9,000
+6,000
+3,000
+0
+2022 | 7,925
+2023 | 9,384
+2024 | 11,127
+2024 (1~8 months) | 7,083
+2025 (1~8 months) | 9,382
+Growth rate
+32%
+Source: Financial Information Service Co., Ltd.
+
+2. Financial Information Service Co., Ltd. has also established the “Shared Platform for Inter-Institutional Electronic Payments,” enabling the interconnection and interoperability of information flows and funds flows among domestic electronic payment institutions and between electronic payment institutions and financial institutions, and providing inter-institutional services such as “transfers,” “tax payments,” “bill payments” and “shopping.” As of the end of the previous year, all 9 electronic payment institutions that had joined TWQR were providing shopping services.
+
+VII. The Bank Continues to Advance the CBDC Research Project
+
+(I) Establishing a “Digital Money Flow Platform,” which will be used for universal cash distributions
+
+1. The Bank has completed the CBDC experimental project and established the “Digital Public Infrastructure Money Flow Platform” (hereinafter the “Digital Money Flow Platform”).
+
+2. Given that our country’s current payment instruments are diverse, convenient and efficient, there is as yet no urgency to issue CBDC. Therefore, the “Digital Money Flow Platform” will first use the distribution of government digital vouchers as a trial implementation item. A trial implementation of the Hakka Affairs Council’s Hakka Coins was conducted first in August this year, and the platform is expected to be used for universal cash distributions in November.
+
+(II) Continuing broad communication
+
+To enable all sectors to understand CBDC planning, communicate broadly with the public on the direction of CBDC development, and continuously refine CBDC-related design, the Bank completed a written
+
+38
+=== PAGE 50 ===
+opinion survey in 2024, and is continuing this year by holding public hearings, information sessions and forums in the north (Taipei), center (Taichung) and south (Kaohsiung), totaling 9 events. So far, 3 public hearings, 3 forums and 2 information sessions have been completed.
+
+(III) Continuing to study relevant legal and regulatory provisions should CBDC be issued in the future, including the legal basis for CBDC issuance, protection of privacy [隱私], and other matters related to issuance and management.
+
+(IV) Study of CBDC cross-border payments
+
+1. Cross-border payments in the current banking system still need to be processed through intermediaries [中介機構] such as correspondent banks15, resulting in problems such as slower remittances and higher remittance fees. Therefore, the BIS and the central banks of major countries are studying experimental schemes to improve cross-border payments.
+
+2. The BIS considers that CBDC or the interconnection of countries’ fast payment systems (FPS) may be a future solution for improving cross-border payments. However, there are currently no common international standards, and international organizations still need to formulate them for countries to follow in order to resolve interoperability issues.
+
+3. The Bank will continue to closely monitor international developments and actively participate in exchanges at relevant meetings of international organizations, to ensure that the future cross-border payment system is aligned with international practices.
+
+15 Current cross-border funds transfers still need to rely on the correspondent banking model because many banks worldwide have no direct business relationships, especially in countries with regional banks or only small and medium-sized banks, where large multinational banks must serve as intermediary bridges. In addition, factors such as differences in time zones, operating schedules and system closing times across countries lengthen the payment process, with processing usually taking several days and involving higher remittance fees.
+
+39
+=== PAGE 51 ===
+V. Conclusion
+
+The above is a brief report on domestic and international economic and financial conditions and the Bank’s principal operations. An overview of the Bank’s operations in monetary regulation, currency issuance, foreign exchange management and management of the national treasury is provided in the appendix for your reference.
+
+The Bank bears the statutory responsibilities of promoting financial stability, ensuring sound banking operations, maintaining the stability of the internal and external value of the currency, and, at the same time, assisting economic development. It closely monitors domestic and international economic and financial developments at all times and appropriately uses various policy instruments to achieve its policy objectives. The Bank’s operations have long benefited from the assistance and support of all Committee members. We take this opportunity to express our sincere gratitude and respectfully request your continued guidance. Thank you!
+
+40
+=== PAGE 52 ===
+Appendix: Overview of the Bank’s Operations
+I. Monetary Regulation
+
+1. Continuing to conduct open market operations to regulate monetary conditions
+
+In conjunction with monetary policy implementation, the Bank regulates market liquidity through the issuance of certificates of deposit. On 2 October this year, the outstanding balance of certificates of deposit issued was 7 trillion 4,968 hundred million yuan.
+
+2. Accepting redeposits from financial institutions
+
+At the end of September this year, the outstanding balance of redeposits from financial institutions accepted by the Bank was 1 trillion 9,026 hundred million yuan, including 1 trillion 6,237 hundred million yuan in postal savings redeposits from Chunghwa Post Co., Ltd. and 2,789 hundred million yuan in redeposits from banks.
+
+3. Accepting and inspecting deposit reserves
+
+In August this year, required reserves for all deposit-taking institutions were 3 trillion 6,563 hundred million yuan, actual reserves were 3 trillion 6,926 hundred million yuan, and excess reserves were 363 hundred million yuan.
+
+4. Inspecting the liquidity conditions of financial institutions
+
+(I) From January to August this year, the liquid reserve ratios of the vast majority of financial institutions complied with the daily minimum requirement of 10%, with an average ratio of 26.72%.
+
+(II) From January to August this year, the “New Taiwan dollar cash-flow maturity gap over the next 0~30 days” of all financial institutions complied with the requirement (the statutory minimum ratio is -5%), with an overall average ratio of 9.76%.
+
+(III) From January to July this year, the liquidity coverage ratios (LCR)16 of all domestic banks complied with the requirement (the statutory minimum ratio is 100%), with an average ratio of 124.48%.
+
+16 The liquidity coverage ratio refers to total high-quality liquid assets divided by total net cash outflows over the next 30 days, with a statutory minimum ratio of 100%. This ratio requires banks to hold sufficient high-quality liquid assets to meet short-term funding needs and helps strengthen banks’ short-term liquidity risk management.
+
+41
+=== PAGE 53 ===
+(IV) In quarters 1 to 2 of this year, the net stable funding ratios (NSFR)17 of domestic banks all complied with the requirement (the statutory minimum ratio is 100%), with an average ratio of 133.11%.
+
+II. Currency Issuance
+
+1. Issuance status
+
+(I) The amount of New Taiwan dollars issued climbed to a record high of 4 trillion 537 hundred million yuan before the Lunar New Year (24 January this year), and declined after the Lunar New Year. At the end of September, it was 3 trillion 6,790 hundred million yuan, an increase of 1,982 hundred million yuan or 5.69% over the same period of the previous year.
+
+(II) Circulation of various banknotes at the end of September this year: 2,000-yuan notes accounted for 2.76% of the total value of banknotes issued, 1,000-yuan notes for 89.39%, 500-yuan notes for 3.29%, 200-yuan notes for 0.15%, 100-yuan notes for 4.26%, and small-denomination banknotes of 50 yuan and below and others for 0.15%.
+
+(III) On 9 January this year, the ninth set in the third series of Chinese zodiac commemorative coin sets, the “Yi-Si Year of the Snake Commemorative Coin Set,” went on sale, using the two parallel sales channels of “online pre-orders” and “over-the-counter sales.”
+
+(IV) On 23 June this year, online pre-orders were opened to the public for the “2024 Third WBSC Premier12 Baseball Championship Commemorative Silver Coin,” which is expected to be available for public collection in November.
+
+2. Inspections of issuance reserves and inventories of banknotes and coins
+
+The Bank fully backs New Taiwan dollar issuance reserves with the equivalent value of gold, foreign exchange and other assets, held in dedicated custody. Under Article 8 of the Central Bank of the Republic of China (Taiwan) Act, the Bank’s Board of Supervisors inspects currency issuance reserves and the amount issued, and announcements are made under Article 17 of the Central Bank of the Republic of China (Taiwan) Act to demonstrate confidence in the currency. From January to September this year, the Bank of Taiwan’s issuance vaults were inspected 29 times, and the recorded amounts matched the inventories.
+
+17 The net stable funding ratio refers to available stable funding divided by required stable funding, with a statutory minimum ratio of 100%. This ratio requires banks to have sufficient stable funding sources with terms of 1 year or more to meet medium- and long-term funding needs such as housing loans, and helps strengthen banks’ medium- and long-term liquidity risk management.
+
+42
+=== PAGE 54 ===
+III. Foreign Exchange Management
+
+1. Foreign exchange reserves and gold
+
+At the end of September this year, the Bank held foreign exchange reserves of 6,029.43 hundred million US dollars18, an increase of 262.66 hundred million US dollars over the end of the previous year. This was mainly attributable to returns on the investment and use of foreign exchange reserves, changes in the exchange rates of major currencies against the US dollar, and the Bank’s market intervention to maintain order in the foreign exchange market.
+
+At the end of September, the Bank held 1,363 ten thousand ounces of gold, mainly as reserves for New Taiwan dollar issuance.
+
+2. Managing designated foreign exchange banks to fully meet the public’s needs for convenient foreign exchange services
+
+As of the end of September this year, the number of approved designated foreign exchange banking units was 3,451, sufficient to fully meet the public’s needs for foreign exchange services.
+
+To promote banks’ development of digital financial services, the Bank permits designated banks to accept customers’ opening of digital foreign exchange deposit accounts [帳戶] online, and they may install automated service equipment to provide exchange services between New Taiwan dollar and foreign currency banknotes, enabling the public to enjoy more diverse and convenient financial services.
+
+3. Diversification of financial products
+
+(I) Subject to financial stability, the Bank is progressively permitting designated banks, securities firms and bills finance companies, among others, to conduct business in foreign exchange financial products, providing diversified financial product services and continuing to promote the sound development of financial markets.
+
+(II) From January to August this year, the foreign exchange derivatives transaction volume of all banks was 4 trillion 9,106 hundred million US dollars.
+
+18 As of the end of September this year, domestic stocks and bonds held by foreign investors, calculated at market prices on that day, together with their outstanding New Taiwan dollar deposits, amounted to the equivalent of 1 trillion 397 hundred million US dollars, approximately 172% of foreign exchange reserves.
+
+43
+=== PAGE 55 ===
+[FIGURE]
+Foreign Exchange Derivatives Trading Volume of All Banks
+
+IV. Trading Volume in the Taipei Foreign Currency Call Loan and Foreign Exchange Swap Markets
+
+(1) Continue to use foreign currency call loans to provide sufficient financing for banks to supply the foreign currency funds needed for firms’ operations, effectively maintaining foreign currency liquidity in the domestic banking system. In months 1 to 9 of this year, trading volume in the Taipei foreign currency call loan market was 1 trillion 9,186.2 hundred million US dollars. At the end of month 9, the Bank’s outstanding balance was 75 hundred million US dollars.
+
+(2) Use foreign exchange swaps to provide US dollar funds to domestic designated banks, thereby financing the foreign currency funds needed for firms’ operations and overseas investments by the life insurance industry and others, reducing their borrowing costs, and at the same time withdrawing excess New Taiwan dollar funds from the market. In months 1 to 9 of this year, the volume of swaps between New Taiwan dollars and foreign currencies in the Taipei interbank foreign exchange swap market was 1 trillion 675.3 hundred million US dollars. At the end of month 9, the Bank’s outstanding balance was 794 hundred million US dollars.
+
+V. Operation of Taiwan’s Foreign Currency Settlement Platform
+
+(1) The foreign currency settlement platform, planned and established by the Financial Information Service Co., Ltd. under the Bank’s supervision, began operating in month 3 of 2013. It currently provides domestic and cross-border renminbi and Japanese yen remittances, as well as domestic US dollar, euro and Australian dollar remittances. It also has a payment-versus-payment (PVP) mechanism, a liquidity-saving mechanism for foreign currency remittances, and a delivery-versus-payment (DVP) mechanism for foreign currency bonds and bills. The foreign currency settlement platform has a complete range of functions and operates smoothly.
+
+44
+=== PAGE 56 ===
+(2) Operation of domestic foreign currency clearing business (month 8 of 2025):
+
+Currency | Participating institutions | Average daily number of transactions | Average daily amount
+US dollar | 72 | 6,016 | 83.54 hundred million US dollars
+Renminbi | 59 | 1,592 | 21.99 hundred million renminbi
+Japanese yen | 37 | 322 | 87.59 hundred million Japanese yen
+Euro | 38 | 88 | 38.26 million euros
+Australian dollar | 30 | 144 | 10.57 million Australian dollars
+
+VI. Widespread Availability of New Taiwan Dollar Cash Exchange Services for Inbound Foreign Travelers
+
+Domestic financial institutions have a dense network of branches. After arriving in Taiwan, foreign travelers can already obtain New Taiwan dollar cash exchange services at more than 35,000 locations throughout Taiwan, including banks, post offices, foreign currency exchange bureaus and ATMs.
+
+VII. Current Status of Offshore Financial Business
+
+(1) Offshore Banking Units (OBU)
+
+At the end of month 8 of this year, a total of 59 OBUs were in operation, with total assets of 3,098.23 hundred million US dollars, an increase of 287.80 hundred million US dollars or 10.2% over the same period of the previous year.
+
+In months 1 to 8 of this year, the net profit after tax of all OBUs was 20.54 hundred million US dollars, an increase of 7.91 hundred million US dollars or 62.6% over the same period of the previous year.
+
+(2) Offshore Securities Units (OSU)
+
+At the end of month 8 of this year, a total of 18 OSUs were in operation, with total assets of 85.18 hundred million US dollars, an increase of 16.08 hundred million US dollars or 23.3% over the same period of the previous year.
+
+In months 1 to 8 of this year, the net profit after tax of all OSUs was 62.44 million US dollars, an increase of 56.67 million US dollars or 9.82 times over the same period of the previous year.
+
+45
+=== PAGE 57 ===
+(3) Offshore Insurance Units (OIU)
+
+At the end of month 8 of this year, a total of 20 OIUs were in operation, with total assets of 8.16 hundred million US dollars, a decrease of 0.47 hundred million US dollars or 5.4% from the same period of the previous year.
+
+In months 1 to 8 of this year, the net profit after tax of all OIUs was 1.43 million US dollars, a decrease of 15.25 million US dollars or 91.4% from the same period of the previous year.
+
+Part IV. Managing the National Treasury
+
+I. Treasury Receipts and Payments
+
+(1) Collection of Treasury Revenue
+
+In months 1 to 9 of this year, treasury revenue collected by all treasury agent institutions totaled 3 trillion 7,924 hundred million yuan, a decrease of 2,209 hundred million yuan or 5.50% from the same period of the previous year.
+
+(2) Disbursement of Treasury Expenditure
+
+In months 1 to 9 of this year, treasury expenditure disbursed by all treasury agent institutions totaled 3 trillion 7,241 hundred million yuan, a decrease of 433 hundred million yuan or 1.15% from the same period of the previous year.
+
+(3) Treasury Deposit Balance
+
+At the end of month 9 of this year, the balance of treasury deposits under management was 2,755 hundred million yuan, a decrease of 309 hundred million yuan or 10.08% from the same period of the previous year.
+
+II. Issuance of Government Bonds and Treasury Bills and Repayment of Principal and Payment of Interest
+
+(1) Government Bonds
+
+1. Issuance
+
+In months 1 to 9 of this year, a total of 14 issues of central government bonds amounting to 3,535 hundred million yuan were issued, a decrease of 695 hundred million yuan or 16.43% from the same period of the previous year.
+
+2. Repayment of Principal and Payment of Interest
+
+46
+=== PAGE 58 ===
+In months 1 to 9 of this year, principal repayments on government bonds at maturity amounted to 4,000 hundred million yuan, and interest payments on government bonds at maturity amounted to 703 hundred million yuan. Total principal and interest payments amounted to 4,703 hundred million yuan, an increase of 190 hundred million yuan or 4.21% over the same period of the previous year.
+
+3. Outstanding Balance
+
+At the end of month 9 of this year, the outstanding balance of central government bonds was 5 trillion 9,876 hundred million yuan, an increase of 335 hundred million yuan or 0.56% over the same period of the previous year.
+
+(2) Treasury Bills
+
+1. Issuance
+
+In months 1 to 9 of this year, a total of 5 issues of treasury bills amounting to 1,600 hundred million yuan were issued, a decrease of 600 hundred million yuan or 27.27% from the same period of the previous year.
+
+2. Repayment of Principal and Payment of Interest
+
+In months 1 to 9 of this year, principal repayments on treasury bills at maturity amounted to 1,245 hundred million yuan, and interest payments at maturity amounted to 5 hundred million yuan. Total principal and interest payments amounted to 1,250 hundred million yuan, a decrease of 600 hundred million yuan or 32.43% from the same period of the previous year.
+
+3. Outstanding Balance
+
+At the end of month 9 of this year, the outstanding balance of treasury bills was 650 hundred million yuan, the same as in the corresponding period of the previous year.
+
+47

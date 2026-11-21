@@ -64,7 +64,7 @@ State of the data files as of **2026-11-17** (dates are those of the files, not 
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
 | Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
 | Model classification of units | **not started** (no unit has been labelled by a model) |
-| Tests in CI | 43 |
+| Tests in CI | 48 |
 <!-- NUMBERS:END -->
 
 ## 4. Checklist, with what a second model has audited
@@ -96,7 +96,7 @@ Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/R
 | 21 | Talk tables, event history, yearly series | designed, not built | design A3 (funnel rejected, replaced) | — |
 | 22 | F-cell extraction on the v12 corpus, blind human reference | not started | — | — |
 | 23 | Talk against commitment, analysis, paper | not started | — | — |
-| 24 | Website | mock-up; real data only for NO and UK development profiles | not audited | — |
+| 24 | Website | rebuilt 21 Nov on the real corpus: map of the 44 projects and a database of all 772 documents with decisions and links; no results shown; 9 Taiwanese machine translations published under the issuer's open licence ([ADR-008](DECISIONS/ADR-008-website-documents-and-published-translations-2026-11-21.md)) | not audited | MB decided on translations 21 Nov; DS to confirm |
 
 **Not covered by any audit and worth one before the freeze (step 18):** steps 4, 5, 8 (run 3), 14 (version 2), 15 (v0.3) and 17, i.e. everything changed after commit `4d4f142`.
 

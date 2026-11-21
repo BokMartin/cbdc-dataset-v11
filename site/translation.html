@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine translation · CBDC privacy dataset</title>
+<meta name="description" content="English machine translation of an official CBDC document, published where the issuer's licence allows reuse.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tr-text { white-space: pre-wrap; font: .95rem/1.6 var(--font); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; overflow-wrap: anywhere; }
+  .tr-text .pg { display: block; color: var(--muted); font-size: .8rem; font-weight: 600; border-top: 1px solid var(--line); margin: 14px 0 6px; padding-top: 6px; }
+</style>
+</head>
+<body>
+<header class="site"></header>
+<main id="main" class="narrow">
+  <p class="small"><a href="documents.html">← Documents</a></p>
+  <h1 id="title">Machine translation</h1>
+  <div id="meta" class="muted"></div>
+  <div class="note" id="warn"><strong>Machine translation, not checked by a reader of the source language.</strong> It can weaken, strengthen or change the meaning of a sentence. Quote and cite the original document, not this text.</div>
+  <div class="row" id="actions" style="margin-bottom:16px"></div>
+  <div class="tr-text" id="text">Loading…</div>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var S = window.SITE, id = new URLSearchParams(location.search).get("id");
+  S.get("assets/documents.json").then(function (DD) {
+    var d = DD.documents.filter(function (x) { return x.id === id; })[0];
+    if (!d || !d.tr) { document.getElementById("text").textContent = "No published translation for this document."; return; }
+    document.title = d.t + " (machine translation) · CBDC privacy dataset";
+    document.getElementById("title").textContent = d.t;
+    document.getElementById("meta").innerHTML = S.esc(d.iss) + (d.y ? " · " + d.y : "") + " · translated from " + S.esc(S.lang(d.l, DD.meta)) + " into English";
+    document.getElementById("actions").innerHTML = (d.u ? '<a class="btn sm" href="' + S.esc(d.u) + '" target="_blank" rel="noopener">Original document ↗</a>' : "") +
+      '<a class="btn ghost sm" href="' + S.esc(d.tr.f) + '" download>Download text</a>' +
+      '<span class="small muted">Source © ' + S.esc(d.iss) + ', reused under <a href="' + S.esc(d.tr.lu) + '" target="_blank" rel="noopener">' + S.esc(d.tr.lic) + "</a>. Translation by the model gpt-6-astra (OpenAI API, run " + S.esc(d.tr.run) + "), provided under CC BY 4.0 with the same attribution.</span>";
+    return fetch(d.tr.f).then(function (r) { return r.text(); }).then(function (t) {
+      var body = t.split("\n").filter(function (l) { return l.charAt(0) !== "#"; }).join("\n");
+      document.getElementById("text").innerHTML = S.esc(body).replace(/^=== PAGE (\d+) ===$/gm, '<span class="pg">Page $1 of the original</span>');
+    });
+  }).catch(function (e) { document.getElementById("text").textContent = "Could not load (" + e.message + ")."; });
+})();
+</script>
+</body>
+</html>

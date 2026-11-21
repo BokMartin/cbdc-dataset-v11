@@ -1,0 +1,276 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-343 | source: CBDC_MASTER_v12/TW/TW__2022-06__Governor-Yang-speech-at-FISC-annual-conference.pdf | source_sha256: dbeacd928375628c0d54ea5b94683cae75af05dd80276738bea7ba39b96d9149
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+Governor Yang's Keynote Speech at the Financial Information Service Co., Ltd. 111 Annual Financial Information Systems Conference
+—Central Bank Money in Digital Transformation
+                                                  111.6.29
+                                                 Central Bank of the Republic of China (Taiwan)
+
+Good morning, distinguished guests, senior members of the financial community, and friends from the media. I am very pleased to attend this annual conference. Over the past year or so, owing to the pandemic, opportunities for everyone to participate in large in-person gatherings have been rare. Now that the pandemic is tending to ease, thanks to the careful planning of the Financial Information Service Co., Ltd., everyone can use this annual conference as a platform for exchanging financial information, freely discuss issues of innovation in digital payments, and present awards to banks for stable system operations, excellence in business development, and innovation, to encourage financial institutions to provide more advanced services.
+
+Speaking of innovation in digital payments, central bank digital currency (CBDC) [央行數位貨幣] (Central Bank Digital Currency, CBDC) should be a topic of widespread interest. Therefore, this annual conference has specially arranged a dedicated area to display the results of the Bank's phase 2 general-purpose CBDC experimental project. Here, I would first like to thank the 5 banks—CTBC Bank, Hua Nan Bank, The Shanghai Commercial & Savings Bank, Cathay United Bank, and Taishin International Bank—for participating in the experiments and demonstrations for this project, as well as the Financial Information Service Co., Ltd. for its strong assistance, enabling everyone to actually simulate CBDC application scenarios in a closed¹ experimental environment.
+
+In recent years, in response to the development of the digital economy, everyone seems to have considerable room for imagining digital currencies. For example, when virtual assets² such as Bitcoin and stablecoins appeared, they attracted attention from the media and the public. Some people even believed that these computer programs or privately issued virtual
+
+1
+This means that connections to banks' production operating systems have not yet been opened; instead, simulations and experiments in various scenarios are conducted with banks' testing systems in a separate, independent, closed environment.
+2
+Also called crypto-assets or digital assets.
+                       1
+=== PAGE 2 ===
+assets might replace central bank money and become widely used payment instruments. Therefore, in this keynote speech on “Central Bank Money in Digital Transformation,” I will share with everyone views on three aspects: recent developments in virtual assets such as Bitcoin, key points in CBDC development, and the results of the Bank's current-stage CBDC experiments and plans for the next stage:
+
+I. Recent developments in virtual assets such as Bitcoin
+
+In 2009, technology specialists applied blockchain decentralization technology (DLT³) to create Bitcoin, attempting to make it a global payment instrument. However, its rollercoaster-like price movements (The Bitcoin Rollercoaster) make it more like a risky asset for speculation, unsuitable for use in payments.
+
+(1) Prices of virtual assets such as Bitcoin remain highly volatile, and they are risky assets
+
+Over the past two years, as the COVID-19 pandemic hit the global economy, central banks and finance ministries in major countries such as the United States continued to adopt accommodative monetary and fiscal policies. Driven by abundant market funds and speculation, Bitcoin's price rose sharply along with the trend, reaching a new high of over 68 thousand US dollars in November of last year (2021). However, afterward, as the monetary policy of the US Federal Reserve System (Fed) gradually returned to normalization, Bitcoin's price recently fell rapidly below 20 thousand US dollars, a decline of nearly 70%.
+
+To date, the number of similar assets created following Bitcoin has reached 20 thousand, and in total
+
+3
+The full English name is Distributed Ledger Technology. DLT differs from the traditional practice of recording transaction data at a single central node. Instead, it uses multiple nodes to jointly record transaction data and uses a consensus mechanism to update the data synchronously at each node, ensuring that the information in each ledger [帳本] is consistent. DLT provides a peer-to-peer (P2P) method of direct transactions, without the need for processing through a center or intermediary [中介機構], and is therefore also called decentralization or disintermediation technology.
+                                             2
+=== PAGE 3 ===
+market capitalization, Bitcoin still ranks first, accounting for 42%, while changes in the prices of the remaining assets mostly follow Bitcoin closely. When virtual asset prices were at their highest in November of last year, total market capitalization reached 3 trillion US dollars; it has now fallen to approximately 0.9 trillion US dollars. Investors are reminded here that, as the tide of funds gradually recedes, whether the speculative frenzy in risky assets such as Bitcoin can continue must be observed prudently.
+
+(2) Virtual assets are attempting to develop into quasi-financial fields, but at present are still mostly used for speculation
+
+To expand their fields of application and market scale, virtual assets have continually attempted to develop into quasi-financial products. For example, Bitcoin futures and Bitcoin ETFs provide trading services similar to derivatives in traditional financial markets; initial coin offerings (ICO), involving tokens [代幣], imitate the practice of initial public offerings (IPO) of shares in securities markets, attempting to serve as a new channel for raising funds. In addition, some businesses have introduced stablecoins⁴ (Stable Coin) intended to maintain a stable price of 1 US dollar, similar to the mechanism for issuing electronic money⁵. In recent years, virtual asset businesses have continually sought new business opportunities or products⁶. Unfortunately, they still mostly serve as instruments for speculation.
+
+For example, the Chicago Mercantile Exchange (CME), the first to obtain approval from the US Commodity Futures Trading Commission (CFTC) to offer Bitcoin futures, still has a trading scale far smaller than that of other offshore trading platforms not supervised by the CFTC. Speculation is prevalent on these offshore trading platforms, and some even allow customers to conduct highly leveraged transactions (for example, 100-fold leverage), further intensifying
+
+4
+Stablecoins of equivalent value are issued with fiat currency or other assets as collateral. See the reference material for the press conference following the Central Bank's Board of Directors and Supervisors meeting on 16 December 110, “International Developments, Risks, and Regulatory Issues of Stablecoins”; https://www.cbc.gov.tw/dl-179887-
+edb16a1187d14b2399287db337ca7c84.html.
+5
+Electronic money issued with value stored in fiat currency (the stored funds may be placed in trust or covered by a bank guarantee), such as stored-value cards and electronic payment accounts [帳戶] in our country.
+6
+Including decentralized computing platforms, decentralized applications (DApp), decentralized finance (DeFi), and non-fungible tokens (NFT), etc. See the reference material for the press conference following the Central Bank's Board of Directors and Supervisors meeting on 16 June 111, “Development and Risk Issues of DeFi and NFT”;
+https://www.cbc.gov.tw/dl-190421-7d807b0573a34a579a5fe34cd3723304.html.
+                                             3
+=== PAGE 4 ===
+the fluctuations in Bitcoin prices in the market. In addition, the amount of funds raised through ICOs peaked in 2018. However, because ICO fundraising methods are not transparent and investor protection is incomplete, they have often been used by unlawful persons for financial fraud and taking in funds through pyramid selling, seriously affecting investor confidence. In addition, countries have strengthened public education and required ICOs to comply with securities-related laws and regulations, eliminating the advantages ICOs previously enjoyed through regulatory arbitrage. After 2018, the amount of funds raised through ICOs declined sharply, and recently they seem to have vanished.
+
+Stablecoins deserve particular mention. The background to the initial introduction of stablecoins was that, at the time, directly purchasing virtual assets with US dollars required remitting US dollars through the banking system to a trading platform (possibly located offshore). The process was inconvenient and subject to requirements such as anti-money laundering and counter-terrorist financing (AML/CFT). If stablecoins were used instead, the banking system could be bypassed and transactions completed directly on the platform. Stablecoins attempt to imitate electronic money, with the issuer taking in funds from the general public and promising repayment at face value. However, in their operations to date, unlike electronic money, they have still been unable to maintain a stable 1:1 exchange relationship with fiat currency at all times⁷. At present, stablecoins mainly remain a medium for facilitating transactions involving speculation or investment in virtual assets, and are rarely used for payments in real economic activities.
+
+(3) Recent stablecoin crashes have again raised the issue of CBDC
+
+Looking back at the development of “money,” it is nothing other than a history centered on establishing trust. From early decentralized commodity money (Commodity Money) to its later evolution into credit money (Credit Money) competitively issued by separate private-sector entities, all ultimately faded away because they could not gain the public's
+
+7
+A research report by the Bank for International Settlements (BIS) points out that, to date, the prices of many stablecoins are actually unstable and do not live up to their name.
+                            4
+=== PAGE 5 ===
+trust. The most typical example of the disorder caused by private-sector entities issuing their own currencies is the case of wildcat banking in the United States in the 19th century⁸. Finally, through implementation of the National Bank Act and the establishment of the US Federal Reserve System (Fed) in 1913, granting the Fed the exclusive right to issue currency, the disorder in the monetary system was resolved and financial order could be rebuilt.
+
+Some believe that the free issuance of stablecoins by private parties to take in funds from the public closely resembles a repetition of the disorder of wildcat banking. At present, the total market capitalization of virtual assets (including stablecoins) is less than 1 trillion US dollars, far below the global financial asset market capitalization of 469 trillion US dollars. Because their asset scale is still small, and they are mostly used for speculation in transactions in the virtual world, their degree of interconnectedness with the financial system is not high, and their impact on financial stability is limited. However, recently, Tether (USDT), the stablecoin with the largest market capitalization, departed from its commitment to a US dollar peg and fell to 0.95 US dollars. In addition, the third-largest stablecoin, TerraUSD (UST⁹), owing to the crash of its Luna coin, affected the pressure for other virtual assets to be delisted and the sharp fall in Bitcoin's price, etc. All of these have raised concerns about the market volatility and risks involved in virtual assets¹⁰. Furthermore, as the digital economy drives demand for digital payments, and because some countries have experienced a year-by-year decline in cash use and inadequate payment infrastructure¹¹, the issue of central banks issuing digital currency, CBDC, has arisen.
+
+8
+At that time, there were no unified official banknotes. Private banks in different localities printed their own banknotes, resulting in the issuance of over 8,000 types of wildcat banknote. Although these banknotes did not have sufficient collateral assets, the public was misled into believing that they could be redeemed at any time. Ultimately, these wildcat banks collapsed because they were unable to repay, developing into a fairly long period of financial instability in US history.
+9
+In May 2022, the US dollar stablecoin UST, developed by a South Korean business, became depegged from the US dollar. The business took in funds at an interest rate as high as 20%, attracting investors to deposit UST. However, because the business was unable to meet large-scale redemptions of UST, investors rushed to redeem, ultimately causing UST's price to fall to zero; as many as 280 thousand South Korean people were affected.
+10
+Brainard, Lael (2022), “Digital Assets and the Future of Finance: Examining the Benefits and Risks of a U.S.
+Central Bank Digital Currency,” Testimony before the Committee on Financial Services, U.S. House of
+Representatives, Washington, D.C., May 26.
+11
+Countries with year-by-year declines in cash use include Sweden and mainland China; those with inadequate payment infrastructure include island countries such as The Bahamas and those in the Eastern Caribbean.
+                                                        5
+=== PAGE 6 ===
+II. Key points in CBDC development
+
+To give everyone a comprehensive overview of CBDC, I will explain, in sequence, the role of central bank money, the potential benefits of CBDC, risks, and policy responses.
+
+(1) The role of central bank money
+
+1. Central bank money has no credit risk or liquidity risk and is the foundation for the sound operation of payment systems
+
+Modern payment systems are based on two forms of central bank money: central bank reserves and cash. Reserves are the settlement asset for processing interbank payment transactions between financial institutions¹², while cash is currently the only physical money that the public can obtain directly.
+
+Taking our country as an example, large-value transactions between financial institutions, such as interbank loans, bonds, bills, stocks, and foreign exchange, processed through the “Central Bank's Interbank Funds Transfer System¹³,” as well as various private-sector payments, such as ATM withdrawals and transfers, remittances, bill payments, tax payments, purchase debits, and corporate fund transfers, processed through the “Financial Information Service Co., Ltd. Financial Information System¹⁴,” all use the Bank's reserves for real-time interbank fund transfers and settlement. The “Central Bank's Interbank Funds Transfer System” and the “Financial Information Service Co., Ltd. Financial Information System” are critical infrastructure for promoting domestic financial development and maintaining financial stability. Last year, the average daily balance of reserves used was approximately 930 billion yuan, while the annual turnover of interbank transactions processed on this basis was 533 trillion yuan and 188
+
+12
+Refers to funds deposited by financial institutions in reserve accounts or settlement accounts at the central bank. Financial institutions use these accounts to transfer and settle interbank funds.
+13
+The Central Bank's Interbank Funds Transfer System adopted a real-time gross settlement (RTGS) mechanism in 2002.
+14
+Since 1987, the Financial Information Service Co., Ltd. Financial Information System has used central bank money to settle each transaction in real time, meeting the requirements for fast payments.
+                              6
+=== PAGE 7 ===
+trillion yuan, respectively.
+
+In addition, to help promote mobile payments, the Bank has urged the Financial Information Service Co., Ltd. to work with banks to promote a common QR Code payment standard, providing services such as transfers, bill payments, tax payments, and shopping. The interbank transactions involved also use the Bank's reserves for settlement. Last year, the amount processed through the common QR Code payment standard was 180.7 billion yuan, 2 times that of 2020.
+
+As for the cash held by the public, it exists in physical form, does not rely on electricity or networks, can be used anytime and anywhere, has anonymity [匿名性] and legal tender status [法償效力], etc., and cannot easily be replaced by other payment instruments. The amount currently in circulation is approximately 3 trillion yuan.
+
+2. Central bank money can be used to provide intraday liquidity and emergency liquidity
+
+At present, to enable interbank transactions (whether large-value payments in financial markets or private-sector retail payments) to complete the payment and receipt of funds in real time on the same day, central banks in various countries allow a paying bank experiencing a temporary shortage of funds to obtain intraday liquidity from the central bank at any time (to be repaid at the end of the day), to ensure that every transaction is completed in real time. This intraday liquidity is also central bank money. At present, the maximum amount used intraday by financial institutions in our country is approximately 16 billion yuan.
+
+In addition, if financial institutions encounter a financial crisis, the central bank may, in its role as “lender of last resort,” provide emergency liquidity through the provision of central bank money, preventing the risk of runs in the financial system from causing chain reactions that affect financial stability.
+
+                  7
+=== PAGE 8 ===
+3. Ensuring the effectiveness of monetary policy implementation through adjustments to central bank money
+
+In addition to meeting the payment needs of the financial system described above, central banks can also adjust the quantity of reserve money by injecting or withdrawing central bank money through open market operations, thereby influencing the overall level of funds and interest rates in financial markets and achieving the objectives of monetary policy implementation.
+
+(2) Potential benefits of CBDC
+
+1. Enabling the public to obtain safe digital currency
+
+Cash is the only central bank money that the public can use and is a very safe payment option. Although our country has developed various electronic payment methods, such as debit cards, credit cards, stored-value cards, bank accounts, and electronic payment accounts, cash is still widely used by the public.
+
+In recent years, with the promotion of electronic payments, the electronic payment ratio¹⁵ has risen year by year, from 40 % in 2017 to 60% in the 1st quarter of this year (2022). Although the rate of growth has not been as rapid as in countries such as Sweden, in response to future demand for the digitalization of cash, the public may wish to have the option of CBDC, with the central bank providing a safe, trusted digital payment instrument with no cost of use and no credit or liquidity risk.
+
+2. Meeting future demand for payment services
+
+CBDC is a programmable currency. Through smart contracts [智能合約] (Smart Contract), CBDC can automatically execute transactions according to conditions set in a program,
+
+15
+Refers to the ratio of the value of consumption paid for through non-cash payments, such as credit cards, debit cards, stored-value cards, electronic payment accounts, and ACH, to private consumption expenditure.
+                            8
+=== PAGE 9 ===
+and extend to diverse settings¹⁶, meeting the requirements for efficiency and innovation in the continuous evolution of the digital economy.
+
+3. Deepening financial inclusion
+
+At present, financial institutions accept applications to open digital accounts and provide various services such as payments, savings, and loans, but these services do not cover the economically disadvantaged. CBDC is not a bank deposit. Anyone who wishes to obtain digital cash for payments can open a CBDC wallet [錢包] and obtain CBDC-related digital services.
+
+4. Possibility of improving cross-border payments
+
+At present, cross-border payments in the banking system involve multiple intermediaries, many procedures, and high fees. According to World Bank statistics, in the 4th quarter of 2021, the global average remittance fee was 6.04% of the remittance amount.
+
+CBDC can use new technologies to simplify operating procedures. However, to deliver substantive benefits, it is necessary to await international coordination and the study and discussion of common specifications and standards, infrastructure, and legal frameworks, including the establishment of supervisory guidelines to prevent illegal activities. This requires long-term planning. Therefore, major countries developing CBDC all begin with domestic use. For the cross-border part, only after resolving interoperability between systems and legal issues involving jurisdiction can further discussion take place on specific operations for optimizing cross-border payments.
+
+16
+For example, stimulus vouchers or welfare payments issued by the government may only be used for consumption within a specified period or in specified industries. If issued through CBDC, execution of a program can achieve the purpose of earmarking funds for specified uses within a certain period.
+                          9
+=== PAGE 10 ===
+(3) Potential risks of CBDC and policy responses
+
+1. Financial intermediation function
+
+Deposits in the banking system are the source of credit creation. CBDC may affect banks' existing payment business and cause bank deposit outflows. Therefore, at present, internationally, both countries that have issued CBDC and those studying it adopt the two-tier structure [雙層式架構] of traditional currency issuance, allowing banks to continue to play the role of financial intermediaries [金融中介].
+
+In addition, if CBDC is designed to bear interest, it will also become a substitute for bank deposits. Once the total amount of deposits in the banking system decreases, banks' funding costs will increase, in turn raising borrowing costs for individuals, households, and enterprises. To avoid affecting banks' financial intermediation function, a non-interest-bearing design may be chosen for CBDC.
+
+2. Financial stability
+
+Central bank money is a risk-free asset. If it circulates widely after digitalization, during a financial crisis, CBDC will cause bank deposit outflows even if it does not bear interest, because digital runs proceed faster, exposing banks to more severe liquidity risk.
+
+To prevent large-scale bank deposit outflows, controls may be imposed on users' CBDC transaction limits [交易量之上限] and total holding limits [持有總量之上限]. However, such controls may affect the public's demand for use. How to strike a balance between public demand and financial intermediation is an issue that requires prudent study for CBDC.
+
+                 10
+=== PAGE 11 ===
+3. Monetary policy implementation
+
+At present, open market operations conducted by central banks to influence the funding positions of the banking system and achieve monetary policy objectives, whether injecting or withdrawing central bank money, are already carried out digitally. Therefore, CBDC will not change the way central banks conduct operations.
+
+However, if CBDC bears interest, there may be interaction effects with monetary policy implementation. For example, if the interest rate on CBDC is comparable to the returns on other safe assets, individuals or enterprises may reduce their investments in bank deposits, Treasury bills, or money market mutual funds and increase their CBDC holdings. Once public demand for CBDC fluctuates substantially under the influence of market factors, it will change the level of funds in the banking system, in turn affecting the implementation and operation of central bank monetary policy.
+
+Interest-bearing CBDC has broad potential effects on banks' deposits and lending, households' and enterprises' investment decisions, and central banks' monetary policy implementation, and might serve as a new policy instrument. However, to avoid CBDC causing shocks to the financial system, even if CBDC has an interest-bearing design, in the initial stage of implementation it should first be treated as digital cash and issued on a non-interest-bearing basis. At present, countries such as mainland China and The Bahamas that are piloting or issuing CBDC have all stated that CBDC does not bear interest.
+
+4. Privacy [隱私] protection and prevention of financial crime
+
+The financial transaction data generated by CBDC are generated in the same way as those currently produced through transactions via financial institutions. Because CBDC operates through a two-tier structure [雙層架構], with respect to privacy protec-
+
+                 11
+=== PAGE 12 ===
+tion, this can be addressed through the existing mechanisms of intermediaries (such as financial institutions). As for the prevention of financial crime, the procedures intermediaries currently follow for anti-money laundering and counter-terrorist financing, such as mechanisms for retaining transaction records and reporting anomalous data, all help CBDC comply with relevant anti-money laundering requirements.
+
+5. Security and resilience of system operations
+
+CBDC also faces the same threats as existing electronic payments, such as operational disruptions or cybersecurity risks. However, because CBDC can be used by anyone at any time (just like cash), appropriate information security protection measures are even more necessary. On the other hand, to strengthen the resilience of CBDC operations, the feasibility of offline payment [離線支付] options needs to be studied, allowing the public to continue to make certain everyday payments without a network connection. If there is no offline payment option, physical cash might serve as another backup mechanism in the event of disconnection.
+
+III. Results of the Bank's current-stage CBDC experiments and plans for the next stage
+
+In recent years, the number of central banks internationally studying CBDC has increased year by year, and during the research process they have gained a deeper understanding of CBDC's potential benefits and risks, as well as possible response measures. Some central banks are also simultaneously conducting both wholesale (for use between financial institutions) and general-purpose (for use by the public) studies.
+
+(1) Our country's progress is in step with international developments
+
+The Bank planned two research projects as early as 2019. In June 2020, it completed the phase 1 technical feasibility study, mainly analyzing the application of decentralized tech-
+
+                     12
+=== PAGE 13 ===
+technology (DLT), its potential and limitations. The research results showed that DLT's operational performance cannot yet meet the requirements of high-frequency, high-volume payment transactions requiring real-time clearing. In September of the same year, the second-stage “General-Purpose CBDC Experiment Plan” then began. To meet operational performance requirements, the technical architecture adopts centralized operations, with some functions incorporating DLT designs; construction of the CBDC prototype platform and experiments simulating retail payment scenarios in a closed environment, originally expected to be completed in two years (September 2022), have now been completed, 3 months ahead of schedule.
+
+(2) Demonstration of the current experimental results and planning for the next stage
+
+The general-purpose CBDC experiments focus on retail scenarios close to people's everyday lives. However, because of the pandemic, it is not convenient to provide the public with direct experience. Therefore, a demonstration is being provided through the annual conference of the Financial Information Service Co., Ltd. The purposes of the demonstration and future plans are explained below:
+
+1. Enabling participants to understand the experimental scenarios planned for the second stage
+
+   During the second-stage experiments, the Bank's CBDC working group invited the Financial Information Service Co., Ltd. and external technical teams to participate together in developing the prototype platform. It also invited 5 banks—CTBC Bank, Hua Nan Commercial Bank, The Shanghai Commercial & Savings Bank, Cathay United Bank, and Taishin International Bank—to participate in the design and simulation experiments, so as to incorporate banks' practical financial intermediation operations.
+
+   As the experiments concern general-purpose CBDC for public use, the simulated scenario is that the central bank provides CBDC to banks, which then provide CBDC to the public. After obtaining CBDC, the public can use it in retail payment scenarios.
+
+13
+=== PAGE 14 ===
+2. Enabling participants to experience demonstrations of CBDC in retail payment scenarios
+
+   There are two demonstration areas: “banks” and “contracted merchants”:
+
+   (1) The bank demonstration area demonstrates: opening a CBDC wallet [錢包]; conversion between deposit accounts [帳戶] and CBDC; for those without bank accounts, converting cash (including foreign currencies) into CBDC through ATMs, or converting CBDC into cash; using CBDC for transfers; providing CBDC for migrant workers to make small-value cross-border remittances17; and using CBDC programmability to issue digital vouchers, among other things.
+
+   (2) The contracted merchant demonstration area demonstrates: using CBDC or digital vouchers held to make purchases and pay bills, and providing scan-to-pay and NFC contactless payments.
+
+   Some of the scenarios in this demonstration are also applicable to existing electronic payments, such as shopping, transfers, and bill payments. These are all basic CBDC applications. The difference between CBDC and electronic payments is that future CBDC will have universality of payment: it can be used at any store at any time, just like cash. In addition, there are innovative applications, such as enabling foreigners to open CBDC wallets, converting foreign currencies into CBDC through ATMs, using CBDC to issue digital vouchers and make small-value cross-border remittances, and so on. Other innovations will continue to be conceived in the subsequent process of advancing CBDC.
+
+3. Taking a proactive and open attitude to solicit views widely from all sectors as a reference for planning the next stage
+
+   CBDC encompasses wholesale and general-purpose types, and involves innovation in the overall payment system18.
+
+17
+Financial institutions provide user-friendly interfaces, such as foreign-language APPs, so that foreign migrant workers, upon obtaining CBDC, can make small-value cross-border remittances with lower remittance fees.
+18
+Including the Central Bank's Interbank Funds Transfer System, which processes large-value wholesale transactions between financial institutions, and the Financial Information Service Co., Ltd.'s Financial Information System, which processes private-sector retail payment transactions.
+14
+=== PAGE 15 ===
+The technical architectures currently adopted by the domestic “Central Bank's Interbank Funds Transfer System” and the “Financial Information Service Co., Ltd.'s Financial Information System” have continued to operate safely and soundly to date. In response to the evolution of the latest technologies, the Bank and the Financial Information Service Co., Ltd. will study more modern system architectures. The current research into the CBDC platform can serve as an appropriate opportunity for the future development of new systems.
+
+   Subsequently, the Bank will conduct an opinion survey based on the results of the second-stage experiments, and plan the following work to continue advancing the CBDC research project:
+
+   (1) Communicate widely to obtain public support: Developing CBDC requires the participation and support of government agencies, users, financial institutions, technology and infrastructure providers, academia, and others. This requires a long period of communication and discussion.
+
+   (2) Refine the platform design and adopt more robust and mature technologies: In system construction, in addition to meeting transaction capacity requirements, extensive technical development and evaluation work is also needed in terms of system integrity19, operational robustness20, and resilience21.
+
+   (3) Study a solid legal framework and establish legal rules: In the process of completing the opinion survey and system construction evaluation, a legal framework must be studied, including providing an explicit legal basis for granting CBDC legal tender [法償貨幣] status, and numerous rules must be formulated on anti-money laundering, counter-terrorist financing, privacy [隱私] protection, information security protection, and allocation of liability in disputes, among other things, to strengthen market trust in CBDC.
+
+19
+Integrity (integrity): CBDC must have strong information security protection mechanisms to ensure that the system operates correctly and that no unauthorized manipulation occurs.
+20
+Robustness (robustness): CBDC must be able to maintain uninterrupted operations, operate continuously 7x24, and provide services normally at all times.
+21
+Resilience (resilience): CBDC must also have the ability to resist and withstand various adverse circumstances (such as power outages and network disconnections), and recover from them.
+15
+=== PAGE 16 ===
+Only when the above work is completed will subsequent plans for launching CBDC be decided. It can thus be seen that advancing CBDC is an enormous and complex undertaking. At present, the central banks of major economies are all still at the research or experimental stage. Even Sweden, which is actively conducting experiments, and mainland China, which is already conducting pilots, have not yet announced a timetable for formal issuance.
+
+IV. Conclusion
+
+The digital economy drives demand for digital currency, giving everyone unlimited scope for imagining digital currency. However, when actually exploring this new field, many theoretical ideas will face technical and practical tests and challenges.
+
+First, in terms of “technology,” for example, if technologies and governance that tout decentralization still present numerous risks in operational performance, information security protection, and protection of users' rights and interests, this indicates that their design is not yet sound and mature and cannot gain the public's “trust.” This is also why virtual assets such as Bitcoin and stablecoins, although they attempted to become payment instruments at their inception, remain objects of speculation on trading platforms to this day and are rarely used in real economic transactions. On the other hand, analysis of the “practice” of money concerns its 3 basic functions: being universally used as a medium of exchange, a store of value, and a unit of pricing (accounting). These 3 basic functions are also all founded on the public's trust in central bank money.
+
+Advancing central bank digital currency (CBDC) is not just about digitizing cash. It also involves payment system innovation and affects financial stability and the implementation of monetary policy. Therefore, major countries' research into CBDC is not based on a race to issue it first, but rather on ensuring that CBDC issuance meets
+
+16
+=== PAGE 17 ===
+policy expectations and public needs.
+
+If the Bank ultimately decides to issue CBDC, in addition to having to formulate a series of plans and steps and advance them in sequence, it can also continue planning in accordance with the 3 foundational principles jointly established by the BIS and the central banks of major countries: “do no harm22,” “coexistence23,” and “innovation and efficiency24.” Most importantly, it must work together with financial institutions to jointly build a complete CBDC ecosystem.
+
+Finally, thank you once again to the organizers for their invitation, and to the financial institutions and friends from the media for their participation. I wish everyone good health and success in all things! Thank you all!
+
+22
+“Do no harm” means that CBDC issuance must be able to ensure that it does no harm to the implementation of public policy objectives; at a minimum, it will not interfere with or hinder the central bank's pursuit of monetary stability and financial stability.
+23
+“Coexistence” means that the convenience of the payment system is built on a diverse choice of payment instruments. The introduction of CBDC must coexist with existing payment instruments and be applied in more diverse payment settings.
+24
+“Innovation and efficiency” means that a modern payment system consists of a two-tier structure [雙層架構] of public-private collaboration between the central bank and the private sector (such as banks and non-bank payment businesses). On the basis of providing central bank money, it assists private-sector businesses in developing efficient and innovative business activities; future CBDC will not change this either.
+17

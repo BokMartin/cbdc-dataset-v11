@@ -1,0 +1,339 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-340 | source: CBDC_MASTER_v12/TW/TW__2020-12__.pdf | source_sha256: a68e7342575e621694c1f38cd40f22c16eb76a83fa640badd90460482401cc52
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+V. Latest International Developments in Central Bank Digital Currency and Progress in the Bank's Research Planning
+
+Driven by the COVID-19 pandemic, the development of the digital economy has accelerated. At the same time, the pandemic has also changed the public's payment behavior, making people more willing and more accustomed than before to using digital payment methods1. Such changes are very likely to continue after the pandemic, driving human society further toward a more digital future. Central banks internationally have also followed this trend by exploring central bank digital currency (CBDC), and are continuing to improve the foundations for research and development, advancing research or preparing experimental projects step by step. This article compiles the latest international developments in CBDC, and presents the Bank's survey of domestic businesses' views on CBDC and the current state of the Bank's research planning, in order to keep abreast of domestic and international CBDC developments and ensure that related progress keeps pace with international developments.
+
+(I) Central banks of major countries and international institutions are continuing to improve the foundations for CBDC research and development
+
+1. Seven major central banks and the BIS establish foundational principles and core features of CBDC
+    －As national circumstances differ, countries' considerations regarding CBDC will also differ. However, central banks' responsibility to maintain monetary and financial stability is common to all countries. Accordingly, the seven major central banks of the United States, Canada, the United Kingdom, the euro area, Japan, Switzerland and Sweden, together with the BIS, jointly established “CBDC Foundational Principles and Core Features”2 in October of this (2020) year, committing that any issuance of CBDC must not impair central banks' functions in maintaining monetary and financial stability.
+
+Table 1 CBDC Foundational Principles
+Item | Explanation
+Do no harm | Do not impair central banks' policy objectives of monetary and financial stability
+Coexistence | Ensure coexistence with, and complementarity to, existing forms of money (such as cash and commercial bank money)
+Innovation and efficiency | Public-private collaboration to jointly promote a payment environment of innovation and efficiency
+Source: BOC, ECB, BOJ, Riksbank, SNB, BOE, Fed and BIS (2020)
+
+    －The “CBDC Foundational Principles” include do no harm, coexistence, and innovation and efficiency (Table 1), and are the highest guiding principles that CBDC issuance should follow.
+
+1
+    For the recent impact of the COVID-19 pandemic on payments, see Central Bank of the Republic of China (Taiwan) (2020), “The Role of Central Banks and Forms of Money in the Era of Digital Payments,” reference materials for the press conference following the meeting of the Board of Directors and Supervisors of the Central Bank, September 17.
+2
+    .BOC, ECB, BOJ, Riksbank, SNB, BOE, Fed and BIS (2020), “Central Bank Digital Currencies: Foundational Principles and Core Features,” Oct. 9.
+
+71
+=== PAGE 2 ===
+－The “CBDC Core Features” are divided into instrument, system and institutional aspects, listing 14 features that CBDC should possess (Table 2), to further implement the requirements of the “CBDC Foundational Principles” in the design of CBDC and its system.
+
+Table 2 CBDC Core Features
+Aspect | Features and explanations
+Instrument aspect | (1) Convertibility: exchangeable one-to-one with other forms of money (such as cash)
+ | (2) Convenience: should be as convenient as cash, card-based or mobile payments
+ | (3) Acceptance and availability: usable in many situations involving cash transactions (such as POS and person-to-person payments), and provision of offline transactions [離線交易]
+ | (4) Low cost: low or no cost for use by individuals
+System aspect | (5) Security: highly resistant to cyberattacks and other threats, and able to effectively prevent counterfeiting
+ | (6) Instant: transactions can reach final settlement instantly or near-instantly
+ | (7) Resilience: highly resistant to events such as operational failures or disruptions
+ | (8) Availability: 7x24 operation
+ | (9) Performance: able to process a very large number of transactions per second
+ | (10) Scalability: able to expand the system's processing performance to meet future demand
+ | (11) Interoperability: able to interoperate with other electronic payment systems
+ | (12) Flexibility and adaptability: able to adjust in line with actual changes or policy needs
+Institutional aspect | (13) Clear and sound legal framework: there should be a clear legal basis for issuing CBDC
+ | (14) Regulatory standards: the CBDC system and participants should comply with appropriate regulatory standards
+Source: BOC, ECB, BOJ, Riksbank, SNB, BOE, Fed and BIS (2020)
+
+2. Japan, Switzerland and the IMF, among others, have already explored legal issues concerning CBDC
+
+As required by the “CBDC Core Features” described above, the issuance of CBDC must have a “clear and sound legal framework.” To this end, internationally, the Bank of Japan, the Swiss Federal Council and the IMF, among others, have successively published reports3 exploring the legal issues that CBDC may involve, as follows:
+
+    －There should be a basis for issuance: there should be a clear legal basis for issuing CBDC.
+    －Explore legal tender status [法償效力]: it is necessary to explore whether the law grants CBDC legal tender status, so that, as with cash, no one may refuse to accept it.
+    －Clarify legal attributes: the legal attributes of CBDC (for example, treating it like cash or electronic accounts [帳戶]) should be clarified. This will affect legal judgments and how related legal procedures are carried out, such as the transfer and seizure of CBDC.
+    －Determine the roles of intermediaries [中介機構]: the provision of CBDC services will involve many intermediaries (including banks and non-bank institutions providing payment-related services, etc.). It is necessary to clearly define
+
+3
+    .BOJ (2019), “Report of the Study Group on Legal Issues Regarding Central Bank Digital Currency,” Sep. 27; Federal Council (2019), “Central Bank Digital Currency,” Dec.
+    13; Bossu, Wouter, Masaru Itatani, Catalina Margulis, Arthur Rossi, Hans Weenink and Akihiro Yoshinaga (2020), “Legal Aspects of Central Bank Digital Currency: Central
+    Bank and Monetary Law Considerations,” IMF Working Paper, WP/20/254, Nov. 20.
+
+72
+=== PAGE 3 ===
+their respective legal roles and relationships, and rights and obligations.
+    －Compliance with anti-money laundering and counter-terrorist financing (AML/CFT): CBDC must comply with AML/CFT requirements, carrying out necessary checks and controls on users and related transactions.
+    －Ensure consumer protection, data security and privacy [隱私] protection: CBDC should comply with relevant standards in ensuring consumer protection, data security and the protection of privacy.
+    －Other: it is necessary to explore the liability for compensation4 regime and litigation procedures applicable to CBDC; if CBDC is used in cross-border transactions, issues of cross-border jurisdiction need to be clarified. In addition, financial institutions' obligations to comply with national and international tax requirements (such as automatic reporting of tax information) may also apply to the tax treatment of CBDC.
+
+3. The European Central Bank proposes possible scenarios and requirements for its future issuance of CBDC
+    －The European Central Bank published a report on a digital euro5 in October of this year, envisioning 7 scenarios in which a digital euro might be issued in the future, as well as 14 requirements that should first be met before issuance (Figure 1), as a reference for future assessment. However, the Bank emphasized that even if the envisioned scenarios actually occur in the future and the related requirements can also be met, this still does not mean that a digital euro will necessarily be launched; it must still be assessed together with other possible options6.
+
+[FIGURE]
+Figure 1 Possible Scenarios and Requirements for Issuance of a Digital Euro
+Possible scenarios for issuing a digital euro | Requirements that a digital euro should meet in individual scenarios | General requirements that a digital euro should meet
+Scenario 1 Supporting the digitalization and independence of the European economy | Requirement 1 Able to enhance digital efficiency | Requirement 8 Controllable quantity in circulation
+Scenario 2 A significant weakening of the role of cash as a payment instrument | Requirement 2 Possessing cash-like features | Requirement 9 Cooperation with market participants
+Scenario 3 Forms of money denominated in currencies other than the euro become alternative instruments for payments or stores of value | Requirement 3 Competitiveness | Requirement 10 Compliance with the regulatory framework
+Scenario 4 Necessary for, or beneficial to, monetary policy | Requirement 4 Able to serve as an operational instrument of monetary policy | Requirement 11 Safe and efficient
+Scenario 5 To reduce the risk of disruption to payment services due to extreme events | Requirement 5 Able to serve as a backup system | Requirement 12 Easy to obtain throughout the euro area
+Scenario 6 Used to enhance the international status of the euro | Requirement 6 Available for international use | Requirement 13 Conditional use by non-euro-area residents
+Scenario 7 Used to improve the overall cost and ecological footprint of the monetary and payment systems | Requirement 7 Cost-saving and environmentally friendly | Requirement 14 Possessing cyber resilience
+
+Source: Eurosystem High-Level Task Force on Central Bank Digital Currency (2020)
+
+4
+  CBDC may give rise to related liability for compensation due to technical operational problems (such as system disruptions or failures), or due to cyber risks, transmission errors, theft, fraud, data or privacy leaks, etc.
+5
+  Eurosystem High-Level Task Force on Central Bank Digital Currency (2020), “Report on a Digital Euro,” ECB, Oct. 2.
+6
+  For example, the European Central Bank is strengthening its infrastructure and establishing the fast payment system “TARGET Instant Payment Settlement” (TIPS), to provide fast and cost-effective payment services in the European region.
+
+73
+=== PAGE 4 ===
+－Among the 7 scenarios in which the European Central Bank would provide a digital euro to the public, those related to the Bank's responsibilities include: a digital euro helps the digitalisation of the European economy, can respond to the decline in cash use, can withstand threats from forms of money not denominated in euro (for example, global stablecoins7, foreign CBDCs, etc.), helps the transmission of central bank monetary policy, or can reduce the risk of payment service disruptions caused by extreme events such as cyberattacks, natural disasters and epidemics; if consideration is raised to the level of Europe's overall development goals, a digital euro could be used to enhance the international standing of the euro or improve the overall costs of the monetary and payment systems.
+
+    －The different scenarios above place different requirements on a digital euro. For example, in response to a significant weakening of the role of cash as a payment instrument, a digital euro must have cash-like features (for example, ensuring transaction privacy [隱私]); in addition, under all scenarios, a digital euro must meet the general requirements set by the European Central Bank, such as the Bank being able to control the amount of digital euro in circulation, cooperating with private-sector market participants to provide digital euro services, and complying with the regulatory framework.
+
+(II) Most countries are advancing CBDC research and experiments step by step; only mainland China and the Bahamas have progressed more rapidly8
+
+1. Major countries and regions such as the United States, the euro area and Japan are continuing to research CBDCs or prepare experimental projects
+    －United States: Given that the US dollar is an important international reserve currency and has a very substantial impact on the global economy, the United States is particularly cautious in its planning of CBDC research. Fed Chair Powell considers that there is no rush to be first, and that getting it right is more important; Narula, head of the Massachusetts Institute of Technology (MIT) team working with the Boston Fed, also stated that mainland China's current approach to the digital renminbi is not applicable to the United States, and that different system designs will be considered. The research project has a timeframe of approximately 2~3 years, but it is estimated that the US government will very likely still be unable to put it into actual use before 2024, 20259.
+    －Euro area: European Central Bank President Lagarde agrees with the Fed's argument against racing to be first. Although she expects a move towards a digital euro in the future, it may be necessary to undertake a 2~4-year
+
+7
+  Given that global stablecoins (global stablecoins, GSC) could bring challenges and risks to consumer protection, personal privacy [個人隱私], AML/CFT, financial stability and monetary policy, the G7 has put forward 4 initiatives requiring GSCs to meet the highest management standards and be subject to prudential regulation; the G20 Financial Stability Board (FSB) also issued 10 regulatory recommendations in October this year to ensure consistency in domestic and international regulation of GSCs. As for Facebook's Libra, which previously received considerable attention, although it has been renamed Diem, local European authorities remain cautious, considering that it has not yet resolved regulatory concerns, and do not permit it to enter the market.
+8
+  Recent media reports have stated that Cambodia's central bank has issued a CBDC called “Bakong.” In fact, the Bank has clarified that Bakong is not a CBDC, but rather a “backbone payment system” (backbone payment system) connecting banks, enabling members of the public to complete clearing immediately when using mobile wallets [手機錢包] to make payments and transfers in local currency or US dollars, even when they belong to different banks. See NBC (2020), “Project Bakong – Next Generation
+   Payment System,” Jun. 17 and Patel, Bhavin (2020), “Cambodia Edges Towards Digital Payments,” Jun. 22.
+  .Reuters Staff (2020), “Fed's Powell: More Important for U.S. to Get Digital Currency Right than be First,” Reuters, Oct. 19; Kapilkov, Michael (2020), “MIT is Helping the
+9
+
+   Boston Fed Build a CBDC that Can be Scaled for Consumer Use,” Cointelegraph, Sep. 4; Lang, Hannah (2020), “A Fed Digital Currency Looks Inevitable. So Do the
+   Problems,” American Banker, Nov. 4.
+                                                                                     74
+=== PAGE 5 ===
+project to first resolve issues such as AML/CFT, privacy and technology; the Bank will decide in the middle of next (2021) year whether to launch a digital euro project10.
+     －Japan: The Bank of Japan considers that a digital yen should first be ensured not to harm monetary policy and the banking system, and the Bank is currently in no hurry to issue one; it is planning to test technical feasibility in three phases. It will begin the first phase of a proof of concept (POC) in April next year to test basic functions; in March 2022 it will enter the second phase of the POC to test additional functions; subsequently, only if it is assessed as necessary will it conduct a pilot (pilot)11.
+
+     －South Korea: The Bank of Korea currently has no plan to issue a CBDC, but, in response to possible future changes in the digital payment environment, it is conducting a 22-month pilot (from March this year to December next year); in July this year, the Bank completed the CBDC design and definition of requirements, as well as an assessment of implementation technologies. It is now in the business process analysis and external consultation phase, and will enter the system construction and testing phase in January next year as scheduled12.
+     －Sweden: Sveriges Riksbank has not decided to issue an e-krona (e-krona), but, in response to the continuing decline in cash use in the country, the Bank began a pilot in February this year to develop and test related technical solutions; it is expected to be completed in February next year, and the project timeframe will be extended as necessary (by up to a further 6 years)13.
+     －Norway: Norges Bank Deputy Governor Bache considers that there is currently no urgent need to issue a CBDC. However, the continuing decline in cash use in the country is similar to that in neighbouring Sweden, so relevant preparations must also be made in advance; the Bank is conducting CBDC research and will decide next year whether to undertake further experiments14.
+
+     －Russia: The Bank of Russia has not yet decided whether to introduce a digital ruble (digital ruble), but is considering the possibility. It expects to proceed in stages, first studying the concept, then conducting a pilot, and only finally assessing whether issuance would be suitable for the country; the Bank has not yet determined the actual timeframe for each stage and is seeking relevant opinions from all sectors before the end of this
+
+10
+   Weeks, Ryan (2020), “ECB not ‘Racing to be First’ but Lagarde’s Hunch is that Europe will Issue a Digital Euro,” The Block, Nov. 12; Eurosystem High-Level Task Force
+   on Central Bank Digital Currency (2020), “Report on a Digital Euro,” ECB, Oct. 2.
+11
+   Kihara, Leika, and Takahiko Wada (2020), “Bank of Japan Official Downplays Fears over China's Digital Currency,” Reuters, Oct. 16; BOJ (2020), “The Bank of Japan’s
+   Approach to Central Bank Digital Currency,” Oct. 9.
+12
+   BOK (2020), “Bank of Korea, Central Bank Digital Currency (CBDC) Pilot Test,” Apr. 2; Lee, Min-hyung (2020), “Bank of Korea to Pick Consulting Partner for CBDC
+   Drive,” The Korea Times, Aug. 30; Jung, Min-kyung (2020), “BOK to Virtually Test Distribution of Digital Currency Next Year,” The Korea Herald, Oct. 7.
+13
+   Sveriges Riksbank (2020), “Digital Money – the Riksbank’s E-krona Pilot,” Payment in Sweden 2020, Oct. 29.
+14
+   Bache, Ida Wolden (2020), “Central Bank Digital Currency and Real-time Payments,” Speech at Finance Norway's Payments Conference, Nov. 5; Norges Bank (2020),
+   “CBDC – Possible Technical Testing Strategies,” Norges Bank Webinar, Nov. 9.
+                                                                                    75
+=== PAGE 6 ===
+year to facilitate subsequent planning15.
+
+2. Mainland China launches digital renminbi pilots
+     －The People's Bank of China positions the digital renminbi as a substitute for cash16, adopting a two-tier model [雙層式架構] in its operation; research began in 2014, and intermediaries [中介機構]17 were brought into joint research and development at the end of 2017. To date, basic research and development work has been completed, and internal closed pilot tests are being conducted in Shenzhen, Suzhou, Xiong'an, Chengdu and future Winter Olympics settings.
+
+     －In October this year, the Shenzhen municipal government cooperated with the People's Bank of China to conduct a digital renminbi pilot. Funded by Shenzhen, 50,000 digital renminbi “red packets” worth 200 yuan each were distributed to local residents through a lottery. Winners could spend them at more than 3,000 designated local merchants within the time limit18, completing payments by scanning barcodes or using NFC, methods commonly used in mobile payments at present (Figure 2); in December, Suzhou also conducted a pilot using the “red packet” model. In addition to expanding the scale of red packet distribution and the number of participating merchants, it further tested the offline payment [離線支付] function19.
+
+[FIGURE]
+Figure 2 Digital renminbi pilot in Shenzhen
+
+     －The digital renminbi pilots in Shenzhen and Suzhou are innovative measures by local governments during the COVID-19 pandemic to stimulate consumption and boost domestic demand. At the same time, they also mark the People's Bank of China's start in extending the scope of digital renminbi testing to the general public, indicating that its system appears to possess certain basic functions. This has attracted close attention from various countries.
+
+     －The People's Bank of China has repeatedly emphasised that there is currently no timetable for the formal launch of the digital renminbi, and that in the future it will continue to advance research and development
+
+Source: China Daily (2020)
+
+15
+   Bank of Russia (2020), “Bank of Russia Announces Public Discussions on Digital Ruble,” Oct. 13; Bank of Russia (2020), “A Digital Ruble,” Oct. 13.
+16
+   However, the People's Bank of China expects cash and the digital renminbi to continue to coexist in the future. See Li Zhensheng (2020), “Yi Gang: Digital Currency Is Still at an Early Stage and Needs a More Complete Legal Framework,” Radio Television Hong Kong website, November 2.
+17
+   For example, banks and payment-service-related institutions such as the Industrial and Commercial Bank of China, Agricultural Bank of China, Bank of China, China Construction Bank, Alipay and WeChat Pay.
+18
+   Digital renminbi red packets that remain unused after the time limit will be recovered centrally by the system.
+19
+   China Daily (2020), “Ping An Smart City Joins Shenzhen Municipal People's Government and the People's Bank of China in Conducting a Digital Renminbi Red Packet Pilot,” October 15; Kang Pu (2020), “The Digital Renminbi Is Closer to Us,” People's Daily Overseas Edition, November 4; Huang Zihao (2020), “Digital Renminbi Red Packets Are Here Again! This Time Suzhou Is Chosen for the Rollout,” Shanghai Securities News, December 7.
+                                                                                  76
+=== PAGE 7 ===
+work, carry out pilot testing well, strengthen research on related policies and impacts, and continually optimise and improve research and development design20. Future digital renminbi pilots are expected to continue to follow the People's Bank of China's overall plan for a two-tier model, with multiple intermediaries each developing technologies and providing services21, allowing the public to choose the most suitable solution through a mechanism of market competition22.
+
+     －In addition to continuing research and development at the technical level, the People's Bank of China also published draft amendments to the “Law of the People's Republic of China on the People's Bank of China” on October 23 this year, soliciting opinions from the public; the main amendments include expressly stipulating that “the renminbi includes physical and digital forms,” providing a legal basis for the issuance of the digital renminbi23.
+
+3. The Bahamas formally launches the Sand Dollar (Sand Dollar)
+     －The Bahamas has a population of only approximately 400,000, spread across as many as 700 islands. Owing to a lack of payment infrastructure on the outlying islands, most residents can only rely on cash transactions. However, cash handling costs are high, particularly because transport between the islands is difficult.
+
+[FIGURE]
+Figure 3 Scanning a Sand Dollar smart card for payment
+
+     －To address the inadequacy of payment infrastructure in the Bahamas and promote financial inclusion, the Central Bank of The Bahamas began the Sand Dollar project in December last (2019) year, conducting pilots successively on Exuma (Exuma) and Great Abaco (Abaco); on October 20 this year, it formally launched the Sand Dollar for use throughout the Bahamas.
+
+     －The Sand Dollar is a CBDC issued by the Central Bank of The Bahamas and is a digital version of physical cash; it adopts a two-tier model, with intermediaries responsible for KYC account opening [開戶] and providing wallet [錢包] services, among other things; it offers two versions, a smart card (smart card) and a mobile app: the smart card can display a one-time dynamic password and a QR Code for merchants to scan to complete payment (Figure 3); on a mobile phone, payments are made through the app by scanning a QR Code or directly entering an account number [帳號], among other methods, operating in the same way as existing mobile payment apps.
+
+Source: Google Play Store
+
+20
+   People's Bank of China (2020), “China Financial Stability Report 2020,” China Financial Publishing House, November 7.
+21
+   For example, in the digital renminbi pilot in Suzhou in December, six banks—the Industrial and Commercial Bank of China, Agricultural Bank of China, Bank of China, China Construction Bank, Bank of Communications and Postal Savings Bank of China—provided digital renminbi wallets that they had each developed.
+22
+   Chen Peng (2019), “Central Bank's Mu Changchun Explains in Detail the Practice of Statutory Digital Currency: It Can Now Be Said to Be on the Verge of Emerging,” The Beijing News, August 11.
+23
+   People's Bank of China (2020), “Notice of the People's Bank of China on Public Consultation on the ‘Law of the People's Republic of China on the People's Bank of China (Revised Draft for Public Comment)’,” October 23.
+                                               77
+=== PAGE 8 ===
+－The Sand Dollar does not provide the anonymous [匿名] function of cash. All transactions must be processed through an AML/CFT mechanism, and strict data protection is implemented to safeguard privacy.
+
+     －The Central Bank of The Bahamas plans to continue assisting individuals and enterprises in opening wallets until before the 1st quarter of next year, so that the private sector is ready; in the 1st and 2nd quarters of next year, it will expand applications to government and public utilities24.
+
+(III) The progress of the Bank's CBDC research planning is consistent with international trends
+
+      The Bank is currently conducting the second-phase “General-Purpose CBDC Experimental Project,” with plans to adopt a two-tier model25, relying on intermediaries to provide users with CBDC wallet opening and payment-related services. Therefore, to facilitate the advancement of the experimental project, the Bank's CBDC working group held an online briefing on the CBDC research project in August this year, explaining the planning of the experimental project to major banks, non-bank payment institutions and related businesses26, while exchanging opinions and views and conducting a written survey27.
+
+1. The survey shows that domestic businesses have expectations for the future development of CBDCs
+(1) Expectations that a CBDC can improve current pain points in domestic electronic payments
+     －The Bank's compilation of responses from participating institutions found that cash is functioning well domestically, but physical cash cannot be used in a digital environment. Although domestic electronic payments are diverse and convenient to use, many pain points remain. For example: the domestic payment market is fragmented28, with poor interoperability affecting payment efficiency; there are barriers to use (for example, age restrictions on account opening; a bank account [帳戶], ATM/debit card or credit card must be linked), and merchants' considerations regarding fees and other costs (for example, merchants may be unwilling to adopt electronic payments because of fees or taxation issues, as well as considerations about the integration and costs of acquiring equipment) affect the promotion of electronic payments; in addition, they cannot be used offline like cash.
+
+24
+   Central Bank of the Bahamas (2020), “The Sand Dollar is on Schedule for Gradual National Release to The Bahamas in mid-October 2020,” Sep. 25.
+25
+   See Central Bank of the Republic of China (Taiwan) (2020), “The Role of Central Banks and Forms of Money in the Era of Digital Payments,” reference materials for the press conference following the September 17 meeting of the Central Bank's Board of Directors and Supervisors.
+26
+   Including major participants in the Central Bank's Interbank Funds Transfer System (30 institutions), electronic payment and electronic stored-value card institutions (9 institutions), third-party payment and financial technology businesses (4 businesses), certificate authorities (2 institutions), and hardware vendors (2 vendors), for a total of 47 participating institutions.
+27
+   At the online briefing, participating institutions were asked to provide written opinions after the meeting on topics such as the current state of domestic payments and CBDC planning.
+28
+   Payment systems should in principle accommodate as many users as possible to fully realise the benefits of network effects. However, under considerations of profitability and commercial competition, private payment businesses usually tend to develop independent, closed payment networks and are unwilling to share them with other businesses. This results in a lack of interoperability between payment brands, creating a phenomenon of payment market “fragmentation” (fragmentation).
+                                                                                   78
+=== PAGE 9 ===
+－Participating institutions expect a CBDC to serve as digital cash with good interoperability, to promote free competition in the market and improve payment efficiency; if opening a CBDC wallet does not require linking a bank account, ATM/debit card or credit card, it could be expected to lower barriers to use; on the other hand, a CBDC must also pay attention to merchants' needs regarding system integration and cost considerations, to facilitate the promotion of its use.
+(2) Public-private cooperation to provide a CBDC as a shared payment instrument to meet the future needs of the digital economy
+ －Most participating institutions consider that a CBDC should be jointly provided through “cooperation between the central bank and the private sector” (Figure 4), maintaining the traditional approach of jointly providing money through public-private cooperation and making good use of the existing two-tier model that is already functioning well, so that banks continue to play the role of financial intermediaries [金融中介] in the CBDC system, to avoid negative impacts on the central bank's implementation of monetary policy and maintenance of financial stability.
+ －As central bank money for use by the public, becoming a “payment instrument shared across the market” would be the most suitable market positioning for a CBDC (Figure 5), allowing universal use in various payment scenarios without being constrained by a particular payment brand or payment scenario.
+ －If a CBDC “meets the future payment needs of the digital economy,” it will be able to deliver the greatest benefits (Figure 6), ensuring that, as the economy moves towards digitalisation, the public can continue to use safe central bank money to meet various payment needs and improve current payment pain points.
+
+[FIGURE]
+   Figure 4 Method of providing a CBDC
+
+ Cooperation between the central bank and the private sector
+  67%
+ Entirely the responsibility of the central bank
+  33%
+ Entirely the responsibility of the private sector
+  0%
+
+   Source: The Bank's CBDC working group
+
+[FIGURE]
+   Figure 5 Market positioning of a CBDC
+
+ Payment instrument shared across the market
+  43%
+ Substitute for cash
+  33%
+ Other
+  4%
+ New payment instrument to promote market competition
+  20%
+
+   Source: The Bank's CBDC working group
+
+[FIGURE]
+   Figure 6 Greatest benefit of a CBDC
+
+ Meeting the future payment needs of the digital economy
+  37%
+ Responding to the decline in cash use
+  24%
+ Other
+  9%
+ Making payments more resilient, competitive and innovative
+  17%
+ As part of improving cross-border payments
+  13%
+
+   Source: The Bank's CBDC working group
+
+                                    79
+=== PAGE 10 ===
+(3) Distributed ledger technology (DLT) [分散式帳本技術] has its benefits, but is not fully applicable to CBDC; CBDC technology still needs 7~10 years or more to mature
+     －Regarding the benefits of DLT for CBDC, participating institutions had relatively divergent opinions. Most considered the distinctive decentralized nature of DLT to be its greatest benefit, while quite a few participating institutions also considered programmability [可程式化] and encryption technology, among other things, to be helpful for the development of CBDC (Figure 7). However, most participating institutions considered that CBDC does not necessarily have to use DLT (Figure 8).
+     －Regardless of whether DLT is used, current CBDC technology still needs time to develop. Only a few participating institutions considered that CBDC technology could mature within 3 years; about one-third of participating institutions considered that 4~6 years would be needed. Those taking a conservative view of the development of CBDC technology, expecting it to require 7~10 years or more than 10 years, together accounted for more than half (Figure 9).
+
+[FIGURE]
+Figure 7 Benefits of DLT for CBDC
+Decentralization 34%
+Programmability 27%
+Encryption technology 23%
+Data sharing 9%
+Other 7%
+Source: The Bank's CBDC Working Group
+
+[FIGURE]
+Figure 8 Should CBDC use DLT?
+Not necessarily 59%
+Yes 32%
+No 9%
+Source: The Bank's CBDC Working Group
+
+[FIGURE]
+Figure 9 When will CBDC technology mature?
+Within 3 years 7%
+4~6 years 35%
+7~10 years 30%
+After 10 years 28%
+Source: The Bank's CBDC Working Group
+
+2. The Bank's CBDC research planning is in line with international trends and domestic needs
+     －The CBDC operating framework planned by the Bank adopts a two-tier model [雙層式架構] involving cooperation between the central bank and the private sector, as well as a design in which some functions can incorporate DLT, among other features29. It is in line with international development trends and focuses on addressing pain points in domestic electronic payments. In the future, CBDC can break down the existing barriers between different payment services and promote the integration of the payments market, so as to fully realize the network effects of payments. CBDC is not intended to make a profit; the plan is to follow the example of cash, allowing the general public, in their day-
+
+29
+     For example, the CBDC platform design in the Bank's second-stage “General-Purpose CBDC Pilot [試驗] Project” is based on a centralized system, with some functions (such as transaction data storage) incorporating DLT.
+                                            80
+=== PAGE 11 ===
+to-day transactions, not to bear handling fees, and to focus on improving the user experience, lowering the threshold for use as much as possible, and supporting offline transactions [離線交易]; at the same time, it will reduce the burden of system integration for merchants to facilitate the promotion of widespread CBDC use.
+
+     －The Bank's second-stage “General-Purpose CBDC Pilot Project” was launched on September 28 of this year. The CBDC Working Group is currently collaborating with an external technical team. Preliminary planning mainly includes three types of pilot scenarios: (1) delivery versus payment (DvP) for large-value transactions30, (2) domestic consumer payments and transfers, and (3) small-value cross-border remittances31. These broadly cover the main applications of general-purpose CBDC. Subsequently, communication with relevant businesses regarding specific needs and detailed processes, among other things, will continue, in order to plan a design that can resolve current payment pain points and meet market needs.
+
+     －In the future, the Bank will also seek opinions from relevant external institutions from time to time as required by operational planning, and adjust its planning at any time in line with actual future needs.
+
+(IV) Conclusion
+
+1. Major countries currently have no issuance plans, but have not overlooked the potential for future development of CBDC
+     －With the trend toward the development of the digital economy, the digitalization of money is already underway. For example, the various online and mobile payments made by the public using commercial bank money and electronic money, and the various large-value payments made by banks using central bank money in the form of central bank reserves, have all been digitalized. However, another form of central bank money, “cash,” cannot be used in a digital environment, and its role as a payment instrument may gradually weaken in the future, creating a gap in the payments market.
+
+     －Electronic payments in major countries are well developed and continue to improve. Therefore, none currently has plans to issue CBDC or has announced a timetable for its introduction. However, in view of CBDC's potential for future development as a digital payment instrument used in the digital economy, they have also successively begun research and pilots recently, to round out the possible options for future payment development. As for emerging countries lacking electronic payment infrastructure, the benefits of CBDC are clearer, and it can serve as an option for governments to resolve current payment pain points
+
+30
+     In the DvP pilot scenario, the preliminary plan focuses on securities transactions by legal persons, such as bonds and bills, using CBDC to test the feasibility of DvP operations.
+31
+     In the small-value cross-border remittance pilot scenario, the preliminary plan is to focus first on improving the inconvenience and costs associated with domestic cash receipts and payments in the small-value cross-border remittance process; existing mechanisms will be retained for the cross-border and overseas portions. For example, foreign migrant workers can pay CBDC directly to businesses handling small-value cross-border remittances, without having to receive or pay cash through convenience stores or collection agencies.
+                                           81
+=== PAGE 12 ===
+; for example, the Bahamas has issued the Sand Dollar, enabling the country's people to enjoy convenient mobile payment services.
+
+2. The Bank's CBDC research planning is in line with international trends and domestic needs, and the general-purpose CBDC pilot project is continuing to advance
+     －In addition to advancing their respective CBDC research and pilots step by step, central banks internationally have also worked together to formulate “CBDC Foundational Principles and Core Features” as the highest guiding principles for each country's CBDC, ensuring that CBDC issuance must “do no harm” to monetary and financial stability, “coexist” with other forms of money, and achieve optimal “innovation and efficiency” through a two-tier model involving public-private cooperation.
+
+     －The Bank is currently conducting its second-stage “General-Purpose CBDC Pilot Project,” incorporating the internationally formulated “CBDC Foundational Principles and Core Features” mentioned above into its planning. At the same time, it will also test CBDC application scenarios targeting domestic payment pain points, in order to meet domestic expectations for CBDC. Current preliminary planning includes three possible pilot scenarios—DvP, domestic consumer payments and transfers, and small-value cross-border remittances—which broadly cover the main applications of general-purpose CBDC.
+
+3. The Bank will continue to monitor domestic and international CBDC developments to refine its CBDC research and pilots
+     －As a new form of central bank money, CBDC involves a very wide range of aspects. It may not only affect the central bank's responsibilities for maintaining monetary and financial stability, but may also have far-reaching effects on the economy, society, and other areas. Before deciding to introduce CBDC, all aspects must undergo in-depth and prudent examination, with an assessment of the associated benefits and risks and possible response measures, as well as broad discussion among the public, to ensure that the eventual decision to issue CBDC has achieved social consensus and has a solid foundation in all aspects, so as to continue the good tradition of widespread trust in central bank money.
+
+     －Internationally, in addition to continued research and pilots on the technical aspects of CBDC, the possible legal implications of CBDC are also being explored. The Bank will continue to monitor international CBDC developments in all aspects and raise legal issues at appropriate times32. On the other hand, it will also, as needed, explain the progress of its CBDC research and exchange views with relevant businesses through briefings or other means, in order to continuously refine the Bank's research and pilots.
+
+32
+     Current international discussions of the legal aspects of CBDC are all conceptual studies and are still ongoing. If a decision is made in the future to issue CBDC, corresponding amendments to laws may be needed. However, the legislative amendment process can only proceed after the specific design framework and operating processes of CBDC, among other things, have been determined.
+                                         82
