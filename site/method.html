@@ -3,60 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Method and progress — CBDC Dataset</title>
-<meta name="description" content="Where the CBDC privacy dataset v12 stands and the step-by-step plan to the registered analysis.">
+<title>Method · CBDC privacy dataset</title>
+<meta name="description" content="How the CBDC privacy dataset is built: source rule, two layers, checks, and what it will not claim.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="layout">
-<aside class="side"></aside>
-<main class="content">
-<div class="mock-banner" id="mock-banner"><strong>Mock-up</strong>Loading…</div>
-<section class="hero"><div class="wrap">
-  <h1>Method and progress</h1>
-  <p class="lead">Written for the supervisor and for ourselves: what the paper now claims, what is finished, what is being decided, and the fixed order of the remaining steps. Status as of 3 November 2026 (v12; the v11 line of 18 October is tagged <code>v11-dev-final</code> in the repository).</p>
-</div></section>
-
-<section class="block"><div class="wrap">
-  <h2>What the paper is now</h2>
-  <p>A <strong>measurement and data paper</strong> (target: <em>Data &amp; Policy</em>): an audited, cross-project account of who is documented as able to link a retail CBDC payment to a person, under what decision and implementation status, with what uncertainty, from official documents only. Three layers, never mixed: the <strong>commitment matrix</strong> (cells admissible only when documented and endorsed by the competent body or operational), the <strong>privacy-posture layer</strong> (a P0–P3 ladder and nine indicators over every located statement, status attached), and <strong>linguistic emphasis</strong> (descriptive only). The table of commitments that disappear under strict rules is the bridge between them.</p>
-  <p>Why v12: the external consultation (28 Oct) showed that v11 treated conditional statements as commitments and applied a genre-based source rubric unevenly; an independent audit (2 Nov) found the executable instrument did not enforce the proposed rules; a uniform gap check (2 Nov) found 354 official documents the rubric had excluded across the 43 projects, most of them status decisions, legislation and FAQs with explicit privacy statements. A classified institutional illustration is not feasible on the commitment matrix on current evidence (sealed census: 5 model-labelled endorsed positions of 43); the authors decide on 6 Nov whether it is omitted or exploratory.</p>
-</div></section>
-
-<section class="block alt"><div class="wrap">
-  <h2>Step by step (v12)</h2>
-  <ol class="steps">
-    <li class="done"><b>Project frame</b><span class="st">done · 2 Nov</span><br>48 projects → 46 national → 43 retail candidates; unions out of the national analysis; exclusions with reasons.</li>
-    <li class="now"><b>Source rule and gap check</b><span class="st">rule drafted · check run 2 Nov</span><br>Authority/content rule replaces genre exclusions. All 43 projects searched: 378 candidates, 354 not in the registry, major gaps in 27 projects. Next: author decision over 178 priority rows, download, SHA-256, dated additions, page texts; then one source manifest (URL, hash, language, route, reuse terms) frozen with a single as-of date.</li>
-    <li class="done"><b>Language ledger</b><span class="st">kept · 2 Nov</span><br>106 English / 19 non-English of the 125 v11 core documents (nine registry labels were wrong). Routes A/B/C/D; issuer English editions ingested for Norway; evidence available only via translation in 7 documents of 6 projects within the frame.</li>
-    <li class="now"><b>Measurement contract v12</b><span class="st">draft</span><br>Endorsement by the competent body; decision status × implementation status; symmetric admissibility implemented and tested; no inference from silence; locators with spans; posture layer. Adopted only after the corpus is completed and the sealed census re-run.</li>
-    <li class="done"><b>Development cases NO and UK</b><span class="st">done · 2 Nov</span><br>Complete-coverage single vs two-stage runs; Norway re-run from the issuer's English editions. Values agree on raw cells; under the admissibility gate Norway is undetermined in all four runs and the UK is determined only in single mode. Single mode mislocated five pages in a 1.2-million-character request; two-stage located 17/17.</li>
-    <li class="done"><b>Sealed model-only screens</b><span class="st">done · to be re-run</span><br>Endorsement census and statement survey (2,628 typed statements, 80 % located verbatim), per-project results sealed off-repository, aggregates committed, release governed by an exposure allowlist enforced in code.</li>
-    <li><b>Freeze and registration</b><span class="st">gate</span><br>Manifest, contract, prompts, routing and gates frozen; Zenodo DOI; OSF registration with exposure disclosure and both language denominators; smallest effect of interest elicited only if a classified estimate remains.</li>
-    <li><b>Human reference</b><span class="st">after the gate</span><br>Blind reference workbooks without model columns for a probability sample of 12–16 projects, locked before any model output is opened, plus source-first F1 for every analytic project.</li>
-    <li><b>Production and audit</b><span class="st">after the reference</span><br>Frozen pipeline, two providers, one scored run on the blind set, challenge battery, outer audit, stability envelope on six fixed projects.</li>
-    <li><b>Analysis and release</b><span class="st">last</span><br>Commitment matrix, posture layer, emphasis layer, change map, missingness bounds; every number replayable from archived outputs; this site's mock data replaced by pipeline output.</li>
-  </ol>
-</div></section>
-
-<section class="block"><div class="wrap">
-  <h2>Open decisions (6 November)</h2>
-  <div class="findings">
-    <div class="finding-card"><span class="n">1</span><p><strong>Shape of the paper.</strong> Measurement-and-data core; the institutional illustration omitted or exploratory on the status-attached view, labelled as such.</p></div>
-    <div class="finding-card"><span class="n">2</span><p><strong>Order of work.</strong> Complete the corpus under the new source rule before any instrument freeze; re-run the sealed census on the completed corpus.</p></div>
-    <div class="finding-card"><span class="n">3</span><p><strong>Capacity-bound choices.</strong> Blind set 12 vs 16; retention of F9/F10; routing rule for very long requests; translations for Chile, Taiwan, Czechia.</p></div>
-  </div>
-</div></section>
-<footer class="site">
-  <div class="wrap">
-    <div class="cite-as"><strong>Cite as</strong>Bok, Martin &amp; Stroukal, Dominik (2026). <em>Institutional Determinants of Privacy Design in Central Bank Digital Currencies</em>. Working paper, cbdcdataset.org.</div>
-    <div>© 2026 Martin Bok &amp; Dominik Stroukal · Data CC BY 4.0 · Code MIT · <a href="about.html">About &amp; contact</a></div>
-    <div>Site concept inspired by Davide Romelli's <a href="https://cbidata.org/">CBI Data (cbidata.org)</a>.</div>
-  </div>
-</footer>
-</main>
+<header class="site"></header>
+<main id="main">
+<div class="narrow">
+<h1>Method</h1>
+<p class="lead">A summary for readers. The authoritative description is the project brief and the decision records in the <a href="https://github.com/BokMartin/cbdc-dataset-v11">repository</a>.</p>
+<h2>The question</h2>
+<p>When the makers of a retail CBDC say it will respect privacy, what exactly do they say, and what have they committed to?</p>
+<h2>Which projects</h2>
+<p>44 projects: 43 national retail CBDC projects and the digital euro. A currency union is one project; documents of the ECB and of the national central banks of the euro area belong to the digital euro.</p>
+<h2>Which documents count</h2>
+<p>Only official documents of the body competent to decide for the project, on its official channels. Reports of the BIS, the IMF, consultancies, trackers and the media are never evidence. Each document collected is decided by the authors as one of:</p>
+<ul>
+  <li><b>Evidence</b>: read by the measurement.</li>
+  <li><b>Companion</b>: cited for the project's status, timeline or legal state (for example a press release announcing a report, or an act of parliament), never measured. A binding text issued by the central bank itself stays evidence.</li>
+  <li><b>Not used</b> or <b>wholesale only</b>.</li>
+</ul>
+<p>Rule: <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/SOURCE_RULE_D1.md">SOURCE_RULE_D1</a>. The search for missing documents was run for every project with the same rule.</p>
+<h2>Two layers, never mixed</h2>
+<p><b>Talk.</b> Every statement in a project's own documents about users' privacy, identifiability or access to their data, split into sentence units before any model sees them and labelled by aspect and voice.</p>
+<p><b>Commitment.</b> Twelve design features (for example: can the central bank link a payment to a person?), counted only when the competent body has decided them or the system runs them, each with a located quote. Silence is never read as a commitment.</p>
+<h2>Languages</h2>
+<p>Documents not in English are read in the issuer's own English edition where one exists, otherwise in a machine translation made through a provider's API with a full run record. Machine translation is used only for projects with five or more evidence publications. Its quality is being judged by both authors on a benchmark of five documents that also exist in the issuer's own English; how far translated text may be used follows from that judgement.</p>
+<h2>Checks</h2>
+<p>Every model run leaves a run record (exact model, prompt hash, inputs, per-call log). Human coders code before they see model output. The instrument has been audited four times by an independent model; the open findings are listed in the repository. Nothing is reported as validated until the authors' agreement meets the thresholds set in advance.</p>
+<h2>What the dataset will not claim</h2>
+<p>No ranking of projects by how much they talk about privacy, no "silent" projects, no score combining talk and commitment, and no causal language.</p>
 </div>
-<script src="assets/vendor/d3.v7.min.js"></script>
-<script src="assets/vendor/topojson-client.min.js"></script>
+</main>
+<footer class="site"></footer>
 <script src="assets/site.js"></script>
-<script>CBDC.load(function(D){  });</script></body></html>
+</body>
+</html>

@@ -1,0 +1,574 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-346 | source: CBDC_MASTER_v12/TW/TW__2024-06__CBDC-MPC-press-conference-note-CBDC-survey-results.pdf | source_sha256: 2c1e2ee2c39148cc74600685c65ba5b02a3f1472f8fc0aa941fd854534535a96
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+VII. Explanation of the Results of the Bank's Outsourced Questionnaire Survey on the Topic of Central Bank Digital Currency (CBDC)
+
+    The operation of the modern monetary system is based on central bank money, building a diverse, convenient, safe and trusted payment system; in recent years, CBDC has become a focus of research internationally. If research and testing establish its feasibility, it could not only serve as a new foundation for future digital payments, but the central bank will also continue to provide the foundation of trust in the monetary system.
+
+    To respond to developments in the digital age, the Bank began researching CBDC1 (i.e., the digital New Taiwan dollar) in 2019 and has completed two stages of research and testing2. It is currently at the prototype-building stage3, in step with advanced countries worldwide; three workstreams4 are currently underway. Among these, for the work on broad communication, an outsourced questionnaire survey was undertaken from April of last year (2023) and was successfully completed in April of this year (2024). This report aims to explain to the public the key survey results and subsequent related plans; it also reiterates that, if the Bank decides to issue CBDC in the future, taking the digital divide into consideration, it will still retain cash issuance to take account of the preferences and habits of particular groups.
+
+(I) Origins of international research on CBDC
+
+1. Developments in the digital age may reshape the forms of payment services
+
+    The operation of the modern monetary system is based on central bank money, supporting the development of commercial bank money and other forms of money5, and together building a sound payment system centered on the central bank and financial institutions. However, the current payment market is no longer limited to services provided by traditional financial institutions. The entry of non-bank payment institutions, technological innovation and other factors may all reshape the forms of payment services.
+
+2. Regardless of how financial technology develops, the role played by the central bank and the foundation of trust it provides for the monetary system will remain key to a sound financial system
+
+(1) Regardless of future technological innovations, central bank money remains the anchor6 of the monetary system, ensuring the exchange of commercial bank money for central bank money at 1：1
+
+1
+  For details, see Central Bank of the Republic of China (Taiwan) (2020), “Latest International Developments in Central Bank Digital Currency and Progress in the Bank's Research Planning,” Reference Materials for the Press Conference Following the Meeting of the Board of Directors and Supervisors, December 17; Central Bank of the Republic of China (Taiwan) (2020), “The Role of the Central Bank and Forms of Money in the Digital Payment Era,” Reference Materials for the Press Conference Following the Meeting of the Board of Directors and Supervisors, September 17; Central Bank of the Republic of China (Taiwan) (2020), “Latest International Development Trends in Central Bank Digital Currency,” Reference Materials for the Press Conference Following the Meeting of the Board of Directors and Supervisors, June 18.
+2
+  The “Technical Research on the Feasibility of Wholesale CBDC” and the “Retail CBDC Experimental Project” were completed in June 2020 and June 2022, respectively.
+3
+  The International Monetary Fund (IMF) divides progress in advancing CBDC into five stages: “preparation,” “proof of concept,” “prototype building,” “pilot” and “actual operation.” The preparation stage refers to preliminary research into possible CBDC technologies, design and applications; proof of concept involves conducting test items in a closed environment; prototype building refers to building a CBDC ecosystem; a pilot involves selecting a particular area in a real-world environment to test the CBDC system; actual operation means formally issuing CBDC and operating the system. For details, see IMF (2023), “How Do Central Banks Explore Digital Currency?” Fintech Notes, Sep.
+4
+  These are “broad communication to obtain public support,” “refining platform design and adopting more robust and mature technologies,” and “studying a solid legal framework to strengthen market trust in CBDC.”
+5
+  In addition to commercial bank money issued by the banking system, there is also electronic money issued by smaller non-bank electronic payment institutions.
+6
+  That is, 1 dollar of central bank money is 1 New Taiwan dollar, and commercial bank money is exchanged for central bank money at a ratio of 1:1, thereby ensuring that 1 dollar of commercial bank money is 1 New Taiwan dollar; even for electronic money, 1 dollar of electronic money is 1 New Taiwan dollar, and its value is also anchored to the value of central bank money.
+                                                         102
+=== PAGE 2 ===
+to maintain the singleness of money7 and safeguard monetary and financial stability; in addition, central bank money has no credit risk or liquidity risk and can serve as the final settlement asset, helping promote the sound operation of payment systems.
+    (2) The central bank can also make good use of the opportunities brought by digital technology to innovate. In particular, CBDC, which has seen a rise in research internationally in recent years, could, if testing establishes its feasibility, serve as a new foundation for future digital payments. Accordingly, countries around the world are increasing their investment in CBDC-related areas, and the central banks of many countries are actively exploring the potential benefits and challenges of CBDC8.
+
+(II) Latest global development trends in CBDC
+
+1. Apart from a small number of countries that have formally issued retail CBDC, other major advanced countries are still at the proof-of-concept or prototype-building stage, and currently have no specific issuance timetable.
+
+2. Most countries that have currently issued CBDC are countries with less adequate financial infrastructure, such as the Bahamas and Nigeria, which hope thereby to promote financial inclusion. However, developments since issuance have fallen short of expectations9; a small number of countries have entered the pilot stage, such as mainland China and Thailand; major advanced countries such as Japan10, the euro area11 and the United Kingdom12 are still at the proof-of-concept or prototype-building stage.
+
+(III) The Bank has planned a preliminary CBDC framework and design as basic material for the questionnaire survey
+
+1. Issuance using a two-tier model [雙層式架構]
+
+      To maintain the operating model of the traditional monetary system's two-tier model and avoid financial disintermediation, if a decision is made to issue CBDC in the future,
+
+7
+   Singleness of money means that all forms of money should have the same value and be exchangeable with all other forms of money without loss of value. See BIS (2023), “Blueprint for the Future Monetary System: Improving the Old, Enabling the New,” BIS Annual Economic Report, pp.85-118, Jun 20.
+8
+   See Central Bank of the Republic of China (Taiwan) (2021), “International CBDC Development Trends and Their Policy Implications,” Reference Materials for the Press Conference Following the Meeting of the Board of Directors and Supervisors, June 17.
+9
+   The Central Bank of The Bahamas issued the Sand Dollar in October 2020; however, as of the end of January this year, its amount issued accounted for less than 1% of the country's amount of currency issued. The Central Bank of Nigeria launched the eNaira in October 2021; as of the end of August last year, its amount issued accounted for only about 0.37% of the country's amount of currency issued (the country's central bank has not regularly published eNaira-related data).
+10
+   The Bank of Japan (BoJ) has completed two stages of functional testing of retail CBDC and established a CBDC forum from July last year, inviting stakeholders to participate jointly to improve the related design; the Ministry of Finance (which is in charge of the country's monetary system and has responsibility for CBDC legal issues) has convened CBDC-related interministerial liaison meetings since January this year to discuss framework, design and legal issues; to date, the BoJ has no issuance timetable.
+11
+   After completing the investigation phase for the “Digital Euro” last year, the European Central Bank (ECB) entered the preparation phase while also refining and testing technical solutions. In addition, the European Commission proposed a “Draft Regulation on the Digital Euro” in June last year; however, the ECB has publicly stated on multiple occasions that it must wait until the legislative process is completed before deciding whether to issue a digital euro.
+12
+   The Bank of England (BoE) plans to develop the “Digital Pound” in three stages. It began research and exploration work in 2022, is carrying out related design work from last year to 2026, and is building a prototype system from this year; the BoE has publicly stated that it will decide within ten years whether to issue a digital pound.
+                                                                                103
+=== PAGE 3 ===
+a two-tier model will also be adopted, namely, the Bank will provide a CBDC platform, issue CBDC on the platform and distribute it to intermediaries [中介機構], which will then provide CBDC to users (Figure 1). Intermediaries are responsible for opening wallets [錢包] for users, providing wallet interfaces (such as mobile Apps) and other value-added application services.
+
+[FIGURE]
+                        Figure 1 Overall architecture of the CBDC system planned by the Bank
+                                                                Central Bank Interbank Funds Transfer System
+                     Central bank              CBDC
+                                                dedicated vault
+                                                                 Reserve account [帳戶]         CBDC dedicated account
+                                      Bank/non-bank          Bank/non-bank
+                                        central vault          central vault
+
+                                                               Platform system
+                                                                      CBDC
+                                                                       dedicated vault
+                                               API layer
+                                                                                    Supervisory
+                                                               Intermediary          Intermediary
+                                                                central vault         central vault    analysis
+                                       Bank and non-bank                                       module
+                                        intermediaries
+                                                               User wallet          User wallet
+
+                                           Wallet interface
+                                                               Note: The “CBDC dedicated vault,” “intermediary
+                                                                 central vault” and “user wallet” in the platform
+                                                                 system are wallets belonging respectively
+                                                                 to the central bank, intermediaries and end users,
+                                               End users         recording the amount of CBDC held.
+
+      Notes: 1. “CBDC dedicated vault” refers to the central bank's dedicated wallet on the CBDC platform, used to issue and redeem CBDC; “intermediary central vault” refers to a wallet opened by the central bank for an intermediary on the CBDC platform, used to receive CBDC issued by the central bank and to transfer funds between intermediaries.
+        2. Description of the operating process: At an intermediary's request, the central bank converts reserves into CBDC in the Interbank Funds Transfer System and transfers them into the CBDC dedicated account. At the same time, the platform credits an equivalent amount of CBDC to the CBDC dedicated vault, then distributes it to the intermediary central vault; at users' requests, the intermediary provides CBDC to user wallets.
+
+2. No interest at the initial stage of issuance, but the interest-bearing function is retained
+
+(1) Since deposits taken by banks and other intermediaries are a source of credit creation, if CBDC replaces bank deposits on a large scale, it may affect financial stability and, in turn, affect the effectiveness of monetary
+                                           104
+=== PAGE 4 ===
+policy transmission.
+(2) To avoid members of the public converting large amounts of deposits into CBDC, if a decision is made to issue it in the future, it will initially be issued without interest to maintain the existing monetary policy transmission mechanism; however, the interest-bearing function will be retained to preserve future policy flexibility13.
+
+3. Other important designs and functions
+
+(1) Wallet tiering [錢包分級]: Taking risk management into consideration, CBDC wallets will be divided into unregistered [不記名] and registered [記名] wallets14 according to the type of holder, method of opening and degree of verification of identity [身分驗證]. According to risk levels, the CBDC platform sets upper limits on wallet stored-value amounts [錢包儲值金額及交易金額上限] and transaction limits; intermediaries may also set their own limits based on their own risk considerations, but these must not exceed the limits set by the platform.
+
+(2) Privacy [隱私] and personal data [個人資料] protection:
+      ‒ Users opening unregistered wallets only need to provide a mobile phone number and do not need to provide other personal data, thereby also taking account of the public's privacy needs.
+      ‒ When users open registered wallets, intermediaries carry out customer due diligence (KYC) [認識你的客戶(KYC)] procedures and must properly safeguard and manage users' personal data. Intermediaries may only access [查閱] relevant data pertaining to themselves and their own users. The Bank may only access user transaction data processed using de-identification [去識別化] technology.
+
+(3) Platform functions: In addition to supporting basic functions such as transfers between wallets, purchases, conversion (referring to mutual conversion between cash, bank deposits and CBDC), and automatic conversion/top-up15, it can also support value-added functions such as digital vouchers and authorized debits16.
+
+(4) Information security management:
+      ‒ Overall platform security: A defense in depth (DiD)17 architecture is adopted, with the Bank, intermediaries and users jointly achieving security management objectives. In this, the central bank maintains platform security; intermediaries establish information security management systems to ensure uninterrupted operations; users comply with intermediaries' rules for secure use of wallet
+
+13
+   Paying interest on CBDC can give rise to a new monetary policy operating tool, that is, the central bank might be able to influence market interest rates by adjusting the CBDC interest rate; in addition, in a situation of severe deflation, it can serve as a tool for breaking through the zero lower bound on interest rates. Huang Chao-hsi [黃朝熙] (2020), “The Impact of CBDC on Financial Stability and the Effectiveness of Monetary Policy,” CTCI Foundation special report.
+14
+   Those eligible to open wallets include legal persons and natural persons (nationals and foreigners); opening methods are over the counter or online; unregistered wallets require only a mobile phone number, while registered wallets require basic information.
+15
+   Automatic conversion means that when the amount transferred into a wallet exceeds the wallet limit, the platform automatically transfers the excess amount to a designated bank account. Automatic top-up is the reverse operation of the automatic conversion function.
+16
+   Users can use digital signatures to authorize designated institutions or merchants to deduct amounts from their wallets under preset conditions (payment of utility bills on their behalf, linking wallets for e-commerce online shopping, etc.).
+17
+   This is a cybersecurity strategy that mainly uses multiple layers of checks to protect an organization's network and information.
+                                          105
+=== PAGE 5 ===
+interfaces.
+       ‒ Transaction security: A public/private key mechanism (Public Key Cryptography, PKC) is adopted, and a certificate mechanism (Public Key Infrastructure, PKI) is adopted as needed; all user transactions must be signed with digital signatures18 and verified by the platform system to ensure transaction security19.
+
+4. Using the preliminary CBDC framework and design planned above as basic material for broad communication, and continuing the two workstreams of refining platform design and studying the legal framework
+
+(1) Broad communication to understand the public's awareness of and needs regarding CBDC, and to obtain support:
+     ‒ Mainly divided into two major phases:
+         First phase (from April last year to April this year), outsourced questionnaire survey to solicit opinions broadly: The Bank commissioned the Taiwan Institute of Economic Research to conduct a quantitative questionnaire survey of the general public, industry, government institutions and academia on topics such as CBDC awareness, needs, design and privacy. It was completed in April this year.
+         Second phase (expected to start in January 2025), specific and in-depth communication: With reference to the survey results, review and revise the preliminary CBDC framework and design. In the future, based on the revised content, several public hearings, briefing sessions or forums will be held to conduct broader and more specific exchanges with stakeholders, and thereby strengthen CBDC outreach and raise public awareness.
+
+(2) Refining platform design and adopting more robust and mature technologies:
+     ‒ The CBDC platform already has digital currency lifecycle (issuance, circulation, cancellation) management and various basic functions. Work is currently continuing on developing ideas for various innovative applications and value-added functions, including conditional payments such as digital vouchers and authorized debits; in addition, taking into account the digital divide and the payment needs of disadvantaged groups or groups in remote areas, research and testing of offline payment [離線支付] technology are also being conducted; and, in response to the trend toward tokenization, the feasibility of using wholesale CBDC to settle tokenized assets is being tested.
+
+(3) Studying the legal framework: In conjunction with the above two workstreams, the legal framework of our country is being studied in parallel, and an inventory is being made of laws and regulations that may need to be established or amended in connection with issuing CBDC, in order to clearly delineate the rights and obligations of all participants in the CBDC ecosystem and strengthen market trust in CBDC.
+
+18
+     Refers to signing transactions with a private key, including the public/private key mechanism (PKC) and the certificate mechanism (PKI).
+19
+     Users should properly safeguard wallet devices to avoid theft of cryptographic keys.
+                                            106
+=== PAGE 6 ===
+(IV) Key points of the results of the outsourced CBDC questionnaire survey
+
+Table 1 Survey respondents and methods
+Stakeholders | Survey respondents | Survey method | Number of questionnaires
+CBDC demanders | General public: members of the public | Landline, mobile phone, internet | 4,234
+CBDC demanders | General public: shops | Landline | 1,436
+CBDC demanders | General public: street vendors | In-person field interviews | 611
+Intermediaries [中介機構] | Industry: financial institutions; electronic payment institutions |  First select a defined range of survey respondents  Then distribute questionnaires  Provide an internet link or conduct telephone interviews | 260
+CBDC service providers | Industry: third-party payment institutions; virtual asset businesses |  First select a defined range of survey respondents  Then distribute questionnaires  Provide an internet link or conduct telephone interviews | 41
+CBDC demanders/regulators | Government agencies: economy/tourism/industry, disadvantaged groups, taxation, financial supervision, money laundering prevention |  First select a defined range of survey respondents  Then distribute questionnaires  Provide an internet link or conduct telephone interviews | 107
+Experts and scholars | Academia: economics and finance, law, information and communications technology |  First select a defined range of survey respondents  Then distribute questionnaires  Provide an internet link or conduct telephone interviews | 104
+Note: Agencies related to the economy/industry/tourism include the Ministry of Economic Affairs, Ministry of Transportation and Communications, Ministry of Culture, and local government industrial development bureaus, etc.; agencies for disadvantaged groups include social affairs bureaus, the Council of Indigenous Peoples, and mountain indigenous district offices, etc.; agencies related to money laundering prevention include the Anti-Money Laundering Office of the Executive Yuan, agencies of the Ministry of Justice such as the Investigation Bureau and the High Prosecutors Office, etc., and agencies of the Ministry of the Interior such as the National Police Agency and police departments, etc.; the financial supervisory agency is mainly the Financial Supervisory Commission.
+
+1. Survey respondents, methods, and focus areas
+
+(1) Different survey methods were adopted according to respondent category (Table 1)
+
+－General public (referring to members of the public, shops20, and street vendors21): Members of the public were surveyed mainly by landline and mobile phone, supplemented by an internet survey22. The survey covered citizens aged 18 and above in all 22 counties and cities nationwide. For shops, industries with a relatively high proportion of retail payments, such as retail, transportation and storage, accommodation and food services, and services, were selected as survey respondents, and the survey was conducted by landline. For street vendors, in accordance with their operating patterns, in-person field interviews were conducted at morning markets and night markets in the northern, central, southern, and eastern regions.
+
+－For surveys of other respondents, such as industry (referring to financial institutions23, electronic payment institutions, third-party payment institutions, and virtual asset businesses), government agencies (referring to agencies responsible for the economy/industry/tourism, disadvantaged groups, taxation, financial supervision, and money laundering prevention and fraud prevention), and academia, a defined range of representative respondents was first selected, and they were then provided with an internet link to complete the questionnaire or interviewed by telephone.
+
+(2) Appropriate survey focus areas and question types were designed according to respondent category (Figure 2)
+
+－General public: To understand their awareness of CBDC and, through the design of questions and explanations by interviewers, enhance their understanding of CBDC. In addition, the public's views on CBDC design and needs, as well as privacy [隱私] and the scope of data use, were also survey focus areas.
+
+20
+Enterprises registered in accordance with law (such as the “Company Act” and the “Business Registration Act”) or registered for tax purposes.
+21
+According to the Directorate-General of Budget, Accounting and Statistics' “Survey on the Operating Conditions of Street Vendors,” street vendors refer to those who set up fixed or mobile stalls to sell goods in public or private traditional markets, on streets, or in other open spaces such as night markets.
+22
+Respondents to the landline and mobile phone questionnaires tended to be older. To balance the age groups in the survey, an internet questionnaire targeting mainly younger groups was added. To ensure representativeness, the market research company weighted the three types of questionnaires—landline, mobile phone, and internet—according to Taiwan's population structure, so that the survey results would closely reflect the population.
+23
+Financial institutions include domestic banks, branches of foreign banks in Taiwan, credit cooperatives, and the credit departments of farmers' and fishermen's associations (referred to in this report as grassroots financial institutions).
+
+107
+=== PAGE 7 ===
+－Industry:
+ For those that could become CBDC intermediaries, such as financial institutions and electronic payment institutions, or those that could provide CBDC-related payment services24, such as third-party payment institutions, the survey asked about their expected supporting measures and feasible business models, etc.
+
+[FIGURE]
+Figure 2 Survey focus areas for each category of respondents
+
+ In addition, given that the architecture and design of CBDC could affect financial institutions, such as their financial intermediation role, funding costs, and liquidity risk, financial institutions' views on these issues were also a focus of attention. As for virtual asset businesses, they were asked about the possible benefits of CBDC for innovation in their businesses.
+
+－Government agencies: Asked for their views on the benefits of CBDC for the operations for which their agencies are specifically responsible, etc.
+
+－Scholars: Asked for relevant opinions from experts in various fields, such as economics and finance, law, and information and communications technology.
+
+2. Survey results
+
+(1) General public (members of the public, shops, and street vendors): Awareness of CBDC is not high, but if awareness and understanding are enhanced, willingness to use it will increase substantially.
+
+－The public's daily consumption expenditures and the payment receipts of shops and street vendors: As CBDC transactions are conducted mainly through mobile phones (and possibly also cards) as the medium, the user experience is similar to that of mobile payments. Therefore, the public's use of mobile payments was surveyed as a reference.
+
+ The public's daily consumption expenditures: “Use both cash and non-cash” accounted for the highest proportion, at 7 tenths (Figure 3). Some members of the public use only cash due to habit or preference25 (Figure 4). Compared with the previous year, more than 7 tenths of
+
+[FIGURE]
+Figure 3 The public's daily consumption behavior
+Use only cash, 25%
+Use only non-cash, 1.2%
+Use both cash and non-cash, 73.8%
+
+24
+Refers to those that, although they do not provide services for opening CBDC wallets [錢包], can provide payment services such as collection and payment on behalf of users by linking to users' CBDC wallets.
+25
+Among them, the proportions using only cash in remote areas, among men, and among those aged 40 and above are higher than those in non-remote areas, among women, and among those aged 39 and below.
+
+108
+=== PAGE 8 ===
+the public increased their frequency of using mobile payments (Figure 5). In addition, the public considered that the difficulties in using mobile payments mainly came from “shops do not accept mobile payments” or “do not accept the mobile payments consumers habitually use” (Figure 6).
+
+[FIGURE]
+Figure 4 Reasons the public use only cash for consumption (multiple answers)
+Personal habit or preference to use only cash | 81.0%
+Mobile payments are complicated to operate; do not know how to use them | 23.7%
+Concern about the risk of unauthorized use or fraudulent charges | 13.0%
+Concern about the risk of leakage of personal data [個資] or transaction information | 8.1%
+Other | 6.8%
+Most shops accept only cash payments | 6.5%
+Do not know/no opinion/refused to answer | 1.8%
+Mobile phone does not have unlimited internet data | 1.0%
+
+[FIGURE]
+Figure 5 Frequency of mobile payment use compared with the previous year
+Unchanged | 17.7%
+Do not know/refused to answer | 0.8%
+Decreased | 5.1%
+Increased | 76.4%
+
+[FIGURE]
+Figure 6 Difficulties the public face when using mobile payments (multiple answers)
+Shops do not accept mobile payments | 18.9%
+Shops do not accept the mobile payments consumers habitually use | 12.0%
+Account [戶] opening procedures or operating methods are complicated | 8.7%
+Too many types of mobile payments exist in the market | 7.6%
+Unable to pay when the mobile phone's internet signal is poor | 6.5%
+Need to link a credit card or bank account [帳戶] | 4.3%
+Concern about forgetting the password | 4.0%
+Unable to pay when the mobile phone's battery runs out | 3.4%
+Transaction records are used for commercial purposes | 3.2%
+Do not know/no opinion/refused to answer | 3.4%
+
+ Payment receipts of shops and street vendors: In addition to receiving cash, both shops and street vendors accept mobile payments. However, due to constraints on premises, equipment, scale, etc., the proportion of street vendors accepting only cash is 76.1%, significantly higher than the 46.8% for shops (Figure 7). It is therefore appropriate to have relevant supporting measures to encourage them to accept non-cash payment methods such as mobile payments. In addition, both shops and street vendors considered that, if CBDC is simple to operate in the future or the government provides incentives for taxes, equipment, etc., their willingness to use it will be higher (Figure 8).
+
+[FIGURE]
+Figure 7 Payment receipts of shops and street vendors
+Shops
+Street vendors
+Accept only cash | 46.8% | 76.1%
+Accept both cash and non-cash | 53.0% | 23.9%
+Accept only non-cash payment methods | 0.2% | 0
+Note: Non-cash payment methods include credit cards, debit cards, stored-value cards, and mobile payments, etc.
+
+[FIGURE]
+Figure 8 Supporting measures that shops and street vendors consider could increase their willingness to use CBDC (multiple answers)
+Shops
+Street vendors
+0% 10% 20% 30% 40% 50%
+Simple and convenient to operate
+Government provides tax incentives
+Government provides equipment incentives
+Comprehensive education and training and troubleshooting guidance
+CBDC has strict information security protection
+
+109
+=== PAGE 9 ===
+－Awareness and willingness to use: Before the questionnaire survey began (pre-test)26, the general public's awareness of CBDC was relatively low (Figure 9). However, after answering subsequent questions and receiving explanations of relevant information, thereby gaining a deeper awareness and understanding of CBDC, the public's willingness to use it increased significantly when asked again (post-test)27 (Figure 10).
+
+[FIGURE]
+Figure 9 The general public's awareness of CBDC
+Members of the public
+Shops
+Street vendors
+7% 10.4% 11.9%
+92.7% 89.6% 88.1%
+Have heard of
+CBDC (i.e., digital New Taiwan dollar)
+CBDC (digital New Taiwan dollar)
+Have not heard of
+Have not heard of
+CBDC (i.e., digital New Taiwan dollar)
+CBDC (digital New Taiwan dollar)
+
+[FIGURE]
+Figure 10 The general public's willingness to use CBDC
+Pre-test
+Post-test
+Members of the public | 49.1% | 71.5%
+Shops | 51.9% | 66.8%
+Street vendors | 45.9% | 54.0%
+
+－CBDC design and needs:
+ The public has demand for unregistered wallets [不記名錢包], registered wallets [記名錢包], and wallets in the form of stored-value cards. In addition, 47% of the public expressed a need for wallets in card form (Figure 11), with particularly high demand among people in remote areas or disadvantaged groups28.
+
+[FIGURE]
+Figure 11 Degree of public demand for wallets in the form of stored-value cards
+Do not know/no opinion/refused to answer, 6.2%
+Very much needed, 21.9%
+Somewhat needed, 25.1%
+Not very much needed, 21.4%
+Not needed at all, 25.5%
+
+ If CBDC has innovative application functions, such as government-issued stimulus vouchers, consumption vouchers, or tax refunds being able to be transferred directly into wallets, foreign-currency automated teller machine (ATM) exchange functions29, withdrawals by scanning a code, or smart contracts for programmable payments, the public expressed a need for all of them.
+
+－Privacy and scope of data use:
+
+26
+“Pre-test” refers to interviewers first asking members of the public about their willingness to use CBDC at the beginning of the questionnaire.
+27
+“Post-test” refers to members of the public expressing their willingness to use CBDC again after interviewers have provided explanations and asked questions one by one, under circumstances in which their awareness and understanding of CBDC have increased.
+28
+The survey results show that the proportion of people in the Kinmen–Matsu and Yilan–Hualien–Taitung areas expressing a need reached 77%. Among disadvantaged groups, such as recipients of government relief payments or low- and middle-income households, more than 7 tenths also indicated a need.
+29
+For example, if members of the public still have unused foreign-currency cash when returning to the country, they can exchange it directly back into New Taiwan dollars at a foreign-currency ATM and automatically deposit it into a CBDC wallet, making it convenient to convert the foreign currency they hold for domestic use.
+
+110
+=== PAGE 10 ===
+   The proportion of the public concerned that CBDC would leave transaction records is 45.2%, while the proportion not concerned is 51.4% (Figure 12); however, if there is international information security certification, or if the government retrieves data only when lawful and when investigating illegal activities, more than 7 in 10 members of the public believe this could reduce their level of concern.
+           The proportion of the public agreeing to have their personal account-opening information [個人開戶資料] kept at the central bank reaches 7 in 10 (Figure 13). However, as regards providing de-identified [去識別化] transaction data for central bank research, although 54.1% express willingness, 40.7% also express unwillingness (Figure 14); this indicates that matters involving the public’s personal data [個資], privacy [隱私] and the scope of data use must be handled cautiously and rigorously.
+
+[FIGURE]
+Figure 12 The public’s level of concern that CBDC would leave transaction records
+Do not know/no opinion/refused to answer, 3.4%
+Very concerned, 25.5%
+Very unconcerned, 20.7%
+Not very concerned, 30.7%
+Somewhat concerned, 19.7%
+
+[FIGURE]
+Figure 13 Do you agree to the central bank keeping the public’s account-opening information?
+Do not know/no opinion/refused to answer, 6.2%
+Disagree, 23.0%
+Agree, 70.8%
+
+[FIGURE]
+Figure 14 Are you willing to provide de-identified transaction data to the central bank for research?
+Do not know/no opinion/refused to answer, 5.2%
+Very willing, 17.2%
+Completely unwilling, 22.4%
+Somewhat willing, 36.9%
+Not very willing, 18.3%
+
+(2) Industry (financial institutions, payment businesses, virtual asset businesses): Compared with banks, grassroots financial institutions are smaller and less competitive, and any loss of deposits would have a greater impact. They are therefore the most concerned about the impact CBDC would bring; however, feasible business models or supporting measures might reduce their level of concern. In addition, financial institutions all consider the Bank’s current CBDC-related designs30 appropriate.
+
+[FIGURE]
+Figure 15 Proportion of businesses that have heard of CBDC
+Domestic banks | 100.0%
+Branches of foreign banks in Taiwan | 73.7%
+Grassroots financial institutions | 50.0%
+Electronic payment institutions | 49.0%
+Third-party payment institutions | 40.9%
+Virtual asset businesses | 80.0%
+
+     －Businesses’ level of awareness of CBDC is clearly higher than that of the general public (Figure 15). More than 7 in 10 grassroots financial institutions express concern about the possible impacts of CBDC-related designs, such as weakening the role of financial intermediaries [金融中介] and increasing funding costs (Table
+
+30
+     See the preliminary CBDC framework and design on page 2 of this text.
+                                           111
+=== PAGE 11 ===
+2); businesses all consider the CBDC-related designs currently planned by the Bank appropriate, including “no interest paid initially, but retaining an interest-bearing function” and “setting different wallet [錢包] amount caps [金額上限] according to the degree of verification of identity [身分驗證].”
+
+[FIGURE]
+Table 2 Financial institutions’ views on the impact of CBDC
+Item | Financial institutions | Domestic banks | Branches of foreign banks in Taiwan | Grassroots financial institutions
+Weakening the role of financial intermediaries | 66.2% | 59.6% | 40.0% | 72.2%
+Increasing funding costs | 65.4% | 56.5% | 60% | 71.6%
+Crowding out payment business | 57.7% | 60.6% | 70% | 55%
+Increasing liquidity risk | 66.9% | 53.5% | 50.0% | 76.8%
+
+     －Business models that businesses consider feasible include charging merchants, charging enterprises for the use of value-added services, and allowing intermediaries [中介機構] to use the central bank’s CBDC system free of charge (Figure 16). In addition, businesses believe that clear laws and regulations, comprehensive supporting measures and a supervisory framework should be established before issuing CBDC.
+
+     (3) Government agencies (agencies responsible for economy/industry/tourism, disadvantaged groups, taxation, financial supervision, anti-money laundering and fraud prevention): If CBDC is issued and introduced, most of the agencies surveyed believe it would have positive benefits for the business under their responsibility.
+
+[FIGURE]
+Figure 16 Business models that businesses consider feasible
+Financial institutions
+53.8%
+55.8%
+61.9%
+Electronic payment institutions
+77.8%
+66.7%
+55.6%
+Intermediaries use the central bank’s CBDC-related systems free of charge
+Intermediaries use the central bank’s CBDC-related systems free of charge
+Charging for value-added services used by enterprise users
+Charging enterprise users for the use of value-added services
+Charging merchants transaction fees
+
+     －Survey of awareness and payment receipt and disbursement operations:
+          Among the government agencies surveyed, the proportion that have heard of CBDC is 3 in 10.
+          Since CBDC is related to payment receipt and disbursement, the survey first examined the payment receipt and disbursement operations handled by the agencies surveyed31. Among agencies that handle payment receipt and disbursement operations (Figure 17), nearly 4 in 10 believe that issuing CBDC would benefit their payment receipt and disbursement operations (Figure 18). Possible difficulties in introducing CBDC include complex operation, the need for additional costs, or low public acceptance (Figure 19). Therefore, the agencies surveyed proposed several feasible supporting assistance measures, in order: first conducting demonstrations at regional sites; subsidizing hardware facilities; publicizing CBDC through advertisements or events; exchanging views with the agencies beforehand; and providing education and training, such as instruction on troubleshooting system failures. All are worth considering.
+
+31
+     Tax agencies’ payment receipt and disbursement-related operations include tax payments and tax refunds; economy/industry/tourism agencies’ operations include, for example, disbursement of tourism subsidies, sales of public transport tickets (Taipei Metro, Taiwan Railways), and collection of administrative fees; agencies responsible for disadvantaged groups’ operations include disbursement of welfare benefits.
+                                        112
+=== PAGE 12 ===
+[FIGURE]
+Figure 17 Proportion of agencies surveyed that handle payment receipt and disbursement-related operations
+Do not know/no opinion/refused to answer, 3.8%
+No, 23.1%
+Yes, 73.1%
+
+[FIGURE]
+Figure 18 Views of agencies that handle payment receipt and disbursement-related operations on the benefits of CBDC for payment receipt and disbursement operations
+Very helpful, 10.7%
+Do not know/no opinion/refused to answer, 19.6%
+Not at all helpful, 1.8%
+Fairly helpful, 35.7%
+Not very helpful, 32.1%
+
+[FIGURE]
+Figure 19 Possible difficulties in introducing CBDC (multiple selections)
+Complex operation or difficulty integrating with other methods | 83.9%
+Additional costs required, such as purchasing equipment | 80.4%
+Low public acceptance | 73.2%
+Concern about being unable to resolve failures immediately | 67.9%
+Additional administrative burden | 5.4%
+Increased transaction costs | 3.6%
+Do not know/no opinion/refused to answer | 3.6%
+Digital divide | 1.8%
+Convenience of system interfacing | 1.8%
+High risk; must be promoted from the central level downwards | 1.8%
+
+     －Benefits for business under agencies’ responsibility, and whether foreigners visiting Taiwan should be allowed to use it for tourism spending: If CBDC is issued, the agencies surveyed mostly take a positive view of its benefits for the business under their responsibility32 (Figure 20). In addition, more than 5 in 10 financial supervisory agencies, anti-money laundering and fraud prevention agencies, and agencies responsible for economy/industry/tourism believe that foreigners visiting Taiwan could be allowed to apply for CBDC wallets for tourism spending (Figure 21). However, to prevent foreigners from using unnamed wallets [不記名錢包] to engage in illegal activities such as money laundering or fraud, supporting measures should be in place, such as being able to identify [識別] their status as foreigners, restricting use to within the territory, and setting lower amount caps than those for nationals.
+
+[FIGURE]
+Figure 20 If CBDC is issued, government agencies’ views on its benefits for the business under their responsibility
+Helpful | Not helpful
+Agencies responsible for economy/industry/tourism | 54.8% | 29.1%
+Agencies responsible for disadvantaged groups | 46.1% | 42.3%
+Agencies responsible for taxation | 57.2% | 38.1%
+Agencies responsible for financial supervision | 100% | 0
+Agencies responsible for anti-money laundering and fraud prevention | 88.9% | 11.1%
+Note: Apart from “Helpful” and “Not helpful,” the other options are “Do not know/no opinion/refused to answer.”
+
+[FIGURE]
+Figure 21 Should foreigners be allowed to apply for CBDC wallets?
+Do not know/no opinion/refused to answer, 20.7%
+Should, 55.2%
+Should not, 24.1%
+
+32
+     Economy/industry/tourism agencies were asked about the benefits for revitalizing local industries and tourism of government agencies issuing digital vouchers similar to arts and culture vouchers in conjunction with CBDC; agencies responsible for disadvantaged groups were asked about the benefits of CBDC enabling social subsidies to be disbursed directly to the public’s wallets; tax agencies were asked about the benefits of directly transferring funds to companies’ or members of the public’s CBDC wallets for operations such as tax refunds; financial supervisory agencies were asked whether it would help financial inclusion, anti-money laundering and fraud prevention.
+                                          113
+=== PAGE 13 ===
+(4) Academia (scholars in economics and finance, law, and information and communications technology): Economics and finance scholars believe that institutions that could serve as CBDC intermediaries are, in order, banks, electronic payment institutions, and grassroots financial institutions; most believe that issuing CBDC would have a positive impact on the economy and finance (Appendix 1). As for legal scholars and information and communications technology scholars, their views on some issues differ slightly, as described separately below:
+     －Legal scholars:
+         If CBDC is issued using a two-tier architecture [雙層式架構], then, regarding the reciprocal rights and obligations between intermediaries and the public33, and between the central bank and the public34 in issuance, circulation or safekeeping: more than 6 in 10 scholars believe that a contractual relationship should exist between intermediaries and the public, such as fixed-term contracts, contracts of deposit for consumption, a good administrator, protection of the right to privacy [隱私權], and agreements on compensation for losses (Figure 22); nearly 6 in 10 scholars believe that a legal relationship should exist between the central bank and the public, such as financial supervision obligations, obligations to guarantee payment35, protection of the right to privacy, and ensuring that, after digitalization, the risk of inability to pay due to factors such as electricity cannot be transferred to consumers or intermediaries to bear (Figure 23). As for the relationship between the central bank and intermediaries, most scholars believe it should be a mandate relationship, while some scholars also believe it could be supervisory responsibility or an administrative contract.
+         CBDC legal framework: If CBDC is issued using a two-tier architecture, nearly 7 in 10 scholars believe that the “Central Bank of the Republic of China (Taiwan) Act” should first be amended before CBDC can be issued. As for the handling of other CBDC-related laws and regulations (for example, personal data protection [個資保護], money laundering prevention, and alteration or counterfeiting of currency), 3 in 10 scholars believe these should be consolidated into a special law; another 3 in 10 scholars believe they should be partly consolidated into a special law, with currency-related laws partly amended; nearly 3 in 10 scholars also believe currency-related laws could be amended separately, for example, provisions in the Civil Code involving loans of currency and provisions in the Criminal Code involving counterfeiting or alteration of currency36 (Figure 24).
+         Since currency issued by the central bank has legal tender status [法償效力], in principle its acceptance may not be refused. Nevertheless, 6 in 10 scholars believe that exceptions to CBDC’s legal tender status should be stipulated, allowing those meeting certain conditions to refuse acceptance, including shops that did not previously accept other electronic payment methods, shops below a certain size, cases in which the buyer and seller have an agreement, and certain individual users37. For views on individual provisions governing other CBDC-related matters, see Appendix 2.
+
+33
+   The aim is to understand whether intermediaries have some form of service-provider status because they provide CBDC intermediary services to the public, and should therefore bear related rights and obligations, such as financial consumer protection; or whether they merely have the status of agents of the central bank and have no rights or obligations toward the public.
+34
+   The aim is to understand whether the central bank does not need to bear related obligations directly toward the public because it uses intermediaries as intermediating parties to provide CBDC intermediary services to the public; or whether, because intermediaries are merely agents of the central bank, the central bank still bears the rights and obligations toward the public.
+35
+   The concept of guaranteeing payment means that, when a member of the public lawfully receives a transfer of CBDC (for example, based on a lawful CBDC transaction), the central bank, based on its status as CBDC issuer and administrator, has an obligation to guarantee that the member of the public obtains that CBDC, for example, by correctly entering the amount of CBDC obtained by that member of the public in the ledger [帳本].
+36
+   Some scholars also believe that a legal basis for issuing digital currency could be added to Article 13 of the “Central Bank of the Republic of China (Taiwan) Act,” and that the central bank and other competent authorities could be authorized to enact regulatory orders.
+37
+   As for the legal effects of refusing acceptance, 5 in 10 scholars believe these should be effects under civil law, such as a creditor’s delay in acceptance, while a minority believe administrative or criminal penalties could be imposed. A creditor’s delay in acceptance means that, if a debtor makes payment to a creditor in legal tender [法幣] and the creditor refuses to accept it, the creditor should bear responsibility for the delay in acceptance; for example, the debtor may claim that no interest needs to be paid during the delay. At present, however, there are no provisions in our country for administrative or criminal penalties for refusing to accept legal tender without cause.
+                                          114
+=== PAGE 14 ===
+[FIGURE]
+Figure 22 Should there be a contractual relationship between intermediaries [中介機構] and the public?
+Do not know/No opinion/Refused to answer, 7.7%
+Other, 3.8%
+There should not be, 23.1%
+There should be, 65.4%
+
+[FIGURE]
+Figure 23 Should there be a legal relationship between the central bank and the public?
+Do not know/No opinion/Refused to answer, 11.5%
+Other, 7.7%
+There should not be, 23.1%
+There should be, 57.7%
+
+[FIGURE]
+Figure 24 Legal handling of CBDC-related matters
+Integrate some into a special law and address some through amendments to currency-related laws | 34.6%
+Integrate into a single special law | 30.8%
+Amend currency-related laws separately | 26.9%
+Other | 3.8%
+Do not know/No opinion/Refused to answer | 3.8%
+
+－Information and communications technology scholars:
+   Technologies recommended for consideration to strengthen information security include multi-factor identity authentication [多因子身分認證]38, zero-trust mechanisms39, digital signatures, etc.; technologies to protect personal data [個資] and privacy [隱私] include zero-knowledge proofs40, differential privacy technology41, etc.; technologies to improve transaction efficiency include FIDO(Fast IDentity Online) authentication42, etc.; technologies to improve transaction security include post-quantum cryptography43, etc.
+   As to whether CBDC needs an offline payment [離線支付] function, about 3 tenths of the scholars supported developing single-offline payments [單離線支付]44, and nearly 1 tenth supported dual-offline payments [雙離線支付]45 (Figure 25); and those supporting single-offline payments
+
+[FIGURE]
+Figure 25 Scholars’ views on developing offline payment functions
+Single-offline payments | 27.3%
+Neither is needed | 27.3%
+Both are needed | 18.2%
+Dual-offline payments | 9.1%
+Do not know/No opinion/Refused to answer | 18.2%
+
+38
+   A multi-factor identity authentication mechanism (MFA) is a verification of identity [身分驗證] mechanism and an access control method. Users need to pass through two or more verification mechanisms before they can obtain authorization.
+39
+   Zero trust is a cybersecurity concept, meaning that no one inside or outside the network should be trusted unless their identity has been thoroughly checked. Its operation is based on the assumption that threats outside and inside the network are ubiquitous factors, and rigorous verification of identity is performed for every person or device attempting to access the network or applications.
+40
+   A zero-knowledge proof (ZKP) is a cryptographic technology through which a prover can prove the authenticity of a transaction to a verifier without revealing any additional information.
+41
+   So-called differential privacy technology is a method for protecting personal data and privacy. Its core principle is to add a small amount of noise when analyzing data (such as transaction records), so that the data cannot be traced to an individual.
+42
+   FIDO authentication refers to a technology that can provide users with a high level of security, allowing quick and convenient login to an account [帳號] while also ensuring that personal privacy is not disclosed to third parties.
+43
+   Post-quantum cryptography mainly studies encryption algorithms that can resist quantum computers, especially public-key encryption (asymmetric encryption) algorithms. However, the relevant technologies are not yet mature and remain at the research stage.
+44
+   Single-offline payments refer to payment activity in which one of the payer and payee is offline (without a network connection) and the other is online. Taking a credit card payment scenario as an example, a consumer takes a credit card to a department store POS terminal to pay. The POS terminal conducts verification of identity with the card issuer using the credit card provided by the consumer. The verification process between the merchant and the card issuer takes place through a network and is in an online state, whereas the consumer’s process of paying by credit card does not involve network services and is therefore in an offline state.
+45
+   Dual-offline payments mean that both the payee and the payer can make payments and transfers while offline (without a network connection).
+                                       115
+=== PAGE 15 ===
+considered that dual-offline payment technology is more difficult and may involve risks such as double spending46.
+(V) Conclusion
+1. The Bank continues to refine technology and improve CBDC design and functions to meet the needs of future digital economic development and the public
+(1) The results of this questionnaire survey show that many members of the public have a need for offline payments, especially card-based wallets [卡式錢包]. Taking into account technical difficulty, risks, etc., the Bank will continue to conduct relevant research and experiments and monitor the evolution of mainstream technologies internationally, so as to make offline payments resilient and widely accessible; if a decision is made in the future to issue CBDC, implementation in stages may be considered, and the most suitable timing for introduction will then be assessed in light of the maturity of technologies internationally and the public’s actual needs and necessity. In addition, as remote areas or disadvantaged groups have a higher proportion of cash payments owing to preferences or habits, the issuance of cash will still be retained when introducing CBDC, so as to also take their needs into account.
+(2) Regarding some members of the public’s concerns about privacy and the use of personal data [個人資料], the Bank will continue to study and deliberate on a rigorous data management system, a clearly defined scope of data use47, comprehensive privacy protection mechanisms, and the strengthening of information security technologies, to enhance public trust and reduce concerns.
+(3) In response to developments in the digital era, how to apply the technological advantages of tokenization [代幣化] and programmability [可程式化], using central bank money as the final settlement instrument, has recently become a focus of attention for central banks in various countries; to explore possible developments and potential applications, the Bank has also planned experiments related to settling tokenized assets using wholesale CBDC48.
+2. The Bank will undertake the second phase of broad communication work
+(1) Based on the results of this outsourced questionnaire survey, the preliminary CBDC framework and design will be reviewed and revised. In the future, several public hearings, explanatory meetings, or forums will be held on the basis of the revised content, to conduct more concrete, broad, and in-depth exchanges and communication with stakeholders, and thereby strengthen outreach on CBDC and raise public awareness.
+(2) As for the wide scope of CBDC-related legal-system issues, in addition to using the above-mentioned occasions to exchange views with various sectors, the Bank will also, in line with the progress of its CBDC-related work, continue to collect information on the status and developments of legislative amendments concerning CBDC in major countries internationally, and study and deliberate on our country’s legal framework.
+(3) After the above work is completed, whether to implement a pilot plan will then be studied, deliberated on, and assessed49.
+
+46
+   Double-spending risk refers to the risk that the same transaction may be used repeatedly when the same funds are used to make payments without being connected to a payment network or intermediary. Many circumstances may lead to double spending, such as delays in information synchronization, system failures, or the misappropriation of transaction information.
+47
+   Some legal scholars recommended that it would be more appropriate to first specify the purposes and scope of obtaining personal data and obtain the consent of the persons concerned.
+48
+   Including establishing a tokenization platform to support relevant application scenarios such as interbank transfers between commercial bank deposit tokens [代幣], delivery-versus-payment settlement of financial instruments, and special-purpose tokens.
+49
+   If, following careful assessment, the Bank considers it necessary to implement a pilot plan, it will first conduct a small-scale pilot through designated banks and selected stores and members of the public within a specific scope, under the principles of safety and controllability. Subsequently, it will expand the scope in light of implementation, to gradually build a CBDC ecosystem.
+                                     116
+=== PAGE 16 ===
+Appendix 1 Summary of the views of experts and scholars in the economic and financial fields on economic and financial issues if CBDC is issued
+
+Item No. | Question | Yes/Helpful | No/Not helpful | No opinion/Do not know/Refused to answer | Explanation
+1 | Could it increase the risk of bank runs? | 37.5% | 62.5% | ‒ | The reason for considering that it could increase the risk is that, in the past, withdrawing cash required an ATM or a visit to a bank counter, whereas in the future, bank deposits could be converted into CBDC simply through a mobile phone.
+2 | Is it appropriate not to pay interest during the initial issuance period while retaining an interest-bearing design? | 85.7% | 12.5% | 1.8% | ‒
+3 | Is it appropriate to set different maximum wallet amounts [錢包金額上限] according to the degree of verification of identity? | 91.1% | 7.2% | 1.8% | ‒
+4 | Would it help reduce costs related to physical cash? | 87.5% | 8.9% | 3.6% | ‒
+5 | Helpfulness of programmable payment functions for financial innovation | 73.2% | 7.1% | 19.6% | ‒
+6 | Would it help the flexibility or effectiveness of monetary policy implementation? | 46.6% | 32.2% | 21.2% | The main reasons scholars considered it helpful include the ability to understand economic activity through transaction data, and that it might serve as a means of overcoming the constraint of the zero lower bound on interest rates, etc.; the main reason for considering it unhelpful was that, if it is merely a substitute for cash, it would not affect money creation.
+7 | Would it help reduce cross-border transaction costs? | 73.2% | 17.9% | 8.9% | ‒
+8 | Would it help promote financial inclusion? | 62.5% | 28.6% | 8.9% | ‒
+9 | Would it help the economic and financial industries? | 66.1% | 0 | 33.9% | ‒
+
+                                    117
+=== PAGE 17 ===
+Appendix 2 Summary of legal scholars’ views on individual regulations concerning CBDC-related matters
+
+Item No. | Question | May/Appropriate/Needed/Helpful | May not/Inappropriate/Not needed/Not helpful | No opinion/Other | Explanation
+1 | Is it appropriate for the central bank to obtain the public’s personal and transaction data on the premise of investigating crimes? | 50.0% | 42.3% | 7.7% | Scholars considered that the public’s data may be obtained for anti-money laundering purposes, but the scope of data obtained and the purposes of use should be specifically regulated. Other views included that the central bank should first consider the necessity of obtaining the public’s personal data or transaction data, establish clear laws and regulations governing the conditions under which the central bank may obtain the public’s personal data and transaction data, or obtain the consent of the persons concerned, etc.
+2 | Would CBDC help anti-money laundering and counter-terrorist financing (AML/CFT)? | 69.2% | 26.7% | 3.8% | ‒
+3 | Do CBDC anti-money laundering and counter-terrorist financing regulations need to be stricter than those for financial institutions? | 30.7% | 53.8% | 15.5% | The reason for considering this unnecessary was that the nature of CBDC is not very different from that of cash; it may first be handled by analogy with current regulations, with separate regulations established later as needed.
+4 | Is it necessary to amend anti-money laundering and counter-terrorist financing laws? | 42.3% | 38.4% | 19.3% | CBDC needs to be included in anti-money laundering regulations, or CBDC inspection measures need to be added, etc.
+5 | Is it necessary to amend laws relating to counterfeiting and altering currency? | 73.1% | 7.7% | 19.2% | ‒
+6 | Is it necessary to increase penalties for counterfeiting and altering CBDC? | 38.5% | 34.6% | 26.9% | The reason for considering this necessary was that detection and prevention for digital currency are more difficult than for physical currency; the main reason for considering it unnecessary was that, viewed from the perspective of fiat currency [法幣], the legally protected interests infringed upon are the same as for physical currency.
+7 | Is it necessary to establish laws and regulations to address the misappropriation of CBDC or fraud involving it? | 65.4% | 26.9% | 7.7% | ‒
+8 | Is it necessary to establish laws and regulations on issues such as erroneous payments? | 50.0% | 30.7% | 19.3% | ‒
+
+                                             118

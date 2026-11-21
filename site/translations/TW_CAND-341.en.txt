@@ -1,0 +1,224 @@
+# English machine translation (route D, provisional). doc_key: TW_CAND-341 | source: CBDC_MASTER_v12/TW/TW__2021-11__CBDC-Special-report-to-Legislative-Yuan-CBDC-readiness.pdf | source_sha256: 74faebff809a7bce9092664d612a12f7c59fc54444ebf2d6a0e2f8af598bb7f1
+# provider: openai | model: gpt-6-astra | interface: API (Responses API, one call per chunk, no history, no tools) | run: openai_gpt-6-astra_api_20261110 | system prompt sha256: 5c054f82c7d9991d2b505de0ee2a54adc40aee03657537073013ba062b670716
+# Not checked by a reader of the source language. Report errors via the project website.
+=== PAGE 1 ===
+Legislative Yuan, 10th Term, 4th Session
+8th Plenary Meeting of the Finance Committee
+
+
+
+
+Special Report on
+“Central Bank Digital Currency (CBDC) Readiness,
+and How to Respond to Cryptocurrencies Entering
+Financial Markets”
+
+
+
+
+Central Bank
+1 November 110
+=== PAGE 2 ===
+
+=== PAGE 3 ===
+Chair, Committee Members, Ladies and Gentlemen:
+
+It is a great honour to be invited to report to your Committee today. Below, we respectfully present a report on the progress of the Bank’s CBDC research project and an overview of developments in virtual currencies such as Bitcoin, which has attracted the most attention among cryptocurrencies. We welcome your guidance.
+
+
+
+I. Progress of the Bank’s CBDC Research Project
+
+1. International foundational principles and challenges for CBDC
+
+In recent years, the issue of CBDC has attracted considerable attention, mainly because people see considerable room for imagining what CBDC could offer. However, in exploring this new field, many theoretical ideals and benefits will face technical and practical tests and challenges one by one.
+
+To this end, the Bank for International Settlements (BIS) and 7 major central banks of the United States, Canada, the United Kingdom, Europe, Japan, Switzerland and Sweden jointly established 3 “CBDC foundational principles”1: “do no harm,” “coexistence,” and “innovation and efficiency,” as the basis for issuing CBDC2.
+
+1
+Under the “CBDC foundational principles,” 14 core features have also been established for the instrument, system and institutional aspects to facilitate the achievement of the foundational principles. Instrument: (1) convertibility, (2) convenience, (3) acceptance and availability, (4) low cost; system: (5) security, (6) instant settlement, (7) resilience, (8) availability, (9) performance, (10) scalability, (11) interoperability, (12) flexibility and adaptability; institutional: (13) a clear and robust legal framework, (14) regulatory standards. See BOC, ECB, BOJ, Riksbank, SNB, BOE, Fed and BIS (2020), “Central Bank Digital Currencies: Foundational Principles and Core Features,” Oct. 9.
+2
+In addition, on 13 October 2021, the G7 finance ministries and central banks published 13 public policy principles for retail CBDC, extending the 3 CBDC foundational principles and additionally considering such aspects as privacy [隱私] protection, cross-border spillover effects, energy efficiency and environmental protection. See G7 (2021), “Public Policy Principles for Retail Central Bank Digital Currencies (CBDCs),” Oct. 13.
+1
+=== PAGE 4 ===
+(1) Do no harm (do no harm)
+
+The central bank’s foremost commitment is that the issuance of CBDC must ensure that it does “no harm” to the implementation of public policy objectives, and at least does not interfere with or impede the central bank’s duties in maintaining monetary stability and financial stability.
+
+In particular, deposit money in the banking system is a source of credit creation, while CBDC3 could affect banks’ existing payment business and cause an outflow of bank deposits. Especially during a crisis, CBDC could have an even greater effect on the outflow of bank deposits, because CBDC “digital runs” (digital runs)4 are faster, exposing banks to more severe liquidity risks. Therefore, how to strike a balance between meeting public demand and maintaining financial intermediation, and avoid affecting financial stability, will be a challenge facing CBDC.
+
+(2) Coexistence (coexistence)
+
+The convenience of the payment system is built upon a diverse choice of payment instruments. The purpose of issuing CBDC is not to replace other forms of money or payment instruments, but to “coexist” with and complement existing cash, commercial bank money, credit cards, bank cards, electronic payments5 and other instruments,
+
+3
+Whether members of the public open CBDC accounts [帳戶]/wallets [錢包] directly with the central bank or open CBDC accounts/wallets through banks, both could lead them to convert their existing bank deposits into CBDC, causing an outflow of bank deposits and affecting banks’ financial intermediation function.
+4
+This means that there is no need to go in person to a bank counter or operate an ATM; CBDC withdrawals can be completed at any time using a mobile phone.
+5
+Including stored-value cards and electronic payment accounts.
+2
+=== PAGE 5 ===
+for use in a greater variety of payment settings.
+
+At present, payments in major economies such as Europe, the United States and Japan, as well as Taiwan, have all developed in diverse forms. How the introduction of CBDC can coexist, interoperate and compete fairly with these payment instruments is also a challenge to be faced in the future6.
+
+(3) Innovation and efficiency (innovation and efficiency)
+
+Programmable money may be a focus of future innovation7. In addition, cross-border payments in the existing financial system involve intermediary correspondent banks, with relatively complex procedures and high costs. CBDC may be one solution for improvement.
+
+Although innovation opens up opportunities to develop CBDC, if it brings risks to the financial and economic systems and damages public trust in central bank money, the potential benefits of CBDC cannot be realised. Thus, “innovation and efficiency” have substantive meaning only on the prerequisite of ensuring “do no harm” and “coexistence.”
+
+2. The 4 stages of advancing CBDC
+
+There are generally 4 stages in advancing CBDC. The first is technical research,
+
+6
+For example, US Fed Vice Chair for Supervision Quarles considers that the US payment system operates well and does not believe that CBDC can promote innovation in ways that the private sector cannot achieve. Introducing CBDC could instead crowd out private-sector innovation. See Quarles, Randal (2021), “Parachute Pants and Central Bank Money,” Speech at the 113th Annual Utah Bankers Association Convention, Jun. 28.
+7
+Programmable money can enable CBDC to execute transactions automatically according to conditions set in a program, extending to a variety of settings. For example, stimulus vouchers or welfare payments distributed by the government can be used only for spending in specified industries or within a limited period. If distributed through a CBDC platform, the scope of use can be written into the code to achieve the purpose of earmarking funds for specific uses.
+3
+=== PAGE 6 ===
+followed by the experimental stage for validation. After the experimental stage, before entering the 3rd stage of a pilot project to conduct pilot testing, or further implementing the 4th stage of a full launch, the following 3 preconditions must also be met8:
+
+(1) Support from a broad range of stakeholders: Developing CBDC requires the input, participation and support of numerous stakeholders, including government agencies, users, financial institutions, technology and infrastructure providers, and academia.
+
+(2) Robust and mature technology: In addition to meeting transaction-volume requirements, extensive technical development and evaluation work is needed in system integrity9, operational robustness10 and resilience11.
+
+(3) A solid legal framework: This includes providing a clear legal basis for granting CBDC legal tender [法償貨幣] status, and establishing rules on anti-money laundering and counter-terrorist financing (AML/CFT), privacy protection, and the attribution of liability in disputes, to enhance market trust in CBDC.
+
+Only when the above preconditions are in place will it be the appropriate time to introduce CBDC. It can thus be seen that advancing CBDC is an enormous and complex undertaking. At present, apart from countries such as the Bahamas, whose economies and populations are very small and which do not need to consider too many conditions when introducing CBDC, central banks in major economies such as Europe, the United States and Japan are all
+
+8
+Mainly based on Cheng, Jess, Angela N Lawson, and Paul Wong (2021), “Preconditions for a General-purpose Central Bank Digital Currency,” FEDS Notes, Feb. 24.
+9
+Integrity (integrity): CBDC must have strong information-security protection mechanisms to ensure that the system operates correctly and that no unauthorised manipulation occurs.
+10
+Robustness (robustness): CBDC must be able to maintain uninterrupted operations, operate continuously 7x24, and provide services normally at all times.
+11
+Resilience (resilience): CBDC must also be able to resist and withstand various adverse conditions (such as power outages and network disconnections), and recover from them.
+4
+=== PAGE 7 ===
+still at the research stage; Taiwan has now entered the experimental stage of technical validation12.
+
+3. Progress of the Bank’s CBDC research and experimentation
+
+In June of last (2020) year, the Bank completed the 1st stage of research on technical feasibility, gaining an understanding of the limitations of applying distributed ledger technology (DLT) [分散式帳本技術], particularly that its operational performance cannot yet meet the demand for real-time, high-frequency, high-volume payment transactions. At present, the 2nd-stage “General-purpose CBDC Experimental Project” is underway and has entered the technical experimentation stage. By building a CBDC prototype platform, experiments simulate the application of CBDC in retail payment scenarios13, with completion expected in September of next (2022) year.
+
+[FIGURE]
+1st stage                              2nd stage
+(Completed)                            (In progress)
+
+Technical feasibility research on wholesale CBDC     General-purpose CBDC Experimental Project
+(2019.6~2020.6)                                       (2020.9 ~2022.9)
+
+ Understand the potential and limitations of applying DLT to CBDC
+ Develop a prototype platform to simulate retail payment application scenarios
+
+The General-purpose CBDC Experimental Project adopts a two-tier operational architecture [雙層運作架構]. The first tier [第一層]
+
+12
+For most countries, including the economies of Europe, the United States and Japan, and Taiwan, payment systems are diverse and convenient, and no decision has yet been made on whether to issue CBDC in the future. Even Sweden, which is actively conducting experiments, and China, which is already conducting pilot testing, have central banks that state there is no specific timetable for a formal launch.
+13
+For example, simulations of opening a CBDC digital wallet, converting bank deposits or cash into CBDC, making transfers with CBDC or spending it at physical or online shops, as well as government distribution of digital vouchers and assistance with small-value cross-border remittances by migrant workers. In the scenario of assisting migrant workers with small-value cross-border remittances, preliminary plans will focus on improving the inconvenience and costs associated with domestic cash receipts and payments in the remittance process. For example, foreign migrant workers can pay CBDC directly to businesses handling small-value cross-border remittances, without having to receive or pay cash through convenience stores or collection agencies.
+5
+=== PAGE 8 ===
+is the central bank issuing CBDC to financial institutions, while the second tier is the public obtaining CBDC through conversion at financial institutions14. In addition, design considerations will take account of two aspects: on the one hand, retaining the advantages of cash, such as allowing anyone to open a CBDC digital wallet, protecting privacy, availability at any time, and supporting offline transactions [離線交易]; on the other hand, making good use of digital technology, including mechanisms for handling losses, support for interest design, and providing payment interoperability and programmable money functions.
+
+In the future, the results of the 2nd-stage simulation experiments will be disclosed to the public in a timely manner and used as a basis for public discussion. Opinions from outside the Bank will be sought broadly, enabling the Bank to assess the possibility of issuing CBDC from more diverse perspectives.
+
+
+
+II. Overview of Developments in Virtual Currencies such as Bitcoin
+
+1. Virtual currencies such as Bitcoin once attempted to challenge and change the form of money, but their development has not met expectations, and they are still not payment instruments
+
+Virtual currencies such as Bitcoin have attempted to challenge and change the form of money, but their development has not met expectations. Mainly because of problems such as severe price fluctuations, speculation and speculative hype, they have been defined as risky virtual assets or commodities15, rather than money.
+
+Some may say that Bitcoin is also used for payments, but according to statistics on Bitcoin application
+
+14
+The Bank has incorporated the 3 international CBDC foundational principles into its considerations.
+15
+For example: the FATF and IMF define them as virtual assets (virtual assets), and the ECB defines them as crypto-assets (crypto-assets).
+6
+=== PAGE 9 ===
+scenarios16, nearly 90% of global transaction volume serves as a speculative or investment instrument on trading platforms, while payments to merchants account for only about 1%, a much smaller and disproportionate scale (Figure 1). In addition, the UK Financial Conduct Authority (FCA) published a survey this (2021) year on reasons for purchasing virtual currencies17. Most were for speculation or investment, and those using them for payments accounted for zero18 (Figure 2).
+
+[FIGURE]
+Figure 1. Application scenarios for virtual currencies     Figure 2. Reasons for purchase among UK virtual currency holders
+(July 2019~June 2020)                                      (Multiple responses allowed)
+
+                                                          Gambling, speculation                 38%
+                         Mining                           Portfolio diversification             30%
+                         4%                               Personal long-term investment         19%
+                                                          Alternative to stocks                 19%
+Trading platforms        Merchants                        Fear of missing out                   18%
+87%                      1%
+                                                          Wanting to make quick money           17%
+                                                          Distrust of the financial system      15%
+                         Other
+                         8%                               Use for payments                       0%
+                                                          Other                                 13%
+Source: Chainalysis (2020)                                 Source: FCA (2021)
+
+2. Virtual currencies are shifting towards quasi-financial products
+
+In recent years, virtual currencies such as Bitcoin have mostly developed in the form of commodity or securities tokenisation towards quasi-financial products such as Futures (similar to futures operations), ETF (similar to stock-index ETFs), ICO (similar to IPOs), STO (similar to crowdfunding), or Stablecoin (stablecoins, similar to electronic-payment stored-value instruments or electronic money).
+
+16
+Chainalysis (2020), “The 2020 Geography of Cryptocurrency Report,” Sep.
+17
+FCA (2021), “Research Note: Cryptoasset Consumer Research 2021,” Jun. 17.
+18
+Although the authorities in El Salvador recently announced that Bitcoin can be used for payments, hoping to provide a channel through Bitcoin for people abroad to remit funds back, whether the public would want to hold such a volatile asset as money remains a matter of contention between the authorities and the public.
+7
+=== PAGE 10 ===
+For products among these that involve futures, securities and the like, most major countries currently tend to adopt the principle of “same risk, same regulation” (same risk, same regulation) recommended by BIS General Manager Agustín Carstens19, supervising them with reference to the relevant provisions of futures or securities exchange laws20. As for stablecoins, international organisations are drafting relevant regulatory standards21.
+
+In view of stablecoins’22 attempt to become a global payment system, the Committee on Payments and Market Infrastructures (CPMI) and the International Organization of Securities Commissions (IOSCO) published relevant Principles for Financial Market Infrastructures (PFMI)23 on October 6 of this year and sought public consultation. Relevant guidance will be issued in the future to serve as internationally consistent regulatory standards.
+
+3. Taiwan brings virtual currency trading platforms within the scope of anti-money laundering rules
+
+At present, Taiwan’s virtual currency trading volume accounts for a very small share of the global total, and its linkage with the real
+
+19
+Carstens, Agustín (2018), “Money in the Digital Age: What Role for Central Banks?”
+Speech at the House of Finance, Goethe University, Frankfurt, Feb. 6.
+20
+For example: the US Securities and Exchange Commission (SEC) considers that if virtual currencies are securities in nature, they must be subject to SEC regulation in accordance with the law. The US Commodity Futures Trading Commission (CFTC) has brought futures trading in virtual currencies under regulation. The UK Financial Conduct Authority (FCA) also considers that if virtual currencies are security tokens, they should be subject to regulation, and prohibits businesses from selling virtual-currency-related derivatives (such as futures and options) to the public. See Gensler, Gary (2021), Remarks at the Aspen Security Forum, Aug. 3; CFTC (2018), “CFTC Backgrounder on Oversight of and Approach to Virtual Currency Futures Markets,” Jan. 4; FCA (2019), “Guidance on Cryptoassets,” Jul.; FCA (2020), “FCA Bans the Sale of Crypto-derivatives to Retail Consumers,” Oct. 6.
+21
+FSB (2021), “Regulation, Supervision and Oversight of ‘Global Stablecoin’
+Arrangements: Progress Report on the implementation of the FSB High-Level
+Recommendations,” Oct. 7; G7 Finance Ministries and Central Banks (2021), “G7
+Finance Ministers and Central Bank Governors’ Statement on Central Bank Digital
+Currencies (CBDCs) and Digital Payments,” Oct. 13.
+22
+For example, Libra, the predecessor of Diem.
+23
+CPMI-IOSCO (2021), “Application of the Principles for Financial Market Infrastructures
+to Stablecoin Arrangements,” Oct. 6.
+8
+=== PAGE 11 ===
+economy is low, with no significant effect on the payment system, financial stability or the central bank’s monetary policy. However, risks could still arise in such areas as anti-money laundering and investor protection. The regulatory authority, the Financial Supervisory Commission (abbreviated as FSC), has therefore brought virtual currency trading platform businesses under regulation, requiring transactions to use a real-name system [實名制] and implementing internationally consistent anti-money laundering regulatory standards, to prevent virtual currencies from creating loopholes in the traditional regulatory framework. In addition, the FSC and the central bank have also issued press releases reminding the public that virtual currencies are not money but high-risk assets, and that attention should be paid to the associated investment risks.
+
+III. Conclusion
+
+Objectively speaking, there is no first-mover advantage in CBDC technology. Countries’ development of CBDC is not a race; rather, it is about ensuring that the issuance of CBDC must, at a minimum, meet domestic needs. The few countries issuing it first, in order to address their particular domestic payment-environment problems24, can indeed experiment with CBDC technology first, but must also bear the potential risks of that technology. Other countries have a late-mover advantage, including learning from their development experience, further preventing drawbacks and promoting benefits, and building a more comprehensive CBDC ecosystem.
+
+CBDC needs to offer greater advantages than existing payment instruments to be worth introducing. The Bank will continue to conduct research and experiments pragmatically, continue exploring the future prospects of CBDC,
+
+24
+Emerging countries such as the Bahamas and those of the Eastern Caribbean have insufficient financial infrastructure, excessively high cash issuance costs, and poor results from private-sector promotion of electronic payments. Switching instead to central bank issuance of CBDC is one feasible option for governments to achieve their policy objective of financial inclusion. China is facing a private-sector payments monopoly that continues to crowd out the use of cash. As cash usage gradually declines, if the central bank can introduce CBDC, it could be expected to fill the gap left by cash, enabling the public to continue obtaining the safest central bank money within the payment system.
+9
+=== PAGE 12 ===
+clarify the positioning and role of CBDC in Taiwan’s future payment blueprint, and ensure that the comprehensiveness of future payment policy can complement the Bank’s operational objectives: 1. promoting financial stability; 2. fostering sound banking operations; 3. maintaining the stability of the internal and external value of the currency; and 4. assisting economic development.
+
+As for virtual currencies such as Bitcoin, they have already developed towards quasi-financial products and are not money or payment instruments. The Bank will continue to monitor international developments and, if necessary, provide the information it has collected and analysed to the financial regulatory authority, the FSC, for its reference.
+
+This concludes the report. We respectfully welcome the guidance of the Committee Members. Thank you.
+
+
+
+
+10

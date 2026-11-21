@@ -15,8 +15,9 @@ jobs:
       - name: replay — project frame and site data rebuild from archived inputs, no API
         run: |
           python scripts/frame/project_frame.py
-          python scripts/site/build_site_data.py
           git diff --stat -- data/frame/projects.csv
+      - name: website data are current and contain no unlisted translation
+        run: python scripts/site/build_site_data.py --check
       - name: the numbers in PROJECT_BRIEF.md match the data files
         run: python scripts/pipeline/update_brief.py --check
       - name: every model run has a complete run record and the run statement is current

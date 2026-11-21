@@ -1,0 +1,10 @@
+id,project,file,translation_sha256,run,issuer_licence,licence_url,decided_by,date,basis
+CAND-340,TW,TW_CAND-340.en.txt,068b2bfbf26ba5cb9f60954e4e07c8f2e6da6cbb8d36803c850cc5a3dbf765de,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-341,TW,TW_CAND-341.en.txt,057055b6f138a552dcee8db867a9c7e456a22ea84d14fdd1fba4ff29585a098e,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-343,TW,TW_CAND-343.en.txt,71fc4313f56dfe14424adfead23b2c0482ced42292f281f916dc207e535ca487,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-345,TW,TW_CAND-345.en.txt,85eea1fc3f643e3386a9ea04da7068fc785b0796d0c8dbeb0396252e8ded6b3f,openai_gpt-6-astra_api_20261113,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-346,TW,TW_CAND-346.en.txt,4cdbf3fcd6577c4fd5a9067f5c12c9ad2e06c03d1f93eb9c5f4df5913d540f16,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-347,TW,TW_CAND-347.en.txt,8f27c6a06b5a373c75ef9461de6342bfdacf0c48986646e6dc716107cf920c10,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-349,TW,TW_CAND-349.en.txt,18299a62f91b11d12c3f785b600ef8e0bf36fc86978d3fde88e39d332d120e24,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+CAND-350,TW,TW_CAND-350.en.txt,72c467ea982167fb4645a258a9cbe9ba9e3226e718c6ec45ed2aa004aba62e6f,openai_gpt-6-astra_api_20261113,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
+TW_TW-CBC-CBDC-Communication-Summary-Report-2026,TW,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026.en.txt,0e7aa6a45e7f2742d487f1ab89190e50456d9bfae6548c681722619e5ab21eb5,openai_gpt-6-astra_api_20261110,OGDL-Taiwan-1.0,https://www.cbc.gov.tw/en/cp-958-40419-F8209-2.html,MB,2026-11-21,ADR-008
