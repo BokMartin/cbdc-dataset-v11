@@ -137,7 +137,8 @@
         (d.same ? "<dt>Same publication as</dt><dd><a href='#' data-goto='" + S.esc(d.same) + "'>" + S.esc(byId[d.same] ? byId[d.same].t : d.same) + "</a></dd>" : "") +
         (d.role ? "<dt>Companion role</dt><dd>" + S.esc(d.role) + "</dd>" : "") +
         (d.link.length ? "<dt>Linked evidence</dt><dd>" + d.link.map(function (i) { return "<a href='#' data-goto='" + S.esc(i) + "'>" + S.esc(byId[i] ? byId[i].y + " · " + byId[i].t : i) + "</a>"; }).join("<br>") + "</dd>" : "") +
-        (d.tf ? "<dt>Title</dt><dd>taken from the file name, to be checked</dd>" : "") + "</dl>";
+        (d.tf ? "<dt>Title</dt><dd>taken from the file name, to be checked</dd>" : "") +
+        (d.tm ? "<dt>Title</dt><dd>read from the document's first pages, not yet checked by an author</dd>" : "") + "</dl>";
       return "<tr>" +
         '<td class="y" data-l="Year">' + (d.y || "n.d.") + "</td>" +
         '<td><div class="dt">' + title + (d.tf ? ' <span class="muted small">(from file name)</span>' : "") + '</div><div class="dm">' + sub + '</div><details class="more"><summary>Details</summary>' + extra + "</details></td>" +
@@ -157,8 +158,8 @@
     }
 
     $("dl-filtered").addEventListener("click", function (e) {
-      var cols = ["id", "p", "y", "t", "iss", "k", "c", "bl", "by", "l", "pg", "en", "trf", "u", "ue", "same", "role", "link", "sha"];
-      var head = ["id", "project", "year", "title", "issuer", "kind", "decision", "borderline", "decided_by", "language", "pages", "english_text", "published_translation", "url", "issuer_english_edition_url", "same_publication_as", "companion_role", "linked_evidence", "sha256"];
+      var cols = ["id", "p", "y", "t", "tm", "iss", "k", "c", "bl", "by", "l", "pg", "en", "trf", "u", "ue", "same", "role", "link", "sha"];
+      var head = ["id", "project", "year", "title", "title_read_by_model_unchecked", "issuer", "kind", "decision", "borderline", "decided_by", "language", "pages", "english_text", "published_translation", "url", "issuer_english_edition_url", "same_publication_as", "companion_role", "linked_evidence", "sha256"];
       var q = function (v) { v = Array.isArray(v) ? v.join(";") : v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
       var csv = [head.join(",")].concat(current.map(function (d) { return cols.map(function (c) { return q(c === "trf" ? (d.tr ? d.tr.f : "") : d[c]); }).join(","); })).join("\n") + "\n";
       this.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));

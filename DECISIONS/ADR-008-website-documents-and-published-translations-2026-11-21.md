@@ -19,5 +19,6 @@ The website in `site/` was a mock-up of October 2026 (contract v1.1, 70 projects
 - MB's judgement of the translation benchmark (17 Nov) found 30 % of matched pairs "meaning differs"; DS found 4 %; the pairs are not adjudicated. The published texts are labelled accordingly. If the adjudication shows systematic errors, the published list is revisited.
 - Publishing translated text is not an exposure of an author to model classification output (EXPOSURE_LEDGER); no ledger row is needed.
 - The Dutch letter can be added if an author confirms its licence status.
-- 110 documents (mostly registry rows of the v11 corpus) have no recorded title; the site shows a label derived from the file name and marks it. Titles to be filled from the documents in a later dated file.
+- 111 documents (mostly registry rows of the v11 corpus) had no recorded title. MB asked on 21 Nov to fill them from the texts: titles were read from the first pages of the held files (text cache of 21 Nov) and recorded in `data/manifest/DOC_TITLES_2026-11-21.csv` with `checked_by_author = no`; the site marks them as read by a model until an author checks them.
+- MB set the final destination of the site: cbdcdataset.org (21 Nov).
 - The repository `bokcvok-droid/CBDCdataset.org-WIP-version` is empty; where the site is published (GitHub Pages of this repository, or that repository as the public copy for cbdcdataset.org) is for MB to decide.

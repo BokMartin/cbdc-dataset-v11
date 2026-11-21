@@ -19,6 +19,7 @@ Inputs (all under data/):
   manifest/COMPANION_LINKS_2026-11-13.csv     companions: kind, role, URL, linked evidence
   manifest/GAP_CHECK_2026-11-02.csv           gap-check candidates (CAND-<row>): issuer, type, URL
   manifest/MANUAL_DOWNLOADS_2026-11-10.csv    download provenance (URL by SHA-256)
+  manifest/DOC_TITLES_2026-11-21.csv          titles read from the held files where no title was recorded
   registry/REGISTRY_v2_2.csv, registry/SOURCE_URL_AMENDMENT_2026-11-02.csv, registry/REGISTRY_ADDITIONS_2026-11-02.csv
   registry/DOC_LICENCES_2026-11-02.csv, registry/LICENCES_BY_INSTITUTION_2026-11-02.csv
   translation/ENGLISH_EDITIONS_2026-11-10.csv issuer English editions (route B) with URL
@@ -149,6 +150,9 @@ def build():
             return gap[int(i[5:]) - 1]
         return None
 
+    # titles read from the documents where the manifests hold none (dated file, model reading until an author checks it)
+    read_titles = {r["id"]: r for r in read(D("manifest", "DOC_TITLES_2026-11-21.csv"))}
+
     published = {}
     man = {}
     for f in sorted(os.listdir(D("translation"))):
@@ -179,6 +183,10 @@ def build():
             add(i, by_sha[t["sha256"]])
         c, s, k, r = corpus.get(i, {}), issuers.get(i, {}), comp.get(i, {}), reg.get(i, {})
         title, title_from_file = clean_title(t["title"], r.get("fname") or os.path.basename(t["master_path"]), i)
+        title_read = 0
+        if title_from_file and i in read_titles:
+            title, title_from_file = read_titles[i]["title"], False
+            title_read = 0 if read_titles[i]["checked_by_author"] == "yes" else 1
         lang = (t["language"] or "").replace("mixed:", "")
         issuer = c.get("issuer") or s.get("issuer") or (g or {}).get("issuer") or lic_doc.get(i, {}).get("institution") or ""
         kind = c.get("kind") or s.get("kind") or k.get("kind") or (g or {}).get("doc_type") or r.get("doc_kind") or ""
@@ -188,7 +196,7 @@ def build():
             text = "no English text yet"
         docs.append({
             "id": i, "p": t["project"], "y": int(t["year"]) if t["year"].isdigit() else None,
-            "t": title, "tf": 1 if title_from_file else 0,
+            "t": title, "tf": 1 if title_from_file else 0, "tm": title_read,
             "iss": issuer, "k": kind.replace("_", " "),
             "c": cat, "bl": 1 if t["decision_v12"] == "BORDERLINE" else 0,
             "by": decided_by(t["decision_source"]),
@@ -243,11 +251,11 @@ def build():
 
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator="\n")
-    w.writerow(["id", "project", "year", "title", "title_from_filename", "issuer", "kind", "decision", "borderline", "decided_by",
+    w.writerow(["id", "project", "year", "title", "title_from_filename", "title_read_by_model_unchecked", "issuer", "kind", "decision", "borderline", "decided_by",
                 "language", "pages", "english_text", "published_translation", "url", "issuer_english_edition_url", "same_publication_as", "companion_role",
                 "linked_evidence", "sha256"])
     for d in docs:
-        w.writerow([d["id"], d["p"], d["y"] or "", d["t"], d["tf"], d["iss"], d["k"], d["c"], d["bl"], d["by"], d["l"], d["pg"] or "",
+        w.writerow([d["id"], d["p"], d["y"] or "", d["t"], d["tf"], d["tm"], d["iss"], d["k"], d["c"], d["bl"], d["by"], d["l"], d["pg"] or "",
                     d["en"], d["tr"]["f"] if d["tr"] else "", d["u"], d["ue"], d["same"], d["role"], ";".join(d["link"]), d["sha"]])
     return {"site/assets/projects.json": proj_json + "\n", "site/assets/documents.json": doc_json + "\n",
             "site/data/documents.csv": buf.getvalue()}, docs, projects
