@@ -53,7 +53,7 @@ The index needs one more status level. Proposal for that thread: in the main ind
 | 3 Wholesale, author evidence | 9 (Khokha 1 and 2, Jasper I-II and III, Acacia, Garuda x3, BCL DCB prototype) | evidence (author) | INCLINED or stays evidence | **yes, open point B** |
 | 4 Brazil | BR_Brazil_2023; NP-BR-01, NP-BR-02 | outside frame | no change: Brazil stays out (MB, 23:52) | decided |
 
-**Open point B**: "same treatment" either moves the 11 wholesale and BIS Innovation Hub documents the authors already decided as evidence down to INCLINED (one rule for all of them, recommended for consistency), or keeps them as evidence and lifts only the model-flagged rows to INCLINED.
+**Point B, decided by MB on 21 Nov 2026, 23:54** ("the 11 wholesale documents as the additional layer, leaning sources that can support"): the 11 move to INCLINED. Applied together with groups 1 to 3 in `data/manifest/AUTHOR_DECISIONS_2026-11-21.csv` (38 rows: 25 WHOLESALE, 5 KEEP, 6 BORDERLINE, 1 DROP, 1 candidate) and `TIERS_2026-11-21.csv`. Original wording of the question: "same treatment" either moves the 11 wholesale and BIS Innovation Hub documents the authors already decided as evidence down to INCLINED (one rule for all of them, recommended for consistency), or keeps them as evidence and lifts only the model-flagged rows to INCLINED.
 
 **Point C, decided by MB on 21 Nov 2026, 23:52: Brazil stays out of the frame** ("brazilii tedy vynechejme"). BR_Brazil_2023 stays as it is (outside the frame); NP-BR-01 and NP-BR-02 are references only, not corpus candidates. The two files were saved to `CBDC_MASTER_v12/BR/` for reference (SHA-256 in the candidates file). Background: Held: one BCB document (2023 press-conference deck on the pilot, evidence by author, borderline, no English text). Dropbox has no other BCB document (searched 21 Nov; only an HRF tracker page, not eligible). With the two candidates Brazil would be a T3 project with 1 to 3 documents. Adding it changes the frame of 44 projects (ADR-005 §1), the project status table (status NONE now) and the website.
 
@@ -64,3 +64,11 @@ The index needs one more status level. Proposal for that thread: in the main ind
 - New `AUTHOR_DECISIONS_<date>.csv` rows for every changed document; TIERS and site data rebuilt; `PROJECT_BRIEF.md` numbers updated.
 - Corpus freeze moves: INCLINED documents need text, translation (T1 and T2 rule of ADR-007 applies) and units before calibration.
 - DS confirms.
+
+## Applied on 21 Nov 2026 (MB as author; DS to confirm)
+
+- `TIERS_2026-11-21.csv` supersedes `TIERS_2026-11-17.csv`: 776 rows = 772 + 4 documents found through the Nijsse and Pinto check (NP-EU-01, NP-EU-02, NP-JP-01 as CANDIDATE; NP-CH-01 Tourbillon as INCLINED). Brazil's two files are in the master folder for reference only (`MASTER_MANIFEST_2026-11-21.csv`, 783 files).
+- Evidence publications in the frame: 229 -> 218. Projects affected: AU 6->5, CA 6->4, CH 4->2, EU 15->14, ID 4->1, ZA 4->2.
+- **The `tier` column is not recomputed.** Counted without INCLINED, Canada would fall from T2 to T3; all other tiers stay. Tiers stay as of 17 Nov until DS confirms this ADR, then the authors decide whether INCLINED counts for tiers (the table above says no).
+- Units of the INCLINED documents are kept; the pipeline has to mark them as a separate stratum before any run (open engineering, not yet built).
+- Website: new categories "Inclined" and "Candidate".

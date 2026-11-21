@@ -9,7 +9,7 @@ A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Domini
 ## 2. State in five lines
 
 1. **No model has labelled a unit and no paid classification call has been made.** The fourth audit by a second model (A4, 17 Nov) returned NO-GO for calibration and for production until listed repairs are made (18 findings, 8 blockers).
-2. Corpus: 229 evidence publications decided by an author; 207 documents with English text, 42 of 44 projects (Chile and Czechia have none); 171,865 sentence units; 19,570 candidates for classification.
+2. Corpus: 218 evidence publications decided by an author (229 until 21 Nov 23:54, when MB moved 11 wholesale and BIS Innovation Hub documents to the new INCLINED layer, draft ADR-010, DS to confirm); 207 documents with English text, 42 of 44 projects (Chile and Czechia have none); 171,865 sentence units; 19,570 candidates for classification.
 3. Human inputs so far: both authors coded relevance blind for 120 development units, **agreement 67 %, Krippendorff's alpha 0.46**, below the 0.667 of the protocol; the disagreement sits in the label "U". Both judged 86 translation pairs, **Cohen's kappa 0.38**; MB is far stricter than DS. Neither result may be reported as validation; both are development findings that call for a repaired codebook and a joint adjudication.
 4. Decided: three models in full (`claude-opus-5-5`, `gpt-6-astra`, `deepseek-v4-pro`); one unit per request (page packing dropped); validation by verification, with relevance coded blind; translation only for documents of T1 and T2 projects.
 5. Repaired after A4 without author input: duplicate text removed (Israel), one header source, translation ingest fails closed, run-record check verifies artifacts, strict output parsers. 62 tests, CI green.

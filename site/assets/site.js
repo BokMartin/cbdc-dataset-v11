@@ -36,11 +36,13 @@
 
   S.CAT = {
     evidence: { label: "Evidence", long: "Evidence: an official document of the competent body that the measurement reads" },
+    inclined: { label: "Inclined", long: "Inclined: an official document the authors lean towards (joint or wholesale work of the competent body); read as a separate layer that can support, never establish, a finding" },
     companion: { label: "Companion", long: "Companion: cited for status, timeline or legal state, never measured" },
     dropped: { label: "Not used", long: "Not used: does not meet the source rule (another issuer, off topic, no bearing on design or status)" },
-    wholesale: { label: "Wholesale", long: "Wholesale only: outside the retail frame" }
+    wholesale: { label: "Wholesale", long: "Wholesale only: outside the retail frame" },
+    candidate: { label: "Candidate", long: "Candidate: found after the collection, awaiting an author's decision" }
   };
-  S.CAT_ORDER = ["evidence", "companion", "dropped", "wholesale"];
+  S.CAT_ORDER = ["evidence", "inclined", "companion", "dropped", "wholesale", "candidate"];
   S.STATUS = {
     LIVE: ["Live", "#1b7f5b"], PILOT: ["Pilot", "#4aa37c"], PREPARATION: ["Preparation", "#2f74b5"], EXPLORATION: ["Exploration", "#8fb7dd"],
     PAUSED: ["Paused", "#d39b3a"], DISCONTINUED: ["Discontinued", "#b5523b"], UNRESEARCHED: ["Status not yet checked", "#b9b4a8"],
