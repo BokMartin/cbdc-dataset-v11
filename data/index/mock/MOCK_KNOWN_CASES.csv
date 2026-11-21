@@ -1,7 +1,7 @@
 case_id,project_id,cell,expected_value,expected_min_rung,note
-MK01,MOCK34,F4,no,,MOCK DATA - invented - not a result
-MK02,MOCK31,F2,yes,,MOCK DATA - invented - not a result
-MK03,MOCK16,F7,no,,MOCK DATA - invented - not a result
-MK04,MOCK38,F1,no,,MOCK DATA - invented - not a result
-MK05,MOCK24,F4,yes,,MOCK DATA - invented - not a result
-MK06,MOCK41,F1,yes,,MOCK DATA - invented - not a result (planted miss)
+MK01,MOCK32,F9,yes,,MOCK DATA - invented - not a result
+MK02,MOCK28,F7,yes,,MOCK DATA - invented - not a result
+MK03,MOCK12,F10,no,,MOCK DATA - invented - not a result
+MK04,MOCK35,F8,yes,,MOCK DATA - invented - not a result
+MK05,MOCK21,F2,yes,,MOCK DATA - invented - not a result
+MK06,MOCK38,F1,no,,MOCK DATA - invented - not a result (planted miss)

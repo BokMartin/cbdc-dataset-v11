@@ -7,7 +7,10 @@ routinely attributed to an identified person, from F1, F2, F4, F7. Values are ta
 status, so a considered design scores like an operated one on this axis; the status of every component is shown beside
 it (axis 2) and the admissible-only version (contract §5, rule C) is computed for every project.
 
-Primary aggregation is **lexicographic** (review of 21 Nov, item 5): F1 first, then the mean of the other components.
+v2 (MB, 21 Nov 21:31: an index that rests on F1 alone is useless; all F-cells must matter): eight privacy cells
+F1, F2, F3, F4, F7, F8, F9, F10, scored by SCORE, primary aggregation the compensatory MEAN. The lexicographic rule
+below (review of 21 Nov, item 5) and the cap are kept only as sensitivity variants.
+Lexicographic variant: F1 first, then the mean of the other components.
 Embedded on [0, 1]: F1 protective -> 0.5 + 0.5 * rest; F1 not protective -> 0.5 * rest; F1 undetermined -> the
 union of both. Every project with a protective F1 therefore lies above every project with a non-protective F1, and the
 0.5 is the split point of the two classes, not a tuning constant. The compensatory mean and the old cap are kept as
@@ -25,11 +28,24 @@ import random
 
 from derive import _status, admissible
 
-PROTECTIVE = {"F1": "no", "F2": "no", "F4": "yes", "F7": "yes", "F8": "no", "F10": "no"}
-CORE = ("F1", "F2", "F4", "F7")
-REST = ("F2", "F4", "F7")
-OPTIONAL = ("F8", "F10")  # sensitivity only
-RULES = ("lexicographic", "mean", "cap")
+# Score of each cell value for the reference user's privacy (v2 after MB, 21 Nov 21:31: "all F relevant").
+# F3 and F9 have a direction the authors must confirm (AMBIGUOUS); a sensitivity variant drops them.
+SCORE = {
+    "F1": {"no": 1, "yes": 0},                         # CB cannot link online payments to a person
+    "F2": {"no": 1, "yes": 0},                         # PSP cannot link
+    "F3": {"via_psp": 1, "via_cb": 0, "via_both": 0},  # lawful access only through intermediaries, as for bank accounts
+    "F4": {"yes": 1, "no": 0},                         # private offline mode
+    "F7": {"yes": 1, "no": 0},                         # low-identity route
+    "F8": {"no": 1, "yes": 0},                         # ordinary wallet without verified identity
+    "F9": {"no": 1, "yes": 0},                         # no exceptional re-identification process
+    "F10": {"no": 1, "yes": 0},                        # no programmable restrictions on use
+}
+PROTECTIVE = {f: next(v for v, x in m.items() if x == 1) for f, m in SCORE.items()}
+CORE = ("F1", "F2", "F3", "F4", "F7", "F8", "F9", "F10")
+CORE4 = ("F1", "F2", "F4", "F7")  # v1 definition, kept as a sensitivity variant
+AMBIGUOUS = ("F3", "F9")
+OPTIONAL = ()
+RULES = ("mean", "lexicographic", "cap")
 CAP = 0.5
 RUNG = {"considered": 1, "tested": 2, "endorsed": 3, "operational": 4}
 
@@ -38,7 +54,7 @@ def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=
     """1 protective, 0 not protective, None undetermined. view: 'stated' (any status) or 'admissible' (rule C)."""
     if not cell:
         return None
-    if view == "admissible" and not admissible(cell):
+    if view == "admissible" and not admissible(cell, categorical=set(SCORE[fid]) if fid == "F3" else None):
         return None
     if exclude_route_d and str(cell.get("text_route", "")).strip().upper() == "D":
         return None
@@ -50,14 +66,13 @@ def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=
     if dec in ("rejected", "superseded"):
         return None
     v = str(cell.get("value", "")).strip().lower()
-    if v not in ("yes", "no"):
-        return None
-    return 1 if v == PROTECTIVE[fid] else 0
+    return SCORE[fid].get(v)
 
 
-def rung(cell):
-    """Commitment rung of a cell that carries a yes/no value."""
-    if not cell or str(cell.get("value", "")).strip().lower() not in ("yes", "no"):
+def rung(cell, fid=None):
+    """Commitment rung of a cell that carries a scored value (yes/no, or the F3 categories)."""
+    valid = set(SCORE[fid]) if fid in SCORE else {"yes", "no"}
+    if not cell or str(cell.get("value", "")).strip().lower() not in valid:
         return 0
     dec, impl = _status(cell)
     if dec in ("rejected", "superseded"):
@@ -76,9 +91,9 @@ def _wmean(vals, weights, fill):
     return sum(weights[f] * (fill if v is None else v) for f, v in vals.items()) / total
 
 
-def axis1(cells, rule="lexicographic", weights=None, include=(), drop=(), **kw):
+def axis1(cells, rule="mean", weights=None, include=(), drop=(), cells_used=CORE, **kw):
     """Interval of the stated-design score (or admissible, with view='admissible')."""
-    comps = [f for f in CORE + tuple(include) if f not in drop]
+    comps = [f for f in tuple(cells_used) + tuple(include) if f not in drop]
     comp = {f: component(cells.get(f), f, **kw) for f in comps}
     w = {f: 1.0 for f in comps}
     if weights:
@@ -101,10 +116,11 @@ def axis1(cells, rule="lexicographic", weights=None, include=(), drop=(), **kw):
             "determined": sum(v is not None for v in comp.values()), "n_components": len(comp)}
 
 
-def axis2(cells):
-    """Commitment profile: rung per core component and the count at rung >= 3 out of 4."""
-    profile = {f: rung(cells.get(f)) for f in CORE}
-    return {"profile": profile, "decided_of_4": sum(r >= 3 for r in profile.values())}
+def axis2(cells, cells_used=CORE):
+    """Commitment profile: rung per cell and the count at rung >= 3 (endorsed or operational) out of all cells."""
+    profile = {f: rung(cells.get(f), f) for f in cells_used}
+    return {"profile": profile, "decided": sum(r >= 3 for r in profile.values()), "n_cells": len(profile),
+            "stated_only": sum(1 <= r <= 2 for r in profile.values())}
 
 
 def privacy_index(cells, **kw):
@@ -144,7 +160,8 @@ def _dirichlet(rng, keys):
 
 def uncertainty_analysis(projects, draws=500, seed=20261121, view="stated"):
     """Share of the baseline separated pairs that survive (a) Dirichlet(1) weight draws, (b) the alternative rules
-    (mean, cap), (c) leaving out each component, (d) the admissible view, (e) adding F8 and F10."""
+    (lexicographic, cap), (c) leaving out each cell, (d) the admissible view, (e) without the ambiguous F3 and F9,
+    (f) the four cells of v1 only, (g) without route-D or inferred cells."""
     base_scores = {p: axis1(c, view=view) for p, c in projects.items()}
     base = separated_pairs(base_scores)
     out = {"n_projects": len(projects), "baseline_separated_pairs": len(base), "baseline_share": round(share_separated(base_scores), 4)}
@@ -162,12 +179,13 @@ def uncertainty_analysis(projects, draws=500, seed=20261121, view="stated"):
             counts[pair] += pair in cur
     out["weights_kept_in_all_draws"] = None if not base else round(sum(v == draws for v in counts.values()) / len(base), 4)
     out["weights_mean_kept"] = None if not base else round(sum(counts.values()) / (len(base) * draws), 4)
-    for rule in ("mean", "cap"):
+    for rule in ("lexicographic", "cap"):
         out[f"rule_{rule}_kept"] = kept({p: axis1(c, view=view, rule=rule) for p, c in projects.items()})
     for f in CORE:
         out[f"drop_{f}_kept"] = kept({p: axis1(c, view=view, drop=(f,)) for p, c in projects.items()})
     out["admissible_view_kept"] = kept({p: axis1(c, view="admissible") for p, c in projects.items()})
-    out["with_F8_F10_kept"] = kept({p: axis1(c, view=view, include=OPTIONAL) for p, c in projects.items()})
+    out["without_F3_F9_kept"] = kept({p: axis1(c, view=view, drop=AMBIGUOUS) for p, c in projects.items()})
+    out["core4_only_kept"] = kept({p: axis1(c, view=view, cells_used=CORE4) for p, c in projects.items()})
     out["no_route_D_kept"] = kept({p: axis1(c, view=view, exclude_route_d=True) for p, c in projects.items()})
     out["no_inferred_kept"] = kept({p: axis1(c, view=view, exclude_inferred=True) for p, c in projects.items()})
     return out
@@ -184,9 +202,9 @@ def simulate_separation(coverage, p_protective=0.5, n_projects=44, draws=200, se
         for i in range(n_projects):
             cells = {}
             for f in CORE:
-                if rng.random() < coverage[f]:
+                if rng.random() < coverage.get(f, 0):
                     protective = rng.random() < p_protective
-                    v = PROTECTIVE[f] if protective else ("yes" if PROTECTIVE[f] == "no" else "no")
+                    v = PROTECTIVE[f] if protective else next(x for x, sc in SCORE[f].items() if sc == 0)
                     cells[f] = {"value": v, "evidence_state": "documented", "decision_status": "endorsed"}
             scores[i] = axis1(cells, view=view)
         shares.append(share_separated(scores))

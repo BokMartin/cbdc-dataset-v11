@@ -117,3 +117,66 @@ What the dry run shows about the design (properties of the method on invented in
 6. Choice of the four cells justified (§2); leave-one-out kept.
 7. Known cases and external measures pre-specified (§10.2).
 8. Separation is a diagnostic only until DS confirms ordering (§6).
+
+## 12. Version 2 (MB, 21 Nov 21:31): all F-cells matter, and privacy talk against commitments
+
+MB: an index that rests on F1 alone is useless; all F-cells must matter, privacy statements must come in, and a key output is privacy talk against actual commitments, with the expectation that privacy is talked about a lot and committed to little. Where this section and §2 to §4 differ, this section is the current proposal.
+
+### 12.1 Design index on all eight privacy cells
+
+Cells F1, F2, F3, F4, F7, F8, F9, F10 (F5 and F6 are reserved; F11 objectives and F12 ledger technology are not privacy properties). Scores (`SCORE` in `derive_index.py`):
+
+| Cell | 1 (protective) | 0 | undetermined |
+|---|---|---|---|
+| F1 CB link | no | yes | anything else |
+| F2 PSP link | no | yes | |
+| F3 lawful access route | via_PSP | via_CB, via_both | none_stated, n/d |
+| F4 private offline | yes | no | |
+| F7 low-identity route | yes | no | |
+| F8 onboarding ID | no | yes | |
+| F9 targeted re-identification | no | yes | |
+| F10 programmable restrictions | no | yes | |
+
+F3 and F9 have a direction the authors must confirm (a documented route or process can also be read as a safeguard); a sensitivity variant drops them. Aggregation is the compensatory **mean** of the eight, as an interval; the lexicographic rule and the cap are sensitivity variants. Axis 2 is the rung profile over the eight cells and the count of cells at endorsed or operational.
+
+**MOCK dry run, what it shows about the design:** every cell now moves the result (leaving one out keeps 53 to 91 % of the separated pairs), but with eight cells of which about half are undetermined the intervals are wide: only about 4 % of project pairs are separated in the stated view and none in the admissible view (simulation at that coverage: 2 %, 0 to 5.5 %). The design index is therefore a **profile per project**, not a league table; ordering is in any case not allowed until DS confirms (§6).
+
+### 12.2 Talk against commitments, by aspect (`talk_commitment.py`)
+
+The two layers stay separately measured and meet on the same unit, the (project, aspect) pair, for the six talk aspects that have a matching F-cell:
+
+| Talk aspect (codebook v0.3) | F-cells |
+|---|---|
+| CB_ACCESS | F1 |
+| INTERMEDIARY_DATA | F2 |
+| AUTHORITY_ACCESS | F3, F9 |
+| OFFLINE | F4 |
+| ANONYMITY | F7 |
+| IDENTIFICATION | F7, F8 |
+
+DATA_PROTECTION, USER_CONTROL, PETS and GENERAL have no cell: talk on them is reported, with no gap. F10 has no talk aspect.
+
+Per pair: **talk** = at least one own-voice relevant unit on the aspect; **commitment** = admissible (a mapped cell at endorsed or operational), stated (rung 1 or 2), none, or uncertain (blind coders disagree). Per project, over the six aspects: aspects talked about, design stated, committed, and the **gap = number of aspects talked about without an admissible commitment** (bounds for uncertain pairs). This is a count of cells of the 2 × 2 table of ADR-005, not the difference of two scales. Talk intensity (share of own-voice relevant units among candidates, Wilson interval) is reported beside it and never enters the gap.
+
+### 12.3 Hypotheses to register before any data (proposal; MB's expectation, not a finding)
+
+- **H-TC1** (talk exceeds decided commitments): per project, share of aspects talked about minus share with an admissible commitment, > 0. *The MOCK dry run shows this comes out positive even when talk only mirrors designs that are stated but not decided, because decided commitments are rare (the census found an admissible F1 for 5 of 43). It is reported descriptively, not as the test.*
+- **H-TC2** (talk without substance; the discriminating test): share of aspects talked about minus share of aspects whose design the documents state at any status, > 0. In the MOCK dry run it is positive in the scenario where talk is frequent regardless of design (31 of 44 projects above, p < 0.001 at the upper bound; 21 above, 13 below, p = 0.11 at the lower bound) and not in the scenario where talk mirrors stated designs (0 above, 20 below).
+- Test: one-sided sign test over projects, and the mean difference with a project bootstrap 95 % interval, at the bound least favourable to the hypothesis; the smallest difference of interest δ is set by the authors before the data (as for H2). No causal language.
+
+### 12.4 Which earlier decisions this touches (nothing applied without MB and DS)
+
+| Decision | Effect of version 2 |
+|---|---|
+| ADR-004 §4 (no count-based talk index) | kept if talk stays beside the index (option recommended to MB on 21 Nov); overturned if talk becomes a component of one number |
+| ADR-005 §4 (2 × 2 table instead of Talk minus Commitment) | kept: the gap is a count of 2 × 2 cells on the same aspects; a project-level gap count is new and needs DS's agreement |
+| Brief §1 "no difference of a talk and a commitment index" | kept in letter; the gap count must be described as above in the brief |
+| ADR-009 v1 (four cells, lexicographic) | replaced by §12.1 |
+| Contract v12 §6 (F3 descriptive only; F9, F10 [OPEN]) | F3 and F9 get a score direction, F10 enters the index: contract change, needs both authors |
+| HANDOFF §4 decision 1 (blank double coding of voice and aspect, undecided) | becomes necessary: the gap rests on voice and aspect |
+
+### 12.5 What it adds to validation and to the timeline
+
+- **Talk layer:** the gap needs relevance, voice and aspect to be valid. Relevance between the authors is at alpha 0.46 (below the 0.667 of the protocol) and is being repaired; voice and aspect have never been coded blind. So: adjudication and codebook repair, then blank double coding of voice and aspect on 80 to 120 units (HANDOFF decision 1), then the model run of the talk layer (paid, three providers, ADR-006).
+- **Commitment layer:** blind double coding of all eight cells for 44 projects is 352 cells (the template is ready), double the four-cell plan; alternative: all 44 projects for F1, F2, F4, F7 and a sample of 16 for F3, F8, F9, F10.
+- **Timeline:** both layers are now on the critical path. With the deadline of 31 Dec this is only feasible if contract v12 (with the F3/F9/F10 changes) and the talk codebook repair are both settled by early December. If time runs short, the order of cuts proposed is: keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10 (they stay in the index with a "model, verified" label).

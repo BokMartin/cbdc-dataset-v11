@@ -18,7 +18,7 @@ import random
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from derive_index import axis1, rung  # noqa: E402
+from derive_index import SCORE, axis1, rung  # noqa: E402
 
 
 def check_known_cases(projects, known):
@@ -31,13 +31,13 @@ def check_known_cases(projects, known):
         got = (cell or {}).get("value", "undetermined")
         if not exp:
             status = "not_fixed"
-        elif got not in ("yes", "no"):
+        elif got not in SCORE.get(k["cell"], {"yes": 1, "no": 0}):
             status = "undetermined"
         elif got != exp:
             status = "miss"
         else:
             mr = (k.get("expected_min_rung") or "").strip()
-            status = "hit" if not mr or rung(cell) >= int(mr) else "hit_value_low_rung"
+            status = "hit" if not mr or rung(cell, k["cell"]) >= int(mr) else "hit_value_low_rung"
         out.append({"case_id": k.get("case_id"), "project_id": k["project_id"], "cell": k["cell"], "expected": exp,
                     "observed": got, "status": status})
     return out

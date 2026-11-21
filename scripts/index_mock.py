@@ -11,12 +11,14 @@ import argparse
 import csv
 import os
 import random
+import sys
 
-CORE = ("F1", "F2", "F4", "F7")
-PROTECTIVE = {"F1": "no", "F2": "no", "F4": "yes", "F7": "yes"}
+sys.path.insert(0, os.path.dirname(__file__))
+from derive_index import CORE, SCORE  # noqa: E402
+from talk_commitment import ASPECT_CELLS, TALK_ONLY_ASPECTS  # noqa: E402
 STATUS = [("considered", "untested_or_unreported", 0.5), ("considered", "tested", 0.2),
           ("endorsed", "untested_or_unreported", 0.2), ("endorsed", "operational", 0.1)]
-COVERAGE = {"F1": 0.77, "F2": 0.5, "F4": 0.5, "F7": 0.5}  # F1 from the sealed census aggregate; the rest assumed
+COVERAGE = {f: (0.77 if f == "F1" else 0.5) for f in CORE}  # F1 from the sealed census aggregate; the rest assumed
 TIERS = ["T1"] * 8 + ["T2"] * 8 + ["T3"] * 28
 FIELDS = ["project_id", "cell", "value", "decision_status", "implementation_status", "quote", "page_index"]
 BANNER = "MOCK DATA - invented - not a result"
@@ -40,8 +42,10 @@ def generate(seed=20261121, disagreement=0.1):
         for c in CORE:
             if rng.random() < COVERAGE[c]:
                 protective = rng.random() < 0.25 + 0.5 * lean
-                v = PROTECTIVE[c] if protective else ("yes" if PROTECTIVE[c] == "no" else "no")
+                v = rng.choice([x for x, sc in SCORE[c].items() if sc == (1 if protective else 0)])
                 dec, impl = _status(rng)
+            elif c == "F3" and rng.random() < 0.3:
+                v, dec, impl = "none_stated", "", ""
             else:
                 v, dec, impl = "undetermined", "", ""
             row = {"project_id": p, "cell": c, "value": v, "decision_status": dec, "implementation_status": impl,
@@ -49,7 +53,7 @@ def generate(seed=20261121, disagreement=0.1):
             a.append(row)
             r2 = dict(row)
             if rng.random() < disagreement:
-                r2["value"] = rng.choice([x for x in ("yes", "no", "undetermined") if x != v])
+                r2["value"] = rng.choice([x for x in list(SCORE[c]) + ["undetermined"] if x != v])
             b.append(r2)
     tiers = dict(zip(projects, rng.sample(TIERS, len(TIERS))))
     return projects, tiers, a, b
@@ -75,7 +79,7 @@ def write(out, seed=20261121):
     with open(os.path.join(out, "MOCK_EXTERNAL.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["project_id", "measure", "value", "note"])
-        prot = {p: sum(1 for r in a if r["project_id"] == p and r["value"] == PROTECTIVE[r["cell"]]) for p in projects}
+        prot = {p: sum(1 for r in a if r["project_id"] == p and SCORE[r["cell"]].get(r["value"]) == 1) for p in projects}
         for p in projects:
             w.writerow([p, "mock_convergent", round(prot[p] + rng.gauss(0, 1), 3), BANNER])
             w.writerow([p, "mock_discriminant", round(rng.gauss(0, 1), 3), BANNER])
@@ -89,7 +93,38 @@ def write(out, seed=20261121):
         w.writerow(["project_id", "tier", "note"])
         for p in projects:
             w.writerow([p, tiers[p], BANNER])
+    write_talk(out, a, projects, seed)
     return out
+
+
+RUNG_OF = {("considered", "untested_or_unreported"): 1, ("considered", "tested"): 2, ("endorsed", "untested_or_unreported"): 3, ("endorsed", "operational"): 4}
+
+
+def write_talk(out, a, projects, seed):
+    """Two invented talk scenarios on the same invented cells:
+    MOCK_TALK_H: talk on an aspect is frequent whatever the commitment (the pattern MB expects);
+    MOCK_TALK_NULL: talk on an aspect appears only where the design is at least stated (talk mirrors commitments).
+    The pair shows whether the pre-specified test can tell the two apart; neither is a result."""
+    rng = random.Random(seed + 2)
+    cells = {(r["project_id"], r["cell"]): r for r in a}
+    for scen in ("H", "NULL"):
+        with open(os.path.join(out, f"MOCK_TALK_{scen}.csv"), "w", newline="", encoding="utf-8") as fh:
+            w = csv.writer(fh)
+            w.writerow(["project_id", "aspect", "own_units", "note"])
+            for p in projects:
+                for asp, fs in list(ASPECT_CELLS.items()) + [(x, ()) for x in TALK_ONLY_ASPECTS]:
+                    stated = any(cells[(p, f)]["value"] in SCORE[f] for f in fs)
+                    if scen == "H":
+                        talk = rng.random() < 0.75
+                    else:
+                        talk = stated and rng.random() < 0.9
+                    w.writerow([p, asp, rng.randint(1, 30) if talk else 0, BANNER])
+    with open(os.path.join(out, "MOCK_TALK_INTENSITY.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["project_id", "candidate_units", "own_relevant_units", "note"])
+        for p in projects:
+            n = rng.randint(40, 1200)
+            w.writerow([p, n, int(n * rng.uniform(0.05, 0.4)), BANNER])
 
 
 if __name__ == "__main__":

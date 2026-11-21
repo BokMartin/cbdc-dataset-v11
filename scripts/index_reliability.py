@@ -24,7 +24,7 @@ from score_agreement import alpha  # noqa: E402
 sys.path.insert(0, os.path.dirname(__file__))
 from derive_index import CORE, rung  # noqa: E402
 
-VALUES = {"yes", "no", "undetermined"}
+VALUES = {"yes", "no", "undetermined", "via_psp", "via_cb", "via_both", "none_stated"}  # F3 is categorical
 FIELDS = ["project_id", "cell", "value", "decision_status", "implementation_status", "quote", "page_index"]
 
 
@@ -66,11 +66,11 @@ def merge(a, b):
         p, c = k
         x, y = a[k], b[k]
         if x["value"] == y["value"] and x["value"] != "undetermined":
-            lower = x if rung(x) <= rung(y) else y
+            lower = x if rung(x, c) <= rung(y, c) else y
             cell = {"value": x["value"], "evidence_state": "documented", "decision_status": lower["decision_status"],
                     "implementation_status": lower["implementation_status"]}
         elif x["value"] == y["value"]:
-            cell = {"value": "undetermined"}
+            cell = {"value": x["value"]}
         else:
             cell = {"value": "undetermined", "coder_disagreement": "true", "values_coded": [x["value"], y["value"]]}
         merged.setdefault(p, {})[c] = cell

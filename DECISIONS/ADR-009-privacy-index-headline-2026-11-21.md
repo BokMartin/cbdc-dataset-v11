@@ -17,6 +17,10 @@ The sealed endorsement census of 2 Nov (model only, aggregate) found an admissib
 2. The index on admissible cells only (rule C) is reported for every project as the robustness check. Whether to swap primary and robustness is open (review item 1).
 3. Talk labels never enter the index. ADR-004 §4 and the ban on a difference of a talk and a commitment index stand.
 
+## Revision of 21 Nov 21:31 (MB): all F-cells and talk against commitments
+
+MB: an index that rests on F1 alone is useless; all F-cells must matter, privacy statements must come in, and a key output is privacy talk against commitments, with the expectation that there is much talk and little commitment. Proposal in spec §12: the design index uses the eight privacy cells F1, F2, F3, F4, F7, F8, F9, F10 with a compensatory mean (lexicographic and cap only in sensitivity); talk is set against commitments on the six aspects with a matching cell, as counts of 2 × 2 cells per project; MB's expectation is registered as hypotheses H-TC1 (descriptive) and H-TC2 (the discriminating test) before any data. Whether talk stays beside the index or becomes a component of it was put to MB on 21 Nov (recommendation: beside, which keeps ADR-004 §4 and ADR-005). Spec §12.4 lists every earlier decision this touches; all need DS.
+
 ## Open (for DS and MB before the freeze)
 
 - Lexicographic rule (proposal, replaces the cap of 0.5); equal weights of F2, F4, F7 (proposal); F8 and F10 only in sensitivity (proposal).
