@@ -1,0 +1,224 @@
+{
+ "label": "MOCK",
+ "n_projects": 44,
+ "reliability": {
+  "keys_in_one_file_only": [],
+  "F1": {
+   "n": 44,
+   "agreement": 0.955,
+   "alpha_3cat": 0.93,
+   "n_both_valued": 31,
+   "alpha_valued": 1.0
+  },
+  "F2": {
+   "n": 44,
+   "agreement": 0.909,
+   "alpha_3cat": 0.846,
+   "n_both_valued": 18,
+   "alpha_valued": 0.784
+  },
+  "F4": {
+   "n": 44,
+   "agreement": 0.977,
+   "alpha_3cat": 0.964,
+   "n_both_valued": 22,
+   "alpha_valued": 1.0
+  },
+  "F7": {
+   "n": 44,
+   "agreement": 0.886,
+   "alpha_3cat": 0.819,
+   "n_both_valued": 20,
+   "alpha_valued": 0.805
+  }
+ },
+ "coverage_after_merge": {
+  "F1": 0.705,
+  "F2": 0.364,
+  "F4": 0.5,
+  "F7": 0.409
+ },
+ "separation_share_stated": 0.2495,
+ "separation_share_admissible": 0.0148,
+ "simulation_at_observed_coverage": {
+  "mean": 0.268,
+  "p05": 0.1839,
+  "p95": 0.352
+ },
+ "uncertainty_all": {
+  "n_projects": 44,
+  "baseline_separated_pairs": 236,
+  "baseline_share": 0.2495,
+  "weights_kept_in_all_draws": 1.0,
+  "weights_mean_kept": 1.0,
+  "rule_mean_kept": 0.1229,
+  "rule_cap_kept": 0.1229,
+  "drop_F1_kept": 0.0678,
+  "drop_F2_kept": 0.9958,
+  "drop_F4_kept": 0.9576,
+  "drop_F7_kept": 0.9873,
+  "admissible_view_kept": 0.0593,
+  "with_F8_F10_kept": 0.9322,
+  "no_route_D_kept": 1.0,
+  "no_inferred_kept": 1.0
+ },
+ "uncertainty_T1_T2": {
+  "n_projects": 16,
+  "baseline_separated_pairs": 29,
+  "baseline_share": 0.2417,
+  "weights_kept_in_all_draws": 1.0,
+  "weights_mean_kept": 1.0,
+  "rule_mean_kept": 0.3793,
+  "rule_cap_kept": 0.3793,
+  "drop_F1_kept": 0.069,
+  "drop_F2_kept": 1.0,
+  "drop_F4_kept": 0.9655,
+  "drop_F7_kept": 1.0,
+  "admissible_view_kept": 0.1379,
+  "with_F8_F10_kept": 0.931,
+  "no_route_D_kept": 1.0,
+  "no_inferred_kept": 1.0
+ },
+ "known_cases": [
+  {
+   "case_id": "MK01",
+   "project_id": "MOCK34",
+   "cell": "F4",
+   "expected": "no",
+   "observed": "no",
+   "status": "hit"
+  },
+  {
+   "case_id": "MK02",
+   "project_id": "MOCK31",
+   "cell": "F2",
+   "expected": "yes",
+   "observed": "yes",
+   "status": "hit"
+  },
+  {
+   "case_id": "MK03",
+   "project_id": "MOCK16",
+   "cell": "F7",
+   "expected": "no",
+   "observed": "no",
+   "status": "hit"
+  },
+  {
+   "case_id": "MK04",
+   "project_id": "MOCK38",
+   "cell": "F1",
+   "expected": "no",
+   "observed": "no",
+   "status": "hit"
+  },
+  {
+   "case_id": "MK05",
+   "project_id": "MOCK24",
+   "cell": "F4",
+   "expected": "yes",
+   "observed": "yes",
+   "status": "hit"
+  },
+  {
+   "case_id": "MK06",
+   "project_id": "MOCK41",
+   "cell": "F1",
+   "expected": "yes",
+   "observed": "no",
+   "status": "miss"
+  }
+ ],
+ "external": [
+  {
+   "measure": "mock_convergent",
+   "role": "convergent",
+   "expected_sign": "+",
+   "n": 12,
+   "rho": 0.786,
+   "ci95": [
+    0.376,
+    0.906
+   ],
+   "projects_excluded_wide_interval": [
+    "MOCK02",
+    "MOCK03",
+    "MOCK04",
+    "MOCK07",
+    "MOCK08",
+    "MOCK09",
+    "MOCK10",
+    "MOCK11",
+    "MOCK13",
+    "MOCK14",
+    "MOCK15",
+    "MOCK17",
+    "MOCK18",
+    "MOCK19",
+    "MOCK20",
+    "MOCK21",
+    "MOCK23",
+    "MOCK25",
+    "MOCK26",
+    "MOCK27",
+    "MOCK28",
+    "MOCK29",
+    "MOCK30",
+    "MOCK32",
+    "MOCK34",
+    "MOCK35",
+    "MOCK37",
+    "MOCK38",
+    "MOCK39",
+    "MOCK40",
+    "MOCK43",
+    "MOCK44"
+   ]
+  },
+  {
+   "measure": "mock_discriminant",
+   "role": "discriminant",
+   "expected_sign": "0",
+   "n": 12,
+   "rho": 0.491,
+   "ci95": [
+    0.0,
+    0.776
+   ],
+   "projects_excluded_wide_interval": [
+    "MOCK02",
+    "MOCK03",
+    "MOCK04",
+    "MOCK07",
+    "MOCK08",
+    "MOCK09",
+    "MOCK10",
+    "MOCK11",
+    "MOCK13",
+    "MOCK14",
+    "MOCK15",
+    "MOCK17",
+    "MOCK18",
+    "MOCK19",
+    "MOCK20",
+    "MOCK21",
+    "MOCK23",
+    "MOCK25",
+    "MOCK26",
+    "MOCK27",
+    "MOCK28",
+    "MOCK29",
+    "MOCK30",
+    "MOCK32",
+    "MOCK34",
+    "MOCK35",
+    "MOCK37",
+    "MOCK38",
+    "MOCK39",
+    "MOCK40",
+    "MOCK43",
+    "MOCK44"
+   ]
+  }
+ ]
+}

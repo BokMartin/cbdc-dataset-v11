@@ -97,6 +97,16 @@ Each coder fills one copy of the coder template: `project_id, cell, value (yes /
 
 **Workload (estimate, not measured):** 176 cells, most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
 
+### 10.4 Dry run on MOCK data (21 Nov, MB: "zatím to udělej na mockup datech")
+
+The whole chain runs end to end on invented data: `python scripts/index_mock.py` writes 44 invented projects MOCK01 to MOCK44 (two blind-coder files with about 10 % planted disagreement, six known cases with one planted miss, two invented external measures, tiers); `scripts/index_report.py --label MOCK ...` writes `data/index/mock/MOCK_INDEX_{RESULTS.json, TABLE.csv, REPORT.md, MAP.svg}`. Every file name starts with MOCK, the table and report say MOCK DATA in their first lines, the map carries a watermark, and MOCK project ids refuse any other label (tested). The website build does not read `data/index` (tested). For the real run the same command takes the locked coder files and `--label` with the run date.
+
+What the dry run shows about the design (properties of the method on invented inputs, not results):
+- Almost all separation comes from the F1 class: dropping F1 keeps about 7 % of the separated pairs, dropping F2, F4 or F7 keeps 96 to 100 %. Under the lexicographic rule the index is close to "F1 plus a tie-breaker"; this is to be said plainly, or the authors prefer the compensatory mean as primary (it keeps only about 12 % of the lexicographic pairs).
+- Weight draws change nothing for the same reason; weights matter only within an F1 class, where intervals are rarely narrow enough to separate.
+- The external comparison uses only projects with interval width ≤ 0.25: 12 of 44 here. At that size the invented "discriminant" measure gave rho 0.49 by chance; the real comparison needs either a looser width rule fixed in advance or a statement that it is underpowered.
+- The planted known-case miss and the planted coder disagreements are caught and reported.
+
 ## 11. Changes after the review of 21 Nov (items as numbered in the review)
 
 1. Axis 1 renamed "stated design (any status)", status shown per point, F4 and F7 read accordingly; swapping primary and robustness left to the authors.

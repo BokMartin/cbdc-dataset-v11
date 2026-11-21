@@ -112,3 +112,34 @@ def test_prepared_input_files_are_well_formed():
         known = list(csv.DictReader(fh))
     assert all(r["expected_value"] in ("", "yes", "no") for r in known)
     assert all(r["expected_value"] == "" for r in known if r["exposure"].startswith("NOT exposed"))
+
+
+def test_mock_dry_run_end_to_end(tmp_path):
+    from index_mock import write as write_mock
+    from index_report import run, write as write_report
+    m = write_mock(str(tmp_path / "mock"))
+    res, index, tiers = run("MOCK", f"{m}/MOCK_CODER_A.csv", f"{m}/MOCK_CODER_B.csv", f"{m}/MOCK_KNOWN_CASES.csv",
+                            f"{m}/MOCK_EXTERNAL.csv", f"{m}/MOCK_MEASURES.csv", f"{m}/MOCK_TIERS.csv", draws=20)
+    assert res["n_projects"] == 44 and len(index) == 44
+    assert [k["status"] for k in res["known_cases"]].count("miss") == 1  # the planted miss is caught
+    files = write_report(str(tmp_path / "out"), "MOCK", res, index, tiers)
+    assert all(os.path.basename(f).startswith("MOCK_") for f in files)
+    assert open(files[1]).readline().startswith("# MOCK DATA")
+    assert "MOCK DATA" in open(files[3]).read()
+
+
+def test_mock_ids_require_mock_label(tmp_path):
+    import pytest
+    from index_mock import write as write_mock
+    from index_report import run
+    m = write_mock(str(tmp_path / "mock"))
+    with pytest.raises(ValueError):
+        run("REAL", f"{m}/MOCK_CODER_A.csv", f"{m}/MOCK_CODER_B.csv", None, None, None, None, draws=5)
+
+
+def test_website_never_reads_index_mock():
+    for d, _, fs in os.walk(os.path.join(ROOT, "site")):
+        for f in fs:
+            if f.endswith((".html", ".js", ".json", ".py")):
+                assert "data/index" not in open(os.path.join(d, f), encoding="utf-8", errors="ignore").read(), f
+    assert "data/index" not in open(os.path.join(ROOT, "scripts/site/build_site_data.py")).read()
