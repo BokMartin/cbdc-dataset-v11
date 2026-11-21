@@ -51,16 +51,16 @@ The index needs one more status level. Proposal for that thread: in the main ind
 | 2 Switzerland | Helvetia I and II | evidence (author) | INCLINED or stays evidence | **yes, open point B** |
 | 3 Wholesale, model flag | 25 (incl. 6 SNB Helvetia pages) | wholesale (model) | INCLINED | no, MB decided the rule; per-row check suggested, several are press releases that may be companions |
 | 3 Wholesale, author evidence | 9 (Khokha 1 and 2, Jasper I-II and III, Acacia, Garuda x3, BCL DCB prototype) | evidence (author) | INCLINED or stays evidence | **yes, open point B** |
-| 4 Brazil | BR_Brazil_2023 plus candidates NP-BR-01 (Drex pilot report phase 1) and NP-BR-02 (Gomes speech) | outside frame | BR enters the frame as project 45 | **yes, open point C** |
+| 4 Brazil | BR_Brazil_2023; NP-BR-01, NP-BR-02 | outside frame | no change: Brazil stays out (MB, 23:52) | decided |
 
 **Open point B**: "same treatment" either moves the 11 wholesale and BIS Innovation Hub documents the authors already decided as evidence down to INCLINED (one rule for all of them, recommended for consistency), or keeps them as evidence and lifts only the model-flagged rows to INCLINED.
 
-**Open point C**: Brazil. Held: one BCB document (2023 press-conference deck on the pilot, evidence by author, borderline, no English text). Dropbox has no other BCB document (searched 21 Nov; only an HRF tracker page, not eligible). With the two candidates Brazil would be a T3 project with 1 to 3 documents. Adding it changes the frame of 44 projects (ADR-005 §1), the project status table (status NONE now) and the website.
+**Point C, decided by MB on 21 Nov 2026, 23:52: Brazil stays out of the frame** ("brazilii tedy vynechejme"). BR_Brazil_2023 stays as it is (outside the frame); NP-BR-01 and NP-BR-02 are references only, not corpus candidates. The two files were saved to `CBDC_MASTER_v12/BR/` for reference (SHA-256 in the candidates file). Background: Held: one BCB document (2023 press-conference deck on the pilot, evidence by author, borderline, no English text). Dropbox has no other BCB document (searched 21 Nov; only an HRF tracker page, not eligible). With the two candidates Brazil would be a T3 project with 1 to 3 documents. Adding it changes the frame of 44 projects (ADR-005 §1), the project status table (status NONE now) and the website.
 
 ## Consequences if adopted
 
 - `docs/SOURCE_RULE_D1.md`: add INCLINED after rule 5 and amend rule 1 ("BIS ... never are") for joint reports in which the competent central bank takes part.
-- ADR-005 §1 (frame) if Brazil enters; ADR-005 §9-10 (evidence) for the new status.
+- ADR-005 §9-10 (evidence) for the new status.
 - New `AUTHOR_DECISIONS_<date>.csv` rows for every changed document; TIERS and site data rebuilt; `PROJECT_BRIEF.md` numbers updated.
 - Corpus freeze moves: INCLINED documents need text, translation (T1 and T2 rule of ADR-007 applies) and units before calibration.
 - DS confirms.
