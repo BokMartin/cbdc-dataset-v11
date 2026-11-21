@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
-from derive_index import privacy_index, ranked_above, sensitivity_table, weight_sensitivity  # noqa: E402
+from derive_index import two_axis_index, privacy_index, ranked_above, sensitivity_table, weight_sensitivity  # noqa: E402
 
 E = {"evidence_state": "documented", "decision_status": "endorsed"}
 
@@ -61,3 +61,17 @@ def test_sensitivity_runs_on_synthetic_projects():
     assert set(t["primary"]) == {"P1", "P2", "P3"} and "drop_F1" in t
     w = weight_sensitivity(projects, draws=50)
     assert w["baseline_pairs"] == 1 and w["kept_all_draws"] == 1.0
+
+
+def test_two_axis_status_never_enters_design_axis():
+    considered = {f: {"value": v, "evidence_state": "documented", "decision_status": "considered"} for f, v in (("F1", "no"), ("F2", "no"), ("F4", "yes"), ("F7", "yes"))}
+    operational = {f: {"value": v, "evidence_state": "documented", "decision_status": "endorsed", "implementation_status": "operational"} for f, v in (("F1", "no"), ("F2", "no"), ("F4", "yes"), ("F7", "yes"))}
+    a, b = two_axis_index(considered), two_axis_index(operational)
+    assert a["design"]["lower"] == b["design"]["lower"] == 1.0
+    assert a["commitment"] == 0.25 and b["commitment"] == 1.0
+    assert a["strict"]["determined"] == 0 and b["strict"]["determined"] == 4 and b["admissible"] == 4
+
+
+def test_two_axis_no_values():
+    r = two_axis_index({})
+    assert r["commitment"] is None and r["design"]["upper"] == 1.0

@@ -1,4 +1,9 @@
-"""Exploratory commitment-based privacy index (PROPOSAL, not adopted; see docs/PRIVACY_INDEX_PROPOSAL_2026-11-21.md, ADR-008 draft).
+"""Two-axis CBDC privacy index (PROPOSAL; option B chosen by MB on 21 Nov 2026, DS to confirm; see docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md, ADR-008).
+
+Axis 1, design privacy: how far the documented design keeps payments from being routinely attributed to persons,
+from the values of F1, F2, F4, F7 at any status (status-attached view, contract §5). Axis 2, commitment: how firmly
+that design is held (considered 1, tested 2, endorsed 3, operational 4). Status never enters axis 1. The strict
+variant (admissible cells only, rule C) is the robustness check (option A).
 
 Built only from F-cells of the commitment layer (contract v12). Talk labels never enter it. Missing cells are never filled:
 the index is an interval [lower, upper], where lower treats every undetermined component as not protective and upper
@@ -9,7 +14,7 @@ Run only on synthetic cells until the definition is frozen and registered before
 """
 import random
 
-from derive import admissible
+from derive import _status, admissible
 
 # cell id -> the value that protects the reference user's privacy
 PROTECTIVE = {"F1": "no", "F2": "no", "F4": "yes", "F7": "yes", "F8": "no", "F10": "no"}
@@ -106,3 +111,35 @@ def sensitivity_table(projects):
     for f in ("F1", "F2", "F4", "F7"):
         out[f"drop_{f}"] = {p: privacy_index(c, drop=(f,)) for p, c in projects.items()}
     return out
+
+
+# ---------- two-axis index (option B) ----------
+RUNG = {"considered": 1, "tested": 2, "endorsed": 3, "operational": 4}
+
+
+def rung(cell):
+    """Commitment rung of a cell with a yes/no value: operational 4, endorsed 3, tested 2, considered 1, else 0."""
+    if not cell or str(cell.get("value", "")).strip().lower() not in ("yes", "no"):
+        return 0
+    dec, impl = _status(cell)
+    if dec in ("rejected", "superseded"):
+        return 0
+    if impl == "operational":
+        return 4
+    if dec == "endorsed":
+        return 3
+    if impl == "tested":
+        return 2
+    return 1 if dec == "considered" else 0
+
+
+def two_axis_index(cells, include=(), cap=DEFAULT_CAP, **kw):
+    """Axis 1 = design privacy interval on the status-attached view; axis 2 = mean rung / 4 over components with a value;
+    strict = option A interval on admissible cells only (robustness)."""
+    design = privacy_index(cells, strict=False, include=include, cap=cap, **kw)
+    fids = [f for f, v in design["components"].items() if v is not None]
+    rungs = {f: rung(cells.get(f)) for f in fids}
+    commitment = round(sum(rungs.values()) / (4 * len(rungs)), 4) if rungs else None
+    strict = privacy_index(cells, strict=True, include=include, cap=cap, **kw)
+    return {"design": design, "commitment": commitment, "rungs": rungs,
+            "admissible": sum(r >= 3 for r in rungs.values()), "strict": strict}
