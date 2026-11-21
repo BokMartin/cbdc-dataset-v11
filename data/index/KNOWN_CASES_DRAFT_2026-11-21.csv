@@ -1,0 +1,8 @@
+case_id,project_id,cell,expected_value,expected_min_rung,exposure,proposed_by,source_to_confirm,note
+K01,EU,F4,yes,,development case (exposed),model proposal,ECB digital euro preparation-phase documents (official layer); authors fix page and quote before data,offline mode with cash-like privacy is a stated design goal; legislation not adopted so a rung of endorsed is not expected
+K02,EU,F1,no,,development case (exposed),model proposal,ECB digital euro preparation-phase documents (official layer); authors fix page and quote before data,the Eurosystem states it would not be able to identify users from transactions
+K03,UK,F1,no,,development case (exposed),development review MB (Oct 2026),Bank of England CP 970 (2024); authors confirm,value from the exposed development profile; status to be re-checked under rule A
+K04,BS,F7,,,NOT exposed: filling this row exposes BS (log in EXPOSURE_LEDGER.md),,official Central Bank of The Bahamas document; authors fill,tiered wallet design; authors decide whether to use as known case
+K05,CN,F7,,,NOT exposed: filling this row exposes CN (log in EXPOSURE_LEDGER.md),,official PBoC document; authors fill,tiered wallet design; authors decide whether to use as known case
+K06,CN,F1,,,NOT exposed: filling this row exposes CN (log in EXPOSURE_LEDGER.md),,official PBoC document; authors fill,authors decide whether to use as known case
+K07,NG,F7,,,NOT exposed: filling this row exposes NG (log in EXPOSURE_LEDGER.md),,official CBN document; authors fill,tiered wallet design; authors decide whether to use as known case

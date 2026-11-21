@@ -1,0 +1,3 @@
+measure,role,expected_sign,source,vintage,note
+mock_convergent,convergent,+,invented,,MOCK DATA - invented - not a result
+mock_discriminant,discriminant,0,invented,,MOCK DATA - invented - not a result
