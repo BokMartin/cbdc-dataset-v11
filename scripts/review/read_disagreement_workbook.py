@@ -19,7 +19,10 @@ Rows the workbook leaves unclear can be settled by the authors later in words; t
 (data/units/DEV_ADJUDICATION_CLARIFICATIONS_<date>.csv: unit_id, joint_label, clarified_by, date, source, note_for_prompt) and
 are applied only to rows whose workbook answer was unclear.
 
-usage: read_disagreement_workbook.py --workbook <xlsx> --out data/units/DEV_ADJUDICATED_RELEVANCE_MB_DS_<date>.csv --date <YYYY-MM-DD> [--clarify <csv>]
+A later revision of an agreed label by the authors goes in --revise (data/units/DEV_ADJUDICATION_REVISIONS_<date>.csv: unit_id,
+previous_joint_label, joint_label, revised_by, date, source); the previous label must match, so a revision is never applied blind.
+
+usage: read_disagreement_workbook.py --workbook <xlsx> --out data/units/DEV_ADJUDICATED_RELEVANCE_MB_DS_<date>.csv --date <YYYY-MM-DD> [--clarify <csv>] [--revise <csv>]
 """
 import argparse, csv, glob, hashlib, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -62,7 +65,8 @@ def adjudicate(row):
 
 def main():
     import openpyxl
-    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True); ap.add_argument("--clarify"); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True); ap.add_argument("--clarify"); ap.add_argument("--revise"); a = ap.parse_args()
+    rev = {r["unit_id"]: r for r in csv.DictReader(open(a.revise, encoding="utf-8"))} if a.revise else {}
     clar = {r["unit_id"]: r for r in csv.DictReader(open(a.clarify, encoding="utf-8"))} if a.clarify else {}
     sha = hashlib.sha256(open(a.workbook, "rb").read()).hexdigest()
     ws = openpyxl.load_workbook(a.workbook)["RELEVANCE"]; rows = list(ws.iter_rows(values_only=True)); h = rows[0]
@@ -86,11 +90,17 @@ def main():
             assert status == "needs_author_check" and c["joint_label"] in V, f"clarification for {u} applies only to an unclear row"
             joint, status, basis = c["joint_label"], "agreed", "authors_clarification"
             if rs == "open": rs = "accepted" if joint == x["proposal"] else "rejected"
+        v = rev.pop(u, None)
+        if v:
+            assert status == "agreed" and joint == v["previous_joint_label"] and v["joint_label"] in V, f"revision for {u} does not match the agreed label"
+            joint, basis = v["joint_label"], "authors_revision"
+            if rs: rs = "accepted" if joint == x["proposal"] else "rejected"
         out.append({"unit_id": u, "project": r[3], "mb_blind": mb["relevant"] or ("invalid:" + mb_file if mb_file else "blank"), "ds_blind": ds["relevant"],
                     "ai_proposal_label": x["proposal"], "ai_proposal_took": took_of(x["note"]), "reason": x["reason"], "rule_proposed": rule_of(x["note"]) if x["reason"] == "B" else "",
                     "authors_response": re.sub(r"\s+", " ", str(r[14] or "")).strip(), "joint_label": joint, "status": status, "basis": basis, "rule_status": rs,
                     "doc_in_current_corpus": "yes" if u.split(":p")[0] in man else "no", "adjudicated_by": ("MB+DS jointly" + (", clarified by " + c["clarified_by"] if c else "")) if status == "agreed" else "",
-                    "date": (c["date"] if c else a.date) if status == "agreed" else "", "clarification_source": c["source"] if c else "", "note_for_prompt": c["note_for_prompt"] if c else "", "workbook_sha256": sha})
+                    "date": (c["date"] if c else a.date) if status == "agreed" else "", "clarification_source": (c["source"] if c else "") + (("revised from " + v["previous_joint_label"] + " on " + v["date"] + ": " + v["source"]) if v else ""), "note_for_prompt": c["note_for_prompt"] if c else "", "workbook_sha256": sha})
+    assert not rev, f"revisions for units not in the workbook: {sorted(rev)}"
     assert not clar, f"clarifications for units not in the workbook: {sorted(clar)}"
     out.sort(key=lambda d: d["unit_id"])
     with open(a.out, "w", newline="", encoding="utf-8") as f:
