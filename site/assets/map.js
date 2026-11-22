@@ -110,10 +110,10 @@
     }
     function panel(p) {
       if (!p) {
-        var n = { evidence: 0, companion: 0, dropped: 0, wholesale: 0 }, pubs = 0;
-        frame.forEach(function (q) { Object.keys(n).forEach(function (k) { n[k] += q.n[k]; }); pubs += q.pubs; });
+        var n = {}, pubs = 0;
+        frame.forEach(function (q) { Object.keys(q.n).forEach(function (k) { n[k] = (n[k] || 0) + q.n[k]; }); pubs += q.pubs; });
         $("panel").innerHTML = "<h2>44 projects</h2><div class='sub'>Click a country or a row of the table below.</div>" +
-          "<p><b>" + pubs + "</b> evidence publications, <b>" + n.companion + "</b> companions and <b>" + (n.dropped + n.wholesale) + "</b> documents not used, for the projects in the frame.</p>" +
+          "<p><b>" + pubs + "</b> evidence publications, <b>" + n.companion + "</b> companions and <b>" + ((n.dropped || 0) + (n.wholesale || 0)) + "</b> documents not used, for the projects in the frame.</p>" +
           "<p><a class='btn sm' href='documents.html'>Browse all documents</a></p>";
         return;
       }
@@ -147,7 +147,7 @@
         return "<td><b>" + S.esc(p.name) + "</b>" + (p.project_name ? "<div class='small muted'>" + S.esc(p.project_name) + "</div>" : "") + "</td>" +
           '<td><span class="dot" style="background:' + st[1] + '"></span> ' + S.esc(st[0]) + "</td><td>" + S.esc(p.tier) + "</td>" +
           '<td class="n">' + p.pubs + "</td><td>" + (p.ev_years.length ? p.ev_years[0] + (p.ev_years[1] !== p.ev_years[0] ? " to " + p.ev_years[1] : "") : "") + "</td>" +
-          '<td class="n">' + p.n.companion + '</td><td class="n">' + (p.n.dropped + p.n.wholesale) + "</td>";
+          '<td class="n">' + p.n.companion + '</td><td class="n">' + ((p.n.dropped || 0) + (p.n.wholesale || 0)) + "</td>";
       })
       .on("click", function (ev, p) { select(p.code); window.scrollTo({ top: 0, behavior: "smooth" }); })
       .on("keydown", function (ev, p) { if (ev.key === "Enter") select(p.code); });

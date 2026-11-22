@@ -31,7 +31,7 @@
 <script>
 SITE.get("assets/projects.json").then(function (PP) {
   var f = PP.projects.filter(function (p) { return p.frame; }), pubs = 0, comp = 0, out = 0, mt = 0, orig = 0;
-  f.forEach(function (p) { pubs += p.pubs; comp += p.n.companion; out += p.n.dropped + p.n.wholesale; mt += p.english["machine translation"]; orig += p.english["English original"] + p.english["issuer's English edition"]; });
+  f.forEach(function (p) { pubs += p.pubs; comp += p.n.companion; out += (p.n.dropped || 0) + (p.n.wholesale || 0); mt += p.english["machine translation"]; orig += p.english["English original"] + p.english["issuer's English edition"]; });
   var S = [[f.length, "projects in the frame"], [pubs, "evidence publications, each decided by an author"], [comp, "companion documents, cited for status and law"], [out, "documents collected and not used (another issuer, off topic, or wholesale only)"]];
   document.getElementById("stats").innerHTML = S.map(function (s) { return '<div class="card stat"><b>' + SITE.fmt(s[0]) + "</b><span>" + s[1] + "</span></div>"; }).join("");
 });
