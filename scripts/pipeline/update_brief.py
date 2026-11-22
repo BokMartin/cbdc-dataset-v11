@@ -47,6 +47,7 @@ def block():
     comp = rows(latest("data/manifest/COMPANION_LINKS_*.csv")); uf = latest("data/units/UNITS_MANIFEST_*.csv"); U = rows(uf); cand = rows(latest("data/units/CANDIDATES_*.csv"))
     nu = [r for r in rows(latest("data/units/UNITS_NOT_UNITISED_*.csv")) if "same publication" not in r["reason"]]
     route = C(r["route"] for r in U); s = lambda k: sum(int(r[k]) for r in cand)
+    inc_ids = {r["id"] for r in T if r["decision_v12"] == "INCLINED"}; n_inc = sum(r["id"] in inc_ids for r in U)  # documents with units that are not confirmed evidence (ADR-010)
     runs = sorted(glob.glob(os.path.join(ROOT, "data/translation/runs/*/RUN_META.json"))); calls = sum(json.load(open(f)).get("calls", 0) for f in runs)
     tm = [r for f in sorted(glob.glob(os.path.join(ROOT, "data/translation/TRANSLATION_MANIFEST_*.csv"))) for r in rows(f)]
     tdocs = {r["doc_key"] for r in tm if r["status"] == "ok" and r["priority"] != "BENCH"}
@@ -61,7 +62,7 @@ def block():
          f"| Evidence documents (in the frame) | **{len(pubs)} publications** ({len(ev)} rows); {by_author} of {len(ev)} decided or confirmed by an author |",
          f"| Companion documents (in the frame) | {len(comp)}, cited for status and timeline; linked to evidence of the same year {sum(r['link_basis'] == 'same year' for r in comp)}, of the nearest year {sum(r['link_basis'].startswith('nearest') for r in comp)}, no link {sum(not (r['link_basis'] == 'same year' or r['link_basis'].startswith('nearest')) for r in comp)}; {sum(r['decision_source'].startswith('author') for r in comp)} reviewed by an author |",
          f"| Tiers by number of evidence publications | T1 (8+): {len(tiers['T1'])} · {', '.join(sorted(tiers['T1']))}<br>T2 (5 to 7): {len(tiers['T2'])} · {', '.join(sorted(tiers['T2']))}<br>T3 (4 or fewer): {len(tiers['T3'])} |",
-         f"| English text for measurement | {len(U)} documents of {len({r['project'] for r in U})} projects: {route['A']} English originals, {route['B']} issuer English editions, {route['D']} machine translations; {len(nu)} evidence documents still without English text |",
+         f"| English text for measurement | {len(U)} documents of {len({r['project'] for r in U})} projects ({len(U) - n_inc} evidence publications and {n_inc} INCLINED documents, ADR-010): {route['A']} English originals, {route['B']} issuer English editions, {route['D']} machine translations; {len(nu)} evidence documents still without English text |",
          f"| Machine translation | {len(runs)} API runs, {calls} calls, {len(tdocs)} documents translated (benchmark translations excluded) |",
          f"| Sentence units | {n(sum(int(r['units']) for r in U))} units; {n(s('D') + s('N') + s('R'))} candidates for classification (dictionary hits {n(s('D'))}, neighbours {n(s('N'))}, random control {n(s('R'))}) |",
          f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; {dev_agreement()} · reference sample (400): {'drawn' if main else 'not drawn'} |",

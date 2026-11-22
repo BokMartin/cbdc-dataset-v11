@@ -78,7 +78,7 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 | # | Step | When | Script and input | Done |
 |---|---|---|---|---|
 | V1 | Freeze this spec, the known cases and the external measures; register with contract v12 | before F-cell production | this file, `data/index/*_DRAFT_*` | no |
-| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-21.csv` | no |
+| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells; under version 2 all eight cells, 352 cells, §12.5) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-21.csv` | no |
 | V3 | Reliability: Krippendorff's alpha per cell (three categories and valued pairs), merge, disagreements to undetermined | after V2 | `scripts/index_reliability.py` | no |
 | V4 | Re-run the separation simulation with real coverage | after V3, before reading scores | `simulate_separation` | no |
 | V5 | Known cases | after V3 | `scripts/index_validity.py`, `data/index/KNOWN_CASES_DRAFT_2026-11-21.csv` | no |
@@ -95,16 +95,16 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 
 Each coder fills one copy of the coder template: `project_id, cell, value (yes / no / undetermined), decision_status, implementation_status, quote, page_index`. `index_reliability.py` stops on duplicate rows or values outside the list, reports alpha per cell (undefined, not 1, when all ratings fall in one category), and merges: agreement gives the shared value with the lower of the two rungs; disagreement gives an undetermined cell flagged `coder_disagreement`, which widens the interval. Gate: alpha ≥ .80 per cell (contract §12); a cell below it is reported and the authors decide before any score is read.
 
-**Workload (estimate, not measured):** 176 cells, most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
+**Workload (estimate, not measured):** 176 cells in version 1 (352 for the eight cells of version 2, §12.5), most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
 
 ### 10.4 Dry run on MOCK data (21 Nov, MB: "zatím to udělej na mockup datech")
 
-The whole chain runs end to end on invented data: `python scripts/index_mock.py` writes 44 invented projects MOCK01 to MOCK44 (two blind-coder files with about 10 % planted disagreement, six known cases with one planted miss, two invented external measures, tiers); `scripts/index_report.py --label MOCK ...` writes `data/index/mock/MOCK_INDEX_{RESULTS.json, TABLE.csv, REPORT.md, MAP.svg}`. Every file name starts with MOCK, the table and report say MOCK DATA in their first lines, the map carries a watermark, and MOCK project ids refuse any other label (tested). The website build does not read `data/index` (tested). For the real run the same command takes the locked coder files and `--label` with the run date.
+The whole chain runs end to end on invented data: `python scripts/index_mock.py` writes 44 invented projects MOCK01 to MOCK44 (two blind-coder files with about 10 % planted disagreement, six known cases with one planted miss, two invented external measures, tiers); `scripts/index_report.py --label MOCK ...` writes `data/index/mock/MOCK_INDEX_{RESULTS.json, TABLE.csv, REPORT.md, MAP.svg}` (since version 2 one set per talk scenario: `MOCK_H_INDEX_*` and `MOCK_NULL_INDEX_*`, §12.3). Every file name starts with MOCK, the table and report say MOCK DATA in their first lines, the map carries a watermark, and MOCK project ids refuse any other label (tested). The website build does not read `data/index` (tested). For the real run the same command takes the locked coder files and `--label` with the run date.
 
 What the dry run shows about the design (properties of the method on invented inputs, not results):
 - Almost all separation comes from the F1 class: dropping F1 keeps about 7 % of the separated pairs, dropping F2, F4 or F7 keeps 96 to 100 %. Under the lexicographic rule the index is close to "F1 plus a tie-breaker"; this is to be said plainly, or the authors prefer the compensatory mean as primary (it keeps only about 12 % of the lexicographic pairs).
 - Weight draws change nothing for the same reason; weights matter only within an F1 class, where intervals are rarely narrow enough to separate.
-- The external comparison uses only projects with interval width ≤ 0.25: 12 of 44 here. At that size the invented "discriminant" measure gave rho 0.49 by chance; the real comparison needs either a looser width rule fixed in advance or a statement that it is underpowered.
+- The external comparison uses only projects with interval width ≤ 0.25: 12 of 44 here (version 1 dry run; 4 of 44 in the version 2 dry run, `MOCK_H_INDEX_REPORT.md`). At that size the invented "discriminant" measure gave rho 0.49 by chance; the real comparison needs either a looser width rule fixed in advance or a statement that it is underpowered.
 - The planted known-case miss and the planted coder disagreements are caught and reported.
 
 ## 11. Changes after the review of 21 Nov (items as numbered in the review)
