@@ -18,11 +18,15 @@ Reading guide: §1–§2 scope; §3 the claim schema; §4 status model (rules A�
 
 **Estimand (ADR F2).** Cross-section of current documentation as of the as-of date (**2026-10-18**, unchanged); eligible = national retail projects with an admissible F1 cell (§5) and observed covariate; the illustration estimates an unadjusted model-based association among measurable projects. Missingness bounds are reported (§8.4).
 
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *D11:* the as-of date 2026-10-18 is the **issue date** of a document: a document issued later is not evidence, whenever it was found. *D1:* the primary analysis is the **core of 16 projects** (tiers T1 and T2 as frozen on 17 Nov, Canada included; D13); NO and UK are the development cases (one development round); the other T3 projects are reported as exploratory ("uncompleted CBDC research", also on the map); CZ and CL, without readable evidence, are unavailable, not excepted. Frame 44 projects, measured 42.
+
 **Time.** Current state at the as-of date with a *claim history* (§7.6). No aggregate panel is built from it (ADR D4).
 
 ## 2. Scope of evidence
 
 `core_v1` (109 documents, frozen 18 Oct) + `core_v2` (UK, 18 documents) → one **production source manifest** frozen at Phase 3 with a uniform gap check (ADR D2). Genre exclusions in the core rubric are replaced by an authority/content rule applied uniformly; the earlier freeze is not re-opened retroactively, the manifest records the amendment with a date (ADR D1). Layers unchanged: official (default) · `staff_research` (corroborates, never establishes) · wholesale-only (flagged, out of the retail analysis) · background legal layer (F3 only).
+
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *D5, three classes of the INCLINED layer (ADR-010):* (1) confirmed retail evidence of the project; (2) a joint retail experiment or report explicitly attributable to the named project (for example BoE with MIT, Project Tourbillon): may give LEANING, never a commitment, flagged and scored only in the `with_leaning` sensitivity; (3) wholesale material: context only, and the source of PET observations, which keep their experiment id and appear in a separate context table. *D17:* documents found through Nijsse and Pinto (2026) that meet the source rule are added like any other, with `found_via` recorded; no further literature check. *D12:* no second corpus for talk.
 
 **Document-level language** is recorded in the evidence-language ledger (§9), not in the claim.
 
@@ -67,6 +71,8 @@ Rule unchanged: every qualifier needed to derive the cell value is recorded, inh
 
 **4.3 Project status (NO3).** Replaces lifecycle labels in the analysis: `activity` (active / paused / ended) × `issuance_intent` (decided_to_issue / not_decided / decided_not_now / rejected) × `last_stage` (research / PoC / pilot / live) × `legal_constraint` (none / enabling_law_pending / prohibited). The registry's LIVE/PILOT/… labels remain descriptive display labels on the website only.
 
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *D10:* both axes keep all their values; decision and implementation are two fields, never one ladder. Every count of commitments, in every result (index axis 2, talk against commitment, type, Y), uses the one predicate `admissible()` of §5; operational arrangements without a documented decision are shown separately, and considered or tested claims stay in the status-attached view and the dated history. A result computed by another rule is a defect (finding 1 of A4b, V6; repaired before any coding).
+
 ## 5. Admissibility and the primary matrix (rule C)
 
 A cell enters the **primary commitment matrix** (and hence Y, the type and the illustration) only if **all** hold:
@@ -98,6 +104,8 @@ Unchanged from v1.1 unless stated. Each cell = value · evidence_state · decisi
 | **F10 PROGRAMMABLE_RESTRICTIONS** **[OPEN]** | Does the endorsed design allow issuer/state-imposed restrictions on use (purpose, expiry, blocking)? | yes / no | Excludes issuance/redemption rules, holding limits, AML onboarding controls and court seizure (NO12, UK10). **Decision 6 Nov:** keep in v2 and drop if development cases show it consumes time, or omit now. |
 | **F11 OBJECTIVES** Δ | Which objectives does the institution state, and did it rank one as main? | 8 atomic tags, each `endorsed` / `considered` / `explicitly_rejected` / `not_documented` / `unresolved` (NO13); `primary_status` as v1.1; `primary_objectives` from **ranked original statements with stable ids** (UK11, NO14) | Tags: `payment_modernisation` · `financial_inclusion` · `monetary_sovereignty` · `monetary_policy_transmission` (split, NO13) · `cash_substitute` · `payment_resilience` (split) · `aml_cft_tax_enforcement` · `innovation_competitiveness`. Display crosswalk to the six v1.1 groups in `schema/f11_crosswalk.json` (ADR D5). Later rejection supersedes; omission from a later list ≠ rejection (NO14). |
 | **F12 LEDGER_TECHNOLOGY** Δ | Which ledger technology, by **component**, and with what selection status? | per component (`core_ledger`, `offline_component`, `settlement_layer`): conventional_centralised / permissioned_DLT / permissionless_DLT / hybrid / undecided / n/d; `selection_status` = tested / shortlisted / selected / operational; `platform` free text | "hybrid" = a *defined* combination within the core ledger, not "DLT in one pilot, centralised in another" (ADR D3). Concurrent coding check against archived tracker versions (BIS, Atlantic Council) is a check of the extraction, not of privacy validity (E18). |
+
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *F9 and F10* are kept (their [OPEN] marks are settled by ADR-009 and D4). *Index (D4, ADR-009):* the primary stated-design privacy index is the mean of **seven** cells, F1, F2, F4, F7, F8, F9, F10, with an interval; the four-cell index F1, F2, F4, F7 is reported beside it as the narrower variant; F7 and F8 grouped as one component is a sensitivity. Direction: less access, less identification and no re-identification = more privacy. **F3 is categorical**, outside the mean, reported beside it. Temporal precedence: the newest claim of the highest status wins; a newer document wins over an older one (§7.2). *F7 (D9):* a rejection of full or cash-like anonymity is a flag `anonymity_rejected`, never F7 = no; F7 = no only under rule E. **New cell PET** beside F7: a multi-valued record of the privacy-enhancing techniques named for the project, with the vocabulary and definitions of Nijsse and Pinto (2026), each with its own claim id, status and experiment id; a profile, not a scale, outside the index mean.
 
 ## 6b. Privacy-posture layer (descriptive; added 2 Nov 2026 after the sealed statement survey)
 
@@ -156,12 +164,16 @@ G2 and G3 may both be yes for one project; both are reported with dates (claim h
 
 An **evidence-language ledger** (`docs/LANGUAGE_LEDGER.md`) lists every non-English core document with its route: **A** English original · **B** issuer's own English version (the English text is the evidence; the original is retained for the parallel-text test) · **C** independently checked human translation (translator and checker named) · **D** machine translation only, *provisional*. Primary human-verified outcomes use A/B/C only; D cells are flagged and never promoted to the primary matrix. Where authentic pairs exist (route B), a parallel-text test compares extraction from the original and the English version. The paper reports the English-accessibility selection; no multilingual validity is claimed.
 
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *D6 and D14:* route D (machine translation) documents **are in the main result**; a variant without them is reported beside it, and every project that depends on route D (Taiwan among them) says so. The 7 older T3 translations are used like the other route-D texts, flagged as made under the earlier queue. The sentence above ("D cells … never promoted to the primary matrix") is superseded.
+
 ## 10. Human protocol
 
 - **Development cases** (exposed, flagged in `EXPOSURE_LEDGER.md`): NO, UK, euro area, Canada, Chile, Hungary, one LIVE project (ADR G3). Filled first by the pipeline (both providers), verified by the authors in the review workbook; verdicts are development material.
 - **Reference coding** (blind): both authors code independently from the PDFs in a **blank reference workbook** (no model columns, no `agree_<model>`), lock their workbooks, then adjudicate; the adjudicated reference is locked before any model output for those projects is opened (E6). Predictor values and expected directions hidden during coding (E7).
 - **Scope of the reference** **[OPEN, ADR E3]:** 16 full profiles (12 as emergency reduction, labelled limited validation), probability sample within the English-accessible domain with metadata strata and retained inclusion probabilities; **plus** F1 (and F7 if Y₃ kept) with qualifiers for **every** analytic project before model exposure (E5). Workload split: one author source-checks every retained claim, the other all inferential cells and the blind sample (E14).
 - Keyword finder in the workbook lists page references only.
+
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** *D1 and D2:* in the 16 core projects both authors code every cell from the sources in blank records, lock them and adjudicate from the sources **before any model output is opened**; the adjudicated cell with its provenance is the index source. Model extractions are stored separately and are a comparison. Outside the core, a value stands only when all three models agree with a located quote **and** a source check confirms it; discordances, abstentions and failures are resolved by the authors from the sources or stay unresolved. A human-only analysis and a provenance-stratified model-assisted extension are both released. *D18:* the reference sample of talk units is 400 units drawn directly at random from all eligible units, strata 140 / 50 / 210, with the inclusion probability of each unit stored. *D8:* see protocol v2 §4.
 
 ## 11. Machine protocol
 
@@ -170,6 +182,8 @@ An **evidence-language ledger** (`docs/LANGUAGE_LEDGER.md`) lists every non-Engl
 - **Two providers** (E13): primary fixed on development performance; the second exposes disagreements; all disagreements, failures and primary-outcome cells adjudicated, plus a sample of agreements.
 - **11.4 Citation check** `verify_quotes.py` v2: full normalised span; states exact_page / spanning_pages / elsewhere_in_doc / fuzzy_candidate / invalid / empty / empty_but_value_set; furniture removal logged; ±1 page is diagnostic only (UK12). A claim whose quote is not located is void for audit purposes; entailment checked in the audit.
 - **Replay:** every published number is reproducible from archived outputs without API access; fresh reruns form a separate stability envelope on six fixed projects.
+
+> **Amended 22 Nov 2026 (ADR-012, MB and DS, 22 Nov 2026).** **Three models** (three providers), the same request for each, each stored separately with its run record; two-provider wording above is superseded. The registered hypothesis (D3): "much talk" = own-voice privacy talk in at least two distinct publications and at least 1 own-voice relevant unit per 100 eligible units; "few commitments" = fewer than 2 of the 4 protective commitments F1, F2, F4, F7; it holds if a majority of the 16 core projects meet both, and is inconclusive if the bounds straddle a majority; no sign test.
 
 ## 12. Validation and gates (frozen at Phase 3, before scoring)
 
@@ -180,6 +194,8 @@ Gates as proposed (E9), to be fixed with denominators: α ≥ .80 (and AC1) on c
 `EXPOSURE_LEDGER.md` is the dated record of what the authors have seen. Replaces the v1.1 "no F-cell value seen" statement (ADR F1). The **endorsement census** (model-only, all 43 projects, one question: is there an endorsed F1 position?) is sealed outside the repository; only its SHA-256 and aggregate counts are committed; the authors use the aggregate to decide the orientation rule and the blind draw. Per-project sealed results are released only **after the blind reference workbooks are locked and scored** (not merely after the draw); the release script enforces `data/EXPOSURE_ALLOWLIST.json`.
 
 ## 14. Change log and crosswalk
+
+- 2026-11-22 **ADR-012** (audit A4b; MB and DS): amendment notes in §1, §2, §4/§5, §6, §9, §10, §11 (cutoff as issue date; core of 16; three INCLINED classes; one admissibility predicate; seven-cell index with F3 categorical and a four-cell variant; anonymity rejection as a flag; new PET cell; route D in the main result; authors code the core before models; three models; registered hypothesis thresholds; reference sample 400).
 
 - 2026-11-13 **§6b retired** in favour of the unit-based instrument; **analytic frame** = 43 national retail candidates + the digital euro (44 projects; `analytic_frame` in `data/frame/projects.csv`), ECCU stays outside; year-by-year output per project is an event history, not a yearly share (ADR-005).
 
