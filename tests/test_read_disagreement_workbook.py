@@ -40,6 +40,6 @@ def test_committed_adjudication_matches_the_blind_files():
         assert r["ds_blind"] == blind["DS"][u]["relevant"]
         if blind["MB"][u]["relevant"]: assert r["mb_blind"] == blind["MB"][u]["relevant"]
         assert r["mb_blind"] != r["ds_blind"], "only disagreements are adjudicated"
-        if r["status"] == "agreed": assert r["joint_label"] in ("R", "N", "U") and r["date"]
         if r["basis"] == "authors_clarification": assert r["clarification_source"] and r["authors_response"].lower() != "ok"
+        if r["status"] == "agreed": assert r["joint_label"] in ("R", "N", "U") and r["date"]
         else: assert r["status"] == "needs_author_check" and r["joint_label"] == ""
