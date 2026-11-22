@@ -2,7 +2,7 @@
 
 **One page to read first.** What the project is for, how it works, what is done, and which parts a second model has audited. Kept current: the numbers below are generated from the data files and checked in CI; the rest is updated at the end of every working session. Working rules for any assistant are in [`AGENTS.md`](AGENTS.md).
 
-Authors: Martin Bok (MB), Dominik Stroukal (DS), Prague University of Economics and Business. Target: a measurement-and-data paper in *Data & Policy*, self-imposed deadline 31 Dec 2026. Technical collaborator: an LLM (Claude), supervised by the authors.
+Authors: Martin Bok (MB), Dominik Stroukal (DS), Prague University of Economics and Business. Target: a measurement-and-data paper in *Data & Policy*. Technical collaborator: an LLM (Claude), supervised by the authors.
 
 ## 1. Goal
 
@@ -64,7 +64,7 @@ State of the data files as of **2026-11-21** (dates are those of the files, not 
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
 | Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
 | Model classification of units | **not started** (no unit has been labelled by a model) |
-| Tests in CI | 69 |
+| Tests in CI | 75 |
 <!-- NUMBERS:END -->
 
 ## 4. Checklist, with what a second model has audited
@@ -102,14 +102,14 @@ Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/R
 
 ## 5. Next, in order
 
-1. **Audit A4 (17 Nov) returned NO-GO for calibration and for production** ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), 18 findings, 8 blockers; dispositions and MB's decisions of 17 Nov in [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md); state of each finding in [docs/audits/README.md](docs/audits/README.md), section 5). No paid call before the repairs. Target kept by MB: everything by the end of November, mid-December at the latest.
+1. **Audit A4 (17 Nov) returned NO-GO for calibration and for production** ([report](docs/audits/INDEPENDENT_AUDIT_2026-11-17.md), 18 findings, 8 blockers; dispositions and MB's decisions of 17 Nov in [ADR-007](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md); state of each finding in [docs/audits/README.md](docs/audits/README.md), section 5). No paid call before the repairs.
 2. **What waits for whom is listed in [HANDOFF.md](HANDOFF.md)**, sections 4 and 5. In short: the authors adjudicate their disagreements on relevance and on the translation benchmark (the codebook is repaired from that), decide on blank coding of voice and aspect, adopt contract v12 and review issuer metadata; the pipeline author builds the runner, the exposure registry and the v12 extraction instrument. Then a capability probe, development rounds, a confirmation set and audit A5.
 3. Facets: relevance validated independently; the others verified with planted errors (ADR-006 A, replacing the blind facet coding of [protocol v2](docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md)).
 4. Audit A5 of everything changed since A4; freeze; register.
 5. Reference sample and model classification; double coding of the five benchmark documents (issuer English against machine translation), which decides how far translated text may be used; talk tables.
 6. F-cell extraction and blind reference on the v12 corpus; talk against commitment; paper.
 
-**Risk to the deadline.** Steps 18 to 23 are all still ahead with six weeks left. If time runs short, the order of cuts proposed by audit A3 (item 18) and not yet decided by the authors is: fewer facets (relevance, voice, aspect only), then F-cells limited to F1 to F4, F7, F8, then project-level outputs limited to T1 and T2.
+**Scope.** The authors keep the full scope they defined: all talk facets, all F-cells of the index and all projects of the frame. No reduction of scope is planned, and the full scope is what will be registered (MB, 22 Nov 2026).
 
 ## 6. Where to look
 

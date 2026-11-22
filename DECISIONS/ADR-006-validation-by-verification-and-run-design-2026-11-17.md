@@ -16,7 +16,7 @@ This ADR departs from protocol v2 of 13 Nov (`docs/TALK_AGREEMENT_PROTOCOL_v2_20
 
 5. **Three models, full runs (MB, 17 Nov, afternoon).** The whole classification of candidate units and the whole F-cell extraction are run on three models and the paper reports agreement and each model's results, as in the authors' previous paper: `claude-opus-5-5`, `gpt-6-astra` and `deepseek-v4-pro`, the last chosen as an inexpensive model of non-Western origin. This replaces the proposed cross-provider check on a 20 % subsample (B.3) and the choice of one primary model (B.6).
 6. **A fourth audit by a second model before any paid production run (MB, 17 Nov)**: on acceptability in academic journals, on what is stored as input and output, on how to calibrate the prompts, and on whether everything needed before calibration exists (`docs/audits/PROMPT_AUDIT_2026-11-17.md`, `AUDIT_BRIEF_2026-11-17.md`). The calibration procedure put to the auditor is `docs/CALIBRATION_PROTOCOL_DRAFT_2026-11-17.md`; the collaborator's own readiness list is `docs/READINESS_BEFORE_CALIBRATION_2026-11-17.md`.
-7. **Target date**: all model runs finished by 30 November 2026.
+7. *Withdrawn by MB on 22 Nov 2026: this point set a calendar target for the model runs. The repository records no target dates; the order of the steps follows the method.*
 
 ## B. Proposed, awaiting the authors
 

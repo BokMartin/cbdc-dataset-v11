@@ -175,11 +175,11 @@ Per pair: **talk** = at least one own-voice relevant unit on the aspect; **commi
 | Contract v12 §6 (F3 descriptive only; F9, F10 [OPEN]) | F3 and F9 get a score direction, F10 enters the index: contract change, needs both authors |
 | HANDOFF §4 decision 1 (blank double coding of voice and aspect, undecided) | becomes necessary: the gap rests on voice and aspect |
 
-### 12.5 What it adds to validation and to the timeline
+### 12.5 What it adds to validation
 
 - **Talk layer:** the gap needs relevance, voice and aspect to be valid. Relevance between the authors is at alpha 0.46 (below the 0.667 of the protocol) and is being repaired; voice and aspect have never been coded blind. So: adjudication and codebook repair, then blank double coding of voice and aspect on 80 to 120 units (HANDOFF decision 1), then the model run of the talk layer (paid, three providers, ADR-006).
 - **Commitment layer:** blind double coding of all eight cells for 44 projects is 352 cells (the template is ready), double the four-cell plan; alternative: all 44 projects for F1, F2, F4, F7 and a sample of 16 for F3, F8, F9, F10.
-- **Timeline:** both layers are now on the critical path. With the deadline of 31 Dec this is only feasible if contract v12 (with the F3/F9/F10 changes) and the talk codebook repair are both settled by early December. If time runs short, the order of cuts proposed is: keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10 (they stay in the index with a "model, verified" label).
+- **Scope:** both layers are needed for the index and the gap, and both are kept in full: all eight cells and the whole talk layer. No order of cuts is kept (MB, 22 Nov 2026).
 
 ### 12.6 Cells resting on an "inclined" document (LEANING; proposal, follows ADR-010 in PR 3)
 

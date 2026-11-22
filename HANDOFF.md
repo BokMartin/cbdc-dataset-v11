@@ -4,7 +4,7 @@ For an assistant that opens this repository in a new conversation. Read in this 
 
 ## 1. Goal
 
-A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (ten feature cells per project, F1 to F12 with F5 and F6 reserved, with located verbatim quotes). No causal claims. Target set by MB on 17 Nov: all model runs finished by the end of November, mid-December at the latest; the authors' own deadline for the paper is 31 Dec 2026.
+A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (ten feature cells per project, F1 to F12 with F5 and F6 reserved, with located verbatim quotes). No causal claims.
 
 ## 2. State in five lines
 
@@ -24,7 +24,7 @@ A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Domini
 | Talk instrument: units, candidates (dictionary hit, neighbour, random control), relevance then facets; schema and prompts are drafts v0.3 | ADR-004, `schema/talk_units_v13_DRAFT.json` |
 | The authors do not code the seven facets blind; validation by verification with safeguards | ADR-006 A |
 | Three models, full runs, results per model and agreement reported | ADR-006 A.5 |
-| A4 dispositions and MB's six decisions of 17 Nov (no split of the target; packing dropped; translation only T1 and T2; Israel duplicate linked) | ADR-007 §2, §4 |
+| A4 dispositions and MB's six decisions of 17 Nov (commitment layer not split off; packing dropped; translation only T1 and T2; Israel duplicate linked) | ADR-007 §2, §4 |
 | Every model run leaves a run record; production only through provider APIs | `docs/RUN_RECORD_SPEC.md`, `AGENTS.md` |
 
 Decided by MB on 21 Nov 2026 and waiting for DS (not in force until he confirms; the ADR is the authority):
@@ -44,7 +44,7 @@ Decisions (each stops something):
 | 1 | Blank double coding of **voice** and **aspect** on 80 to 120 relevant units by both authors (about 1.5 to 3 hours each), or all seven facets labelled exploratory in the paper | what the paper may claim about facets (A4 F01) | MB undecided on 17 Nov. It can be done after the model runs if the units are reserved now and the authors' labels are locked before they see model output. Given the relevance result, repair the rules first |
 | 2 | How calibration is run. MB proposed (17 Nov): development rounds on Anthropic only, then one clean run on three models. Proposal of the pipeline author, not yet answered: (a) a short capability probe of all three providers before round 1, (b) three rounds on Claude with changes driven only by defects the authors find in the codebook or prompt, (c) a fresh confirmation set of 40 units on all three models before the freeze | first paid call | ADR-007 is the place to record the answer |
 | 3 | Seven machine-translated documents of today's T3 projects (CN 3, PE 3, TH 1) exist only because those projects were T2 on 10 Nov: keep and state it, drop them, or translate the other 14 T3 documents as well | freeze of the corpus | ADR-007 §4.4 |
-| 4 | Adoption of the measurement contract v12 (`docs/MEASUREMENT_CONTRACT_v12_DRAFT.md`, open points marked `[OPEN]`). The extraction prompts, generator, schema validation and comparison are still built for contract v1.1 | all F-cell work (A4 F02); the critical path if the commitment layer is to be done by mid-December | the pipeline author owes the authors a list of the open points |
+| 4 | Adoption of the measurement contract v12 (`docs/MEASUREMENT_CONTRACT_v12_DRAFT.md`, open points marked `[OPEN]`). The extraction prompts, generator, schema validation and comparison are still built for contract v1.1 | all F-cell work (A4 F02); the critical path of the commitment layer | the pipeline author owes the authors a list of the open points |
 | 5 | Review of issuer, issuer type and document kind for the 207 documents (pre-filled by a model; the facet prompt receives them as input) | facet rounds and production | `data/manifest/ISSUERS_2026-11-13.csv`; 2 to 5 hours |
 | 6 | DS confirms ADR-004 to ADR-010 | freeze | |
 | 7 | Remaining rows of ADR-007 §2 (F10 wording of "first" and status vector, F13 access statement, F14 cutoff date, F15 reference design, F16 rounds) | freeze | |
