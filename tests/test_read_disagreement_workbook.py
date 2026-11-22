@@ -43,3 +43,15 @@ def test_committed_adjudication_matches_the_blind_files():
         if r["basis"] == "authors_clarification": assert r["clarification_source"] and r["authors_response"].lower() != "ok"
         if r["status"] == "agreed": assert r["joint_label"] in ("R", "N", "U") and r["date"]
         else: assert r["status"] == "needs_author_check" and r["joint_label"] == ""
+
+
+def test_committed_translation_adjudication_is_complete_and_text_free():
+    p = sorted(glob.glob(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_ADJUDICATED_MB_DS_*.csv")))
+    if not p: return
+    key = {r["n"]: r for r in csv.DictReader(open(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_KEY_2026-11-11.csv"), encoding="utf-8"))}
+    rows = list(csv.DictReader(open(p[-1], encoding="utf-8")))
+    assert len({r["n"] for r in rows}) == len(rows)
+    for r in rows:
+        assert r["n"] in key and r["pair"] == key[r["n"]]["pair"] and r["mb_blind"] != r["ds_blind"]
+        assert (r["status"] == "agreed") == (r["joint_code"] in ("S", "W", "X", "M", "D"))
+        assert set(r) == {"n", "pair", "stratum", "mb_blind", "ds_blind", "ai_proposal", "joint_code", "reason", "status", "adjudicated_by", "date", "workbook_sha256"}
