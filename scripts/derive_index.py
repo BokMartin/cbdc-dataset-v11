@@ -3,7 +3,8 @@ docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md and ADR-009). Run only on synthetic 
 frozen and registered before F-cell production.
 
 Axis 1, **stated design (any status)**: how far the design the documents describe keeps a retail payment from being
-routinely attributed to an identified person, from F1, F2, F4, F7. Values are taken at any decision or implementation
+routinely attributed to an identified person, from the cells in CORE (version 1: F1, F2, F4, F7; version 2, below:
+eight cells). Values are taken at any decision or implementation
 status, so a considered design scores like an operated one on this axis; the status of every component is shown beside
 it (axis 2) and the admissible-only version (contract §5, rule C) is computed for every project.
 
@@ -20,7 +21,8 @@ Missing cells are never filled. Every score is an interval [lower, upper]: lower
 as not protective, upper as protective (the bound logic of contract §8.4).
 
 Axis 2, **commitment profile**: the rung of each component (considered 1, tested 2, endorsed 3, operational 4; none 0)
-and the number of components at rung 3 or above out of the 4 (fixed denominator). No mean of ranks (review item 4).
+and the number of components at rung 3 or above out of the cells in CORE (8 in version 2, 4 in version 1; fixed
+denominator). No mean of ranks (review item 4).
 
 Talk labels never enter the index.
 """

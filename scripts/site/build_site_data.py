@@ -3,7 +3,7 @@
 
 What the site shows, and only that:
   * the analytic frame (44 projects) and the official project status of 17 Oct 2026 with its source;
-  * every document the project holds (776 rows of TIERS, 4 of them candidates awaiting an author), with the authors' decision on it
+  * every document the project holds (776 rows of TIERS, 3 of them candidates awaiting an author), with the authors' decision on it
     (evidence / companion / dropped / wholesale), who made the decision (an author, or a model proposal not yet
     confirmed), language, how an English text was obtained, the issuer's URL and the SHA-256 of the file we hold;
   * corpus counts per project (documents, years, tiers).

@@ -11,7 +11,7 @@ Authors: Martin Bok (MB), Dominik Stroukal (DS), Prague University of Economics 
 **Product.** An open, auditable dataset built only from official documents, in which every value leads to a document, a page and a sentence, with two layers that are never mixed:
 
 - **Talk**: every statement about users' privacy, identifiability or data access in the project's own documents, labelled by who speaks, which aspect of privacy it concerns, and (if human coders can agree on them) stance, basis, decision status and implementation.
-- **Commitment**: twelve design features (F1 to F12, e.g. *can the central bank link a payment to a person?*), counted only when the competent body has decided them or the system runs them ([measurement contract](docs/MEASUREMENT_CONTRACT_v12_DRAFT.md), rules A to C).
+- **Commitment**: ten design features (cells F1 to F12; F5 and F6 are reserved; e.g. *can the central bank link a payment to a person?*), counted only when the competent body has decided them or the system runs them ([measurement contract](docs/MEASUREMENT_CONTRACT_v12_DRAFT.md), rules A to C).
 
 **What the paper will report.** Per aspect, which projects talk about it in their own voice and which have an admissible commitment (a 2 × 2 table of named projects); the highest rung each project has reached per aspect (declaration, policy, legal or technical basis, decided, operational); an event history per project (the year each rung was first reached); corpus-level series by year; coverage and missingness.
 
@@ -58,7 +58,7 @@ State of the data files as of **2026-11-21** (dates are those of the files, not 
 | Evidence documents (in the frame) | **218 publications** (223 rows); 223 of 223 decided or confirmed by an author |
 | Companion documents (in the frame) | 283, cited for status and timeline; linked to evidence of the same year 194, of the nearest year 87, no link 2; 64 reviewed by an author |
 | Tiers by number of evidence publications | T1 (8+): 8 · EU, IL, JM, JP, KZ, SE, TW, UK<br>T2 (5 to 7): 8 · AU, BS, CA, HK, IN, NO, NZ, RU<br>T3 (4 or fewer): 28 |
-| English text for measurement | 207 documents of 42 projects: 162 English originals, 15 issuer English editions, 30 machine translations; 22 evidence documents still without English text |
+| English text for measurement | 207 documents of 42 projects (196 evidence publications and 11 INCLINED documents, ADR-010): 162 English originals, 15 issuer English editions, 30 machine translations; 22 evidence documents still without English text |
 | Machine translation | 3 API runs, 199 calls, 43 documents translated (benchmark translations excluded) |
 | Sentence units | 171 865 units; 19 570 candidates for classification (dictionary hits 7 849, neighbours 6 046, random control 5 675) |
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
@@ -81,7 +81,7 @@ Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/R
 | 6 | Tiers | done | logic A3; current values changed since | follow from step 4 |
 | 7 | Language detection, issuer English editions | done | A3 | n/a |
 | 8 | Machine translation (3 runs) | done; 1 re-translation waits for API credit | hash chain on 2 examples A3; run 3, reading-order rule and page spans **not audited** | no author reads the source languages |
-| 9 | Translation quality: benchmark on 5 documents | automatic part done; human judgement of matched pairs returned 17 Nov: 59 % same meaning and strength, 31 % "meaning differs" (not yet broken down) | A3: not sufficient for decision status and modality; the human result **not audited** | MB judged 86 pairs; sub-coding of the 24 "meaning differs" pairs and 30 unmatched sentences **pending**; DS has not judged |
+| 9 | Translation quality: benchmark on 5 documents | automatic part done; human judgement of the 86 matched pairs returned by both authors on 17 Nov: the judges agree on 59 % of the pairs (Cohen's kappa 0.38); "meaning differs" 30 % for MB and 4 % for DS (numbers above); not adjudicated | A3: not sufficient for decision status and modality; the human result **not audited** | MB and DS judged 86 pairs; joint adjudication of the pairs on which they differ and MB's 30 unmatched sentences **pending** (HANDOFF §4) |
 | 10 | Measurement contract (F1 to F12, rules A to C) | draft v12, not frozen; posture layer retired 13 Nov | A1, A2; A3 compared it with the talk facets | to adopt before the freeze |
 | 11 | Extraction pipeline for F-cells (prompts, citation check, derivation) | built; development runs for Norway and the UK only | A2 | NO and UK cells reviewed as development |
 | 12 | Sealed model screens of 2 Nov (census, statement survey) | done on the old core; superseded as measurement | A2 (aggregates) | aggregates only |
@@ -96,7 +96,7 @@ Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/R
 | 21 | Talk tables, event history, yearly series | designed, not built | design A3 (funnel rejected, replaced) | — |
 | 22 | F-cell extraction on the v12 corpus, blind human reference | not started | — | — |
 | 23 | Talk against commitment, analysis, paper | not started | — | — |
-| 24 | Website | rebuilt 21 Nov on the real corpus: map of the 44 projects and a database of all 772 documents with decisions and links; no results shown; 9 Taiwanese machine translations published under the issuer's open licence ([ADR-008](DECISIONS/ADR-008-website-documents-and-published-translations-2026-11-21.md)) | not audited | MB decided on translations 21 Nov; DS to confirm |
+| 24 | Website | rebuilt 21 Nov on the real corpus: map of the 44 projects and a database of all 776 documents with decisions and links; no results shown; 9 Taiwanese machine translations published under the issuer's open licence ([ADR-008](DECISIONS/ADR-008-website-documents-and-published-translations-2026-11-21.md)) | not audited | MB decided on translations 21 Nov; DS to confirm |
 
 **Not covered by any audit and worth one before the freeze (step 18):** steps 4, 5, 8 (run 3), 14 (version 2), 15 (v0.3) and 17, i.e. everything changed after commit `4d4f142`.
 
@@ -115,12 +115,12 @@ Purpose, rules and register of the audits: [docs/audits/README.md](docs/audits/R
 
 | For | File |
 |---|---|
-| Decisions and why | `DECISIONS/ADR-001` to `ADR-005` |
+| Decisions and why | `DECISIONS/ADR-001` to `ADR-010` (ADR-008 to ADR-010: decided by MB on 21 Nov, DS to confirm) |
 | Which document is evidence | `data/manifest/TIERS_<date>.csv`, `AUTHOR_DECISIONS_*.csv`, [source rule](docs/SOURCE_RULE_D1.md) |
 | Where the last session stopped; what waits for the authors; data outside the repository | [HANDOFF.md](HANDOFF.md) |
 | What the audits are for, their rules, register and open findings | [docs/audits/README.md](docs/audits/README.md) |
 | Translation procedure and benchmark | [docs/TRANSLATION_PROCEDURE.md](docs/TRANSLATION_PROCEDURE.md) |
-| Which documents are read, by project (208 documents, 42 of 44 projects) | [data/manifest/CORPUS_COVERAGE_2026-11-17.csv](data/manifest/CORPUS_COVERAGE_2026-11-17.csv), [CORPUS_DOCUMENTS_2026-11-17.csv](data/manifest/CORPUS_DOCUMENTS_2026-11-17.csv) |
+| Which documents are read, by project (207 documents, 42 of 44 projects) | [data/manifest/CORPUS_COVERAGE_2026-11-21.csv](data/manifest/CORPUS_COVERAGE_2026-11-21.csv), [CORPUS_DOCUMENTS_2026-11-21.csv](data/manifest/CORPUS_DOCUMENTS_2026-11-21.csv) |
 | Models, prompts, inputs and settings of every run (what the paper states) | [docs/RUN_STATEMENT.md](docs/RUN_STATEMENT.md), rules in [docs/RUN_RECORD_SPEC.md](docs/RUN_RECORD_SPEC.md) |
 | Talk instrument | [ADR-004](DECISIONS/ADR-004-unit-based-privacy-talk-instrument-2026-11-12.md), `schema/talk_units_v13_DRAFT.json`, [codebook](docs/TALK_CODEBOOK_cs.tsv), `pipeline/prompts/talk_*.md` |
 | Who has seen which model output | [EXPOSURE_LEDGER.md](EXPOSURE_LEDGER.md) |
