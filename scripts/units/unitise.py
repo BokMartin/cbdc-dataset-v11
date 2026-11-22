@@ -16,6 +16,9 @@ Rules (deterministic): page markers of the text layer are kept; lines that repea
 footers) and bare page numbers are dropped; a paragraph is a block separated by a blank line, hyphenation at line ends is undone;
 sentences are split at . ! ? ; : followed by whitespace and an upper-case letter, digit, quote or bracket; units of fewer than 4
 words are attached to the previous unit of the same paragraph (headings stay as their own unit when they open a paragraph);
+a sentence cut by a page break is joined into one unit (22 Nov 2026, join_page_breaks(): the first part
+ends without . ! ? : ; and the next page starts in lower case; footnotes at the foot of the page are skipped; the unit keeps
+the id and page of its first part and records page_end; the units file has the column page_end);
 bracketed source terms and translator notes of route-D text stay in the unit text (they are evidence), and are ignored by dictionaries.
 Repository: data/units/UNITS_MANIFEST_<date>.csv, one row per document: doc_key, id, project, tier, year, kind, issuer, issuer_type
 (central_bank / government / legislature / other from the issuer string; not_recorded for registry documents, whose issuer field holds
@@ -58,7 +61,7 @@ def reading_order(pdf, cache_dir, sha):
     return f
 
 
-def units_of(text):
+def units_of(text, join_pages=True):
     text = re.sub(r"(?m)^#.*\n", "", text); parts = re.split(r"=== PAGE ([\d.]+) ===\n?", text)[1:]
     pages = collections.OrderedDict()
     for n, t in zip(parts[0::2], parts[1::2]): pages.setdefault(n.split(".")[0], []).append(t)
@@ -77,8 +80,55 @@ def units_of(text):
                 if sents and (ABBR.search(sents[-1]) or len(s.split()) < 4): sents[-1] += " " + s
                 else: sents.append(s)
             for s in sents:
-                k += 1; out.append((n, pi, k, s))
-    return out, len(pages)
+                k += 1; out.append((n, pi, k, s, n))
+    return (join_page_breaks(out) if join_pages else out), len(pages)
+
+
+TERMINAL = re.compile(r"[.!?:;][\"'”’)\]]*$")
+NOTE = re.compile(r"^(\d{1,3}|[*†‡])\s?\S")  # a footnote at the foot of a page: "12 See ...", "* Note"
+
+
+LIST_MARK = re.compile(r"^\(?([ivxlc]+|[a-z])[).]\s")  # "(iii) ", "a) ": a list item, not a continuation
+
+
+def _continues(prev, nxt):
+    """prev (end of a page) is an unfinished sentence and nxt (start of the next page) carries on with it: nxt begins
+    with a lower-case letter (not a list marker, not "13th")."""
+    nxt = nxt.lstrip()
+    return (len(prev.split()) >= 4 and not TERMINAL.search(prev.rstrip()) and bool(nxt) and nxt[0].islower()
+            and not LIST_MARK.match(nxt))
+
+
+def join_page_breaks(out):
+    """Join a sentence that a page break cut in two (MB, 22 Nov 2026: "tohle to chce nějak vyřešit").
+
+    For every pair of consecutive pages: the last body unit of the earlier page (footnotes at its foot are skipped) is
+    joined with the first unit of the next page when the first does not end a sentence and the second starts in lower
+    case. The joined unit keeps the identifier, page and paragraph of its first part and records page_end; the second
+    part's identifier disappears. No other identifier changes (k keeps its numbering), so earlier samples, labels and
+    adjudications stay joined to the same units except the joined pairs, which the manifest lists. A hyphen at the
+    break is undone ("pay-" + "ments")."""
+    by_page = collections.OrderedDict()
+    for i, u in enumerate(out):
+        by_page.setdefault(u[0], []).append(i)
+    pages = list(by_page); drop = set(); out = list(out)
+    norm = lambda t: re.sub(r"\d+", "#", t.strip())
+    repeated = {t for t, c in collections.Counter(norm(u[3]) for u in out).items() if c >= 2 and len(t.split()) <= 12}
+    for a, b in zip(pages, pages[1:]):
+        if not by_page[b] or not by_page[a] or int(b) != int(a) + 1:
+            continue
+        body = [i for i in by_page[a] if i not in drop]
+        while len(body) > 1 and ((NOTE.match(out[body[-1]][3]) and len(out[body[-1]][3].split()) < 60) or norm(out[body[-1]][3]) in repeated):
+            body.pop()  # footnotes and running heads or feet the line filter missed stay where they are
+        if not body:
+            continue  # the page's only unit was itself the end of a joined sentence
+        i, j = body[-1], by_page[b][0]
+        prev, nxt = out[i][3], out[j][3]
+        if not _continues(prev, nxt):
+            continue
+        text = (prev[:-1] + nxt) if re.search(r"[A-Za-z]-$", prev) else (prev + " " + nxt)
+        out[i] = (out[i][0], out[i][1], out[i][2], text, out[j][4]); drop.add(j)
+    return [u for i, u in enumerate(out) if i not in drop]
 
 
 def main():
@@ -118,11 +168,11 @@ def main():
         if len(U) < 3: skipped.append({"id": r["id"], "project": r["project"], "reason": "text layer too thin"}); continue
         f = os.path.join(a.out, key + ".units.csv")
         with open(f, "w", newline="", encoding="utf-8") as fh:
-            w = csv.writer(fh); w.writerow(["unit_id", "page", "para", "n_words", "text"])
-            for n, pi, k, s in U: w.writerow([f"{key}:p{n}:s{k}", n, pi, len(s.split()), s])
+            w = csv.writer(fh); w.writerow(["unit_id", "page", "para", "n_words", "text", "page_end"])
+            for n, pi, k, s, pe in U: w.writerow([f"{key}:p{n}:s{k}", n, pi, len(s.split()), s, pe])
         w_ = W.get(r["id"], {})
         rows.append({"doc_key": key, "id": r["id"], "project": r["project"], "tier": r["tier"], "year": r["year"], "kind": w_.get("kind") or "", "issuer": w_.get("issuer") or "", "issuer_type": issuer_type(w_.get("issuer")), "route": route, "text_mode": mode, "layout_gap_share": gs,
-                     "text_sha256": hashlib.sha256(raw.encode("utf-8")).hexdigest(), "pages": np_, "units": len(U), "words": sum(len(u[3].split()) for u in U), "units_sha256": hashlib.sha256(open(f, "rb").read()).hexdigest()})
+                     "text_sha256": hashlib.sha256(raw.encode("utf-8")).hexdigest(), "pages": np_, "units": len(U), "words": sum(len(u[3].split()) for u in U), "page_breaks_joined": sum(u[0] != u[4] for u in U), "units_sha256": hashlib.sha256(open(f, "rb").read()).hexdigest()})
     for name, data in ((f"UNITS_MANIFEST_{a.date}.csv", rows), (f"UNITS_NOT_UNITISED_{a.date}.csv", skipped)):
         with open(os.path.join(ROOT, "data/units", name), "w", newline="", encoding="utf-8") as fh:
             w = csv.DictWriter(fh, fieldnames=list(data[0].keys())); w.writeheader(); w.writerows(data)

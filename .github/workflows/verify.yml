@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install pytest pycountry
+      - run: pip install pytest pycountry openpyxl
       - name: every script compiles (a comment once swallowed a statement, 13 Nov 2026)
         run: python -m compileall -q scripts
       - name: instrument validity tests (citation check, derivation gate, extractor validation)

@@ -93,7 +93,8 @@ def test_simulation_more_coverage_more_separation():
 
 def test_reliability_and_merge():
     def row(p, c, v, dec="endorsed"):
-        return {"project_id": p, "cell": c, "value": v, "decision_status": dec, "implementation_status": "", "quote": "", "page_index": ""}
+        return {"project_id": p, "cell": c, "value": v, "decision_status": dec, "implementation_status": "", "evidence_state": "documented",
+                "basis": "architectural", "text_route": "A", "derivation": "explicit", "conflict": "", "quote": "q", "page_index": ""}
     a = {("P1", "F1"): row("P1", "F1", "no"), ("P2", "F1"): row("P2", "F1", "yes"), ("P3", "F1"): row("P3", "F1", "no", "considered"),
          ("P1", "F3"): row("P1", "F3", "via_psp")}
     b = {("P1", "F1"): row("P1", "F1", "no", "considered"), ("P2", "F1"): row("P2", "F1", "no"), ("P3", "F1"): row("P3", "F1", "no"),
@@ -141,9 +142,11 @@ def test_talk_test_discriminates_talk_from_stated_design():
 
 
 def test_prepared_input_files_are_well_formed():
-    with open(os.path.join(ROOT, "data/index/CODER_TEMPLATE_2026-11-21.csv"), newline="") as fh:
+    with open(os.path.join(ROOT, "data/index/CODER_TEMPLATE_2026-11-22.csv"), newline="") as fh:
         rows = list(csv.DictReader(fh))
     assert len(rows) == 44 * 8 and {r["cell"] for r in rows} == set(CORE)
+    from index_reliability import FIELDS
+    assert list(rows[0]) == FIELDS and all(r[f] == "" for r in rows for f in FIELDS if f not in ("project_id", "cell"))
     with open(os.path.join(ROOT, "data/index/KNOWN_CASES_DRAFT_2026-11-21.csv"), newline="") as fh:
         known = list(csv.DictReader(fh))
     assert all(r["expected_value"] in ("", "yes", "no") for r in known)
@@ -193,3 +196,124 @@ def test_leaning_cells_bound_only_in_primary():
     assert pair_state(3, c, "CB_ACCESS")["commitment"] == "none" and pair_state(3, c, "CB_ACCESS")["leaning"]
     own = dict(c, F1=cell("yes"))  # a value from the competent body's own documents replaces the leaning
     assert privacy_index(own)["stated"]["components"]["F1"] == 0
+
+
+# ---------- V6 of the 22 Nov check / audit A4b finding 1: one rule-C predicate for every commitment count ----------
+BAD = {"value": "no", "evidence_state": "partial", "conflict": "true", "decision_status": "unclear", "implementation_status": "operational"}
+
+
+def test_v6_auditor_counterexample_is_never_a_commitment():
+    from derive import admissible
+    from derive_index import committed
+    assert not admissible(BAD) and not committed(BAD, "F1")
+    r = privacy_index({"F1": BAD})
+    assert r["commitment"]["decided"] == 0 and r["commitment"]["rung3_not_admissible"] == ["F1"]
+    assert r["commitment"]["profile"]["F1"] == 4  # the ladder is still shown
+    assert r["stated"]["components"]["F1"] is None  # a conflicted cell states no design
+    assert pair_state(3, {"F1": BAD}, "CB_ACCESS")["commitment"] == "stated"
+
+
+def test_v6_partial_operational_is_stated_not_committed():
+    partial = {"value": "no", "evidence_state": "partial", "decision_status": "unclear", "implementation_status": "operational"}
+    r = privacy_index({"F1": partial})
+    assert r["stated"]["components"]["F1"] == 1 and r["admissible"]["components"]["F1"] is None
+    assert r["commitment"]["decided"] == 0
+    assert pair_state(3, {"F1": partial}, "CB_ACCESS")["commitment"] == "stated"
+    s = project_summary({"CB_ACCESS": 3}, {"F1": partial})
+    assert s["committed"] == 0 and s["gap"] == [1, 1]
+
+
+def test_v6_operational_documented_without_decision_is_admissible():
+    op = {"value": "no", "evidence_state": "documented", "decision_status": "unclear", "implementation_status": "operational"}
+    assert privacy_index({"F1": op})["commitment"]["decided"] == 1  # contract §5 item 3 permits it
+    assert pair_state(1, {"F1": op}, "CB_ACCESS")["commitment"] == "admissible"
+
+
+def _rec(p, c, v, **kw):
+    r = {"project_id": p, "cell": c, "value": v, "decision_status": "endorsed", "implementation_status": "", "evidence_state": "documented",
+         "basis": "architectural", "text_route": "A", "derivation": "explicit", "conflict": "", "document_id": "DOC", "quote": "q",
+         "page_index": "1", "note": ""}
+    r.update(kw)
+    return r
+
+
+def test_v6_merge_carries_fields_conservatively_and_keeps_every_key():
+    a = {("P1", "F1"): _rec("P1", "F1", "no", text_route="D", derivation="inferred"), ("P1", "F2"): _rec("P1", "F2", "no"),
+         ("P1", "F4"): _rec("P1", "F4", "yes", evidence_state="partial"), ("P1", "F7"): _rec("P1", "F7", "yes")}
+    b = {("P1", "F1"): _rec("P1", "F1", "no"), ("P1", "F2"): _rec("P1", "F2", "no", conflict="true"),
+         ("P1", "F4"): _rec("P1", "F4", "yes")}
+    m = merge(a, b)["P1"]
+    assert (m["F1"]["text_route"], m["F1"]["derivation"]) == ("D", "inferred")
+    assert m["F2"]["conflict"] == "true" and m["F4"]["evidence_state"] == "partial"
+    assert m["F7"]["missing_coder"] == "true" and m["F7"]["value"] == "undetermined"
+    assert m["F1"]["coded"]["a"]["quote"] == "q" and m["F1"]["coded"]["b"]["text_route"] == "A"
+    r = privacy_index(m)
+    assert r["commitment"]["decided"] == 1  # only F1: F2 conflicted, F4 partial, F7 coded by one coder only
+    assert axis1(m, exclude_route_d=True)["components"]["F1"] is None and axis1(m, exclude_inferred=True)["components"]["F1"] is None
+    assert pair_state(2, m, "ANONYMITY")["commitment"] == "uncertain"
+
+
+def _write(path, rows):
+    from index_reliability import FIELDS
+    with open(path, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, FIELDS)
+        w.writeheader()
+        w.writerows(rows)
+    return str(path)
+
+
+def test_v6_reader_refuses_incomplete_records(tmp_path):
+    import pytest
+    from index_reliability import read
+    cases = {
+        "old_format": None,
+        "empty_key": [_rec("", "F1", "no")],
+        "no_evidence_state": [_rec("P1", "F1", "no", evidence_state="")],
+        "no_route": [_rec("P1", "F7", "yes", text_route="")],
+        "no_quote": [_rec("P1", "F7", "yes", quote="")],
+        "f1_without_basis": [_rec("P1", "F1", "no", basis="")],
+        "value_on_unknown": [_rec("P1", "F7", "yes", evidence_state="unknown")],
+        "bad_route": [_rec("P1", "F7", "yes", text_route="E")],
+        "duplicate": [_rec("P1", "F7", "yes"), _rec("P1", "F7", "yes")],
+        "outside_grid": [_rec("P1", "F11", "yes")],
+    }
+    for name, rows in cases.items():
+        path = tmp_path / f"{name}.csv"
+        if rows is None:
+            path.write_text("project_id,cell,value,decision_status,implementation_status,quote,page_index\nP1,F1,no,endorsed,,q,1\n")
+        else:
+            _write(path, rows)
+        with pytest.raises(ValueError):
+            read(str(path))
+    ok = read(_write(tmp_path / "ok.csv", [_rec("P1", "F7", "yes"), _rec("P1", "F1", "", evidence_state="", basis="", text_route="", derivation="", document_id="", quote="")]))
+    assert ok[("P1", "F1")]["value"] == "undetermined"
+
+
+def test_v6_through_the_report_entry_point(tmp_path):
+    from index_report import run
+    rows = [_rec("P1", "F1", "no", evidence_state="partial", implementation_status="operational", decision_status="unclear"),
+            _rec("P1", "F2", "no", text_route="D"), _rec("P1", "F7", "yes", conflict="true"),
+            _rec("P2", "F1", "no", basis="policy"), _rec("P2", "F2", "no"), _rec("P2", "F7", "yes")]
+    a = _write(tmp_path / "a.csv", rows)
+    b = _write(tmp_path / "b.csv", rows + [_rec("P2", "F4", "yes")])
+    talk = tmp_path / "talk.csv"
+    talk.write_text("project_id,aspect,own_units\nP1,CB_ACCESS,4\nP1,INTERMEDIARY_DATA,2\nP1,ANONYMITY,3\nP2,OFFLINE,1\n")
+    res, index, _ = run("TEST", a, b, None, None, None, None, draws=5, talk_path=str(talk))
+    assert index["P1"]["commitment"]["decided"] == 1  # F2 only; F1 partial, F7 conflicted
+    assert index["P1"]["commitment"]["rung3_not_admissible"] == ["F1", "F7"]
+    assert index["P2"]["commitment"]["decided"] == 3
+    assert res["reliability"]["keys_in_one_file_only"] == [["P2", "F4"]]
+    assert res["reliability"]["f1_no_on_policy_basis"] == ["P2"]
+    pp = res["talk_commitment"]["per_project"]
+    assert pp["P1"]["committed"] == 1 and pp["P1"]["gap"] == [2, 2]
+    assert pp["P2"]["uncertain"] == 1 and pp["P2"]["gap"] == [0, 1]  # F4 coded by one coder only
+
+
+def test_one_aspect_map_in_the_schema():
+    import json
+    from talk_commitment import ASPECT_CELLS, TALK_ONLY_ASPECTS, UNMAPPED_CELLS
+    sch = json.load(open(os.path.join(ROOT, "schema/talk_units_v13_DRAFT.json"), encoding="utf-8"))
+    m = sch["aspect_comparison_cells"]["cells"]
+    assert set(m) == set(sch["L2_facets"]["aspect"])  # every codebook aspect is mapped, to cells or to none
+    assert set(ASPECT_CELLS) | set(TALK_ONLY_ASPECTS) == set(m)
+    assert {c for cs in ASPECT_CELLS.values() for c in cs} | set(UNMAPPED_CELLS) == set(CORE)
