@@ -14,7 +14,7 @@ Status: **decided by MB and DS jointly on 22 Nov 2026**, reported by MB in the p
 
 Reading: a pair is S unless a word that sets the force of the statement changes (modality such as could, may, will, must, should; this gives W or X) or the meaning otherwise changes materially (M), or the two segments are mispaired or cut (D). Synonyms and paraphrase of the same content (privacy and data protection, register and ledger, due diligence and checks) are S. The 35 joint codes follow this rule.
 
-Not yet applied: `docs/TRANSLATION_PROCEDURE.md` and the instructions of the judgement workbook still carry the stricter reading of 11 Nov. Whether the rule is written into them, and whether the 51 pairs on which the judges agreed are re-read under it, is open for the authors.
+The 51 pairs on which the judges had agreed were re-read by MB and DS under this rule; none changed (MB, 22 Nov, 11:36 UTC). Whether the rule governs future judging is proposed in `docs/TRANSLATION_PROCEDURE.md` (section "Joint adjudication") and waits for the authors' confirmation.
 
 ## 3. Notes for the prompts (MB, 22 Nov)
 
@@ -24,3 +24,12 @@ Not yet applied: `docs/TRANSLATION_PROCEDURE.md` and the instructions of the jud
 ## 4. What these results are and are not
 
 The workbook was pre-filled on 19 Nov with an AI proposal (gpt-6-astra according to MB); the authors went through every row by hand and decided themselves (`EXPOSURE_LEDGER.md`, 22 Nov). The joint answers are an adjudication, not an independent coding: they repair the codebook and the judging rule and are never reported as agreement or validation. The development units stay out of the reference sample.
+
+## 5. Repair of the codebook and the relevance prompt (proposal, 22 Nov)
+
+Codebook v0.4 DRAFT (`docs/TALK_CODEBOOK_cs.tsv`) and relevance prompt v0.3 DRAFT (`pipeline/prompts/talk_L1_relevance.system.md`) carry the accepted rule sentences of §1 and the notes of §3. Proposal of the pipeline assistant until the authors confirm it. Points where the joint labels and the rules do not fit together, for the authors:
+
+1. **Headings.** v0.3 coded a heading that names the topic as N; the joint labels give U to stand-alone headings, captions, abbreviations and bibliographic fragments, but N to the Madagascar outline. Proposed: outline and table-of-contents entries N, stand-alone headings in running text U.
+2. **Thailand, accounting sentence with the AML/CFT heading of the next section stuck to it.** Joint label R, while the accepted rule says a stuck heading does not change how a complete sentence is judged (the proposal keeps the rule). Either the unit is an exception or the authors state what makes it R.
+3. **Russia 2020, a digital rouble with a unique number like a banknote.** Joint label R; the proposed rule "a unique identifier without a statement on tracing is not enough" was rejected, but no replacement sentence was given.
+4. **Scope.** The accepted rules count AML/CFT measures, confidentiality of the system and technical limits on data access as relevant even without the word privacy, including in a wholesale prototype (Jasper) and a payment pilot (Hungary). v0.3 says privacy of wholesale participants is N. Proposed: keep wholesale participants N unless the unit is about data of end users; to be confirmed.
