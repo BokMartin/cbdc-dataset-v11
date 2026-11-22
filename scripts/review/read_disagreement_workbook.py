@@ -15,13 +15,17 @@ MB and DS columns equal them, joined on unit_id.
 Output: one CSV row per disagreement unit, without any source text (the workbook holds sentences and stays off the repository).
 For reason B the general rule sentence is kept ("Pravidlo: ..." up to its first full stop); case notes, which quote the unit, are not.
 
-usage: read_disagreement_workbook.py --workbook <xlsx> --out data/units/DEV_ADJUDICATED_RELEVANCE_MB_DS_<date>.csv --date <YYYY-MM-DD>
+Rows the workbook leaves unclear can be settled by the authors later in words; those answers are passed in --clarify
+(data/units/DEV_ADJUDICATION_CLARIFICATIONS_<date>.csv: unit_id, joint_label, clarified_by, date, source, note_for_prompt) and
+are applied only to rows whose workbook answer was unclear.
+
+usage: read_disagreement_workbook.py --workbook <xlsx> --out data/units/DEV_ADJUDICATED_RELEVANCE_MB_DS_<date>.csv --date <YYYY-MM-DD> [--clarify <csv>]
 """
 import argparse, csv, glob, hashlib, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 V = ("R", "N", "U")
 COLS = ["unit_id", "project", "mb_blind", "ds_blind", "ai_proposal_label", "ai_proposal_took", "reason", "rule_proposed",
-        "authors_response", "joint_label", "status", "basis", "rule_status", "doc_in_current_corpus", "adjudicated_by", "date", "workbook_sha256"]
+        "authors_response", "joint_label", "status", "basis", "rule_status", "doc_in_current_corpus", "adjudicated_by", "date", "clarification_source", "note_for_prompt", "workbook_sha256"]
 
 
 def read_response(text):
@@ -58,7 +62,8 @@ def adjudicate(row):
 
 def main():
     import openpyxl
-    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True); a = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--workbook", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True); ap.add_argument("--clarify"); a = ap.parse_args()
+    clar = {r["unit_id"]: r for r in csv.DictReader(open(a.clarify, encoding="utf-8"))} if a.clarify else {}
     sha = hashlib.sha256(open(a.workbook, "rb").read()).hexdigest()
     ws = openpyxl.load_workbook(a.workbook)["RELEVANCE"]; rows = list(ws.iter_rows(values_only=True)); h = rows[0]
     assert h[2] == "unit_id" and h[9] == "MB" and h[10] == "DS" and h[11] == "spolecny_stitek" and str(h[14]).startswith("souhlas"), "unexpected layout of sheet RELEVANCE"
@@ -76,12 +81,17 @@ def main():
         assert wb_mb == mb_file, f"MB column differs from the blind file for {u}"
         assert str(r[10]).strip().upper() == ds["relevant"], f"DS column differs from the blind file for {u}"
         x = {"proposal": str(r[11]).strip().upper(), "reason": str(r[12] or "").strip().upper(), "note": r[13], "response": r[14]}
-        joint, status, basis, rs = adjudicate(x)
+        joint, status, basis, rs = adjudicate(x); c = clar.pop(u, None)
+        if c:
+            assert status == "needs_author_check" and c["joint_label"] in V, f"clarification for {u} applies only to an unclear row"
+            joint, status, basis = c["joint_label"], "agreed", "authors_clarification"
+            if rs == "open": rs = "accepted" if joint == x["proposal"] else "rejected"
         out.append({"unit_id": u, "project": r[3], "mb_blind": mb["relevant"] or ("invalid:" + mb_file if mb_file else "blank"), "ds_blind": ds["relevant"],
                     "ai_proposal_label": x["proposal"], "ai_proposal_took": took_of(x["note"]), "reason": x["reason"], "rule_proposed": rule_of(x["note"]) if x["reason"] == "B" else "",
                     "authors_response": re.sub(r"\s+", " ", str(r[14] or "")).strip(), "joint_label": joint, "status": status, "basis": basis, "rule_status": rs,
-                    "doc_in_current_corpus": "yes" if u.split(":p")[0] in man else "no", "adjudicated_by": "MB+DS jointly" if status == "agreed" else "",
-                    "date": a.date if status == "agreed" else "", "workbook_sha256": sha})
+                    "doc_in_current_corpus": "yes" if u.split(":p")[0] in man else "no", "adjudicated_by": ("MB+DS jointly" + (", clarified by " + c["clarified_by"] if c else "")) if status == "agreed" else "",
+                    "date": (c["date"] if c else a.date) if status == "agreed" else "", "clarification_source": c["source"] if c else "", "note_for_prompt": c["note_for_prompt"] if c else "", "workbook_sha256": sha})
+    assert not clar, f"clarifications for units not in the workbook: {sorted(clar)}"
     out.sort(key=lambda d: d["unit_id"])
     with open(a.out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLS); w.writeheader(); w.writerows(out)

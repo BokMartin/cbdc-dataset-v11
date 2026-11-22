@@ -1,0 +1,6 @@
+unit_id,joint_label,clarified_by,date,source,note_for_prompt
+CH_CAND-049:p1:s187,N,MB for MB+DS,2026-11-22,project thread message 11:06 UTC (MB forgot to fill the cell),
+JP_JP_BoJ_PoC2:p14:s247,N,MB for MB+DS,2026-11-22,"project thread message 11:06 UTC: ""MB"" in column O means the label MB chose blind",
+RU_RU_Russia_consultation_paper_201013:p6:s82,R,MB for MB+DS,2026-11-22,"project thread message 11:06 UTC: ""MB"" in column O means the label MB chose blind (general reading, row not named)",
+MG_MG_BFM_RFI_2021:p8:s129,N,MB for MB+DS,2026-11-22,project thread message 11:06 UTC,"Improve the prompt so that chapter titles of an outline (table of contents, list of sections) are not taken as relevant; the chapters themselves can be R (DS)."
+MO_MO_AMCM_eMOP_WP:p39:s350,R,MB for MB+DS,2026-11-22,project thread message 11:06 UTC,"Note for extraction: the key sentence of this passage (managed anonymity as a design feature of e-MOP) is not in the unit or its paragraph (DS)."
