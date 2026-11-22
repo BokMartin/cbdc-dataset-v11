@@ -54,10 +54,10 @@ What each audit covered step by step is the column "audited by a second model" o
 | F05 run-record check passes a fictitious run | blocker | closed | `tests/test_run_record.py` |
 | F06 reference separation not implemented | blocker | **open** | exposure registry and block-level exclusion not built |
 | F07 factor rule is not a non-inferiority test | blocker for the savings | closed by decision | page packing dropped (MB, 17 Nov); the reasoning test, if run, uses the auditor's paired rule |
-| F08 language coverage and translation restrictions conflict | blocker for unrestricted claims | **open, authors** | T3 translation inconsistency (ADR-007 §4.4); benchmark not adjudicated; scorer does not yet show "not judgeable" as an outcome |
+| F08 language coverage and translation restrictions conflict | blocker for unrestricted claims | **open, authors** | T3 translation inconsistency (ADR-007 §4.4); the 35 benchmark pairs on which the judges differed were adjudicated jointly on 22 Nov (ADR-011), the registered weighted shares are not recomputed; scorer does not yet show "not judgeable" as an outcome |
 | F09 publisher metadata and institutional voice conflated | major | partly closed | one header source, tested; the content awaits the authors' review |
 | F10 absence, "first" and "highest rung" | major | open, authors | wording and status vector to adopt |
-| F11 "U" mixes unusable text and uncertainty | major | open, confirmed by data | the authors agree on 6 of 30 "U" labels; adjudication workbook issued |
+| F11 "U" mixes unusable text and uncertainty | major | open, confirmed by data | the authors agree on 6 of 30 "U" labels; the 41 development units on which their labels differ or one is missing were adjudicated jointly on 22 Nov (ADR-011) and codebook v0.4 is proposed from the accepted rule sentences, not yet confirmed |
 | F12 packing changes context | major | closed by decision; facet prompt change open | |
 | F13 availability promise conflicts with the journal | major | open | wording removed from the specification; manifest and statement not written |
 | F14 companion links are navigation | major | partly closed | brief wording corrected; cutoff date and claim-specific verification open |

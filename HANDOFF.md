@@ -1,6 +1,6 @@
 # Handoff: where the work stands and how to continue (written 21 Nov 2026, at commit of this file)
 
-For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), `DECISIONS/ADR-008` to `ADR-010` (decided by MB on 21 Nov 2026 and waiting for DS: website and published translations, privacy index, INCLINED documents), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
+For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), `DECISIONS/ADR-008` to `ADR-010` (decided by MB on 21 Nov 2026 and waiting for DS: website and published translations, privacy index, INCLINED documents), `DECISIONS/ADR-011` (joint adjudication of the authors' disagreements, 22 Nov 2026), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
 
 ## 1. Goal
 
@@ -10,9 +10,9 @@ A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Domini
 
 1. **No model has labelled a unit and no paid classification call has been made.** The fourth audit by a second model (A4, 17 Nov) returned NO-GO for calibration and for production until listed repairs are made (18 findings, 8 blockers).
 2. Corpus: 218 evidence publications decided by an author (229 until 21 Nov 23:54, when MB moved 11 wholesale and BIS Innovation Hub documents to the new INCLINED layer, draft ADR-010, DS to confirm); 207 documents with English text (196 evidence publications and 11 INCLINED documents), 42 of 44 projects (Chile and Czechia have none); 171,865 sentence units; 19,570 candidates for classification.
-3. Human inputs so far: both authors coded relevance blind for 120 development units, **agreement 67 %, Krippendorff's alpha 0.46**, below the 0.667 of the protocol; the disagreement sits in the label "U". Both judged 86 translation pairs, **Cohen's kappa 0.38**; MB is far stricter than DS. Neither result may be reported as validation; both are development findings that call for a repaired codebook and a joint adjudication.
+3. Human inputs so far: both authors coded relevance blind for 120 development units, **agreement 67 %, Krippendorff's alpha 0.46**, below the 0.667 of the protocol; the disagreement sits in the label "U". Both judged 86 translation pairs, **Cohen's kappa 0.38**; MB is far stricter than DS. Neither result may be reported as validation; both are development findings. On 22 Nov the authors went through their disagreements together and set a joint answer for each of the 41 relevance units and the 35 translation pairs (ADR-011). The joint answers are an adjudication made after reading an AI proposal, not an independent coding: they are never reported as agreement or validation. They repair the codebook (v0.4, a proposal) and the rule for judging translations.
 4. Decided: three models in full (`claude-opus-5-5`, `gpt-6-astra`, `deepseek-v4-pro`); one unit per request (page packing dropped); validation by verification, with relevance coded blind; translation only for documents of T1 and T2 projects.
-5. Repaired after A4 without author input: duplicate text removed (Israel), one header source, translation ingest fails closed, run-record check verifies artifacts, strict output parsers. 88 tests, CI green.
+5. Repaired after A4 without author input: duplicate text removed (Israel), one header source, translation ingest fails closed, run-record check verifies artifacts, strict output parsers. On 22 Nov: 75 test functions (the number in `PROJECT_BRIEF.md`), 94 tests as pytest counts them, CI green.
 
 ## 3. Decisions in force (the ADR is the authority)
 
@@ -21,10 +21,11 @@ A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Domini
 | Frame of 44 projects; the euro area is a project of its own; ECCU out | ADR-005 §1 |
 | Evidence = KEEP + BORDERLINE documents of the competent body; legal texts of parliaments and governments are companions (cited, never a source of units) | `docs/SOURCE_RULE_D1.md`, ADR-005 §9, §10 |
 | Tiers by number of evidence publications: T1 8 or more, T2 5 to 7, T3 4 or fewer | `data/manifest/TIERS_2026-11-21.csv` (the `tier` column is as of 17 Nov and was not recomputed after the INCLINED decisions, ADR-010) |
-| Talk instrument: units, candidates (dictionary hit, neighbour, random control), relevance then facets; schema and prompts are drafts v0.3 | ADR-004, `schema/talk_units_v13_DRAFT.json` |
+| Talk instrument: units, candidates (dictionary hit, neighbour, random control), relevance then facets; schema, codebook and prompts are drafts (since 22 Nov: codebook v0.4 and relevance prompt v0.3, proposals from the joint adjudication; facet prompt v0.3 of 13 Nov) | ADR-004, ADR-011 §5, `schema/talk_units_v13_DRAFT.json` |
 | The authors do not code the seven facets blind; validation by verification with safeguards | ADR-006 A |
 | Three models, full runs, results per model and agreement reported | ADR-006 A.5 |
 | A4 dispositions and MB's six decisions of 17 Nov (commitment layer not split off; packing dropped; translation only T1 and T2; Israel duplicate linked) | ADR-007 §2, §4 |
+| Joint adjudication by MB and DS on 22 Nov of their disagreements of 17 Nov: a joint label for each of the 41 development units on which their blind labels differ or one is missing, and a joint code for each of the 35 translation pairs on which their codes differ, stored apart from the blind answers and never reported as agreement or validation. Rule used for the translation pairs: a pair counts as the same unless a word that sets the force of the statement changes, the meaning otherwise changes materially, or the segments are mispaired or cut | ADR-011 §1, §2, §4 |
 | Every model run leaves a run record; production only through provider APIs | `docs/RUN_RECORD_SPEC.md`, `AGENTS.md` |
 
 Decided by MB on 21 Nov 2026 and waiting for DS (not in force until he confirms; the ADR is the authority):
@@ -48,23 +49,24 @@ Decisions (each stops something):
 | 5 | Review of issuer, issuer type and document kind for the 207 documents (pre-filled by a model; the facet prompt receives them as input) | facet rounds and production | `data/manifest/ISSUERS_2026-11-13.csv`; 2 to 5 hours |
 | 6 | DS confirms ADR-004 to ADR-010 | freeze | |
 | 7 | Remaining rows of ADR-007 §2 (F10 wording of "first" and status vector, F13 access statement, F14 cutoff date, F15 reference design, F16 rounds) | freeze | |
+| 8 | Added 22 Nov. Confirmation of the proposals made from the joint adjudication: codebook v0.4 and relevance prompt v0.3 (MB answered the four open points of ADR-011 §5 the same day), and whether the rule of ADR-011 §2 governs future judging of translations | freeze | ADR-011 §5; `docs/TRANSLATION_PROCEDURE.md`, section "Joint adjudication" |
+| 9 | Added 22 Nov. ADR-008 §3 says the list of published translations is revisited if the adjudication of the benchmark shows systematic errors. The 35 differing pairs are now adjudicated (with the 51 agreed pairs the 86 hold S 59, W 4, X 7, M 4, D 12); no answer of the authors on this point is recorded | nothing in the pipeline (it concerns the nine translations published on the website) | ADR-008 §3; `docs/TRANSLATION_PROCEDURE.md`, section "Joint adjudication" |
 
 Workbooks to fill in (Dropbox folder `Dizertace all the PDFs`; not changed since 17 Nov when checked on 21 Nov):
 
 | File | What | Who |
 |---|---|---|
-| `NESHODY_MB_DS_2026-11-17.xlsx` | only the rows where the authors differ: 41 development units (relevance) and 35 translation pairs; joint label, reason, and for unclear rules one sentence that would have settled it. The sentences become the codebook repair | MB and DS together |
 | `CBDC_TALK_v13/TALK_DEV_FIX_MB_2026-11-17.xlsx`, sheet `U_24` | what MB meant by each of his 24 "U" labels | MB |
 | `CBDC_TRANSLATION_v12/TRANSLATION_JUDGEMENT_MB_2026-11-17.xlsx`, sheet `UNMATCHED` | 30 unmatched sentences (DS has done them) | MB |
 
-Reader for the disagreement workbook does not exist yet: write it when the file comes back, store joint labels apart from the blind ones (`DEV_LABELS_*` are never overwritten).
+Returned on 22 Nov: the disagreement workbook `NESHODY_MB_DS_2026-11-17.xlsx` (the 41 development units) and `NESHODY_PREKLAD_MB_DS_2026-11-22.xlsx` (the 35 translation pairs). They are read by `scripts/review/read_disagreement_workbook.py` and `scripts/review/read_translation_disagreement.py`. The joint answers are in `data/units/DEV_ADJUDICATED_RELEVANCE_MB_DS_2026-11-22.csv` and `data/translation/benchmark/JUDGEMENT_ADJUDICATED_MB_DS_2026-11-22.csv`, apart from the blind ones (`DEV_LABELS_*` are never overwritten). Record: ADR-011 and `EXPOSURE_LEDGER.md`.
 
 ## 5. Open on the pipeline author's side (no author input, no paid call)
 
 1. Runner for three providers with run record, idempotent, with cost cap, tested offline against the failure fixtures of A4 (truncated output, refusal, timeout, duplicate attempt). Not built.
 2. Exposure registry (which unit, paragraph and document each author and each model has seen) and exclusion by displayed paragraph in `draw_agreement_sample.py` (A4 F06). Not built.
 3. Unitisation reads only pinned successful translation records (rest of A4 F04); unit identifiers bound to a unitisation version (rest of F03).
-4. Facet prompt v0.4: a unit admitted by another model is not assumed relevant; explicit not-applicable channel (F12). Codebook and relevance prompt repaired from the authors' adjudication.
+4. Facet prompt v0.4: a unit admitted by another model is not assumed relevant; explicit not-applicable channel (F12). The codebook and the relevance prompt were repaired from the authors' adjudication on 22 Nov (codebook v0.4, relevance prompt v0.3; proposals until the authors confirm them, ADR-011 §5).
 5. Scorer of the translation benchmark shows "not judgeable" as its own outcome (F08); usage and price ledger fed by measured usage (F18).
 6. F-cell instrument at v12: generator, schema validation, comparison, replay on two status axes (F02). Large; needs decision 4 first.
 7. Rights and access manifest and a concrete data availability statement (F13). Data & Policy does not accept "available on request".
@@ -72,7 +74,7 @@ Reader for the disagreement workbook does not exist yet: write it when the file 
 
 ## 6. Agreed order up to the first production call
 
-Repair inputs and checks (section 5, items 1 to 5) → authors adjudicate disagreements and the codebook is repaired → capability probe of the providers (a few USD; replaces the cost estimate with a measurement) → development rounds → confirmation set → **audit A5** of everything changed since commit `7e6e4c5` → freeze and registration (OSF, Zenodo) → reference sample coded blind → production on three models → verification. The auditor's full 24-step protocol is in `docs/audits/INDEPENDENT_AUDIT_2026-11-17.md`, question 13; `docs/CALIBRATION_PROTOCOL_DRAFT_2026-11-17.md` is superseded by it.
+Repair inputs and checks (section 5, items 1 to 5) → authors adjudicate disagreements and the codebook is repaired (adjudicated on 22 Nov, ADR-011; the repaired codebook is a proposal the authors have yet to confirm) → capability probe of the providers (a few USD; replaces the cost estimate with a measurement) → development rounds → confirmation set → **audit A5** of everything changed since commit `7e6e4c5` → freeze and registration (OSF, Zenodo) → reference sample coded blind → production on three models → verification. The auditor's full 24-step protocol is in `docs/audits/INDEPENDENT_AUDIT_2026-11-17.md`, question 13; `docs/CALIBRATION_PROTOCOL_DRAFT_2026-11-17.md` is superseded by it.
 
 ## 7. Data that is not in the repository and where it is
 
@@ -111,4 +113,4 @@ The paths inside `master_local.json` point to the workspace of the conversation 
 
 ## 10. Text to paste into a new conversation
 
-> Pokračujeme v projektu CBDC privacy dataset (článek pro Data & Policy, autoři Martin Bok a Dominik Stroukal). Zdroj pravdy je GitHub `BokMartin/cbdc-dataset-v11`, větev `main`. Naklonuj repo a přečti v tomto pořadí: `AGENTS.md`, `PROJECT_BRIEF.md`, `HANDOFF.md`, `DECISIONS/ADR-007-audit-2026-11-17-dispositions.md`, `DECISIONS/ADR-008` až `ADR-010`, `docs/audits/README.md`. Ověř, že poslední běh CI `verify` je zelený. Pak mi česky shrň stav v pěti bodech a řekni, co ode mě a od Dominika potřebuješ jako první. Nic placeného nespouštěj a nic neměň v pravidlech bez mého souhlasu. Pracovní data mimo repo jsou v Dropboxu ve složce `Dizertace all the PDFs` (viz HANDOFF, oddíl 7); klíče k API ti dám až na vyžádání.
+> Pokračujeme v projektu CBDC privacy dataset (článek pro Data & Policy, autoři Martin Bok a Dominik Stroukal). Zdroj pravdy je GitHub `BokMartin/cbdc-dataset-v11`, větev `main`. Naklonuj repo a přečti v tomto pořadí: `AGENTS.md`, `PROJECT_BRIEF.md`, `HANDOFF.md`, `DECISIONS/ADR-007-audit-2026-11-17-dispositions.md`, `DECISIONS/ADR-008` až `ADR-011`, `docs/audits/README.md`. Ověř, že poslední běh CI `verify` je zelený. Pak mi česky shrň stav v pěti bodech a řekni, co ode mě a od Dominika potřebuješ jako první. Nic placeného nespouštěj a nic neměň v pravidlech bez mého souhlasu. Pracovní data mimo repo jsou v Dropboxu ve složce `Dizertace all the PDFs` (viz HANDOFF, oddíl 7); klíče k API ti dám až na vyžádání.
