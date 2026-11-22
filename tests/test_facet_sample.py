@@ -53,7 +53,8 @@ def test_facet_sample(tmp_path):
         ws = load_workbook(f)["CODE"]
         head = [c.value for c in ws[1]]
         assert head == dfs.COLS and not any("model" in (h or "").lower() for h in head)
-        coded = [[c.value for c in row[10:16]] for row in ws.iter_rows(min_row=2)]
+        coded = [[c.value for c in row[10:17]] for row in ws.iter_rows(min_row=2)]
+        assert head[10:17] == ["relevant", "voice", "aspect", "aspect2", "basis", "decision", "stance"]
         assert len(coded) == 20 and all(v is None for row in coded for v in row)  # nothing pre-filled
     assert [r["order_MB"] for r in rec] != [r["order_DS"] for r in rec]
     # a second draw excludes the first one

@@ -2,8 +2,8 @@
 """Blind facet sample of 80 sentences (D8 of ADR-012; MB 22 Nov 2026: "raději 80 vět").
 
 Both authors code the same 80 units, each alone and before any model has labelled a unit: relevance afresh, and for the
-units they call relevant voice, aspect (optional second aspect), decision and stance (ADR-012 D8 as accepted by MB at
-14:21 and 14:27). The result is a development diagnosis of the facets, not the reference measurement: the reference
+units they call relevant voice, aspect (optional second aspect), basis, decision and stance (ADR-012 D8 as accepted by MB
+at 14:21 and 14:27; basis added by MB at 16:07, as the auditor proposed, because D3 counts sentences with a mechanism). The result is a development diagnosis of the facets, not the reference measurement: the reference
 sample of 400 (D18) is drawn later and never contains a unit of this set or of the development sample.
 
 Population: candidate units of stratum D (dictionary hit) in documents of stratum `evidence` of the latest unit
@@ -51,8 +51,8 @@ import context  # noqa: E402
 SEED = "talk-v13-facet80-2026-11-22"
 ROUTE = {"A": "English original", "B": "issuer's English edition", "D": "MACHINE TRANSLATION"}
 COLS = ["n", "unit_id", "project", "issuer (document)", "kind", "year", "text is", "page", "paragraph (unit marked »…«)",
-        "UNIT TO CODE", "relevant", "voice", "aspect", "aspect2", "decision", "stance", "note"]
-FACETS = ("voice", "aspect", "aspect2", "decision", "stance")
+        "UNIT TO CODE", "relevant", "voice", "aspect", "aspect2", "basis", "decision", "stance", "note"]
+FACETS = ("voice", "aspect", "aspect2", "basis", "decision", "stance")
 WRAP = Alignment(wrap_text=True, vertical="top")
 BOLD = Font(bold=True)
 
@@ -120,13 +120,13 @@ def draw(pool, n):
 
 README = [
     "Slepé kódování 80 vět, kodér {coder} (vylosováno {date}, seed {seed}). Na listu CODE je {n} vět. Kóduje každý SÁM, bez porady a bez pomoci jazykového modelu; o jednotlivých větách se nebavte, dokud oba neodevzdáte.",
-    "PROČ: ověřujeme, zda se dva lidé shodnou na údajích voice, aspect, decision a stance (rozhodnutí MB 22. 11. 2026, ADR-012 D8), a zároveň znovu na relevanci. Výsledek se zveřejní takový, jaký bude. Když shoda nevyjde, projdete věty spolu a dohodnete konečné štítky; nesplněný práh ale zůstane nesplněný a údaj se v článku označí jako exploratorní.",
+    "PROČ: ověřujeme, zda se dva lidé shodnou na údajích voice, aspect, basis, decision a stance (rozhodnutí MB 22. 11. 2026, ADR-012 D8; basis doplněn na přání MB), a zároveň znovu na relevanci. Výsledek se zveřejní takový, jaký bude. Když shoda nevyjde, projdete věty spolu a dohodnete konečné štítky; nesplněný práh ale zůstane nesplněný a údaj se v článku označí jako exploratorní.",
     "CO SE KÓDUJE: jen věta ve žlutém sloupci UNIT TO CODE. Sloupec 'paragraph' je odstavec, v němž věta stojí (věta je v něm označena »takto«); slouží k pochopení zájmen, odkazů a toho, kdo mluví. Je prázdný, pokud věta stojí sama (nadpis, buňka tabulky). Stejný odstavec dostane i model.",
     "Sloupec 'relevant': R = věta sama něco říká o soukromí, identifikovatelnosti nebo přístupu k datům uživatelů retailové CBDC; N = neříká; U = nečitelná nebo useknutá (U jen výjimečně, viz CODEBOOK). Pokud N nebo U, ostatní sloupce nechte prázdné.",
-    "Pokud R: vyplňte voice, aspect, decision a stance (rozbalovací seznamy). aspect2 jen tehdy, když věta mluví o dvou aspektech. Ostatní údaje z dřívějšího sešitu (basis, implementation, modality, příznaky) se tentokrát nekódují. Do 'note' pište pochybnosti.",
+    "Pokud R: vyplňte voice, aspect, basis, decision a stance (rozbalovací seznamy). aspect2 jen tehdy, když věta mluví o dvou aspektech. Ostatní údaje z dřívějšího sešitu (implementation, modality, příznaky) se tentokrát nekódují. Do 'note' pište pochybnosti.",
     "Sloupec 'text is' říká, zda čtete anglický originál, anglické vydání vydavatele, nebo STROJOVÝ PŘEKLAD. Věty jsou slovníkové zásahy (obsahují slovo z oblasti soukromí), proto bude většina relevantní, ale ne všechny.",
     "Pravidla jsou na listu CODEBOOK: verze 0.4 z 22. 11. 2026 po společném projití neshod (ADR-011); dokud ji oba autoři nepotvrdí, je to návrh. Kódujte podle ní.",
-    "Pořadí řádků je pro každého kodéra jiné (náhodné). Neřaďte list: kódujte v daném pořadí. Odhad času 1,5 až 3 hodiny. Soubor uložte pod stejným názvem a pošlete zpět; nic jiného v něm neměňte.",
+    "Pořadí řádků je pro každého kodéra jiné (náhodné). Neřaďte list: kódujte v daném pořadí. Odhad času 2 až 3,5 hodiny. Soubor uložte pod stejným názvem a pošlete zpět; nic jiného v něm neměňte.",
 ]
 
 
@@ -161,8 +161,8 @@ def workbook(path, coder, date, sample, text, iss, schema, codebook):
         d.cell(n + 1, 10).fill = PatternFill("solid", fgColor="FFF2CC")
         u["order_" + coder] = n
     lists = {"relevant": ["R", "N", "U"], "voice": schema["voice"], "aspect": schema["aspect"], "aspect2": schema["aspect"],
-             "decision": schema["decision"], "stance": schema["stance"]}
-    for c, wd in enumerate([5, 14, 7, 22, 12, 6, 14, 5, 60, 60, 9, 11, 18, 18, 15, 12, 30], 1):
+             "basis": schema["basis"], "decision": schema["decision"], "stance": schema["stance"]}
+    for c, wd in enumerate([5, 14, 7, 22, 12, 6, 14, 5, 60, 60, 9, 11, 18, 18, 15, 15, 12, 30], 1):
         d.column_dimensions[d.cell(1, c).column_letter].width = wd
     for c in range(1, len(COLS) + 1):
         d.cell(1, c).font = BOLD
