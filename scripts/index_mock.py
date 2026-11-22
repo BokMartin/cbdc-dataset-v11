@@ -15,12 +15,12 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from derive_index import CORE, SCORE  # noqa: E402
+from index_reliability import BASIS_REQUIRED, FIELDS  # noqa: E402
 from talk_commitment import ASPECT_CELLS, TALK_ONLY_ASPECTS  # noqa: E402
 STATUS = [("considered", "untested_or_unreported", 0.5), ("considered", "tested", 0.2),
           ("endorsed", "untested_or_unreported", 0.2), ("endorsed", "operational", 0.1)]
 COVERAGE = {f: (0.77 if f == "F1" else 0.5) for f in CORE}  # F1 from the sealed census aggregate; the rest assumed
 TIERS = ["T1"] * 8 + ["T2"] * 8 + ["T3"] * 28
-FIELDS = ["project_id", "cell", "value", "decision_status", "implementation_status", "quote", "page_index"]
 BANNER = "MOCK DATA - invented - not a result"
 
 
@@ -48,12 +48,18 @@ def generate(seed=20261121, disagreement=0.1):
                 v, dec, impl = "none_stated", "", ""
             else:
                 v, dec, impl = "undetermined", "", ""
+            valued = v != "undetermined"
             row = {"project_id": p, "cell": c, "value": v, "decision_status": dec, "implementation_status": impl,
-                   "quote": BANNER, "page_index": ""}
+                   "evidence_state": "documented" if valued else "", "basis": "architectural" if valued and c in BASIS_REQUIRED else "",
+                   "text_route": "A" if valued else "", "derivation": "explicit" if valued else "", "conflict": "",
+                   "document_id": "MOCK-DOC" if valued else "", "quote": BANNER, "page_index": "", "note": ""}
             a.append(row)
             r2 = dict(row)
             if rng.random() < disagreement:
                 r2["value"] = rng.choice([x for x in list(SCORE[c]) + ["undetermined"] if x != v])
+                if v == "undetermined":  # a value the other coder left open gets the same mock provenance
+                    r2.update(evidence_state="documented", basis="architectural" if c in BASIS_REQUIRED else "",
+                              text_route="A", derivation="explicit", document_id="MOCK-DOC")
             b.append(r2)
     tiers = dict(zip(projects, rng.sample(TIERS, len(TIERS))))
     return projects, tiers, a, b

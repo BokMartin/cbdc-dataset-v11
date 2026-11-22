@@ -21,7 +21,7 @@ Missing cells are never filled. Every score is an interval [lower, upper]: lower
 as not protective, upper as protective (the bound logic of contract §8.4).
 
 Axis 2, **commitment profile**: the rung of each component (considered 1, tested 2, endorsed 3, operational 4; none 0)
-and the number of components at rung 3 or above out of the cells in CORE (8 in version 2, 4 in version 1; fixed
+and the number of components that pass rule C (committed(), the same predicate as admissible(); V6) out of the cells in CORE (8 in version 2, 4 in version 1; fixed
 denominator). No mean of ranks (review item 4).
 
 Talk labels never enter the index.
@@ -59,22 +59,48 @@ def is_leaning(cell):
                            or str(cell.get("leaning", "")).strip().lower() in ("true", "1", "yes"))
 
 
+def _flag(cell, key):
+    return str((cell or {}).get(key, "")).strip().lower() in ("true", "1", "yes")
+
+
+def disputed(cell):
+    """The blind coders disagree on the value, or only one of them coded the cell (index_reliability.merge)."""
+    return _flag(cell, "coder_disagreement") or _flag(cell, "missing_coder")
+
+
+def conflicted(cell):
+    """Unresolved conflict between claims of equal standing (contract §5 item 4, §7 rule 4)."""
+    return _flag(cell, "conflict") or str((cell or {}).get("evidence_state", "")).strip().lower() == "conflict"
+
+
+def committed(cell, fid):
+    """The one rule-C predicate for every commitment count (axis 2, talk against commitments, admissible view;
+    ADR-012 §3, V6 of the 22 Nov check): admissible() of derive.py, plus never a LEANING cell and never a cell the
+    blind coders disputed. The rung ladder is shown beside it, but a rung of 3 or 4 alone is not a commitment."""
+    if not cell or is_leaning(cell) or disputed(cell):
+        return False
+    return admissible(cell, categorical=set(SCORE["F3"]) if fid == "F3" else None)
+
+
 def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=False, include_leaning=False):
     """1 protective, 0 not protective, None undetermined. view: 'stated' (any status) or 'admissible' (rule C).
     A LEANING cell is undetermined in the primary index (it only bounds the interval); include_leaning=True scores it
-    at its value (sensitivity variant, never in the admissible view)."""
+    at its value (sensitivity variant, never in the admissible view). A conflicted cell is undetermined in every view:
+    two claims of equal standing that disagree state no design (V6)."""
     if not cell:
         return None
     if is_leaning(cell) and (not include_leaning or view == "admissible"):
         return None
-    if view == "admissible" and not admissible(cell, categorical=set(SCORE[fid]) if fid == "F3" else None):
+    if view == "admissible" and not committed(cell, fid):
+        return None
+    if conflicted(cell):
         return None
     if exclude_route_d and str(cell.get("text_route", "")).strip().upper() == "D":
         return None
     if exclude_inferred and str(cell.get("derivation", "")).strip().lower() == "inferred":
         return None
-    if str(cell.get("coder_disagreement", "")).strip().lower() in ("true", "1", "yes"):
-        return None  # an unresolved disagreement between the blind coders widens the interval
+    if disputed(cell):
+        return None  # an unresolved disagreement between the blind coders (or a cell coded by one only) widens the interval
     dec, _ = _status(cell)
     if dec in ("rejected", "superseded"):
         return None
@@ -135,9 +161,13 @@ def axis1(cells, rule="mean", weights=None, include=(), drop=(), cells_used=CORE
 
 
 def axis2(cells, cells_used=CORE):
-    """Commitment profile: rung per cell and the count at rung >= 3 (endorsed or operational) out of all cells."""
+    """Commitment profile: rung per cell (display) and the count of cells that pass rule C, committed(), out of all
+    cells. A cell at rung 3 or 4 that fails rule C (partial evidence, conflict, coder disagreement) is listed in
+    rung3_not_admissible and is not counted as decided (V6; before 22 Nov it was)."""
     profile = {f: rung(cells.get(f), f) for f in cells_used}
-    return {"profile": profile, "decided": sum(r >= 3 for r in profile.values()), "n_cells": len(profile),
+    ok = {f: committed(cells.get(f), f) for f in cells_used}
+    return {"profile": profile, "decided": sum(ok.values()), "n_cells": len(profile),
+            "rung3_not_admissible": [f for f in cells_used if profile[f] >= 3 and not ok[f]],
             "stated_only": sum(1 <= r <= 2 for r in profile.values()),
             "leaning": [f for f in cells_used if is_leaning(cells.get(f))]}
 

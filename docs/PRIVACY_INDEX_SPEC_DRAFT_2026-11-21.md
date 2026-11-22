@@ -37,7 +37,7 @@ The 0.5 is the split point between the two F1 classes, not a tuning constant: ev
 
 ## 4. Axis 2, commitment profile
 
-Rung of each component that carries a value: considered 1, tested 2, endorsed 3, operational 4; none 0. Reported as a **profile** (four rungs) and as the **number of components at rung 3 or above out of 4** (fixed denominator). Ranks are not averaged (review item 4).
+Rung of each component that carries a value: considered 1, tested 2, endorsed 3, operational 4; none 0. Reported as a **profile** (four rungs) and as the **number of components that pass rule C out of 4** (fixed denominator; until 22 Nov the count took rung 3 or above, which let a partial or conflicted cell count, V6). Ranks are not averaged (review item 4).
 
 ## 5. Robustness: admissible view
 
@@ -78,7 +78,7 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 | # | Step | When | Script and input | Done |
 |---|---|---|---|---|
 | V1 | Freeze this spec, the known cases and the external measures; register with contract v12 | before F-cell production | this file, `data/index/*_DRAFT_*` | no |
-| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells; under version 2 all eight cells, 352 cells, §12.5) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-21.csv` | no |
+| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells; under version 2 all eight cells, 352 cells, §12.5) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-22.csv` | no |
 | V3 | Reliability: Krippendorff's alpha per cell (three categories and valued pairs), merge, disagreements to undetermined | after V2 | `scripts/index_reliability.py` | no |
 | V4 | Re-run the separation simulation with real coverage | after V3, before reading scores | `simulate_separation` | no |
 | V5 | Known cases | after V3 | `scripts/index_validity.py`, `data/index/KNOWN_CASES_DRAFT_2026-11-21.csv` | no |
@@ -93,7 +93,7 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 
 ### 10.3 Reliability (B3) and input format
 
-Each coder fills one copy of the coder template: `project_id, cell, value (yes / no / undetermined), decision_status, implementation_status, quote, page_index`. `index_reliability.py` stops on duplicate rows or values outside the list, reports alpha per cell (undefined, not 1, when all ratings fall in one category), and merges: agreement gives the shared value with the lower of the two rungs; disagreement gives an undetermined cell flagged `coder_disagreement`, which widens the interval. Gate: alpha ≥ .80 per cell (contract §12); a cell below it is reported and the authors decide before any score is read.
+Each coder fills one copy of the coder template (`data/index/CODER_TEMPLATE_2026-11-22.csv`): `project_id, cell, value (yes / no / undetermined, or the F3 categories), decision_status, implementation_status, evidence_state, basis, text_route, derivation, conflict, document_id, quote, page_index, note`. The fields after the two statuses were added on 22 Nov 2026 (V6 of the 22 Nov check, ADR-012 §3): without them the merge marked every agreed cell as documented, and the variants without route D and without inferred cells removed nothing. A set value needs evidence state, route, derivation, document and quote, and F1, F2, F4 and F9 need a basis (contract v12 §3). `index_reliability.py` stops on an empty key, duplicate rows, a missing field or values outside the list, reports alpha per cell (undefined, not 1, when all ratings fall in one category), and merges: agreement gives the shared value with the lower of the two rungs and, for evidence state, basis, route, derivation and conflict, the more conservative entry of the two; both original records travel with the merged cell; disagreement gives an undetermined cell flagged `coder_disagreement`, which widens the interval; a cell only one coder filled stays undetermined, flagged `missing_coder`. Every commitment count (axis 2, talk against commitments, the admissible view) uses one predicate, `committed()` in `derive_index.py`, which is rule C (`admissible()`) without LEANING or disputed cells; the rung ladder is shown beside it but a rung of 3 or 4 alone no longer counts. A conflicted cell is undetermined in every view. Gate: alpha ≥ .80 per cell (contract §12); a cell below it is reported and the authors decide before any score is read.
 
 **Workload (estimate, not measured):** 176 cells in version 1 (352 for the eight cells of version 2, §12.5), most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
 
@@ -143,7 +143,7 @@ F3 and F9 have a direction the authors must confirm (a documented route or proce
 
 ### 12.2 Talk against commitments, by aspect (`talk_commitment.py`)
 
-The two layers stay separately measured and meet on the same unit, the (project, aspect) pair, for the six talk aspects that have a matching F-cell:
+The two layers stay separately measured and meet on the same unit, the (project, aspect) pair, for the six talk aspects that have a matching F-cell (the map is held once, in `schema/talk_units_v13_DRAFT.json`, `aspect_comparison_cells`, and the script reads it):
 
 | Talk aspect (codebook v0.3) | F-cells |
 |---|---|

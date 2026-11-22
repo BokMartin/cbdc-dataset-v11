@@ -58,6 +58,16 @@
    "alpha_3cat": 0.931,
    "n_both_valued": 24,
    "alpha_valued": 1.0
+  },
+  "f1_no_on_policy_basis": [],
+  "field_disagreements_on_agreed_values": {
+   "decision_status": [],
+   "implementation_status": [],
+   "evidence_state": [],
+   "basis": [],
+   "text_route": [],
+   "derivation": [],
+   "conflict": []
   }
  },
  "coverage_after_merge": {
@@ -97,6 +107,7 @@
   "without_F3_F9_kept": 0.8824,
   "core4_only_kept": 0.7647,
   "no_route_D_kept": 1.0,
+  "with_leaning_kept": 1.0,
   "no_inferred_kept": 1.0
  },
  "uncertainty_T1_T2": {
@@ -119,6 +130,7 @@
   "without_F3_F9_kept": 0.875,
   "core4_only_kept": 0.75,
   "no_route_D_kept": 1.0,
+  "with_leaning_kept": 1.0,
   "no_inferred_kept": 1.0
  },
  "known_cases": [
