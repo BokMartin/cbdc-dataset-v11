@@ -31,6 +31,8 @@ Fixed now, applied to the development result, then frozen for the reference samp
 - A facet that cannot be repaired is **dropped** from measurement. Relevance, voice and aspect are the minimum instrument; if one of these three fails, the unit-based instrument is not used for the paper and the result is reported.
 - With about 90 dictionary hits, roughly 40 to 70 units will be relevant for both coders. That is enough to see which facets fail badly and which categories are confused; it is not enough to certify a facet with rare categories. The reference sample does that.
 
+**Amended 22 Nov 2026 (ADR-012 D8, MB and DS).** Before the reference sample, 80 sentences are coded blind by both authors for **voice, aspect, decision and stance**. A facet that fails the threshold above may be reviewed jointly: the joint review gives the final labels of those sentences but does **not** replace the failed threshold; the facet is then reported as exploratory, without accuracy claims.
+
 Thresholds are conventions (Krippendorff 2004; to pass the citation check), not proofs of validity. Both rounds are published whatever they show.
 
 ## 5. Limits

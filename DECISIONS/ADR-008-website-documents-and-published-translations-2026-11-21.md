@@ -2,6 +2,8 @@
 
 Status: decided by MB on 21 Nov 2026 (project thread, decision card "How should the website offer translations of the documents?", option "publish our translations"); DS to confirm. Implemented by the pipeline author on the same day.
 
+**DS confirmed on 22 Nov 2026, relayed by MB in the project chat at 16:08 UTC** ("ano dominik je potvrdil", answering whether DS had also confirmed ADR-008 to ADR-010). The decision is in force for both authors.
+
 ## 1. Context
 
 The website in `site/` was a mock-up of October 2026 (contract v1.1, 70 projects, seeded placeholder values for architecture types and design cells). After the frame of 44 projects (ADR-005) and the author decisions on every evidence document, that mock-up showed values that the project has not measured and could be read as results. MB asked on 21 Nov for the best possible open-source site with (a) a map of the projects and (b) a document database that shows which documents were used and which were not, links to every one, and lets a visitor download and translate them.

@@ -20,6 +20,7 @@ Read [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) first: goal, pipeline, status, what 
 ## Evidence and measurement
 
 - Only official documents of the competent body are evidence; the load-bearing ones. BIS, IMF, consultancies, media and trackers never are.
+- INCLINED material has three classes (ADR-012 D5): confirmed retail evidence; a joint retail report explicitly attributable to the project (LEANING at most, flagged, sensitivity only); wholesale (context and PET only). A rejection of full anonymity is a flag, never F7 = no (ADR-012 D9).
 - Talk labels are descriptive and never set an F-cell. Commitments come only from located claims under contract rules A to C. No inference from silence.
 - Units, samples, thresholds and seeds are fixed and committed before anyone codes or any model labels. Human coders code before they see model output.
 - Never train or tune an encoder on LLM output. Never use the reference sample to tune prompts.

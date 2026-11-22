@@ -203,7 +203,7 @@
  },
  "context": "the paragraph of the unit, rendered by scripts/units/context.py for coders and for the model alike",
  "aspect_comparison_cells": {
-  "status": "the one map of talk aspects to F-cells, read by scripts/talk_commitment.py (S1 of the 22 Nov check). Content as in ADR-009 and index spec \u00a712.2 (MB, 21 Nov 2026); the mapping of ANONYMITY to F7 (narrowed to anonymous holding and paying in the codebook) and the rule that a rejection of full anonymity is only the flag anonymity_rejected, never F7 = no (ADR-012 D9) wait for DS. Until 22 Nov the schema listed ANONYMITY without a cell and AUTHORITY_ACCESS on F3 only, while the script used this map.",
+  "status": "the one map of talk aspects to F-cells, read by scripts/talk_commitment.py (S1 of the 22 Nov check). Content as in ADR-009 and index spec \u00a712.2 (MB, 21 Nov 2026); the mapping of ANONYMITY to F7 (narrowed to anonymous holding and paying in the codebook) and the rule that a rejection of full anonymity is only the flag anonymity_rejected, never F7 = no (ADR-012 D9) were confirmed by DS on 22 Nov 2026 (relayed by MB). Until 22 Nov the schema listed ANONYMITY without a cell and AUTHORITY_ACCESS on F3 only, while the script used this map.",
   "cells": {
    "CB_ACCESS": [
     "F1"
