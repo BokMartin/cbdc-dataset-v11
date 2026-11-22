@@ -39,8 +39,14 @@ Verdict of the auditor: decisions **not ready** to be recorded as adopted; regis
 | D14 | use 7 existing T3 translations | AMEND: only in the translated extension, flagged as historical queue | agree | |
 | D15 | statuses of 7 UNRESEARCHED projects | AMEND: dated source per field, MB confirms, unknown stays unknown | agree | |
 | D16 | complete exposure ledger | AMEND: cell-level entries; DS attests his own reading | agree | |
-| D17 | "found via" column, no further literature check | AMEND: either the same bounded check for all 16 core projects, or quarantine the literature-driven additions in a supplement | MB decides | |
+| D17 | "found via" column, no further literature check | AMEND: either the same bounded check for all 16 core projects, or quarantine the literature-driven additions in a supplement | MB decides || **MB, 22 Nov 2026, 14:21:** "dokuemnty nalezene pres nijsse zkratka pridat a hotovo. stejne jsme je meli najit nasi metoeologii." (*Simply add the documents found through Nijsse and Pinto and that is it; our methodology should have found them anyway.*) Auditor's amendment not taken: no further literature check, no quarantine. DS to confirm. |
 | D18 | store inclusion probabilities; smallest defensible reference sample | AMEND: direct stratified random draw from all eligible units (140 / 50 / 210); 400 recommended, 388 minimum at ±7 pp, 300 if only pooled relevance at ±8 pp; no size certifies rare facet values | MB decides the size | |
+
+## 2a. Nijsse and Pinto (2026): exposure to Table 2 (auditor finding 2 and 8, answer 7)
+
+**MB, 22 Nov 2026, 14:21:** "rozepis jakych 9 z 16 je v tabulce - kazdopadne bych to ignoroval. je to prirozene zkoumame cbdc, oni take. vysledky muzeme mit jine - nebude to validace. jen vyuzivame jejich kvalitne zpracovanych PET definic." (*List which 9 of the 16 are in the table; in any case I would ignore it. It is natural, we study CBDCs and so do they. Our results can differ; it will not be a validation. We only use their well-prepared PET definitions.*)
+
+Recorded consequence: the paper does not present any comparison with Table 2 as validation; the paper is used only as the source of PET definitions. That both authors read Table 2 before coding stays in `EXPOSURE_LEDGER.md` as a disclosure (the 9 core projects named by the auditor: BS, EU, IN, JM, JP, KZ, NO, RU, UK; not re-checked by the assistant). DS to confirm.
 
 ## 3. Repairs that need no author decision
 
