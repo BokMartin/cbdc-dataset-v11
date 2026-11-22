@@ -30,7 +30,7 @@ The current design is version 2 (MB, 21 Nov 21:31 and 21:44; spec §12). Where s
 - Talk layer for the gap: blind double coding of voice and aspect, and repair of relevance (alpha 0.46); spec §12.5.
 - Known cases and external measures for validity (spec §10.2); filling a known case for an unexposed project exposes it.
 - Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only (mock: about 4 % of pairs separated, so the index is a profile per project).
-- Order of cuts if time runs short (spec §12.5): keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10.
+- Scope (closed, MB 22 Nov 2026): the full scope is kept and registered; no order of cuts (spec §12.5).
 - Whether the index is correlated with covariates in the article (proposal: no; H2 stays on Y1, exploratory).
 - Cells resting only on an "inclined but unconfirmed" document (LEANING, ADR-010 in PR 3): proposal in spec §12.6, bound only in the primary index, scored in the `with_leaning` variant, flag `rests_on_leaning`; never counted as a commitment.
 
