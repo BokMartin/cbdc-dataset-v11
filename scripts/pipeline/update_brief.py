@@ -16,6 +16,13 @@ n = lambda x: f"{x:,}".replace(",", " ")
 day = lambda f: re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(f)).group(1)
 
 
+def adjudicated(pat):
+    """Joint answers the authors gave on their disagreements (ADR-011): (rows agreed, rows, date of the file), or None when there is no file."""
+    f = sorted(glob.glob(os.path.join(ROOT, pat)))
+    if not f: return None
+    r = rows(f[-1]); return sum(x["status"] == "agreed" for x in r), len(r), day(f[-1])
+
+
 def judgement(files):
     if not files: return "**not yet returned** (86 matched pairs + 30 unmatched sentences registered)"
     parts = []
@@ -24,16 +31,20 @@ def judgement(files):
         parts.append(f"{d.get('judge', '?')}: same meaning and strength {w['S']:.0%}, weaker {w['W']:.0%}, stronger {w['X']:.0%}, meaning differs {w['M']:.0%}")
     ag = glob.glob(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_AGREEMENT_*.json"))
     two = json.load(open(sorted(ag)[-1]))["two_judges"] if ag else None
+    adj = adjudicated("data/translation/benchmark/JUDGEMENT_ADJUDICATED_*.csv")
+    tail = "not adjudicated**" if not adj else f"blind judgements, before adjudication** · {adj[0]} of the {adj[1]} pairs on which they differ adjudicated jointly on {adj[2]} (ADR-011; an adjudication, not a measure of agreement)"
     return ("matched pairs, weighted to 163 matched sentences, judgeable pairs only · " + " · ".join(parts) +
-            (f" · **the two judges agree on {two['raw_agreement']:.0%} of the 86 pairs (Cohen's kappa {two['cohen_kappa']:.2f}); not adjudicated**" if two else " · one judge"))
+            (f" · **the two judges agree on {two['raw_agreement']:.0%} of the 86 pairs (Cohen's kappa {two['cohen_kappa']:.2f}); {tail}" if two else " · one judge"))
 
 
 def dev_agreement():
     f = sorted(glob.glob(os.path.join(ROOT, "data/units/DEV_AGREEMENT_RELEVANCE_*.json")))
     if not f: return "scored: **not yet**"
     d = json.load(open(f[-1])); a, b = d["all"], d["all_without_U_pairs"]
+    adj = adjudicated("data/units/DEV_ADJUDICATED_RELEVANCE_*.csv")
+    adj_note = "" if not adj else f"; {adj[0]} of the {adj[1]} units with differing or missing blind labels adjudicated jointly on {adj[2]} (ADR-011; an adjudication, not a measure of agreement)"
     return (f"relevance coded blind by {d['coder_a']} and {d['coder_b']} ({d['both_coded']} units both coded): agreement {a['agreement']:.0%}, Krippendorff's alpha {a['alpha']:.2f} "
-            f"(below the 0.667 of the protocol); without the pairs that hold a U: {b['n']} units, agreement {b['agreement']:.0%}, alpha {b['alpha']:.2f}; facets not coded")
+            f"(below the 0.667 of the protocol); without the pairs that hold a U: {b['n']} units, agreement {b['agreement']:.0%}, alpha {b['alpha']:.2f}{adj_note}; facets not coded")
 
 
 def block():
@@ -55,7 +66,8 @@ def block():
     scored = glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_RESULT_*.json")); judged = glob.glob(os.path.join(ROOT, "data/translation/benchmark/JUDGEMENT_RESULT_*.json"))
     ncand = sum(r["decision_v12"] == "CANDIDATE" for r in T); cand_note = f" or, for {ncand} candidates, awaiting one" if ncand else ""
     master = rows(latest("data/manifest/MASTER_MANIFEST_*.csv")); tests = sum(len(re.findall(r"(?m)^def test_", open(f, encoding="utf-8").read())) for f in glob.glob(os.path.join(ROOT, "tests/test_*.py")))
-    L = [B, f"State of the data files as of **{max(day(tf), day(uf))}** (dates are those of the files, not of the day you read this).", "",
+    newest = max([day(tf), day(uf)] + [day(f) for pat in ("data/units/DEV_ADJUDICATED_RELEVANCE_*.csv", "data/translation/benchmark/JUDGEMENT_ADJUDICATED_*.csv") for f in glob.glob(os.path.join(ROOT, pat))])
+    L = [B, f"State of the data files as of **{newest}** (dates are those of the files, not of the day you read this).", "",
          "| | |", "|---|---|",
          f"| Analytic frame | **{n_frame} projects** = {n_nat} national retail candidates + the digital euro |",
          f"| Official documents collected | {len(master)} files in the master folder; {len(T)} document rows, each with an author or model decision{cand_note} |",
@@ -68,7 +80,7 @@ def block():
          f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; {dev_agreement()} · reference sample (400): {'drawn' if main else 'not drawn'} |",
          f"| Human judgement of translation | {judgement(judged)} |",
          f"| Model classification of units | {'run' if glob.glob(os.path.join(ROOT, 'data/units/L1_*')) else '**not started** (no unit has been labelled by a model)'} |",
-         f"| Tests in CI | {tests} |", E]
+         f"| Tests in CI | {tests} test functions (pytest reports more, because it counts every parametrised case) |", E]
     return "\n".join(L)
 
 
