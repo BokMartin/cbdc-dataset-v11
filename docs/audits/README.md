@@ -7,7 +7,7 @@ This is the standing reference for every audit of this project. Each audit has i
 The pipeline (scripts, prompts, samples, documents such as this one) is designed and written by an AI assistant working with the two authors. Three things follow.
 
 - **The designer cannot check itself.** An error in a script or an overstated sentence in a status report looks the same to its author the second time. A model from another vendor, given the files and told to be adversarial, has no stake in the account being right.
-- **Some steps cannot be undone.** Human coders can be blind only once; paid model runs over the whole corpus cost several hundred dollars and days of a fixed deadline; a registered protocol cannot be quietly changed. Each such step gets an audit before it, not after.
+- **Some steps cannot be undone.** Human coders can be blind only once; paid model runs over the whole corpus cost several hundred dollars and days of work; a registered protocol cannot be quietly changed. Each such step gets an audit before it, not after.
 - **The paper claims auditability.** A reader has to be able to see not only the data but how decisions were reached, which objections were raised and what was done about each. The audit reports and the disposition records are part of that evidence.
 
 ## 2. What an audit must answer

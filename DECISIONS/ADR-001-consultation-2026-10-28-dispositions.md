@@ -9,7 +9,7 @@ Legend for *Recommendation*: **accept** = implement as stated; **modify** = impl
 | # | Item | Recommendation | Phase | Rationale / note | Decided (initials, date) |
 |---|---|---|---|---|---|
 | A1 | Keep "measurement and data paper with limited illustration" framing | accept | — | Consultant and authors agree | |
-| A2 | Target venue: Data & Policy (Cambridge) instead of Economic Modelling | accept | 6 | Authors' decision 30 Oct 2026; Turobov & Coyle (2026, D&P 8:e47) is the nearest precedent; self-imposed target 31 Dec 2026, no external deadline | MB 30.10. |
+| A2 | Target venue: Data & Policy (Cambridge) instead of Economic Modelling | accept | 6 | Authors' decision 30 Oct 2026; Turobov & Coyle (2026, D&P 8:e47) is the nearest precedent | MB 30.10. |
 | A3 | Replace "Institutional Determinants" in the title | **modify**: keep the title for now, revisit at writing stage | 6 | Author's standing decision (30 Oct); consultant's objection recorded and will be re-examined once results exist | MB 30.10. |
 | A4 | Demote H1 (informal economy) to descriptive; H2 (liberal democracy) the only classified illustration | accept | 3 | Mechanism of H1 targets state/PSP access (dropped Y₂), not CB separation (Y₁) | MB 30.10. |
 | A5 | Do not strengthen the illustration with controls, extra outcomes or weak-evidence countries | accept | 3–6 | | |
@@ -114,7 +114,7 @@ Legend for *Recommendation*: **accept** = implement as stated; **modify** = impl
 
 | # | Item | Recommendation | Note | Decided |
 |---|---|---|---|---|
-| G1 | SUERF 4 Dec not pursued; Economic Modelling 31 Dec replaced by Data & Policy target | accept | authors 30 Oct | MB 30.10. |
+| G1 | SUERF not pursued; Economic Modelling replaced by Data & Policy | accept | authors 30 Oct | MB 30.10. |
 | G2 | Cuts: aggregate historical panel, encoder retraining/model competitions, methods spin-off, legal-access reconstruction, extra regressions, decorative website work | accept | | |
 | G3 | Seven development cases: NO, UK, euro area, Canada, Chile, Hungary, one LIVE | accept | | |
 | G4 | Minimum viable paper as defined by the consultant | accept | | |
