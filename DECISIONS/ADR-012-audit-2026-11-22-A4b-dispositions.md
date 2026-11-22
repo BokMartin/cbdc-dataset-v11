@@ -58,7 +58,7 @@ ADR-009 (index definition, D4; source of cells, D2), index spec §10 and §12 (D
 
 ## 6. Confirmation and application (22 Nov 2026)
 
-DS's confirmation reached the repository through MB ("dominik potvrzuje", project chat, 22 Nov 2026, 15:09 UTC), after the coordinator had said that the audit and the 18 decisions waited only for DS. It is recorded as a confirmation of D1 to D18 as decided in §2 and §2a, including the thresholds of D3. It is not recorded as a confirmation of ADR-008 to ADR-010; that question was put to MB separately. DS's own attestation of what he read (D16) is still to come.
+DS's confirmation reached the repository through MB ("dominik potvrzuje", project chat, 22 Nov 2026, 15:09 UTC), after the coordinator had said that the audit and the 18 decisions waited only for DS. It is recorded as a confirmation of D1 to D18 as decided in §2 and §2a, including the thresholds of D3. It was not at first recorded as a confirmation of ADR-008 to ADR-010; asked separately, MB answered at 16:08 UTC: "ano dominik je potvrdil" (yes, Dominik confirmed them). That confirmation is recorded in ADR-008, ADR-009 and ADR-010. DS's own attestation of what he read (D16) is still to come.
 
 The texts of §5 were changed in one change after this confirmation, except the files that two open changes already edit (PR 12: HANDOFF, PROJECT_BRIEF; PR 14: index spec, aspect map in the talk schema, `draw_agreement_sample.py`) and the codebook row ANONYMITY, which follows the aspect map. Those are aligned after PR 12 and PR 14 are merged. `data/frame/projects.csv` (D15) changes only with MB's confirmation of each of the seven statuses.
 

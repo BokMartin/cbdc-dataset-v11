@@ -2,6 +2,8 @@
 
 Status: **proposal** written by the pipeline assistant from MB's answers of 21 Nov 2026, 22:29. It amends the source rule D1 (`docs/SOURCE_RULE_D1.md`) and ADR-005 (frame and evidence), so it needs MB's answers to the open points below and DS's confirmation before any row changes. No decided row has been changed.
 
+**DS confirmed on 22 Nov 2026, relayed by MB in the project chat at 16:08 UTC** ("ano dominik je potvrdil", answering whether DS had also confirmed ADR-008 to ADR-010). What MB decided here (point A: option A1; status LEANING) is therefore in force for both authors, as narrowed by ADR-012 D5 (three classes: confirmed retail evidence; a joint retail report attributable to the project gives LEANING at most, flagged, sensitivity only; wholesale is context and PET only). Points that were still open on 21 Nov stay open unless an ADR records an answer. The file name keeps "DRAFT" so that links do not break.
+
 ## What MB said (21 Nov 2026, answers to the four questions of the Nijsse and Pinto check)
 
 1. BoE and MIT, *Enhancing the privacy of a digital pound* (dropped on a model proposal): not to stay out; "kept in as heavily inclined but unconfirmed".
