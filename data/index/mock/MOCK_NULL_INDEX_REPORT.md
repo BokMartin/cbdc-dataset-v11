@@ -54,6 +54,7 @@ Simulated share of separated pairs at this coverage: 0.0236 (0.0 to 0.055).
 | without_F3_F9_kept | 0.8824 | 0.875 |
 | core4_only_kept | 0.7647 | 0.75 |
 | no_route_D_kept | 1.0 | 1.0 |
+| with_leaning_kept | 1.0 | 1.0 |
 | no_inferred_kept | 1.0 | 1.0 |
 
 ## Known cases

@@ -60,9 +60,10 @@ def main():
     a = ap.parse_args(); D = DESIGN[a.design]; SEED = D["seed"]
     mf = sorted(glob.glob(os.path.join(ROOT, "data/units/UNITS_MANIFEST_*.csv")))[-1]; man = {r["doc_key"]: r for r in csv.DictReader(open(mf, encoding="utf-8"))}
     iss = {r["id"]: r for r in csv.DictReader(open(a.issuers, encoding="utf-8"))}
-    taken = set()  # the main sample never contains a unit of a development sample
+    taken = set()  # the main sample never contains a unit of a development sample or of the blind facet sample (facet80, 22 Nov)
     if a.design == "main":
-        for f in glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_SAMPLE_dev_*.csv")): taken |= {r["unit_id"] for r in csv.DictReader(open(f, encoding="utf-8"))}
+        for pat in ("AGREEMENT_SAMPLE_dev_*.csv", "AGREEMENT_SAMPLE_facet80_*.csv"):
+            for f in glob.glob(os.path.join(ROOT, "data/units", pat)): taken |= {r["unit_id"] for r in csv.DictReader(open(f, encoding="utf-8"))}
     pool = []; text = {}
     for key, m in man.items():
         U = list(csv.DictReader(open(os.path.join(a.units, key + ".units.csv"), encoding="utf-8")))

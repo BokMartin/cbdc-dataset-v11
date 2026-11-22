@@ -14,36 +14,32 @@ beside it, descriptively, and never enters the gap.
 An unresolved disagreement of the blind coders on a mapped cell leaves the commitment of that pair uncertain; every
 project-level quantity is then given as bounds (uncertain counted as committed: smallest gap; as not committed: largest).
 """
+import json
 import math
+import os
 import random
 
-from derive_index import is_leaning, rung
+from derive_index import committed as is_committed, disputed, is_leaning, rung
 
-ASPECT_CELLS = {  # talk aspect (codebook v0.3) -> F-cells that can carry a commitment on it
-    "CB_ACCESS": ("F1",),
-    "INTERMEDIARY_DATA": ("F2",),
-    "AUTHORITY_ACCESS": ("F3", "F9"),
-    "OFFLINE": ("F4",),
-    "ANONYMITY": ("F7",),
-    "IDENTIFICATION": ("F7", "F8"),
-}
-TALK_ONLY_ASPECTS = ("DATA_PROTECTION", "USER_CONTROL", "PETS", "GENERAL")  # no F-cell: talk reported, no gap
-UNMAPPED_CELLS = ("F10",)  # programmable restrictions: no talk aspect; in the design index only
-
-
-def _disputed(cell):
-    return str((cell or {}).get("coder_disagreement", "")).strip().lower() in ("true", "1", "yes")
+# The one aspect map lives in the talk schema (S1 of the 22 Nov check); this module only reads it.
+_MAP = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "schema", "talk_units_v13_DRAFT.json"),
+                      encoding="utf-8"))["aspect_comparison_cells"]
+ASPECT_CELLS = {a: tuple(c) for a, c in _MAP["cells"].items() if c}  # talk aspect -> F-cells that can carry a commitment on it
+TALK_ONLY_ASPECTS = tuple(a for a, c in _MAP["cells"].items() if not c)  # no F-cell: talk reported, no gap
+UNMAPPED_CELLS = tuple(_MAP["cells_without_aspect"])  # programmable restrictions: no talk aspect; in the design index only
 
 
 def pair_state(talk_units, cells, aspect):
     """talk: own-voice relevant units on the aspect (int); cells: the project's F-cells.
-    Returns talk (bool), commitment ('admissible' / 'stated' / 'none' / 'uncertain') and the highest rung."""
+    Returns talk (bool), commitment ('admissible' / 'stated' / 'none' / 'uncertain') and the highest rung.
+    'admissible' only if a mapped cell passes rule C (committed(), the predicate of admissible(); V6): a cell at
+    rung 3 or 4 with partial evidence or a conflict is 'stated', never 'admissible'."""
     mapped = ASPECT_CELLS[aspect]
     rungs = [rung(cells.get(f), f) for f in mapped]
-    if any(_disputed(cells.get(f)) for f in mapped) and max(rungs) < 3:
-        commitment = "uncertain"
-    elif max(rungs) >= 3:
+    if any(is_committed(cells.get(f), f) for f in mapped):
         commitment = "admissible"
+    elif any(disputed(cells.get(f)) for f in mapped):
+        commitment = "uncertain"
     elif max(rungs) >= 1:
         commitment = "stated"
     else:
