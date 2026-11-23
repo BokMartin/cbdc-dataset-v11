@@ -1,0 +1,8 @@
+id,field,old,new,reason,decided
+CA_BoC_ScaleDown_page_2024,issuer,v1_corpus,Bank of Canada,field held the acquisition batch; page is on bankofcanada.ca,MB 2026-11-23 (card)
+CA_BoC_ScaleDown_page_2024,issuer_type,other,central_bank,follows from the issuer,MB 2026-11-23 (card)
+JM_JM_Bank-of-Jamaica-Deputy_Bank-of-Jamaica-s-CBDC-Solution_2021_page,issuer,wave1_2026-10,Bank of Jamaica,field held the acquisition batch; speech by the BOJ Deputy Governor,MB 2026-11-23 (card)
+JM_JM_Bank-of-Jamaica-Deputy_Bank-of-Jamaica-s-CBDC-Solution_2021_page,issuer_type,other,central_bank,follows from the issuer,MB 2026-11-23 (card)
+JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_2022_pag,issuer,wave1_2026-10,Bank of Jamaica,field held the acquisition batch; policy of the BOJ wallet,MB 2026-11-23 (card)
+JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_2022_pag,issuer_type,other,central_bank,follows from the issuer,MB 2026-11-23 (card)
+JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_2021_pag,kind,white_paper,press_release,title says press release,MB 2026-11-23 (card)
