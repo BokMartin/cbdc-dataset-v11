@@ -3,7 +3,7 @@
 
 Three providers, one prompt, identical user messages (calibration protocol, models of MB of 17 Nov 2026):
   anthropic  claude-opus-5-5   Message Batches (50 % off) or Messages; the system prompt is a cached block
-  openai     gpt-6-astra       Batch API on /v1/responses (50 % off) or Responses; prompt_cache_key per run
+  openai     gpt-6.2-sol       Batch API on /v1/responses (50 % off) or Responses; prompt_cache_key per run
   deepseek   deepseek-v4-pro   Chat Completions, parallel calls; the provider caches repeated prefixes on its own (no batch API)
 
 Money (MB, 23 Nov 2026: "optimalizuj performance a dollar cost ... není zaplý autoreload"):
