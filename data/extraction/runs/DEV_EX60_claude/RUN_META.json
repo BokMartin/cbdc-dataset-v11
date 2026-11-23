@@ -1,0 +1,63 @@
+{
+ "spec": "run-record v1",
+ "stage": "extraction_single",
+ "purpose": "development",
+ "provider": "anthropic",
+ "interface": "anthropic.message_batches",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": [
+  "claude-opus-5-5"
+ ],
+ "parameters": {
+  "max_tokens": 64000,
+  "output_config.effort": "provider default (not sent)",
+  "thinking": "provider default (not sent; adaptive on this model)",
+  "system": "one text block with cache_control 1h",
+  "temperature": "provider default (not sent; not settable on this model)",
+  "tools": "none",
+  "stream": "not applicable (batch)"
+ },
+ "system_prompt_file": "pipeline/prompts/extraction_v12.2.system.md",
+ "system_prompt_version": "12.2",
+ "system_sha256": "7a97c8dd9059d7a8039c27fb06be2cae4697d04d2f4688671f0a1b4df5879263",
+ "user_message_format": "scripts/pipeline/build_jobs.py extraction_requests() with scripts/extraction/v122.py render_request() with header of scripts/pipeline/build_jobs.py (script_sha256 76a223f8b02f398c…, build_requests e26e10b2569429de…)",
+ "packing": "one document per request, disjoint owned page ranges of at most 60000 characters, one context page on either side",
+ "inputs": [
+  {
+   "file": "data/units/UNITS_MANIFEST_2026-11-23.csv",
+   "sha256": "6d9b8124d892b86e50a5a48be3bef1fba116b45fe9a8966daefa22262faa33ee",
+   "rows": 1
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.units.csv",
+   "sha256": "d769bb08cadfe07ea4819325049741df1e5cfb9eaaf797e668b1f809a1d0f944",
+   "rows": 942,
+   "in_repository": false
+  }
+ ],
+ "git_commit": "b44f13da672b3b15877dd3e483e8edb46bd7f2c4",
+ "started_utc": "2026-11-23T18:46:41Z",
+ "finished_utc": "2026-11-23T18:46:42Z",
+ "calls": 3,
+ "complete": 1,
+ "failed": 2,
+ "retried": 0,
+ "batches": {
+  "msgbatch_01WX8KGfhGfyvNNuwyTRJb5u": {
+   "requests": 3,
+   "submitted_utc": "2026-11-23T18:46:42Z"
+  }
+ },
+ "usage": {
+  "input_tokens": 69040,
+  "cached_input_tokens": 15692,
+  "cache_write_tokens": 7846,
+  "output_tokens": 104940,
+  "reasoning_tokens": 0
+ },
+ "usage_note": "input_tokens include cached and cache-write tokens on every provider; Anthropic does not report reasoning tokens apart from output",
+ "sdk": "anthropic 2.12.0",
+ "python": "3.13.18",
+ "operator": "MB (key from the environment, not stored)",
+ "deviations": "cost at list prices from measured usage: 1.17 USD (cap 1.2 USD)"
+}
