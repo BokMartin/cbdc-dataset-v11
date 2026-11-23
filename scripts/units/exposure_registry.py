@@ -59,7 +59,13 @@ def build(units_dir, entries, root=ROOT):
     for f in sorted(glob.glob(os.path.join(root, "data/units/PAGE_BREAK_JOINS_*.csv"))):
         for r in rd(f): joins[r["absorbed"]] = r["kept"]
     where, B, missing = {}, {}, []
-    for uid, s, who, model, date in entries:
+    expanded = []
+    for e in entries:   # an extraction run names a whole document (doc_key, no ":p"): every unit of it was sent to the model
+        if ":p" in e[0]: expanded.append(e); continue
+        p = os.path.join(units_dir, e[0] + ".units.csv")
+        if not os.path.exists(p): missing.append(e[0]); continue
+        expanded += [(u["unit_id"],) + tuple(e[1:]) for u in rd(p)]
+    for uid, s, who, model, date in expanded:
         uid = joins.get(uid, uid); d = doc_of(uid)
         if d not in where:
             p = os.path.join(units_dir, d + ".units.csv")
