@@ -60,7 +60,7 @@ State of the data files as of **2026-11-23** (dates are those of the files, not 
 | Tiers by number of evidence publications | T1 (8+): 8 · EU, IL, JM, JP, KZ, SE, TW, UK<br>T2 (5 to 7): 8 · AU, BS, CA, HK, IN, NO, NZ, RU<br>T3 (4 or fewer): 28 |
 | English text for measurement | 208 documents of 42 projects (197 evidence publications and 11 INCLINED documents, ADR-010): 163 English originals, 15 issuer English editions, 30 machine translations; 21 evidence documents still without English text |
 | Machine translation | 3 API runs, 199 calls, 43 documents translated (benchmark translations excluded) |
-| Sentence units | 171 099 units; 19 476 candidates for classification (dictionary hits 7 839, neighbours 5 987, random control 5 650) |
+| Sentence units | 171 141 units; 19 477 candidates for classification (dictionary hits 7 839, neighbours 5 987, random control 5 651) |
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
 | Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
 | Model classification of units | **not started** (no unit has been labelled by a model) |
