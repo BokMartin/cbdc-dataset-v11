@@ -53,7 +53,7 @@ What each audit covered step by step is the column "audited by a second model" o
 | F03 inputs not frozen | blocker | partly closed | duplicate removed and tested (`tests/test_corpus_identity.py`); identifiers not yet bound to a unitisation version; development sample not yet reconciled by the authors |
 | F04 translation ingest fails open | blocker | partly closed | ingest requires metadata, hashes and an expected inventory; unitisation still reads translations found on disk |
 | F05 run-record check passes a fictitious run | blocker | closed | `tests/test_run_record.py` |
-| F06 reference separation not implemented | blocker | **open** | exposure registry and block-level exclusion not built |
+| F06 reference separation not implemented | blocker | **open (partly built)** | exposure registry by paragraph built 23 Nov (`scripts/units/exposure_registry.py`, `data/units/EXPOSURE_REGISTRY_2026-11-23.csv`: 196 blocks shown, 41 also model-labelled; development runs are added from their run records); the reference draw is not written yet, and the estimand (exclude shown blocks only, or also blocks labelled in development runs) awaits the authors |
 | F07 factor rule is not a non-inferiority test | blocker for the savings | closed by decision | page packing dropped (MB, 17 Nov); the reasoning test, if run, uses the auditor's paired rule |
 | F08 language coverage and translation restrictions conflict | blocker for unrestricted claims | **open, authors** | T3 translation inconsistency (ADR-007 §4.4); benchmark not adjudicated; scorer does not yet show "not judgeable" as an outcome |
 | F09 publisher metadata and institutional voice conflated | major | partly closed | one header source, tested; the content awaits the authors' review |
