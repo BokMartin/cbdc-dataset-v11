@@ -100,7 +100,7 @@ class FakeOpenAI:
             def create(self, input_file_id, endpoint, completion_window):
                 out, err = [], []
                 for line in fake.files_store[input_file_id].splitlines():
-                    o = json.loads(line); k = key_of(o["body"]["input"])
+                    o = json.loads(line); k = key_of(o["body"]["input"][-1]["content"]); assert o["body"]["input"][0]["role"] == "developer" and "instructions" not in o["body"]
                     if k in fake.quota_keys: err.append(json.dumps({"custom_id": o["custom_id"], "response": {"status_code": 429, "body": {"error": {"code": "insufficient_quota", "message": "quota"}}}}))
                     else:
                         body = {"id": "resp_" + k, "model": "gpt-6-astra-2026", "status": "completed", "output": [{"type": "message", "content": [{"type": "output_text", "text": f"{k}\tU\nEND"}]}],

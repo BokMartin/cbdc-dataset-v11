@@ -161,7 +161,10 @@ class OpenAIBackend:
         self.c = client
 
     def params(self, system, user):
-        p = {"model": self.model, "instructions": system, "input": user, "max_output_tokens": self.max_tokens, "store": False}
+        # the system prompt goes as a developer message, not as `instructions`: gpt-6.2 models do not cache `instructions`
+        # (measured 23 Nov 2026: 0 cached tokens with `instructions`, 1,144 of 1,379 with a developer message; gpt-6-astra caches both)
+        p = {"model": self.model, "input": [{"role": "developer", "content": system}, {"role": "user", "content": user}],
+             "max_output_tokens": self.max_tokens, "store": False}
         if self.cache_key: p["prompt_cache_key"] = self.cache_key
         if self.effort: p["reasoning"] = {"effort": self.effort}
         return p
@@ -169,7 +172,7 @@ class OpenAIBackend:
     def sent_parameters(self):
         return {"max_output_tokens": self.max_tokens, "reasoning.effort": self.effort or "provider default (not sent)", "store": False,
                 "prompt_cache_key": self.cache_key or "not sent", "temperature": "provider default (not sent)", "tools": "none",
-                "endpoint": "/v1/responses" + (" through /v1/batches, completion_window 24h" if self.batch else "")}
+                "system_prompt": "developer message (input[0])", "endpoint": "/v1/responses" + (" through /v1/batches, completion_window 24h" if self.batch else "")}
 
     def call(self, system, user):
         return result_from_responses_body(self.c.responses.create(**self.params(system, user)).model_dump())

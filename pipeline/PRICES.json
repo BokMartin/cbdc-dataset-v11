@@ -14,6 +14,20 @@
   "source": "https://developers.openai.com/api/docs/models/gpt-6-astra (read 23 Nov 2026)",
   "verified": true
  },
+ "gpt-6.2-astra": {
+  "provider": "openai",
+  "input": 8.0, "cached_input": 0.40, "output": 40.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/pricing (read 23 Nov 2026, standard short context; Batch is half)",
+  "verified": true
+ },
+ "gpt-6.2-sol": {
+  "provider": "openai",
+  "input": 2.0, "cached_input": 0.10, "output": 10.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/pricing (read 23 Nov 2026, standard short context; Batch is half)",
+  "verified": true
+ },
  "deepseek-v4-pro": {
   "provider": "deepseek",
   "input": 1.32, "cached_input": 0.044, "output": 3.96,
