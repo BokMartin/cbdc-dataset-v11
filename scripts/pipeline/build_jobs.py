@@ -15,7 +15,7 @@ The extraction header lists the fields of prompt v12.2 §1; decision_authority i
 (prompt §1 allows that), and every such gap is listed in JOB_META.json `warnings`.
 
 usage: build_jobs.py --stage talk_L1 --units <units dir> --projects NO UK --prompt pipeline/prompts/talk_L1_relevance.system.md
-                     --out <job dir> [--packing single|page] [--units-file ids.txt] [--max-chars 240000] [--date 2026-11-23]
+                     --out <job dir> [--packing single|page] [--units-file ids.txt] [--max-chars 60000] [--date 2026-11-23]
 """
 import argparse, csv, glob, hashlib, json, os, re, sys
 
@@ -105,7 +105,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", required=True, choices=["talk_L1", "talk_L2", "extraction_single"]); ap.add_argument("--units", required=True)
     ap.add_argument("--projects", nargs="+", required=True); ap.add_argument("--prompt", required=True); ap.add_argument("--out", required=True)
-    ap.add_argument("--packing", choices=["single", "page"], default="single"); ap.add_argument("--units-file"); ap.add_argument("--max-chars", type=int, default=240000)
+    ap.add_argument("--packing", choices=["single", "page"], default="single"); ap.add_argument("--units-file"); ap.add_argument("--max-chars", type=int, default=60000)   # 60,000 since the development round (MB 23 Nov 2026)
     ap.add_argument("--header-extra", help="CSV doc_key,decision_authority,layer,page_span for the extraction header")
     ap.add_argument("--sample", type=int, help="pilot: keep a random sample of this many requests (seeded, recorded in JOB_META)")
     ap.add_argument("--seed", type=int, default=20261123); ap.add_argument("--docs", nargs="*", help="only these doc_keys")
