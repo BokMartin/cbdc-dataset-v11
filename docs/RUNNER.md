@@ -76,3 +76,13 @@ USD at list prices. gpt-6-astra is the largest share in every row. The unknown t
 - Not in the reducer yet: links across documents by references (P3), supersession across differently named designs, the
   three-model combination with the human adjudication in the core (only the unanimity rule outside it), the PET taxonomy join.
 - Header of the talk requests and packing are DRAFT and are fixed at the freeze together with the prompts.
+
+## Keeping the responses (23 Nov 2026)
+
+Extraction and translation responses hold source text, so only their hashes go into the repository (RUN_RECORD_SPEC
+"Responses"). The work folder of a cloud session is lost when the session ends. After every run, and during a long run after
+every collected batch, zip the run folder (`<work>/<run>/` with ATTEMPTS.jsonl and STATE.json) together with its job folder to
+`/mnt/project-files/<stage>-runs/` and record the zip's SHA-256 in the run's PR. Before zipping, check every
+`response_sha256` against its text. The zips of the blind core are stored, not opened, until the blind cells are locked.
+The pilot of 23 Nov: `/mnt/project-files/pilot/runs-2026-11-23/PILOT_RUNS_2026-11-23.zip`
+(`befa6b34cd3f93aebba1c7ab8658bfe0cad9d56b34528540277cb1b4770deb6a`), all 520 response hashes match.
