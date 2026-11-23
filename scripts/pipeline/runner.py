@@ -344,7 +344,7 @@ def out_estimate(run, a):
 def run_sync(run, be, a, system, reqs, parse):
     ssha = sha(system); stop = threading.Event()
     def one(r):
-        if stop.is_set(): return
+        if stop.is_set() or run.spent() >= a.max_usd: return   # measured cost reached the cap inside the chunk: send no more
         t = now()
         try: res, err = be.call(system, r["user"]), None
         except Exception as e:
@@ -355,7 +355,10 @@ def run_sync(run, be, a, system, reqs, parse):
     while not stop.is_set():
         todo = run.todo(reqs, a.max_attempts, a.retry_unparsed)
         if not todo: break
-        take = budget_cut(run, a, system, todo[: a.chunk], out_estimate(run, a), 0)
+        # small chunks, so that the output estimate is re-measured often (dev round 23 Nov 2026: one chunk of 1,044 with the
+        # first estimate overshot the cap by 41 %)
+        take = budget_cut(run, a, system, todo[: min(a.chunk, 4 * a.concurrency)], out_estimate(run, a), 0)
+        if run.spent() >= a.max_usd: take = []
         if not take: run.event(f"cost cap reached: {run.spent():.2f} USD measured of {a.max_usd} allowed; {len(todo)} requests not sent"); return EXIT_CAP
         with ThreadPoolExecutor(max_workers=a.concurrency) as ex: list(ex.map(one, take))
         fatal = [x for x in run.attempts[-len(take):] if x["error_kind"] == "fatal"]
