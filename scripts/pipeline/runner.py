@@ -68,16 +68,15 @@ def classify(exc):
 
 # ---------------------------------------------------------------------------------------------------------------- parsers
 def parser_for(stage):
+    """parse(text, req) -> note ('' or a remark kept in parse_error) or raises ParseError. req is the job request."""
     import parse_output as po
-    if stage == "talk_L1": return po.parse_l1
-    if stage == "talk_L2": return po.parse_l2
-    def extraction(text, ids):   # extraction prompt v12 (DRAFT): one JSON object that ends with coverage.complete = true
-        try: o = json.loads(text)
-        except Exception: raise po.ParseError("response is not one JSON object")
-        if not isinstance(o, dict) or not isinstance(o.get("claims"), list) or not isinstance(o.get("coverage"), dict): raise po.ParseError("claims or coverage missing")
-        if o.get("doc_key") not in ids: raise po.ParseError("doc_key differs from the request")
-        if o["coverage"].get("complete") is not True: raise po.ParseError("coverage.complete is not true (the model did not finish)")
-        return o
+    if stage == "talk_L1": return lambda text, req: (po.parse_l1(text, req["unit_ids"]), "")[1]
+    if stage == "talk_L2": return lambda text, req: (po.parse_l2(text, req["unit_ids"]), "")[1]
+    sys.path.insert(0, os.path.join(ROOT, "scripts", "extraction")); import v122
+    def extraction(text, req):   # prompt v12.2 (ADR-013): envelope and coverage checked against the request that was sent
+        r = v122.check(text, req["user"])
+        if r["state"] == "failed": raise po.ParseError("; ".join(r["problems"])[:300])
+        return f"{len(r['rejected'])} observations rejected by field or quote checks" if r["rejected"] else ""
     return extraction
 
 
@@ -316,7 +315,7 @@ def row_for(req, system_sha, res, err, parse, model, batch, ttl, started):
     row["text"] = res["text"]; row["response_sha256"] = sha(res["text"])
     row["cost_usd"] = round(cost(model, batch, res["input_tokens"], res["cached_input_tokens"], res["cache_write_tokens"] or 0, res["output_tokens"], ttl), 6)
     try:
-        parse(res["text"], req["unit_ids"]); row["parsed_ok"] = True
+        note = parse(res["text"], req); row["parsed_ok"] = True; row["parse_error"] = note
     except Exception as e:
         row.update(error_kind="unparsed", parse_error=str(e)[:300])
     if row["parsed_ok"] and not res["ok_stop"]: row.update(error_kind="stop", parse_error=f"stop reason {res['stop_reason']}")
@@ -412,8 +411,19 @@ def git_commit(allow_dirty):
     return head, bool(dirty)
 
 
+# expected output tokens per request (for the estimate) and the output limit sent, per stage, when not given: a v12.2
+# response carries every observation with its 30 fields and segments, and reasoning counts toward the limit
+STAGE_DEFAULTS = {"talk_L1": (400, 8000), "talk_L2": (800, 8000), "extraction_single": (16000, 64000)}
+
+
+def stage_defaults(a, jm):
+    eo, mt = STAGE_DEFAULTS.get(jm["stage"], (400, 8000))
+    if a.expect_output is None: a.expect_output = eo
+    if a.max_tokens is None: a.max_tokens = mt
+
+
 def cmd_run(a, client=None):
-    reqs, jm, system = load_job(a.job)
+    reqs, jm, system = load_job(a.job); stage_defaults(a, jm)
     if a.max_usd is None: raise SystemExit("--max-usd is required: no paid run without a cap")
     price(a.model)
     a.cache_key = f"{jm['stage']}-{sha(system)[:16]}"
@@ -436,7 +446,7 @@ def cmd_run(a, client=None):
 
 
 def cmd_plan(a):
-    reqs, jm, system = load_job(a.job)
+    reqs, jm, system = load_job(a.job); stage_defaults(a, jm)
     tin, tout, c = estimate(a.model, a.batch, system, reqs, a.expect_output)
     p = price(a.model)
     cached = sum(len(r["user"]) for r in reqs) / CHARS_PER_TOKEN + len(reqs) * (len(system) / CHARS_PER_TOKEN) * 0.05 + len(system) / CHARS_PER_TOKEN
@@ -482,8 +492,8 @@ def main(argv=None, client=None):
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     for n in ("plan", "run"):
         p = sub.add_parser(n); p.add_argument("--job", required=True); p.add_argument("--provider", required=True, choices=["anthropic", "openai", "deepseek"])
-        p.add_argument("--model", required=True); p.add_argument("--batch", action="store_true"); p.add_argument("--expect-output", type=int, default=400)
-        p.add_argument("--max-tokens", type=int, default=8000); p.add_argument("--effort"); p.add_argument("--thinking", choices=["enabled", "disabled"])
+        p.add_argument("--model", required=True); p.add_argument("--batch", action="store_true"); p.add_argument("--expect-output", type=int)
+        p.add_argument("--max-tokens", type=int); p.add_argument("--effort"); p.add_argument("--thinking", choices=["enabled", "disabled"])
     r = sub.choices["run"]
     r.add_argument("--work", required=True); r.add_argument("--run"); r.add_argument("--purpose", required=True, choices=sorted(rs.PURPOSES)); r.add_argument("--max-usd", type=float)
     r.add_argument("--wait", action="store_true"); r.add_argument("--poll", type=int, default=60); r.add_argument("--chunk", type=int, default=2000)

@@ -1,8 +1,33 @@
-# Runner for the three models (draft, 23 Nov 2026; no paid call made yet)
+# Runner for the three models (no paid call made yet)
 
 `scripts/pipeline/build_jobs.py` builds the requests of one stage (talk L1, talk L2, extraction) for a set of projects, outside
 the repository; `scripts/pipeline/runner.py` sends them to one provider and writes a run record v1 (`docs/RUN_RECORD_SPEC.md`).
-Offline tests with fake provider clients: `tests/test_runner.py`.
+Offline tests with fake provider clients: `tests/test_runner.py`; prompt v12.2 request, check and reducer:
+`tests/test_extraction_v122.py`.
+
+## Extraction with prompt v12.2 (ADR-013)
+
+- **Request** (`build_jobs.py --stage extraction_single`, `scripts/extraction/v122.py render_request`): HEADER with the fields
+  of prompt §1, then `=== PAGE p ===` and one labelled block per paragraph, `[p<page>.b<para>] text`, then
+  `=== END OF REQUEST TEXT ===`. A document longer than `--max-chars` is split into disjoint owned page ranges; each request
+  also carries one read-only context page on either side. Every page 1..pages_total is sent, a page without text as its marker
+  only. request_id = `<doc_key>:p<first>-<last>`. `decision_authority` is `unknown` and `layer` is `official` (stratum
+  evidence) until `--header-extra` gives them; each such gap is a warning in JOB_META.json.
+- **Check** (`v122.check`, called by the runner on every response): a bad envelope, another request_id, coverage not
+  complete, end not seen, pages seen not equal to pages sent, an unreadable page or an unresolved boundary fail the whole
+  request (a failed attempt, never data). An observation with a field outside prompt §4, a quote not verbatim in its named
+  block (white space collapsed, nothing else), first decisive words on a context page, or `endorsed` without a named body and
+  located support is rejected alone, with the reason; the rest are kept (`ok_with_validation_problems`).
+- **Reducer** (`scripts/extraction/reduce_v122.py`): observations of one model -> the eight cells in the shape that
+  `derive.py` and `derive_index.py` read, plus the statutory F3 column (companion legal documents, ADR-013 P2), the PET profile,
+  wholesale PET context, descriptive records (F11, F12, status, legal) and the ledger of every decision. Layer rules, status
+  precedence, newest document, conflict, F3 via_both and none_stated only from a closed search, the F2 premise join, route D with
+  `translation_uncertain` -> partial (P4), policy pledges set no value: see the module docstring. Search closure is true only
+  when every owned page of every planned request of every document of the project came from a request that passed the check
+  (audit A4c fixture 3). `--drop-route-d` gives the view without route-D documents (fixture 2).
+  `python scripts/extraction/reduce_v122.py --job <job> --run-dir <work>/<run> --out <file outside the repository>`.
+- Output limits per stage when not given: talk L1 400 expected / 8,000 max tokens, talk L2 800 / 8,000, extraction
+  16,000 / 64,000 (reasoning counts toward the limit).
 
 ## Cost (MB, 23 Nov 2026: batch calls, credit auto-reload off)
 
@@ -47,5 +72,7 @@ USD at list prices. gpt-6-astra is the largest share in every row. The unknown t
 
 - api.openai.com and api.deepseek.com are blocked by the cloud network of this project; Anthropic is reachable. Either the
   hosts are allowed in the environment's network settings, or the runs for those two providers are made on MB's computer.
-- Extraction header: `decision_authority` and `layer` are not yet in the repository and are written `not_recorded`.
+- Extraction header: `decision_authority` and `layer` per document are not yet in the repository (`unknown` / `official`).
+- Not in the reducer yet: links across documents by references (P3), supersession across differently named designs, the
+  three-model combination with the human adjudication in the core (only the unanimity rule outside it), the PET taxonomy join.
 - Header of the talk requests and packing are DRAFT and are fixed at the freeze together with the prompts.
