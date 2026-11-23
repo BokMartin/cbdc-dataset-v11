@@ -72,6 +72,8 @@ def extraction_requests(units, m, max_chars, extra):
     pages = page_texts(units); blocks = {}
     for u in units: blocks.setdefault(u["page"], {}).setdefault(u["para"], []).append(u["text"])
     total = max(int(m.get("pages") or 0), max(pages)); ps = list(range(1, total + 1)); out = []
+    if extra.get("page_span") == "cbdc_span":   # general publication: only its CBDC pages ±1 (scripts/extraction/cbdc_span.py, ADR-013 P3)
+        ps = sorted(int(p) for p in extra["span_pages"].split())
     pages = {p: pages.get(p, "") for p in ps}   # a page without text is still sent (its marker, no blocks): an omitted page is a gap
     for a, b in owned_ranges(pages, max_chars):
         owned = [p for p in ps if a <= p <= b]; i, j = ps.index(owned[0]), ps.index(owned[-1])
@@ -108,9 +110,12 @@ def main(argv=None):
     ap.add_argument("--packing", choices=["single", "page"], default="single"); ap.add_argument("--units-file"); ap.add_argument("--max-chars", type=int, default=60000)   # 60,000 since the development round (MB 23 Nov 2026)
     ap.add_argument("--header-extra", help="CSV doc_key,decision_authority,layer,page_span for the extraction header")
     ap.add_argument("--sample", type=int, help="pilot: keep a random sample of this many requests (seeded, recorded in JOB_META)")
+    ap.add_argument("--exclude", help="CSV doc_key,stage,reason: documents left out of a stage (e.g. data/manifest/EXCLUDED_FROM_STAGES_2026-11-23.csv)")
     ap.add_argument("--seed", type=int, default=20261123); ap.add_argument("--docs", nargs="*", help="only these doc_keys")
     a = ap.parse_args(argv)
     manp = latest("data/units/UNITS_MANIFEST_*.csv"); man = [m for m in rd(manp) if m["project"] in a.projects and (not a.docs or m["doc_key"] in a.docs)]
+    excl = {r["doc_key"]: r["reason"] for r in rd(a.exclude) if r["stage"] == a.stage} if a.exclude else {}
+    man = [m for m in man if m["doc_key"] not in excl]
     if not man: raise SystemExit("no document of these projects in the unit manifest")
     system = open(a.prompt, "rb").read().decode("utf-8")
     extra = {r["doc_key"]: r for r in rd(a.header_extra)} if a.header_extra else {}
@@ -147,7 +152,7 @@ def main(argv=None):
             "user_message_format": f"{fn} with header of scripts/pipeline/build_jobs.py (script_sha256 {sha_file(os.path.abspath(__file__))[:16]}…, build_requests {sha_file(br.__file__)[:16]}…)",
             "packing": {"single": "one unit per request", "page": "all units to code of one page per request"}[a.packing] if a.stage != "extraction_single" else f"one document per request, disjoint owned page ranges of at most {a.max_chars} characters, one context page on either side",
             "inputs": inputs, "requests": len(reqs), "units_to_code": sum(len(r["unit_ids"]) for r in reqs), "user_chars": sum(len(r["user"]) for r in reqs),
-            "request_keys": [r["request_key"] for r in reqs], "warnings": warnings,
+            "request_keys": [r["request_key"] for r in reqs], "warnings": warnings, "excluded": excl,
             "sample": {"n": a.sample, "seed": a.seed, "docs": a.docs} if (a.sample or a.docs) else None}
     json.dump(meta, open(os.path.join(a.out, "JOB_META.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"{a.stage}: {len(reqs)} requests, {meta['units_to_code']} units, {meta['user_chars']:,} characters of user text -> {a.out}" + (f"; {len(warnings)} warnings" if warnings else ""))

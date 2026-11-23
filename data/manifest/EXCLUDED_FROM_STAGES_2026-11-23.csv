@@ -1,0 +1,2 @@
+doc_key,stage,reason
+PE_CAND-250,extraction_single,"machine translation made from layout text with column gaps on 45 % of long lines; not re-translated, flagged and left out of extraction (non-core, MB 22 Nov 2026; docs/LANGUAGE_LEDGER.md)"

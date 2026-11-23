@@ -34,7 +34,7 @@ Offline tests with fake provider clients: `tests/test_runner.py`; prompt v12.2 r
 | provider | model | interface used | saving |
 |---|---|---|---|
 | Anthropic | claude-opus-5-5 | Message Batches | 50 % on every token; system prompt cached (1 h), cache reads at 0.05 × input |
-| OpenAI | gpt-6-astra | Batch API on /v1/responses | 50 %; `prompt_cache_key` per prompt, cached input at 0.1 × |
+| OpenAI | gpt-6.2-sol (ADR-014) | Batch API on /v1/responses | 50 %; system prompt as a developer message, `prompt_cache_key` per prompt, cached input at 0.05 × |
 | DeepSeek | deepseek-v4-pro | Chat Completions, 8 parallel calls | no batch interface; the provider caches repeated prefixes itself |
 
 - `runner.py plan` prints tokens and a cost estimate and makes no call. `run` refuses to start without `--max-usd`; before every
