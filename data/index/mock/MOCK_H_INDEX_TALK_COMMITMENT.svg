@@ -25,86 +25,86 @@
 <circle cx="372.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK02: talk 4, committed 0 (+0 uncertain)</title></circle>
 <line x1="445.3" x2="445.3" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="445.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK03: talk 5, committed 0 (+0 uncertain)</title></circle>
-<line x1="445.3" x2="445.3" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="445.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK04: talk 5, committed 1 (+1 uncertain)</title></circle>
-<line x1="445.3" x2="445.3" y1="275.0" y2="200.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="445.3" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK05: talk 5, committed 3 (+1 uncertain)</title></circle>
-<line x1="449.3" x2="449.3" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="449.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK06: talk 5, committed 0 (+0 uncertain)</title></circle>
+<line x1="449.3" x2="449.3" y1="500.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="449.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK04: talk 5, committed 0 (+2 uncertain)</title></circle>
+<line x1="445.3" x2="445.3" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="445.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK05: talk 5, committed 1 (+0 uncertain)</title></circle>
+<line x1="453.3" x2="453.3" y1="500.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="453.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK06: talk 5, committed 0 (+1 uncertain)</title></circle>
 <line x1="522.0" x2="522.0" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="522.0" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK07: talk 6, committed 2 (+0 uncertain)</title></circle>
 <line x1="522.0" x2="522.0" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="522.0" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK08: talk 6, committed 1 (+0 uncertain)</title></circle>
 <line x1="522.0" x2="522.0" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="522.0" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK09: talk 6, committed 0 (+0 uncertain)</title></circle>
-<line x1="215.3" x2="215.3" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="215.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK10: talk 2, committed 1 (+1 uncertain)</title></circle>
-<line x1="292.0" x2="292.0" y1="200.0" y2="200.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="292.0" cy="200.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK11: talk 3, committed 4 (+0 uncertain)</title></circle>
-<line x1="376.7" x2="376.7" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="376.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK12: talk 4, committed 0 (+0 uncertain)</title></circle>
-<line x1="453.3" x2="453.3" y1="500.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="453.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK13: talk 5, committed 0 (+2 uncertain)</title></circle>
-<line x1="526.0" x2="526.0" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="526.0" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK14: talk 6, committed 1 (+0 uncertain)</title></circle>
-<line x1="457.3" x2="457.3" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="457.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK15: talk 5, committed 0 (+0 uncertain)</title></circle>
-<line x1="461.3" x2="461.3" y1="500.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="461.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK16: talk 5, committed 0 (+1 uncertain)</title></circle>
+<line x1="215.3" x2="215.3" y1="500.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="215.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK10: talk 2, committed 0 (+1 uncertain)</title></circle>
+<line x1="292.0" x2="292.0" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="292.0" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK11: talk 3, committed 2 (+0 uncertain)</title></circle>
+<line x1="368.7" x2="368.7" y1="275.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="368.7" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK12: talk 4, committed 3 (+0 uncertain)</title></circle>
 <line x1="449.3" x2="449.3" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="449.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK17: talk 5, committed 1 (+0 uncertain)</title></circle>
+<circle cx="449.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK13: talk 5, committed 1 (+0 uncertain)</title></circle>
+<line x1="526.0" x2="526.0" y1="500.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="526.0" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK14: talk 6, committed 0 (+1 uncertain)</title></circle>
+<line x1="445.3" x2="445.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="445.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK15: talk 5, committed 2 (+0 uncertain)</title></circle>
+<line x1="457.3" x2="457.3" y1="500.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="457.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK16: talk 5, committed 0 (+1 uncertain)</title></circle>
 <line x1="453.3" x2="453.3" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="453.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK18: talk 5, committed 1 (+0 uncertain)</title></circle>
-<line x1="457.3" x2="457.3" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="457.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK19: talk 5, committed 1 (+0 uncertain)</title></circle>
+<circle cx="453.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK17: talk 5, committed 1 (+0 uncertain)</title></circle>
+<line x1="457.3" x2="457.3" y1="425.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="457.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK18: talk 5, committed 1 (+2 uncertain)</title></circle>
+<line x1="445.3" x2="445.3" y1="275.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="445.3" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK19: talk 5, committed 3 (+0 uncertain)</title></circle>
 <line x1="368.7" x2="368.7" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="368.7" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK20: talk 4, committed 1 (+1 uncertain)</title></circle>
-<line x1="445.3" x2="445.3" y1="496.0" y2="346.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="445.3" cy="496.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK21: talk 5, committed 0 (+2 uncertain)</title></circle>
-<line x1="530.0" x2="530.0" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="530.0" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK22: talk 6, committed 1 (+1 uncertain)</title></circle>
-<line x1="368.7" x2="368.7" y1="200.0" y2="200.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="368.7" cy="200.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK23: talk 4, committed 4 (+0 uncertain)</title></circle>
-<line x1="292.0" x2="292.0" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="292.0" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK24: talk 3, committed 1 (+1 uncertain)</title></circle>
-<line x1="449.3" x2="449.3" y1="275.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="449.3" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK25: talk 5, committed 3 (+0 uncertain)</title></circle>
-<line x1="380.7" x2="380.7" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="380.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK26: talk 4, committed 0 (+0 uncertain)</title></circle>
-<line x1="384.7" x2="384.7" y1="500.0" y2="200.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="384.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK27: talk 4, committed 0 (+4 uncertain)</title></circle>
+<line x1="449.3" x2="449.3" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="449.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK21: talk 5, committed 2 (+1 uncertain)</title></circle>
+<line x1="530.0" x2="530.0" y1="500.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="530.0" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK22: talk 6, committed 0 (+3 uncertain)</title></circle>
+<line x1="372.7" x2="372.7" y1="275.0" y2="200.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="372.7" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK23: talk 4, committed 3 (+1 uncertain)</title></circle>
+<line x1="292.0" x2="292.0" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="292.0" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK24: talk 3, committed 0 (+0 uncertain)</title></circle>
+<line x1="453.3" x2="453.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="453.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK25: talk 5, committed 2 (+0 uncertain)</title></circle>
 <line x1="372.7" x2="372.7" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="372.7" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK28: talk 4, committed 1 (+0 uncertain)</title></circle>
+<circle cx="372.7" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK26: talk 4, committed 1 (+0 uncertain)</title></circle>
+<line x1="376.7" x2="376.7" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="376.7" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK27: talk 4, committed 1 (+1 uncertain)</title></circle>
+<line x1="376.7" x2="376.7" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="376.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK28: talk 4, committed 0 (+0 uncertain)</title></circle>
 <line x1="461.3" x2="461.3" y1="425.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
 <circle cx="461.3" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK29: talk 5, committed 1 (+1 uncertain)</title></circle>
-<line x1="368.7" x2="368.7" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="368.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK30: talk 4, committed 2 (+1 uncertain)</title></circle>
-<line x1="449.3" x2="449.3" y1="496.0" y2="496.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="449.3" cy="496.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK31: talk 5, committed 0 (+0 uncertain)</title></circle>
-<line x1="522.0" x2="522.0" y1="275.0" y2="125.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="522.0" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK32: talk 6, committed 3 (+2 uncertain)</title></circle>
-<line x1="445.3" x2="445.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="445.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK33: talk 5, committed 2 (+0 uncertain)</title></circle>
-<line x1="372.7" x2="372.7" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="372.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK34: talk 4, committed 2 (+1 uncertain)</title></circle>
-<line x1="534.0" x2="534.0" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="534.0" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK35: talk 6, committed 1 (+0 uncertain)</title></circle>
-<line x1="449.3" x2="449.3" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="449.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK36: talk 5, committed 2 (+1 uncertain)</title></circle>
-<line x1="376.7" x2="376.7" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="376.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK37: talk 4, committed 2 (+0 uncertain)</title></circle>
-<line x1="453.3" x2="453.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="453.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK38: talk 5, committed 2 (+0 uncertain)</title></circle>
+<line x1="380.7" x2="380.7" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="380.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK30: talk 4, committed 0 (+0 uncertain)</title></circle>
 <line x1="445.3" x2="445.3" y1="421.0" y2="421.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="445.3" cy="421.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK39: talk 5, committed 1 (+0 uncertain)</title></circle>
-<line x1="453.3" x2="453.3" y1="275.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="453.3" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK40: talk 5, committed 3 (+0 uncertain)</title></circle>
-<line x1="380.7" x2="380.7" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="380.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK41: talk 4, committed 2 (+0 uncertain)</title></circle>
-<line x1="384.7" x2="384.7" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="384.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK42: talk 4, committed 2 (+0 uncertain)</title></circle>
-<line x1="453.3" x2="453.3" y1="496.0" y2="421.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="453.3" cy="496.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK43: talk 5, committed 0 (+1 uncertain)</title></circle>
-<line x1="368.7" x2="368.7" y1="496.0" y2="496.0" stroke="#c0392b" stroke-width="2"/>
-<circle cx="368.7" cy="496.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK44: talk 4, committed 0 (+0 uncertain)</title></circle>
+<circle cx="445.3" cy="421.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK31: talk 5, committed 1 (+0 uncertain)</title></circle>
+<line x1="534.0" x2="534.0" y1="500.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="534.0" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK32: talk 6, committed 0 (+2 uncertain)</title></circle>
+<line x1="449.3" x2="449.3" y1="275.0" y2="125.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="449.3" cy="275.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK33: talk 5, committed 3 (+2 uncertain)</title></circle>
+<line x1="368.7" x2="368.7" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="368.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK34: talk 4, committed 2 (+0 uncertain)</title></circle>
+<line x1="526.0" x2="526.0" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="526.0" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK35: talk 6, committed 2 (+1 uncertain)</title></circle>
+<line x1="449.3" x2="449.3" y1="421.0" y2="421.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="449.3" cy="421.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK36: talk 5, committed 1 (+0 uncertain)</title></circle>
+<line x1="372.7" x2="372.7" y1="350.0" y2="275.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="372.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK37: talk 4, committed 2 (+1 uncertain)</title></circle>
+<line x1="457.3" x2="457.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="457.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK38: talk 5, committed 2 (+0 uncertain)</title></circle>
+<line x1="461.3" x2="461.3" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="461.3" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK39: talk 5, committed 2 (+0 uncertain)</title></circle>
+<line x1="461.3" x2="461.3" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="461.3" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK40: talk 5, committed 0 (+0 uncertain)</title></circle>
+<line x1="380.7" x2="380.7" y1="425.0" y2="425.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="380.7" cy="425.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK41: talk 4, committed 1 (+0 uncertain)</title></circle>
+<line x1="376.7" x2="376.7" y1="350.0" y2="350.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="376.7" cy="350.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK42: talk 4, committed 2 (+0 uncertain)</title></circle>
+<line x1="445.3" x2="445.3" y1="346.0" y2="346.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="445.3" cy="346.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK43: talk 5, committed 2 (+0 uncertain)</title></circle>
+<line x1="384.7" x2="384.7" y1="500.0" y2="500.0" stroke="#c0392b" stroke-width="2"/>
+<circle cx="384.7" cy="500.0" r="3" fill="#c0392b" fill-opacity="0.8"><title>MOCK44: talk 4, committed 0 (+0 uncertain)</title></circle>
 </svg>

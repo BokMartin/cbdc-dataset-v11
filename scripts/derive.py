@@ -11,6 +11,8 @@ decision_status × implementation_status. ADMISSIBLE_STATUS covers both via the 
 """
 ADMISSIBLE_STATUS = {"adopted", "operational", "endorsed"}  # v1.1 labels + v2 decision_status 'endorsed'
 YESNO = {"yes", "no"}
+OFFICIAL_LAYERS = {"", "official"}  # contract v12 §2: official is the default layer; every other layer only corroborates
+PROTECTIVE_NEEDS_BASIS = {"F1": "no", "F2": "no", "F4": "yes", "F9": "no"}  # contract v12 §3, §6: a policy promise sets none of these
 
 
 def _status(cell):
@@ -22,10 +24,14 @@ def _status(cell):
     return dec, impl
 
 
-def admissible(cell, categorical=None):
+def admissible(cell, categorical=None, cell_id=None):
     """True if a cell may set a commitment value (contract v2 §5, rule C): value in the cell's admissible set (yes/no, or the
     categorical set passed in), evidence_state documented, decision endorsed (any implementation) or implementation operational,
-    not rejected/superseded, no conflict flag, official layer (not staff research)."""
+    not rejected/superseded, no conflict flag, official layer (not staff research).
+    Repaired 23 Nov 2026 (ADR-013 §3, after audit A4c): a cell from any layer other than the official one (INCLINED/joint
+    retail, wholesale, staff research, companion or background legal) is never admissible, so LEANING stays in the
+    with_leaning variant only (ADR-012 D5); a protective value of F1, F2, F4 or F9 resting on basis = policy is not
+    admissible (contract v12 §6: a policy promise never sets F1 = no). cell_id names the cell for the basis rule."""
     if not cell: return False
     v = str(cell.get("value", "")).strip().lower(); ev = str(cell.get("evidence_state", "")).strip().lower()
     dec, impl = _status(cell)
@@ -34,19 +40,22 @@ def admissible(cell, categorical=None):
     if dec in ("rejected", "superseded"): return False
     if str(cell.get("conflict", "")).strip().lower() in ("true", "yes", "1") or str(cell.get("superseded", "")).strip(): return False
     if str(cell.get("staff_research", "")).strip().lower() in ("y", "yes", "true", "1"): return False
+    if str(cell.get("layer", "") or "").strip().lower() not in OFFICIAL_LAYERS: return False
+    if str(cell.get("retail_or_wholesale", "") or "").strip().lower() == "wholesale": return False
+    if PROTECTIVE_NEEDS_BASIS.get(cell_id) == v and str(cell.get("basis", "") or "").strip().lower() == "policy": return False
     return dec == "endorsed" or impl == "operational"
 
 
-def _val(cell, strict):
+def _val(cell, strict, cell_id=None):
     if not cell: return None
-    if strict and not admissible(cell): return None
+    if strict and not admissible(cell, cell_id=cell_id): return None
     v = str(cell.get("value", "")).strip().lower()
     return v if v in YESNO else None
 
 
 def architecture_type(cells, strict=True):
     """Return (type_string, possible_set). strict=True → commitment type; strict=False → permissive (values only)."""
-    f1, f2, f4 = _val(cells.get("F1"), strict), _val(cells.get("F2"), strict), _val(cells.get("F4"), strict)
+    f1, f2, f4 = _val(cells.get("F1"), strict, "F1"), _val(cells.get("F2"), strict, "F2"), _val(cells.get("F4"), strict, "F4")
     online = {"yes": {"A"}, "no": None}.get(f1) if f1 else {"A", "B", "C"}
     if f1 == "no": online = {"B"} if f2 == "yes" else ({"C"} if f2 == "no" else {"B", "C"})
     offline = {"yes": {"1"}, "no": {"0"}}.get(f4) if f4 else {"0", "1"}
@@ -56,11 +65,11 @@ def architecture_type(cells, strict=True):
 
 
 def y1(cells, strict=True):
-    v = _val(cells.get("F1"), strict); return None if v is None else (1 if v == "no" else 0)
+    v = _val(cells.get("F1"), strict, "F1"); return None if v is None else (1 if v == "no" else 0)
 
 
 def y3(cells, strict=True):
-    v = _val(cells.get("F7"), strict); return None if v is None else (1 if v == "yes" else 0)
+    v = _val(cells.get("F7"), strict, "F7"); return None if v is None else (1 if v == "yes" else 0)
 
 
 def summary(cells):
@@ -68,7 +77,7 @@ def summary(cells):
     t_strict, p_strict = architecture_type(cells, True); t_perm, p_perm = architecture_type(cells, False)
     return {"type_commitment": t_strict, "possible_commitment": p_strict, "type_permissive": t_perm, "possible_permissive": p_perm,
             "y1_commitment": y1(cells, True), "y1_permissive": y1(cells, False), "y3_commitment": y3(cells, True), "y3_permissive": y3(cells, False),
-            "admissible_cells": sorted(k for k, c in cells.items() if k != "F11" and admissible(c))}
+            "admissible_cells": sorted(k for k, c in cells.items() if k != "F11" and admissible(c, cell_id=k))}
 
 
 if __name__ == "__main__":

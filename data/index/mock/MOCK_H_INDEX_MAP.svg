@@ -1,17 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" font-family="sans-serif" font-size="11">
 <rect width="760" height="520" fill="#ffffff"/>
 <text x="380.0" y="260.0" font-size="96" fill="#d0d0d0" fill-opacity="0.45" text-anchor="middle" transform="rotate(-25 380.0 260.0)">MOCK DATA</text>
-<text x="70" y="22" font-size="13" font-weight="bold">MOCK: privacy design index (stated design interval, all 8 cells, mean) by cells decided</text>
-<text x="106.66666666666666" y="480" text-anchor="middle">0</text>
-<text x="180.0" y="480" text-anchor="middle">1</text>
-<text x="253.33333333333334" y="480" text-anchor="middle">2</text>
-<text x="326.6666666666667" y="480" text-anchor="middle">3</text>
-<text x="400.0" y="480" text-anchor="middle">4</text>
-<text x="473.3333333333333" y="480" text-anchor="middle">5</text>
-<text x="546.6666666666667" y="480" text-anchor="middle">6</text>
-<text x="620.0" y="480" text-anchor="middle">7</text>
-<text x="693.3333333333334" y="480" text-anchor="middle">8</text>
-<text x="400.0" y="505" text-anchor="middle">cells endorsed or operational (of 8)</text>
+<text x="70" y="22" font-size="13" font-weight="bold">MOCK: privacy design index (stated design interval, all 7 cells, mean) by cells decided</text>
+<text x="111.25" y="480" text-anchor="middle">0</text>
+<text x="193.75" y="480" text-anchor="middle">1</text>
+<text x="276.25" y="480" text-anchor="middle">2</text>
+<text x="358.75" y="480" text-anchor="middle">3</text>
+<text x="441.25" y="480" text-anchor="middle">4</text>
+<text x="523.75" y="480" text-anchor="middle">5</text>
+<text x="606.25" y="480" text-anchor="middle">6</text>
+<text x="688.75" y="480" text-anchor="middle">7</text>
+<text x="400.0" y="505" text-anchor="middle">cells endorsed or operational (of 7)</text>
 <line x1="70" x2="730" y1="460" y2="460" stroke="#e6e6e6"/>
 <text x="62" y="464" text-anchor="end">0.00</text>
 <line x1="70" x2="730" y1="355.0" y2="355.0" stroke="#e6e6e6"/>
@@ -23,92 +22,92 @@
 <line x1="70" x2="730" y1="40.0" y2="40.0" stroke="#e6e6e6"/>
 <text x="62" y="44.0" text-anchor="end">1.00</text>
 <text x="18" y="250.0" transform="rotate(-90 18 250.0)" text-anchor="middle">stated design (any status), interval</text>
-<line x1="147.6" x2="147.6" y1="40.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK01: [0.375, 1.0]</title></line>
-<circle cx="147.6" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="152.0" x2="152.0" y1="145.0" y2="197.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK06: [0.625, 0.75]</title></line>
-<circle cx="152.0" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="156.3" x2="156.3" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK08: [0.375, 0.75]</title></line>
-<circle cx="156.3" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="160.6" x2="160.6" y1="250.0" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK10: [0.125, 0.5]</title></line>
-<circle cx="160.6" cy="328.8" r="2.5" fill="#2a7ab0"/>
-<line x1="164.9" x2="164.9" y1="250.0" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK15: [0.0, 0.5]</title></line>
-<circle cx="164.9" cy="355.0" r="2.5" fill="#2a7ab0"/>
-<line x1="169.2" x2="169.2" y1="92.5" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK17: [0.125, 0.875]</title></line>
-<circle cx="169.2" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="173.5" x2="173.5" y1="92.5" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK18: [0.5, 0.875]</title></line>
-<circle cx="173.5" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="177.8" x2="177.8" y1="92.5" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK19: [0.5, 0.875]</title></line>
-<circle cx="177.8" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="182.2" x2="182.2" y1="92.5" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK20: [0.375, 0.875]</title></line>
-<circle cx="182.2" cy="197.5" r="2.5" fill="#2a7ab0"/>
-<line x1="186.5" x2="186.5" y1="92.5" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK22: [0.5, 0.875]</title></line>
-<circle cx="186.5" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="190.8" x2="190.8" y1="40.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK24: [0.375, 1.0]</title></line>
-<circle cx="190.8" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="195.1" x2="195.1" y1="92.5" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK29: [0.125, 0.875]</title></line>
-<circle cx="195.1" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="199.4" x2="199.4" y1="145.0" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK35: [0.25, 0.75]</title></line>
-<circle cx="199.4" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="203.7" x2="203.7" y1="197.5" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK36: [0.125, 0.625]</title></line>
-<circle cx="203.7" cy="302.5" r="2.5" fill="#2a7ab0"/>
-<line x1="208.0" x2="208.0" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK38: [0.375, 0.75]</title></line>
-<circle cx="208.0" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="212.4" x2="212.4" y1="40.0" y2="197.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK39: [0.625, 1.0]</title></line>
-<circle cx="212.4" cy="118.8" r="2.5" fill="#2a7ab0"/>
-<line x1="75.6" x2="75.6" y1="197.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK02: [0.25, 0.625]</title></line>
-<circle cx="75.6" cy="276.2" r="2.5" fill="#2a7ab0"/>
-<line x1="81.3" x2="81.3" y1="92.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK03: [0.25, 0.875]</title></line>
-<circle cx="81.3" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="86.9" x2="86.9" y1="92.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK09: [0.25, 0.875]</title></line>
-<circle cx="86.9" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="92.6" x2="92.6" y1="145.0" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK12: [0.25, 0.75]</title></line>
-<circle cx="92.6" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="98.2" x2="98.2" y1="40.0" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK13: [0.5, 1.0]</title></line>
-<circle cx="98.2" cy="145.0" r="2.5" fill="#2a7ab0"/>
-<line x1="103.8" x2="103.8" y1="92.5" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK16: [0.5, 0.875]</title></line>
-<circle cx="103.8" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="109.5" x2="109.5" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK21: [0.375, 0.75]</title></line>
-<circle cx="109.5" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="115.1" x2="115.1" y1="197.5" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK26: [0.0, 0.625]</title></line>
-<circle cx="115.1" cy="328.8" r="2.5" fill="#2a7ab0"/>
-<line x1="120.8" x2="120.8" y1="92.5" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK27: [0.125, 0.875]</title></line>
-<circle cx="120.8" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="126.4" x2="126.4" y1="92.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK31: [0.25, 0.875]</title></line>
-<circle cx="126.4" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="132.1" x2="132.1" y1="145.0" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK43: [0.125, 0.75]</title></line>
-<circle cx="132.1" cy="276.2" r="2.5" fill="#2a7ab0"/>
-<line x1="137.7" x2="137.7" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK44: [0.375, 0.75]</title></line>
-<circle cx="137.7" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="225.8" x2="225.8" y1="40.0" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK04: [0.5, 1.0]</title></line>
-<circle cx="225.8" cy="145.0" r="2.5" fill="#2a7ab0"/>
-<line x1="235.0" x2="235.0" y1="145.0" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK25: [0.0, 0.75]</title></line>
-<circle cx="235.0" cy="302.5" r="2.5" fill="#2a7ab0"/>
-<line x1="244.2" x2="244.2" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK28: [0.375, 0.75]</title></line>
-<circle cx="244.2" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="253.3" x2="253.3" y1="92.5" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK30: [0.5, 0.875]</title></line>
-<circle cx="253.3" cy="171.2" r="2.5" fill="#2a7ab0"/>
-<line x1="262.5" x2="262.5" y1="92.5" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK33: [0.125, 0.875]</title></line>
-<circle cx="262.5" cy="250.0" r="2.5" fill="#2a7ab0"/>
-<line x1="271.7" x2="271.7" y1="145.0" y2="250.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK34: [0.5, 0.75]</title></line>
-<circle cx="271.7" cy="197.5" r="2.5" fill="#2a7ab0"/>
-<line x1="280.8" x2="280.8" y1="302.5" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK42: [0.0, 0.375]</title></line>
-<circle cx="280.8" cy="381.2" r="2.5" fill="#2a7ab0"/>
-<line x1="297.3" x2="297.3" y1="92.5" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK05: [0.375, 0.875]</title></line>
-<circle cx="297.3" cy="197.5" r="2.5" fill="#2a7ab0"/>
-<line x1="304.7" x2="304.7" y1="197.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK07: [0.25, 0.625]</title></line>
-<circle cx="304.7" cy="276.2" r="2.5" fill="#2a7ab0"/>
-<line x1="312.0" x2="312.0" y1="250.0" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK11: [0.25, 0.5]</title></line>
-<circle cx="312.0" cy="302.5" r="2.5" fill="#2a7ab0"/>
-<line x1="319.3" x2="319.3" y1="145.0" y2="302.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK14: [0.375, 0.75]</title></line>
-<circle cx="319.3" cy="223.8" r="2.5" fill="#2a7ab0"/>
-<line x1="326.7" x2="326.7" y1="197.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK23: [0.25, 0.625]</title></line>
-<circle cx="326.7" cy="276.2" r="2.5" fill="#2a7ab0"/>
-<line x1="334.0" x2="334.0" y1="197.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK32: [0.25, 0.625]</title></line>
-<circle cx="334.0" cy="276.2" r="2.5" fill="#2a7ab0"/>
-<line x1="341.3" x2="341.3" y1="250.0" y2="407.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK37: [0.125, 0.5]</title></line>
-<circle cx="341.3" cy="328.8" r="2.5" fill="#2a7ab0"/>
-<line x1="348.7" x2="348.7" y1="40.0" y2="197.5" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK40: [0.625, 1.0]</title></line>
-<circle cx="348.7" cy="118.8" r="2.5" fill="#2a7ab0"/>
-<line x1="356.0" x2="356.0" y1="302.5" y2="355.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK41: [0.25, 0.375]</title></line>
-<circle cx="356.0" cy="328.8" r="2.5" fill="#2a7ab0"/>
+<line x1="157.1" x2="157.1" y1="40.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK01: [0.4286, 1.0]</title></line>
+<circle cx="157.1" cy="160.0" r="2.5" fill="#2a7ab0"/>
+<line x1="161.7" x2="161.7" y1="100.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK04: [0.2857, 0.8571]</title></line>
+<circle cx="161.7" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="166.2" x2="166.2" y1="160.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK05: [0.1429, 0.7143]</title></line>
+<circle cx="166.2" cy="280.0" r="2.5" fill="#2a7ab0"/>
+<line x1="170.8" x2="170.8" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK08: [0.1429, 0.5714]</title></line>
+<circle cx="170.8" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="175.4" x2="175.4" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK13: [0.1429, 0.5714]</title></line>
+<circle cx="175.4" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="180.0" x2="180.0" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK17: [0.1429, 0.5714]</title></line>
+<circle cx="180.0" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="184.6" x2="184.6" y1="220.0" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK18: [0.0, 0.5714]</title></line>
+<circle cx="184.6" cy="340.0" r="2.5" fill="#2a7ab0"/>
+<line x1="189.2" x2="189.2" y1="100.0" y2="220.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK19: [0.5714, 0.8571]</title></line>
+<circle cx="189.2" cy="160.0" r="2.5" fill="#2a7ab0"/>
+<line x1="193.8" x2="193.8" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK20: [0.4286, 0.7143]</title></line>
+<circle cx="193.8" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="198.3" x2="198.3" y1="160.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK21: [0.1429, 0.7143]</title></line>
+<circle cx="198.3" cy="280.0" r="2.5" fill="#2a7ab0"/>
+<line x1="202.9" x2="202.9" y1="100.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK26: [0.1429, 0.8571]</title></line>
+<circle cx="202.9" cy="250.0" r="2.5" fill="#2a7ab0"/>
+<line x1="207.5" x2="207.5" y1="160.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK29: [0.1429, 0.7143]</title></line>
+<circle cx="207.5" cy="280.0" r="2.5" fill="#2a7ab0"/>
+<line x1="212.1" x2="212.1" y1="100.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK31: [0.1429, 0.8571]</title></line>
+<circle cx="212.1" cy="250.0" r="2.5" fill="#2a7ab0"/>
+<line x1="216.7" x2="216.7" y1="160.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK36: [0.2857, 0.7143]</title></line>
+<circle cx="216.7" cy="250.0" r="2.5" fill="#2a7ab0"/>
+<line x1="221.2" x2="221.2" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK37: [0.1429, 0.5714]</title></line>
+<circle cx="221.2" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="225.8" x2="225.8" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK39: [0.4286, 0.7143]</title></line>
+<circle cx="225.8" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="230.4" x2="230.4" y1="160.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK41: [0.1429, 0.7143]</title></line>
+<circle cx="230.4" cy="280.0" r="2.5" fill="#2a7ab0"/>
+<line x1="75.5" x2="75.5" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK02: [0.1429, 0.5714]</title></line>
+<circle cx="75.5" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="81.0" x2="81.0" y1="100.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK03: [0.2857, 0.8571]</title></line>
+<circle cx="81.0" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="86.5" x2="86.5" y1="100.0" y2="220.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK06: [0.5714, 0.8571]</title></line>
+<circle cx="86.5" cy="160.0" r="2.5" fill="#2a7ab0"/>
+<line x1="92.0" x2="92.0" y1="160.0" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK09: [0.0, 0.7143]</title></line>
+<circle cx="92.0" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="97.5" x2="97.5" y1="220.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK10: [0.2857, 0.5714]</title></line>
+<circle cx="97.5" cy="280.0" r="2.5" fill="#2a7ab0"/>
+<line x1="103.0" x2="103.0" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK14: [0.4286, 0.7143]</title></line>
+<circle cx="103.0" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="108.5" x2="108.5" y1="100.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK16: [0.2857, 0.8571]</title></line>
+<circle cx="108.5" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="114.0" x2="114.0" y1="40.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK22: [0.1429, 1.0]</title></line>
+<circle cx="114.0" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="119.5" x2="119.5" y1="40.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK24: [0.1429, 1.0]</title></line>
+<circle cx="119.5" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="125.0" x2="125.0" y1="40.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK28: [0.4286, 1.0]</title></line>
+<circle cx="125.0" cy="160.0" r="2.5" fill="#2a7ab0"/>
+<line x1="130.5" x2="130.5" y1="160.0" y2="460.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK30: [0.0, 0.7143]</title></line>
+<circle cx="130.5" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="136.0" x2="136.0" y1="280.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK32: [0.1429, 0.4286]</title></line>
+<circle cx="136.0" cy="340.0" r="2.5" fill="#2a7ab0"/>
+<line x1="141.5" x2="141.5" y1="40.0" y2="220.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK40: [0.5714, 1.0]</title></line>
+<circle cx="141.5" cy="130.0" r="2.5" fill="#2a7ab0"/>
+<line x1="147.0" x2="147.0" y1="100.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK44: [0.4286, 0.8571]</title></line>
+<circle cx="147.0" cy="190.0" r="2.5" fill="#2a7ab0"/>
+<line x1="243.2" x2="243.2" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK07: [0.1429, 0.5714]</title></line>
+<circle cx="243.2" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="251.5" x2="251.5" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK11: [0.4286, 0.7143]</title></line>
+<circle cx="251.5" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="259.8" x2="259.8" y1="280.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK15: [0.1429, 0.4286]</title></line>
+<circle cx="259.8" cy="340.0" r="2.5" fill="#2a7ab0"/>
+<line x1="268.0" x2="268.0" y1="100.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK23: [0.4286, 0.8571]</title></line>
+<circle cx="268.0" cy="190.0" r="2.5" fill="#2a7ab0"/>
+<line x1="276.2" x2="276.2" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK25: [0.4286, 0.7143]</title></line>
+<circle cx="276.2" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="284.5" x2="284.5" y1="100.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK27: [0.2857, 0.8571]</title></line>
+<circle cx="284.5" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="292.8" x2="292.8" y1="100.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK34: [0.1429, 0.8571]</title></line>
+<circle cx="292.8" cy="250.0" r="2.5" fill="#2a7ab0"/>
+<line x1="301.0" x2="301.0" y1="160.0" y2="220.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK35: [0.5714, 0.7143]</title></line>
+<circle cx="301.0" cy="190.0" r="2.5" fill="#2a7ab0"/>
+<line x1="309.2" x2="309.2" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK43: [0.1429, 0.5714]</title></line>
+<circle cx="309.2" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="334.0" x2="334.0" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK12: [0.4286, 0.7143]</title></line>
+<circle cx="334.0" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="350.5" x2="350.5" y1="160.0" y2="280.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK33: [0.4286, 0.7143]</title></line>
+<circle cx="350.5" cy="220.0" r="2.5" fill="#2a7ab0"/>
+<line x1="367.0" x2="367.0" y1="220.0" y2="400.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK38: [0.1429, 0.5714]</title></line>
+<circle cx="367.0" cy="310.0" r="2.5" fill="#2a7ab0"/>
+<line x1="383.5" x2="383.5" y1="340.0" y2="340.0" stroke="#2a7ab0" stroke-width="2.5"><title>MOCK42: [0.2857, 0.2857]</title></line>
+<circle cx="383.5" cy="340.0" r="2.5" fill="#2a7ab0"/>
 </svg>

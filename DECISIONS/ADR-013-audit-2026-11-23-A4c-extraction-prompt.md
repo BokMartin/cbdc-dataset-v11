@@ -78,3 +78,21 @@ Added after the decision of 23 Nov:
 - No development round and no paid call until P1 to P4 are decided and the repairs of §3 and the reducer exist.
 - If P1 is adopted, prompt v12.2 enters `pipeline/prompts/` with the author decisions on P2 to P4 written in. The v12.1 text stays in `docs/audits/` as the audited version.
 - The ledger row for this audit is in `EXPOSURE_LEDGER.md`; the register row in `docs/audits/README.md` §4.
+
+## 5. Implementation (23 Nov 2026, after the decision)
+
+1. **P1 to P4.** The appendix of the report is `pipeline/prompts/extraction_v12.2.system.md`. The auditor's stated hash of the appendix, `3b9ef746…`, was checked and matches. The only change is the first line: "(proposed, 23 November 2026)" became "(adopted 23 November 2026, ADR-013)". The adopted file's SHA-256 is `7a97c8dd9059d7a8039c27fb06be2cae4697d04d2f4688671f0a1b4df5879263`. The prompt already carries P2 (a companion records legal references only and cannot originate a maker cell, F3 included), P3 (explicit references are kept for the runner to resolve) and the `translation_uncertain` rule of P4. The statutory F3 column (P2) and the targeted source check of flagged route-D claims (P4) belong to the claim-to-cell script, which does not exist yet (P5).
+2. **P4, text.** `docs/TRANSLATION_PROCEDURE.md` point (5) of 17 Nov carries a note that it is superseded for F-cells.
+3. **B1.**
+   - The relevance prompt becomes v0.4 (`pipeline/prompts/talk_L1_relevance.system.md`): rule 1 gains "decide from the marked unit and the supplied paragraph alone", and a new rule 8 sets the order for headings.
+   - The codebook becomes v0.5 (`docs/TALK_CODEBOOK_cs.tsv`): the same two rules in Czech, and row N no longer counts a stand-alone heading in the text as N.
+   - The adjudicated labels of the Russia and Thailand units of 22 Nov (ADR-011; `data/units/DEV_ADJUDICATION_CLARIFICATIONS_2026-11-22.csv`) stay as recorded exceptions. They are not rules for new units.
+   - `docs/FACET80_AGREEMENT_2026-11-23.md` no longer says "upper bound".
+   - `pipeline/prompts/talk_L2_facets.system.md` still names codebook v0.4. It is being revised in another thread and is left to it.
+4. **§3 repairs.**
+   - `derive_index.py`: the primary number is the mean of seven cells (`CORE`); F3 is categorical (`F3_VALUES` with `none_stated`, `f3_category()`) beside the index; the four-cell index is in `privacy_index()` as `core4_stated` and `core4_admissible`; the "without F3 and F9" variant is dropped, because F3 is no longer in the mean; `CELLS` keeps all eight coded cells for the coder files.
+   - `derive.py`: `admissible()` rejects a cell from any layer other than the official one, or one marked wholesale. It also rejects a protective F1, F2, F4 or F9 resting on `basis = policy`.
+   - Tests: the auditor's acceptance fixture 1 (F3 changes, all four intervals stay the same), and negative tests for layer and basis.
+   - The mock outputs and the index report are regenerated; the report shows the four-cell index and F3 beside the seven-cell number.
+   - One existing test expected F1 = no on a policy basis to count as decided; it now expects that it does not.
+5. **Not yet built:** the v12 runner, the claim-to-cell reducer, the PET cell in the schema and the other two acceptance fixtures (P5). MB, 23 Nov: development rounds are run by hand in a chat product, so the NO/UK round with v12.2 needs no API call, but its output can be read only once the reducer exists.
