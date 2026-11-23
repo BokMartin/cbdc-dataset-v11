@@ -1,0 +1,197 @@
+doc_key,page,para,block,units,sets,shown_to,model_labelled_by,first_date
+AE_AE_UAE_001,10,1,AE_AE_UAE_001:p10:para1,AE_AE_UAE_001:p10:s155,dev_2026-11-13,DS MB,,2026-11-17
+AE_AE_UAE_001,11,1,AE_AE_UAE_001:p11:para1,AE_AE_UAE_001:p11:s176,facet80_2026-11-22,DS MB,,2026-11-22
+AE_CAND-003,26,21,AE_CAND-003:p26:para21,AE_CAND-003:p26:s808,facet80_2026-11-22,DS MB,,2026-11-22
+AE_CAND-005,3,15,AE_CAND-005:p3:para15,AE_CAND-005:p3:s32,dev_2026-11-13,DS MB,,2026-11-17
+AU_AU_RBA_001,13,6,AU_AU_RBA_001:p13:para6,AU_AU_RBA_001:p13:s203,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+AU_AU_RBA_001,14,4,AU_AU_RBA_001:p14:para4,AU_AU_RBA_001:p14:s242,dev_2026-11-13,DS MB,,2026-11-17
+AU_CAND-013,11,7,AU_CAND-013:p11:para7,AU_CAND-013:p11:s111,facet80_2026-11-22,DS MB,,2026-11-22
+AU_CAND-013,22,1,AU_CAND-013:p22:para1,AU_CAND-013:p22:s266,facet80_2026-11-22,DS MB,,2026-11-22
+AU_CAND-013,33,1,AU_CAND-013:p33:para1,AU_CAND-013:p33:s430,facet80_2026-11-22,DS MB,,2026-11-22
+AW_AW_ARU_001,106,3,AW_AW_ARU_001:p106:para3,AW_AW_ARU_001:p106:s2911,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+AW_AW_ARU_001,107,3,AW_AW_ARU_001:p107:para3,AW_AW_ARU_001:p107:s2964,facet80_2026-11-22,DS MB,,2026-11-22
+AW_AW_ARU_001,151,2,AW_AW_ARU_001:p151:para2,AW_AW_ARU_001:p151:s4400,facet80_2026-11-22,DS MB,,2026-11-22
+AW_CAND-022,178,7,AW_CAND-022:p178:para7,AW_CAND-022:p178:s4321,facet80_2026-11-22,DS MB,,2026-11-22
+AW_CAND-022,264,2,AW_CAND-022:p264:para2,AW_CAND-022:p264:s7610,facet80_2026-11-22,DS MB,,2026-11-22
+AW_CAND-022,298,13,AW_CAND-022:p298:para13,AW_CAND-022:p298:s8471,facet80_2026-11-22,DS MB,,2026-11-22
+AW_CAND-022,323,14,AW_CAND-022:p323:para14,AW_CAND-022:p323:s9008,facet80_2026-11-22,DS MB,,2026-11-22
+AW_CAND-022,358,2,AW_CAND-022:p358:para2,AW_CAND-022:p358:s9890,facet80_2026-11-22,DS MB,,2026-11-22
+BS_BS_Bahamas_SandDollar_2019,3,1,BS_BS_Bahamas_SandDollar_2019:p3:para1,BS_BS_Bahamas_SandDollar_2019:p3:s39,facet80_2026-11-22,DS MB,,2026-11-22
+BS_BS_Bahamas_SandDollar_2019,25,4,BS_BS_Bahamas_SandDollar_2019:p25:para4,BS_BS_Bahamas_SandDollar_2019:p25:s367,dev_2026-11-13,DS MB,,2026-11-17
+BS_BS_Bahamas_SandDollar_2019,30,8,BS_BS_Bahamas_SandDollar_2019:p30:para8,BS_BS_Bahamas_SandDollar_2019:p30:s496,dev_2026-11-13,DS MB,,2026-11-17
+BS_CAND-029,4,,BS_CAND-029 (not in the corpus),BS_CAND-029:p4:s56,dev_2026-11-13,DS MB,,2026-11-17
+BS_CAND-029,6,,BS_CAND-029 (not in the corpus),BS_CAND-029:p6:s85,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+BS_CAND-032,21,1,BS_CAND-032:p21:para1,BS_CAND-032:p21:s315,facet80_2026-11-22,DS MB,,2026-11-22
+BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021,37,1,BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021:p37:para1,BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021:p37:s331,facet80_2026-11-22,DS MB,,2026-11-22
+BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021,98,4,BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021:p98:para4,BT_BT_BT-RMA-Druk-Nguldrel-Lamtoen-2030-2021:p98:s1060,facet80_2026-11-22,DS MB,,2026-11-22
+BT_CAND-034,167,75,BT_CAND-034:p167:para75,BT_CAND-034:p167:s4358,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CA_CA_BoC_Consultation_Report_2023,17,2,CA_CA_BoC_Consultation_Report_2023:p17:para2,CA_CA_BoC_Consultation_Report_2023:p17:s278,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CA_CA_BoC_Consultation_Report_2023,41,4,CA_CA_BoC_Consultation_Report_2023:p41:para4,CA_CA_BoC_Consultation_Report_2023:p41:s955,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_Consultation_Report_2023,43,2,CA_CA_BoC_Consultation_Report_2023:p43:para2,CA_CA_BoC_Consultation_Report_2023:p43:s982,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_PETs_SDP2025_1,9,3,CA_CA_BoC_PETs_SDP2025_1:p9:para3,CA_CA_BoC_PETs_SDP2025_1:p9:s192,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_PETs_SDP2025_1,15,3,CA_CA_BoC_PETs_SDP2025_1:p15:para3,CA_CA_BoC_PETs_SDP2025_1:p15:s406,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_PETs_SDP2025_1,27,3,CA_CA_BoC_PETs_SDP2025_1:p27:para3,CA_CA_BoC_PETs_SDP2025_1:p27:s810,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_RetailFeasibility_SDP2025_9,10,14,CA_CA_BoC_RetailFeasibility_SDP2025_9:p10:para14,CA_CA_BoC_RetailFeasibility_SDP2025_9:p10:s232,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_BoC_RetailFeasibility_SDP2025_9,34,3,CA_CA_BoC_RetailFeasibility_SDP2025_9:p34:para3,CA_CA_BoC_RetailFeasibility_SDP2025_9:p34:s874,facet80_2026-11-22,DS MB,,2026-11-22
+CA_CA_Jasper_Phase12_2017,22,49,CA_CA_Jasper_Phase12_2017:p22:para49,CA_CA_Jasper_Phase12_2017:p22:s938,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CH_CAND-049,1,162,CH_CAND-049:p1:para162,CH_CAND-049:p1:s187,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CN_CAND-062,1,,CN_CAND-062 (not in the corpus),CN_CAND-062:p1:s418,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CN_CAND-064,1,6,CN_CAND-064:p1:para6,CN_CAND-064:p1:s12,dev_2026-11-13,DS MB,,2026-11-17
+CN_CAND-065,1,,CN_CAND-065 (not in the corpus),CN_CAND-065:p1:s424,dev_2026-11-13,DS MB,,2026-11-17
+CN_CN_China_2021,8,1,CN_CN_China_2021:p8:para1,CN_CN_China_2021:p8:s144,dev_2026-11-13,DS MB,,2026-11-17
+CN_CN_China_2021,9,1,CN_CN_China_2021:p9:para1,CN_CN_China_2021:p9:s150,dev_2026-11-13,DS MB,,2026-11-17
+CN_CN_China_2021,11,1,CN_CN_China_2021:p11:para1,CN_CN_China_2021:p11:s190,dev_2026-11-13,DS MB,,2026-11-17
+CN_CN_China_2021,14,1,CN_CN_China_2021:p14:para1,CN_CN_China_2021:p14:s242,dev_2026-11-13,DS MB,,2026-11-17
+CN_CN_PBOC_LuLei_ActionPlan_2025,3,3,CN_CN_PBOC_LuLei_ActionPlan_2025:p3:para3,CN_CN_PBOC_LuLei_ActionPlan_2025:p3:s64,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CN_CN_PBOC_LuLei_ActionPlan_2025,3,5,CN_CN_PBOC_LuLei_ActionPlan_2025:p3:para5,CN_CN_PBOC_LuLei_ActionPlan_2025:p3:s70,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+CN_CN_PBOC_LuLei_ActionPlan_2025,4,6,CN_CN_PBOC_LuLei_ActionPlan_2025:p4:para6,CN_CN_PBOC_LuLei_ActionPlan_2025:p4:s114,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+EU_BE_BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-statu,8,2,EU_BE_BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-statu:p8:para2,EU_BE_BE_Nationale-Bank-van-Bel_Analysing-a-digital-euro-a-statu:p8:s194,facet80_2026-11-22,DS MB,,2026-11-22
+EU_EE_EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021_pa,12,1,EU_EE_EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021_pa:p12:para1,EU_EE_EE_Eesti-Pank_Work-stream-3-A-New-Solution-Blockchain-an_2021_pa:p12:s238,dev_2026-11-13,DS MB,,2026-11-17
+EU_EU_ECB_ClosingReport_2025,1,4,EU_EU_ECB_ClosingReport_2025:p1:para4,EU_EU_ECB_ClosingReport_2025:p1:s13,dev_2026-11-13,DS MB,,2026-11-17
+EU_FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se,7,3,EU_FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se:p7:para3,EU_FI_FI_Suomen-Pankki-Bank-of_Digitaalisen-euron-kansallisen-se:p7:s30,dev_2026-11-13,DS MB,,2026-11-17
+EU_SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024,2,7,EU_SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024:p2:para7,EU_SI_SI_Banka-Slovenije_Zapisnik-3-seje-NSD-digitalni-evro_2024:p2:s61,dev_2026-11-13,DS MB,,2026-11-17
+HK_HK_HKMA_eHKD_Phase2_2025,15,1,HK_HK_HKMA_eHKD_Phase2_2025:p15:para1,HK_HK_HKMA_eHKD_Phase2_2025:p15:s253,dev_2026-11-13,DS MB,,2026-11-17
+HK_HK_HKMA_eHKD_Phase2_2025,27,6,HK_HK_HKMA_eHKD_Phase2_2025:p27:para6,HK_HK_HKMA_eHKD_Phase2_2025:p27:s563,facet80_2026-11-22,DS MB,,2026-11-22
+HU_HU_Hungary_2025,15,1,HU_HU_Hungary_2025:p15:para1,HU_HU_Hungary_2025:p15:s227,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+ID_CAND-096,114,,ID_CAND-096 (not in the corpus),ID_CAND-096:p114:s14 ID_CAND-096:p114:s17,dev_2026-11-13,DS MB,,2026-11-17
+ID_ID_Indonesia_2022,19,12,ID_ID_Indonesia_2022:p19:para12,ID_ID_Indonesia_2022:p19:s336,dev_2026-11-13,DS MB,,2026-11-17
+IL_CAND-101,9,2,IL_CAND-101:p9:para2,IL_CAND-101:p9:s133 IL_CAND-101:p9:s144,facet80_2026-11-22,DS MB,,2026-11-22
+IL_CAND-102,32,2,IL_CAND-102:p32:para2,IL_CAND-102:p32:s520,dev_2026-11-13,DS MB,,2026-11-17
+IL_CAND-105,10,2,IL_CAND-105:p10:para2,IL_CAND-105:p10:s78,facet80_2026-11-22,DS MB,,2026-11-22
+IL_CAND-108,1,,IL_CAND-108 (not in the corpus),IL_CAND-108:p1:s90,dev_2026-11-13,DS MB,,2026-11-17
+IL_CAND-111,57,3,IL_CAND-111:p57:para3,IL_CAND-111:p57:s923,facet80_2026-11-22,DS MB,,2026-11-22
+IL_CAND-111,57,4,IL_CAND-111:p57:para4,IL_CAND-111:p57:s928,facet80_2026-11-22,DS MB,,2026-11-22
+IL_CAND-111,123,1,IL_CAND-111:p123:para1,IL_CAND-111:p123:s1969,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+IL_IL_Israel_-U05d0-U05e8-U05db-U05d9-U05d8-U05e7-U05d8-U05d5-U05e8-U0,8,4,IL_IL_Israel_-U05d0-U05e8-U05db-U05d9-U05d8-U05e7-U05d8-U05d5-U05e8-U0:p8:para4,IL_IL_Israel_-U05d0-U05e8-U05db-U05d9-U05d8-U05e7-U05d8-U05d5-U05e8-U0:p8:s83,dev_2026-11-13,DS MB,,2026-11-17
+IN_CAND-118,1,,IN_CAND-118 (not in the corpus),IN_CAND-118:p1:s75,dev_2026-11-13,DS MB,,2026-11-17
+IN_IN_RBI_ConceptNote_2022,32,22,IN_IN_RBI_ConceptNote_2022:p32:para22,IN_IN_RBI_ConceptNote_2022:p32:s1815,dev_2026-11-13,DS MB,,2026-11-17
+IS_IS_CBI_2018,20,3,IS_IS_CBI_2018:p20:para3,IS_IS_CBI_2018:p20:s455,dev_2026-11-13,DS MB,,2026-11-17
+JM_JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_20,7,1,JM_JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_20:p7:para1,JM_JM_JM_Bank-of-Jamaica_BOJ-Prepares-for-Central-Bank-Digital-Curr_20:p7:s47,dev_2026-11-13,DS MB,,2026-11-17
+JM_JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_20,7,2,JM_JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_20:p7:para2,JM_JM_JM_Bank-of-Jamaica_Privacy-Policy-for-the-Bank-of-Jamaica-Wal_20:p7:s29,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-139,7,3,JP_CAND-139:p7:para3,JP_CAND-139:p7:s97,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-139,13,6,JP_CAND-139:p13:para6,JP_CAND-139:p13:s177,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-140,24,1,JP_CAND-140:p24:para1,JP_CAND-140:p24:s299,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+JP_CAND-141,1,1,JP_CAND-141:p1:para1,JP_CAND-141:p1:s1,facet80_2026-11-22,DS MB,,2026-11-22
+JP_CAND-143,2,2,JP_CAND-143:p2:para2,JP_CAND-143:p2:s17,facet80_2026-11-22,DS MB,,2026-11-22
+JP_CAND-143,5,18,JP_CAND-143:p5:para18,JP_CAND-143:p5:s85,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-145,9,2,JP_CAND-145:p9:para2,JP_CAND-145:p9:s69,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-145,12,2,JP_CAND-145:p12:para2,JP_CAND-145:p12:s88,facet80_2026-11-22,DS MB,,2026-11-22
+JP_CAND-145,24,3,JP_CAND-145:p24:para3,JP_CAND-145:p24:s206,dev_2026-11-13,DS MB,,2026-11-17
+JP_CAND-146,10,1,JP_CAND-146:p10:para1,JP_CAND-146:p10:s142,facet80_2026-11-22,DS MB,,2026-11-22
+JP_CAND-146,15,2,JP_CAND-146:p15:para2,JP_CAND-146:p15:s233,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+JP_CAND-146,32,9,JP_CAND-146:p32:para9,JP_CAND-146:p32:s580,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+JP_CAND-146,32,34,JP_CAND-146:p32:para34,JP_CAND-146:p32:s605,facet80_2026-11-22,DS MB,,2026-11-22
+JP_CAND-146,42,7,JP_CAND-146:p42:para7,JP_CAND-146:p42:s924,dev_2026-11-13,DS MB,,2026-11-17
+JP_JP_BoJ_Pilot_EN,2,2,JP_JP_BoJ_Pilot_EN:p2:para2,JP_JP_BoJ_Pilot_EN:p2:s20,dev_2026-11-13,DS MB,,2026-11-17
+JP_JP_BoJ_Pilot_EN,9,3,JP_JP_BoJ_Pilot_EN:p9:para3,JP_JP_BoJ_Pilot_EN:p9:s161,dev_2026-11-13,DS MB,,2026-11-17
+JP_JP_BoJ_Pilot_EN,17,10,JP_JP_BoJ_Pilot_EN:p17:para10,JP_JP_BoJ_Pilot_EN:p17:s325,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+JP_JP_BoJ_PoC2,14,13,JP_JP_BoJ_PoC2:p14:para13,JP_JP_BoJ_PoC2:p14:s247,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+KE_CAND-148,16,26,KE_CAND-148:p16:para26,KE_CAND-148:p16:s408,facet80_2026-11-22,DS MB,,2026-11-22
+KZ_CAND-153,43,2,KZ_CAND-153:p43:para2,KZ_CAND-153:p43:s595,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+KZ_CAND-154,79,17,KZ_CAND-154:p79:para17,KZ_CAND-154:p79:s2464,dev_2026-11-13,DS MB,,2026-11-17
+KZ_CAND-154,94,14,KZ_CAND-154:p94:para14,KZ_CAND-154:p94:s2946,facet80_2026-11-22,DS MB,,2026-11-22
+KZ_CAND-154,135,3,KZ_CAND-154:p135:para3,KZ_CAND-154:p135:s4375,facet80_2026-11-22,DS MB,,2026-11-22
+KZ_CAND-156,22,2,KZ_CAND-156:p22:para2,KZ_CAND-156:p22:s461,facet80_2026-11-22,DS MB,,2026-11-22
+KZ_CAND-157,1,,KZ_CAND-157 (not in the corpus),KZ_CAND-157:p1:s1403 KZ_CAND-157:p1:s1677,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021,55,6,KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021:p55:para6,KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021:p55:s724,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021,64,3,KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021:p64:para3,KZ_KZ_KZ-NBK-Digital-Tenge-Pilot-White-Paper-2021:p64:s816,dev_2026-11-13,DS MB,,2026-11-17
+MG_MG_BFM_RFI_2021,8,1,MG_MG_BFM_RFI_2021:p8:para1,MG_MG_BFM_RFI_2021:p8:s129,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+MO_CAND-170,1,,MO_CAND-170 (not in the corpus),MO_CAND-170:p1:s105,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+MO_CAND-172,1,,MO_CAND-172 (not in the corpus),MO_CAND-172:p1:s120,dev_2026-11-13,DS MB,,2026-11-17
+MO_MO_AMCM_eMOP_WP,12,1,MO_MO_AMCM_eMOP_WP:p12:para1,MO_MO_AMCM_eMOP_WP:p12:s105,dev_2026-11-13,DS MB,,2026-11-17
+MO_MO_AMCM_eMOP_WP,37,7,MO_MO_AMCM_eMOP_WP:p37:para7,MO_MO_AMCM_eMOP_WP:p37:s340,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+MO_MO_AMCM_eMOP_WP,39,1,MO_MO_AMCM_eMOP_WP:p39:para1,MO_MO_AMCM_eMOP_WP:p39:s350,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+MO_MO_AMCM_eMOP_WP,49,1,MO_MO_AMCM_eMOP_WP:p49:para1,MO_MO_AMCM_eMOP_WP:p49:s423,dev_2026-11-13,DS MB,,2026-11-17
+MU_CAND-187,24,,MU_CAND-187 (not in the corpus),MU_CAND-187:p24:s434,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+MU_CAND-191,218,2,MU_CAND-191:p218:para2,MU_CAND-191:p218:s5206,facet80_2026-11-22,DS MB,,2026-11-22
+NA_CAND-201,216,7,NA_CAND-201:p216:para7,NA_CAND-201:p216:s6360,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+NG_CAND-206,4,19,NG_CAND-206:p4:para19,NG_CAND-206:p4:s95,facet80_2026-11-22,DS MB,,2026-11-22
+NG_CAND-206,200,5,NG_CAND-206:p200:para5,NG_CAND-206:p200:s1843,facet80_2026-11-22,DS MB,,2026-11-22
+NG_NG_NG-CBN-eNaira-Regulatory-Guidelines-2021,11,8,NG_NG_NG-CBN-eNaira-Regulatory-Guidelines-2021:p11:para8,NG_NG_NG-CBN-eNaira-Regulatory-Guidelines-2021:p11:s155,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+NO_NO_NBPapers_1_2018_en,46,3,NO_NO_NBPapers_1_2018_en:p46:para3,NO_NO_NBPapers_1_2018_en:p46:s979,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_NBPapers_1_2021_en,24,3,NO_NO_NBPapers_1_2021_en:p24:para3,NO_NO_NBPapers_1_2021_en:p24:s463,dev_2026-11-13,DS MB,,2026-11-17
+NO_NO_NBPapers_1_2021_en,25,1,NO_NO_NBPapers_1_2021_en:p25:para1,NO_NO_NBPapers_1_2021_en:p25:s476,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_NBPapers_1_2021_en,32,5,NO_NO_NBPapers_1_2021_en:p32:para5,NO_NO_NBPapers_1_2021_en:p32:s658,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_NBPapers_1_2021_en,65,9,NO_NO_NBPapers_1_2021_en:p65:para9,NO_NO_NBPapers_1_2021_en:p65:s1365,dev_2026-11-13,DS MB,,2026-11-17
+NO_NO_NBPapers_2_2019_en,7,2,NO_NO_NBPapers_2_2019_en:p7:para2,NO_NO_NBPapers_2_2019_en:p7:s127,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report,22,1,NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report:p22:para1,NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report:p22:s557,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing,11,2,NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing:p11:para2,NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing:p11:s165,facet80_2026-11-22,DS MB,,2026-11-22
+NO_NO_Norway_norges-bank-papers-2---phase-4---final-report,11,3,NO_NO_Norway_norges-bank-papers-2---phase-4---final-report:p11:para3,NO_NO_Norway_norges-bank-papers-2---phase-4---final-report:p11:s212,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+NO_NO_Norway_norges-bank-papers-2---phase-4---final-report,15,1,NO_NO_Norway_norges-bank-papers-2---phase-4---final-report:p15:para1,NO_NO_Norway_norges-bank-papers-2---phase-4---final-report:p15:s308,dev_2026-11-13,DS MB,,2026-11-17
+NP_CAND-232,44,2,NP_CAND-232:p44:para2,NP_CAND-232:p44:s1078,facet80_2026-11-22,DS MB,,2026-11-22
+NP_NP_NP-NRB-CBDC-Concept-Report-2022,40,1,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p40:para1,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p40:s753,facet80_2026-11-22,DS MB,,2026-11-22
+NP_NP_NP-NRB-CBDC-Concept-Report-2022,55,1,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p55:para1,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p55:s1117,facet80_2026-11-22,DS MB,,2026-11-22
+NP_NP_NP-NRB-CBDC-Concept-Report-2022,72,6,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p72:para6,NP_NP_NP-NRB-CBDC-Concept-Report-2022:p72:s1512,facet80_2026-11-22,DS MB,,2026-11-22
+NZ_CAND-241,4,9,NZ_CAND-241:p4:para9,NZ_CAND-241:p4:s59,facet80_2026-11-22,DS MB,,2026-11-22
+NZ_CAND-242,8,6,NZ_CAND-242:p8:para6,NZ_CAND-242:p8:s130,facet80_2026-11-22,DS MB,,2026-11-22
+NZ_CAND-242,13,3,NZ_CAND-242:p13:para3,NZ_CAND-242:p13:s235,dev_2026-11-13,DS MB,,2026-11-17
+NZ_CAND-242,19,21,NZ_CAND-242:p19:para21,NZ_CAND-242:p19:s388,facet80_2026-11-22,DS MB,,2026-11-22
+NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1,31,1,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p31:para1,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p31:s499,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1,37,14,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p37:para14,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p37:s680,dev_2026-11-13,DS MB,,2026-11-17
+NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1,48,9,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p48:para9,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p48:s897,facet80_2026-11-22,DS MB,,2026-11-22
+NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1,49,1,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p49:para1,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p49:s907,dev_2026-11-13,DS MB,,2026-11-17
+NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1,63,15,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p63:para15,NZ_NZ_RBNZ_cbdc-insights-dossier-for-public-1:p63:s1219,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+PE_CAND-251,3,6,PE_CAND-251:p3:para6,PE_CAND-251:p3:s50,dev_2026-11-13,DS MB,,2026-11-17
+PE_CAND-251,4,3,PE_CAND-251:p4:para3,PE_CAND-251:p4:s60,dev_2026-11-13,DS MB,,2026-11-17
+PE_CAND-259,4,1,PE_CAND-259:p4:para1,PE_CAND-259:p4:s61,dev_2026-11-13,DS MB,,2026-11-17
+PE_CAND-259,11,8,PE_CAND-259:p11:para8,PE_CAND-259:p11:s171,dev_2026-11-13,DS MB,,2026-11-17
+PE_PE_Peru_cbdc-presentation,6,3,PE_PE_Peru_cbdc-presentation:p6:para3,PE_PE_Peru_cbdc-presentation:p6:s96,dev_2026-11-13,DS MB,,2026-11-17
+PE_PE_Peru_cbdc-presentation,14,1,PE_PE_Peru_cbdc-presentation:p14:para1,PE_PE_Peru_cbdc-presentation:p14:s236,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+PE_PE_Peru_cbdc-presentation,19,1,PE_PE_Peru_cbdc-presentation:p19:para1,PE_PE_Peru_cbdc-presentation:p19:s321,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+PE_PE_Peru_cbdc-presentation,23,1,PE_PE_Peru_cbdc-presentation:p23:para1,PE_PE_Peru_cbdc-presentation:p23:s414,facet80_2026-11-22,DS MB,,2026-11-22
+PE_PE_Peru_cbdc-presentation,32,2,PE_PE_Peru_cbdc-presentation:p32:para2,PE_PE_Peru_cbdc-presentation:p32:s628,dev_2026-11-13,DS MB,,2026-11-17
+PW_CAND-262,21,1,PW_CAND-262:p21:para1,PW_CAND-262:p21:s327,dev_2026-11-13,DS MB,,2026-11-17
+RU_CAND-277,1,,RU_CAND-277 (not in the corpus),RU_CAND-277:p1:s231,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+RU_RU_Russia_concept_08042021,17,15,RU_RU_Russia_concept_08042021:p17:para15,RU_RU_Russia_concept_08042021:p17:s323,dev_2026-11-13,DS MB,,2026-11-17
+RU_RU_Russia_consultation_paper_201013,6,2,RU_RU_Russia_consultation_paper_201013:p6:para2,RU_RU_Russia_consultation_paper_201013:p6:s82,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+RU_RU_Russia_consultation_paper_201013,15,3,RU_RU_Russia_consultation_paper_201013:p15:para3,RU_RU_Russia_consultation_paper_201013:p15:s297,dev_2026-11-13,DS MB,,2026-11-17
+RU_RU_Russia_consultation_paper_201013,36,3,RU_RU_Russia_consultation_paper_201013:p36:para3,RU_RU_Russia_consultation_paper_201013:p36:s711,facet80_2026-11-22,DS MB,,2026-11-22
+RW_CAND-279,4,1,RW_CAND-279:p4:para1,RW_CAND-279:p4:s68,facet80_2026-11-22,DS MB,,2026-11-22
+RW_CAND-279,20,2,RW_CAND-279:p20:para2,RW_CAND-279:p20:s368,dev_2026-11-13,DS MB,,2026-11-17
+RW_RW_RW-NBR-CBDC-PoC-Report-2026,12,1,RW_RW_RW-NBR-CBDC-PoC-Report-2026:p12:para1,RW_RW_RW-NBR-CBDC-PoC-Report-2026:p12:s193 RW_RW_RW-NBR-CBDC-PoC-Report-2026:p12:s195,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+SE_CAND-285,20,5,SE_CAND-285:p20:para5,SE_CAND-285:p20:s274,facet80_2026-11-22,DS MB,,2026-11-22
+SE_CAND-287,8,1,SE_CAND-287:p8:para1,SE_CAND-287:p8:s104,dev_2026-11-13,DS MB,,2026-11-17
+SE_CAND-287,29,2,SE_CAND-287:p29:para2,SE_CAND-287:p29:s487,facet80_2026-11-22,DS MB,,2026-11-22
+SE_SE_Riksbank_2017,34,4,SE_SE_Riksbank_2017:p34:para4,SE_SE_Riksbank_2017:p34:s775,dev_2026-11-13,DS MB,,2026-11-17
+SE_SE_Riksbank_2017,42,6,SE_SE_Riksbank_2017:p42:para6,SE_SE_Riksbank_2017:p42:s946,dev_2026-11-13,DS MB,,2026-11-17
+SE_SE_Riksbank_PaymentsReport_2026,30,2,SE_SE_Riksbank_PaymentsReport_2026:p30:para2,SE_SE_Riksbank_PaymentsReport_2026:p30:s469,dev_2026-11-13,DS MB,,2026-11-17
+SE_SE_Riksbank_PaymentsReport_2026,47,5,SE_SE_Riksbank_PaymentsReport_2026:p47:para5,SE_SE_Riksbank_PaymentsReport_2026:p47:s851,facet80_2026-11-22,DS MB,,2026-11-22
+SE_SE_Riksbank_PaymentsReport_2026,53,2,SE_SE_Riksbank_PaymentsReport_2026:p53:para2,SE_SE_Riksbank_PaymentsReport_2026:p53:s965,dev_2026-11-13,DS MB,,2026-11-17
+SG_CAND-298,7,1,SG_CAND-298:p7:para1,SG_CAND-298:p7:s124,facet80_2026-11-22,DS MB,,2026-11-22
+SZ_CAND-305,10,1,SZ_CAND-305:p10:para1,SZ_CAND-305:p10:s120,facet80_2026-11-22,DS MB,,2026-11-22
+SZ_CAND-308,7,1,SZ_CAND-308:p7:para1,SZ_CAND-308:p7:s98,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+SZ_CAND-313,17,6,SZ_CAND-313:p17:para6,SZ_CAND-313:p17:s238,dev_2026-11-13,DS MB,,2026-11-17
+TH_CAND-317,28,2,TH_CAND-317:p28:para2,TH_CAND-317:p28:s437,dev_2026-11-13,DS MB,,2026-11-17
+TH_CAND-317,47,20,TH_CAND-317:p47:para20,TH_CAND-317:p47:s878,facet80_2026-11-22,DS MB,,2026-11-22
+TH_CAND-319,12,13,TH_CAND-319:p12:para13,TH_CAND-319:p12:s228,dev_2026-11-13,DS MB,,2026-11-17
+TH_CAND-319,17,3,TH_CAND-319:p17:para3,TH_CAND-319:p17:s304,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+TH_TH_Thailand_rCBDC_Conclusion_Report,19,7,TH_TH_Thailand_rCBDC_Conclusion_Report:p19:para7,TH_TH_Thailand_rCBDC_Conclusion_Report:p19:s238,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+TR_TR_DigitalLira_Phase2_2025,10,3,TR_TR_DigitalLira_Phase2_2025:p10:para3,TR_TR_DigitalLira_Phase2_2025:p10:s191,dev_2026-11-13,DS MB,,2026-11-17
+TR_TR_DigitalLira_Phase2_2025,11,2,TR_TR_DigitalLira_Phase2_2025:p11:para2,TR_TR_DigitalLira_Phase2_2025:p11:s196,dev_2026-11-13,DS MB,,2026-11-17
+TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report,14,3,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p14:para3,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p14:s237,facet80_2026-11-22,DS MB,,2026-11-22
+TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report,35,1,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p35:para1,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p35:s592,facet80_2026-11-22,DS MB,,2026-11-22
+TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report,35,2,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p35:para2,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p35:s594,facet80_2026-11-22,DS MB,,2026-11-22
+TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report,58,4,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p58:para4,TR_TR_Turkey_Digital_Turkish_Lira_First_Phase_Evaluation_Report:p58:s1055,facet80_2026-11-22,DS MB,,2026-11-22
+TW_CAND-341,10,3,TW_CAND-341:p10:para3,TW_CAND-341:p10:s119,facet80_2026-11-22,DS MB,,2026-11-22
+TW_CAND-347,7,5,TW_CAND-347:p7:para5,TW_CAND-347:p7:s83,dev_2026-11-13,DS MB,,2026-11-17
+TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026,8,3,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p8:para3,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p8:s92,facet80_2026-11-22,DS MB,,2026-11-22
+TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026,9,2,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p9:para2,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p9:s107,dev_2026-11-13,DS MB,,2026-11-17
+TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026,29,9,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p29:para9,TW_TW_TW-CBC-CBDC-Communication-Summary-Report-2026:p29:s513,facet80_2026-11-22,DS MB,,2026-11-22
+UA_UA_NBU_E-hryvnia_2019,20,2,UA_UA_NBU_E-hryvnia_2019:p20:para2,UA_UA_NBU_E-hryvnia_2019:p20:s451,dev_2026-11-13,DS MB,,2026-11-17
+UA_UA_NBU_E-hryvnia_2019,23,1,UA_UA_NBU_E-hryvnia_2019:p23:para1,UA_UA_NBU_E-hryvnia_2019:p23:s504,dev_2026-11-13,DS MB,,2026-11-17
+UA_UA_NBU_E-hryvnia_2019,32,1,UA_UA_NBU_E-hryvnia_2019:p32:para1,UA_UA_NBU_E-hryvnia_2019:p32:s786,dev_2026-11-13,DS MB,,2026-11-17
+UK_UK_BoE_2020_OpportChall,2,2,UK_UK_BoE_2020_OpportChall:p2:para2,UK_UK_BoE_2020_OpportChall:p2:s12,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_BoE_2023_TechWP,78,12,UK_UK_BoE_2023_TechWP:p78:para12,UK_UK_BoE_2023_TechWP:p78:s1369,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_BoE_2023_TechWP,85,1,UK_UK_BoE_2023_TechWP:p85:para1,UK_UK_BoE_2023_TechWP:p85:s1475,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+UK_UK_UK-BoE-2024-01-response-to-technology-working-paper,5,2,UK_UK_UK-BoE-2024-01-response-to-technology-working-paper:p5:para2,UK_UK_UK-BoE-2024-01-response-to-technology-working-paper:p5:s35,dev_2026-11-13,DS MB,,2026-11-17
+UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF,10,1,UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF:p10:para1,UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF:p10:s77,dev_2026-11-13 dev_adjudication_2026-11-22,DS MB,gpt-6-astra (proposal shown),2026-11-17
+UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul,15,2,UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul:p15:para2,UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul:p15:s121,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP,13,1,UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP:p13:para1,UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP:p13:s118,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE,72,1,UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE:p72:para1,UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE:p72:s1126,dev_2026-11-13,DS MB,,2026-11-17
+UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE,78,1,UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE:p78:para1,UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE:p78:s1222,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE,29,1,UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE:p29:para1,UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE:p29:s365,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE,30,1,UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE:p30:para1,UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE:p30:s375,facet80_2026-11-22,DS MB,,2026-11-22
+UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment,19,3,UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment:p19:para3,UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment:p19:s196,dev_2026-11-13,DS MB,,2026-11-17
+UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender,5,2,UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender:p5:para2,UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender:p5:s117,facet80_2026-11-22,DS MB,,2026-11-22
+UY_UY_BCU_Seven_Lessons_2022,7,2,UY_UY_BCU_Seven_Lessons_2022:p7:para2,UY_UY_BCU_Seven_Lessons_2022:p7:s117,dev_2026-11-13,DS MB,,2026-11-17
+ZA_ZA_SARB_SARB_ProjectKhokha-20180605,70,11,ZA_ZA_SARB_SARB_ProjectKhokha-20180605:p70:para11,ZA_ZA_SARB_SARB_ProjectKhokha-20180605:p70:s1095,dev_2026-11-13,DS MB,,2026-11-17

@@ -16,7 +16,7 @@ Inputs (all under data/):
   manifest/TIERS_2026-11-21.csv               one row per document, decision of record, tier, language, SHA-256
                                               (rows with decision CANDIDATE await an author: CANDIDATES_NIJSSE_PINTO_2026-11-21.csv)
   manifest/CORPUS_DOCUMENTS_2026-11-17.csv    evidence documents with English text: issuer, kind, text route
-  manifest/ISSUERS_2026-11-13.csv             issuer and kind of evidence documents (model pre-fill, under review)
+  manifest/ISSUERS_<latest>.csv               issuer and kind of evidence documents (pre-fill checked by check_issuers.py; conflicts decided by the authors)
   manifest/COMPANION_LINKS_2026-11-13.csv     companions: kind, role, URL, linked evidence
   manifest/GAP_CHECK_2026-11-02.csv           gap-check candidates (CAND-<row>): issuer, type, URL
   manifest/MANUAL_DOWNLOADS_2026-11-10.csv    download provenance (URL by SHA-256)
@@ -35,7 +35,7 @@ Outputs:
 
 usage: python scripts/site/build_site_data.py [--check]   (--check: fail if the committed outputs are stale)
 """
-import csv, hashlib, io, json, os, re, sys
+import csv, glob, hashlib, io, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 D = lambda *p: os.path.join(ROOT, "data", *p)
@@ -119,7 +119,7 @@ def clean_title(row_title, fname, did):
 def build():
     tiers = read(D("manifest", TIERS))
     corpus = {r["id"]: r for r in read(D("manifest", CORPUS))}
-    issuers = {r["id"]: r for r in read(D("manifest", "ISSUERS_2026-11-13.csv"))}
+    issuers = {r["id"]: r for r in read(sorted(glob.glob(D("manifest", "ISSUERS_2*.csv")))[-1])}
     comp = {r["id"]: r for r in read(D("manifest", "COMPANION_LINKS_2026-11-13.csv"))}
     gap = read(D("manifest", "GAP_CHECK_2026-11-02.csv"))
     reg = {r["doc_id"]: r for r in read(D("registry", "REGISTRY_v2_2.csv"))}
