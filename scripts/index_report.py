@@ -80,7 +80,9 @@ def _table_rows(index, tiers):
                      "rungs_" + "_".join(CORE): "-".join(str(cm["profile"][f]) for f in CORE), "decided": cm["decided"],
                      "determined": s["determined"], "n_cells": s["n_components"],
                      "with_leaning_lower": x["stated_with_leaning"]["lower"], "with_leaning_upper": x["stated_with_leaning"]["upper"],
-                     "rests_on_leaning": x["stated_with_leaning"]["rests_on_leaning"]})
+                     "rests_on_leaning": x["stated_with_leaning"]["rests_on_leaning"],
+                     "core4_lower": x["core4_stated"]["lower"], "core4_upper": x["core4_stated"]["upper"],
+                     "f3_category": x["F3"]["value"] or "undetermined", "f3_committed": x["F3"]["committed"]})
     return rows
 
 
@@ -182,8 +184,8 @@ def markdown(res, rows, label):
           for b in ("lower", "upper"):
             t = tc[f"test_{name}_{b}_bound"]
             L += ["", f"{name}, {b} bound: projects with talk share above commitment share {t['positive']}, below {t['negative']}, equal {t['zero']}; one-sided sign test p = {t['sign_test_p_one_sided']}; mean difference {t['mean_d']} (95 % {t['mean_d_ci95']})."]
-    L += ["", "## Index per project", "", f"| Project | Tier | F1 | stated | admissible | rungs {'-'.join(CORE)} | decided of {len(CORE)} |", "|---|---|---|---|---|---|---|"]
-    L += [f"| {r['project_id']} | {r['tier']} | {r['f1']} | [{r['stated_lower']}, {r['stated_upper']}] | [{r['admissible_lower']}, {r['admissible_upper']}] | {r['rungs_' + '_'.join(CORE)]} | {r['decided']} |" for r in rows]
+    L += ["", "## Index per project", "", f"| Project | Tier | F1 | stated ({len(CORE)} cells) | admissible | four cells | F3 (category) | rungs {'-'.join(CORE)} | decided of {len(CORE)} |", "|---|---|---|---|---|---|---|---|---|"]
+    L += [f"| {r['project_id']} | {r['tier']} | {r['f1']} | [{r['stated_lower']}, {r['stated_upper']}] | [{r['admissible_lower']}, {r['admissible_upper']}] | [{r['core4_lower']}, {r['core4_upper']}] | {r['f3_category']} | {r['rungs_' + '_'.join(CORE)]} | {r['decided']} |" for r in rows]
     return "\n".join(L) + "\n"
 
 

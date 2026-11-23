@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "units"))
 from score_agreement import alpha  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(__file__))
-from derive_index import CORE, rung  # noqa: E402
+from derive_index import CELLS, rung  # noqa: E402
 
 VALUES = {"yes", "no", "undetermined", "via_psp", "via_cb", "via_both", "none_stated"}  # F3 is categorical
 # Coder template of 22 Nov 2026 (V6 of the 22 Nov check, ADR-012 §3): every field rule C needs travels with the cell.
@@ -52,7 +52,7 @@ def _norm(field, v):
     return v if field in ("document_id", "quote", "page_index", "note") else v.lower()
 
 
-def read(path, cells=CORE):
+def read(path, cells=CELLS):
     """One coder file. Stops the run on anything it cannot read unambiguously, so nothing is dropped silently:
     an empty key, a cell outside the grid, a duplicate (project, cell), a value or field outside its list, a set value
     without evidence state, text route, derivation, document and quote, a set F1/F2/F4/F9 without basis, and a value
@@ -94,7 +94,7 @@ def read(path, cells=CORE):
     return out
 
 
-def reliability(a, b, cells=CORE):
+def reliability(a, b, cells=CELLS):
     """alpha per cell. Keys present in only one file are reported, never paired with a blank (merge() keeps them as
     undetermined cells flagged missing_coder). Also listed for the authors: F1 = no set on a policy basis (contract
     v12 §6 says a policy promise never sets F1 = no; not enforced until the contract is adopted) and, among cells

@@ -36,5 +36,5 @@ disagreements than agreements. No joint review is needed; none was held, so the 
   and voice REPORTED occurs on 4 units. Protocol v2 §4 leaves certification to the reference sample.
 - The intervals are bootstrap intervals over these units and say nothing about the corpus.
 - The coders are the authors. Relevance agreement rose from alpha 0.456 on the development sample of 17 Nov to 0.921 here, after
-  the joint adjudication of 22 Nov (ADR-011), which had read a model proposal. The authors' agreement here is therefore an upper
-  bound on what an outside coder would reach, and it is not independent of that adjudication.
+  the joint adjudication of 22 Nov (ADR-011), which had read a model proposal. How other coders would perform is therefore unknown
+  (wording corrected 23 Nov 2026, ADR-013 B1), and this agreement is not independent of that adjudication.

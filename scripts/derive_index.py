@@ -4,12 +4,15 @@ frozen and registered before F-cell production.
 
 Axis 1, **stated design (any status)**: how far the design the documents describe keeps a retail payment from being
 routinely attributed to an identified person, from the cells in CORE (version 1: F1, F2, F4, F7; version 2, below:
-eight cells). Values are taken at any decision or implementation
+seven cells). Values are taken at any decision or implementation
 status, so a considered design scores like an operated one on this axis; the status of every component is shown beside
 it (axis 2) and the admissible-only version (contract §5, rule C) is computed for every project.
 
-v2 (MB, 21 Nov 21:31: an index that rests on F1 alone is useless; all F-cells must matter): eight privacy cells
-F1, F2, F3, F4, F7, F8, F9, F10, scored by SCORE, primary aggregation the compensatory MEAN. The lexicographic rule
+v2 (MB, 21 Nov 21:31: an index that rests on F1 alone is useless; all F-cells must matter), as amended by ADR-012 D4
+(22 Nov 2026) and repaired on 23 Nov (ADR-013 §3): the primary number is the compensatory MEAN of the seven cells in
+CORE (F1, F2, F4, F7, F8, F9, F10), scored by SCORE. F3 is categorical (F3_VALUES, including none_stated), outside the
+mean and reported beside it (f3_category); the four-cell index CORE4 is reported beside it as the narrower variant.
+All eight cells in CELLS are coded. The lexicographic rule
 below (review of 21 Nov, item 5) and the cap are kept only as sensitivity variants.
 Lexicographic variant: F1 first, then the mean of the other components.
 Embedded on [0, 1]: F1 protective -> 0.5 + 0.5 * rest; F1 not protective -> 0.5 * rest; F1 undetermined -> the
@@ -21,7 +24,7 @@ Missing cells are never filled. Every score is an interval [lower, upper]: lower
 as not protective, upper as protective (the bound logic of contract §8.4).
 
 Axis 2, **commitment profile**: the rung of each component (considered 1, tested 2, endorsed 3, operational 4; none 0)
-and the number of components that pass rule C (committed(), the same predicate as admissible(); V6) out of the cells in CORE (8 in version 2, 4 in version 1; fixed
+and the number of components that pass rule C (committed(), the same predicate as admissible(); V6) out of the cells in CORE (7 in version 2, 4 in version 1; fixed
 denominator). No mean of ranks (review item 4).
 
 Talk labels never enter the index.
@@ -30,12 +33,11 @@ import random
 
 from derive import _status, admissible
 
-# Score of each cell value for the reference user's privacy (v2 after MB, 21 Nov 21:31: "all F relevant").
-# F3 and F9 have a direction the authors must confirm (AMBIGUOUS); a sensitivity variant drops them.
+# Score of each cell value for the reference user's privacy (v2 after MB, 21 Nov 21:31: "all F relevant"; ADR-012 D4:
+# less access, less identification and no re-identification = more privacy). F3 has no score (ADR-012 D4).
 SCORE = {
     "F1": {"no": 1, "yes": 0},                         # CB cannot link online payments to a person
     "F2": {"no": 1, "yes": 0},                         # PSP cannot link
-    "F3": {"via_psp": 1, "via_cb": 0, "via_both": 0},  # lawful access only through intermediaries, as for bank accounts
     "F4": {"yes": 1, "no": 0},                         # private offline mode
     "F7": {"yes": 1, "no": 0},                         # low-identity route
     "F8": {"no": 1, "yes": 0},                         # ordinary wallet without verified identity
@@ -43,9 +45,12 @@ SCORE = {
     "F10": {"no": 1, "yes": 0},                        # no programmable restrictions on use
 }
 PROTECTIVE = {f: next(v for v, x in m.items() if x == 1) for f, m in SCORE.items()}
-CORE = ("F1", "F2", "F3", "F4", "F7", "F8", "F9", "F10")
-CORE4 = ("F1", "F2", "F4", "F7")  # v1 definition, kept as a sensitivity variant
-AMBIGUOUS = ("F3", "F9")
+CORE = ("F1", "F2", "F4", "F7", "F8", "F9", "F10")  # the seven cells of the primary mean (ADR-012 D4)
+CORE4 = ("F1", "F2", "F4", "F7")  # the four-cell index, reported beside the primary number
+CELLS = ("F1", "F2", "F3", "F4", "F7", "F8", "F9", "F10")  # every coded privacy cell
+F3_ROUTES = ("via_psp", "via_cb", "via_both")
+F3_VALUES = F3_ROUTES + ("none_stated",)  # categorical; none_stated needs a completed project search
+VALUES = {**{f: tuple(m) for f, m in SCORE.items()}, "F3": F3_VALUES}  # the value set of every coded cell
 OPTIONAL = ()
 RULES = ("mean", "lexicographic", "cap")
 CAP = 0.5
@@ -79,7 +84,7 @@ def committed(cell, fid):
     blind coders disputed. The rung ladder is shown beside it, but a rung of 3 or 4 alone is not a commitment."""
     if not cell or is_leaning(cell) or disputed(cell):
         return False
-    return admissible(cell, categorical=set(SCORE["F3"]) if fid == "F3" else None)
+    return admissible(cell, categorical=set(F3_ROUTES) if fid == "F3" else None, cell_id=fid)
 
 
 def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=False, include_leaning=False):
@@ -105,12 +110,12 @@ def component(cell, fid, view="stated", exclude_route_d=False, exclude_inferred=
     if dec in ("rejected", "superseded"):
         return None
     v = str(cell.get("value", "")).strip().lower()
-    return SCORE[fid].get(v)
+    return SCORE[fid].get(v) if fid in SCORE else None  # F3 is never scored
 
 
 def rung(cell, fid=None):
     """Commitment rung of a cell that carries a scored value (yes/no, or the F3 categories)."""
-    valid = set(SCORE[fid]) if fid in SCORE else {"yes", "no"}
+    valid = set(F3_ROUTES) if fid == "F3" else (set(SCORE[fid]) if fid in SCORE else {"yes", "no"})
     if not cell or str(cell.get("value", "")).strip().lower() not in valid:
         return 0
     if is_leaning(cell):
@@ -172,12 +177,25 @@ def axis2(cells, cells_used=CORE):
             "leaning": [f for f in cells_used if is_leaning(cells.get(f))]}
 
 
+def f3_category(cell):
+    """F3 beside the index (ADR-012 D4): the stated route, or none_stated, with its rung and whether it passes rule C.
+    A LEANING, disputed, conflicted, rejected or superseded F3 shows no category."""
+    v = str((cell or {}).get("value", "")).strip().lower()
+    if v not in F3_VALUES or is_leaning(cell) or disputed(cell) or conflicted(cell) or _status(cell)[0] in ("rejected", "superseded"):
+        v = None
+    return {"value": v, "rung": rung(cell, "F3"), "committed": committed(cell, "F3")}
+
+
 def privacy_index(cells, **kw):
-    """Both axes plus the admissible-only robustness interval."""
+    """Both axes, the admissible-only robustness interval, the four-cell variant and F3 as a category beside them."""
     kw.pop("view", None)
+    kw.pop("cells_used", None)
     return {"stated": axis1(cells, view="stated", **kw), "commitment": axis2(cells),
             "admissible": axis1(cells, view="admissible", **kw),
-            "stated_with_leaning": axis1(cells, view="stated", include_leaning=True, **kw)}
+            "stated_with_leaning": axis1(cells, view="stated", include_leaning=True, **kw),
+            "core4_stated": axis1(cells, view="stated", cells_used=CORE4, **kw),
+            "core4_admissible": axis1(cells, view="admissible", cells_used=CORE4, **kw),
+            "F3": f3_category(cells.get("F3"))}
 
 
 # ---------- separation of projects (diagnostic until DS confirms ordering, review item 8) ----------
@@ -210,8 +228,8 @@ def _dirichlet(rng, keys):
 
 def uncertainty_analysis(projects, draws=500, seed=20261121, view="stated"):
     """Share of the baseline separated pairs that survive (a) Dirichlet(1) weight draws, (b) the alternative rules
-    (lexicographic, cap), (c) leaving out each cell, (d) the admissible view, (e) without the ambiguous F3 and F9,
-    (f) the four cells of v1 only, (g) without route-D or inferred cells."""
+    (lexicographic, cap), (c) leaving out each cell, (d) the admissible view, (e) the four-cell index only,
+    (f) without route-D or inferred cells, (g) with LEANING cells scored."""
     base_scores = {p: axis1(c, view=view) for p, c in projects.items()}
     base = separated_pairs(base_scores)
     out = {"n_projects": len(projects), "baseline_separated_pairs": len(base), "baseline_share": round(share_separated(base_scores), 4)}
@@ -234,7 +252,6 @@ def uncertainty_analysis(projects, draws=500, seed=20261121, view="stated"):
     for f in CORE:
         out[f"drop_{f}_kept"] = kept({p: axis1(c, view=view, drop=(f,)) for p, c in projects.items()})
     out["admissible_view_kept"] = kept({p: axis1(c, view="admissible") for p, c in projects.items()})
-    out["without_F3_F9_kept"] = kept({p: axis1(c, view=view, drop=AMBIGUOUS) for p, c in projects.items()})
     out["core4_only_kept"] = kept({p: axis1(c, view=view, cells_used=CORE4) for p, c in projects.items()})
     out["no_route_D_kept"] = kept({p: axis1(c, view=view, exclude_route_d=True) for p, c in projects.items()})
     out["with_leaning_kept"] = kept({p: axis1(c, view=view, include_leaning=True) for p, c in projects.items()})

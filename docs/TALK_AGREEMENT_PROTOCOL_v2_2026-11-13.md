@@ -7,7 +7,7 @@ Replaces the protocol of the same morning, which was withdrawn before any unit w
 | | development sample | reference sample |
 |---|---|---|
 | purpose | find out which facets two people can code consistently; revise codebook and prompts | measure agreement of the frozen codebook; reference for the model |
-| size | 120 units: D 90, N 15, R 15; route A 84, B 11, D 25 | 400 units: D 260, N 80, R 60; route A 292, B 30, D 78 |
+| size | 120 units: D 90, N 15, R 15; route A 84, B 11, D 25 | 400 units: D 260, N 80, R 60; route A 292, B 30, D 78. **Superseded 22 Nov 2026 (ADR-012 D18):** a direct stratified random draw of 400 units, D 140 (dictionary hits), N 50 (neighbours of hits), O 210 (all other eligible units), with stored inclusion probabilities (`draw_agreement_sample.py --design main`) |
 | drawn | now, from the evidence set as it stands (`data/units/AGREEMENT_SAMPLE_dev_2026-11-13.csv`) | after the document set and the codebook are frozen; never contains a development unit |
 | may be used to tune the model | yes | no |
 | coded | both authors, alone, all facets | both authors, alone, the facets that survived |
