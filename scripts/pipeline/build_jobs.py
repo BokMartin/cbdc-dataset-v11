@@ -103,8 +103,10 @@ def main(argv=None):
     ap.add_argument("--projects", nargs="+", required=True); ap.add_argument("--prompt", required=True); ap.add_argument("--out", required=True)
     ap.add_argument("--packing", choices=["single", "page"], default="single"); ap.add_argument("--units-file"); ap.add_argument("--max-chars", type=int, default=240000)
     ap.add_argument("--header-extra", help="CSV doc_key,decision_authority,layer,page_span for the extraction header")
+    ap.add_argument("--sample", type=int, help="pilot: keep a random sample of this many requests (seeded, recorded in JOB_META)")
+    ap.add_argument("--seed", type=int, default=20261123); ap.add_argument("--docs", nargs="*", help="only these doc_keys")
     a = ap.parse_args(argv)
-    manp = latest("data/units/UNITS_MANIFEST_*.csv"); man = [m for m in rd(manp) if m["project"] in a.projects]
+    manp = latest("data/units/UNITS_MANIFEST_*.csv"); man = [m for m in rd(manp) if m["project"] in a.projects and (not a.docs or m["doc_key"] in a.docs)]
     if not man: raise SystemExit("no document of these projects in the unit manifest")
     system = open(a.prompt, "rb").read().decode("utf-8")
     extra = {r["doc_key"]: r for r in rd(a.header_extra)} if a.header_extra else {}
@@ -126,6 +128,9 @@ def main(argv=None):
         if a.stage == "talk_L1": inputs.append({"file": "units/" + os.path.basename(cp), "sha256": sha_file(cp), "rows": len(code), "in_repository": False})
         for ids, user in talk_requests(units, code, m, a.packing):
             reqs.append({"request_key": ids[0] if a.packing == "single" else f"{m['doc_key']}:p{units[[u['unit_id'] for u in units].index(ids[0])]['page']}", "unit_ids": ids, "user": user})
+    if a.sample and a.sample < len(reqs):
+        import random
+        keep = set(random.Random(a.seed).sample(range(len(reqs)), a.sample)); reqs = [r for i, r in enumerate(reqs) if i in keep]
     if a.units_file: inputs.append({"file": os.path.abspath(a.units_file), "sha256": sha_file(a.units_file), "rows": len(only), "in_repository": False})
     os.makedirs(a.out, exist_ok=True)
     with open(os.path.join(a.out, "REQUESTS.jsonl"), "w", encoding="utf-8") as fh:
@@ -138,7 +143,8 @@ def main(argv=None):
             "user_message_format": f"{fn} with header of scripts/pipeline/build_jobs.py (script_sha256 {sha_file(os.path.abspath(__file__))[:16]}…, build_requests {sha_file(br.__file__)[:16]}…)",
             "packing": {"single": "one unit per request", "page": "all units to code of one page per request"}[a.packing] if a.stage != "extraction_single" else f"one document per request, page ranges of at most {a.max_chars} characters with one shared page",
             "inputs": inputs, "requests": len(reqs), "units_to_code": sum(len(r["unit_ids"]) for r in reqs), "user_chars": sum(len(r["user"]) for r in reqs),
-            "request_keys": [r["request_key"] for r in reqs], "warnings": warnings}
+            "request_keys": [r["request_key"] for r in reqs], "warnings": warnings,
+            "sample": {"n": a.sample, "seed": a.seed, "docs": a.docs} if (a.sample or a.docs) else None}
     json.dump(meta, open(os.path.join(a.out, "JOB_META.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"{a.stage}: {len(reqs)} requests, {meta['units_to_code']} units, {meta['user_chars']:,} characters of user text -> {a.out}" + (f"; {len(warnings)} warnings" if warnings else ""))
     return meta

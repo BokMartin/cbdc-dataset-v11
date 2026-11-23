@@ -76,13 +76,13 @@ Per core project p:
 - **The hypothesis holds** if a majority of the 16 core projects (9 or more) meet both T_p and C_p. It is **inconclusive** if the
   bounds straddle a majority. There is no sign test.
 
-**Bounds, as proposed (AUTHORS: confirm).** Each project gets a lower and an upper reading.
+**Bounds (MB, 23 Nov 2026: the stricter variant, as proposed).** Each project gets a lower and an upper reading.
 - Lower: an undetermined cell counts as committed, and a unit without a majority label counts as not relevant.
 - Upper: the reverse of the lower reading.
 - L = the number of projects that meet both T_p and C_p at the lower reading. U = the number at the upper reading.
 - The hypothesis holds if L ≥ 9, fails if U ≤ 8, and is inconclusive otherwise.
 
-**Denominator, as proposed (AUTHORS: confirm).**
+**Denominator (MB, 23 Nov 2026: as proposed).**
 - "Eligible units" are all units of the project's evidence texts, after excluding headings and furniture (stratum X).
 - "Own-voice relevant" is relevance R with voice OWN, under the combination rule of the three models fixed at the freeze
   (Registration B).
@@ -106,12 +106,18 @@ only documented development known cases").
 |---|---|---|---|---|---|
 | K03 | UK | F1 | no | UK is a development project (exposed 18 Oct) | proposed; **AUTHORS:** fix page and quote (BoE CP 970, 2024) |
 | new | NO | **AUTHORS:** choose 1 or 2 cells from the October development profile | | NO is a development project (exposed 18 Oct) | to be proposed |
-| K01, K02 | EU | F4 yes, F1 no | | **EU is a core project; the ledger records its exposure only through Table 2 of Nijsse and Pinto, not through model values.** Fixing these values (a model proposal of 21 Nov) before blind coding would expose EU | **AUTHORS:** either drop them, or log the exposure and code EU as not blind (then agreement is reported on 13) |
+| K01, K02 | EU | F4 yes, F1 no | | EU is a core project, coded blind | **dropped** (MB, 23 Nov 2026: EU stays in the core; the two values are not fixed in advance, so EU can be coded blind) |
 | K04 to K07 | BS, CN, NG | F7 / F1 | not filled | filling a value exposes the project; BS is core | recommended: leave out |
+
+## 4a. Reference sample: what is excluded (MB, 23 Nov 2026)
+
+The reference sample of 400 units (D18) leaves out every block of `data/units/EXPOSURE_REGISTRY_*.csv`: the paragraphs shown to
+the authors and the paragraphs labelled in development runs (`scripts/units/exposure_registry.py`, `blocks()` without
+`shown_only`).
 
 ## 5. Before this goes to OSF
 
-1. The authors settle every AUTHORS item above.
+1. The authors settle every AUTHORS item above (open: the page and quote of K03 and the NO cases). DS confirms MB's answers of 23 Nov.
 2. DS confirms the replacement of the manual issuer review by the machine check (docs/ISSUER_CHECK_2026-11-23.md). Issuer and
    kind enter the request headers.
 3. The extraction prompt v12.1 is adopted after the second-model audit, and codebook v0.4 and relevance prompt v0.3 are
