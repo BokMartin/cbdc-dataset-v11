@@ -20,6 +20,23 @@ Model identifiers are shown as *requested → returned by the provider*. Full ha
 | code | 93adcf5555a2d4f8660ae1f5cbd5788fcc0484c9 |
 | not recorded (run predates the specification) | nothing |
 
+## `data/extraction/runs/PILOT_EX_astra62`
+
+| | |
+|---|---|
+| stage | extraction_single |
+| purpose | development |
+| provider, interface | openai; openai.batch |
+| model | gpt-6.2-astra → gpt-6.2-astra |
+| dates of calls (UTC) | 2026-11-23 to 2026-11-23 |
+| system prompt | pipeline/prompts/extraction_v12.2.system.md · sha256 7a97c8dd9059d7a8… |
+| parameters | `{"endpoint": "/v1/responses through /v1/batches, completion_window 24h", "max_output_tokens": 64000, "prompt_cache_key": "extraction_single-7a97c8dd9059d7a8", "reasoning.effort": "provider default (not sent)", "store": false, "temperature": "provider default (not sent)", "tools": "none"}` |
+| input data | data/units/UNITS_MANIFEST_2026-11-23.csv (6d9b8124d892…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv (3a236ae72426…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv (d03d1cccb7ca…) |
+| calls complete / made | 2/2 |
+| tokens | 17614 in / 14030 out |
+| code | 8a21f0f11f25d08f5e87690d033f89ec98150957 |
+| not recorded (run predates the specification) | nothing |
+
 ## `data/extraction/runs/PILOT_EX_claude`
 
 | | |
@@ -54,6 +71,23 @@ Model identifiers are shown as *requested → returned by the provider*. Full ha
 | code | 93adcf5555a2d4f8660ae1f5cbd5788fcc0484c9 |
 | not recorded (run predates the specification) | nothing |
 
+## `data/extraction/runs/PILOT_EX_sol62`
+
+| | |
+|---|---|
+| stage | extraction_single |
+| purpose | development |
+| provider, interface | openai; openai.batch |
+| model | gpt-6.2-sol → gpt-6.2-sol |
+| dates of calls (UTC) | 2026-11-23 to 2026-11-23 |
+| system prompt | pipeline/prompts/extraction_v12.2.system.md · sha256 7a97c8dd9059d7a8… |
+| parameters | `{"endpoint": "/v1/responses through /v1/batches, completion_window 24h", "max_output_tokens": 64000, "prompt_cache_key": "extraction_single-7a97c8dd9059d7a8", "reasoning.effort": "provider default (not sent)", "store": false, "temperature": "provider default (not sent)", "tools": "none"}` |
+| input data | data/units/UNITS_MANIFEST_2026-11-23.csv (6d9b8124d892…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv (3a236ae72426…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv (d03d1cccb7ca…) |
+| calls complete / made | 2/2 |
+| tokens | 17614 in / 23316 out |
+| code | 8a21f0f11f25d08f5e87690d033f89ec98150957 |
+| not recorded (run predates the specification) | nothing |
+
 ## `data/talk/runs/PILOT_L1_astra`
 
 | | |
@@ -69,6 +103,23 @@ Model identifiers are shown as *requested → returned by the provider*. Full ha
 | calls complete / made | 100/100 |
 | tokens | 142730 in / 3748 out |
 | code | 93adcf5555a2d4f8660ae1f5cbd5788fcc0484c9 |
+| not recorded (run predates the specification) | nothing |
+
+## `data/talk/runs/PILOT_L1_astra62`
+
+| | |
+|---|---|
+| stage | talk_L1 |
+| purpose | development |
+| provider, interface | openai; openai.batch |
+| model | gpt-6.2-astra → gpt-6.2-astra |
+| dates of calls (UTC) | 2026-11-23 to 2026-11-23 |
+| system prompt | pipeline/prompts/talk_L1_relevance.system.md · sha256 009fe469b711e27e… |
+| parameters | `{"endpoint": "/v1/responses through /v1/batches, completion_window 24h", "max_output_tokens": 8000, "prompt_cache_key": "talk_L1-009fe469b711e27e", "reasoning.effort": "provider default (not sent)", "store": false, "temperature": "provider default (not sent)", "tools": "none"}` |
+| input data | data/units/UNITS_MANIFEST_2026-11-23.csv (6d9b8124d892…); units/NO_NO_NBPapers_1_2018_en.units.csv (50d3ca924801…); units/NO_NO_NBPapers_1_2018_en.candidates.csv (955223daeecf…); units/NO_NO_NBPapers_1_2021_en.units.csv (5efe7a35ffad…); units/NO_NO_NBPapers_1_2021_en.candidates.csv (6771829e5ad3…); units/NO_NO_NBPapers_2_2019_en.units.csv (2940a885ea20…); units/NO_NO_NBPapers_2_2019_en.candidates.csv (1b394f427262…); units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.units.csv (9d4518b276a6…); units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.candidates.csv (dd7693fd48fc…); units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.units.csv (af8c5bfbf3a1…); units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.candidates.csv (a1091ee22641…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv (3a236ae72426…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.candidates.csv (e3d091709449…); units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.units.csv (a322e00a3099…); units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.candidates.csv (d379a6d2c11b…); units/UK_UK_BoE_2020_OpportChall.units.csv (1b9d37cbdf02…); units/UK_UK_BoE_2020_OpportChall.candidates.csv (1c8f1085df97…); units/UK_UK_BoE_2023_TechWP.units.csv (b7b5403cf97d…); units/UK_UK_BoE_2023_TechWP.candidates.csv (17c00795ffc0…); units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.units.csv (bc51107f525c…); units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.candidates.csv (c2ed4b47eb90…); units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.units.csv (de5283d46f81…); units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.candidates.csv (d9d7a70dcbbf…); units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.units.csv (267d6f07d8b8…); units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.candidates.csv (0344253f3b99…); units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.units.csv (f83c69f84172…); units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.candidates.csv (958d824ef217…); units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.units.csv (f61ffffa5324…); units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.candidates.csv (298be3b3125b…); units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.units.csv (13c965223941…); units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.candidates.csv (da671782123f…); units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.units.csv (4d4a132d297f…); units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.candidates.csv (2c3039ae400d…); units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.units.csv (67e36031e0e5…); units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.candidates.csv (c093582fb567…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv (d03d1cccb7ca…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.candidates.csv (7d7604e86dfd…); units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.units.csv (6d0a241d4ef2…); units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.candidates.csv (38f1c66d68b9…); units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.units.csv (add01752b5d9…); units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.candidates.csv (5a05a7e78972…); units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.units.csv (8353fff81889…); units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.candidates.csv (850d42590dec…); units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.units.csv (d769bb08cadf…); units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.candidates.csv (294e4cdbc1b9…); units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.units.csv (b02f4094d62a…); units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.candidates.csv (eca58435d634…); units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.units.csv (412b12ab20f0…); units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.candidates.csv (e2e7afaee64a…); units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.units.csv (9a06c87a7b5e…); units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.candidates.csv (4f0a042f24d9…) |
+| calls complete / made | 100/100 |
+| tokens | 142730 in / 3024 out |
+| code | 8a21f0f11f25d08f5e87690d033f89ec98150957 |
 | not recorded (run predates the specification) | nothing |
 
 ## `data/talk/runs/PILOT_L1_claude`
@@ -103,6 +154,23 @@ Model identifiers are shown as *requested → returned by the provider*. Full ha
 | calls complete / made | 100/100 |
 | tokens | 152946 in / 38477 out |
 | code | 93adcf5555a2d4f8660ae1f5cbd5788fcc0484c9 |
+| not recorded (run predates the specification) | nothing |
+
+## `data/talk/runs/PILOT_L1_sol62`
+
+| | |
+|---|---|
+| stage | talk_L1 |
+| purpose | development |
+| provider, interface | openai; openai.batch |
+| model | gpt-6.2-sol → gpt-6.2-sol |
+| dates of calls (UTC) | 2026-11-23 to 2026-11-23 |
+| system prompt | pipeline/prompts/talk_L1_relevance.system.md · sha256 009fe469b711e27e… |
+| parameters | `{"endpoint": "/v1/responses through /v1/batches, completion_window 24h", "max_output_tokens": 8000, "prompt_cache_key": "talk_L1-009fe469b711e27e", "reasoning.effort": "provider default (not sent)", "store": false, "temperature": "provider default (not sent)", "tools": "none"}` |
+| input data | data/units/UNITS_MANIFEST_2026-11-23.csv (6d9b8124d892…); units/NO_NO_NBPapers_1_2018_en.units.csv (50d3ca924801…); units/NO_NO_NBPapers_1_2018_en.candidates.csv (955223daeecf…); units/NO_NO_NBPapers_1_2021_en.units.csv (5efe7a35ffad…); units/NO_NO_NBPapers_1_2021_en.candidates.csv (6771829e5ad3…); units/NO_NO_NBPapers_2_2019_en.units.csv (2940a885ea20…); units/NO_NO_NBPapers_2_2019_en.candidates.csv (1b394f427262…); units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.units.csv (9d4518b276a6…); units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.candidates.csv (dd7693fd48fc…); units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.units.csv (af8c5bfbf3a1…); units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.candidates.csv (a1091ee22641…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv (3a236ae72426…); units/NO_NO_Norway_norges-bank-memo-2_2020-eng.candidates.csv (e3d091709449…); units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.units.csv (a322e00a3099…); units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.candidates.csv (d379a6d2c11b…); units/UK_UK_BoE_2020_OpportChall.units.csv (1b9d37cbdf02…); units/UK_UK_BoE_2020_OpportChall.candidates.csv (1c8f1085df97…); units/UK_UK_BoE_2023_TechWP.units.csv (b7b5403cf97d…); units/UK_UK_BoE_2023_TechWP.candidates.csv (17c00795ffc0…); units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.units.csv (bc51107f525c…); units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.candidates.csv (c2ed4b47eb90…); units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.units.csv (de5283d46f81…); units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.candidates.csv (d9d7a70dcbbf…); units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.units.csv (267d6f07d8b8…); units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.candidates.csv (0344253f3b99…); units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.units.csv (f83c69f84172…); units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.candidates.csv (958d824ef217…); units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.units.csv (f61ffffa5324…); units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.candidates.csv (298be3b3125b…); units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.units.csv (13c965223941…); units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.candidates.csv (da671782123f…); units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.units.csv (4d4a132d297f…); units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.candidates.csv (2c3039ae400d…); units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.units.csv (67e36031e0e5…); units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.candidates.csv (c093582fb567…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv (d03d1cccb7ca…); units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.candidates.csv (7d7604e86dfd…); units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.units.csv (6d0a241d4ef2…); units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.candidates.csv (38f1c66d68b9…); units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.units.csv (add01752b5d9…); units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.candidates.csv (5a05a7e78972…); units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.units.csv (8353fff81889…); units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.candidates.csv (850d42590dec…); units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.units.csv (d769bb08cadf…); units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.candidates.csv (294e4cdbc1b9…); units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.units.csv (b02f4094d62a…); units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.candidates.csv (eca58435d634…); units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.units.csv (412b12ab20f0…); units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.candidates.csv (e2e7afaee64a…); units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.units.csv (9a06c87a7b5e…); units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.candidates.csv (4f0a042f24d9…) |
+| calls complete / made | 100/100 |
+| tokens | 142730 in / 3452 out |
+| code | 8a21f0f11f25d08f5e87690d033f89ec98150957 |
 | not recorded (run predates the specification) | nothing |
 
 ## `data/translation/runs/openai_gpt-6-astra_api_20261110`
