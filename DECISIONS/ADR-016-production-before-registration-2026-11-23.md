@@ -27,8 +27,10 @@ not confirmed in his own words.
 - Talk L1 relevance by page (ADR-015), prompt `talk_L1_relevance.system.md` (v0.4 codebook rules, `009fe469…`), and F-cell
   extraction, prompt `extraction_v12.2.system.md` (`7a97c8dd…`), on the unit set v13e (text in images added, PR 24), on the three
   models of ADR-014.
-- **Not talk L2 (facets).** Its prompt `talk_L2_facets.system.md` is a draft that has not been through a second-model audit,
-  and MB has not read it. L2 needs the L1 labels anyway; it is launched after MB has read the prompt and said yes.
+- **Not talk L2 (facets) yet.** L2 needs the L1 labels. Its prompt is v0.4, approved by MB on 23 Nov 2026 20:17 UTC on a card
+  ("Ano, v0.4"): v0.3 of 13 Nov aligned with codebook v0.5 (a vendor is REPORTED) and clarified after the development round
+  (DATA_PROTECTION needs a rule or measure; traceability; stance of described techniques and open questions; headings, labels
+  and fragments). The codebook carries the same clarifications as v0.6. L2 is launched after L1, under its own cap.
 - General publications (annual reports, general research, strategy) are sent as their CBDC pages ±1 only (ADR-013 P3,
   `scripts/extraction/cbdc_span.py`, `data/manifest/EXTRACTION_HEADER_EXTRA_2026-11-23b.csv`): 9 documents. Kind `other` is
   sent whole, because it holds CBDC reports. Explicit references from a span to pages outside it are kept by the model and
