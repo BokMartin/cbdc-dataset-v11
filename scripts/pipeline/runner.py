@@ -187,6 +187,7 @@ class OpenAIBackend:
         if b.status == "failed":
             errs = " ".join(str(getattr(e, "code", "")) + " " + str(getattr(e, "message", "")) for e in (getattr(getattr(b, "errors", None), "data", None) or []))
             if classify(Exception(errs)) == "credit": raise CreditExhausted(f"batch {bid} failed: {errs[:200]}")
+            if "token_limit_exceeded" in errs or "Enqueued token limit" in errs: self.queue_full = getattr(self, "queue_full", set()) | {bid}
         return b.status in ("completed", "failed", "expired", "cancelled")
 
     def results(self, bid):
@@ -343,7 +344,7 @@ def out_estimate(run, a):
 def run_sync(run, be, a, system, reqs, parse):
     ssha = sha(system); stop = threading.Event()
     def one(r):
-        if stop.is_set(): return
+        if stop.is_set() or run.spent() >= a.max_usd: return   # measured cost reached the cap inside the chunk: send no more
         t = now()
         try: res, err = be.call(system, r["user"]), None
         except Exception as e:
@@ -354,7 +355,10 @@ def run_sync(run, be, a, system, reqs, parse):
     while not stop.is_set():
         todo = run.todo(reqs, a.max_attempts, a.retry_unparsed)
         if not todo: break
-        take = budget_cut(run, a, system, todo[: a.chunk], out_estimate(run, a), 0)
+        # small chunks, so that the output estimate is re-measured often (dev round 23 Nov 2026: one chunk of 1,044 with the
+        # first estimate overshot the cap by 41 %)
+        take = budget_cut(run, a, system, todo[: min(a.chunk, 4 * a.concurrency)], out_estimate(run, a), 0)
+        if run.spent() >= a.max_usd: take = []
         if not take: run.event(f"cost cap reached: {run.spent():.2f} USD measured of {a.max_usd} allowed; {len(todo)} requests not sent"); return EXIT_CAP
         with ThreadPoolExecutor(max_workers=a.concurrency) as ex: list(ex.map(one, take))
         fatal = [x for x in run.attempts[-len(take):] if x["error_kind"] == "fatal"]
@@ -372,6 +376,10 @@ def collect(run, be, a, system, reqs, parse):
             if not be.ended(bid): continue
         except CreditExhausted as e:
             run.event(str(e)); b["collected"] = True; run.save(); credit = True; continue
+        if bid in getattr(be, "queue_full", set()):   # refused whole for the provider's enqueued-token limit: nothing was served
+            b["collected"] = True; b["collected_utc"] = now(); b["refused"] = "enqueued token limit"; run.save()
+            run.event(f"batch {bid} refused for the enqueued token limit; its {len(b['keys'])} requests go out again in a later batch")
+            print(f"batch {bid}: refused for the enqueued token limit, not served", flush=True); continue
         got = set()
         for c, res, err in be.results(bid):
             r = by_cid.get(c)
@@ -393,6 +401,14 @@ def run_batch(run, be, a, system, reqs, parse):
         todo = run.todo(reqs, a.max_attempts, a.retry_unparsed)
         if todo:
             take = budget_cut(run, a, system, todo[: a.chunk], oe, fly_est)
+            if a.max_enqueued_tokens:   # the provider counts input tokens of batches in flight against a fixed limit
+                room = a.max_enqueued_tokens - estimate(a.model, True, system, [r for r in reqs if r["request_key"] in fly], 0)[0]; keep = []
+                for r in take:
+                    t = estimate(a.model, True, system, [r], 0)[0]
+                    if t > room: break
+                    keep.append(r); room -= t
+                if not keep and take and not fly: raise SystemExit("one request is larger than --max-enqueued-tokens")
+                take = keep
             if not take and not fly:
                 run.event(f"cost cap reached: {run.spent():.2f} USD measured of {a.max_usd} allowed; {len(todo)} requests not sent"); return EXIT_CAP
             if take:
@@ -500,6 +516,7 @@ def main(argv=None, client=None):
     r = sub.choices["run"]
     r.add_argument("--work", required=True); r.add_argument("--run"); r.add_argument("--purpose", required=True, choices=sorted(rs.PURPOSES)); r.add_argument("--max-usd", type=float)
     r.add_argument("--wait", action="store_true"); r.add_argument("--poll", type=int, default=60); r.add_argument("--chunk", type=int, default=2000)
+    r.add_argument("--max-enqueued-tokens", type=int, default=0, help="input tokens allowed in batches in flight (OpenAI tier limit per model); 0 = no limit")
     r.add_argument("--concurrency", type=int, default=8); r.add_argument("--max-attempts", type=int, default=2); r.add_argument("--retry-unparsed", action="store_true")
     r.add_argument("--operator", default="MB"); r.add_argument("--allow-dirty", action="store_true")
     c = sub.add_parser("record"); c.add_argument("--work", required=True); c.add_argument("--run", required=True); c.add_argument("--out"); c.add_argument("--root")

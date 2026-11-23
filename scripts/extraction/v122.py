@@ -16,8 +16,8 @@ check(text, user)                   the prompt §6 envelope and §4 fields, veri
                                         one by one, with the reason, and the rest are kept.
                                       state = ok: every observation passed.
 Two tolerances (MB, 23 Nov 2026, after the API pilot; prompt unchanged): a response wrapped in exactly one outer Markdown code
-fence is read without it (recorded in "notes"); modality null is read as n/d, because the prompt §4 row lists modality among
-the fields that are "concise text or null".
+fence is read without it (recorded in "notes"); null is read as n/d in modality, basis, legal_state and referenced_law_state
+(modality: the prompt §4 row lists it among "concise text or null"; the others after the development round, MB 23 Nov 2026).
 A quote passes only if it occurs in the named block of the named page, after collapsing runs of white space; no other
 normalisation, no fuzzy match, no match elsewhere (audit A4c answer 5).
 """
@@ -117,7 +117,8 @@ def _check_observation(o, blocks, owned):
     if o["kind"] not in KINDS: return "kind not allowed"
     e = _check_value(o)
     if e: return e
-    if o["modality"] is None: o["modality"] = "n/d"   # prompt §4 row reads "text or null"; null means not stated (MB 23 Nov 2026)
+    for k in ("modality", "basis", "legal_state", "referenced_law_state"):   # null where n/d is allowed reads as n/d (MB 23 Nov 2026,
+        if o[k] is None: o[k] = "n/d"                                         # pilot and development round)
     for k, allowed in (("decision_status", DECISION), ("implementation_status", IMPLEMENTATION), ("basis", BASIS), ("modality", MODALITY),
                        ("retail_or_wholesale", SCOPE), ("legal_state", LEGAL), ("referenced_law_state", LEGAL), ("confidence", CONFIDENCE)):
         if o[k] not in allowed: return f"{k}: value not allowed: {str(o[k])[:30]!r}"

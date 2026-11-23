@@ -1,0 +1,104 @@
+{
+ "spec": "run-record v1",
+ "stage": "extraction_single",
+ "purpose": "development",
+ "provider": "openai",
+ "interface": "openai.batch",
+ "model_requested": "gpt-6.2-sol",
+ "model_returned": [
+  "gpt-6.2-sol"
+ ],
+ "parameters": {
+  "max_output_tokens": 64000,
+  "reasoning.effort": "provider default (not sent)",
+  "store": false,
+  "prompt_cache_key": "extraction_single-7a97c8dd9059d7a8",
+  "temperature": "provider default (not sent)",
+  "tools": "none",
+  "system_prompt": "developer message (input[0])",
+  "endpoint": "/v1/responses through /v1/batches, completion_window 24h"
+ },
+ "system_prompt_file": "pipeline/prompts/extraction_v12.2.system.md",
+ "system_prompt_version": "12.2",
+ "system_sha256": "7a97c8dd9059d7a8039c27fb06be2cae4697d04d2f4688671f0a1b4df5879263",
+ "user_message_format": "scripts/pipeline/build_jobs.py extraction_requests() with scripts/extraction/v122.py render_request() with header of scripts/pipeline/build_jobs.py (script_sha256 76a223f8b02f398c…, build_requests e26e10b2569429de…)",
+ "packing": "one document per request, disjoint owned page ranges of at most 60000 characters, one context page on either side",
+ "inputs": [
+  {
+   "file": "data/units/UNITS_MANIFEST_2026-11-23.csv",
+   "sha256": "6d9b8124d892b86e50a5a48be3bef1fba116b45fe9a8966daefa22262faa33ee",
+   "rows": 7
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2018_en.units.csv",
+   "sha256": "50d3ca9248015357b72339e4d64779a36f7040b1189103d00c1a4fd4efffe2da",
+   "rows": 1157,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2021_en.units.csv",
+   "sha256": "5efe7a35ffadb1e0b817deb3c5ca35a17ca001eddc73872fa89416963f23dc65",
+   "rows": 1522,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2020_OpportChall.units.csv",
+   "sha256": "1b9d37cbdf025b63ce59fddbcbeb44dcd9ed2dea89f792cad426b97591d4ff68",
+   "rows": 1228,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2023_TechWP.units.csv",
+   "sha256": "b7b5403cf97dccb84d5b9c104b4ea520c38b724e06fe97b6d1aac83cdca6bbaa",
+   "rows": 1496,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.units.csv",
+   "sha256": "bc51107f525c9b84fa563d62ae82d895dbfe88b1e70fa2b44affb427c851fb9a",
+   "rows": 408,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.units.csv",
+   "sha256": "8353fff81889e6ee985ae1492cd58ea2fc52f42c13e4e08e337a42cd2d4a9541",
+   "rows": 1784,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.units.csv",
+   "sha256": "d769bb08cadfe07ea4819325049741df1e5cfb9eaaf797e668b1f809a1d0f944",
+   "rows": 942,
+   "in_repository": false
+  }
+ ],
+ "git_commit": "b44f13da672b3b15877dd3e483e8edb46bd7f2c4",
+ "started_utc": "2026-11-23T18:46:41Z",
+ "finished_utc": "2026-11-23T18:54:51Z",
+ "calls": 20,
+ "complete": 17,
+ "failed": 3,
+ "retried": 0,
+ "batches": {
+  "batch_6b048a129acc8190b1da7e499034fa52": {
+   "requests": 16,
+   "submitted_utc": "2026-11-23T18:46:42Z"
+  },
+  "batch_6b048bfaf11c81908354dbd25f4c49a5": {
+   "requests": 4,
+   "submitted_utc": "2026-11-23T18:54:51Z"
+  }
+ },
+ "usage": {
+  "input_tokens": 319949,
+  "cached_input_tokens": 85392,
+  "cache_write_tokens": 0,
+  "output_tokens": 289806,
+  "reasoning_tokens": 17605
+ },
+ "usage_note": "input_tokens include cached and cache-write tokens on every provider",
+ "sdk": "openai 3.57.0",
+ "python": "3.13.18",
+ "operator": "MB (key from the environment, not stored)",
+ "deviations": "2026-11-23T19:00:57Z cost cap reached: 1.69 USD measured of 1.8 allowed; 2 requests not sent; 2 requests of the job were never sent; cost at list prices from measured usage: 1.69 USD (cap 1.8 USD)"
+}

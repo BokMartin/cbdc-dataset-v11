@@ -331,3 +331,10 @@ def test_pilot_tolerances_fence_and_null_modality():
     assert _v.FENCE.fullmatch('```json\n{"a": 1}\n```').group(1) == '{"a": 1}'
     assert _v.FENCE.fullmatch('```\n{"a": 1}\n```')
     assert not _v.FENCE.fullmatch('Here it is:\n```json\n{"a": 1}\n```')
+
+
+def test_null_reads_as_nd_where_nd_is_allowed():
+    """ADR-015 item 2."""
+    import v122 as _v
+    for k in ("modality", "basis", "legal_state", "referenced_law_state"):
+        assert "n/d" in {"modality": _v.MODALITY, "basis": _v.BASIS, "legal_state": _v.LEGAL, "referenced_law_state": _v.LEGAL}[k]
