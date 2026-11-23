@@ -1,0 +1,2 @@
+id,pdf_sha256,pages,pages_ocr,text_mode,mean_confidence,pages_below_70,words,layout,text_sha256,dpi
+JM_JM-BOJ-CBDC-FAQs-Booklet-2022,60c22f04bab3dc82bb595562196a9c8057bba092b9b64cdb0dcd6ca8d2460a35,6,6,ocr_tesseract,88.0,1,1006,blocks,aa11f42fae198f0b4d1fd3415481e43ce9b9b7a8ecef0a73c71868459ce08ca2,300

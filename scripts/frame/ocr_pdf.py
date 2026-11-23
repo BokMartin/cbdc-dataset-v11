@@ -10,13 +10,21 @@ one row per document (id, PDF SHA-256, pages, pages OCRed, mean confidence, page
 the text). The text route of the document does not change (an English original stays route A); its text mode becomes
 `ocr_tesseract` (or `reading_order+ocr` for mixed documents) so that OCR text can always be told apart.
 
+--layout blocks is for designed leaflets (the Jamaica FAQ: two-page spreads, a question column beside an answer column whose
+left edge moves from question to question), where tesseract's own page segmentation reads across both columns. A page wider
+than tall is cut into its two halves; each half is cut into horizontal bands at runs of blank rows, each band into a left and
+a right part at its widest blank vertical gap; every part is read on its own (psm 6) and the parts follow in reading order
+(top to bottom, left before right), separated by blank lines, so that a question comes before its answer.
+
 usage: ocr_pdf.py --pdf <file.pdf> --id <document id> --out <dir> --date 2026-11-22 [--dpi 300] [--min-words 30] [--all-pages]
+                  [--layout auto|blocks]
 """
 import argparse
 import csv
 import hashlib
 import json
 import os
+import re
 import subprocess
 import tempfile
 
@@ -33,17 +41,90 @@ def n_pages(pdf):
     return int(next(l.split()[-1] for l in info.splitlines() if l.startswith("Pages:")))
 
 
-def ocr_page(pdf, page, dpi, tmp):
-    base = os.path.join(tmp, f"p{page}")
-    subprocess.run(["pdftoppm", "-r", str(dpi), "-f", str(page), "-l", str(page), "-singlefile", "-png", pdf, base], check=True)
-    tsv = subprocess.run(["tesseract", base + ".png", "-", "-l", "eng", "--psm", "3", "tsv"], capture_output=True, text=True).stdout
-    txt = subprocess.run(["tesseract", base + ".png", "-", "-l", "eng", "--psm", "3"], capture_output=True, text=True).stdout
+# a bullet glyph that tesseract reads as a letter or a sign at the start of a line, before a capital: "e CBDC is", "¢ Transferring"
+BULLET = re.compile(r"^(?:(?:e|¢e|¢«|¢|«|©|°)\s+|«)(?=[A-Z])", re.M)  # never "eNaira": a letter needs a space after it
+# a capital I read as a vertical bar when it stands alone: "Can | accept", "| make"
+PIPE_I = re.compile(r"(?<!\S)\|(?!\S)")
+
+
+def tess(png, psm):
+    """tesseract on one image: (text, word confidences)."""
+    tsv = subprocess.run(["tesseract", png, "-", "-l", "eng", "--psm", str(psm), "tsv"], capture_output=True, text=True).stdout
+    txt = subprocess.run(["tesseract", png, "-", "-l", "eng", "--psm", str(psm)], capture_output=True, text=True).stdout
     confs = []
     for line in tsv.splitlines()[1:]:
         f = line.split("\t")
         if len(f) == 12 and f[11].strip() and f[10] not in ("-1", ""):
             confs.append(float(f[10]))
-    return txt, (round(sum(confs) / len(confs), 1) if confs else None)
+    return txt, confs
+
+
+def _runs(flags, minlen):
+    """[(start, end)] of runs of True of at least minlen."""
+    out, s = [], None
+    for i, f in enumerate(list(flags) + [False]):
+        if f and s is None:
+            s = i
+        elif not f and s is not None:
+            if i - s >= minlen:
+                out.append((s, i))
+            s = None
+    return out
+
+
+def blocks(im, dpi, dark=160):
+    """Boxes (x0, y0, x1, y1) of one page image in reading order (see --layout blocks)."""
+    g = im.convert("L")
+    w, h = g.size
+    halves = [(0, w // 2), (w // 2, w)] if w > 1.2 * h else [(0, w)]
+    px = g.load()
+    boxes = []
+    for x0, x1 in halves:
+        step = max(1, dpi // 100)
+        ink_row = [any(px[x, y] < dark for x in range(x0, x1, step)) for y in range(h)]
+        blank = _runs([not r for r in ink_row], int(dpi * 0.2))
+        edges = [0] + [(a + b) // 2 for a, b in blank] + [h]
+        for y0, y1 in zip(edges, edges[1:]):
+            if not any(ink_row[y0:y1]):
+                continue
+            ink_col = [any(px[x, y] < dark for y in range(y0, y1, step)) for x in range(x0, x1)]
+            inked = [i for i, c in enumerate(ink_col) if c]
+            lo, hi = inked[0], inked[-1]
+            gaps = [(b - a, a, b) for a, b in _runs([not c for c in ink_col[lo:hi]], int(dpi * 0.13))]
+            if gaps:
+                _, a, b = max(gaps)
+                cut = x0 + lo + (a + b) // 2
+                boxes += [(x0, y0, cut, y1), (cut, y0, x1, y1)]
+            else:
+                boxes.append((x0, y0, x1, y1))
+    return boxes
+
+
+def ocr_page(pdf, page, dpi, tmp, layout="auto"):
+    base = os.path.join(tmp, f"p{page}")
+    subprocess.run(["pdftoppm", "-r", str(dpi), "-f", str(page), "-l", str(page), "-singlefile", "-png", pdf, base], check=True)
+    dropped = []
+    if layout == "auto":
+        txt, confs = tess(base + ".png", 3)
+    else:
+        from PIL import Image, ImageOps
+        im = Image.open(base + ".png")
+        parts, confs = [], []
+        for i, box in enumerate(blocks(im, dpi)):
+            crop = os.path.join(tmp, f"p{page}_{i}.png")
+            ImageOps.expand(im.crop(box), border=dpi // 10, fill="white").save(crop)
+            t, c = tess(crop, 6)
+            if not t.strip():
+                continue
+            if len(t.split()) <= 15 and (not c or sum(c) / len(c) < 75):
+                dropped.append(len(t.split()))
+                continue  # a logo, an emblem or a cover read as letters ("tu. f° C %"): dropped, never mixed into the text
+            # one part is one block of the layout: tesseract's blank lines inside it are not paragraph breaks; a bullet starts one
+            t = PIPE_I.sub("I", BULLET.sub("• ", "\n".join(l for l in t.strip().splitlines() if l.strip())))
+            parts.append(re.sub(r"\n(?=• )", "\n\n", t))
+            confs += c
+        txt = "\n\n".join(parts) + "\n"
+    return txt, (round(sum(confs) / len(confs), 1) if confs else None), dropped
 
 
 def main(argv=None):
@@ -55,6 +136,7 @@ def main(argv=None):
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--min-words", type=int, default=30)
     ap.add_argument("--all-pages", action="store_true")
+    ap.add_argument("--layout", choices=["auto", "blocks"], default="auto")
     a = ap.parse_args(argv)
     sha = hashlib.sha256(open(a.pdf, "rb").read()).hexdigest()
     os.makedirs(a.out, exist_ok=True)
@@ -66,9 +148,10 @@ def main(argv=None):
                 parts.append((p, layer))
                 pages.append({"page": p, "source": "text_layer", "words": len(layer.split()), "confidence": None})
                 continue
-            txt, conf = ocr_page(a.pdf, p, a.dpi, tmp)
+            txt, conf, dropped = ocr_page(a.pdf, p, a.dpi, tmp, a.layout)
             parts.append((p, txt))
-            pages.append({"page": p, "source": "ocr", "words": len(txt.split()), "confidence": conf})
+            pages.append({"page": p, "source": "ocr", "words": len(txt.split()), "confidence": conf,
+                          "parts_dropped_words": dropped})
     text = "".join(f"=== PAGE {p} ===\n{t.rstrip()}\n" for p, t in parts)
     tf = os.path.join(a.out, f"{sha}.ocr.txt")
     open(tf, "w", encoding="utf-8").write(text)
@@ -79,7 +162,7 @@ def main(argv=None):
     row = {"id": a.id, "pdf_sha256": sha, "pages": len(pages), "pages_ocr": len(ocr),
            "text_mode": "ocr_tesseract" if len(ocr) == len(pages) else ("reading_order+ocr" if ocr else "reading_order"),
            "mean_confidence": round(sum(conf) / len(conf), 1) if conf else "", "pages_below_70": sum(c < 70 for c in conf),
-           "words": sum(x["words"] for x in pages), "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(), "dpi": a.dpi}
+           "words": sum(x["words"] for x in pages), "layout": a.layout, "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(), "dpi": a.dpi}
     rec = os.path.join(ROOT, "data/manifest", f"OCR_{a.date}.csv")
     rows = [r for r in (csv.DictReader(open(rec, encoding="utf-8")) if os.path.exists(rec) else []) if r["id"] != a.id] + [row]
     with open(rec, "w", newline="", encoding="utf-8") as fh:
