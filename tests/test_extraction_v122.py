@@ -323,3 +323,11 @@ def test_runner_extraction_stage_end_to_end_with_a_fake_client(tmp_path):
     assert [r["state"] for r in rs] == ["ok", "failed"] and "unreadable" in rs[1]["problems"][0]
     out = rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, rs)
     assert out["cells"]["F1"]["value"] == "no" and not out["search_closed"] and "[5]" in out["gaps"][0]
+
+
+def test_pilot_tolerances_fence_and_null_modality():
+    """MB 23 Nov 2026: one outer code fence is removed; modality null reads as n/d. Two fences or prose around stay failures."""
+    import v122 as _v
+    assert _v.FENCE.fullmatch('```json\n{"a": 1}\n```').group(1) == '{"a": 1}'
+    assert _v.FENCE.fullmatch('```\n{"a": 1}\n```')
+    assert not _v.FENCE.fullmatch('Here it is:\n```json\n{"a": 1}\n```')

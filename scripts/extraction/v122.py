@@ -15,6 +15,9 @@ check(text, user)                   the prompt §6 envelope and §4 fields, veri
                                         fail a field rule or a quote is not verbatim in its block; those are rejected
                                         one by one, with the reason, and the rest are kept.
                                       state = ok: every observation passed.
+Two tolerances (MB, 23 Nov 2026, after the API pilot; prompt unchanged): a response wrapped in exactly one outer Markdown code
+fence is read without it (recorded in "notes"); modality null is read as n/d, because the prompt §4 row lists modality among
+the fields that are "concise text or null".
 A quote passes only if it occurs in the named block of the named page, after collapsing runs of white space; no other
 normalisation, no fuzzy match, no match elsewhere (audit A4c answer 5).
 """
@@ -30,6 +33,7 @@ IMPLEMENTATION = {"untested_or_unreported", "tested", "operational", "unclear"}
 BASIS = {"policy", "architectural", "cryptographic", "n/d"}
 ACTOR = re.compile(r"^(CB|CB_agent|independent_operator|PSP|user|n/d|public_authority:.+)$")
 MODALITY = {"unconditional", "conditional", "n/d"}
+FENCE = re.compile(r"```(?:json|JSON)?[ \t]*\n(.*)\n[ \t]*```", re.S)
 SCOPE = {"retail", "wholesale", "both", "unknown"}
 LEGAL = {"in_force", "adopted_not_effective", "bill", "proposal", "intended", "n/d"}
 CONFIDENCE = {"high", "medium", "low"}
@@ -113,6 +117,7 @@ def _check_observation(o, blocks, owned):
     if o["kind"] not in KINDS: return "kind not allowed"
     e = _check_value(o)
     if e: return e
+    if o["modality"] is None: o["modality"] = "n/d"   # prompt §4 row reads "text or null"; null means not stated (MB 23 Nov 2026)
     for k, allowed in (("decision_status", DECISION), ("implementation_status", IMPLEMENTATION), ("basis", BASIS), ("modality", MODALITY),
                        ("retail_or_wholesale", SCOPE), ("legal_state", LEGAL), ("referenced_law_state", LEGAL), ("confidence", CONFIDENCE)):
         if o[k] not in allowed: return f"{k}: value not allowed: {str(o[k])[:30]!r}"
@@ -151,8 +156,11 @@ def _check_observation(o, blocks, owned):
 
 def check(text, user):
     """See the module docstring."""
-    out = {"state": "failed", "problems": [], "observations": [], "rejected": []}
+    out = {"state": "failed", "problems": [], "observations": [], "rejected": [], "notes": []}
     h = header_of(user); blocks = blocks_of(user); sent = h["page_indices"]; owned = set(h["owned_pages"])
+    text = (text or "").strip()
+    m = FENCE.fullmatch(text)
+    if m: text = m.group(1); out["notes"].append("one outer Markdown code fence removed")   # MB 23 Nov 2026 (API pilot)
     try: o = json.loads(text)
     except Exception: out["problems"].append("response is not one JSON object"); return out
     if not isinstance(o, dict) or sorted(o) != ["claims", "coverage", "doc_key", "request_id"]:
