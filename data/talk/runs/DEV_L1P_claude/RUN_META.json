@@ -1,0 +1,369 @@
+{
+ "spec": "run-record v1",
+ "stage": "talk_L1",
+ "purpose": "development",
+ "provider": "anthropic",
+ "interface": "anthropic.message_batches",
+ "model_requested": "claude-opus-5-5",
+ "model_returned": [
+  "claude-opus-5-5"
+ ],
+ "parameters": {
+  "max_tokens": 8000,
+  "output_config.effort": "provider default (not sent)",
+  "thinking": "provider default (not sent; adaptive on this model)",
+  "system": "one text block with cache_control 1h",
+  "temperature": "provider default (not sent; not settable on this model)",
+  "tools": "none",
+  "stream": "not applicable (batch)"
+ },
+ "system_prompt_file": "pipeline/prompts/talk_L1_relevance.system.md",
+ "system_prompt_version": "talk L1 relevance v0.4",
+ "system_sha256": "009fe469b711e27e63bdbd3c53bc608ce64ab6195ad5590e7f860b700f14bff6",
+ "user_message_format": "scripts/units/build_requests.py page() with header of scripts/pipeline/build_jobs.py (script_sha256 c35da7f464f0891b…, build_requests e26e10b2569429de…)",
+ "packing": "all units to code of one page per request",
+ "inputs": [
+  {
+   "file": "data/units/UNITS_MANIFEST_2026-11-23.csv",
+   "sha256": "6d9b8124d892b86e50a5a48be3bef1fba116b45fe9a8966daefa22262faa33ee",
+   "rows": 25
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2018_en.units.csv",
+   "sha256": "50d3ca9248015357b72339e4d64779a36f7040b1189103d00c1a4fd4efffe2da",
+   "rows": 1157,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2018_en.candidates.csv",
+   "sha256": "955223daeecfc4c6bdc7fd79f65928abe408317a81225cdd876d87ec599e8357",
+   "rows": 137,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2021_en.units.csv",
+   "sha256": "5efe7a35ffadb1e0b817deb3c5ca35a17ca001eddc73872fa89416963f23dc65",
+   "rows": 1522,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_1_2021_en.candidates.csv",
+   "sha256": "6771829e5ad307e7bf28312066bec7b0a75c7f345521c93dae7f0bf63f0ef101",
+   "rows": 289,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_2_2019_en.units.csv",
+   "sha256": "2940a885ea20b1d9635c53ea835eae309ec37369eaf13508f9bfc1967fd765e6",
+   "rows": 875,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NBPapers_2_2019_en.candidates.csv",
+   "sha256": "1b394f42726233ddb105ca73986d62a008823ad4d597aacfbb1b8fec88a9bf40",
+   "rows": 101,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.units.csv",
+   "sha256": "9d4518b276a63116dfceedb79e912cdd5011210f49778077da20f2e86f521d09",
+   "rows": 811,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NO-NorgesBank-Papers-1-2026-CBDC-Phase5-Final-Report.candidates.csv",
+   "sha256": "dd7693fd48fc0c3194fc082e19c0734ec627c688e23862225797d377d8afeba1",
+   "rows": 127,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.units.csv",
+   "sha256": "af8c5bfbf3a1d26d6a1c6e1ea1f4dc504a26665a28692e690543cbe18db069e9",
+   "rows": 637,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_NO-NorgesBank-Papers-3-2026-CBDC-Phase5-Experimental-Testing.candidates.csv",
+   "sha256": "a1091ee22641bd98d436d1fa5c0c6ec59264aa24753e537593b84c6598eed46e",
+   "rows": 123,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv",
+   "sha256": "3a236ae724260279831bde26cb1b985fef9a08c5321f344c67aca0baab2ee156",
+   "rows": 141,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_Norway_norges-bank-memo-2_2020-eng.candidates.csv",
+   "sha256": "e3d0917094490ae3eeb12fea76581452019e7377e68f7aeba6dbc706750f5879",
+   "rows": 13,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.units.csv",
+   "sha256": "a322e00a3099b49331118b8df23da86e6070b9b65615814f87f2b859430c1368",
+   "rows": 424,
+   "in_repository": false
+  },
+  {
+   "file": "units/NO_NO_Norway_norges-bank-papers-2---phase-4---final-report.candidates.csv",
+   "sha256": "d379a6d2c11b565f7c1829bd9c2ab693a49a70407d590c8db71f898dcc842fd6",
+   "rows": 37,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2020_OpportChall.units.csv",
+   "sha256": "1b9d37cbdf025b63ce59fddbcbeb44dcd9ed2dea89f792cad426b97591d4ff68",
+   "rows": 1228,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2020_OpportChall.candidates.csv",
+   "sha256": "1c8f1085df975aabd937dd0e66a0807e21986098c3f625b10508cb666c12684c",
+   "rows": 158,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2023_TechWP.units.csv",
+   "sha256": "b7b5403cf97dccb84d5b9c104b4ea520c38b724e06fe97b6d1aac83cdca6bbaa",
+   "rows": 1496,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_BoE_2023_TechWP.candidates.csv",
+   "sha256": "17c00795ffc019a46216445bb0c54258db8bab3d353d242d3c1ce6091609cd25",
+   "rows": 324,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.units.csv",
+   "sha256": "bc51107f525c9b84fa563d62ae82d895dbfe88b1e70fa2b44affb427c851fb9a",
+   "rows": 408,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2024-01-response-to-technology-working-paper.candidates.csv",
+   "sha256": "c2ed4b47eb90c43cf3897b1bd598a15500581b58340170b4b22cdfc529210672",
+   "rows": 121,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.units.csv",
+   "sha256": "de5283d46f812305814e116c30f1aaa4245ad3edf04bdd4ecec1899ee8d97544",
+   "rows": 158,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2024-05-point-of-sale-proof-of-concept-experiment-rep.candidates.csv",
+   "sha256": "d9d7a70dcbbf4fbf5af85d0fbf7969a661ddb63cb0ea31ddf5da317df9a84156",
+   "rows": 26,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.units.csv",
+   "sha256": "267d6f07d8b84d1a5be298bcd231fa7da69cd7c7ea5a0169fefbd06b228a17c9",
+   "rows": 115,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-01-design-note-blueprint-framework-BoE-pagePDF.candidates.csv",
+   "sha256": "0344253f3b99a7a0bf4367987c4ab03eac0c3777f8a25445a82419e25fa8ef5b",
+   "rows": 27,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.units.csv",
+   "sha256": "f83c69f841725617dd02dff4fef907cdc037907bf5268ea753333cb5977c4261",
+   "rows": 184,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-04-design-note-intermediary-roles-and-scheme-rul.candidates.csv",
+   "sha256": "958d824ef217f8ec37f8938b7c5089db759b221a587388e9b2c83350c37df265",
+   "rows": 55,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.units.csv",
+   "sha256": "f61ffffa5324936466e533f94749f18f388641921c8eafeb6564e8fb88f6a304",
+   "rows": 179,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-04-experiment-report-offline-payments-BoE-pagePD.candidates.csv",
+   "sha256": "298be3b3125be731581e42cce953648c08128c57fa2f0bf73a2855268b63f091",
+   "rows": 50,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.units.csv",
+   "sha256": "13c965223941e1fc61664e8bf38f75b1275c04e8191fa5720a27b20e5bdc8890",
+   "rows": 169,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-07-design-note-interoperability-models-BoE-pageP.candidates.csv",
+   "sha256": "da671782123f459223b172aad7d6f1f213660a8a4fb4317fdc84d5ccae3eec29",
+   "rows": 31,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.units.csv",
+   "sha256": "4d4a132d297f56c9be0aec80b7df112c386a459efb31af9a903f0286f470524c",
+   "rows": 177,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-07-design-note-product-strategy-BoE-pagePDF.candidates.csv",
+   "sha256": "2c3039ae400d3cd1b4f010bbcd03436b611fb6fe3a68d142a7000ad0024a8a9e",
+   "rows": 17,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.units.csv",
+   "sha256": "67e36031e0e5d3f75bb7dc1ad67e4750a0a4e2a26bb22ac89b39e00fe3004469",
+   "rows": 190,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-10-design-note-alias-service-BoE-pagePDF.candidates.csv",
+   "sha256": "c093582fb5677e7320194fceac2b04dccea6490a0d208f20f44713d32539353d",
+   "rows": 58,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv",
+   "sha256": "d03d1cccb7caad087d220ca9fa1118de9e8cdcdfd1d9a3dbe9a87900b03b6ecd",
+   "rows": 176,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.candidates.csv",
+   "sha256": "7d7604e86dfd9cc3aca4ad2815e8a7de524669c771c1d655fd7bb3be86e74d49",
+   "rows": 14,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.units.csv",
+   "sha256": "6d0a241d4ef2b487d472fc609fb3c1ed634ddb5a0c7a164f948dc26442f3583a",
+   "rows": 435,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-11-FSP53-holding-limits-stablecoins-and-digital-.candidates.csv",
+   "sha256": "38f1c66d68b99e4aac08cb55df67ba1aa5eaee7169dc7a42c501327123563645",
+   "rows": 21,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.units.csv",
+   "sha256": "add01752b5d9104e62e0ea365d4b3ba665df5a0a8b820765f0bd67dbc98f7376",
+   "rows": 90,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2026-01-digital-pound-lab-phase-1-update-HTMLrender.candidates.csv",
+   "sha256": "5a05a7e7897257b8374f5a4b6de332eb20cec9944202bf6a62c61b9504dd0fb4",
+   "rows": 10,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.units.csv",
+   "sha256": "8353fff81889e6ee985ae1492cd58ea2fc52f42c13e4e08e337a42cd2d4a9541",
+   "rows": 1784,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2023-02-digital-pound-consultation-paper-BoE.candidates.csv",
+   "sha256": "850d42590decea14d8875bcd3fc8c9a707e640ea47af418cecaaf8aa460e7f32",
+   "rows": 348,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.units.csv",
+   "sha256": "d769bb08cadfe07ea4819325049741df1e5cfb9eaaf797e668b1f809a1d0f944",
+   "rows": 942,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2024-01-consultation-response-BoE.candidates.csv",
+   "sha256": "294e4cdbc1b9ae377f980eb351e67dd9f7c2e9700d20ea911485ae5f0fb3765c",
+   "rows": 271,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.units.csv",
+   "sha256": "b02f4094d62ad3e43825e1be84b03c15dd6c0c4090cad9284c9fc9ecceae5b3e",
+   "rows": 226,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2025-01-progress-update-digital-pound-and-payment.candidates.csv",
+   "sha256": "eca58435d634c2c9df12237e84dcd0065c0f253a43fac28f9294af8f5353c20e",
+   "rows": 37,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.units.csv",
+   "sha256": "412b12ab20f00eef25ef0e0b9ef9511ee94c2eb21291cac79057f213252d5a3f",
+   "rows": 76,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2025-10-digital-pound-update-BoE-pagePDF.candidates.csv",
+   "sha256": "e2e7afaee64a7b1f9c3287252d6095f7fe090add177b14af4b7c102804e6ecfd",
+   "rows": 10,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.units.csv",
+   "sha256": "9a06c87a7b5edb965c1dbe3d7ae95096f7e425ded86670fbfbb1c16d1144976c",
+   "rows": 209,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-HMT-2026-03-progress-update-design-phase-HTMLrender.candidates.csv",
+   "sha256": "4f0a042f24d9a0f07087b84b8dc972a1775a697ea2c8a982131def76043de811",
+   "rows": 44,
+   "in_repository": false
+  }
+ ],
+ "git_commit": "bb20f589f2b03fc04c804952c313193553113bf0",
+ "started_utc": "2026-11-23T17:06:12Z",
+ "finished_utc": "2026-11-23T17:25:23Z",
+ "calls": 578,
+ "complete": 578,
+ "failed": 0,
+ "retried": 0,
+ "batches": {
+  "msgbatch_01D7R9Jn2h3UYexVdKB98fRi": {
+   "requests": 301,
+   "submitted_utc": "2026-11-23T17:06:13Z"
+  },
+  "msgbatch_01EMFvsYxiKwRNsgYb4RjzTY": {
+   "requests": 178,
+   "submitted_utc": "2026-11-23T17:12:46Z"
+  },
+  "msgbatch_01TpZaUEGZKoXZaNKhWhiyZh": {
+   "requests": 79,
+   "submitted_utc": "2026-11-23T17:19:20Z"
+  },
+  "msgbatch_01KDBfKWSYrf6LdDaKRa4G8a": {
+   "requests": 20,
+   "submitted_utc": "2026-11-23T17:25:23Z"
+  }
+ },
+ "usage": {
+  "input_tokens": 1483472,
+  "cached_input_tokens": 993017,
+  "cache_write_tokens": 1721,
+  "output_tokens": 174137,
+  "reasoning_tokens": 0
+ },
+ "usage_note": "input_tokens include cached and cache-write tokens on every provider; Anthropic does not report reasoning tokens apart from output",
+ "sdk": "anthropic 2.12.0",
+ "python": "3.13.18",
+ "operator": "MB (key from the environment, not stored)",
+ "deviations": "cost at list prices from measured usage: 2.82 USD (cap 3.0 USD)"
+}
