@@ -1,0 +1,24 @@
+{
+ "_note": "List prices in USD per million tokens, used by scripts/pipeline/runner.py for the cost cap and the estimate before a run. The cap uses these prices and the usage the provider reports; it is not the provider's invoice. Batch = the provider's batch discount applied to every price of the row. Where a price is not published or not verified, the row uses the higher price that is known, so that the cap errs on the side of stopping early.",
+ "claude-opus-5-5": {
+  "provider": "anthropic",
+  "input": 4.0, "cached_input": 0.20, "cache_write_5m": 5.0, "cache_write_1h": 8.0, "output": 20.0,
+  "batch_discount": 0.5,
+  "source": "Anthropic model and pricing documentation (claude-api reference, read 23 Nov 2026)",
+  "verified": true
+ },
+ "gpt-6-astra": {
+  "provider": "openai",
+  "input": 10.0, "cached_input": 1.0, "output": 50.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/models/gpt-6-astra (read 23 Nov 2026)",
+  "verified": true
+ },
+ "deepseek-v4-pro": {
+  "provider": "deepseek",
+  "input": 1.32, "cached_input": 1.32, "output": 3.96,
+  "batch_discount": 1.0,
+  "source": "peak price from 16 Aug 2026 as reported by InfoWorld (https://www.infoworld.com/article/4209439/); off-peak is half; the cache-hit price was not found and is set to the cache-miss price. To be checked on https://api-docs.deepseek.com/quick_start/pricing before a paid run.",
+  "verified": false
+ }
+}
