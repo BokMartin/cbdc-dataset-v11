@@ -8,7 +8,12 @@ marked R (the number is reported: it is the effective sample for facets). Breakd
 and by text route (A English original, B issuer's English edition, D machine translation). Thresholds are set in
 docs/TALK_AGREEMENT_PROTOCOL_2026-11-13.md before coding; this script only computes.
 
-usage: score_agreement.py --a <coder 1 xlsx> --b <coder 2 xlsx> --sample data/units/AGREEMENT_SAMPLE_2026-11-13.csv --out <json>
+Only the facet columns present in BOTH workbooks are scored (the 80-sentence facet workbook has no implementation and modality but
+has aspect2). aspect2 is optional: on a unit both coders marked R a blank aspect2 is the category NONE, and `aspect_set` compares the
+unordered set {aspect, aspect2}. --set picks the rows of the sample file (default main and dev; facet80 for the 80-sentence sample),
+whose stratum column may be called stratum or candidate_stratum.
+
+usage: score_agreement.py --a <coder 1 xlsx> --b <coder 2 xlsx> --sample data/units/AGREEMENT_SAMPLE_2026-11-13.csv --out <json> [--set main,dev]
 """
 import argparse, csv, json, os, random, collections
 COLS = ["relevant", "voice", "aspect", "stance", "basis", "decision", "implementation", "modality"]  # read by column header, not by position
@@ -52,7 +57,7 @@ def read(f, allowed):
     """One coder's sheet CODE. Duplicate unit ids and values outside the declared lists stop the scoring: nothing is silently dropped."""
     import openpyxl  # only needed to read the workbooks; the coefficients are tested without it
     R = list(openpyxl.load_workbook(f, read_only=True)["CODE"].iter_rows(values_only=True)); h = [str(x) for x in R[0]]; out = {}; bad = []
-    ix = {k: h.index(k) for k in COLS}; uid = h.index("unit_id")
+    ix = {k: h.index(k) for k in COLS + ["aspect2"] if k in h}; uid = h.index("unit_id")
     for r in R[1:]:
         if not r[uid]: continue
         if r[uid] in out: bad.append(f"duplicate unit id {r[uid]}")
@@ -64,17 +69,30 @@ def read(f, allowed):
 
 
 def score(A, Bc, S, allowed):
+    cols = [k for k in COLS if k in next(iter(A.values())) and k in next(iter(Bc.values()))]
+    if "aspect2" in next(iter(A.values())) and "aspect2" in next(iter(Bc.values())):
+        allowed = {**allowed, "aspect2": list(allowed["aspect"]) + ["NONE"]}
+        for C in (A, Bc):
+            for u in C:
+                if C[u]["relevant"] == "R" and not C[u]["aspect2"]: C[u]["aspect2"] = "NONE"
+        cols.insert(cols.index("aspect") + 1, "aspect2")
     miss = sorted(set(S) - set(A)) + sorted(set(S) - set(Bc))
     if miss: raise SystemExit(f"{len(miss)} sample units are missing from a workbook, first: {miss[:3]}")
     ids = list(S); done = [u for u in ids if A[u]["relevant"] and Bc[u]["relevant"]]; both = [u for u in done if A[u]["relevant"] == "R" and Bc[u]["relevant"] == "R"]
     union = [u for u in done if "R" in (A[u]["relevant"], Bc[u]["relevant"])]
     res = {"units_in_sample": len(S), "units_coded_by_both": len(done), "units_left_blank_by_a_coder": len(ids) - len(done), "units_both_relevant": len(both), "units_relevant_for_at_least_one": len(union),
            "relevant": stat([(A[u]["relevant"], Bc[u]["relevant"]) for u in done], allowed["relevant"])}
-    for k in COLS[1:]:
+    res["facets_scored"] = cols[1:]
+    for k in cols[1:]:
         res[k] = stat([(A[u][k], Bc[u][k]) for u in both], allowed[k])
         res[k]["facet_blank_on_a_relevant_unit"] = sum(1 for u in both if not (A[u][k] and Bc[u][k]))
         # end to end: a unit only one coder found relevant counts as a disagreement on the facet (the other coder's label is NOT_RELEVANT)
         res[k + "_end_to_end"] = stat([(A[u][k] if A[u]["relevant"] == "R" else "NOT_RELEVANT", Bc[u][k] if Bc[u]["relevant"] == "R" else "NOT_RELEVANT") for u in union], list(allowed[k]) + ["NOT_RELEVANT"])
+    if "aspect2" in cols:
+        sets = [("|".join(sorted({A[u]["aspect"], A[u]["aspect2"]} - {"NONE"})), "|".join(sorted({Bc[u]["aspect"], Bc[u]["aspect2"]} - {"NONE"}))) for u in both if A[u]["aspect"] and Bc[u]["aspect"]]
+        res["aspect_set"] = {"n": len(sets), "same_set": sum(x == y for x, y in sets), "overlapping": sum(bool(set(x.split("|")) & set(y.split("|"))) for x, y in sets)}
+    for u in ids:
+        S[u].setdefault("stratum", S[u].get("candidate_stratum", ""))
     for dim in ("stratum", "route"):
         res["by_" + dim] = {v: {"relevant": stat([(A[u]["relevant"], Bc[u]["relevant"]) for u in done if S[u][dim] == v], allowed["relevant"]), "aspect": stat([(A[u]["aspect"], Bc[u]["aspect"]) for u in both if S[u][dim] == v], allowed["aspect"])} for v in sorted({S[u][dim] for u in ids})}
     return res
@@ -82,9 +100,10 @@ def score(A, Bc, S, allowed):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--a", required=True); ap.add_argument("--b", required=True); ap.add_argument("--sample", required=True); ap.add_argument("--out", required=True)
+    ap.add_argument("--set", default="main,dev")
     ap.add_argument("--schema", default=os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "schema/talk_units_v13_DRAFT.json"))
-    a = ap.parse_args(); F = json.load(open(a.schema))["L2_facets"]; allowed = {"relevant": ["R", "N", "U"], **{k: F[k] for k in COLS[1:]}}
-    S = {r["unit_id"]: r for r in csv.DictReader(open(a.sample, encoding="utf-8")) if r["set"] in ("main", "dev")}
+    a = ap.parse_args(); F = json.load(open(a.schema))["L2_facets"]; allowed = {"relevant": ["R", "N", "U"], **{k: F[k] for k in COLS[1:] if k in F}, "aspect2": F["aspect"]}
+    S = {r["unit_id"]: r for r in csv.DictReader(open(a.sample, encoding="utf-8")) if r["set"] in a.set.split(",")}
     res = score(read(a.a, allowed), read(a.b, allowed), S, allowed)
     json.dump(res, open(a.out, "w"), indent=1); print(json.dumps({k: {x: y for x, y in v.items() if x != "confusion"} if isinstance(v, dict) else v for k, v in res.items() if not k.startswith("by_")}, indent=1))
 

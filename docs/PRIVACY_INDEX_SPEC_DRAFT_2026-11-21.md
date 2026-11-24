@@ -2,6 +2,8 @@
 
 Status: proposal implementing the decision of MB in [ADR-009](../DECISIONS/ADR-009-privacy-index-headline-2026-11-21.md); DS to confirm. Implementation: `scripts/derive_index.py`, `scripts/index_reliability.py`, `scripts/index_validity.py`; tests `tests/test_derive_index.py` (synthetic cells only). **Nothing here has been computed on project data.** Section 11 lists what the review changed.
 
+> **Amended by ADR-012 (MB and DS, 22 Nov 2026); where this specification differs, ADR-012 wins.** *Index (D4):* the primary stated-design number is the mean of **seven** cells, F1, F2, F4, F7, F8, F9, F10, with an interval; the four-cell index F1, F2, F4, F7 of §2 to §7 is reported beside it as the narrower variant; F7 and F8 grouped as one component is a sensitivity; **F3 is categorical**, outside the mean, reported beside it (the eight-cell mean of §12.1 is superseded); direction: less access, less identification and no re-identification = more privacy; PET is a profile beside F7, outside the mean. *Source of cells (D1, D2):* in the 16 core projects (T1 and T2 of 17 Nov) both authors code every cell from the sources in the blank coder template before any model output is opened, then adjudicate; outside the core a value needs agreement of all three models with a located quote and a source check. *Hypothesis (D3), replacing §12.3:* "much talk" = own-voice privacy talk in at least two distinct publications and at least 1 own-voice relevant unit per 100 eligible units; "few commitments" = fewer than 2 of F1, F2, F4, F7 committed (one admissibility predicate, D10); it holds if a majority of the 16 core projects meet both, inconclusive if the bounds straddle a majority; no sign test. *Reference sample (D18):* 400 talk units, direct stratified random draw 140 / 50 / 210, inclusion probabilities stored. *LEANING (§12.6, D5):* only from a joint retail report attributable to the project, flagged, scored only in the `with_leaning` variant. *Implemented in the code on 23 Nov 2026 (ADR-013 §3, §5):* seven cells in `derive_index.CORE`, F3 categorical (`f3_category`), the four-cell index beside it; `admissible()` rejects non-official layers and protective F1, F2, F4, F9 values on a policy basis.
+
 ## 1. Construct
 
 Axis 1: the extent to which the design that the official documents describe keeps the central bank, intermediaries and the state from routinely attributing a retail payment to an identified natural person. Axis 2: how firmly the competent body holds each element of that design. Not measured: how much a project talks about privacy, data protection in general, or whether a design is desirable. Talk labels never enter the index (ADR-004 §4).
@@ -37,7 +39,7 @@ The 0.5 is the split point between the two F1 classes, not a tuning constant: ev
 
 ## 4. Axis 2, commitment profile
 
-Rung of each component that carries a value: considered 1, tested 2, endorsed 3, operational 4; none 0. Reported as a **profile** (four rungs) and as the **number of components at rung 3 or above out of 4** (fixed denominator). Ranks are not averaged (review item 4).
+Rung of each component that carries a value: considered 1, tested 2, endorsed 3, operational 4; none 0. Reported as a **profile** (four rungs) and as the **number of components that pass rule C out of 4** (fixed denominator; until 22 Nov the count took rung 3 or above, which let a partial or conflicted cell count, V6). Ranks are not averaged (review item 4).
 
 ## 5. Robustness: admissible view
 
@@ -78,7 +80,7 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 | # | Step | When | Script and input | Done |
 |---|---|---|---|---|
 | V1 | Freeze this spec, the known cases and the external measures; register with contract v12 | before F-cell production | this file, `data/index/*_DRAFT_*` | no |
-| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-21.csv` | no |
+| V2 | Both authors code F1, F2, F4, F7 blind for all 44 projects (176 cells; under version 2 all eight cells, 352 cells, §12.5) in the coder template, lock the files | before any model output for those projects is opened | `data/index/CODER_TEMPLATE_2026-11-22.csv` | no |
 | V3 | Reliability: Krippendorff's alpha per cell (three categories and valued pairs), merge, disagreements to undetermined | after V2 | `scripts/index_reliability.py` | no |
 | V4 | Re-run the separation simulation with real coverage | after V3, before reading scores | `simulate_separation` | no |
 | V5 | Known cases | after V3 | `scripts/index_validity.py`, `data/index/KNOWN_CASES_DRAFT_2026-11-21.csv` | no |
@@ -93,18 +95,18 @@ Verified by web search in the review of 21 Nov (not re-verified here): Munda and
 
 ### 10.3 Reliability (B3) and input format
 
-Each coder fills one copy of the coder template: `project_id, cell, value (yes / no / undetermined), decision_status, implementation_status, quote, page_index`. `index_reliability.py` stops on duplicate rows or values outside the list, reports alpha per cell (undefined, not 1, when all ratings fall in one category), and merges: agreement gives the shared value with the lower of the two rungs; disagreement gives an undetermined cell flagged `coder_disagreement`, which widens the interval. Gate: alpha ≥ .80 per cell (contract §12); a cell below it is reported and the authors decide before any score is read.
+Each coder fills one copy of the coder template (`data/index/CODER_TEMPLATE_2026-11-22.csv`): `project_id, cell, value (yes / no / undetermined, or the F3 categories), decision_status, implementation_status, evidence_state, basis, text_route, derivation, conflict, document_id, quote, page_index, note`. The fields after the two statuses were added on 22 Nov 2026 (V6 of the 22 Nov check, ADR-012 §3): without them the merge marked every agreed cell as documented, and the variants without route D and without inferred cells removed nothing. A set value needs evidence state, route, derivation, document and quote, and F1, F2, F4 and F9 need a basis (contract v12 §3). `index_reliability.py` stops on an empty key, duplicate rows, a missing field or values outside the list, reports alpha per cell (undefined, not 1, when all ratings fall in one category), and merges: agreement gives the shared value with the lower of the two rungs and, for evidence state, basis, route, derivation and conflict, the more conservative entry of the two; both original records travel with the merged cell; disagreement gives an undetermined cell flagged `coder_disagreement`, which widens the interval; a cell only one coder filled stays undetermined, flagged `missing_coder`. Every commitment count (axis 2, talk against commitments, the admissible view) uses one predicate, `committed()` in `derive_index.py`, which is rule C (`admissible()`) without LEANING or disputed cells; the rung ladder is shown beside it but a rung of 3 or 4 alone no longer counts. A conflicted cell is undetermined in every view. Gate: alpha ≥ .80 per cell (contract §12); a cell below it is reported and the authors decide before any score is read.
 
-**Workload (estimate, not measured):** 176 cells, most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
+**Workload (estimate, not measured):** 176 cells in version 1 (352 for the eight cells of version 2, §12.5), most of them for T3 projects with four or fewer documents; the coders search with the keyword finder of contract §10. Order of tens of hours per author.
 
 ### 10.4 Dry run on MOCK data (21 Nov, MB: "zatím to udělej na mockup datech")
 
-The whole chain runs end to end on invented data: `python scripts/index_mock.py` writes 44 invented projects MOCK01 to MOCK44 (two blind-coder files with about 10 % planted disagreement, six known cases with one planted miss, two invented external measures, tiers); `scripts/index_report.py --label MOCK ...` writes `data/index/mock/MOCK_INDEX_{RESULTS.json, TABLE.csv, REPORT.md, MAP.svg}`. Every file name starts with MOCK, the table and report say MOCK DATA in their first lines, the map carries a watermark, and MOCK project ids refuse any other label (tested). The website build does not read `data/index` (tested). For the real run the same command takes the locked coder files and `--label` with the run date.
+The whole chain runs end to end on invented data: `python scripts/index_mock.py` writes 44 invented projects MOCK01 to MOCK44 (two blind-coder files with about 10 % planted disagreement, six known cases with one planted miss, two invented external measures, tiers); `scripts/index_report.py --label MOCK ...` writes `data/index/mock/MOCK_INDEX_{RESULTS.json, TABLE.csv, REPORT.md, MAP.svg}` (since version 2 one set per talk scenario: `MOCK_H_INDEX_*` and `MOCK_NULL_INDEX_*`, §12.3). Every file name starts with MOCK, the table and report say MOCK DATA in their first lines, the map carries a watermark, and MOCK project ids refuse any other label (tested). The website build does not read `data/index` (tested). For the real run the same command takes the locked coder files and `--label` with the run date.
 
 What the dry run shows about the design (properties of the method on invented inputs, not results):
 - Almost all separation comes from the F1 class: dropping F1 keeps about 7 % of the separated pairs, dropping F2, F4 or F7 keeps 96 to 100 %. Under the lexicographic rule the index is close to "F1 plus a tie-breaker"; this is to be said plainly, or the authors prefer the compensatory mean as primary (it keeps only about 12 % of the lexicographic pairs).
 - Weight draws change nothing for the same reason; weights matter only within an F1 class, where intervals are rarely narrow enough to separate.
-- The external comparison uses only projects with interval width ≤ 0.25: 12 of 44 here. At that size the invented "discriminant" measure gave rho 0.49 by chance; the real comparison needs either a looser width rule fixed in advance or a statement that it is underpowered.
+- The external comparison uses only projects with interval width ≤ 0.25: 12 of 44 here (version 1 dry run; 4 of 44 in the version 2 dry run, `MOCK_H_INDEX_REPORT.md`). At that size the invented "discriminant" measure gave rho 0.49 by chance; the real comparison needs either a looser width rule fixed in advance or a statement that it is underpowered.
 - The planted known-case miss and the planted coder disagreements are caught and reported.
 
 ## 11. Changes after the review of 21 Nov (items as numbered in the review)
@@ -143,7 +145,7 @@ F3 and F9 have a direction the authors must confirm (a documented route or proce
 
 ### 12.2 Talk against commitments, by aspect (`talk_commitment.py`)
 
-The two layers stay separately measured and meet on the same unit, the (project, aspect) pair, for the six talk aspects that have a matching F-cell:
+The two layers stay separately measured and meet on the same unit, the (project, aspect) pair, for the six talk aspects that have a matching F-cell (the map is held once, in `schema/talk_units_v13_DRAFT.json`, `aspect_comparison_cells`, and the script reads it):
 
 | Talk aspect (codebook v0.3) | F-cells |
 |---|---|
@@ -175,11 +177,11 @@ Per pair: **talk** = at least one own-voice relevant unit on the aspect; **commi
 | Contract v12 §6 (F3 descriptive only; F9, F10 [OPEN]) | F3 and F9 get a score direction, F10 enters the index: contract change, needs both authors |
 | HANDOFF §4 decision 1 (blank double coding of voice and aspect, undecided) | becomes necessary: the gap rests on voice and aspect |
 
-### 12.5 What it adds to validation and to the timeline
+### 12.5 What it adds to validation
 
 - **Talk layer:** the gap needs relevance, voice and aspect to be valid. Relevance between the authors is at alpha 0.46 (below the 0.667 of the protocol) and is being repaired; voice and aspect have never been coded blind. So: adjudication and codebook repair, then blank double coding of voice and aspect on 80 to 120 units (HANDOFF decision 1), then the model run of the talk layer (paid, three providers, ADR-006).
 - **Commitment layer:** blind double coding of all eight cells for 44 projects is 352 cells (the template is ready), double the four-cell plan; alternative: all 44 projects for F1, F2, F4, F7 and a sample of 16 for F3, F8, F9, F10.
-- **Timeline:** both layers are now on the critical path. With the deadline of 31 Dec this is only feasible if contract v12 (with the F3/F9/F10 changes) and the talk codebook repair are both settled by early December. If time runs short, the order of cuts proposed is: keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10 (they stay in the index with a "model, verified" label).
+- **Scope:** both layers are needed for the index and the gap, and both are kept in full: all eight cells and the whole talk layer. No order of cuts is kept (MB, 22 Nov 2026).
 
 ### 12.6 Cells resting on an "inclined" document (LEANING; proposal, follows ADR-010 in PR 3)
 

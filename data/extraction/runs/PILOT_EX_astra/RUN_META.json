@@ -1,0 +1,69 @@
+{
+ "spec": "run-record v1",
+ "stage": "extraction_single",
+ "purpose": "development",
+ "provider": "openai",
+ "interface": "openai.batch",
+ "model_requested": "gpt-6-astra",
+ "model_returned": [
+  "gpt-6-astra"
+ ],
+ "parameters": {
+  "max_output_tokens": 64000,
+  "reasoning.effort": "provider default (not sent)",
+  "store": false,
+  "prompt_cache_key": "extraction_single-7a97c8dd9059d7a8",
+  "temperature": "provider default (not sent)",
+  "tools": "none",
+  "endpoint": "/v1/responses through /v1/batches, completion_window 24h"
+ },
+ "system_prompt_file": "pipeline/prompts/extraction_v12.2.system.md",
+ "system_prompt_version": "12.2",
+ "system_sha256": "7a97c8dd9059d7a8039c27fb06be2cae4697d04d2f4688671f0a1b4df5879263",
+ "user_message_format": "scripts/pipeline/build_jobs.py extraction_requests() with scripts/extraction/v122.py render_request() with header of scripts/pipeline/build_jobs.py (script_sha256 c35da7f464f0891b…, build_requests e26e10b2569429de…)",
+ "packing": "one document per request, disjoint owned page ranges of at most 240000 characters, one context page on either side",
+ "inputs": [
+  {
+   "file": "data/units/UNITS_MANIFEST_2026-11-23.csv",
+   "sha256": "6d9b8124d892b86e50a5a48be3bef1fba116b45fe9a8966daefa22262faa33ee",
+   "rows": 2
+  },
+  {
+   "file": "units/NO_NO_Norway_norges-bank-memo-2_2020-eng.units.csv",
+   "sha256": "3a236ae724260279831bde26cb1b985fef9a08c5321f344c67aca0baab2ee156",
+   "rows": 141,
+   "in_repository": false
+  },
+  {
+   "file": "units/UK_UK_UK-BoE-2025-10-design-note-offline-payments-BoE-pagePDF.units.csv",
+   "sha256": "d03d1cccb7caad087d220ca9fa1118de9e8cdcdfd1d9a3dbe9a87900b03b6ecd",
+   "rows": 176,
+   "in_repository": false
+  }
+ ],
+ "git_commit": "93adcf5555a2d4f8660ae1f5cbd5788fcc0484c9",
+ "started_utc": "2026-11-23T16:01:05Z",
+ "finished_utc": "2026-11-23T16:01:06Z",
+ "calls": 2,
+ "complete": 1,
+ "failed": 1,
+ "retried": 0,
+ "batches": {
+  "batch_6b04634287a48190bc3e38a246421b4f": {
+   "requests": 2,
+   "submitted_utc": "2026-11-23T16:01:06Z"
+  }
+ },
+ "usage": {
+  "input_tokens": 17614,
+  "cached_input_tokens": 4744,
+  "cache_write_tokens": 0,
+  "output_tokens": 17999,
+  "reasoning_tokens": 1358
+ },
+ "usage_note": "input_tokens include cached and cache-write tokens on every provider",
+ "sdk": "openai 3.57.0",
+ "python": "3.13.18",
+ "operator": "MB (key from the environment, not stored)",
+ "deviations": "cost at list prices from measured usage: 0.52 USD (cap 1.0 USD)"
+}

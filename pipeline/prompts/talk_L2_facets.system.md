@@ -1,7 +1,7 @@
 You are a coding instrument in a documented research pipeline on retail central bank digital currency (CBDC). You receive text units (sentences) from ONE official document that an earlier step judged to be statements about the privacy, identifiability or data access of retail CBDC users. Each unit comes with its paragraph, in which the unit is marked »like this«, and with the document header (issuer, type, year). Code every unit listed under CODE on the facets below. Code what the unit says, read with its paragraph; do not use knowledge about the project. Your labels describe what is said; they never decide what the project has committed to.
 
 FACETS (one value each)
-1 voice     OWN = the document's issuer states it in its own voice (position, plan, description of its own design, its own assessment) · REPORTED = the unit reports what others said or think (survey respondents, the public, consultation replies, other countries, literature, international bodies, a participant of a meeting) without adopting it · UNCLEAR
+1 voice     OWN = the document's issuer states it in its own voice (position, plan, description of its own design, its own assessment) · REPORTED = the unit reports what others said or think (survey respondents, the public, consultation replies, other countries, literature, international bodies, a participant of a meeting, a vendor or technology provider) without adopting it · UNCLEAR
 2 aspect    which aspect of privacy the unit is about. Choose the ONE aspect the unit is mainly about; if it clearly covers a second, give it in `aspect2`.
    CB_ACCESS        what the central bank itself (or an agent acting for it) can or cannot see, hold or link: identity, transactions, balances
    INTERMEDIARY_DATA what banks, payment service providers, wallet providers or an operator independent of the central bank hold or see about users, and the separation of their data from the central bank
@@ -9,7 +9,7 @@ FACETS (one value each)
    ANONYMITY        anonymity or pseudonymity of users or payments as a property (offered, limited, not offered, compared with cash)
    IDENTIFICATION   identifying or verifying users as a condition of use: onboarding, KYC, digital identity, tiers or wallets with reduced identification, limits tied to identification
    OFFLINE          privacy or identifiability specifically in offline payments
-   DATA_PROTECTION  personal-data rules as such: data-protection law, minimisation, retention, purpose limitation, security of personal data
+   DATA_PROTECTION  personal-data rules or measures as such: data-protection law, minimisation, retention, purpose limitation, security of personal data (naming personal data or data protection only as a goal or concern is GENERAL)
    USER_CONTROL     consent, choice or control of the user over their data; commercial use or monetisation of user data
    PETS             a named privacy technique or cryptographic design (blind signatures, zero-knowledge proofs, encryption, mixing, privacy-enhancing technologies)
    GENERAL          privacy as a goal, value, requirement, risk, trade-off or public concern, with no specific aspect named
@@ -30,6 +30,9 @@ TRAPS
 - Offline payments: aspect OFFLINE only when the unit is about the offline mode; an anonymity statement that mentions offline in passing stays ANONYMITY with aspect2 OFFLINE.
 - AML/CFT: a duty of intermediaries to identify customers is IDENTIFICATION; access to or monitoring of payment data by authorities is AUTHORITY_ACCESS.
 - "The central bank will not see personal data; these stay with intermediaries" → aspect CB_ACCESS (main clause), aspect2 INTERMEDIARY_DATA.
+- Traceability: whether payments can be traced as a property of the design (token or account, what the ledger records) is ANONYMITY; tracing, monitoring or reporting by authorities is AUTHORITY_ACCESS.
+- Stance needs a statement about users' data. Describing how a technique or design works is PROTECTS only if the unit says that it limits seeing, linking, collecting or identifying; a technique described without that, a plan to study or test, a research question or an open issue ("whether third parties may perform customer due diligence") is NEUTRAL, or TRADEOFF if it is weighed against another aim.
+- A heading, a label from a figure or table, or a fragment that names a topic but states nothing (an earlier step may still pass one): voice UNCLEAR, aspect as named (else GENERAL), stance NEUTRAL, basis NONE, decision UNCLEAR, implementation UNCLEAR. Text from a figure or table may hold misread characters; code the readable words.
 - If the unit holds two statements that would get different labels (e.g. "the bank will not see data, but authorities may obtain them from intermediaries"), code the main clause and set the flag `two_statements`.
 
 OUTPUT (exact)
@@ -37,4 +40,4 @@ One JSON object per line (JSON Lines), one line per unit listed under CODE, in t
 {"unit_id": "...", "voice": "...", "aspect": "...", "aspect2": "", "stance": "...", "basis": "...", "decision": "...", "implementation": "...", "modality": "...", "modal_term": "", "anonymity_rejected": false, "low_id_tier": false, "two_statements": false}
 Copy each unit_id character for character. Use only the values named above. After the last unit write the line `END`. Output nothing else.
 
-Prompt version: talk L2 facets v0.3 DRAFT (13 November 2026, after the independent audit). Not for measurement before the authors lock it.
+Prompt version: talk L2 facets v0.4 (23 November 2026): v0.3 of 13 November aligned with codebook v0.5 and clarified after the development round on NO and UK (vendor as REPORTED; DATA_PROTECTION needs a rule or measure; traceability; stance of described techniques and open questions; headings, labels and fragments).

@@ -7,165 +7,172 @@
    "n": 44,
    "agreement": 0.955,
    "alpha_3cat": 0.926,
-   "n_both_valued": 36,
-   "alpha_valued": 0.942
+   "n_both_valued": 38,
+   "alpha_valued": 0.896
   },
   "F2": {
    "n": 44,
-   "agreement": 0.909,
-   "alpha_3cat": 0.861,
-   "n_both_valued": 22,
-   "alpha_valued": 1.0
+   "agreement": 0.886,
+   "alpha_3cat": 0.829,
+   "n_both_valued": 24,
+   "alpha_valued": 0.917
   },
   "F3": {
    "n": 44,
-   "agreement": 0.818,
-   "alpha_3cat": 0.765,
-   "n_both_valued": 30,
-   "alpha_valued": 0.719
+   "agreement": 0.886,
+   "alpha_3cat": 0.85,
+   "n_both_valued": 27,
+   "alpha_valued": 0.751
   },
   "F4": {
    "n": 44,
    "agreement": 0.886,
-   "alpha_3cat": 0.824,
-   "n_both_valued": 23,
-   "alpha_valued": 0.909
+   "alpha_3cat": 0.822,
+   "n_both_valued": 20,
+   "alpha_valued": 1.0
   },
   "F7": {
+   "n": 44,
+   "agreement": 0.932,
+   "alpha_3cat": 0.886,
+   "n_both_valued": 18,
+   "alpha_valued": 1.0
+  },
+  "F8": {
    "n": 44,
    "agreement": 0.955,
    "alpha_3cat": 0.931,
    "n_both_valued": 25,
-   "alpha_valued": 0.843
-  },
-  "F8": {
-   "n": 44,
-   "agreement": 0.864,
-   "alpha_3cat": 0.792,
-   "n_both_valued": 22,
-   "alpha_valued": 0.911
+   "alpha_valued": 1.0
   },
   "F9": {
    "n": 44,
-   "agreement": 0.977,
-   "alpha_3cat": 0.965,
-   "n_both_valued": 24,
+   "agreement": 0.955,
+   "alpha_3cat": 0.921,
+   "n_both_valued": 18,
    "alpha_valued": 1.0
   },
   "F10": {
    "n": 44,
-   "agreement": 0.955,
-   "alpha_3cat": 0.931,
-   "n_both_valued": 24,
+   "agreement": 0.977,
+   "alpha_3cat": 0.966,
+   "n_both_valued": 26,
    "alpha_valued": 1.0
+  },
+  "f1_no_on_policy_basis": [],
+  "field_disagreements_on_agreed_values": {
+   "decision_status": [],
+   "implementation_status": [],
+   "evidence_state": [],
+   "basis": [],
+   "text_route": [],
+   "derivation": [],
+   "conflict": []
   }
  },
  "coverage_after_merge": {
-  "F1": 0.795,
-  "F2": 0.5,
-  "F3": 0.409,
-  "F4": 0.5,
-  "F7": 0.523,
-  "F8": 0.477,
-  "F9": 0.545,
-  "F10": 0.545
+  "F1": 0.818,
+  "F2": 0.523,
+  "F4": 0.455,
+  "F7": 0.409,
+  "F8": 0.568,
+  "F9": 0.409,
+  "F10": 0.591
  },
- "separation_share_stated": 0.0359,
+ "separation_share_stated": 0.0243,
  "separation_share_admissible": 0.0,
  "simulation_at_observed_coverage": {
-  "mean": 0.0236,
-  "p05": 0.0,
-  "p95": 0.055
+  "mean": 0.0314,
+  "p05": 0.0032,
+  "p95": 0.0698
  },
  "uncertainty_all": {
   "n_projects": 44,
-  "baseline_separated_pairs": 34,
-  "baseline_share": 0.0359,
-  "weights_kept_in_all_draws": 0.0882,
-  "weights_mean_kept": 0.7621,
-  "rule_lexicographic_kept": 0.9412,
-  "rule_cap_kept": 0.8824,
-  "drop_F1_kept": 0.5294,
-  "drop_F2_kept": 0.7059,
-  "drop_F3_kept": 0.8235,
-  "drop_F4_kept": 0.7941,
-  "drop_F7_kept": 0.6471,
-  "drop_F8_kept": 0.7647,
-  "drop_F9_kept": 0.7941,
-  "drop_F10_kept": 0.9118,
+  "baseline_separated_pairs": 23,
+  "baseline_share": 0.0243,
+  "weights_kept_in_all_draws": 0.087,
+  "weights_mean_kept": 0.7688,
+  "rule_lexicographic_kept": 1.0,
+  "rule_cap_kept": 1.0,
+  "drop_F1_kept": 0.4348,
+  "drop_F2_kept": 0.9565,
+  "drop_F4_kept": 0.913,
+  "drop_F7_kept": 0.8696,
+  "drop_F8_kept": 0.3913,
+  "drop_F9_kept": 0.7826,
+  "drop_F10_kept": 0.6957,
   "admissible_view_kept": 0.0,
-  "without_F3_F9_kept": 0.8824,
-  "core4_only_kept": 0.7647,
+  "core4_only_kept": 0.2609,
   "no_route_D_kept": 1.0,
+  "with_leaning_kept": 1.0,
   "no_inferred_kept": 1.0
  },
  "uncertainty_T1_T2": {
   "n_projects": 16,
-  "baseline_separated_pairs": 8,
-  "baseline_share": 0.0667,
-  "weights_kept_in_all_draws": 0.125,
-  "weights_mean_kept": 0.8063,
-  "rule_lexicographic_kept": 0.75,
-  "rule_cap_kept": 0.75,
-  "drop_F1_kept": 0.75,
-  "drop_F2_kept": 0.75,
-  "drop_F3_kept": 0.875,
-  "drop_F4_kept": 0.875,
-  "drop_F7_kept": 0.375,
-  "drop_F8_kept": 0.875,
-  "drop_F9_kept": 0.75,
-  "drop_F10_kept": 0.75,
+  "baseline_separated_pairs": 2,
+  "baseline_share": 0.0167,
+  "weights_kept_in_all_draws": 0.0,
+  "weights_mean_kept": 0.698,
+  "rule_lexicographic_kept": 1.0,
+  "rule_cap_kept": 1.0,
+  "drop_F1_kept": 0.0,
+  "drop_F2_kept": 0.5,
+  "drop_F4_kept": 1.0,
+  "drop_F7_kept": 1.0,
+  "drop_F8_kept": 0.0,
+  "drop_F9_kept": 1.0,
+  "drop_F10_kept": 1.0,
   "admissible_view_kept": 0.0,
-  "without_F3_F9_kept": 0.875,
-  "core4_only_kept": 0.75,
+  "core4_only_kept": 0.5,
   "no_route_D_kept": 1.0,
+  "with_leaning_kept": 1.0,
   "no_inferred_kept": 1.0
  },
  "known_cases": [
   {
    "case_id": "MK01",
-   "project_id": "MOCK32",
-   "cell": "F9",
+   "project_id": "MOCK34",
+   "cell": "F1",
    "expected": "yes",
    "observed": "yes",
    "status": "hit"
   },
   {
    "case_id": "MK02",
-   "project_id": "MOCK28",
+   "project_id": "MOCK30",
    "cell": "F7",
-   "expected": "yes",
-   "observed": "yes",
-   "status": "hit"
-  },
-  {
-   "case_id": "MK03",
-   "project_id": "MOCK12",
-   "cell": "F10",
    "expected": "no",
    "observed": "no",
    "status": "hit"
   },
   {
-   "case_id": "MK04",
-   "project_id": "MOCK35",
-   "cell": "F8",
-   "expected": "yes",
-   "observed": "yes",
-   "status": "hit"
-  },
-  {
-   "case_id": "MK05",
-   "project_id": "MOCK21",
+   "case_id": "MK03",
+   "project_id": "MOCK14",
    "cell": "F2",
    "expected": "yes",
    "observed": "yes",
    "status": "hit"
   },
   {
-   "case_id": "MK06",
-   "project_id": "MOCK38",
+   "case_id": "MK04",
+   "project_id": "MOCK37",
+   "cell": "F3",
+   "expected": "via_psp",
+   "observed": "undetermined",
+   "status": "undetermined"
+  },
+  {
+   "case_id": "MK05",
+   "project_id": "MOCK22",
    "cell": "F1",
+   "expected": "yes",
+   "observed": "undetermined",
+   "status": "undetermined"
+  },
+  {
+   "case_id": "MK06",
+   "project_id": "MOCK39",
+   "cell": "F4",
    "expected": "no",
    "observed": "yes",
    "status": "miss"
@@ -176,22 +183,21 @@
    "measure": "mock_convergent",
    "role": "convergent",
    "expected_sign": "+",
-   "n": 4,
-   "rho": 0.0,
-   "ci95": [
-    -1.0,
-    1.0
-   ],
+   "n": 2,
+   "rho": null,
+   "ci95": null,
    "projects_excluded_wide_interval": [
     "MOCK01",
     "MOCK02",
     "MOCK03",
     "MOCK04",
     "MOCK05",
+    "MOCK06",
     "MOCK07",
     "MOCK08",
     "MOCK09",
     "MOCK10",
+    "MOCK11",
     "MOCK12",
     "MOCK13",
     "MOCK14",
@@ -214,13 +220,13 @@
     "MOCK31",
     "MOCK32",
     "MOCK33",
-    "MOCK35",
+    "MOCK34",
     "MOCK36",
     "MOCK37",
     "MOCK38",
     "MOCK39",
     "MOCK40",
-    "MOCK42",
+    "MOCK41",
     "MOCK43",
     "MOCK44"
    ]
@@ -229,22 +235,21 @@
    "measure": "mock_discriminant",
    "role": "discriminant",
    "expected_sign": "0",
-   "n": 4,
-   "rho": -0.4,
-   "ci95": [
-    -1.0,
-    1.0
-   ],
+   "n": 2,
+   "rho": null,
+   "ci95": null,
    "projects_excluded_wide_interval": [
     "MOCK01",
     "MOCK02",
     "MOCK03",
     "MOCK04",
     "MOCK05",
+    "MOCK06",
     "MOCK07",
     "MOCK08",
     "MOCK09",
     "MOCK10",
+    "MOCK11",
     "MOCK12",
     "MOCK13",
     "MOCK14",
@@ -267,13 +272,13 @@
     "MOCK31",
     "MOCK32",
     "MOCK33",
-    "MOCK35",
+    "MOCK34",
     "MOCK36",
     "MOCK37",
     "MOCK38",
     "MOCK39",
     "MOCK40",
-    "MOCK42",
+    "MOCK41",
     "MOCK43",
     "MOCK44"
    ]
@@ -362,20 +367,20 @@
    "MOCK04": {
     "aspects": 6,
     "talked": 3,
-    "design_stated": 3,
-    "committed": 1,
-    "uncertain": 1,
+    "design_stated": 2,
+    "committed": 0,
+    "uncertain": 2,
     "gap": [
      2,
-     2
+     3
     ],
     "talk_share": 0.5,
     "commit_share": [
-     0.1667,
+     0.0,
      0.3333
     ],
     "stated_share": [
-     0.5,
+     0.3333,
      0.6667
     ],
     "talk_only_aspects": {
@@ -387,18 +392,44 @@
    },
    "MOCK05": {
     "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 3,
-    "uncertain": 1,
+    "talked": 2,
+    "design_stated": 3,
+    "committed": 1,
+    "uncertain": 0,
     "gap": [
      1,
-     2
+     1
+    ],
+    "talk_share": 0.3333,
+    "commit_share": [
+     0.1667,
+     0.1667
+    ],
+    "stated_share": [
+     0.5,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK06": {
+    "aspects": 6,
+    "talked": 4,
+    "design_stated": 4,
+    "committed": 0,
+    "uncertain": 1,
+    "gap": [
+     3,
+     4
     ],
     "talk_share": 0.6667,
     "commit_share": [
-     0.5,
-     0.6667
+     0.0,
+     0.1667
     ],
     "stated_share": [
      0.6667,
@@ -411,24 +442,24 @@
      "GENERAL": false
     }
    },
-   "MOCK06": {
+   "MOCK07": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 6,
-    "committed": 0,
+    "talked": 3,
+    "design_stated": 3,
+    "committed": 2,
     "uncertain": 0,
     "gap": [
-     5,
-     5
+     1,
+     1
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.5,
     "commit_share": [
-     0.0,
-     0.0
+     0.3333,
+     0.3333
     ],
     "stated_share": [
-     1.0,
-     1.0
+     0.5,
+     0.5
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -437,7 +468,85 @@
      "GENERAL": false
     }
    },
-   "MOCK07": {
+   "MOCK08": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 3,
+    "committed": 1,
+    "uncertain": 0,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.1667,
+     0.1667
+    ],
+    "stated_share": [
+     0.5,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK09": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 3,
+    "committed": 0,
+    "uncertain": 0,
+    "gap": [
+     3,
+     3
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.0,
+     0.0
+    ],
+    "stated_share": [
+     0.5,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK10": {
+    "aspects": 6,
+    "talked": 5,
+    "design_stated": 4,
+    "committed": 0,
+    "uncertain": 1,
+    "gap": [
+     4,
+     5
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.0,
+     0.1667
+    ],
+    "stated_share": [
+     0.6667,
+     0.8333
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK11": {
     "aspects": 6,
     "talked": 4,
     "design_stated": 4,
@@ -463,20 +572,98 @@
      "GENERAL": false
     }
    },
-   "MOCK08": {
+   "MOCK12": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 5,
+    "talked": 3,
+    "design_stated": 4,
+    "committed": 3,
+    "uncertain": 0,
+    "gap": [
+     1,
+     1
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.5,
+     0.5
+    ],
+    "stated_share": [
+     0.6667,
+     0.6667
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK13": {
+    "aspects": 6,
+    "talked": 4,
+    "design_stated": 4,
     "committed": 1,
     "uncertain": 0,
     "gap": [
-     4,
-     4
+     3,
+     3
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.6667,
     "commit_share": [
      0.1667,
      0.1667
+    ],
+    "stated_share": [
+     0.6667,
+     0.6667
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK14": {
+    "aspects": 6,
+    "talked": 2,
+    "design_stated": 3,
+    "committed": 0,
+    "uncertain": 1,
+    "gap": [
+     1,
+     2
+    ],
+    "talk_share": 0.3333,
+    "commit_share": [
+     0.0,
+     0.1667
+    ],
+    "stated_share": [
+     0.5,
+     0.6667
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK15": {
+    "aspects": 6,
+    "talked": 5,
+    "design_stated": 5,
+    "committed": 2,
+    "uncertain": 0,
+    "gap": [
+     3,
+     3
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.3333,
+     0.3333
     ],
     "stated_share": [
      0.8333,
@@ -489,7 +676,215 @@
      "GENERAL": false
     }
    },
-   "MOCK09": {
+   "MOCK16": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 2,
+    "committed": 0,
+    "uncertain": 1,
+    "gap": [
+     2,
+     3
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.0,
+     0.1667
+    ],
+    "stated_share": [
+     0.3333,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK17": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 3,
+    "committed": 1,
+    "uncertain": 0,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.1667,
+     0.1667
+    ],
+    "stated_share": [
+     0.5,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK18": {
+    "aspects": 6,
+    "talked": 6,
+    "design_stated": 4,
+    "committed": 1,
+    "uncertain": 2,
+    "gap": [
+     3,
+     5
+    ],
+    "talk_share": 1.0,
+    "commit_share": [
+     0.1667,
+     0.5
+    ],
+    "stated_share": [
+     0.6667,
+     1.0
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK19": {
+    "aspects": 6,
+    "talked": 5,
+    "design_stated": 5,
+    "committed": 3,
+    "uncertain": 0,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.5,
+     0.5
+    ],
+    "stated_share": [
+     0.8333,
+     0.8333
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK20": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 4,
+    "committed": 1,
+    "uncertain": 1,
+    "gap": [
+     3,
+     3
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.1667,
+     0.3333
+    ],
+    "stated_share": [
+     0.6667,
+     0.8333
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK21": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 4,
+    "committed": 2,
+    "uncertain": 1,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.3333,
+     0.5
+    ],
+    "stated_share": [
+     0.6667,
+     0.8333
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK22": {
+    "aspects": 6,
+    "talked": 2,
+    "design_stated": 1,
+    "committed": 0,
+    "uncertain": 3,
+    "gap": [
+     1,
+     2
+    ],
+    "talk_share": 0.3333,
+    "commit_share": [
+     0.0,
+     0.5
+    ],
+    "stated_share": [
+     0.1667,
+     0.6667
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK23": {
+    "aspects": 6,
+    "talked": 5,
+    "design_stated": 5,
+    "committed": 3,
+    "uncertain": 1,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.5,
+     0.6667
+    ],
+    "stated_share": [
+     0.8333,
+     1.0
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK24": {
     "aspects": 6,
     "talked": 1,
     "design_stated": 1,
@@ -515,414 +910,24 @@
      "GENERAL": false
     }
    },
-   "MOCK10": {
-    "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 1,
-    "uncertain": 1,
-    "gap": [
-     3,
-     3
-    ],
-    "talk_share": 0.6667,
-    "commit_share": [
-     0.1667,
-     0.3333
-    ],
-    "stated_share": [
-     0.6667,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK11": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 6,
-    "committed": 4,
-    "uncertain": 0,
-    "gap": [
-     1,
-     1
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.6667,
-     0.6667
-    ],
-    "stated_share": [
-     1.0,
-     1.0
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK12": {
-    "aspects": 6,
-    "talked": 3,
-    "design_stated": 3,
-    "committed": 0,
-    "uncertain": 0,
-    "gap": [
-     3,
-     3
-    ],
-    "talk_share": 0.5,
-    "commit_share": [
-     0.0,
-     0.0
-    ],
-    "stated_share": [
-     0.5,
-     0.5
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK13": {
-    "aspects": 6,
-    "talked": 2,
-    "design_stated": 3,
-    "committed": 0,
-    "uncertain": 2,
-    "gap": [
-     2,
-     2
-    ],
-    "talk_share": 0.3333,
-    "commit_share": [
-     0.0,
-     0.3333
-    ],
-    "stated_share": [
-     0.5,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK14": {
-    "aspects": 6,
-    "talked": 3,
-    "design_stated": 3,
-    "committed": 1,
-    "uncertain": 0,
-    "gap": [
-     2,
-     2
-    ],
-    "talk_share": 0.5,
-    "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     0.5,
-     0.5
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK15": {
-    "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 0,
-    "uncertain": 0,
-    "gap": [
-     4,
-     4
-    ],
-    "talk_share": 0.6667,
-    "commit_share": [
-     0.0,
-     0.0
-    ],
-    "stated_share": [
-     0.6667,
-     0.6667
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK16": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 4,
-    "committed": 0,
-    "uncertain": 1,
-    "gap": [
-     4,
-     5
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.0,
-     0.1667
-    ],
-    "stated_share": [
-     0.6667,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK17": {
-    "aspects": 6,
-    "talked": 2,
-    "design_stated": 2,
-    "committed": 1,
-    "uncertain": 0,
-    "gap": [
-     1,
-     1
-    ],
-    "talk_share": 0.3333,
-    "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     0.3333,
-     0.3333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK18": {
-    "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 1,
-    "uncertain": 0,
-    "gap": [
-     3,
-     3
-    ],
-    "talk_share": 0.6667,
-    "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     0.6667,
-     0.6667
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK19": {
-    "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 1,
-    "uncertain": 0,
-    "gap": [
-     3,
-     3
-    ],
-    "talk_share": 0.6667,
-    "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     0.6667,
-     0.6667
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK20": {
-    "aspects": 6,
-    "talked": 3,
-    "design_stated": 3,
-    "committed": 1,
-    "uncertain": 1,
-    "gap": [
-     2,
-     2
-    ],
-    "talk_share": 0.5,
-    "commit_share": [
-     0.1667,
-     0.3333
-    ],
-    "stated_share": [
-     0.5,
-     0.6667
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK21": {
-    "aspects": 6,
-    "talked": 3,
-    "design_stated": 3,
-    "committed": 0,
-    "uncertain": 2,
-    "gap": [
-     2,
-     3
-    ],
-    "talk_share": 0.5,
-    "commit_share": [
-     0.0,
-     0.3333
-    ],
-    "stated_share": [
-     0.5,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK22": {
-    "aspects": 6,
-    "talked": 4,
-    "design_stated": 4,
-    "committed": 1,
-    "uncertain": 1,
-    "gap": [
-     3,
-     3
-    ],
-    "talk_share": 0.6667,
-    "commit_share": [
-     0.1667,
-     0.3333
-    ],
-    "stated_share": [
-     0.6667,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK23": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 5,
-    "committed": 4,
-    "uncertain": 0,
-    "gap": [
-     1,
-     1
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.6667,
-     0.6667
-    ],
-    "stated_share": [
-     0.8333,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK24": {
-    "aspects": 6,
-    "talked": 2,
-    "design_stated": 2,
-    "committed": 1,
-    "uncertain": 1,
-    "gap": [
-     1,
-     1
-    ],
-    "talk_share": 0.3333,
-    "commit_share": [
-     0.1667,
-     0.3333
-    ],
-    "stated_share": [
-     0.3333,
-     0.5
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
    "MOCK25": {
     "aspects": 6,
-    "talked": 3,
-    "design_stated": 3,
-    "committed": 3,
+    "talked": 4,
+    "design_stated": 4,
+    "committed": 2,
     "uncertain": 0,
     "gap": [
-     0,
-     0
+     2,
+     2
     ],
-    "talk_share": 0.5,
+    "talk_share": 0.6667,
     "commit_share": [
-     0.5,
-     0.5
+     0.3333,
+     0.3333
     ],
     "stated_share": [
-     0.5,
-     0.5
+     0.6667,
+     0.6667
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -935,16 +940,16 @@
     "aspects": 6,
     "talked": 2,
     "design_stated": 2,
-    "committed": 0,
+    "committed": 1,
     "uncertain": 0,
     "gap": [
-     2,
-     2
+     1,
+     1
     ],
     "talk_share": 0.3333,
     "commit_share": [
-     0.0,
-     0.0
+     0.1667,
+     0.1667
     ],
     "stated_share": [
      0.3333,
@@ -959,67 +964,15 @@
    },
    "MOCK27": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 2,
-    "committed": 0,
-    "uncertain": 4,
-    "gap": [
-     2,
-     5
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.0,
-     0.6667
-    ],
-    "stated_share": [
-     0.3333,
-     1.0
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK28": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 5,
-    "committed": 1,
-    "uncertain": 0,
-    "gap": [
-     4,
-     4
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     0.8333,
-     0.8333
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK29": {
-    "aspects": 6,
-    "talked": 2,
+    "talked": 3,
     "design_stated": 2,
     "committed": 1,
     "uncertain": 1,
     "gap": [
      1,
-     1
+     2
     ],
-    "talk_share": 0.3333,
+    "talk_share": 0.5,
     "commit_share": [
      0.1667,
      0.3333
@@ -1035,24 +988,24 @@
      "GENERAL": false
     }
    },
-   "MOCK30": {
+   "MOCK28": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 4,
-    "committed": 2,
-    "uncertain": 1,
+    "talked": 2,
+    "design_stated": 2,
+    "committed": 0,
+    "uncertain": 0,
     "gap": [
      2,
-     3
+     2
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.3333,
     "commit_share": [
-     0.3333,
-     0.5
+     0.0,
+     0.0
     ],
     "stated_share": [
-     0.6667,
-     0.8333
+     0.3333,
+     0.3333
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -1061,7 +1014,33 @@
      "GENERAL": false
     }
    },
-   "MOCK31": {
+   "MOCK29": {
+    "aspects": 6,
+    "talked": 3,
+    "design_stated": 3,
+    "committed": 1,
+    "uncertain": 1,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.1667,
+     0.3333
+    ],
+    "stated_share": [
+     0.5,
+     0.6667
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK30": {
     "aspects": 6,
     "talked": 3,
     "design_stated": 3,
@@ -1087,17 +1066,69 @@
      "GENERAL": false
     }
    },
-   "MOCK32": {
+   "MOCK31": {
     "aspects": 6,
     "talked": 3,
+    "design_stated": 3,
+    "committed": 1,
+    "uncertain": 0,
+    "gap": [
+     2,
+     2
+    ],
+    "talk_share": 0.5,
+    "commit_share": [
+     0.1667,
+     0.1667
+    ],
+    "stated_share": [
+     0.5,
+     0.5
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK32": {
+    "aspects": 6,
+    "talked": 5,
+    "design_stated": 4,
+    "committed": 0,
+    "uncertain": 2,
+    "gap": [
+     4,
+     5
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.0,
+     0.3333
+    ],
+    "stated_share": [
+     0.6667,
+     1.0
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK33": {
+    "aspects": 6,
+    "talked": 5,
     "design_stated": 4,
     "committed": 3,
     "uncertain": 2,
     "gap": [
-     0,
-     0
+     1,
+     2
     ],
-    "talk_share": 0.5,
+    "talk_share": 0.8333,
     "commit_share": [
      0.5,
      0.8333
@@ -1113,7 +1144,7 @@
      "GENERAL": false
     }
    },
-   "MOCK33": {
+   "MOCK34": {
     "aspects": 6,
     "talked": 1,
     "design_stated": 2,
@@ -1139,9 +1170,9 @@
      "GENERAL": false
     }
    },
-   "MOCK34": {
+   "MOCK35": {
     "aspects": 6,
-    "talked": 5,
+    "talked": 4,
     "design_stated": 5,
     "committed": 2,
     "uncertain": 1,
@@ -1149,7 +1180,7 @@
      3,
      3
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.6667,
     "commit_share": [
      0.3333,
      0.5
@@ -1165,7 +1196,7 @@
      "GENERAL": false
     }
    },
-   "MOCK35": {
+   "MOCK36": {
     "aspects": 6,
     "talked": 4,
     "design_stated": 4,
@@ -1183,32 +1214,6 @@
     "stated_share": [
      0.6667,
      0.6667
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK36": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 4,
-    "committed": 2,
-    "uncertain": 1,
-    "gap": [
-     2,
-     3
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.3333,
-     0.5
-    ],
-    "stated_share": [
-     0.6667,
-     0.8333
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -1220,6 +1225,32 @@
    "MOCK37": {
     "aspects": 6,
     "talked": 5,
+    "design_stated": 4,
+    "committed": 2,
+    "uncertain": 1,
+    "gap": [
+     2,
+     3
+    ],
+    "talk_share": 0.8333,
+    "commit_share": [
+     0.3333,
+     0.5
+    ],
+    "stated_share": [
+     0.6667,
+     0.8333
+    ],
+    "talk_only_aspects": {
+     "DATA_PROTECTION": false,
+     "USER_CONTROL": false,
+     "PETS": false,
+     "GENERAL": false
+    }
+   },
+   "MOCK38": {
+    "aspects": 6,
+    "talked": 5,
     "design_stated": 5,
     "committed": 2,
     "uncertain": 0,
@@ -1243,7 +1274,7 @@
      "GENERAL": false
     }
    },
-   "MOCK38": {
+   "MOCK39": {
     "aspects": 6,
     "talked": 4,
     "design_stated": 4,
@@ -1269,46 +1300,20 @@
      "GENERAL": false
     }
    },
-   "MOCK39": {
+   "MOCK40": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 6,
-    "committed": 1,
+    "talked": 4,
+    "design_stated": 5,
+    "committed": 0,
     "uncertain": 0,
     "gap": [
      4,
      4
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.6667,
     "commit_share": [
-     0.1667,
-     0.1667
-    ],
-    "stated_share": [
-     1.0,
-     1.0
-    ],
-    "talk_only_aspects": {
-     "DATA_PROTECTION": false,
-     "USER_CONTROL": false,
-     "PETS": false,
-     "GENERAL": false
-    }
-   },
-   "MOCK40": {
-    "aspects": 6,
-    "talked": 5,
-    "design_stated": 5,
-    "committed": 3,
-    "uncertain": 0,
-    "gap": [
-     2,
-     2
-    ],
-    "talk_share": 0.8333,
-    "commit_share": [
-     0.5,
-     0.5
+     0.0,
+     0.0
     ],
     "stated_share": [
      0.8333,
@@ -1323,22 +1328,22 @@
    },
    "MOCK41": {
     "aspects": 6,
-    "talked": 5,
-    "design_stated": 6,
-    "committed": 2,
+    "talked": 4,
+    "design_stated": 4,
+    "committed": 1,
     "uncertain": 0,
     "gap": [
-     4,
-     4
+     3,
+     3
     ],
-    "talk_share": 0.8333,
+    "talk_share": 0.6667,
     "commit_share": [
-     0.3333,
-     0.3333
+     0.1667,
+     0.1667
     ],
     "stated_share": [
-     1.0,
-     1.0
+     0.6667,
+     0.6667
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -1375,22 +1380,22 @@
    },
    "MOCK43": {
     "aspects": 6,
-    "talked": 3,
-    "design_stated": 2,
-    "committed": 0,
-    "uncertain": 1,
+    "talked": 4,
+    "design_stated": 5,
+    "committed": 2,
+    "uncertain": 0,
     "gap": [
-     2,
+     3,
      3
     ],
-    "talk_share": 0.5,
+    "talk_share": 0.6667,
     "commit_share": [
-     0.0,
-     0.1667
+     0.3333,
+     0.3333
     ],
     "stated_share": [
-     0.3333,
-     0.5
+     0.8333,
+     0.8333
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -1401,22 +1406,22 @@
    },
    "MOCK44": {
     "aspects": 6,
-    "talked": 0,
-    "design_stated": 3,
+    "talked": 4,
+    "design_stated": 4,
     "committed": 0,
     "uncertain": 0,
     "gap": [
-     0,
-     0
+     4,
+     4
     ],
-    "talk_share": 0.0,
+    "talk_share": 0.6667,
     "commit_share": [
      0.0,
      0.0
     ],
     "stated_share": [
-     0.5,
-     0.5
+     0.6667,
+     0.6667
     ],
     "talk_only_aspects": {
      "DATA_PROTECTION": false,
@@ -1427,39 +1432,39 @@
    }
   },
   "table_2x2": {
-   "talk_and_committed": 49,
+   "talk_and_committed": 42,
    "talk_stated_not_decided": 100,
    "talk_no_commitment": 0,
-   "talk_uncertain": 11,
-   "silent_committed": 3,
-   "silent_stated": 10,
-   "silent_none": 77,
-   "silent_uncertain": 14
+   "talk_uncertain": 14,
+   "silent_committed": 6,
+   "silent_stated": 6,
+   "silent_none": 85,
+   "silent_uncertain": 11
   },
   "test_H_TC1_admissible_lower_bound": {
    "n_projects": 44,
-   "positive": 36,
+   "positive": 39,
    "negative": 2,
-   "zero": 6,
+   "zero": 3,
    "sign_test_p_one_sided": 0.0,
    "mean_d": 0.3144,
    "mean_d_ci95": [
-    0.2386,
-    0.3901
+    0.25,
+    0.375
    ],
    "bound": "lower",
    "level": "admissible"
   },
   "test_H_TC1_admissible_upper_bound": {
    "n_projects": 44,
-   "positive": 40,
+   "positive": 42,
    "negative": 1,
-   "zero": 3,
+   "zero": 1,
    "sign_test_p_one_sided": 0.0,
    "mean_d": 0.4091,
    "mean_d_ci95": [
-    0.3371,
-    0.4773
+    0.3485,
+    0.4697
    ],
    "bound": "upper",
    "level": "admissible"
@@ -1467,33 +1472,73 @@
   "test_H_TC2_stated_lower_bound": {
    "n_projects": 44,
    "positive": 0,
-   "negative": 20,
-   "zero": 24,
+   "negative": 18,
+   "zero": 26,
    "sign_test_p_one_sided": 1.0,
-   "mean_d": -0.1023,
+   "mean_d": -0.0871,
    "mean_d_ci95": [
-    -0.1439,
-    -0.0606
+    -0.1212,
+    -0.0568
    ],
    "bound": "lower",
    "level": "stated"
   },
   "test_H_TC2_stated_upper_bound": {
    "n_projects": 44,
-   "positive": 6,
-   "negative": 9,
-   "zero": 29,
-   "sign_test_p_one_sided": 0.849121,
-   "mean_d": -0.0076,
+   "positive": 10,
+   "negative": 10,
+   "zero": 24,
+   "sign_test_p_one_sided": 0.588099,
+   "mean_d": 0.0076,
    "mean_d_ci95": [
-    -0.0492,
-    0.0341
+    -0.0265,
+    0.0454
    ],
    "bound": "upper",
    "level": "stated"
   },
   "intensity": {
    "MOCK01": {
+    "share": 0.1158,
+    "ci95": [
+     0.0916,
+     0.1454
+    ],
+    "n": 544
+   },
+   "MOCK02": {
+    "share": 0.1725,
+    "ci95": [
+     0.1415,
+     0.2086
+    ],
+    "n": 487
+   },
+   "MOCK03": {
+    "share": 0.2524,
+    "ci95": [
+     0.222,
+     0.2855
+    ],
+    "n": 717
+   },
+   "MOCK04": {
+    "share": 0.2736,
+    "ci95": [
+     0.2423,
+     0.3073
+    ],
+    "n": 720
+   },
+   "MOCK05": {
+    "share": 0.3938,
+    "ci95": [
+     0.3658,
+     0.4226
+    ],
+    "n": 1135
+   },
+   "MOCK06": {
     "share": 0.3209,
     "ci95": [
      0.2943,
@@ -1501,7 +1546,7 @@
     ],
     "n": 1128
    },
-   "MOCK02": {
+   "MOCK07": {
     "share": 0.1515,
     "ci95": [
      0.1082,
@@ -1509,7 +1554,7 @@
     ],
     "n": 198
    },
-   "MOCK03": {
+   "MOCK08": {
     "share": 0.299,
     "ci95": [
      0.2684,
@@ -1517,7 +1562,7 @@
     ],
     "n": 806
    },
-   "MOCK04": {
+   "MOCK09": {
     "share": 0.1227,
     "ci95": [
      0.1048,
@@ -1525,7 +1570,7 @@
     ],
     "n": 1133
    },
-   "MOCK05": {
+   "MOCK10": {
     "share": 0.2143,
     "ci95": [
      0.1798,
@@ -1533,7 +1578,7 @@
     ],
     "n": 476
    },
-   "MOCK06": {
+   "MOCK11": {
     "share": 0.1204,
     "ci95": [
      0.0907,
@@ -1541,7 +1586,7 @@
     ],
     "n": 357
    },
-   "MOCK07": {
+   "MOCK12": {
     "share": 0.264,
     "ci95": [
      0.2273,
@@ -1549,7 +1594,7 @@
     ],
     "n": 500
    },
-   "MOCK08": {
+   "MOCK13": {
     "share": 0.3338,
     "ci95": [
      0.3002,
@@ -1557,7 +1602,7 @@
     ],
     "n": 716
    },
-   "MOCK09": {
+   "MOCK14": {
     "share": 0.2974,
     "ci95": [
      0.2515,
@@ -1565,7 +1610,7 @@
     ],
     "n": 343
    },
-   "MOCK10": {
+   "MOCK15": {
     "share": 0.0549,
     "ci95": [
      0.0421,
@@ -1573,7 +1618,7 @@
     ],
     "n": 947
    },
-   "MOCK11": {
+   "MOCK16": {
     "share": 0.2132,
     "ci95": [
      0.1726,
@@ -1581,7 +1626,7 @@
     ],
     "n": 333
    },
-   "MOCK12": {
+   "MOCK17": {
     "share": 0.2016,
     "ci95": [
      0.1568,
@@ -1589,7 +1634,7 @@
     ],
     "n": 253
    },
-   "MOCK13": {
+   "MOCK18": {
     "share": 0.1224,
     "ci95": [
      0.0789,
@@ -1597,7 +1642,7 @@
     ],
     "n": 147
    },
-   "MOCK14": {
+   "MOCK19": {
     "share": 0.226,
     "ci95": [
      0.1982,
@@ -1605,7 +1650,7 @@
     ],
     "n": 792
    },
-   "MOCK15": {
+   "MOCK20": {
     "share": 0.106,
     "ci95": [
      0.0867,
@@ -1613,7 +1658,7 @@
     ],
     "n": 811
    },
-   "MOCK16": {
+   "MOCK21": {
     "share": 0.3679,
     "ci95": [
      0.335,
@@ -1621,7 +1666,7 @@
     ],
     "n": 791
    },
-   "MOCK17": {
+   "MOCK22": {
     "share": 0.3937,
     "ci95": [
      0.3438,
@@ -1629,7 +1674,7 @@
     ],
     "n": 348
    },
-   "MOCK18": {
+   "MOCK23": {
     "share": 0.201,
     "ci95": [
      0.1746,
@@ -1637,7 +1682,7 @@
     ],
     "n": 791
    },
-   "MOCK19": {
+   "MOCK24": {
     "share": 0.2632,
     "ci95": [
      0.2297,
@@ -1645,7 +1690,7 @@
     ],
     "n": 608
    },
-   "MOCK20": {
+   "MOCK25": {
     "share": 0.2178,
     "ci95": [
      0.1914,
@@ -1653,7 +1698,7 @@
     ],
     "n": 854
    },
-   "MOCK21": {
+   "MOCK26": {
     "share": 0.2035,
     "ci95": [
      0.1762,
@@ -1661,7 +1706,7 @@
     ],
     "n": 752
    },
-   "MOCK22": {
+   "MOCK27": {
     "share": 0.1897,
     "ci95": [
      0.1384,
@@ -1669,7 +1714,7 @@
     ],
     "n": 174
    },
-   "MOCK23": {
+   "MOCK28": {
     "share": 0.1002,
     "ci95": [
      0.0785,
@@ -1677,7 +1722,7 @@
     ],
     "n": 589
    },
-   "MOCK24": {
+   "MOCK29": {
     "share": 0.2814,
     "ci95": [
      0.2446,
@@ -1685,7 +1730,7 @@
     ],
     "n": 526
    },
-   "MOCK25": {
+   "MOCK30": {
     "share": 0.2325,
     "ci95": [
      0.1938,
@@ -1693,7 +1738,7 @@
     ],
     "n": 400
    },
-   "MOCK26": {
+   "MOCK31": {
     "share": 0.3275,
     "ci95": [
      0.2758,
@@ -1701,7 +1746,7 @@
     ],
     "n": 287
    },
-   "MOCK27": {
+   "MOCK32": {
     "share": 0.3625,
     "ci95": [
      0.292,
@@ -1709,7 +1754,7 @@
     ],
     "n": 160
    },
-   "MOCK28": {
+   "MOCK33": {
     "share": 0.3857,
     "ci95": [
      0.3404,
@@ -1717,7 +1762,7 @@
     ],
     "n": 420
    },
-   "MOCK29": {
+   "MOCK34": {
     "share": 0.2425,
     "ci95": [
      0.2167,
@@ -1725,7 +1770,7 @@
     ],
     "n": 973
    },
-   "MOCK30": {
+   "MOCK35": {
     "share": 0.1764,
     "ci95": [
      0.148,
@@ -1733,7 +1778,7 @@
     ],
     "n": 601
    },
-   "MOCK31": {
+   "MOCK36": {
     "share": 0.2373,
     "ci95": [
      0.2067,
@@ -1741,7 +1786,7 @@
     ],
     "n": 670
    },
-   "MOCK32": {
+   "MOCK37": {
     "share": 0.1982,
     "ci95": [
      0.1586,
@@ -1749,7 +1794,7 @@
     ],
     "n": 328
    },
-   "MOCK33": {
+   "MOCK38": {
     "share": 0.2288,
     "ci95": [
      0.1972,
@@ -1757,7 +1802,7 @@
     ],
     "n": 612
    },
-   "MOCK34": {
+   "MOCK39": {
     "share": 0.1066,
     "ci95": [
      0.0901,
@@ -1765,7 +1810,7 @@
     ],
     "n": 1144
    },
-   "MOCK35": {
+   "MOCK40": {
     "share": 0.0553,
     "ci95": [
      0.0423,
@@ -1773,7 +1818,7 @@
     ],
     "n": 922
    },
-   "MOCK36": {
+   "MOCK41": {
     "share": 0.3846,
     "ci95": [
      0.3054,
@@ -1781,7 +1826,7 @@
     ],
     "n": 130
    },
-   "MOCK37": {
+   "MOCK42": {
     "share": 0.3771,
     "ci95": [
      0.3437,
@@ -1789,7 +1834,7 @@
     ],
     "n": 777
    },
-   "MOCK38": {
+   "MOCK43": {
     "share": 0.3286,
     "ci95": [
      0.2948,
@@ -1797,53 +1842,13 @@
     ],
     "n": 700
    },
-   "MOCK39": {
+   "MOCK44": {
     "share": 0.1466,
     "ci95": [
      0.1226,
      0.1744
     ],
     "n": 716
-   },
-   "MOCK40": {
-    "share": 0.3071,
-    "ci95": [
-     0.2536,
-     0.3663
-    ],
-    "n": 254
-   },
-   "MOCK41": {
-    "share": 0.3214,
-    "ci95": [
-     0.26,
-     0.3897
-    ],
-    "n": 196
-   },
-   "MOCK42": {
-    "share": 0.3912,
-    "ci95": [
-     0.3558,
-     0.4278
-    ],
-    "n": 703
-   },
-   "MOCK43": {
-    "share": 0.3403,
-    "ci95": [
-     0.301,
-     0.382
-    ],
-    "n": 523
-   },
-   "MOCK44": {
-    "share": 0.1894,
-    "ci95": [
-     0.1539,
-     0.2309
-    ],
-    "n": 396
    }
   }
  }

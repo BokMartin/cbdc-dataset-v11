@@ -1,0 +1,766 @@
+{
+ "units_in_sample": 80,
+ "units_coded_by_both": 79,
+ "units_left_blank_by_a_coder": 1,
+ "units_both_relevant": 29,
+ "units_relevant_for_at_least_one": 32,
+ "relevant": {
+  "n": 79,
+  "categories_declared": [
+   "R",
+   "N",
+   "U"
+  ],
+  "agreement": 0.949,
+  "alpha": 0.921,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.838,
+   0.981
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.926,
+  "counts": {
+   "N": 65,
+   "U": 32,
+   "R": 61
+  },
+  "confusion": {
+   "N|N": 32,
+   "N|U": 1,
+   "R|R": 29,
+   "R|U": 2,
+   "U|R": 1,
+   "U|U": 14
+  }
+ },
+ "facets_scored": [
+  "voice",
+  "aspect",
+  "aspect2",
+  "stance",
+  "basis",
+  "decision"
+ ],
+ "voice": {
+  "n": 29,
+  "categories_declared": [
+   "OWN",
+   "REPORTED",
+   "UNCLEAR"
+  ],
+  "agreement": 1.0,
+  "alpha": 1.0,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   1.0,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 23,
+  "ac1": 1.0,
+  "counts": {
+   "REPORTED": 8,
+   "OWN": 50
+  },
+  "confusion": {
+   "OWN|OWN": 25,
+   "REPORTED|REPORTED": 4
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "voice_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "OWN",
+   "REPORTED",
+   "UNCLEAR",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.906,
+  "alpha": 0.689,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.23,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.896,
+  "counts": {
+   "REPORTED": 8,
+   "OWN": 53,
+   "NOT_RELEVANT": 3
+  },
+  "confusion": {
+   "NOT_RELEVANT|OWN": 1,
+   "OWN|NOT_RELEVANT": 2,
+   "OWN|OWN": 25,
+   "REPORTED|REPORTED": 4
+  }
+ },
+ "aspect": {
+  "n": 29,
+  "categories_declared": [
+   "CB_ACCESS",
+   "INTERMEDIARY_DATA",
+   "AUTHORITY_ACCESS",
+   "ANONYMITY",
+   "IDENTIFICATION",
+   "OFFLINE",
+   "DATA_PROTECTION",
+   "USER_CONTROL",
+   "PETS",
+   "GENERAL"
+  ],
+  "agreement": 0.931,
+  "alpha": 0.92,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.792,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.924,
+  "counts": {
+   "DATA_PROTECTION": 5,
+   "GENERAL": 14,
+   "IDENTIFICATION": 12,
+   "AUTHORITY_ACCESS": 10,
+   "PETS": 4,
+   "INTERMEDIARY_DATA": 2,
+   "ANONYMITY": 5,
+   "CB_ACCESS": 4,
+   "USER_CONTROL": 2
+  },
+  "confusion": {
+   "ANONYMITY|ANONYMITY": 2,
+   "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 5,
+   "CB_ACCESS|CB_ACCESS": 2,
+   "DATA_PROTECTION|DATA_PROTECTION": 2,
+   "DATA_PROTECTION|GENERAL": 1,
+   "GENERAL|ANONYMITY": 1,
+   "GENERAL|GENERAL": 6,
+   "IDENTIFICATION|IDENTIFICATION": 6,
+   "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 1,
+   "PETS|PETS": 2,
+   "USER_CONTROL|USER_CONTROL": 1
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "aspect_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "CB_ACCESS",
+   "INTERMEDIARY_DATA",
+   "AUTHORITY_ACCESS",
+   "ANONYMITY",
+   "IDENTIFICATION",
+   "OFFLINE",
+   "DATA_PROTECTION",
+   "USER_CONTROL",
+   "PETS",
+   "GENERAL",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.844,
+  "alpha": 0.819,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.662,
+   0.929
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.829,
+  "counts": {
+   "DATA_PROTECTION": 5,
+   "GENERAL": 14,
+   "IDENTIFICATION": 14,
+   "AUTHORITY_ACCESS": 11,
+   "NOT_RELEVANT": 3,
+   "PETS": 4,
+   "INTERMEDIARY_DATA": 2,
+   "ANONYMITY": 5,
+   "CB_ACCESS": 4,
+   "USER_CONTROL": 2
+  },
+  "confusion": {
+   "ANONYMITY|ANONYMITY": 2,
+   "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 5,
+   "AUTHORITY_ACCESS|NOT_RELEVANT": 1,
+   "CB_ACCESS|CB_ACCESS": 2,
+   "DATA_PROTECTION|DATA_PROTECTION": 2,
+   "DATA_PROTECTION|GENERAL": 1,
+   "GENERAL|ANONYMITY": 1,
+   "GENERAL|GENERAL": 6,
+   "IDENTIFICATION|IDENTIFICATION": 6,
+   "IDENTIFICATION|NOT_RELEVANT": 1,
+   "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 1,
+   "NOT_RELEVANT|IDENTIFICATION": 1,
+   "PETS|PETS": 2,
+   "USER_CONTROL|USER_CONTROL": 1
+  }
+ },
+ "aspect2": {
+  "n": 29,
+  "categories_declared": [
+   "CB_ACCESS",
+   "INTERMEDIARY_DATA",
+   "AUTHORITY_ACCESS",
+   "ANONYMITY",
+   "IDENTIFICATION",
+   "OFFLINE",
+   "DATA_PROTECTION",
+   "USER_CONTROL",
+   "PETS",
+   "GENERAL",
+   "NONE"
+  ],
+  "agreement": 0.931,
+  "alpha": 0.903,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.731,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.926,
+  "counts": {
+   "NONE": 28,
+   "INTERMEDIARY_DATA": 12,
+   "AUTHORITY_ACCESS": 7,
+   "ANONYMITY": 2,
+   "IDENTIFICATION": 2,
+   "DATA_PROTECTION": 4,
+   "GENERAL": 1,
+   "CB_ACCESS": 2
+  },
+  "confusion": {
+   "ANONYMITY|ANONYMITY": 1,
+   "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 3,
+   "AUTHORITY_ACCESS|NONE": 1,
+   "CB_ACCESS|CB_ACCESS": 1,
+   "DATA_PROTECTION|DATA_PROTECTION": 2,
+   "GENERAL|NONE": 1,
+   "IDENTIFICATION|IDENTIFICATION": 1,
+   "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 6,
+   "NONE|NONE": 13
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "aspect2_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "CB_ACCESS",
+   "INTERMEDIARY_DATA",
+   "AUTHORITY_ACCESS",
+   "ANONYMITY",
+   "IDENTIFICATION",
+   "OFFLINE",
+   "DATA_PROTECTION",
+   "USER_CONTROL",
+   "PETS",
+   "GENERAL",
+   "NONE",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.844,
+  "alpha": 0.786,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.59,
+   0.938
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.833,
+  "counts": {
+   "NONE": 30,
+   "INTERMEDIARY_DATA": 13,
+   "AUTHORITY_ACCESS": 7,
+   "ANONYMITY": 2,
+   "NOT_RELEVANT": 3,
+   "IDENTIFICATION": 2,
+   "DATA_PROTECTION": 4,
+   "GENERAL": 1,
+   "CB_ACCESS": 2
+  },
+  "confusion": {
+   "ANONYMITY|ANONYMITY": 1,
+   "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 3,
+   "AUTHORITY_ACCESS|NONE": 1,
+   "CB_ACCESS|CB_ACCESS": 1,
+   "DATA_PROTECTION|DATA_PROTECTION": 2,
+   "GENERAL|NONE": 1,
+   "IDENTIFICATION|IDENTIFICATION": 1,
+   "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 6,
+   "NONE|NONE": 13,
+   "NONE|NOT_RELEVANT": 2,
+   "NOT_RELEVANT|INTERMEDIARY_DATA": 1
+  }
+ },
+ "stance": {
+  "n": 29,
+  "categories_declared": [
+   "PROTECTS",
+   "EXPOSES",
+   "TRADEOFF",
+   "NEUTRAL"
+  ],
+  "agreement": 1.0,
+  "alpha": 1.0,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   1.0,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 1.0,
+  "counts": {
+   "TRADEOFF": 12,
+   "EXPOSES": 22,
+   "PROTECTS": 14,
+   "NEUTRAL": 10
+  },
+  "confusion": {
+   "EXPOSES|EXPOSES": 11,
+   "NEUTRAL|NEUTRAL": 5,
+   "PROTECTS|PROTECTS": 7,
+   "TRADEOFF|TRADEOFF": 6
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "stance_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "PROTECTS",
+   "EXPOSES",
+   "TRADEOFF",
+   "NEUTRAL",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.906,
+  "alpha": 0.876,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.72,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.885,
+  "counts": {
+   "TRADEOFF": 12,
+   "EXPOSES": 24,
+   "NOT_RELEVANT": 3,
+   "PROTECTS": 15,
+   "NEUTRAL": 10
+  },
+  "confusion": {
+   "EXPOSES|EXPOSES": 11,
+   "EXPOSES|NOT_RELEVANT": 1,
+   "NEUTRAL|NEUTRAL": 5,
+   "NOT_RELEVANT|EXPOSES": 1,
+   "PROTECTS|NOT_RELEVANT": 1,
+   "PROTECTS|PROTECTS": 7,
+   "TRADEOFF|TRADEOFF": 6
+  }
+ },
+ "basis": {
+  "n": 29,
+  "categories_declared": [
+   "NONE",
+   "POLICY",
+   "LEGAL",
+   "ARCHITECTURAL",
+   "CRYPTOGRAPHIC"
+  ],
+  "agreement": 1.0,
+  "alpha": 1.0,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   1.0,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 1.0,
+  "counts": {
+   "NONE": 30,
+   "ARCHITECTURAL": 14,
+   "CRYPTOGRAPHIC": 4,
+   "LEGAL": 10
+  },
+  "confusion": {
+   "ARCHITECTURAL|ARCHITECTURAL": 7,
+   "CRYPTOGRAPHIC|CRYPTOGRAPHIC": 2,
+   "LEGAL|LEGAL": 5,
+   "NONE|NONE": 15
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "basis_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "NONE",
+   "POLICY",
+   "LEGAL",
+   "ARCHITECTURAL",
+   "CRYPTOGRAPHIC",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.906,
+  "alpha": 0.864,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.702,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.892,
+  "counts": {
+   "NONE": 31,
+   "ARCHITECTURAL": 15,
+   "NOT_RELEVANT": 3,
+   "CRYPTOGRAPHIC": 4,
+   "POLICY": 1,
+   "LEGAL": 10
+  },
+  "confusion": {
+   "ARCHITECTURAL|ARCHITECTURAL": 7,
+   "ARCHITECTURAL|NOT_RELEVANT": 1,
+   "CRYPTOGRAPHIC|CRYPTOGRAPHIC": 2,
+   "LEGAL|LEGAL": 5,
+   "NONE|NONE": 15,
+   "NOT_RELEVANT|NONE": 1,
+   "POLICY|NOT_RELEVANT": 1
+  }
+ },
+ "decision": {
+  "n": 29,
+  "categories_declared": [
+   "CONSIDERED",
+   "ENDORSED",
+   "UNCLEAR",
+   "NOT_APPLICABLE"
+  ],
+  "agreement": 1.0,
+  "alpha": 1.0,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   1.0,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 1.0,
+  "counts": {
+   "NOT_APPLICABLE": 16,
+   "CONSIDERED": 42
+  },
+  "confusion": {
+   "CONSIDERED|CONSIDERED": 21,
+   "NOT_APPLICABLE|NOT_APPLICABLE": 8
+  },
+  "facet_blank_on_a_relevant_unit": 0
+ },
+ "decision_end_to_end": {
+  "n": 32,
+  "categories_declared": [
+   "CONSIDERED",
+   "ENDORSED",
+   "UNCLEAR",
+   "NOT_APPLICABLE",
+   "NOT_RELEVANT"
+  ],
+  "agreement": 0.906,
+  "alpha": 0.8,
+  "alpha_undefined_reason": "",
+  "alpha_ci95_conditional_on_sample": [
+   0.559,
+   1.0
+  ],
+  "bootstrap_replicates_undefined": 0,
+  "ac1": 0.894,
+  "counts": {
+   "NOT_APPLICABLE": 16,
+   "CONSIDERED": 44,
+   "NOT_RELEVANT": 3,
+   "ENDORSED": 1
+  },
+  "confusion": {
+   "CONSIDERED|CONSIDERED": 21,
+   "CONSIDERED|NOT_RELEVANT": 1,
+   "ENDORSED|NOT_RELEVANT": 1,
+   "NOT_APPLICABLE|NOT_APPLICABLE": 8,
+   "NOT_RELEVANT|CONSIDERED": 1
+  }
+ },
+ "aspect_set": {
+  "n": 29,
+  "same_set": 26,
+  "overlapping": 27
+ },
+ "by_stratum": {
+  "D": {
+   "relevant": {
+    "n": 79,
+    "categories_declared": [
+     "R",
+     "N",
+     "U"
+    ],
+    "agreement": 0.949,
+    "alpha": 0.921,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     0.838,
+     0.981
+    ],
+    "bootstrap_replicates_undefined": 0,
+    "ac1": 0.926,
+    "counts": {
+     "N": 65,
+     "U": 32,
+     "R": 61
+    },
+    "confusion": {
+     "N|N": 32,
+     "N|U": 1,
+     "R|R": 29,
+     "R|U": 2,
+     "U|R": 1,
+     "U|U": 14
+    }
+   },
+   "aspect": {
+    "n": 29,
+    "categories_declared": [
+     "CB_ACCESS",
+     "INTERMEDIARY_DATA",
+     "AUTHORITY_ACCESS",
+     "ANONYMITY",
+     "IDENTIFICATION",
+     "OFFLINE",
+     "DATA_PROTECTION",
+     "USER_CONTROL",
+     "PETS",
+     "GENERAL"
+    ],
+    "agreement": 0.931,
+    "alpha": 0.92,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     0.792,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 0,
+    "ac1": 0.924,
+    "counts": {
+     "DATA_PROTECTION": 5,
+     "GENERAL": 14,
+     "IDENTIFICATION": 12,
+     "AUTHORITY_ACCESS": 10,
+     "PETS": 4,
+     "INTERMEDIARY_DATA": 2,
+     "ANONYMITY": 5,
+     "CB_ACCESS": 4,
+     "USER_CONTROL": 2
+    },
+    "confusion": {
+     "ANONYMITY|ANONYMITY": 2,
+     "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 5,
+     "CB_ACCESS|CB_ACCESS": 2,
+     "DATA_PROTECTION|DATA_PROTECTION": 2,
+     "DATA_PROTECTION|GENERAL": 1,
+     "GENERAL|ANONYMITY": 1,
+     "GENERAL|GENERAL": 6,
+     "IDENTIFICATION|IDENTIFICATION": 6,
+     "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 1,
+     "PETS|PETS": 2,
+     "USER_CONTROL|USER_CONTROL": 1
+    }
+   }
+  }
+ },
+ "by_route": {
+  "A": {
+   "relevant": {
+    "n": 67,
+    "categories_declared": [
+     "R",
+     "N",
+     "U"
+    ],
+    "agreement": 0.955,
+    "alpha": 0.93,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     0.836,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 0,
+    "ac1": 0.934,
+    "counts": {
+     "N": 55,
+     "U": 25,
+     "R": 54
+    },
+    "confusion": {
+     "N|N": 27,
+     "N|U": 1,
+     "R|R": 26,
+     "R|U": 2,
+     "U|U": 11
+    }
+   },
+   "aspect": {
+    "n": 26,
+    "categories_declared": [
+     "CB_ACCESS",
+     "INTERMEDIARY_DATA",
+     "AUTHORITY_ACCESS",
+     "ANONYMITY",
+     "IDENTIFICATION",
+     "OFFLINE",
+     "DATA_PROTECTION",
+     "USER_CONTROL",
+     "PETS",
+     "GENERAL"
+    ],
+    "agreement": 0.962,
+    "alpha": 0.955,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     0.851,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 0,
+    "ac1": 0.958,
+    "counts": {
+     "DATA_PROTECTION": 5,
+     "GENERAL": 13,
+     "IDENTIFICATION": 10,
+     "AUTHORITY_ACCESS": 10,
+     "PETS": 4,
+     "ANONYMITY": 4,
+     "CB_ACCESS": 4,
+     "USER_CONTROL": 2
+    },
+    "confusion": {
+     "ANONYMITY|ANONYMITY": 2,
+     "AUTHORITY_ACCESS|AUTHORITY_ACCESS": 5,
+     "CB_ACCESS|CB_ACCESS": 2,
+     "DATA_PROTECTION|DATA_PROTECTION": 2,
+     "DATA_PROTECTION|GENERAL": 1,
+     "GENERAL|GENERAL": 6,
+     "IDENTIFICATION|IDENTIFICATION": 5,
+     "PETS|PETS": 2,
+     "USER_CONTROL|USER_CONTROL": 1
+    }
+   }
+  },
+  "B": {
+   "relevant": {
+    "n": 8,
+    "categories_declared": [
+     "R",
+     "N",
+     "U"
+    ],
+    "agreement": 1.0,
+    "alpha": 1.0,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     1.0,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 8,
+    "ac1": 1.0,
+    "counts": {
+     "N": 8,
+     "U": 2,
+     "R": 6
+    },
+    "confusion": {
+     "N|N": 4,
+     "R|R": 3,
+     "U|U": 1
+    }
+   },
+   "aspect": {
+    "n": 3,
+    "categories_declared": [
+     "CB_ACCESS",
+     "INTERMEDIARY_DATA",
+     "AUTHORITY_ACCESS",
+     "ANONYMITY",
+     "IDENTIFICATION",
+     "OFFLINE",
+     "DATA_PROTECTION",
+     "USER_CONTROL",
+     "PETS",
+     "GENERAL"
+    ],
+    "agreement": 0.667,
+    "alpha": 0.615,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     -0.667,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 135,
+    "ac1": 0.638,
+    "counts": {
+     "IDENTIFICATION": 2,
+     "INTERMEDIARY_DATA": 2,
+     "GENERAL": 1,
+     "ANONYMITY": 1
+    },
+    "confusion": {
+     "GENERAL|ANONYMITY": 1,
+     "IDENTIFICATION|IDENTIFICATION": 1,
+     "INTERMEDIARY_DATA|INTERMEDIARY_DATA": 1
+    }
+   }
+  },
+  "D": {
+   "relevant": {
+    "n": 4,
+    "categories_declared": [
+     "R",
+     "N",
+     "U"
+    ],
+    "agreement": 0.75,
+    "alpha": 0.588,
+    "alpha_undefined_reason": "",
+    "alpha_ci95_conditional_on_sample": [
+     -0.4,
+     1.0
+    ],
+    "bootstrap_replicates_undefined": 129,
+    "ac1": 0.66,
+    "counts": {
+     "U": 5,
+     "R": 1,
+     "N": 2
+    },
+    "confusion": {
+     "N|N": 1,
+     "U|R": 1,
+     "U|U": 2
+    }
+   },
+   "aspect": {
+    "n": 0,
+    "categories_declared": [
+     "CB_ACCESS",
+     "INTERMEDIARY_DATA",
+     "AUTHORITY_ACCESS",
+     "ANONYMITY",
+     "IDENTIFICATION",
+     "OFFLINE",
+     "DATA_PROTECTION",
+     "USER_CONTROL",
+     "PETS",
+     "GENERAL"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "_note": "List prices in USD per million tokens, used by scripts/pipeline/runner.py for the cost cap and the estimate before a run. The cap uses these prices and the usage the provider reports; it is not the provider's invoice. Batch = the provider's batch discount applied to every price of the row. Where a price is not published or not verified, the row uses the higher price that is known, so that the cap errs on the side of stopping early.",
+ "claude-opus-5-5": {
+  "provider": "anthropic",
+  "input": 4.0, "cached_input": 0.20, "cache_write_5m": 5.0, "cache_write_1h": 8.0, "output": 20.0,
+  "batch_discount": 0.5,
+  "source": "Anthropic model and pricing documentation (claude-api reference, read 23 Nov 2026)",
+  "verified": true
+ },
+ "gpt-6-astra": {
+  "provider": "openai",
+  "input": 10.0, "cached_input": 1.0, "output": 50.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/models/gpt-6-astra (read 23 Nov 2026)",
+  "verified": true
+ },
+ "gpt-6.2-astra": {
+  "provider": "openai",
+  "input": 8.0, "cached_input": 0.40, "output": 40.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/pricing (read 23 Nov 2026, standard short context; Batch is half)",
+  "verified": true
+ },
+ "gpt-6.2-sol": {
+  "provider": "openai",
+  "input": 2.0, "cached_input": 0.10, "output": 10.0,
+  "batch_discount": 0.5,
+  "source": "https://developers.openai.com/api/docs/pricing (read 23 Nov 2026, standard short context; Batch is half)",
+  "verified": true
+ },
+ "deepseek-v4-pro": {
+  "provider": "deepseek",
+  "input": 1.32, "cached_input": 0.044, "output": 3.96,
+  "batch_discount": 1.0,
+  "source": "https://api-docs.deepseek.com/quick_start/pricing (read 23 Nov 2026): peak prices (cache hit 0.044, cache miss 1.32, output 3.96 USD per 1M; model DeepSeek-V4-Pro-0813). Off-peak is half of peak; peak hours are 01:00-04:00 and 06:00-10:00 UTC Mon-Fri. The row keeps the peak price so that the cap errs on the side of stopping early. No batch interface.",
+  "verified": true
+ }
+}

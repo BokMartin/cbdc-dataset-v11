@@ -1,0 +1,3 @@
+id,pdf_sha256,pages,pages_ocr,text_mode,mean_confidence,pages_below_70,words,layout,text_sha256,dpi,pages_ocred,engine
+JM_JM-BOJ-CBDC-FAQs-Booklet-2022,60c22f04bab3dc82bb595562196a9c8057bba092b9b64cdb0dcd6ca8d2460a35,6,6,ocr_tesseract,88.0,1,1006,blocks,aa11f42fae198f0b4d1fd3415481e43ce9b9b7a8ecef0a73c71868459ce08ca2,300,,
+CAND-132,96ed3de6b737d29d2758a84f36ee836b45173dda9a219f9b49953dbe08dd4a5a,186,3,reading_order+ocr,92.8,0,620,auto,8f648ab06ab9d4f229a95381bf0f57748999f538973e883edf7eecbed948a5fe,300,7 14 84,"tesseract 5.4.0.20240606 (UB-Mannheim), eng, psm 3, on MB's computer"

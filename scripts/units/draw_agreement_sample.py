@@ -4,10 +4,17 @@
 Two designs, both drawn before any model has classified a unit, from the candidate units of select_candidates.py:
   dev   development sample, 120 units: D 90 (route A 62, B 9, D 19) · N 15 (11, 1, 3) · R 15 (11, 1, 3). Both authors code ALL facets;
         the result decides which facets are kept, merged or dropped. The codebook and the model prompts may be revised on it.
-  main  reference sample, 400 units: D 260 (190, 20, 50) · N 80 (58, 6, 16) · R 60 (44, 4, 12). Drawn only after the document set and
-        the codebook are frozen; never contains a dev unit; not used to tune prompts, so it stays a clean reference for the model.
-Within a stratum x route cell the route-A units are split by project tier 45 % T1, 35 % T2, 20 % T3; projects take turns (round robin
-in hash order), with a cap per document and stratum (dev 2, main 4), units in hash order. Hash = SHA-256(seed | unit_id).
+  main  reference sample, 400 units (ADR-012 D18, MB and DS, 22 Nov 2026): a direct stratified random draw from ALL eligible units,
+        D 140 (dictionary hits) · N 50 (neighbours of hits) · O 210 (every other unit: the random controls and the units never sent),
+        simple random sampling without replacement within a stratum, units in hash order, no caps and no rotation, and the inclusion
+        probability n_h / N_h of every unit stored, so that every estimate can be weighted back to the population. Eligible = units of
+        the documents of stratum `evidence` of the latest unit manifest (INCLINED out), minus every unit whose paragraph was shown to a
+        coder in an earlier agreement sample (development 13 Nov, facet80 22 Nov; A4 F06): those paragraphs are out of the frame, and
+        the size of the frame after exclusion is stored. Drawn only after the document set and the codebook are frozen; not used to
+        tune prompts, so it stays a clean reference for the model. (Until 22 Nov the main design was quotas 260 / 80 / 60 by route and
+        tier with a round robin and a cap per document; the audit A4b found its inclusion probabilities unknown, so it was replaced.)
+Dev design: within a stratum x route cell the route-A units are split by project tier 45 % T1, 35 % T2, 20 % T3; projects take turns
+(round robin in hash order), with a cap of 2 per document and stratum, units in hash order. Hash = SHA-256(seed | unit_id).
 Context shown to the coder is the unit's paragraph from scripts/units/context.py, the same string the model will receive.
 Outputs outside the repository (unit text is issuers' copyright): one workbook per coder (READ_ME, CODEBOOK, CODE), rows in a
 different hash order for each coder. Repository: data/units/AGREEMENT_SAMPLE_<design>_<date>.csv with unit ids, strata, the SHA-256
@@ -22,7 +29,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE); import context
 DESIGN = {"dev": {"seed": "talk-v13-dev-2026-11-13", "cap": 2, "quota": {("D", "A"): 62, ("D", "B"): 9, ("D", "D"): 19, ("N", "A"): 11, ("N", "B"): 1, ("N", "D"): 3, ("R", "A"): 11, ("R", "B"): 1, ("R", "D"): 3}},
-          "main": {"seed": "talk-v13-main-2026-11-13", "cap": 4, "quota": {("D", "A"): 190, ("D", "B"): 20, ("D", "D"): 50, ("N", "A"): 58, ("N", "B"): 6, ("N", "D"): 16, ("R", "A"): 44, ("R", "B"): 4, ("R", "D"): 12}}}
+          "main": {"seed": "talk-v13-main-2026-11-22", "alloc": {"D": 140, "N": 50, "O": 210}}}
 TIER_SHARE = (("T1", .45), ("T2", .35), ("T3", .20)); SEED = None
 ROUTE = {"A": "English original", "B": "issuer's English edition", "D": "MACHINE TRANSLATION"}
 WRAP = Alignment(wrap_text=True, vertical="top"); BOLD = Font(bold=True)
@@ -53,6 +60,54 @@ def round_robin(pool, n, taken, cap):
     return out
 
 
+def is_x(U, i):
+    """Stratum X exactly as select_candidates.py decides it (fragments under 4 words that are not hits; boilerplate)."""
+    import re
+    from select_candidates import BROAD, excluded
+    u = U[i]; hit = bool(BROAD.search(re.sub(r"\[[^\]\n]{1,120}\]", " ", u["text"])))
+    return excluded(u["text"], int(u.get("n_words") or len(u["text"].split())), hit)
+
+
+def main_frame(units_dir, man, exclude):
+    """Eligible units for the reference sample (D18): every unit of an evidence document, stratum D, N or O (all others
+    except stratum X, which select_candidates.py keeps out of every denominator),
+    minus the paragraphs already shown to a coder. Returns pool, texts and the frame size per stratum after exclusion."""
+    pool, text = [], {}
+    for key, m in man.items():
+        if m.get("stratum", "evidence") != "evidence":
+            continue
+        U = list(csv.DictReader(open(os.path.join(units_dir, key + ".units.csv"), encoding="utf-8")))
+        st = {r["unit_id"]: r["stratum"] for r in csv.DictReader(open(os.path.join(units_dir, key + ".candidates.csv"), encoding="utf-8"))}
+        shown = {(u["page"], u.get("para", "")) for u in U if u["unit_id"] in exclude}
+        for i, u in enumerate(U):
+            if (u["page"], u.get("para", "")) in shown:
+                continue
+            s = st.get(u["unit_id"])
+            if s not in ("D", "N"):
+                if s != "R" and is_x(U, i):
+                    continue  # stratum X of select_candidates.py: out of every denominator
+                s = "O"
+            text[u["unit_id"]] = (context.render(U, i), u["text"], u["page"])
+            pool.append({"unit_id": u["unit_id"], "doc_key": key, "project": m["project"], "tier": m["tier"], "route": m["route"], "kind": m["kind"], "year": m["year"], "id": m["id"], "stratum": s, "units_sha256": m["units_sha256"]})
+    return pool, text
+
+
+def draw_main(pool, alloc, seed):
+    """Stratified simple random sample without replacement; stores n_h / N_h and N_h on every drawn unit."""
+    by = collections.defaultdict(list)
+    for u in pool:
+        by[u["stratum"]].append(u)
+    sample = []
+    for s, n in alloc.items():
+        units = sorted(by.get(s, []), key=lambda u: hx(seed, u["unit_id"]))
+        if len(units) < n:
+            raise SystemExit(f"stratum {s}: frame {len(units)} smaller than {n}")
+        for u in units[:n]:
+            u["inclusion_probability"] = round(n / len(units), 10); u["stratum_frame"] = len(units)
+        sample += units[:n]
+    return sample
+
+
 def main():
     global SEED
     ap = argparse.ArgumentParser(); ap.add_argument("--design", required=True, choices=list(DESIGN)); ap.add_argument("--units", required=True); ap.add_argument("--issuers", required=True); ap.add_argument("--out", required=True); ap.add_argument("--date", required=True)
@@ -60,19 +115,24 @@ def main():
     a = ap.parse_args(); D = DESIGN[a.design]; SEED = D["seed"]
     mf = sorted(glob.glob(os.path.join(ROOT, "data/units/UNITS_MANIFEST_*.csv")))[-1]; man = {r["doc_key"]: r for r in csv.DictReader(open(mf, encoding="utf-8"))}
     iss = {r["id"]: r for r in csv.DictReader(open(a.issuers, encoding="utf-8"))}
-    taken = set()  # the main sample never contains a unit of a development sample
+    taken = set()  # the main sample never contains a unit of a development sample or of the blind facet sample (facet80, 22 Nov)
     if a.design == "main":
-        for f in glob.glob(os.path.join(ROOT, "data/units/AGREEMENT_SAMPLE_dev_*.csv")): taken |= {r["unit_id"] for r in csv.DictReader(open(f, encoding="utf-8"))}
+        for pat in ("AGREEMENT_SAMPLE_dev_*.csv", "AGREEMENT_SAMPLE_facet80_*.csv"):
+            for f in glob.glob(os.path.join(ROOT, "data/units", pat)): taken |= {r["unit_id"] for r in csv.DictReader(open(f, encoding="utf-8"))}
     pool = []; text = {}
-    for key, m in man.items():
+    if a.design == "main":
+        pool, text = main_frame(a.units, man, taken)
+        sample = draw_main(pool, D["alloc"], SEED)
+    for key, m in (man.items() if a.design == "dev" else []):
         U = list(csv.DictReader(open(os.path.join(a.units, key + ".units.csv"), encoding="utf-8")))
         st = {r["unit_id"]: r["stratum"] for r in csv.DictReader(open(os.path.join(a.units, key + ".candidates.csv"), encoding="utf-8"))}
         for i, u in enumerate(U):
             if u["unit_id"] in st:
                 text[u["unit_id"]] = (context.render(U, i), u["text"], u["page"])
                 pool.append({"unit_id": u["unit_id"], "doc_key": key, "project": m["project"], "tier": m["tier"], "route": m["route"], "kind": m["kind"], "year": m["year"], "id": m["id"], "stratum": st[u["unit_id"]], "units_sha256": m["units_sha256"]})
-    sample = []
-    for (s, rt), q in D["quota"].items():
+    if a.design == "dev":
+        sample = []
+    for (s, rt), q in (D["quota"].items() if a.design == "dev" else []):
         cell = [u for u in pool if u["stratum"] == s and u["route"] == rt]
         if rt == "A" and q >= 10:
             parts = [(t, round(q * sh)) for t, sh in TIER_SHARE]; parts[0] = (parts[0][0], q - sum(n for _, n in parts[1:]))
@@ -121,7 +181,7 @@ def main():
         wb.save(os.path.join(a.out, f"TALK_{a.design.upper()}_SAMPLE_{coder}_{a.date}.xlsx"))
     rows = [{"unit_id": u["unit_id"], "set": a.design, "stratum": u["stratum"], "project": u["project"], "tier": u["tier"], "route": u["route"], "kind": u["kind"],
              "unit_text_sha256": hashlib.sha256(text[u["unit_id"]][1].encode("utf-8")).hexdigest(), "context_sha256": hashlib.sha256(text[u["unit_id"]][0].encode("utf-8")).hexdigest(), "units_file_sha256": u["units_sha256"],
-             "order_MB": u["order_MB"], "order_DS": u["order_DS"]} for u in sample]
+             "order_MB": u["order_MB"], "order_DS": u["order_DS"]} | ({"inclusion_probability": u["inclusion_probability"], "stratum_frame": u["stratum_frame"]} if a.design == "main" else {}) for u in sample]
     with open(os.path.join(ROOT, "data/units", f"AGREEMENT_SAMPLE_{a.design}_{a.date}.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     c = collections.Counter

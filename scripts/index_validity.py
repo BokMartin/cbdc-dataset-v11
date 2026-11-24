@@ -18,7 +18,7 @@ import random
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from derive_index import SCORE, axis1, rung  # noqa: E402
+from derive_index import VALUES, axis1, rung  # noqa: E402
 
 
 def check_known_cases(projects, known):
@@ -31,7 +31,7 @@ def check_known_cases(projects, known):
         got = (cell or {}).get("value", "undetermined")
         if not exp:
             status = "not_fixed"
-        elif got not in SCORE.get(k["cell"], {"yes": 1, "no": 0}):
+        elif got not in VALUES.get(k["cell"], ("yes", "no")):
             status = "undetermined"
         elif got != exp:
             status = "miss"

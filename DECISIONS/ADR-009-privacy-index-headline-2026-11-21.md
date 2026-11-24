@@ -2,6 +2,8 @@
 
 **Status:** decision of MB, 21 Nov 2026 (two choices in the project thread: the index belongs in the article, 18:16; it is a key result, 18:17; form "B. two-axis index", 18:38). **DS to confirm.** Until DS confirms, the amendments in §4 are proposals and are not applied to `PROJECT_BRIEF.md` or the contract. **Related:** ADR-004 §4, ADR-005 §4, contract v12 §5, §7.7, §8; `docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md`; `scripts/derive_index.py`.
 
+**Amended by ADR-012 (MB and DS, 22 Nov 2026).** **DS confirmed on 22 Nov 2026, relayed by MB in the project chat at 16:08 UTC** ("ano dominik je potvrdil", answering whether DS had also confirmed ADR-008 to ADR-010). ADR-009 is in force as amended by ADR-012; the proposals of its §4 are applied with the ADR-012 changes. Index definition (D4): the primary number is the mean of seven cells, F1, F2, F4, F7, F8, F9, F10, with an interval; the four-cell index F1, F2, F4, F7 is reported beside it; F3 is categorical, outside the mean, reported beside it; PET is a profile beside F7, outside the mean. Source of cells (D1, D2): in the 16 core projects both authors code every cell from the sources before any model output is opened, and the adjudicated cell is the index source; models are a comparison; outside the core a value needs agreement of all three models with a located quote and a source check. Where the text below differs, ADR-012 wins.
+
 ## Context
 
 The brief says the article will not rank projects. ADR-005 replaced "ranking of projects by amount of privacy talk" with the highest rung per aspect, and "Talk index minus Commitment index" with a 2 × 2 table. ADR-004 §4 forbids a count-based talk index. The v1 manuscript (MSED 2026) used a documented-commitment privacy index as its dependent variable. MB wants a privacy index as a key result of the Data & Policy article: index papers are widely read, and the index connects the article to the dissertation.
@@ -30,7 +32,7 @@ The current design is version 2 (MB, 21 Nov 21:31 and 21:44; spec §12). Where s
 - Talk layer for the gap: blind double coding of voice and aspect, and repair of relevance (alpha 0.46); spec §12.5.
 - Known cases and external measures for validity (spec §10.2); filling a known case for an unexposed project exposes it.
 - Whether separated projects may be ordered in the article: until DS confirms, separation is a diagnostic only (mock: about 4 % of pairs separated, so the index is a profile per project).
-- Order of cuts if time runs short (spec §12.5): keep the six mapped aspects and H-TC2; drop talk intensity; drop the sample coding of F3, F8, F9, F10.
+- Scope (closed, MB 22 Nov 2026): the full scope is kept and registered; no order of cuts (spec §12.5).
 - Whether the index is correlated with covariates in the article (proposal: no; H2 stays on Y1, exploratory).
 - Cells resting only on an "inclined but unconfirmed" document (LEANING, ADR-010 in PR 3): proposal in spec §12.6, bound only in the primary index, scored in the `with_leaning` variant, flag `rests_on_leaning`; never counted as a commitment.
 

@@ -1,18 +1,20 @@
 # Handoff: where the work stands and how to continue (written 21 Nov 2026, at commit of this file)
 
-For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
+For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), `DECISIONS/ADR-008` to `ADR-010` (decided by MB on 21 Nov 2026 and waiting for DS: website and published translations, privacy index, INCLINED documents), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
 
 ## 1. Goal
 
-A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (twelve feature cells per project with located verbatim quotes). No causal claims. Target set by MB on 17 Nov: all model runs finished by the end of November, mid-December at the latest; the authors' own deadline for the paper is 31 Dec 2026.
+A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (ten feature cells per project, F1 to F12 with F5 and F6 reserved, with located verbatim quotes). No causal claims.
 
 ## 2. State in five lines
 
 1. **No model has labelled a unit and no paid classification call has been made.** The fourth audit by a second model (A4, 17 Nov) returned NO-GO for calibration and for production until listed repairs are made (18 findings, 8 blockers).
-2. Corpus: 218 evidence publications decided by an author (229 until 21 Nov 23:54, when MB moved 11 wholesale and BIS Innovation Hub documents to the new INCLINED layer, draft ADR-010, DS to confirm); 207 documents with English text, 42 of 44 projects (Chile and Czechia have none); 171,865 sentence units; 19,570 candidates for classification.
+2. Corpus: 218 evidence publications decided by an author (229 until 21 Nov 23:54, when MB moved 11 wholesale and BIS Innovation Hub documents to the new INCLINED layer, draft ADR-010, DS to confirm); 207 documents with English text (196 evidence publications and 11 INCLINED documents), 42 of 44 projects (Chile and Czechia have none); 171,865 sentence units; 19,570 candidates for classification.
 3. Human inputs so far: both authors coded relevance blind for 120 development units, **agreement 67 %, Krippendorff's alpha 0.46**, below the 0.667 of the protocol; the disagreement sits in the label "U". Both judged 86 translation pairs, **Cohen's kappa 0.38**; MB is far stricter than DS. Neither result may be reported as validation; both are development findings that call for a repaired codebook and a joint adjudication.
-4. Decided: three models in full (`claude-opus-5-5`, `gpt-6-astra`, `deepseek-v4-pro`); one unit per request (page packing dropped); validation by verification, with relevance coded blind; translation only for documents of T1 and T2 projects.
-5. Repaired after A4 without author input: duplicate text removed (Israel), one header source, translation ingest fails closed, run-record check verifies artifacts, strict output parsers. 62 tests, CI green.
+4. Decided: three models in full (`claude-opus-5-5`, `gpt-6-astra`, `deepseek-v4-pro`; **since 23 Nov `gpt-6.2-sol` replaces `gpt-6-astra`, ADR-014**); one unit per request (page packing dropped; **reversed 23 Nov, talk L1 by page, ADR-015**); validation by verification, with relevance coded blind; translation only for documents of T1 and T2 projects.
+4a. Text in images (MB, 23 Nov 2026, before the final extraction): 686 pages of 159 PDFs with no or little text layer were OCR'd on MB's computer; 99 pages of 30 documents carry text in images (37 ok, 62 charts or tables) and were added as 937 new units (13,700 words) with `scripts/units/add_image_text.py`: unit set **v13e** (`UNITS_MANIFEST_2026-11-23b.csv`, `CANDIDATES_2026-11-23b.csv`, 97 new candidates, no existing unit id or stratum changed), page record `data/manifest/OCR_IMAGE_PAGES_2026-11-23b.csv`. 11 pages (garbage, not content) not added. Units: `/mnt/project-files/units-v13e/`.
+4b. Production before registration (ADR-016, MB 23 Nov 2026 20:03 UTC): the OSF registration is filed later; the dated freeze `docs/FREEZE_2026-11-23.md` with tag `freeze-2026-11-23` takes its place before the first production call. First launch: talk L1 by page and extraction on v13e; L2 facets after MB has read their prompt. Blind-core outputs are stored and not opened until MB and DS lock their blind coding.
+5. Repaired after A4 without author input: duplicate text removed (Israel), one header source, translation ingest fails closed, run-record check verifies artifacts, strict output parsers. 88 tests, CI green.
 
 ## 3. Decisions in force (the ADR is the authority)
 
@@ -20,12 +22,20 @@ A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Domini
 |---|---|
 | Frame of 44 projects; the euro area is a project of its own; ECCU out | ADR-005 §1 |
 | Evidence = KEEP + BORDERLINE documents of the competent body; legal texts of parliaments and governments are companions (cited, never a source of units) | `docs/SOURCE_RULE_D1.md`, ADR-005 §9, §10 |
-| Tiers by number of evidence publications: T1 8 or more, T2 5 to 7, T3 4 or fewer | `data/manifest/TIERS_2026-11-17.csv` |
+| Tiers by number of evidence publications: T1 8 or more, T2 5 to 7, T3 4 or fewer | `data/manifest/TIERS_2026-11-21.csv` (the `tier` column is as of 17 Nov and was not recomputed after the INCLINED decisions, ADR-010) |
 | Talk instrument: units, candidates (dictionary hit, neighbour, random control), relevance then facets; schema and prompts are drafts v0.3 | ADR-004, `schema/talk_units_v13_DRAFT.json` |
 | The authors do not code the seven facets blind; validation by verification with safeguards | ADR-006 A |
 | Three models, full runs, results per model and agreement reported | ADR-006 A.5 |
-| A4 dispositions and MB's six decisions of 17 Nov (no split of the target; packing dropped; translation only T1 and T2; Israel duplicate linked) | ADR-007 §2, §4 |
+| A4 dispositions and MB's six decisions of 17 Nov (commitment layer not split off; packing dropped; translation only T1 and T2; Israel duplicate linked) | ADR-007 §2, §4 |
 | Every model run leaves a run record; production only through provider APIs | `docs/RUN_RECORD_SPEC.md`, `AGENTS.md` |
+
+Decided by MB on 21 Nov 2026 and waiting for DS (not in force until he confirms; the ADR is the authority):
+
+| Decision | Where |
+|---|---|
+| The website shows the corpus and never results; nine Taiwanese machine translations are published under the issuer's open licence | ADR-008 |
+| A two-axis privacy index on eight F-cells is a key result of the article; privacy talk stays beside the index and is set against commitments by aspect; hypotheses H-TC1 and H-TC2 are to be registered before any data; so far everything runs on mock data only | ADR-009, `docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md` §12 |
+| Document status INCLINED (38 documents) and cell status LEANING, every result reported with and without them; Brazil stays outside the frame | ADR-010 (draft), `data/manifest/TIERS_2026-11-21.csv` |
 
 ## 4. Waiting for the authors
 
@@ -36,9 +46,9 @@ Decisions (each stops something):
 | 1 | Blank double coding of **voice** and **aspect** on 80 to 120 relevant units by both authors (about 1.5 to 3 hours each), or all seven facets labelled exploratory in the paper | what the paper may claim about facets (A4 F01) | MB undecided on 17 Nov. It can be done after the model runs if the units are reserved now and the authors' labels are locked before they see model output. Given the relevance result, repair the rules first |
 | 2 | How calibration is run. MB proposed (17 Nov): development rounds on Anthropic only, then one clean run on three models. Proposal of the pipeline author, not yet answered: (a) a short capability probe of all three providers before round 1, (b) three rounds on Claude with changes driven only by defects the authors find in the codebook or prompt, (c) a fresh confirmation set of 40 units on all three models before the freeze | first paid call | ADR-007 is the place to record the answer |
 | 3 | Seven machine-translated documents of today's T3 projects (CN 3, PE 3, TH 1) exist only because those projects were T2 on 10 Nov: keep and state it, drop them, or translate the other 14 T3 documents as well | freeze of the corpus | ADR-007 §4.4 |
-| 4 | Adoption of the measurement contract v12 (`docs/MEASUREMENT_CONTRACT_v12_DRAFT.md`, open points marked `[OPEN]`). The extraction prompts, generator, schema validation and comparison are still built for contract v1.1 | all F-cell work (A4 F02); the critical path if the commitment layer is to be done by mid-December | the pipeline author owes the authors a list of the open points |
-| 5 | Review of issuer, issuer type and document kind for the 207 documents (pre-filled by a model; the facet prompt receives them as input) | facet rounds and production | `data/manifest/ISSUERS_2026-11-13.csv`; 2 to 5 hours |
-| 6 | DS confirms ADR-004 to ADR-007 | freeze | |
+| 4 | Adoption of the measurement contract v12 (`docs/MEASUREMENT_CONTRACT_v12_DRAFT.md`, open points marked `[OPEN]`). The extraction prompts, generator, schema validation and comparison are still built for contract v1.1 | all F-cell work (A4 F02); the critical path of the commitment layer | the pipeline author owes the authors a list of the open points |
+| 5 | ~~Review of issuer, issuer type and document kind for the 207 documents~~ Replaced by a machine check (MB, 23 Nov 2026): 4 conflicts fixed on MB's decision, no manual review | done | `docs/ISSUER_CHECK_2026-11-23.md`, `data/manifest/ISSUERS_2026-11-23.csv` |
+| 6 | DS confirms ADR-004 to ADR-010 | freeze | |
 | 7 | Remaining rows of ADR-007 §2 (F10 wording of "first" and status vector, F13 access statement, F14 cutoff date, F15 reference design, F16 rounds) | freeze | |
 
 Workbooks to fill in (Dropbox folder `Dizertace all the PDFs`; not changed since 17 Nov when checked on 21 Nov):
@@ -103,4 +113,4 @@ The paths inside `master_local.json` point to the workspace of the conversation 
 
 ## 10. Text to paste into a new conversation
 
-> Pokračujeme v projektu CBDC privacy dataset (článek pro Data & Policy, autoři Martin Bok a Dominik Stroukal). Zdroj pravdy je GitHub `BokMartin/cbdc-dataset-v11`, větev `main`. Naklonuj repo a přečti v tomto pořadí: `AGENTS.md`, `PROJECT_BRIEF.md`, `HANDOFF.md`, `DECISIONS/ADR-007-audit-2026-11-17-dispositions.md`, `docs/audits/README.md`. Ověř, že poslední běh CI `verify` je zelený. Pak mi česky shrň stav v pěti bodech a řekni, co ode mě a od Dominika potřebuješ jako první. Nic placeného nespouštěj a nic neměň v pravidlech bez mého souhlasu. Pracovní data mimo repo jsou v Dropboxu ve složce `Dizertace all the PDFs` (viz HANDOFF, oddíl 7); klíče k API ti dám až na vyžádání.
+> Pokračujeme v projektu CBDC privacy dataset (článek pro Data & Policy, autoři Martin Bok a Dominik Stroukal). Zdroj pravdy je GitHub `BokMartin/cbdc-dataset-v11`, větev `main`. Naklonuj repo a přečti v tomto pořadí: `AGENTS.md`, `PROJECT_BRIEF.md`, `HANDOFF.md`, `DECISIONS/ADR-007-audit-2026-11-17-dispositions.md`, `DECISIONS/ADR-008` až `ADR-010`, `docs/audits/README.md`. Ověř, že poslední běh CI `verify` je zelený. Pak mi česky shrň stav v pěti bodech a řekni, co ode mě a od Dominika potřebuješ jako první. Nic placeného nespouštěj a nic neměň v pravidlech bez mého souhlasu. Pracovní data mimo repo jsou v Dropboxu ve složce `Dizertace all the PDFs` (viz HANDOFF, oddíl 7); klíče k API ti dám až na vyžádání.

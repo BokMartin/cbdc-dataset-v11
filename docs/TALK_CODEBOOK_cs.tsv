@@ -1,13 +1,15 @@
-KÓDOVACÍ PRAVIDLA (verze 0.3 po auditu z 13. 11. 2026; hodnoty jsou anglicky, protože tak půjdou do dat)		
+KÓDOVACÍ PRAVIDLA (verze 0.6 z 23. 11. 2026: upřesnění fazet podle promptu L2 v0.4 (dodavatel je REPORTED, DATA_PROTECTION, sledovatelnost, postoj u popisu techniky a otevřených otázek, nadpisy a popisky); verze 0.5 z 23. 11. 2026: verze 0.4 z 22. 11. podle společného projití neshod MB a DS (ADR-011), potvrzená autory s pořadím pro nadpisy a pravidlem „jen jednotka a odstavec“, ADR-013 B1. Předchozí verze 0.3 po auditu z 13. 11. 2026; hodnoty jsou anglicky, protože tak půjdou do dat)		
 ZÁSADA		Kódujete, co věta ŘÍKÁ. Vaše štítky popisují řeč o soukromí; o tom, k čemu se projekt zavázal (F-buňky), nerozhodují. Kontext je odstavec, věta ke kódování je v něm označena »takto«. Stejný odstavec dostane i model.
 RELEVANT		
-relevant	R	Věta sama říká něco o: kdo vidí, drží, propojuje nebo používá identitu, transakční data či zůstatky uživatelů CBDC; anonymitě nebo pseudonymitě; ověřování totožnosti jako podmínce použití (včetně peněženek s nižší identifikací); ochraně, minimalizaci, uchovávání či využití osobních údajů; přístupu úřadů k datům (včetně AML/CFT sledování uživatelů); soukromí jako cíli, požadavku, riziku, kompromisu nebo obavě veřejnosti.
-relevant	N	Vše ostatní: soukromí někoho jiného než uživatelů CBDC (velkoobchodní účastníci, bankovní tajemství obecně, cookies webu), bezpečnost a podvody bez výroku o datech uživatelů, identifikace bank a firem, nadpis nebo položka obsahu, která téma jen jmenuje, věta, která jen odkazuje jinam. Programovatelnost je R jen tehdy, když věta říká, že vyžaduje nebo odhaluje, kdo uživatel je nebo za co platí.
-relevant	U	Věta je nečitelná nebo useknutá tak, že nelze určit obsah.
-		Zmínka není výrok: slovo "privacy" v nadpisu nebo výčtu kapitol je N. Na tom, kdo mluví a jak závazně, relevance nezávisí. Pokud N nebo U, ostatní sloupce nechte prázdné.
+relevant	R	Věta sama říká něco o: kdo vidí, drží, propojuje nebo používá identitu, transakční data či zůstatky uživatelů CBDC; anonymitě nebo pseudonymitě; ověřování totožnosti jako podmínce použití (včetně peněženek s nižší identifikací); ochraně, minimalizaci, uchovávání či využití osobních údajů; přístupu úřadů k datům (včetně AML/CFT sledování uživatelů); soukromí jako cíli, požadavku, riziku, kompromisu nebo obavě veřejnosti. Patří sem také (22. 11.): konkrétní opatření AML/CFT v navrhovaném nebo pilotovaném CBDC, včetně omezení přeshraničního použití; důvěrnost systému CBDC a uživatelských dat a technický mechanismus, který v popisovaném řešení omezuje přístup k datům koncových uživatelů, i bez slova privacy (u velkoobchodního řešení, kde jde o data bank, N); riziko pro soukromí u stávajících plateb, pokud ho odstavec výslovně uvádí jako důvod pro CBDC; srovnání modelů (účet proti tokenu, DLT), které zahrnuje AML nebo regulatorní kontrolu.
+relevant	N	Vše ostatní: soukromí někoho jiného než uživatelů CBDC (velkoobchodní účastníci, bankovní tajemství obecně, cookies webu), bezpečnost a podvody bez výroku o datech uživatelů, identifikace bank a firem, položka obsahu nebo osnovy, která téma jen jmenuje (samostatný nadpis v textu je U), věta, která jen odkazuje jinam. Programovatelnost je R jen tehdy, když věta říká, že vyžaduje nebo odhaluje, kdo uživatel je nebo za co platí. Dále (22. 11.): obecná tvrzení o hotovosti a kriminalitě bez vazby na vlastnost nebo pravidlo CBDC; preference respondentů pro hotovost, dokud nejsou výslovně spojeny s požadavky na CBDC; obecná exekuční a bankovní pravidla bez vazby na CBDC; identifikace emitenta a pravosti peněz; obecná správa rizik a rozdělení regulace bez soukromí, identity, dat nebo AML/CFT; zmínka KYC u obecného projektu e-money bez vazby na CBDC; názvy kapitol v osnově nebo obsahu (samotné kapitoly mohou být R).
+relevant	U	Jednotka není použitelná výpověď: je useknutá nebo nečitelná; samostatný nadpis, popisek, položka tabulky nebo seznamu bez nadřazené výpovědi, zkratka, bibliografický útržek; otázka (např. FAQ) bez odpovědi. Ve sporu má neúplnost přednost před rozhodováním o relevanci. (Rozšířeno 22. 11. podle společného projití; ve verzi 0.3 byly nadpisy N.)
+		Zmínka není výpověď: slovo "privacy" v názvu kapitoly nebo ve výčtu kapitol je N (osnova) nebo U (samostatný nadpis v textu). Formát seznamu sám U neopravňuje: úplný požadavek nebo úplný seznam požadavků s jasným adresátem je použitelná výpověď. Přilepené číslo oddílu nečiní dokončenou větu U. Přilepený nadpis další části (např. "- AML/CFT aspects:") se čte jako součást jednotky. Jednotka s více větami je R, obsahuje-li aspoň jednu věcnou relevantní výpověď. Odstavec smí rozvázat odkaz ("toto", "takové"), pokud jednoznačně určuje předmět, ale nepřenáší na obecnou větu vlastnosti okolních vět.
+		Nadpisy v tomto pořadí (23. 11., ADR-013 B1): položka obsahu nebo osnovy je N; samostatný nadpis, popisek, útržek nebo otázka bez odpovědi je U; přilepené číslo oddílu nebo úplný požadavek jednotku U nečiní; úplný smysluplný seznam je R nebo N. Rozhoduje jen označená jednotka a dodaný odstavec; obsahují-li jen pořadové číslo bez viditelného relevantního obsahu, rozhoduje viditelný obsah.
+		Na tom, kdo mluví a jak závazně, relevance nezávisí. Pokud N nebo U, ostatní sloupce nechte prázdné.
 VOICE (kdo mluví)		
 voice	OWN	Vydavatel dokumentu říká vlastním hlasem, co platí, co zamýšlí, co zvažuje nebo co testoval.
-voice	REPORTED	Věta podává cizí názor nebo fakt: respondenti konzultace, veřejnost, literatura, jiná země, účastník jednání, dodavatel.
+voice	REPORTED	Věta podává cizí názor nebo fakt: respondenti konzultace, veřejnost, literatura, jiná země, účastník jednání, dodavatel nebo poskytovatel technologie.
 voice	UNCLEAR	Nelze rozhodnout.
 ASPECT (o jakém aspektu soukromí věta je; vyberte hlavní, případně druhý do aspect2)		
 aspect	CB_ACCESS	Co vidí, drží nebo nevidí sama centrální banka (nebo ten, kdo jedná jejím jménem).
@@ -16,15 +18,17 @@ aspect	AUTHORITY_ACCESS	Přístup úřadů a orgánů činných v trestním ří
 aspect	ANONYMITY	Anonymita nebo pseudonymita jako vlastnost peněz či plateb (včetně výroku, že anonymita nebude).
 aspect	IDENTIFICATION	Ověřování totožnosti uživatelů, KYC, úrovně a peněženky s nižší identifikací.
 aspect	OFFLINE	Soukromí v offline platbách.
-aspect	DATA_PROTECTION	Pravidla ochrany osobních údajů, minimalizace, doba uchovávání, zákon o ochraně údajů.
+aspect	DATA_PROTECTION	Pravidla ochrany osobních údajů, minimalizace, doba uchovávání, zákon o ochraně údajů. Jen zmínka osobních údajů nebo ochrany dat jako cíle či obavy, bez pravidla nebo opatření, je GENERAL.
 aspect	USER_CONTROL	Souhlas a kontrola uživatele nad daty, komerční využití dat.
 aspect	PETS	Pojmenovaná technika ochrany soukromí (zero-knowledge proofs, blind signatures, šifrování apod.).
 aspect	GENERAL	Soukromí obecně jako cíl, princip, riziko nebo kompromis, bez konkrétního aspektu.
+		Sledovatelnost plateb jako vlastnost návrhu (token nebo účet, co zaznamenává kniha) je ANONYMITY; sledování, monitorování a hlášení úřady je AUTHORITY_ACCESS.
 STANCE (z pohledu uživatele)		
 stance	PROTECTS	Věta říká, že vidění, propojování, sběr, využití dat nebo identifikace je omezeno či vyloučeno (banka data neuvidí, sbírá se jen nezbytné, peněženka bez plné identifikace).
 stance	EXPOSES	Věta říká, že někdo data uvidí, bude držet nebo může získat, že uživatel musí být identifikován, nebo že anonymita nebude.
 stance	TRADEOFF	Soukromí jako riziko, kompromis, napětí s jiným cílem nebo obava, bez příklonu.
 stance	NEUTRAL	Jmenuje soukromí jako cíl, princip nebo téma, aniž říká, co se omezuje nebo zpřístupňuje.
+		Postoj potřebuje výrok o datech uživatelů. Popis toho, jak technika nebo návrh funguje, je PROTECTS jen tehdy, když věta říká, že omezuje vidění, propojování, sběr nebo identifikaci; popis techniky bez toho, záměr něco zkoumat či testovat, výzkumná nebo otevřená otázka („zda mohou třetí strany provádět prověrku klienta“) je NEUTRAL, případně TRADEOFF, je-li vážena proti jinému cíli.
 BASIS (čím věta sama výrok podkládá)		
 basis	NONE	Jen prohlášení ("soukromí je pro nás prioritou").
 basis	POLICY	Pravidlo nebo slib instituce ("data nebudeme používat"). Slib NEPOUŽÍVAT data je vždy POLICY, nikdy ARCHITECTURAL.
@@ -46,6 +50,7 @@ implementation	NOT_APPLICABLE	Stejné případy jako u decision.
 MODALITY		
 modality	FIRM	Řečeno jako fakt, rozhodnutí nebo povinnost (is, will, shall, must, does not).
 modality	CONDITIONAL	Podmíněně nebo jako možnost (could, might, would, may, is being considered, one option). Řiďte se smyslem věty, ne jedním slovesem; u strojového překladu zvlášť.
+		Nadpis, popisek z obrázku nebo tabulky či útržek, který jen jmenuje téma (předchozí krok ho přesto může propustit): voice UNCLEAR, aspect podle jmenovaného tématu (jinak GENERAL), stance NEUTRAL, basis NONE, decision UNCLEAR, implementation UNCLEAR. Text z obrázku nebo tabulky může mít špatně přečtené znaky; kódujte čitelná slova.
 PŘÍZNAKY (nepovinné, napište x)		
 anonymity_rejected	x	Věta výslovně říká, že anonymita jako u hotovosti nebude.
 low_id_tier	x	Věta zmiňuje úroveň nebo peněženku bez plného ověření totožnosti.

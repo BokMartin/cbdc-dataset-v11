@@ -47,7 +47,7 @@ Shared context for humans and models (the paragraph, not adjacent units); two st
 - ECCU (DCash) is a union project with one evidence document. By the rule of decision 2 it would also enter the frame; it is outside for now.
 - Retire the posture layer P0 to P3 / G1 to G9 of the contract in favour of the unit-based instrument (audit item 11)? Not yet decided.
 - CH: MB asks to check the SNB speech against the Federal Council's 2019 position; the project's status in the frame is to be re-checked.
-- Two document universes (audit item 9) are not feasible by December; the proposal is to name the result "privacy statements in the selected evidence corpus" and to make no claim about an institution's communication as a whole.
+- Two document universes (audit item 9): a second, uniformly searched universe of all official retail-CBDC communication is not collected, because of the work it needs (MB, 22 Nov 2026: corpus kept as it is); the proposal is to name the result "privacy statements in the selected evidence corpus" and to make no claim about an institution's communication as a whole.
 
 ## 6. Decisions of MB, 13 Nov 2026, 14:42
 

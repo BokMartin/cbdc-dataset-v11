@@ -203,16 +203,36 @@
  },
  "context": "the paragraph of the unit, rendered by scripts/units/context.py for coders and for the model alike",
  "aspect_comparison_cells": {
-  "CB_ACCESS": "F1 CB_LINK_ONLINE",
-  "INTERMEDIARY_DATA": "F2 PSP_LINK_ONLINE",
-  "AUTHORITY_ACCESS": "F3 LAWFUL_ACCESS_ROUTE",
-  "OFFLINE": "F4 PRIVATE_OFFLINE_AVAILABLE",
-  "IDENTIFICATION": "F7 / F8",
-  "ANONYMITY": "none (general anonymity is neither F1 nor F4)",
-  "DATA_PROTECTION": "none",
-  "USER_CONTROL": "none",
-  "PETS": "none",
-  "GENERAL": "none",
+  "status": "the one map of talk aspects to F-cells, read by scripts/talk_commitment.py (S1 of the 22 Nov check). Content as in ADR-009 and index spec \u00a712.2 (MB, 21 Nov 2026); the mapping of ANONYMITY to F7 (narrowed to anonymous holding and paying in the codebook) and the rule that a rejection of full anonymity is only the flag anonymity_rejected, never F7 = no (ADR-012 D9) were confirmed by DS on 22 Nov 2026 (relayed by MB). Until 22 Nov the schema listed ANONYMITY without a cell and AUTHORITY_ACCESS on F3 only, while the script used this map.",
+  "cells": {
+   "CB_ACCESS": [
+    "F1"
+   ],
+   "INTERMEDIARY_DATA": [
+    "F2"
+   ],
+   "AUTHORITY_ACCESS": [
+    "F3",
+    "F9"
+   ],
+   "OFFLINE": [
+    "F4"
+   ],
+   "ANONYMITY": [
+    "F7"
+   ],
+   "IDENTIFICATION": [
+    "F7",
+    "F8"
+   ],
+   "DATA_PROTECTION": [],
+   "USER_CONTROL": [],
+   "PETS": [],
+   "GENERAL": []
+  },
+  "cells_without_aspect": [
+   "F10"
+  ],
   "note": "pairs used ONLY to line up the 2 x 2 table of talk against commitment. An aspect label never establishes the cell: actor, data object, ordinary or exceptional access, payer or payee and design version are recorded in the atomic claims of the contract, not here."
  }
 }

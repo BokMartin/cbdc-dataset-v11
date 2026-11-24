@@ -9,7 +9,9 @@ A document is **eligible evidence** for a project if all of the following hold:
 1. **Authority.** Published by the body competent to decide for the project (central bank, ministry of finance / treasury, legislature or government, or a common union authority), or by a project consortium of which that body is the lead member, on an official channel (institution website or official publication series; an official English edition of the same institution counts as the same document, route B). Documents by other institutions (BIS, IMF, consultancies, news) are never evidence, whatever they contain.
 2. **Subject.** About a retail CBDC of that project (wholesale-only documents are flagged and excluded from the retail matrix).
 3. **Content.** Contains at least one statement that bears on a contract cell (F1–F12) or on a posture statement type (contract v2 §6b.1), or records a decision on project status (issuance, pause, discontinuation). A genre label does not decide: a press release that announces "the central bank will not see transaction data" is eligible; a 200-page report that never touches design or status is not.
-4. **Date.** Published on or before the as-of date (2026-10-18).
+4. **Date.** Published on or before the as-of date (2026-10-18). *(ADR-012 D11, 22 Nov 2026: the date is the document's issue date.)*
+
+*Amended 22 Nov 2026 (ADR-012 D5) for rules 1 and 2:* a joint report or experiment with an outside partner is eligible for a project only when it is explicitly attributable to that project's competent body; a joint **retail** report may support LEANING (ADR-010), never a commitment; a **wholesale** document is context and a source of PET observations only, never retail evidence.
 5. **Layer.** Staff research (author-views disclaimer or staff series) is eligible as `staff_research = Y`: it may corroborate, never establish (contract §2).
 
 Public speeches by board members on the official site are eligible under 1–3 (they were previously excluded by genre); their status is decided per claim (§4 rule A), not by genre.

@@ -7,7 +7,7 @@ Replaces the protocol of the same morning, which was withdrawn before any unit w
 | | development sample | reference sample |
 |---|---|---|
 | purpose | find out which facets two people can code consistently; revise codebook and prompts | measure agreement of the frozen codebook; reference for the model |
-| size | 120 units: D 90, N 15, R 15; route A 84, B 11, D 25 | 400 units: D 260, N 80, R 60; route A 292, B 30, D 78 |
+| size | 120 units: D 90, N 15, R 15; route A 84, B 11, D 25 | 400 units: D 260, N 80, R 60; route A 292, B 30, D 78. **Superseded 22 Nov 2026 (ADR-012 D18):** a direct stratified random draw of 400 units, D 140 (dictionary hits), N 50 (neighbours of hits), O 210 (all other eligible units), with stored inclusion probabilities (`draw_agreement_sample.py --design main`) |
 | drawn | now, from the evidence set as it stands (`data/units/AGREEMENT_SAMPLE_dev_2026-11-13.csv`) | after the document set and the codebook are frozen; never contains a development unit |
 | may be used to tune the model | yes | no |
 | coded | both authors, alone, all facets | both authors, alone, the facets that survived |
@@ -30,6 +30,8 @@ Fixed now, applied to the development result, then frozen for the reference samp
 - A facet below that is **repaired once**: categories that are confused with each other are merged by a written rule, or the codebook text is changed; the facet is then re-scored on the same development units as a check of the rule, not as evidence.
 - A facet that cannot be repaired is **dropped** from measurement. Relevance, voice and aspect are the minimum instrument; if one of these three fails, the unit-based instrument is not used for the paper and the result is reported.
 - With about 90 dictionary hits, roughly 40 to 70 units will be relevant for both coders. That is enough to see which facets fail badly and which categories are confused; it is not enough to certify a facet with rare categories. The reference sample does that.
+
+**Amended 22 Nov 2026 (ADR-012 D8, MB and DS).** Before the reference sample, 80 sentences are coded blind by both authors for **voice, aspect, decision and stance**. A facet that fails the threshold above may be reviewed jointly: the joint review gives the final labels of those sentences but does **not** replace the failed threshold; the facet is then reported as exploratory, without accuracy claims.
 
 Thresholds are conventions (Krippendorff 2004; to pass the citation check), not proofs of validity. Both rounds are published whatever they show.
 

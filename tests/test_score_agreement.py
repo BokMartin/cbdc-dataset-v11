@@ -38,3 +38,18 @@ def test_end_to_end_counts_relevance_disagreement_as_facet_disagreement():
     r = sa.score(A, B, S, allowed)
     assert r["units_both_relevant"] == 1 and r["units_relevant_for_at_least_one"] == 2
     assert r["voice_end_to_end"]["agreement"] == 0.5
+
+
+def test_facet_workbook_scores_only_its_columns_and_aspect2_blank_is_none():
+    """The 80-sentence workbook has no implementation or modality but has aspect2; the sample file names its stratum candidate_stratum."""
+    allowed = {"relevant": RNU, "voice": ["OWN", "REPORTED"], "aspect": ["GENERAL", "ANONYMITY"], "aspect2": ["GENERAL", "ANONYMITY"]}
+    def row(rel, voice="", aspect="", aspect2=""):
+        return {"relevant": rel, "voice": voice, "aspect": aspect, "aspect2": aspect2}
+    A = {"u1": row("R", "OWN", "GENERAL"), "u2": row("R", "OWN", "ANONYMITY", "GENERAL"), "u3": row("N")}
+    B = {"u1": row("R", "OWN", "GENERAL"), "u2": row("R", "REPORTED", "GENERAL", "ANONYMITY"), "u3": row("N")}
+    S = {u: {"candidate_stratum": "D", "route": "A"} for u in A}
+    res = sa.score(A, B, S, allowed)
+    assert res["facets_scored"] == ["voice", "aspect", "aspect2"]
+    assert res["aspect2"]["counts"]["NONE"] == 2
+    assert res["aspect_set"] == {"n": 2, "same_set": 2, "overlapping": 2}
+    assert list(res["by_stratum"]) == ["D"]
