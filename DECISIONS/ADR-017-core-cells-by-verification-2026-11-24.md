@@ -51,3 +51,15 @@ MB judged that manual search of long documents is more error-prone than the mach
 - MB confirmed the merge of this ADR on 24 Nov 2026, 17:35 UTC ("ano slouci").
 - DS has not confirmed. The order of the reference sample and the opening (point 7) is still open, so the outputs of the 14
   projects stay closed until MB chooses.
+
+## Opening (24 Nov 2026)
+
+MB, 17:44 UTC, on the question of point 7: "otevrit hned" (option A): the outputs are opened now and every paragraph shown
+in verification is excluded from the reference sample of 400 units when it is drawn (added to the exposure registry,
+Registration A §4a). Opened by CL at about 17:50 UTC from `PROD_RUNS_FINAL_2026-11-24b.zip` (SHA-256 `7ae8ad8f…`), with the
+requests `PROD_EX2/REQUESTS.jsonl` rebuilt from the frozen inputs (SHA-256 `5590a8da…`, identical to amendment 1 of the
+freeze). Verification items: 83 keys with a value, 142 rows; 29 empty keys, 10 drawn (inclusion probability 10/29)
+(`data/index/VERIFY_ITEMS_2026-11-24.csv`, `scripts/review/build_verification_workbook.py`). Three-model agreement on the
+cells: `docs/EXTRACTION_AGREEMENT_2026-11-24.md`.
+
+After the re-run of failed requests (archive `PROD_RUNS_FINAL_2026-11-24c.zip`, `c23bb74d…`) two rows were added (`KZ-F3-2n`, `KZ-F4-2n`, supplement workbooks `VERIFY_CELLS_{MB,DS}_2026-11-24_DOPLNEK.xlsx`); no row disappeared and the drawn empty keys are unchanged.
