@@ -128,6 +128,8 @@ def _header(ws, cols, widths):
 
 
 def _dv(ws, col, n, vals):
+    if n < 1:
+        return
     dv = DataValidation(type="list", formula1='"' + ",".join(vals) + '"', allow_blank=True)
     ws.add_data_validation(dv)
     dv.add(f"{col}2:{col}{n + 1}")

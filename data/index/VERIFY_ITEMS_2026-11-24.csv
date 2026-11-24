@@ -141,6 +141,8 @@ item,TW-F9-2,TW,F9,deepseek,TW-09,31,1
 item,TW-F10-1,TW,F10,deepseek,TW-05,4,1
 item,TW-F10-2,TW,F10,sol62,TW-05,12,1
 item,TW-F10-3,TW,F10,claude,TW-09,30,1
+item,KZ-F3-2n,KZ,F3,claude,KZ-10,37,1
+item,KZ-F4-2n,KZ,F4,claude,KZ-10,41,1
 empty_key,IN-F9,IN,F9,,,,0.3448
 empty_key,IN-F2,IN,F2,,,,0.3448
 empty_key,IN-F8,IN,F8,,,,0.3448

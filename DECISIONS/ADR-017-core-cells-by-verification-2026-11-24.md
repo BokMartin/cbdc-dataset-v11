@@ -61,3 +61,5 @@ requests `PROD_EX2/REQUESTS.jsonl` rebuilt from the frozen inputs (SHA-256 `5590
 freeze). Verification items: 83 keys with a value, 142 rows; 29 empty keys, 10 drawn (inclusion probability 10/29)
 (`data/index/VERIFY_ITEMS_2026-11-24.csv`, `scripts/review/build_verification_workbook.py`). Three-model agreement on the
 cells: `docs/EXTRACTION_AGREEMENT_2026-11-24.md`.
+
+After the re-run of failed requests (archive `PROD_RUNS_FINAL_2026-11-24c.zip`, `c23bb74d…`) two rows were added (`KZ-F3-2n`, `KZ-F4-2n`, supplement workbooks `VERIFY_CELLS_{MB,DS}_2026-11-24_DOPLNEK.xlsx`); no row disappeared and the drawn empty keys are unchanged.
