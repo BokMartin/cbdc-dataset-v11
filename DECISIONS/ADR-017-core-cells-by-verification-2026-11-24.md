@@ -46,6 +46,8 @@ MB judged that manual search of long documents is more error-prone than the mach
 
 ## Open
 
-- MB wrote "F1-12". Whether F11 (objectives) and F12 (ledger technology) are also verified is asked; until answered, only the
-  eight cells of point 2.
-- DS has not confirmed. The order of the reference sample and the opening (point 7).
+- MB wrote "F1-12". Asked whether F11 and F12 are also verified, he answered on 24 Nov 2026, 17:35 UTC: "jen 8" (only the
+  eight cells of point 2). Settled.
+- MB confirmed the merge of this ADR on 24 Nov 2026, 17:35 UTC ("ano slouci").
+- DS has not confirmed. The order of the reference sample and the opening (point 7) is still open, so the outputs of the 14
+  projects stay closed until MB chooses.
