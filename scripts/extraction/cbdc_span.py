@@ -9,6 +9,12 @@ page on either side. If the span holds 90 % or more of the characters, the docum
 to pages outside it are kept by the model in `references` (prompt v12.2 §1, "the runner resolves those references against
 eligible material"); they are resolved after the extraction run, not here.
 
+Pages in another script (MB 23 Nov 2026, production check): a page whose letters are mostly outside the Latin alphabet (the
+Arabic summary pages of two UAE papers, the Kazakh or Russian annex of a Kazakh report, Thai pages, a Ukrainian cover page) is
+left out of the extraction request (`omit_pages`): it is not English text for measurement, and in the first production
+requests both Claude and Sol marked such a page unreadable, which fails the whole request (prompt v12.2 §2). The page is
+not "expected" because it is not in page_indices.
+
 Output (no unit text): data/manifest/EXTRACTION_HEADER_EXTRA_<date>.csv with doc_key, page_span, span_pages (space-separated),
 pages_with_text, span_share_chars, terms_pages; build_jobs.py --header-extra reads it and sends only the span pages.
 
@@ -30,20 +36,32 @@ TERMS = re.compile(r"\b(CBDCs?|central[- ]bank digital (currenc\w+|money)|digita
                    r"e-?Naira|JAM-?DEX|Sand Dollar|DCash|Bakong|tokeni[sz]ed (money|cash|deposits?)|retail token)\b", re.I)
 
 
+LATIN = set("abcdefghijklmnopqrstuvwxyzáàâäãåæçéèêëíìîïñóòôöõøœúùûüýÿšžčřďťňěůłńśźżőűğışășț")
+
+
+def other_script(t):
+    letters = [c for c in t if c.isalpha()]
+    return len(letters) >= 30 and sum(c.lower() not in LATIN for c in letters) / len(letters) > 0.5
+
+
 def spans(units_dir, manifest):
     out = []
     for m in manifest:
-        if m["kind"] not in GENERAL:
-            continue
         pages = collections.defaultdict(str)
         for u in csv.DictReader(open(os.path.join(units_dir, m["doc_key"] + ".units.csv"), encoding="utf-8")):
             pages[int(u["page"])] += " " + u["text"]
+        omit = " ".join(str(p) for p in sorted(pages) if other_script(pages[p]))
+        if m["kind"] not in GENERAL:
+            if omit:
+                out.append({"doc_key": m["doc_key"], "page_span": "whole_document", "span_pages": "", "pages_with_text": len(pages),
+                            "span_share_chars": "", "terms_pages": "", "omit_pages": omit})
+            continue
         hit = sorted(p for p, t in pages.items() if TERMS.search(t))
         span = sorted({q for p in hit for q in (p - 1, p, p + 1) if q in pages})
         share = sum(len(pages[p]) for p in span) / max(1, sum(len(t) for t in pages.values()))
         whole = share >= WHOLE_AT
         out.append({"doc_key": m["doc_key"], "page_span": "whole_document" if whole else "cbdc_span", "span_pages": "" if whole else " ".join(map(str, span)),
-                    "pages_with_text": len(pages), "span_share_chars": round(share, 3), "terms_pages": len(hit)})
+                    "pages_with_text": len(pages), "span_share_chars": round(share, 3), "terms_pages": len(hit), "omit_pages": omit})
     return out
 
 
@@ -54,9 +72,9 @@ def main(argv=None):
     rows = spans(a.units, list(csv.DictReader(open(mf, encoding="utf-8"))))
     p = os.path.join(ROOT, "data/manifest", f"EXTRACTION_HEADER_EXTRA_{a.date}.csv")
     with open(p, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, ["doc_key", "page_span", "span_pages", "pages_with_text", "span_share_chars", "terms_pages"]); w.writeheader(); w.writerows(rows)
+        w = csv.DictWriter(fh, ["doc_key", "page_span", "span_pages", "pages_with_text", "span_share_chars", "terms_pages", "omit_pages"]); w.writeheader(); w.writerows(rows)
     n = [r for r in rows if r["page_span"] == "cbdc_span"]
-    print(f"{len(rows)} general publications, {len(n)} cut to a CBDC span; manifest {os.path.basename(mf)} -> {os.path.relpath(p, ROOT)}")
+    print(f"{len(rows)} rows, {len(n)} cut to a CBDC span, {sum(len(r['omit_pages'].split()) for r in rows)} pages in another script left out; manifest {os.path.basename(mf)} -> {os.path.relpath(p, ROOT)}")
     return rows
 
 

@@ -52,11 +52,17 @@ class CreditExhausted(Exception):
     pass
 
 
+def not_served(a):
+    """An attempt the provider refused before serving it: no credit, or the account's own spend limit (Anthropic 'You have reached
+    your specified API usage limits', recorded as fatal before 23 Nov 2026 21:50 UTC)."""
+    return a["error_kind"] == "credit" or "specified api usage limits" in (a.get("parse_error") or "").lower()
+
+
 def classify(exc):
     """'credit' | 'rate' | 'transient' | 'fatal' for an exception or an error object of a provider."""
     status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
     text = (str(getattr(exc, "body", "") or "") + " " + str(getattr(exc, "code", "") or "") + " " + str(getattr(exc, "type", "") or "") + " " + str(exc)).lower()
-    if status == 402 or any(s in text for s in ("billing_error", "insufficient_quota", "credit balance is too low", "insufficient balance", "billing_hard_limit")):
+    if status == 402 or any(s in text for s in ("billing_error", "insufficient_quota", "credit balance is too low", "insufficient balance", "billing_hard_limit", "specified api usage limits")):
         return "credit"
     if status == 429 or "rate_limit" in text: return "rate"
     name = type(exc).__name__
@@ -299,9 +305,9 @@ class Run:
         for r in reqs:
             at = bk.get(r["request_key"], [])
             if any(a["complete"] for a in at) or r["request_key"] in fly: continue
-            counted = [a for a in at if a["error_kind"] != "credit"]   # an attempt refused for credit was not served
+            counted = [a for a in at if not not_served(a)]   # an attempt refused for credit or an account limit was not served
             if len(counted) >= max_attempts: continue
-            if counted and not at[-1]["error_kind"] in ("credit", "rate", "transient") and not (retry_unparsed and at[-1]["error_kind"] in ("unparsed", "stop")): continue
+            if counted and not (not_served(at[-1]) or at[-1]["error_kind"] in ("rate", "transient")) and not (retry_unparsed and at[-1]["error_kind"] in ("unparsed", "stop")): continue
             out.append(r)
         return out
 

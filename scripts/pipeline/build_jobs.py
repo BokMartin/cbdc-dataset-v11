@@ -74,6 +74,8 @@ def extraction_requests(units, m, max_chars, extra):
     total = max(int(m.get("pages") or 0), max(pages)); ps = list(range(1, total + 1)); out = []
     if extra.get("page_span") == "cbdc_span":   # general publication: only its CBDC pages ±1 (scripts/extraction/cbdc_span.py, ADR-013 P3)
         ps = sorted(int(p) for p in extra["span_pages"].split())
+    if extra.get("omit_pages"):   # pages in another script (scripts/extraction/cbdc_span.py other_script)
+        ps = [p for p in ps if str(p) not in extra["omit_pages"].split()]
     pages = {p: pages.get(p, "") for p in ps}   # a page without text is still sent (its marker, no blocks): an omitted page is a gap
     for a, b in owned_ranges(pages, max_chars):
         owned = [p for p in ps if a <= p <= b]; i, j = ps.index(owned[0]), ps.index(owned[-1])
