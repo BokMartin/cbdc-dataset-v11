@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results · CBDC privacy dataset</title>
+<meta name="description" content="Stated-design privacy index with intervals, the PET profile and privacy talk beside the index, by tier.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<div class="mock-banner" id="mock-banner" hidden role="note"></div>
+<main id="main">
+  <h1>Results</h1>
+  <p class="lead">What the official documents of each project state about its design, read as a privacy index with an interval, and how much the project talks about privacy, shown beside the index and never mixed into it.</p>
+  <div class="note" id="as-of">Loading…</div>
+
+  <h2>The hypothesis: much talk, few commitments</h2>
+  <div class="card hyp" id="hyp"></div>
+
+  <h2>By tier</h2>
+  <p class="small muted">T1 and T2 are the 16 core projects: both authors coded every design cell from the sources before any model output was opened. T3 is exploratory: projects with four or fewer evidence publications, often unfinished CBDC research. Means over a tier describe the tier; they do not rank projects.</p>
+  <div class="grid tiers" id="tiers"></div>
+
+  <h2>Projects</h2>
+  <div class="toolbar">
+    <label class="f">Show<select id="tier-filter">
+      <option value="core">Core (T1 and T2)</option>
+      <option value="all">All 44 projects</option>
+      <option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3 (exploratory)</option>
+    </select></label>
+    <span class="small muted">Listed by tier and name, never by value: the index does not yet support a ranking.</span>
+  </div>
+  <div class="scroll-x card" style="padding:6px 10px">
+    <table class="ptable rtable" id="rtable">
+      <thead><tr>
+        <th scope="col">Project</th>
+        <th scope="col">Privacy index, 7 cells<div class="small muted">interval 0 to 1</div></th>
+        <th scope="col">4 cells</th>
+        <th scope="col">Lawful access (F3)</th>
+        <th scope="col" class="n">Committed of 7</th>
+        <th scope="col">PET profile</th>
+        <th scope="col" class="n">Talk per 100 units</th>
+        <th scope="col" class="n">Mechanism · decision</th>
+        <th scope="col" class="n">Talk without commitment</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="small muted">Click a row for the cell-by-cell record.</p>
+  <aside class="card" id="detail" aria-live="polite" hidden></aside>
+
+  <h2>PET profile</h2>
+  <p class="small muted">Privacy-enhancing technologies named in the official design documents, coded with the list of Nijsse and Pinto (2026). A profile, not a scale: more techniques do not mean more privacy, and the profile never enters the index.</p>
+  <div class="chips" id="pets"></div>
+
+  <h2>How to read this page</h2>
+  <div class="narrow">
+  <p><b>Privacy index.</b> The mean of seven design cells: can the central bank link an online payment to a person (F1), can an intermediary (F2), are private offline payments available (F4), is there a low-identity route (F7), is identity required at onboarding (F8), is targeted re-identification possible (F9), are there programmable restrictions (F10). Less access, less identification and no re-identification mean more privacy. Nothing is imputed: a cell the documents leave open is scored 0 for the lower bound and 1 for the upper bound, so a wide bar means the documents say little, not that the design is in the middle.</p>
+  <p><b>Beside the index, outside the mean.</b> The four-cell index (F1, F2, F4, F7) as the narrower variant; the lawful access route (F3) as a category; the PET profile; and how many of the seven cells the competent body has decided or runs (committed, one rule for every count).</p>
+  <p><b>Talk, beside the index.</b> Own-voice sentences on users' privacy per 100 eligible sentence units of the project's evidence texts; the share of those sentences that state a mechanism or a decision; and the directional gap: of the six aspects with a matching design cell, how many the project talks about without a commitment. Talk never enters the index.</p>
+  <p><b>The hypothesis</b> was fixed before the data. Much talk: own-voice privacy talk in at least two publications and at least 1 relevant unit per 100. Few commitments: fewer than 2 of F1, F2, F4 and F7 committed. It holds if at least 9 of the 16 core projects meet both even at the reading least favourable to it (L), fails if at most 8 meet both at the most favourable reading (U), and is inconclusive otherwise. There is no significance test.</p>
+  <p>Rules: <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/REGISTRATION_A_DRAFT_2026-11-23.md">Registration A</a>, <a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/DECISIONS/ADR-012-audit-2026-11-22-A4b-dispositions.md">ADR-012</a>. Data: <a href="assets/results.json" download>results.json</a>.</p>
+  </div>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script src="assets/results.js"></script>
+</body>
+</html>

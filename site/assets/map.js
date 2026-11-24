@@ -6,6 +6,9 @@
   var W = 960, H = 500;
   var DOC_BINS = [[0, 0, "none yet"], [1, 2, "1 to 2"], [3, 4, "3 to 4"], [5, 7, "5 to 7 (T2 level)"], [8, 999, "8 or more (T1 level)"]];
   var DOC_COL = ["#e9e5da", "#c6dbef", "#85b6da", "#3d88c2", "#0f4d85"];
+  // analysis tiers of 17 Nov 2026: T1 and T2 are the 16 core projects, T3 is exploratory (Registration A §1, ADR-012 D1)
+  var TIER = { T1: ["T1 · core", "#0f4d85"], T2: ["T2 · core", "#3d88c2"], T3: ["T3 · exploratory, often unfinished CBDC research", "#e3b45c"] };
+  S.tierLabel = function (t) { return (TIER[t] || [t])[0]; };
 
   Promise.all([S.get("assets/projects.json"), S.get("assets/documents.json"), S.get("assets/vendor/countries-50m.json")])
     .then(function (r) { init(r[0], r[1], r[2]); })
@@ -34,11 +37,13 @@
     function colour(p) {
       if (state.mode === "status") return (S.STATUS[p.status] || S.STATUS.NA)[1];
       if (state.mode === "docs") return DOC_COL[bin(pubsUpTo(p, state.year))];
+      if (state.mode === "tier") return (TIER[p.tier] || TIER.T3)[1];
       return p.ev_years.length ? FIRST(p.ev_years[0]) : DOC_COL[0];
     }
     function label(p) {
       if (state.mode === "status") return (S.STATUS[p.status] || S.STATUS.NA)[0];
       if (state.mode === "docs") { var n = pubsUpTo(p, state.year); return n + " evidence publication" + (n === 1 ? "" : "s") + " up to " + state.year; }
+      if (state.mode === "tier") return S.tierLabel(p.tier);
       return p.ev_years.length ? "first evidence publication " + p.ev_years[0] : "no evidence publication";
     }
 
@@ -95,6 +100,8 @@
       } else if (state.mode === "docs") {
         var cnt = DOC_BINS.map(function () { return 0; }); frame.forEach(function (p) { cnt[bin(pubsUpTo(p, state.year))]++; });
         items = DOC_BINS.map(function (b, i) { return [DOC_COL[i], b[2] + " (" + cnt[i] + ")"]; });
+      } else if (state.mode === "tier") {
+        items = ["T1", "T2", "T3"].map(function (t) { return [TIER[t][1], TIER[t][0] + " (" + frame.filter(function (p) { return p.tier === t; }).length + ")"]; });
       } else {
         items = [y0, Math.round((y0 + y1) / 2), y1].map(function (y) { return [FIRST(y), String(y)]; }).concat([[DOC_COL[0], "none"]]);
       }
@@ -128,7 +135,7 @@
       var mx = Math.max.apply(null, ys.map(function (y) { return p.ev_by_year[y] || 0; }).concat([1]));
       var spark = p.frame ? '<div class="small muted">Evidence publications by year</div><div class="spark" aria-hidden="true">' + ys.map(function (y) { return '<i style="height:' + (100 * (p.ev_by_year[y] || 0) / mx) + '%" title="' + y + ": " + (p.ev_by_year[y] || 0) + '"></i>'; }).join("") + '</div><div class="spark-x"><span>' + y0 + "</span><span>" + y1 + "</span></div>" : "";
       var en = p.frame && p.pubs ? '<p class="small" style="margin-top:12px">English text for measurement: ' + Object.keys(p.english).filter(function (k) { return p.english[k]; }).map(function (k) { return p.english[k] + " " + k; }).join(", ") + ".</p>" : "";
-      $("panel").innerHTML = "<h2>" + S.esc(p.name) + "</h2><div class='sub'>" + (p.project_name ? S.esc(p.project_name) + " · " : "") + (p.frame ? "tier " + S.esc(p.tier) : "outside the frame") + "</div>" +
+      $("panel").innerHTML = "<h2>" + S.esc(p.name) + "</h2><div class='sub'>" + (p.project_name ? S.esc(p.project_name) + " · " : "") + (p.frame ? "tier " + S.esc(S.tierLabel(p.tier)) : "outside the frame") + "</div>" +
         '<p><span class="dot" style="background:' + st[1] + '"></span> <b>' + S.esc(st[0]) + "</b>" + (p.status_date ? " as of " + S.esc(p.status_date) : "") +
         (p.status_url ? ' · <a href="' + S.esc(p.status_url) + '" target="_blank" rel="noopener">source ↗</a>' : "") + "</p>" +
         (p.members.length ? "<p class='small muted'>One project for " + p.members.length + " member states; documents of the ECB and of national central banks of the euro area belong to it.</p>" : "") +
@@ -145,7 +152,7 @@
       .html(function (p) {
         var st = S.STATUS[p.status] || S.STATUS.NA;
         return "<td><b>" + S.esc(p.name) + "</b>" + (p.project_name ? "<div class='small muted'>" + S.esc(p.project_name) + "</div>" : "") + "</td>" +
-          '<td><span class="dot" style="background:' + st[1] + '"></span> ' + S.esc(st[0]) + "</td><td>" + S.esc(p.tier) + "</td>" +
+          '<td><span class="dot" style="background:' + st[1] + '"></span> ' + S.esc(st[0]) + "</td><td>" + S.esc(p.tier) + (p.tier === "T3" ? "<div class='small muted'>exploratory</div>" : "") + "</td>" +
           '<td class="n">' + p.pubs + "</td><td>" + (p.ev_years.length ? p.ev_years[0] + (p.ev_years[1] !== p.ev_years[0] ? " to " + p.ev_years[1] : "") : "") + "</td>" +
           '<td class="n">' + p.n.companion + '</td><td class="n">' + ((p.n.dropped || 0) + (p.n.wholesale || 0)) + "</td>";
       })

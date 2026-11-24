@@ -18,6 +18,8 @@ jobs:
           git diff --stat -- data/frame/projects.csv
       - name: website data are current and contain no unlisted translation
         run: python scripts/site/build_site_data.py --check
+      - name: results page data are current (test data until the blind core is opened)
+        run: python scripts/site/build_results_data.py --mock --check
       - name: the numbers in PROJECT_BRIEF.md match the data files
         run: python scripts/pipeline/update_brief.py --check
       - name: every model run has a complete run record and the run statement is current
