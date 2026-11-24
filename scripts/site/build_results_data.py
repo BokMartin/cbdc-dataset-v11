@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The results page of the website: data for site/results.html (MB, 24 Nov 2026: prepare the page in advance on the
+"""The results page of the website: data for site-preview/results.html (moved into site/ only with real data) (MB, 24 Nov 2026: prepare the page in advance on the
 test data, so that when the outputs are opened only the numbers change).
 
 What the page shows follows Registration A (docs/REGISTRATION_A_DRAFT_2026-11-23.md) and ADR-012 D1, D3, D4:
@@ -29,8 +29,8 @@ every view. A real run needs --label with the run name and project ids without M
 blind core outputs are opened under ADR-016 point 4. Model outputs of the blind core are never an input here before then.
 
 usage:
-  build_results_data.py --mock            # the test-data page (default inputs), writes site/assets/results.json
-  build_results_data.py --mock --check    # fail if site/assets/results.json is not what the inputs give
+  build_results_data.py --mock            # the test-data page (default inputs), writes site-preview/assets/results.json
+  build_results_data.py --mock --check    # fail if site-preview/assets/results.json is not what the inputs give
   build_results_data.py --make-mock-extra # rewrite data/site/mock/MOCK_SITE_EXTRA.csv
 """
 import argparse
@@ -50,7 +50,7 @@ from talk_commitment import ASPECT_CELLS, TALK_ONLY_ASPECTS, project_summary, ta
 sys.path.insert(0, os.path.join(ROOT, "scripts", "extraction"))
 from v122 import PET_CODES  # noqa: E402
 
-OUT = os.path.join(ROOT, "site", "assets", "results.json")
+OUT = os.path.join(ROOT, "site-preview", "assets", "results.json")  # site/ never reads the index mock
 MOCK_DIR = os.path.join(ROOT, "data", "index", "mock")
 MOCK_EXTRA = os.path.join(ROOT, "data", "site", "mock", "MOCK_SITE_EXTRA.csv")
 MOCK_INPUTS = {"a": os.path.join(MOCK_DIR, "MOCK_CODER_A.csv"), "b": os.path.join(MOCK_DIR, "MOCK_CODER_B.csv"),
@@ -238,13 +238,13 @@ def main():
     if o.check:
         cur = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
         if cur != text:
-            print("site/assets/results.json is not current: run scripts/site/build_results_data.py --mock")
+            print("site-preview/assets/results.json is not current: run scripts/site/build_results_data.py --mock")
             return 1
         print("results data current (label %s)" % label)
         return 0
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write(text)
-    print("written site/assets/results.json (label %s, %d projects)" % (label, len(json.loads(text)["projects"])))
+    print("written site-preview/assets/results.json (label %s, %d projects)" % (label, len(json.loads(text)["projects"])))
     return 0
 
 

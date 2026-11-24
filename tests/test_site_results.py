@@ -1,8 +1,8 @@
-"""The results page (site/results.html): test data only, until the blind core outputs are opened (ADR-016 point 4)."""
+"""The results page (site-preview/results.html; it moves into site/ only with real data): test data only, until the blind core outputs are opened (ADR-016 point 4)."""
 import json, os, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "site", "assets", "results.json")
+DATA = os.path.join(ROOT, "site-preview", "assets", "results.json")
 
 
 def load():
@@ -31,9 +31,10 @@ def test_results_page_not_linked_while_test_data():
     site_js = open(os.path.join(ROOT, "site", "assets", "site.js"), encoding="utf-8").read()
     assert "results.html" not in site_js
     for f in os.listdir(os.path.join(ROOT, "site")):
-        if f.endswith(".html") and f != "results.html":
+        if f.endswith(".html"):
             assert "results.html" not in open(os.path.join(ROOT, "site", f), encoding="utf-8").read(), f
-    page = open(os.path.join(ROOT, "site", "results.html"), encoding="utf-8").read()
+    assert not os.path.exists(os.path.join(ROOT, "site", "results.html"))
+    page = open(os.path.join(ROOT, "site-preview", "results.html"), encoding="utf-8").read()
     assert 'name="robots" content="noindex"' in page and 'id="mock-banner"' in page
 
 

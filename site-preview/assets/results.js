@@ -1,5 +1,6 @@
 /* Results page: the privacy index with its interval, the PET profile and talk beside the index, by tier.
-   Reads assets/results.json (scripts/site/build_results_data.py) and assets/projects.json for names.
+   Reads assets/results.json (scripts/site/build_results_data.py) and ../site/assets/projects.json for names.
+   Lives in site-preview/ while the data are MOCK: the public site/ never reads the index mock (tests/test_derive_index.py).
    Rows are listed by tier and name, never sorted by a value (no league table, index spec §6). */
 (function () {
   "use strict";
@@ -24,7 +25,7 @@
       '<span class="ivnum">' + num(iv[0]) + "–" + num(iv[1]) + "</span>";
   }
 
-  Promise.all([S.get("assets/results.json"), S.get("assets/projects.json").catch(function () { return { projects: [] }; })]).then(function (r) {
+  Promise.all([S.get("assets/results.json"), S.get("../site/assets/projects.json").catch(function () { return { projects: [] }; })]).then(function (r) {
     var R = r[0], names = {};
     r[1].projects.forEach(function (p) { names[p.code] = p.name; });
     var name = function (id) { return names[id] || id; };
