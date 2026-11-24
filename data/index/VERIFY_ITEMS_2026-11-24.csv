@@ -1,0 +1,153 @@
+kind,row_id,project_id,cell,models,doc_code,page_index,inclusion_probability
+item,AU-F1-1,AU,F1,sol62 deepseek,AU-01,11,1
+item,AU-F1-2,AU,F1,claude,AU-02,13,1
+item,AU-F2-1,AU,F2,deepseek,AU-01,8,1
+item,AU-F3-1,AU,F3,deepseek,,,1
+item,AU-F7-1,AU,F7,claude,AU-02,14,1
+item,AU-F7-2,AU,F7,deepseek,AU-02,14,1
+item,AU-F7-3,AU,F7,sol62,AU-01,7,1
+item,AU-F8-1,AU,F8,claude,AU-02,14,1
+item,AU-F8-2,AU,F8,deepseek,AU-02,14,1
+item,AU-F8-3,AU,F8,sol62,AU-01,8,1
+item,AU-F10-1,AU,F10,claude sol62,AU-02,14,1
+item,BS-F1-1,BS,F1,deepseek,BS-01,12,1
+item,BS-F2-1,BS,F2,deepseek,BS-01,13,1
+item,BS-F4-1,BS,F4,deepseek,BS-01,10,1
+item,BS-F7-1,BS,F7,claude sol62 deepseek,BS-03,4,1
+item,BS-F8-1,BS,F8,sol62,BS-01,24,1
+item,BS-F8-2,BS,F8,claude,BS-03,5,1
+item,BS-F10-1,BS,F10,claude sol62,BS-01,10,1
+item,BS-F10-2,BS,F10,deepseek,BS-04,3,1
+item,CA-F1-1,CA,F1,deepseek,CA-04,15,1
+item,CA-F1-2,CA,F1,claude,CA-04,15,1
+item,CA-F2-1,CA,F2,deepseek,CA-04,17,1
+item,CA-F3-1,CA,F3,deepseek,CA-04,17,1
+item,CA-F7-1,CA,F7,claude deepseek,CA-03,20,1
+item,CA-F8-1,CA,F8,claude,CA-03,18,1
+item,CA-F8-2,CA,F8,deepseek,CA-04,33,1
+item,CA-F9-1,CA,F9,deepseek,CA-04,26,1
+item,CA-F10-1,CA,F10,deepseek,CA-04,5,1
+item,CA-F10-2,CA,F10,claude,CA-04,15,1
+item,EU-F1-1,EU,F1,sol62,EU-13,18,1
+item,EU-F1-2,EU,F1,deepseek,EU-13,18,1
+item,EU-F1-3,EU,F1,claude,EU-03,25,1
+item,EU-F2-1,EU,F2,sol62 deepseek,EU-14,9,1
+item,EU-F3-1,EU,F3,deepseek,EU-02,12,1
+item,EU-F4-1,EU,F4,sol62 deepseek,EU-13,16,1
+item,EU-F4-2,EU,F4,claude,EU-11,2,1
+item,EU-F7-1,EU,F7,sol62,EU-03,35,1
+item,EU-F7-2,EU,F7,claude,EU-02,13,1
+item,EU-F7-3,EU,F7,deepseek,EU-02,13,1
+item,EU-F8-1,EU,F8,claude,EU-02,14,1
+item,EU-F8-2,EU,F8,deepseek,EU-13,18,1
+item,EU-F8-3,EU,F8,sol62,EU-03,21,1
+item,EU-F9-1,EU,F9,deepseek,EU-03,41,1
+item,EU-F10-1,EU,F10,claude sol62 deepseek,EU-14,12,1
+item,HK-F1-1,HK,F1,sol62,HK-01,40,1
+item,HK-F1-2,HK,F1,claude,HK-02,30,1
+item,HK-F2-1,HK,F2,claude sol62,HK-01,37,1
+item,HK-F3-1,HK,F3,deepseek,HK-02,29,1
+item,HK-F9-1,HK,F9,deepseek,HK-01,37,1
+item,HK-F10-1,HK,F10,claude,HK-04,16,1
+item,HK-F10-2,HK,F10,sol62,HK-04,16,1
+item,HK-F10-3,HK,F10,deepseek,HK-05,17,1
+item,IL-F1-1,IL,F1,claude deepseek,IL-08,8,1
+item,IL-F1-2,IL,F1,sol62,IL-08,41,1
+item,IL-F2-1,IL,F2,deepseek,IL-07,41,1
+item,IL-F3-1,IL,F3,deepseek,IL-07,27,1
+item,IL-F3-2,IL,F3,sol62,IL-07,113,1
+item,IL-F3-3,IL,F3,claude,IL-07,113,1
+item,IL-F4-1,IL,F4,sol62,IL-07,97,1
+item,IL-F4-2,IL,F4,deepseek,IL-07,7,1
+item,IL-F7-1,IL,F7,deepseek,IL-08,22,1
+item,IL-F8-1,IL,F8,sol62,IL-03,10,1
+item,IL-F8-2,IL,F8,claude,IL-07,40,1
+item,IL-F8-3,IL,F8,deepseek,IL-08,8,1
+item,IL-F9-1,IL,F9,deepseek,IL-07,113,1
+item,IL-F10-1,IL,F10,claude,IL-07,94,1
+item,IL-F10-2,IL,F10,deepseek,IL-02,6,1
+item,IN-F1-1,IN,F1,sol62,IN-02,8,1
+item,IN-F3-1,IN,F3,sol62 deepseek,,,1
+item,IN-F10-1,IN,F10,claude,IN-02,34,1
+item,JM-F1-1,JM,F1,claude sol62 deepseek,JM-04,3,1
+item,JM-F2-1,JM,F2,claude deepseek,JM-04,3,1
+item,JM-F3-1,JM,F3,claude deepseek,JM-04,3,1
+item,JM-F8-1,JM,F8,claude sol62 deepseek,JM-04,2,1
+item,JM-F9-1,JM,F9,deepseek,JM-04,3,1
+item,JP-F1-1,JP,F1,deepseek,JP-09,1,1
+item,JP-F1-2,JP,F1,claude,JP-10,5,1
+item,JP-F1-3,JP,F1,sol62,JP-10,5,1
+item,JP-F2-1,JP,F2,claude,JP-10,4,1
+item,JP-F2-2,JP,F2,sol62,JP-10,5,1
+item,JP-F8-1,JP,F8,sol62,JP-10,11,1
+item,JP-F8-2,JP,F8,claude,JP-10,11,1
+item,JP-F8-3,JP,F8,deepseek,JP-11,21,1
+item,JP-F10-1,JP,F10,deepseek,JP-11,15,1
+item,JP-F10-2,JP,F10,sol62,JP-12,7,1
+item,JP-F10-3,JP,F10,claude,JP-12,29,1
+item,KZ-F1-1,KZ,F1,claude,KZ-03,67,1
+item,KZ-F2-1,KZ,F2,claude,KZ-03,36,1
+item,KZ-F2-2,KZ,F2,sol62,KZ-03,44,1
+item,KZ-F2-3,KZ,F2,deepseek,KZ-08,22,1
+item,KZ-F3-1,KZ,F3,deepseek,KZ-10,22,1
+item,KZ-F4-1,KZ,F4,claude sol62,KZ-03,65,1
+item,KZ-F4-2,KZ,F4,deepseek,KZ-06,103,1
+item,KZ-F7-1,KZ,F7,sol62,KZ-03,59,1
+item,KZ-F7-2,KZ,F7,claude,KZ-02,17,1
+item,KZ-F7-3,KZ,F7,deepseek,KZ-06,30,1
+item,KZ-F8-1,KZ,F8,deepseek,KZ-09,11,1
+item,KZ-F8-2,KZ,F8,claude,KZ-10,26,1
+item,KZ-F9-1,KZ,F9,deepseek,KZ-06,30,1
+item,KZ-F10-1,KZ,F10,deepseek,KZ-10,19,1
+item,KZ-F10-2,KZ,F10,claude,KZ-10,26,1
+item,NZ-F1-1,NZ,F1,claude sol62,NZ-02,4,1
+item,NZ-F1-2,NZ,F1,deepseek,NZ-02,27,1
+item,NZ-F7-1,NZ,F7,claude sol62,NZ-01,22,1
+item,NZ-F8-1,NZ,F8,claude sol62,NZ-02,8,1
+item,NZ-F8-2,NZ,F8,deepseek,NZ-01,22,1
+item,NZ-F10-1,NZ,F10,claude sol62,NZ-02,4,1
+item,NZ-F10-2,NZ,F10,deepseek,NZ-02,7,1
+item,RU-F1-1,RU,F1,claude sol62,RU-01,26,1
+item,RU-F1-2,RU,F1,deepseek,RU-05,7,1
+item,RU-F2-1,RU,F2,deepseek,RU-01,32,1
+item,RU-F3-1,RU,F3,deepseek,RU-03,2,1
+item,RU-F8-1,RU,F8,claude deepseek,RU-01,32,1
+item,RU-F10-1,RU,F10,deepseek,RU-07,1,1
+item,RU-F10-2,RU,F10,claude,RU-06,7,1
+item,RU-F10-3,RU,F10,sol62,RU-05,24,1
+item,SE-F1-1,SE,F1,deepseek,SE-09,4,1
+item,SE-F1-2,SE,F1,claude,SE-02,19,1
+item,SE-F1-3,SE,F1,sol62,SE-02,20,1
+item,SE-F2-1,SE,F2,claude deepseek,SE-09,4,1
+item,SE-F3-1,SE,F3,deepseek,SE-03,13,1
+item,SE-F4-1,SE,F4,claude,SE-07,19,1
+item,SE-F4-2,SE,F4,sol62,SE-01,21,1
+item,SE-F7-1,SE,F7,claude deepseek,SE-04,9,1
+item,SE-F7-2,SE,F7,sol62,SE-02,20,1
+item,SE-F8-1,SE,F8,claude deepseek,SE-04,9,1
+item,SE-F10-1,SE,F10,sol62,SE-05,6,1
+item,SE-F10-2,SE,F10,claude,SE-09,4,1
+item,SE-F10-3,SE,F10,deepseek,SE-07,11,1
+item,TW-F1-1,TW,F1,sol62 deepseek,TW-09,31,1
+item,TW-F1-2,TW,F1,claude,TW-09,9,1
+item,TW-F2-1,TW,F2,deepseek,TW-09,9,1
+item,TW-F3-1,TW,F3,claude sol62 deepseek,TW-09,9,1
+item,TW-F7-1,TW,F7,claude sol62,TW-09,32,1
+item,TW-F7-2,TW,F7,deepseek,TW-09,8,1
+item,TW-F8-1,TW,F8,claude sol62,TW-09,8,1
+item,TW-F8-2,TW,F8,deepseek,TW-09,30,1
+item,TW-F9-1,TW,F9,claude,TW-09,31,1
+item,TW-F9-2,TW,F9,deepseek,TW-09,31,1
+item,TW-F10-1,TW,F10,deepseek,TW-05,4,1
+item,TW-F10-2,TW,F10,sol62,TW-05,12,1
+item,TW-F10-3,TW,F10,claude,TW-09,30,1
+empty_key,IN-F9,IN,F9,,,,0.3448
+empty_key,IN-F2,IN,F2,,,,0.3448
+empty_key,IN-F8,IN,F8,,,,0.3448
+empty_key,JM-F10,JM,F10,,,,0.3448
+empty_key,IN-F4,IN,F4,,,,0.3448
+empty_key,CA-F4,CA,F4,,,,0.3448
+empty_key,JM-F7,JM,F7,,,,0.3448
+empty_key,JM-F4,JM,F4,,,,0.3448
+empty_key,JP-F3,JP,F3,,,,0.3448
+empty_key,JP-F7,JP,F7,,,,0.3448
