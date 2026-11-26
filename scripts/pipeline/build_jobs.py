@@ -144,7 +144,7 @@ def main(argv=None):
         keep = set(random.Random(a.seed).sample(range(len(reqs)), a.sample)); reqs = [r for i, r in enumerate(reqs) if i in keep]
     if a.units_file: inputs.append({"file": os.path.abspath(a.units_file), "sha256": sha_file(a.units_file), "rows": len(only), "in_repository": False})
     os.makedirs(a.out, exist_ok=True)
-    with open(os.path.join(a.out, "REQUESTS.jsonl"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(a.out, "REQUESTS.jsonl"), "w", encoding="utf-8", newline="\n") as fh:
         for r in reqs: fh.write(json.dumps({**r, "user_sha256": sha(r["user"])}, ensure_ascii=False) + "\n")
     open(os.path.join(a.out, "SYSTEM_PROMPT.md"), "wb").write(system.encode("utf-8"))
     fn = {"talk_L1": f"scripts/units/build_requests.py {a.packing}()", "talk_L2": f"scripts/units/build_requests.py {a.packing}()",

@@ -5,6 +5,8 @@ import json
 import os
 import sys
 
+import pytest
+
 HERE = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(HERE, "..", "scripts"))
 sys.path.insert(0, os.path.join(HERE, "..", "scripts", "extraction"))
@@ -269,12 +271,59 @@ def test_duplicate_occurrence_counted_once_and_descriptive_records_kept():
 
 
 def test_combine_models_unanimity():
-    a = {"F1": {"value": "no", "evidence_state": "documented", "quote": "q"}}
-    b = {"F1": {"value": "no", "evidence_state": "documented", "quote": "q2"}}
-    c = {"F1": {"value": "yes", "evidence_state": "documented", "quote": "q3"}}
-    assert rd.combine_models({"a": a, "b": b})["F1"]["value"] == "no"
-    x = rd.combine_models({"a": a, "b": b, "c": c})["F1"]
+    loc = {"evidence_state": "documented", "document_id": "NO-01", "page_index": 3}
+    a = {"F1": dict(loc, value="no", quote="q")}
+    b = {"F1": dict(loc, value="no", quote="q2")}
+    c = {"F1": dict(loc, value="yes", quote="q3")}
+    assert rd.combine_models({"claude": a, "sol62": b, "deepseek": dict(a)})["F1"]["value"] == "no"
+    x = rd.combine_models({"claude": a, "sol62": b, "deepseek": c})["F1"]
     assert x["value"] == "" and x["to_authors"]
+
+
+def test_combine_models_needs_the_three_models_and_a_located_non_blank_quote():
+    # audit A5 finding 8: two models (or one) are not unanimity; an empty-string quote is not a quote
+    loc = {"evidence_state": "documented", "document_id": "NO-01", "page_index": 3}
+    a = {"F1": dict(loc, value="no", quote="q")}
+    with pytest.raises(ValueError):
+        rd.combine_models({"claude": a, "sol62": a})
+    blank = {"F1": dict(loc, value="no", quote="  ")}
+    assert rd.combine_models({"claude": a, "sol62": a, "deepseek": blank})["F1"]["value"] == ""
+    nopage = {"F1": dict(loc, value="no", quote="q", page_index="")}
+    assert rd.combine_models({"claude": a, "sol62": a, "deepseek": nopage})["F1"]["value"] == ""
+
+
+def test_all_claims_rejected_response_does_not_close_the_search():
+    # audit A5 finding 6: a response that passed the envelope check but lost every claim is not "searched, nothing found"
+    lost = dict(req("NO-01", []), rejected=[{"claim_no": 1, "why": "extra key"}])
+    r = rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [lost])
+    assert not r["search_closed"] and "every claim rejected" in r["gaps"][0]
+    assert r["cells"]["F3"]["value"] == "" and r["cells"]["F3"]["unknown_reason"] == "search_incomplete"
+    empty = req("NO-01", [])  # an honest empty answer still closes it
+    assert rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [empty])["cells"]["F3"]["value"] == "none_stated"
+
+
+def test_f2_premises_rejected_superseded_or_without_keys_are_not_used():
+    # audit A5 finding 8: three superseded premises with null keys once inferred F2 = yes
+    nulls = [obs(i, "F2", v, kind="premise", dec="superseded") for i, v in enumerate(("mapping", "routine_record", "join_key"), 1)]
+    assert rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [req("NO-01", nulls)])["cells"]["F2"]["value"] == ""
+    nokeys = [obs(i, "F2", v, kind="premise") for i, v in enumerate(("mapping", "routine_record", "join_key"), 1)]
+    assert rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [req("NO-01", nokeys)])["cells"]["F2"]["value"] == ""
+    same = dict(participant="PSP", tscope="online retail", design="v1")
+    sup = [obs(1, "F2", "mapping", kind="premise", dec="superseded", **same), obs(2, "F2", "routine_record", kind="premise", **same),
+           obs(3, "F2", "join_key", kind="premise", **same)]
+    assert rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [req("NO-01", sup)])["cells"]["F2"]["value"] == ""
+
+
+def test_offline_exclusion_only_considered_keeps_its_value():
+    # audit A5 finding 8: n.a. needs an adopted exclusion (contract rule F)
+    o = obs(1, "F4", "no", dec="considered", details={"offline_mode": "explicitly_excluded"})
+    c = rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [req("NO-01", [o])])["cells"]["F4"]
+    assert c["value"] == "no" and c["evidence_state"] == "documented" and c["decision_status"] == "considered"
+
+
+def test_pet_of_unknown_scope_is_withheld():
+    r = rd.reduce_project("NO", {"NO-01": DOCS["NO-01"]}, [req("NO-01", [obs(1, "PET", "ZKP", scope="unknown"), obs(2, "PET", "blind_signatures", page=4)])])
+    assert [x["code"] for x in r["pet"]] == ["blind_signatures"] and [x["code"] for x in r["pet_withheld"]] == ["ZKP"]
 
 
 def test_requests_from_run_reads_a_work_folder(tmp_path):

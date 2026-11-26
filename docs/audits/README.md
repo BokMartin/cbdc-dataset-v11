@@ -1,6 +1,6 @@
 # Audits by a second model: what they are for, how they are run, what they found
 
-This is the standing reference for every audit of this project. Each audit has its own prompt, brief and report in this folder and its own disposition record in `DECISIONS/`. Updated 21 Nov 2026.
+This is the standing reference for every audit of this project. Each audit has its own prompt, brief and report in this folder and its own disposition record in `DECISIONS/`. Updated 26 Nov 2026.
 
 ## 1. Why the project is audited
 
@@ -43,34 +43,47 @@ An audit does **not** establish that the measurement is valid. Validity rests on
 | A4b | 22 Nov 2026 | writing the authors' decisions of 22 Nov (D1 to D18) into the repository; registration | `706b2e8` | **decisions not ready to record as adopted; registration NO-GO**; 10 findings, 7 blockers; D7, D12, D13 adopt, D9 reject, the rest amend | [brief](AUDIT_BRIEF_2026-11-22.md), [prompt](PROMPT_AUDIT_2026-11-22.md), [MB's answers](DECISIONS_MB_2026-11-22_verbatim.md), [report](INDEPENDENT_AUDIT_2026-11-22.md) | [ADR-012](../../DECISIONS/ADR-012-audit-2026-11-22-A4b-dispositions.md) |
 | A4c | 23 Nov 2026 | F-cell extraction prompt v12.1, before adoption and the development round on NO and UK; Part B: codebook v0.4 and relevance prompt v0.3 | `b60f444` | **development round NO-GO; production NO-GO**; 13 findings, 5 blockers; proposes amendments A1 to A12 and prompt v12.2; Part B conditional adoption. Authors adopted P1 to P4 and B1 as recommended (23 Nov) | [brief](AUDIT_BRIEF_2026-11-23.md), [prompt](PROMPT_AUDIT_2026-11-23.md), [prompt audited](EXTRACTION_PROMPT_v12.1_audited_2026-11-23.md), [test document](TEST_DOCUMENT_synthetic_2026-11-23.md), [report](INDEPENDENT_AUDIT_2026-11-23.md) | [ADR-013](../../DECISIONS/ADR-013-audit-2026-11-23-A4c-extraction-prompt.md) |
 
+| A5 | 26 Nov 2026 | after production, before verification of the core cells and finalization of the results | `e61a562` plus the open PRs 28, 12, 7, 6 as diffs; pack `CBDC_RESULTS_AUDIT_PACK_2026-11-26.zip` (SHA-256 `786a254275d721743ed9632cfa3762e705557c4b61116a6bb7d0ecb875f9db59`) | **supervisor preview GO with conditions; verification with the workbooks of 24 Nov NO-GO; index and hypothesis in the article, results on the website, submission NO-GO**; 13 findings, 5 blockers; 31 deviations (R-01 to R-31); must-not-claim list; 8-step plan | report SHA-256 `a9df9534871adc1b70e8cbfcab38c62650a795be16031e280006e0ef93c3e67d`, prompt `e8fdceab2d825196264f8a8aeb42e4d3ff13791ea5dcda22a04485abd107ed58`, brief `60eb684184cece94d53ce4d92338bf1b9bee71bf185182723e7c6bff0ae4569e` (held in the project folder `audit-2026-11-26/`; see the note below) | [ADR-018 draft](../../DECISIONS/ADR-018-audit-2026-11-26-A5-dispositions-DRAFT.md) |
+
+**Note on A5.** The report, the prompt and the brief of A5 name per-project cell values and talk results of blind core
+projects, which stay out of the repository until verification is locked (AGENTS.md; ADR-017). They are therefore registered
+here by SHA-256 and will be committed unchanged, with these hashes, when both verification passes are locked. Errata to the
+brief found by the audit and checked: 83 keys with a value (not 85); EX2 cached-input share 32.18 / 30.54 / 43.89 % (not 32
+to 38 %); the pre-amendment stage EX attempted 5 / 3 / 6 keys and completed 2 / 2 / 6 (not "six per model").
+
 What each audit covered step by step is the column "audited by a second model" of the checklist in [`PROJECT_BRIEF.md`](../../PROJECT_BRIEF.md), section 4. A step changed after its audit is marked "not re-audited" there.
 
-## 5. State of the A4 findings on 21 Nov 2026
+## 5. State of the earlier findings on 26 Nov 2026
 
-| Finding | Severity | State | Evidence or what is missing |
-|---|---|---|---|
-| F01 verification does not establish validity | blocker for strong claims | **open, authors** | decision on blank double coding of voice and aspect |
-| F02 F-cell extraction is not a v12 instrument | blocker | **open** | contract v12 not adopted; generator, validation, comparison at v1.1 |
-| F03 inputs not frozen | blocker | partly closed | duplicate removed and tested (`tests/test_corpus_identity.py`); identifiers not yet bound to a unitisation version; development sample not yet reconciled by the authors |
-| F04 translation ingest fails open | blocker | partly closed | ingest requires metadata, hashes and an expected inventory; unitisation still reads translations found on disk |
-| F05 run-record check passes a fictitious run | blocker | closed | `tests/test_run_record.py` |
-| F06 reference separation not implemented | blocker | **open (partly built)** | exposure registry by paragraph built 23 Nov (`scripts/units/exposure_registry.py`, `data/units/EXPOSURE_REGISTRY_2026-11-23.csv`: 196 blocks shown, 41 also model-labelled; development runs are added from their run records); the reference draw is not written yet, and the estimand (exclude shown blocks only, or also blocks labelled in development runs) awaits the authors |
-| F07 factor rule is not a non-inferiority test | blocker for the savings | closed by decision | page packing dropped (MB, 17 Nov); the reasoning test, if run, uses the auditor's paired rule |
-| F08 language coverage and translation restrictions conflict | blocker for unrestricted claims | **open, authors** | T3 translation inconsistency (ADR-007 §4.4); benchmark not adjudicated; scorer does not yet show "not judgeable" as an outcome |
-| F09 publisher metadata and institutional voice conflated | major | partly closed | one header source, tested; the content awaits the authors' review |
-| F10 absence, "first" and "highest rung" | major | open, authors | wording and status vector to adopt |
-| F11 "U" mixes unusable text and uncertainty | major | open, confirmed by data | the authors agree on 6 of 30 "U" labels; adjudication workbook issued |
-| F12 packing changes context | major | closed by decision; facet prompt change open | |
-| F13 availability promise conflicts with the journal | major | open | wording removed from the specification; manifest and statement not written |
-| F14 companion links are navigation | major | partly closed | brief wording corrected; cutoff date and claim-specific verification open |
-| F15 sampling and scoring | major | open | reference design proposed, not adopted |
-| F16 stopping rule | major | open, authors | rounds as proposed by the auditor, not adopted |
-| F17 provider identity | major | open | to do at the capability probe |
-| F18 arithmetic and budget documentation | minor / major | partly closed | brief corrected; usage ledger not built |
+The reading of audit A5 (answer 2), checked by the assistant against the files; "closed" only with an artifact (rule 9).
+
+| Finding | State | Artifact, or what is missing |
+|---|---|---|
+| A4 F01, F06, F15 validity, reference separation, reference sample | **open** | 80-sentence facet agreement (`docs/FACET80_AGREEMENT_2026-11-23.md`); exposure registry now with the pages of the verification workbooks (`data/units/EXPOSURE_REGISTRY_2026-11-26.csv`); the reference sample of 400 is not drawn |
+| A4 F02 extraction instrument | partly closed | prompt v12.2, check `v122.py`, reducer with tests; source-layer routing (A5 finding 2) and search closure (A5 finding 6, repaired 26 Nov) kept it open |
+| A4 F03 inputs frozen | partly closed | freeze and amendment hashes; the freeze tag was not pushed; Registration B absent |
+| A4 F04, F08 translation | open | route D and its flag exist; the source check of `translation_uncertain` observations (ADR-013 P4) has no record |
+| A4 F05 run-record check | closed | `tests/test_run_record.py` |
+| A4 F07, F12 packing | reopened | page packing reinstated for L1 by ADR-015 |
+| A4 F09 publisher metadata | partly closed | issuer check (`docs/ISSUER_CHECK_2026-11-23.md`); decision authority and layer are unknown in every extraction header (A5 finding 2) |
+| A4 F10 absence, "first", highest rung | partly closed | status priority in the reducer; the date rule is an open author decision |
+| A4 F11 "U" label | closed for new labels | L1 rules, codebook, ADR-013 B1 |
+| A4 F13 availability statement | **open** | no rights manifest or data availability statement |
+| A4 F14 companion links | open | companion F3 routing exists, no companion is classified in production |
+| A4 F16, F17, F18 stopping rule, provider identity, budget | open / closed / closed | no confirmation round; model strings and usage in every run record (`docs/RUN_INCIDENTS_2026-11-26.md`) |
+| A4b finding 1 (rule C bypass) | closed | `admissible()` in `scripts/derive.py`, tested |
+| A4b D1, D2 blind coding | replaced | ADR-017 (MB only): verification of model citations; two-pass workbooks of 26 Nov |
+| A4b D18 reference sample | open | adopted, not drawn |
+| A4c findings 1 to 3 | closed | prompt v12.2, typed fields, acceptance fixtures |
+| A4c finding 4 cross-document links | open | reducer keeps references, links nothing |
+| A4c finding 9 shared translations | open | no record of a source check |
+| A4c finding 10 F11, F12, PET | open | raw observations only; PET of unknown scope withheld since 26 Nov |
+| A4c finding 11 output budget | open | 37 / 58 / 4 persistent failures; 10 responses lost every claim (`docs/RUN_INCIDENTS_2026-11-26.md`) |
+| A5 findings | see the [ADR-018 draft](../../DECISIONS/ADR-018-audit-2026-11-26-A5-dispositions-DRAFT.md) | |
 
 ## 6. The next audits
 
-- **A5, before the freeze and the first production call.** Scope: everything changed since `7e6e4c5`: the repairs listed above, the runner and its failure tests, the exposure registry and the draw, the repaired codebook and prompts, the calibration rounds as run (not as planned), the confirmation set, the combination rule for three models, the registered analysis outputs, the cost ledger. For the commitment layer, the adopted contract v12 and the rebuilt extraction instrument. Question to answer: is there anything left that would force a re-run after production?
+- **A5** was planned before the freeze and the first production call; it was held after production (26 Nov), because production ran before an audit (ADR-016; deviation R-03 of the A5 brief).
 - **A6, before submission.** Scope: the manuscript against the data. Every number and every project-level statement traced to a file; every claim checked against the must-not-claim list of A4 (section 5 of that report); the data availability statement against what is actually deposited.
 
 ## 7. How to run one

@@ -32,6 +32,11 @@ Order (audit A4c answer 3, "reducer order", in the part that needs no further au
     explicitly_excluded) is n.a., not a scored no (A4c answer 3: the convention is frozen before index construction).
  6. F2 inference (contract §7.3), only when no explicit F2 value exists: premises mapping, routine_record and join_key with
     the same participant, scope and design label; derivation inferred; its status is the weakest of the premises.
+Repairs of 26 Nov 2026 (audit A5 findings 6, 8, 10; README rule 9): a response whose every emitted claim the check rejected
+does not cover its pages; F2 premises pass the rejected/superseded filter and need participant, scope and design label; F4 is
+n.a. only for an adopted (endorsed or operational) exclusion; PET of unknown scope or layer is withheld; combine_models()
+needs the three expected models and a non-blank, located quote. Known and not changed here (an author decision, agenda of
+ADR-018): the candidate date is the later of the document year and the event date.
 Not here (later steps, or author decisions): links across documents by references (P3; the reference list is kept),
 supersession across differently named designs, the three-model combination outside the core (combine_models() below gives
 the unanimity rule of ADR-012 D2), the PET taxonomy join.
@@ -59,14 +64,23 @@ def _first(o):
     s = next(x for x in o["evidence"] if x["role"] == "proposition")["segments"][0]; return s
 
 
+def covers(r):
+    """A used request covers its owned pages, unless the check rejected every claim it emitted (audit A5 finding 6): such a
+    response is not a search that found nothing, so it cannot close a negative search."""
+    return r["state"] in USED and not (r.get("rejected") and not r.get("observations"))
+
+
 def search_state(project_docs, requests):
     """(closed, gaps): every owned page of every planned request of the project's documents is covered by a used request."""
     gaps = []
     for d in project_docs:
         planned = {p for r in requests if r["doc_key"] == d["doc_key"] for p in r["owned_pages"]}
-        used = {p for r in requests if r["doc_key"] == d["doc_key"] and r["state"] in USED for p in r["owned_pages"]}
+        used = {p for r in requests if r["doc_key"] == d["doc_key"] and covers(r) for p in r["owned_pages"]}
+        lost = [r["request_id"] for r in requests if r["doc_key"] == d["doc_key"] and r["state"] in USED and not covers(r)]
         if not planned: gaps.append(f"{d['doc_key']}: no request"); continue
-        if planned - used: gaps.append(f"{d['doc_key']}: pages {sorted(planned - used)} not covered by a used request")
+        if planned - used:
+            gaps.append(f"{d['doc_key']}: pages {sorted(planned - used)} not covered by a used request"
+                        + (f" (every claim rejected by the check in {', '.join(lost)})" if lost else ""))
     return not gaps, gaps
 
 
@@ -113,10 +127,15 @@ def reduce_project(project, docs, requests, drop_route_d=False):
     pdocs = [d for d in docs.values() if d["project"] == project]
     closed, gaps = search_state(pdocs, [r for r in requests if docs[r["doc_key"]]["project"] == project])
     obs = [o for o in observations([r for r in requests if docs[r["doc_key"]]["project"] == project], docs, drop_route_d)]
-    ledger, cand, addressed, premises, statutory, pet, descriptive, wholesale = [], {}, {}, [], [], [], [], []
+    ledger, cand, addressed, premises, statutory, pet, descriptive, wholesale, pet_withheld = [], {}, {}, [], [], [], [], [], []
     for o in obs:
         d = docs[o["_doc"]]; cell = o["cell"]; note = lambda why: ledger.append({"claim_id": o["_id"], "cell": cell, "value": o["asserted_value"], "use": why})
         if cell == "PET":
+            if o["retail_or_wholesale"] == "unknown" or (o["retail_or_wholesale"] != "wholesale" and d["layer"] in ("unknown", "companion_legal")):
+                # scope or layer unknown: withheld, as for the cells (audit A5 finding 10); kept in its own table
+                pet_withheld.append({"claim_id": o["_id"], "code": o["asserted_value"], "scope": o["retail_or_wholesale"], "layer": d["layer"],
+                                     "decision_status": o["decision_status"], "implementation_status": o["implementation_status"], "document_id": o["_doc"]})
+                note("PET withheld: scope or layer unknown"); continue
             (wholesale if (d["layer"] == "wholesale_context" or o["retail_or_wholesale"] == "wholesale") else pet).append(
                 {"claim_id": o["_id"], "code": o["asserted_value"], "technique_text": o["details"].get("technique_text"), "privacy_function": o["details"].get("privacy_function"),
                  "decision_status": o["decision_status"], "implementation_status": o["implementation_status"], "scope": o["retail_or_wholesale"],
@@ -132,7 +151,10 @@ def reduce_project(project, docs, requests, drop_route_d=False):
             else: note("companion document: not a maker cell")
             continue
         if o["kind"] == "premise":
-            if d["layer"] == "official" and o["retail_or_wholesale"] in ("retail", "both"): premises.append(o); note("F2 premise")
+            if o["decision_status"] in ("rejected", "superseded"): note(f"F2 premise {o['decision_status']}: not used")
+            elif not all(o.get(k) for k in ("reference_participant", "transaction_scope", "design_label")):
+                note("F2 premise without participant, scope and design label: not used")
+            elif d["layer"] == "official" and o["retail_or_wholesale"] in ("retail", "both"): premises.append(o); note("F2 premise")
             else: note("F2 premise outside the official retail layer: not used")
             continue
         if o["kind"] == "context": note("context only"); continue
@@ -177,11 +199,13 @@ def reduce_project(project, docs, requests, drop_route_d=False):
         else:
             w = sorted(win, key=lambda c: c["state"] != "documented")[0]
             cell = _cell(w, docs, {"claim_ids": [c["obs"]["_id"] for c in win], "counter_evidence": others})
-            if f == "F4" and w["obs"]["details"].get("offline_mode") == "explicitly_excluded":
+            if f == "F4" and w["obs"]["details"].get("offline_mode") == "explicitly_excluded" and _class(w["obs"]) == 2:
+                # n.a. only for an adopted exclusion (endorsed or operational; contract rule F "a project that endorsed
+                # no offline"; audit A5 finding 8). A considered exclusion keeps its value and status.
                 cell.update(value="", evidence_state="n.a.", unknown_reason="offline explicitly excluded for this horizon (n.a., not a scored no)")
         if not official: cell["leaning"] = "true"
         cells[f] = cell
-    return {"project": project, "cells": cells, "statutory_F3": statutory, "pet": pet, "pet_wholesale_context": wholesale, "descriptive": descriptive,
+    return {"project": project, "cells": cells, "statutory_F3": statutory, "pet": pet, "pet_wholesale_context": wholesale, "pet_withheld": pet_withheld, "descriptive": descriptive,
             "search_closed": closed, "gaps": gaps, "ledger": ledger}
 
 
@@ -203,14 +227,21 @@ def infer_f2(premises, docs):
     return None
 
 
-def combine_models(by_model):
+EXPECTED_MODELS = ("claude", "sol62", "deepseek")
+
+
+def combine_models(by_model, expected=EXPECTED_MODELS):
     """ADR-012 D2, outside the core: a cell has a value only if every model gives the same value, documented and located;
-    otherwise it goes to the authors. by_model: {model: cells}."""
+    otherwise it goes to the authors. by_model: {model: cells}. The expected set of models must be present (audit A5 finding
+    8: two models, or one, never make a unanimity), and a quote must be non-blank and located."""
+    if expected is not None and set(by_model) != set(expected):
+        raise ValueError(f"combine_models needs exactly the models {sorted(expected)}, got {sorted(by_model)}")
     out = {}
     for f in MAKER_CELLS:
         cs = [m.get(f) or {} for m in by_model.values()]
         vals = {c.get("value") for c in cs}
-        ok = len(vals) == 1 and "" not in vals and None not in vals and all(c.get("evidence_state") == "documented" and c.get("quote") is not None for c in cs)
+        ok = len(vals) == 1 and "" not in vals and None not in vals and all(c.get("evidence_state") == "documented" and str(c.get("quote") or "").strip()
+                                                                       and c.get("document_id") and c.get("page_index") not in (None, "") for c in cs)
         out[f] = {"value": cs[0]["value"] if ok else "", "unanimous": ok, "to_authors": not ok, "by_model": {k: (m.get(f) or {}).get("value", "") for k, m in by_model.items()}}
     return out
 
