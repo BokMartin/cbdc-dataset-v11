@@ -70,7 +70,7 @@ def _sha(path):
 URL_CHECK = "data/index/SOURCE_URL_CHECK_2026-11-27.csv"
 
 
-def source_links(docs):
+def source_links(docs, dropbox=None):
     """{code: (url, kind)}: the issuer URL of every document from the website data (route B: the issuer's English
     edition, which is the text that was read), with what a check of 27 Nov 2026 found at it (URL_CHECK: HTTP status and
     content type, fetched from the cloud, so 403 may be a block of automated clients and not of a browser). kind:
@@ -102,10 +102,17 @@ def source_links(docs):
         else:
             kind = "web"
         out[d["code"]] = (u, kind)
+    # Dropbox links of MB's master copies (a CSV kept outside the repository: the links carry an access key) replace a
+    # home page or a broken URL; raw=1 makes Dropbox serve the PDF to the browser, which then honours #page=N
+    if dropbox:
+        with open(dropbox, newline="", encoding="utf-8") as fh:
+            for r in csv.DictReader(fh):
+                if out.get(r["code"], ("", "home"))[1] in ("home", "broken"):
+                    out[r["code"]] = (r["url"].replace("&dl=0", "&raw=1"), "dropbox")
     return out
 
 
-NOTE = {"pdf": "", "web": " (webová stránka, stranu najděte ručně)", "home": " (jen domovská stránka vydavatele: otevřete PDF z Dropboxu)",
+NOTE = {"pdf": "", "dropbox": " (kopie v Dropboxu)", "web": " (webová stránka, stranu najděte ručně)", "home": " (jen domovská stránka vydavatele: otevřete PDF z Dropboxu)",
         "broken": " (odkaz při kontrole nefungoval: otevřete PDF z Dropboxu)"}
 
 
@@ -116,7 +123,7 @@ def _link(cell, links, code, page):
         cell.value = f"{code} s. {page} (URL chybí: otevřete PDF z Dropboxu)"
         return ""
     cell.value = f"{code} s. {page}" + NOTE[kind]
-    cell.hyperlink = f"{u}#page={page}" if kind == "pdf" else u
+    cell.hyperlink = f"{u}#page={page}" if kind in ("pdf", "dropbox") else u
     cell.font = Font(color="0563C1", underline="single")
     return kind
 
@@ -157,7 +164,7 @@ NAVOD1 = [
     "Ověření buněk F, PRŮCHOD 1, autor {coder} (sešit vytvořen {date}). Vyplňujete sami, bez druhého autora (ADR-017).",
     "V tomto průchodu NEVIDÍTE, co našly modely. Vidíte jen otázku a místa, kde modely něco našly (kód dokumentu a stranu). Přečtěte to místo v kontextu (celý odstavec nebo stranu, klidně i okolí) a zapište, co z něj plyne podle vás.",
     "LIST PRUCHOD1 ({n_read} buněk, náhodné pořadí): pro každou buňku vyplňte žluté sloupce:",
-    "ODKAZY: sloupce 'odkaz 1' až 'odkaz 3' otevřou dokument u vydavatele přímo na uvedené straně (u PDF). Kde je napsáno 'webová stránka', vede odkaz na stránku webu a stranu je třeba najít ručně; kde je napsáno 'otevřete PDF z Dropboxu', vydavatel přímý odkaz nemá nebo nefungoval. Číslo strany je pořadí strany v PDF (ne číslo vytištěné na stránce). Kdyby vydavatel soubor mezitím vyměnil, platí PDF v Dropboxu (cesta v listu DOKUMENTY). U cesty D (strojový překlad) vede odkaz na originál; překlad má stejné číslování stran.",
+    "ODKAZY: sloupce 'odkaz 1' až 'odkaz 3' otevřou dokument u vydavatele přímo na uvedené straně (u PDF). Kde je napsáno 'webová stránka', vede odkaz na stránku webu a stranu je třeba najít ručně; kde je napsáno 'kopie v Dropboxu', otevře se Martinova kopie v Dropboxu (je třeba být přihlášen k Dropboxu účtem, se kterým je složka sdílená). Číslo strany je pořadí strany v PDF (ne číslo vytištěné na stránce). Kdyby vydavatel soubor mezitím vyměnil, platí PDF v Dropboxu (cesta v listu DOKUMENTY). U cesty D (strojový překlad) vede odkaz na originál; překlad má stejné číslování stran.",
     "  hodnota: hodnota buňky podle zdroje, nebo 'nedostatecna_opora', když místo nic určitého neříká.",
     "  decision_status a implementation_status: jak je věc rozhodnutá a zavedená (considered vs endorsed, tested vs operational).",
     "  basis: proč to platí (architectural, cryptographic, legal, policy, n/d).",
@@ -206,7 +213,7 @@ def _fill(ws, i, vals, ncols):
         ws.cell(i, c).fill = YELLOW
 
 
-def _common(wb, docs):
+def _common(wb, docs, dropbox=None):
     pr = wb.create_sheet("PRAVIDLA")
     _header(pr, ["oddíl", "buňka / pole", "pravidlo"], {"oddíl": 10, "buňka / pole": 26, "pravidlo": 140})
     for i, row in enumerate(PRAVIDLA, 2):
@@ -216,7 +223,7 @@ def _common(wb, docs):
     cols = ["kód", "projekt", "pro buňky", "rok", "název", "druh", "cesta textu", "odkaz na zdroj", "PDF v Dropboxu (Dizertace all the PDFs)",
             "anglický překlad (cesta D)", "document id"]
     _header(dc, cols, {"název": 60, "odkaz na zdroj": 30, "PDF v Dropboxu (Dizertace all the PDFs)": 60, "anglický překlad (cesta D)": 45, "document id": 30})
-    links = source_links(docs)
+    links = source_links(docs, dropbox)
     for i, d in enumerate(docs, 2):
         for c, v in enumerate([d["code"], d["project"], d["for_cells"], d["year"], d["title"], d["kind"], d["route"], None, d["pdf"],
                                d["translation"], d["id"]], 1):
@@ -224,7 +231,7 @@ def _common(wb, docs):
         u, kind = links.get(d["code"], ("", ""))
         x = dc.cell(i, cols.index("odkaz na zdroj") + 1)
         if u:
-            x.value = {"pdf": "otevřít PDF", "web": "otevřít stránku webu", "home": "jen domovská stránka (použijte Dropbox)",
+            x.value = {"pdf": "otevřít PDF", "dropbox": "otevřít PDF (Dropbox)", "web": "otevřít stránku webu", "home": "jen domovská stránka (použijte Dropbox)",
                        "broken": "odkaz nefunguje (použijte Dropbox)"}[kind]
             x.hyperlink = u
             x.font = Font(color="0563C1", underline="single")
@@ -243,8 +250,8 @@ SCOLS = ["key", "project_id", "cell", "proc tady", "otazka", "kde hledat (kód: 
          "vlastnimi slovy", "poznamka"]
 
 
-def pass1(path, coder, date, read, search, drawn, docs, fpages):
-    links = source_links(docs)
+def pass1(path, coder, date, read, search, drawn, docs, fpages, dropbox=None):
+    links = source_links(docs, dropbox)
     wb = Workbook()
     ws = wb.active
     ws.title = "NAVOD"
@@ -289,7 +296,7 @@ def pass1(path, coder, date, read, search, drawn, docs, fpages):
             x = se.cell(i, SCOLS.index(SLINKS[0]) + 1 + j); x.fill = GREY; x.alignment = WRAP
             _link(x, links, code, pg)
     _dv(se, SCOLS, "nalezeno", len(rows), ("nalezeno", "nenalezeno"))
-    _common(wb, docs)
+    _common(wb, docs, dropbox)
     wb.save(path)
 
 
@@ -384,6 +391,7 @@ def main():
     ap.add_argument("--coder", choices=CODERS)
     ap.add_argument("--xlsx")
     ap.add_argument("--lock-pass1", action="store_true")
+    ap.add_argument("--dropbox-links", help="CSV code,url of Dropbox links to MB's copies (outside the repository)")
     ap.add_argument("--suffix", default="", help="added to the workbook names, e.g. _odkazy for a reissue with the same items")
     a = ap.parse_args()
     if a.lock_pass1:
@@ -431,7 +439,7 @@ def main():
     rec = []
     for coder in CODERS:
         path = os.path.join(out, f"VERIFY_CELLS_{coder}_PASS1_{a.date}{a.suffix}.xlsx")
-        pass1(path, coder, a.date, read, search, drawn, docs, fpages)
+        pass1(path, coder, a.date, read, search, drawn, docs, fpages, a.dropbox_links)
         rec.append((coder, os.path.basename(path), _sha(path)))
     with open(os.path.join(idx, f"VERIFY_WORKBOOKS_{a.date}{a.suffix}.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
