@@ -55,6 +55,8 @@ STATUS_D = ("endorsed", "considered", "rejected", "superseded", "unclear")
 STATUS_I = ("operational", "tested", "untested_or_unreported")
 BASIS = ("architectural", "cryptographic", "legal", "policy", "n/d")
 LAYER = ("official_cb", "official_government", "legislation", "staff_research", "joint_research", "other")
+SITE_DOCS = "site/data/documents.csv"
+N_LINKS = 3  # most places of one key to read (data/index/VERIFY_ITEMS_2026-11-26.csv)
 GREY = PatternFill("solid", fgColor="DDDDDD")
 YELLOW = PatternFill("solid", fgColor="FFF2CC")
 WRAP = Alignment(wrap_text=True, vertical="top")
@@ -63,6 +65,60 @@ WRAP = Alignment(wrap_text=True, vertical="top")
 def _sha(path):
     with open(path, "rb") as fh:
         return hashlib.sha256(fh.read()).hexdigest()
+
+
+URL_CHECK = "data/index/SOURCE_URL_CHECK_2026-11-27.csv"
+
+
+def source_links(docs):
+    """{code: (url, kind)}: the issuer URL of every document from the website data (route B: the issuer's English
+    edition, which is the text that was read), with what a check of 27 Nov 2026 found at it (URL_CHECK: HTTP status and
+    content type, fetched from the cloud, so 403 may be a block of automated clients and not of a browser). kind:
+      pdf    a PDF (by extension or content type): opens at a page with #page=N in the PDF viewers of current browsers;
+      web    an HTML page (a web publication or a landing page): cannot be opened at a page;
+      home   only the issuer's home page is recorded: the document must be opened from Dropbox;
+      broken the check got 404.
+    Added 27 Nov 2026 on MB's request."""
+    with open(os.path.join(ROOT, SITE_DOCS), newline="", encoding="utf-8") as fh:
+        site = {r["id"]: r for r in csv.DictReader(fh)}
+    chk = {}
+    if os.path.exists(os.path.join(ROOT, URL_CHECK)):
+        with open(os.path.join(ROOT, URL_CHECK), newline="", encoding="utf-8") as fh:
+            chk = {r["id"]: r for r in csv.DictReader(fh)}
+    out = {}
+    for d in docs:
+        r = site.get(d["id"]) or {}
+        u = (r.get("issuer_english_edition_url") if d["route"] == "B" else "") or r.get("url") or ""
+        if not u.startswith("http"):
+            continue
+        c = chk.get(d["id"]) or {}
+        path = u.split("://", 1)[1].split("/", 1)[1] if "/" in u.split("://", 1)[1] else ""
+        if c.get("http_status") == "404":
+            kind = "broken"
+        elif not path.strip("/"):
+            kind = "home"
+        elif u.lower().split("?")[0].split("#")[0].endswith(".pdf") or "pdf" in c.get("content_type", ""):
+            kind = "pdf"
+        else:
+            kind = "web"
+        out[d["code"]] = (u, kind)
+    return out
+
+
+NOTE = {"pdf": "", "web": " (webová stránka, stranu najděte ručně)", "home": " (jen domovská stránka vydavatele: otevřete PDF z Dropboxu)",
+        "broken": " (odkaz při kontrole nefungoval: otevřete PDF z Dropboxu)"}
+
+
+def _link(cell, links, code, page):
+    """Make the cell a hyperlink to the document (at the page when it is a PDF); returns the kind, or "" without a URL."""
+    u, kind = links.get(code, ("", ""))
+    if not u:
+        cell.value = f"{code} s. {page} (URL chybí: otevřete PDF z Dropboxu)"
+        return ""
+    cell.value = f"{code} s. {page}" + NOTE[kind]
+    cell.hyperlink = f"{u}#page={page}" if kind == "pdf" else u
+    cell.font = Font(color="0563C1", underline="single")
+    return kind
 
 
 def _norm(q):
@@ -101,6 +157,7 @@ NAVOD1 = [
     "Ověření buněk F, PRŮCHOD 1, autor {coder} (sešit vytvořen {date}). Vyplňujete sami, bez druhého autora (ADR-017).",
     "V tomto průchodu NEVIDÍTE, co našly modely. Vidíte jen otázku a místa, kde modely něco našly (kód dokumentu a stranu). Přečtěte to místo v kontextu (celý odstavec nebo stranu, klidně i okolí) a zapište, co z něj plyne podle vás.",
     "LIST PRUCHOD1 ({n_read} buněk, náhodné pořadí): pro každou buňku vyplňte žluté sloupce:",
+    "ODKAZY: sloupce 'odkaz 1' až 'odkaz 3' otevřou dokument u vydavatele přímo na uvedené straně (u PDF). Kde je napsáno 'webová stránka', vede odkaz na stránku webu a stranu je třeba najít ručně; kde je napsáno 'otevřete PDF z Dropboxu', vydavatel přímý odkaz nemá nebo nefungoval. Číslo strany je pořadí strany v PDF (ne číslo vytištěné na stránce). Kdyby vydavatel soubor mezitím vyměnil, platí PDF v Dropboxu (cesta v listu DOKUMENTY). U cesty D (strojový překlad) vede odkaz na originál; překlad má stejné číslování stran.",
     "  hodnota: hodnota buňky podle zdroje, nebo 'nedostatecna_opora', když místo nic určitého neříká.",
     "  decision_status a implementation_status: jak je věc rozhodnutá a zavedená (considered vs endorsed, tested vs operational).",
     "  basis: proč to platí (architectural, cryptographic, legal, policy, n/d).",
@@ -156,24 +213,38 @@ def _common(wb, docs):
         for c, v in enumerate(row, 1):
             pr.cell(i, c, v).alignment = WRAP
     dc = wb.create_sheet("DOKUMENTY")
-    cols = ["kód", "projekt", "pro buňky", "rok", "název", "druh", "cesta textu", "PDF v Dropboxu (Dizertace all the PDFs)",
+    cols = ["kód", "projekt", "pro buňky", "rok", "název", "druh", "cesta textu", "odkaz na zdroj", "PDF v Dropboxu (Dizertace all the PDFs)",
             "anglický překlad (cesta D)", "document id"]
-    _header(dc, cols, {"název": 60, "PDF v Dropboxu (Dizertace all the PDFs)": 60, "anglický překlad (cesta D)": 45, "document id": 30})
+    _header(dc, cols, {"název": 60, "odkaz na zdroj": 30, "PDF v Dropboxu (Dizertace all the PDFs)": 60, "anglický překlad (cesta D)": 45, "document id": 30})
+    links = source_links(docs)
     for i, d in enumerate(docs, 2):
-        for c, v in enumerate([d["code"], d["project"], d["for_cells"], d["year"], d["title"], d["kind"], d["route"], d["pdf"],
+        for c, v in enumerate([d["code"], d["project"], d["for_cells"], d["year"], d["title"], d["kind"], d["route"], None, d["pdf"],
                                d["translation"], d["id"]], 1):
             dc.cell(i, c, v).alignment = WRAP
+        u, kind = links.get(d["code"], ("", ""))
+        x = dc.cell(i, cols.index("odkaz na zdroj") + 1)
+        if u:
+            x.value = {"pdf": "otevřít PDF", "web": "otevřít stránku webu", "home": "jen domovská stránka (použijte Dropbox)",
+                       "broken": "odkaz nefunguje (použijte Dropbox)"}[kind]
+            x.hyperlink = u
+            x.font = Font(color="0563C1", underline="single")
+        else:
+            x.value = "URL chybí"
 
 
-P1COLS = ["poradi", "key", "project_id", "cell", "vyvojovy projekt", "otazka", "kde cist (kód: strana)",
+LINKS = [f"odkaz {i}" for i in range(1, N_LINKS + 1)]
+P1COLS = ["poradi", "key", "project_id", "cell", "vyvojovy projekt", "otazka", "kde cist (kód: strana)", *LINKS,
           "hodnota", "decision_status", "implementation_status", "basis", "vrstva dokumentu", "oporne misto (kód: strana)",
           "vlastnimi slovy", "minut", "poznamka"]
-SCOLS = ["key", "project_id", "cell", "proc tady", "otazka", "kde hledat (kód: strany)", "proslo (dokumenty a strany)",
+N_SLINKS = 8  # documents linked per search row (first finder page of each)
+SLINKS = [f"dokument {i}" for i in range(1, N_SLINKS + 1)]
+SCOLS = ["key", "project_id", "cell", "proc tady", "otazka", "kde hledat (kód: strany)", *SLINKS, "proslo (dokumenty a strany)",
          "minut", "nalezeno", "hodnota", "decision_status", "implementation_status", "oporne misto (kód: strana)",
          "vlastnimi slovy", "poznamka"]
 
 
 def pass1(path, coder, date, read, search, drawn, docs, fpages):
+    links = source_links(docs)
     wb = Workbook()
     ws = wb.active
     ws.title = "NAVOD"
@@ -188,6 +259,11 @@ def pass1(path, coder, date, read, search, drawn, docs, fpages):
     for i, k in enumerate(read, 2):
         _fill(p1, i, [k["order"], k["key"], k["project_id"], k["cell"], "ano" if k["development"] else "", QUESTION[k["cell"]],
                       "; ".join(f"{c}: {pg}" for c, pg in k["places"])], len(P1COLS))
+        if len(k["places"]) > N_LINKS:
+            raise SystemExit(f"{k['key']}: {len(k['places'])} places, more than {N_LINKS} link columns")
+        for j, (c, pg) in enumerate(k["places"]):
+            x = p1.cell(i, P1COLS.index(LINKS[0]) + 1 + j); x.fill = GREY; x.alignment = WRAP
+            _link(x, links, c, pg)
     n = len(read)
     for name, vals in (("hodnota", tuple(VALUES.get("F1")) + ("via_psp", "via_cb", "via_both", "none_stated", "nedostatecna_opora")),
                        ("decision_status", STATUS_D), ("implementation_status", STATUS_I), ("basis", BASIS),
@@ -202,6 +278,16 @@ def pass1(path, coder, date, read, search, drawn, docs, fpages):
     for i, (key, p, c, why) in enumerate(rows, 2):
         where = "; ".join(s for g in CELL_GROUPS[c] for s in fpages.get((p, g), []))
         _fill(se, i, [key, p, c, why, QUESTION[c], where or ("vyhledávač stran se pro NO a UK nedělal" if p in DEVELOPMENT else "vyhledávač nic nenašel")], len(SCOLS))
+        # one link per document: to the first finder page, or to page 1 of each evidence document when there is no finder
+        first = {}
+        for part in where.split("; ") if where else []:
+            code, _, pages = part.partition(": ")
+            first.setdefault(code, int(pages.split()[0]))
+        if not first:
+            first = {d["code"]: 1 for d in docs if d["project"] == p and d["for_cells"] == "ano"}
+        for j, (code, pg) in enumerate(list(first.items())[:N_SLINKS]):
+            x = se.cell(i, SCOLS.index(SLINKS[0]) + 1 + j); x.fill = GREY; x.alignment = WRAP
+            _link(x, links, code, pg)
     _dv(se, SCOLS, "nalezeno", len(rows), ("nalezeno", "nenalezeno"))
     _common(wb, docs)
     wb.save(path)
@@ -298,6 +384,7 @@ def main():
     ap.add_argument("--coder", choices=CODERS)
     ap.add_argument("--xlsx")
     ap.add_argument("--lock-pass1", action="store_true")
+    ap.add_argument("--suffix", default="", help="added to the workbook names, e.g. _odkazy for a reissue with the same items")
     a = ap.parse_args()
     if a.lock_pass1:
         if not (a.coder and a.xlsx):
@@ -343,10 +430,10 @@ def main():
                         "inclusion_probability": round(N_EMPTY / n_empty, 4)})
     rec = []
     for coder in CODERS:
-        path = os.path.join(out, f"VERIFY_CELLS_{coder}_PASS1_{a.date}.xlsx")
+        path = os.path.join(out, f"VERIFY_CELLS_{coder}_PASS1_{a.date}{a.suffix}.xlsx")
         pass1(path, coder, a.date, read, search, drawn, docs, fpages)
         rec.append((coder, os.path.basename(path), _sha(path)))
-    with open(os.path.join(idx, f"VERIFY_WORKBOOKS_{a.date}.csv"), "w", newline="", encoding="utf-8") as fh:
+    with open(os.path.join(idx, f"VERIFY_WORKBOOKS_{a.date}{a.suffix}.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["coder", "file", "sha256"])
         w.writerows(rec)
