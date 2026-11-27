@@ -1,0 +1,12 @@
+{
+ "model": "claude-opus-5-5",
+ "provider": "anthropic",
+ "counts": {
+  "verify_first": 59,
+  "accept": 153,
+  "wholesale": 11,
+  "companion": 141,
+  "reject": 14
+ },
+ "note": "RECONSTRUCTED 2026-11-09 from SOURCE_DECISION_WORKBOOK_v12_2026-11-03.xlsx after loss of the working container; original request archive (prescreen_requests/) and per-project response ids were lost; proposals, load_bearing and reasons are the original model outputs carried in the workbook."
+}
