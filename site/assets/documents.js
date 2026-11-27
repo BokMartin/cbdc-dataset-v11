@@ -29,7 +29,7 @@
       '<dt><span class="badge b-evidence">Evidence · borderline</span></dt><dd>Evidence the authors kept although it sits near the edge of the rule (for example, staff research that may corroborate but never establish).</dd>';
 
     var count = {}; docs.forEach(function (d) { count[d.c] = (count[d.c] || 0) + 1; });
-    $("cats").innerHTML = S.CAT_ORDER.map(function (c) { return '<button type="button" class="chip" data-c="' + c + '" aria-pressed="false" title="' + S.esc(S.CAT[c].long) + '"><span class="badge b-' + c + '">' + S.CAT[c].label + '</span><span class="n">' + count[c] + "</span></button>"; }).join("");
+    $("cats").innerHTML = S.CAT_ORDER.filter(function (c) { return count[c]; }).map(function (c) { return '<button type="button" class="chip" data-c="' + c + '" aria-pressed="false" title="' + S.esc(S.CAT[c].long) + '"><span class="badge b-' + c + '">' + S.CAT[c].label + '</span><span class="n">' + count[c] + "</span></button>"; }).join("");
 
     var st = { q: "", project: "", lang: "", en: "", by: "", kind: "", y0: "", y1: "", cats: [], sort: "y", dir: -1, shown: PAGE };
     readHash();

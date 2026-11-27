@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy paragraphs · CBDC privacy dataset</title>
+<meta name="description" content="Every sentence about users' privacy that the official documents of retail CBDC projects state in their own voice, with document, page and labels.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<div class="prelim" id="prelim" hidden role="note"></div>
+<main id="main">
+  <h1>Privacy paragraphs</h1>
+  <p class="lead">Every passage in the official documents that speaks about users' privacy in the project's own voice, as the three models labelled it: which aspect it is about, whether it states a mechanism and whether it states a decision. Each row shows a short quotation and opens the issuer's document at the page. For documents without an English edition the quotation is from our machine translation, and it is marked.</p>
+  <div class="note" id="pending" hidden><strong>Being prepared.</strong> The passages are labelled; the table that brings them here is being exported from the production run. This page fills in without any change once it arrives.</div>
+  <div class="toolbar" id="tools">
+    <input type="search" id="q" placeholder="Search the quotations" aria-label="Search the quotations" style="min-width:240px">
+    <label class="f">Project<select id="proj"><option value="">All projects</option></select></label>
+    <label class="f">Aspect<select id="asp"><option value="">All aspects</option></select></label>
+    <label class="f">States<select id="st"><option value="">anything</option><option value="mech">a mechanism</option><option value="dec">a decision</option></select></label>
+    <span class="small muted" id="count"></span>
+  </div>
+  <div class="scroll-x card" style="padding:6px 10px"><table class="ptable" id="pt"><thead><tr><th>Project</th><th>Aspect</th><th>Quotation</th><th>Mechanism · decision</th><th>Document</th></tr></thead><tbody></tbody></table></div>
+  <p><button class="btn ghost sm" type="button" id="more" hidden>Show more</button></p>
+  <p class="small muted">Quotations are short extracts (at most 300 characters) under the quotation right; the full text stays with the issuer (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/DECISIONS/ADR-019-website-results-and-short-quotations-2026-11-27.md">ADR-019</a>).</p>
+  <p class="small muted" id="masked"></p>
+  <section id="provenance" class="narrow"></section>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var S = SITE, $ = function (id) { return document.getElementById(id); };
+  var PAGE = 200, shown = PAGE;
+  Promise.all([S.get("assets/paragraphs.json"), S.get("assets/projects.json")]).then(function (r) {
+    var D = r[0], names = {};
+    r[1].projects.forEach(function (p) { names[p.code] = p.name; });
+    S.prelim(D.meta); S.provenance(D.meta);
+    if (D.meta.masked && D.meta.masked.length) $("masked").textContent = "Not shown until the authors' verification: " + D.meta.masked.map(function (c) { return names[c] || c; }).join(", ") + ".";
+    if (!D.available) { $("pending").hidden = false; $("tools").hidden = true; $("pt").closest(".card").hidden = true; return; }
+    var P = {}, A = {}; D.rows.forEach(function (x) { P[x.p] = 1; if (x.a) A[x.a] = 1; });
+    $("proj").innerHTML += Object.keys(P).sort(function (a, b) { return (names[a] || a).localeCompare(names[b] || b); }).map(function (k) { return '<option value="' + k + '">' + S.esc(names[k] || k) + "</option>"; }).join("");
+    $("asp").innerHTML += Object.keys(A).sort().map(function (k) { return '<option value="' + k + '">' + S.esc(k.toLowerCase().replace(/_/g, " ")) + "</option>"; }).join("");
+    function paint() {
+      var q = $("q").value.trim().toLowerCase(), p = $("proj").value, a = $("asp").value, st = $("st").value;
+      var rows = D.rows.filter(function (x) {
+        return (!p || x.p === p) && (!a || x.a === a) && (!q || x.q.toLowerCase().indexOf(q) >= 0) &&
+          (!st || (st === "mech" ? x.b && x.b !== "NONE" : x.d === "ENDORSED"));
+      });
+      $("count").textContent = rows.length + " passages" + (rows.length > shown ? ", first " + shown + " shown" : "");
+      $("pt").querySelector("tbody").innerHTML = rows.slice(0, shown).map(function (x) {
+        return "<tr><td>" + S.esc(names[x.p] || x.p) + "</td><td class='small'>" + S.esc((x.a || "").toLowerCase().replace(/_/g, " ")) + "</td><td><blockquote>“" + S.esc(x.q) + "”</blockquote>" + (x.mt ? "<div class='small muted'>our machine translation of the original</div>" : "") + "</td><td class='small'>" + S.esc([x.b && x.b !== "NONE" ? "mechanism: " + x.b.toLowerCase().replace(/_/g, " ") : "", x.d && x.d !== "NOT_APPLICABLE" ? "decision: " + x.d.toLowerCase().replace(/_/g, " ") : ""].filter(Boolean).join(" · ")) + "</td><td class='small'>" + S.docLink(x.doc) + "</td></tr>";
+      }).join("");
+      $("more").hidden = rows.length <= shown;
+    }
+    ["q", "proj", "asp", "st"].forEach(function (id) { $(id).addEventListener("input", function () { shown = PAGE; paint(); }); });
+    $("more").addEventListener("click", function () { shown += 500; paint(); });
+    paint();
+  });
+})();
+</script>
+</body>
+</html>

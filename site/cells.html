@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cell history · CBDC privacy dataset</title>
+<meta name="description" content="How each design cell of a CBDC project developed, document by document, as read by three models.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<div class="prelim" id="prelim" hidden role="note"></div>
+<main id="main">
+  <h1>Cell history</h1>
+  <p class="lead">How the design of a project developed in its own documents. The documents are read in the order they were published; after each one, every model gives the value of each design cell from everything published so far. A change shows when a design was first stated, reversed, or contradicted by a later document.</p>
+  <div class="toolbar">
+    <label class="f">Project<select id="proj"></select></label>
+    <span class="small legend-inline"><span><i class="v-pro"></i>more privacy</span><span><i class="v-non"></i>less privacy</span><span><i class="v-cat"></i>F3 route stated</span><span><i class="v-conf"></i>documents conflict</span><span><i class="v-un"></i>no value</span> · each square is one model: Claude, GPT, DeepSeek</span>
+  </div>
+  <div class="scroll-x card" style="padding:10px" id="grid"></div>
+  <h2>Changes</h2>
+  <div class="toolbar">
+    <label class="f">Kind<select id="kind"><option value="">All kinds of change</option></select></label>
+    <label class="f"><input type="checkbox" id="all-proj"> all projects</label>
+  </div>
+  <div class="scroll-x card" style="padding:6px 10px">
+    <table class="ptable" id="log"><thead><tr><th>Project</th><th>Cell</th><th>After document</th><th>Change</th><th>Before → after</th><th>Quotation</th></tr></thead><tbody></tbody></table>
+  </div>
+  <section id="provenance" class="narrow"></section>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var S = SITE, $ = function (id) { return document.getElementById(id); };
+  var PRO = { F1: "no", F2: "no", F4: "yes", F7: "yes", F8: "no", F9: "no", F10: "no" };
+  var ORDER = ["F1", "F2", "F3", "F4", "F7", "F8", "F9", "F10"];
+  var NAMES = { F1: "CB can link", F2: "Intermediary can link", F3: "Lawful access route", F4: "Private offline", F7: "Low-identity route", F8: "ID at onboarding", F9: "Re-identification", F10: "Programmable limits" };
+  Promise.all([S.get("assets/cell_history.json"), S.get("assets/projects.json")]).then(function (r) {
+    var H = r[0], names = {};
+    r[1].projects.forEach(function (p) { names[p.code] = p.name; });
+    S.prelim(H.meta); S.provenance(H.meta);
+    var ids = Object.keys(H.projects).sort(function (a, b) { return (H.projects[a].tier + (names[a] || a)).localeCompare(H.projects[b].tier + (names[b] || b)); });
+    $("proj").innerHTML = ids.map(function (k) { return '<option value="' + k + '">' + S.esc((names[k] || k) + " (" + H.projects[k].tier + (H.projects[k].masked ? ", withheld" : "") + ")") + "</option>"; }).join("");
+    var kinds = {}; H.changes.forEach(function (c) { kinds[c.cat] = 1; });
+    $("kind").innerHTML += Object.keys(kinds).sort().map(function (k) { return '<option>' + S.esc(k) + "</option>"; }).join("");
+    function cls(f, v) {
+      if (!v || !v[0]) return v && v[1] === "conflict" ? "v-conf" : "v-un";
+      if (f === "F3") return v[0] === "none_stated" ? "v-un" : "v-cat";
+      return v[0] === PRO[f] ? "v-pro" : "v-non";
+    }
+    function title(f, v, m) {
+      if (!v) return m + ": –";
+      return m + ": " + (v[0] || (v[1] === "conflict" ? "conflict" : (v[4] || "no value").replace(/_/g, " "))) + (v[2] ? " (" + v[2] + (v[3] && v[3] !== "untested_or_unreported" ? ", " + v[3] : "") + ")" : "");
+    }
+    function grid() {
+      var k = $("proj").value, P = H.projects[k];
+      location.hash = k;
+      if (P.masked) { $("grid").innerHTML = "<p class='muted'>Withheld until the authors' verification. The authors are checking the cells of this project against the sources without seeing the models' answers, so its history is not published yet.</p>"; log(); return; }
+      var head = "<tr><th></th>" + P.docs.map(function (d, i) { return '<th class="doc" title="' + S.esc((d && d.t) || "") + '">' + (i + 1) + ". " + S.esc(d ? (d.date || "") + " " + (d.t || d.id || "").slice(0, 38) : "") + "</th>"; }).join("") + "</tr>";
+      var body = ORDER.map(function (f) {
+        var c = P.cells[f] || {};
+        return '<tr><th class="cell">' + f + ' <span class="muted">' + NAMES[f] + "</span></th>" + P.docs.map(function (d, i) {
+          return "<td><span class='trip'>" + S.MODELS.map(function (m) { var v = (c[m[0]] || [])[i]; return '<i class="' + cls(f, v) + '" title="' + S.esc(title(f, v, m[1])) + '"></i>'; }).join("") + "</span></td>";
+        }).join("") + "</tr>";
+      }).join("");
+      $("grid").innerHTML = "<table class='hgrid'>" + head + body + "</table><p class='small muted' style='margin:8px 0 0'>" + P.docs.length + " evidence documents in order of publication. Hover a square for the value and its status. <a href='results.html#" + k + "'>The cells today, with quotations</a>.</p>" +
+        "<ol class='small' style='columns:2;margin-top:8px'>" + P.docs.map(function (d) { return d ? "<li>" + S.esc(d.date || "") + " · " + S.docLink(d) + "</li>" : "<li></li>"; }).join("") + "</ol>";
+      log();
+    }
+    function log() {
+      var k = $("proj").value, kind = $("kind").value, all = $("all-proj").checked;
+      var rows = H.changes.filter(function (c) { return (all || c.project === k) && (!kind || c.cat === kind); });
+      $("log").querySelector("tbody").innerHTML = rows.slice(0, 400).map(function (c) {
+        var b = c.before.filter(Boolean).join(", ") || "no value", a = c.after.filter(Boolean).join(", ") || "no value";
+        return "<tr><td>" + S.esc(names[c.project] || c.project) + "</td><td>" + S.esc(c.cell) + "</td><td>" + c.n + ". " + S.esc(c.date || "") + "</td><td>" + S.esc(c.cat) + "<div class='small muted'>" + S.esc(c.models) + "</div></td><td>" + S.esc(b) + " → <b>" + S.esc(a) + "</b></td><td>" + (c.q ? "<blockquote>“" + S.esc(c.q) + "”</blockquote>" : "") + "<div class='small'>" + S.docLink(c.doc) + "</div></td></tr>";
+      }).join("") || "<tr><td colspan='6' class='muted'>No change of this kind.</td></tr>";
+    }
+    $("proj").addEventListener("change", grid);
+    $("kind").addEventListener("change", log);
+    $("all-proj").addEventListener("change", log);
+    var h = location.hash.slice(1);
+    if (H.projects[h]) $("proj").value = h;
+    else { var open = ids.filter(function (k) { return !H.projects[k].masked; })[0]; if (open) $("proj").value = open; }
+    grid();
+  }).catch(function (e) { $("grid").textContent = "The cell history could not be loaded (" + e.message + ")."; });
+})();
+</script>
+</body>
+</html>
