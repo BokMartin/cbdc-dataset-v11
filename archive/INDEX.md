@@ -68,7 +68,7 @@ statement cite them, and some tests still exercise them.
 | [`data/index/mock/`](../data/index/mock/) | synthetic (MOCK) projects used to design and test the privacy index before any real data; not results | ADR-009, docs/PRIVACY_INDEX_SPEC_DRAFT_2026-11-21.md |
 | [`scripts/index_mock.py`](../scripts/index_mock.py) | generator of the synthetic index data | data/index/mock/ |
 
-## 3. Dated files with a single version (75)
+## 3. Dated files with a single version (77)
 
 Each is the only version of its family and therefore current, unless a document names it as a dated record.
 
@@ -147,3 +147,5 @@ Each is the only version of its family and therefore current, unless a document 
 - `docs/REGISTRATION_A_DRAFT_2026-11-23.md`
 - `docs/TALK_AGREEMENT_PROTOCOL_2026-11-13.md`
 - `docs/TALK_AGREEMENT_PROTOCOL_v2_2026-11-13.md`
+- `docs/provenance/OUTSIDE_GIT_2026-11-27.csv`
+- `docs/provenance/PRODUCTION_RUNS_2026-11-24.csv`
