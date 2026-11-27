@@ -87,7 +87,7 @@ def validate_run(folder, root=ROOT):
 
 def records():
     rows, problems = [], []
-    for f in sorted(glob.glob(os.path.join(ROOT, "data", "**", "RUN_META.json"), recursive=True)):
+    for f in sorted(glob.glob(os.path.join(ROOT, "data", "**", "RUN_META.json"), recursive=True), key=rel):  # same order on every OS (A6)
         m = json.load(open(f)); new = m.get("spec") == "run-record v1"
         if new: problems += validate_run(os.path.dirname(f))
         elif rel(os.path.dirname(f)) not in LEGACY: problems.append(f"{rel(f)}: no 'spec: run-record v1' and not on the list of runs made before the specification")
@@ -102,7 +102,7 @@ def records():
                      "inputs": "; ".join(f"{i['file']} ({str(i['sha256'])[:12]}…)" for i in m.get("inputs", [])) or m.get("scope", ""),
                      "calls": f"{m.get('complete')}/{m.get('calls')}", "tokens": f"{usage.get('input_tokens')} in / {usage.get('output_tokens')} out",
                      "commit": m.get("git_commit", "not recorded"), "lacks": ", ".join(lacks) or "nothing"})
-    for f in sorted(glob.glob(os.path.join(ROOT, "data", "worked_profiles", "runs_v2_*", "MANIFEST.json"))):
+    for f in sorted(glob.glob(os.path.join(ROOT, "data", "worked_profiles", "runs_v2_*", "MANIFEST.json")), key=rel):
         m = json.load(open(f)); calls = m.get("stage1", []) + [m[k] for k in ("single", "stage2") if isinstance(m.get(k), dict)]
         mr = sorted({c.get("model_returned") for c in calls if c.get("model_returned")}); st = sorted(c["started_utc"][:10] for c in calls if c.get("started_utc"))
         ti = sum(c.get("usage", {}).get("input_tokens", 0) for c in calls); to = sum(c.get("usage", {}).get("output_tokens", 0) for c in calls)

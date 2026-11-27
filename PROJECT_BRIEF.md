@@ -63,8 +63,8 @@ State of the data files as of **2026-11-23** (dates are those of the files, not 
 | Sentence units | 172 078 units; 19 574 candidates for classification (dictionary hits 7 882, neighbours 5 991, random control 5 701) |
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
 | Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
-| Model classification of units | **not started** (no unit has been labelled by a model) |
-| Tests in CI | 153 |
+| Model runs in production | 9 runs used for the results (EX2 3, L1P 3, L2 3; three providers), 3 stopped and not used; 31667 completed requests; preliminary, not verified by the authors; register `docs/provenance/PRODUCTION_RUNS_2026-11-24.csv` |
+| Tests in CI | 155 |
 <!-- NUMBERS:END -->
 
 ## 4. Checklist, with what a second model has audited
