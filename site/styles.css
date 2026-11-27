@@ -187,31 +187,45 @@ table.ptable tbody tr { cursor: pointer; }
 table.ptable tbody tr:hover { background: var(--surface-2); }
 .scroll-x { overflow-x: auto; }
 
-/* results page (results.html) */
-.mock-banner { background: #b5523b; color: #fff; text-align: center; padding: 10px 16px; font-size: .95rem; position: sticky; top: 58px; z-index: 4; }
-.mock-banner strong { text-transform: uppercase; letter-spacing: .04em; margin-right: .3em; }
-@media (max-width: 760px) { .mock-banner { top: 0; } }
-.mock-inline { display: inline-block; background: #b5523b; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: .85rem; }
-.hyp-head { display: flex; flex-wrap: wrap; gap: 14px 32px; align-items: flex-end; margin-bottom: 18px; }
-.verdict { font-size: 1.6rem; font-weight: 700; }
+/* results pages */
+.prelim { background: var(--warn-bg); border-bottom: 1px solid var(--warn-line); color: var(--ink); padding: 10px 16px; font-size: .93rem; }
+.prelim strong { color: var(--wh); }
+.verdict { font-size: 1.5rem; font-weight: 700; margin: 2px 0 6px; }
 .verdict.v-holds { color: var(--ev); } .verdict.v-fails { color: var(--wh); } .verdict.v-inconclusive { color: var(--ink-2); }
-.lu { position: relative; height: 34px; background: var(--surface-2); border-radius: 6px; margin: 26px 0 4px; }
-.lu-range { position: absolute; top: 8px; height: 18px; background: var(--accent); opacity: .75; border-radius: 4px; }
-.lu-maj { position: absolute; top: -22px; bottom: 0; border-left: 2px dashed var(--ink-2); }
-.lu-maj i { position: absolute; top: 0; left: 6px; white-space: nowrap; font-style: normal; font-size: .78rem; color: var(--ink-2); }
-.lu-tick { position: absolute; top: 36px; transform: translateX(-50%); font-size: .8rem; font-weight: 700; }
-.lu-axis { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); margin-top: 16px; }
-.grid.tiers { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.tier h3 { margin-top: 0; }
-.tier.t-T3 { border-style: dashed; }
-.tier-iv { margin-top: 10px; }
-.ivbar { position: relative; display: inline-block; vertical-align: middle; width: 120px; height: 10px; background: var(--surface-2); border-radius: 5px; border: 1px solid var(--line); }
+.card.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.lu { position: relative; height: 30px; background: var(--surface-2); border-radius: 6px; margin: 26px 0 4px; }
+.lu-range { position: absolute; top: 7px; height: 16px; background: var(--accent); opacity: .75; border-radius: 4px; min-width: 3px; }
+.lu-maj { position: absolute; top: -20px; bottom: 0; border-left: 2px dashed var(--ink-2); }
+.lu-maj i { position: absolute; top: 0; left: 6px; white-space: nowrap; font-style: normal; font-size: .76rem; color: var(--ink-2); }
+.lu-tick { position: absolute; top: 32px; transform: translateX(-50%); font-size: .76rem; font-weight: 700; white-space: nowrap; }
+.lu-axis { display: flex; justify-content: space-between; font-size: .76rem; color: var(--muted); margin-top: 16px; }
+.ivbar { position: relative; display: inline-block; vertical-align: middle; width: 110px; height: 10px; background: var(--surface-2); border-radius: 5px; border: 1px solid var(--line); }
 .ivbar .iv { position: absolute; top: -1px; bottom: -1px; background: var(--accent); border-radius: 5px; }
-.ivbar.thin { height: 6px; width: 80px; }
+.ivbar.thin { height: 6px; width: 70px; }
 .ivbar.thin .iv { background: var(--ink-2); }
-.ivnum { font-size: .82rem; color: var(--ink-2); margin-left: 8px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ivnum { font-size: .8rem; color: var(--ink-2); margin-left: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ivc { white-space: nowrap; }
+.mrow { display: flex; align-items: center; gap: 6px; } .mrow > .small { width: 62px; }
 .rtable td { vertical-align: top; }
-.rtable tr.grp th { background: var(--surface-2); text-align: left; font-size: .9rem; padding: 8px 10px; }
-.pet { display: inline-block; font-size: .78rem; background: var(--co-bg); color: var(--co); border-radius: 5px; padding: 1px 6px; margin: 1px 0; white-space: nowrap; }
+tr.grp th { background: var(--surface-2); text-align: left; font-size: .9rem; padding: 8px 10px; }
+.pet { display: inline-block; font-size: .78rem; background: var(--co-bg); color: var(--co); border-radius: 5px; padding: 1px 6px; margin: 1px 0; }
 #detail { margin-top: 14px; }
+table.cells td, table.cells th { vertical-align: top; text-align: left; }
+.mcell { margin: 0 0 10px; font-size: .92rem; }
+blockquote { margin: 4px 0 2px; padding: 4px 10px; border-left: 3px solid var(--line); color: var(--ink-2); font-size: .88rem; }
+.hgrid { border-collapse: collapse; font-size: .8rem; }
+.hgrid th, .hgrid td { border: 1px solid var(--line); padding: 2px; text-align: center; }
+.hgrid th.doc { writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 400; max-height: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 4px 2px; }
+.hgrid th.cell { text-align: left; white-space: nowrap; padding: 2px 8px; background: var(--surface-2); }
+.trip { display: inline-flex; gap: 1px; }
+.trip i { display: block; width: 7px; height: 16px; border-radius: 1px; }
+.v-pro { background: #1f6f50; } .v-non { background: #b5523b; } .v-cat { background: #2f74b5; } .v-un { background: var(--surface-2); outline: 1px solid var(--line); } .v-conf { background: repeating-linear-gradient(45deg, #b5523b 0 2px, #1f6f50 2px 4px); }
+.legend-inline span { margin-right: 14px; white-space: nowrap; } .legend-inline i { display: inline-block; width: 10px; height: 12px; vertical-align: -1px; margin-right: 4px; border-radius: 1px; }
+.pmatrix { border-collapse: collapse; font-size: .82rem; }
+.pmatrix th, .pmatrix td { border: 1px solid var(--line); padding: 3px 5px; text-align: center; }
+.pmatrix th.proj { writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 600; padding: 6px 2px; }
+.pmatrix td.code { text-align: left; white-space: nowrap; }
+.pmatrix tr.fam th { text-align: left; background: var(--surface-2); }
+.dotc { display: inline-block; width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--co); }
+.dotc.c { background: var(--co); }
+#provenance code { overflow-wrap: anywhere; word-break: break-word; }

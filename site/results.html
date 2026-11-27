@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy index · CBDC privacy dataset</title>
+<meta name="description" content="Stated-design privacy index of 42 retail CBDC projects with intervals, privacy talk beside it, and the hypothesis much talk, few commitments.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<div class="prelim" id="prelim" hidden role="note"></div>
+<main id="main">
+  <h1>Privacy index</h1>
+  <p class="lead">What the official documents of each project state about its design, read as a privacy index from 0 (the design lets the central bank, intermediaries and the state attribute payments to a person) to 1 (it does not). It is an interval: a design question the documents leave open counts as 0 at the lower end and 1 at the upper end. How much a project <em>talks</em> about privacy is shown beside the index, never inside it.</p>
+
+  <h2>The hypothesis: much talk, few commitments</h2>
+  <p class="small muted">Fixed before the data (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/docs/REGISTRATION_A_DRAFT_2026-11-23.md">Registration A §3</a>). Much talk: own-voice privacy talk in at least two publications and at least 1 relevant sentence per 100. Few commitments: fewer than 2 of F1, F2, F4 and F7 committed. It holds if at least 9 of the 16 core projects meet both at the least favourable reading (L), fails if at most 8 meet both at the most favourable reading (U), and is inconclusive otherwise. No significance test.</p>
+  <div class="grid" id="hyp"></div>
+
+  <h2>Projects</h2>
+  <div class="toolbar">
+    <div class="row" style="gap:12px">
+      <label class="f">Combination of the three models<select id="rule">
+        <option value="prov">Provisional: one model gives a value, none contradicts it</option>
+        <option value="strict">Strict: all three models give the same value</option>
+      </select></label>
+      <label class="f">Show<select id="tier-filter">
+        <option value="core">Core (T1 and T2)</option>
+        <option value="all">All projects</option>
+        <option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3 (exploratory)</option>
+      </select></label>
+    </div>
+    <span class="small muted">Listed by tier and name. The index does not yet support a ranking.</span>
+  </div>
+  <div class="scroll-x card" style="padding:6px 10px">
+    <table class="ptable rtable" id="rtable">
+      <thead><tr>
+        <th scope="col">Project</th>
+        <th scope="col">Privacy index, 7 cells</th>
+        <th scope="col">4 cells</th>
+        <th scope="col">Each model</th>
+        <th scope="col">Lawful access (F3)</th>
+        <th scope="col" class="n">Talk per 100 sentences</th>
+        <th scope="col" class="n">Mechanism · decision</th>
+        <th scope="col" class="n">Talk without commitment</th>
+        <th scope="col">Hypothesis L · U</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="small muted">Click a row for the cell-by-cell record of the three models, with the quotation each value rests on.</p>
+  <aside class="card" id="detail" aria-live="polite" hidden></aside>
+
+  <h2>How to read this page</h2>
+  <div class="narrow small">
+  <p><b>Seven cells.</b> F1 the central bank can link an online payment to a person; F2 an intermediary can; F4 private offline payments are available; F7 a low-identity route (anonymous holding and paying); F8 identity is required at onboarding; F9 targeted re-identification is possible; F10 programmable restrictions. Less access, less identification and no re-identification mean more privacy. The four-cell variant uses F1, F2, F4 and F7. F3, the lawful access route, has no direction and is shown as a category.</p>
+  <p><b>Three models.</b> Each cell was read from the documents by three language models independently (Claude, GPT and DeepSeek). <i>Provisional</i>: a cell has a value when at least one model gives one and no model gives another. <i>Strict</i>: only when all three agree. The authors will decide the rule and verify the cells against the sources; until then both are shown.</p>
+  <p><b>Talk.</b> Own-voice sentences about users' privacy per 100 eligible sentences of the project's evidence documents (lower and upper count); the share of them that state a mechanism or a decision; and how many of the six aspects with a design cell the project talks about without a commitment.</p>
+  </div>
+  <section id="provenance" class="narrow"></section>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script src="assets/results.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
-/* Map page: D3 + TopoJSON, world geometry vendored (Natural Earth 1:50m via world-atlas). Reads site/assets/projects.json
-   and site/assets/documents.json. Shows corpus facts and official status only; never a measurement result. */
+/* Map page: D3 + TopoJSON, world geometry vendored (Natural Earth 1:50m via world-atlas). Reads site/assets/projects.json,
+   site/assets/documents.json and, for the privacy index, site/assets/results.json (preliminary, marked as such). */
 (function () {
   "use strict";
   var S = window.SITE, $ = function (id) { return document.getElementById(id); };
@@ -10,16 +10,20 @@
   var TIER = { T1: ["T1 · core", "#0f4d85"], T2: ["T2 · core", "#3d88c2"], T3: ["T3 · exploratory, often unfinished CBDC research", "#e3b45c"] };
   S.tierLabel = function (t) { return (TIER[t] || [t])[0]; };
 
-  Promise.all([S.get("assets/projects.json"), S.get("assets/documents.json"), S.get("assets/vendor/countries-50m.json")])
-    .then(function (r) { init(r[0], r[1], r[2]); })
+  Promise.all([S.get("assets/projects.json"), S.get("assets/documents.json"), S.get("assets/vendor/countries-50m.json"),
+    S.get("assets/results.json").catch(function () { return null; })])
+    .then(function (r) { init(r[0], r[1], r[2], r[3]); })
     .catch(function (e) { $("panel").innerHTML = "<p>Could not load the map (" + S.esc(e.message) + ").</p>"; });
 
-  function init(PP, DD, world) {
+  var IX_BINS = [[0, 0.2, "#b5523b"], [0.2, 0.4, "#de8f6e"], [0.4, 0.6, "#e9e1c9"], [0.6, 0.8, "#7fb89b"], [0.8, 1.01, "#1f6f50"]];
+  function init(PP, DD, world, RR) {
+    var IX = {}; if (RR) RR.projects.forEach(function (x) { IX[x.id] = x; });
+    if (RR) S.prelim(RR.meta);
     var meta = PP.meta, projects = PP.projects, docs = DD.documents;
     var P = {}, byGeo = {};
     projects.forEach(function (p) { P[p.code] = p; p.geo.forEach(function (g) { byGeo[g] = p; }); });
     var frame = projects.filter(function (p) { return p.frame; });
-    $("as-of").innerHTML = "<strong>Corpus as of " + meta.as_of + "; official status as documented up to " + meta.status_as_of + ".</strong> No measurement result is shown: the coding of the documents has not been run yet.";
+    $("as-of").innerHTML = "<strong>Corpus as of " + meta.as_of + "; official status as documented up to " + meta.status_as_of + ".</strong>" + (RR ? " The privacy index is preliminary model output, not yet verified by the authors." : "");
 
     var years = [];
     frame.forEach(function (p) { Object.keys(p.ev_by_year).forEach(function (y) { years.push(+y); }); });
@@ -38,12 +42,14 @@
       if (state.mode === "status") return (S.STATUS[p.status] || S.STATUS.NA)[1];
       if (state.mode === "docs") return DOC_COL[bin(pubsUpTo(p, state.year))];
       if (state.mode === "tier") return (TIER[p.tier] || TIER.T3)[1];
+      if (state.mode === "index") { var x = IX[p.code]; if (!x) return DOC_COL[0]; var m = (x.index.prov[0] + x.index.prov[1]) / 2; for (var i = 0; i < IX_BINS.length; i++) if (m < IX_BINS[i][1]) return IX_BINS[i][2]; return DOC_COL[0]; }
       return p.ev_years.length ? FIRST(p.ev_years[0]) : DOC_COL[0];
     }
     function label(p) {
       if (state.mode === "status") return (S.STATUS[p.status] || S.STATUS.NA)[0];
       if (state.mode === "docs") { var n = pubsUpTo(p, state.year); return n + " evidence publication" + (n === 1 ? "" : "s") + " up to " + state.year; }
       if (state.mode === "tier") return S.tierLabel(p.tier);
+      if (state.mode === "index") { var x = IX[p.code]; return x ? "privacy index " + x.index.prov[0].toFixed(2) + (x.index.prov[1] !== x.index.prov[0] ? " to " + x.index.prov[1].toFixed(2) : "") + " (preliminary)" : "no index (no readable text)"; }
       return p.ev_years.length ? "first evidence publication " + p.ev_years[0] : "no evidence publication";
     }
 
@@ -100,6 +106,9 @@
       } else if (state.mode === "docs") {
         var cnt = DOC_BINS.map(function () { return 0; }); frame.forEach(function (p) { cnt[bin(pubsUpTo(p, state.year))]++; });
         items = DOC_BINS.map(function (b, i) { return [DOC_COL[i], b[2] + " (" + cnt[i] + ")"]; });
+      } else if (state.mode === "index") {
+        items = IX_BINS.map(function (b) { return [b[2], b[0].toFixed(1) + " to " + Math.min(b[1], 1).toFixed(1)]; }).concat([[DOC_COL[0], "no index"]]);
+        items.push(["transparent", "middle of the interval, provisional reading; preliminary, not a ranking"]);
       } else if (state.mode === "tier") {
         items = ["T1", "T2", "T3"].map(function (t) { return [TIER[t][1], TIER[t][0] + " (" + frame.filter(function (p) { return p.tier === t; }).length + ")"]; });
       } else {
@@ -139,6 +148,7 @@
         '<p><span class="dot" style="background:' + st[1] + '"></span> <b>' + S.esc(st[0]) + "</b>" + (p.status_date ? " as of " + S.esc(p.status_date) : "") +
         (p.status_url ? ' · <a href="' + S.esc(p.status_url) + '" target="_blank" rel="noopener">source ↗</a>' : "") + "</p>" +
         (p.members.length ? "<p class='small muted'>One project for " + p.members.length + " member states; documents of the ECB and of national central banks of the euro area belong to it.</p>" : "") +
+        (IX[p.code] ? "<div class='card' style='padding:10px;margin:10px 0'><div class='small muted'>Privacy index, preliminary</div>provisional " + S.ivbar(IX[p.code].index.prov) + "<br>strict " + S.ivbar(IX[p.code].index.strict) + "<div class='small' style='margin-top:6px'><a href='results.html#" + p.code + "'>Cells and quotations</a> · <a href='cells.html#" + p.code + "'>history of the cells</a> · <a href='pets.html'>PETs</a></div></div>" : "") +
         bars + spark + en +
         (ev.length ? "<h3>Evidence publications</h3><ul class='plain doclist'>" + ev.slice(0, 8).map(function (d) {
           return "<li><span class='muted'>" + (d.y || "n.d.") + "</span> " + (d.u ? '<a href="' + S.esc(d.u) + '" target="_blank" rel="noopener">' + S.esc(d.t) + "</a>" : S.esc(d.t)) + "</li>";

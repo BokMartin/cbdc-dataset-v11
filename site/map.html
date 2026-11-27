@@ -9,9 +9,10 @@
 </head>
 <body>
 <header class="site"></header>
+<div class="prelim" id="prelim" hidden role="note"></div>
 <main id="main">
   <h1>The 44 projects</h1>
-  <p class="lead">43 national retail CBDC projects and the digital euro. Colour a project by its official status or by how many official documents we read as evidence, and drag the year to watch the record grow. Click a project for its documents.</p>
+  <p class="lead">43 national retail CBDC projects and the digital euro. Colour a project by its official status or by how many official documents we read as evidence, and drag the year to watch the record grow. Click a project for its documents and its privacy index.</p>
   <div class="note" id="as-of"></div>
   <div class="map-layout">
     <div>
@@ -22,6 +23,7 @@
             <option value="docs">Evidence publications up to the year</option>
             <option value="first">Year of the first evidence publication</option>
             <option value="tier">Analysis tier (core or exploratory)</option>
+            <option value="index">Privacy index (preliminary)</option>
           </select></label>
           <div class="f" id="yr-box"><span class="f" style="display:block">Year</span><span class="yr"><input type="range" id="year" min="2016" max="2026" step="1" value="2026" aria-label="Year"><output id="year-out" for="year">2026</output><button class="btn ghost sm" type="button" id="play" aria-label="Play the years">▶</button></span></div>
         </div>

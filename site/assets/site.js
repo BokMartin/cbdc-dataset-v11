@@ -4,7 +4,8 @@
 (function () {
   "use strict";
   var S = (window.SITE = {});
-  var NAV = [["index.html", "Home"], ["map.html", "Map"], ["documents.html", "Documents"], ["method.html", "Method"], ["data.html", "Data & reuse"], ["about.html", "About"]];
+  var NAV = [["index.html", "Home"], ["map.html", "Map"], ["results.html", "Privacy index"], ["cells.html", "Cell history"], ["paragraphs.html", "Paragraphs"], ["pets.html", "PETs"], ["documents.html", "Documents"], ["paper.html", "Paper"], ["method.html", "Method"], ["data.html", "Data & reuse"], ["about.html", "About"]];
+  S.REPO = "https://github.com/BokMartin/cbdc-dataset-v11";
   var here = location.pathname.split("/").pop() || "index.html";
 
   // theme: follows the system, a visitor may override it (kept only in their browser)
@@ -60,4 +61,39 @@
   S.googlePage = function (u, tl) { return "https://translate.google.com/translate?sl=auto&tl=" + encodeURIComponent(tl) + "&u=" + encodeURIComponent(u); };
   S.googleDocs = function (tl) { return "https://translate.google.com/?sl=auto&tl=" + encodeURIComponent(tl) + "&op=docs"; };
   S.deeplDocs = "https://www.deepl.com/translator/files";
+
+  // results: status banner and provenance (scripts/site/build_results_site.py writes meta into every results file)
+  S.MODELS = [["claude", "Claude"], ["sol62", "GPT"], ["deepseek", "DeepSeek"]];
+  S.prelim = function (meta) {
+    var el = document.getElementById("prelim");
+    if (!el || !meta) return;
+    el.hidden = false;
+    el.innerHTML = "<strong>" + S.esc(meta.status) + ".</strong> Numbers can still change: the authors are verifying the cells against the sources and have not yet chosen how the three models are combined, so both readings are shown. <a href='#provenance'>Where these numbers come from</a>.";
+  };
+  S.provenance = function (meta, id) {
+    var el = document.getElementById(id || "provenance");
+    if (!el || !meta) return;
+    var src = meta.sources || {}, R = S.REPO;
+    var li = [];
+    if (src.freeze) li.push("Instrument frozen before the production run: tag <a href='" + R + "/tree/" + S.esc(src.freeze) + "'><code>" + S.esc(src.freeze) + "</code></a> (<a href='" + R + "/blob/main/docs/FREEZE_2026-11-23.md'>freeze record</a>).");
+    if (src.reducer) li.push("Cells reduced by <code>scripts/extraction/reduce_v122.py</code> at commit <a href='" + R + "/tree/" + S.esc(src.reducer) + "'><code>" + S.esc(src.reducer.slice(0, 10)) + "</code></a>" + (src.reducer_pr ? " (<a href='" + R + "/pull/" + S.esc(src.reducer_pr) + "'>pull request " + S.esc(src.reducer_pr) + "</a>, repairs after audit A5)" : "") + (src.cells_date ? ", " + S.esc(src.cells_date) : "") + ".");
+    if (src.talk_date) li.push("Talk counts and hypothesis flags: results of " + S.esc(src.talk_date) + "; cell history: " + S.esc(src.history_date || src.talk_date) + ".");
+    li.push("Index and combination rules: <a href='" + R + "/blob/main/scripts/derive_index.py'><code>scripts/derive_index.py</code></a>, <a href='" + R + "/blob/main/docs/REGISTRATION_A_DRAFT_2026-11-23.md'>Registration A</a>, <a href='" + R + "/blob/main/DECISIONS/ADR-012-audit-2026-11-22-A4b-dispositions.md'>ADR-012</a>. Website data built by <a href='" + R + "/blob/main/scripts/site/build_results_site.py'><code>scripts/site/build_results_site.py</code></a>.");
+    li.push("Input files and their SHA-256: " + Object.keys(meta.inputs || {}).map(function (k) { return "<code title='" + S.esc(meta.inputs[k]) + "'>" + S.esc(k) + "</code>"; }).join(", ") + ". The model outputs themselves hold source text and stay outside the repository.");
+    el.innerHTML = "<h2>Where these numbers come from</h2><ul class='small'>" + li.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>";
+  };
+  S.docLink = function (d, label) {
+    if (!d) return "";
+    var t = S.esc(label || d.t || d.id) + (d.pg ? ", p. " + d.pg : "");
+    if (!d.u) return t;
+    var u = d.u + (d.pg && /\.pdf($|\?)/i.test(d.u) ? "#page=" + d.pg : "");
+    return '<a href="' + S.esc(u) + '" target="_blank" rel="noopener">' + t + " ↗</a>";
+  };
+  S.VAL = { yes: "yes", no: "no", via_psp: "via intermediary", via_cb: "via central bank", via_both: "via both", none_stated: "none stated", unspecified: "unspecified", "": "–" };
+  S.ivbar = function (iv, cls) {
+    if (!iv) return "–";
+    var lo = 100 * iv[0], hi = 100 * iv[1];
+    return '<span class="ivbar ' + (cls || "") + '" role="img" aria-label="from ' + iv[0].toFixed(2) + " to " + iv[1].toFixed(2) + '"><span class="iv" style="left:' + lo + "%;width:" + Math.max(hi - lo, 1.5) + '%"></span></span><span class="ivnum">' + iv[0].toFixed(2) + (iv[1] !== iv[0] ? "–" + iv[1].toFixed(2) : "") + "</span>";
+  };
+  S.TIERLABEL = { T1: "T1 · core", T2: "T2 · core", T3: "T3 · exploratory, often unfinished CBDC research" };
 })();

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PETs · CBDC privacy dataset</title>
+<meta name="description" content="Privacy-enhancing technologies named in the official design documents of retail CBDC projects, coded with the list of Nijsse and Pinto (2026).">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"></header>
+<div class="prelim" id="prelim" hidden role="note"></div>
+<main id="main">
+  <h1>Privacy-enhancing technologies</h1>
+  <p class="lead">Which privacy-enhancing technologies (PETs) the official documents of each project name for its retail design. The codes and families follow <a id="paper" href="https://arxiv.org/abs/2602.23659">Nijsse and Pinto (2026)</a>. This is a profile, not a scale: naming more techniques does not mean more privacy, and PETs never enter the privacy index.</p>
+  <p class="small" id="cite"></p>
+  <div class="toolbar">
+    <label class="f">Show<select id="tier-filter"><option value="core">Core (T1 and T2)</option><option value="all">All projects</option><option value="T3">T3 (exploratory)</option></select></label>
+    <label class="f">Mentioned by<select id="minm"><option value="1">at least one model</option><option value="2">at least two models</option><option value="3">all three models</option></select></label>
+    <span class="small legend-inline"><span><span class="dotc"></span> named</span><span><span class="dotc c"></span> endorsed or operational</span></span>
+  </div>
+  <div class="scroll-x card" style="padding:10px"><table class="pmatrix" id="mx"></table></div>
+  <h2>Other techniques named</h2>
+  <p class="small muted">Techniques outside the list of Nijsse and Pinto, in the words of the documents.</p>
+  <div id="other" class="small"></div>
+  <h2>Every mention</h2>
+  <div class="toolbar"><label class="f">Project<select id="proj"></select></label></div>
+  <div class="scroll-x card" style="padding:6px 10px"><table class="ptable" id="obs"><thead><tr><th>Technique</th><th>Family</th><th>Model</th><th>What it is for, in the document</th><th>Status</th><th>Document</th></tr></thead><tbody></tbody></table></div>
+  <p class="small muted">Wholesale settlement and joint experiments are kept apart as context: they are not part of the retail profile.</p>
+  <section id="provenance" class="narrow"></section>
+</main>
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var S = SITE, $ = function (id) { return document.getElementById(id); };
+  var FAM = ["Cryptographic techniques", "Privacy architecture", "Other technologies", "Baseline / context"];
+  function nice(c) { return c.replace(/^other:/, "").replace(/_/g, " "); }
+  Promise.all([S.get("assets/pets.json"), S.get("assets/projects.json")]).then(function (r) {
+    var D = r[0], names = {}, tiers = {};
+    r[1].projects.forEach(function (p) { names[p.code] = p.name; tiers[p.code] = p.tier; });
+    S.prelim(D.meta); S.provenance(D.meta);
+    $("paper").href = D.meta.pet_paper.url; $("paper").title = D.meta.pet_paper.title;
+    $("cite").innerHTML = "Codes from: " + S.esc(D.meta.pet_paper.title) + ' <a href="' + S.esc(D.meta.pet_paper.url) + '">' + S.esc(D.meta.pet_paper.url) + "</a>";
+    var retail = D.rows.filter(function (x) { return x.table === "retail"; });
+    function matrix() {
+      var tf = $("tier-filter").value, minm = +$("minm").value;
+      var rows = retail.filter(function (x) { return x.models.length >= minm && (tf === "all" || (tf === "core" ? x.tier !== "T3" : x.tier === tf)); });
+      var projs = {}; rows.forEach(function (x) { projs[x.project] = 1; });
+      var P = Object.keys(projs).sort(function (a, b) { return ((tiers[a] || "") + (names[a] || a)).localeCompare((tiers[b] || "") + (names[b] || b)); });
+      var by = {}; rows.forEach(function (x) { (by[x.code] = by[x.code] || {})[x.project] = x; });
+      var html = "<tr><th></th>" + P.map(function (p) { return '<th class="proj" title="' + S.esc(names[p] || p) + '">' + S.esc(names[p] || p) + "</th>"; }).join("") + "<th>projects</th></tr>";
+      FAM.forEach(function (fam) {
+        var codes = Object.keys(by).filter(function (c) { var x = by[c][Object.keys(by[c])[0]]; return x.family === fam; }).sort();
+        if (!codes.length) return;
+        html += '<tr class="fam"><th colspan="' + (P.length + 2) + '">' + S.esc(fam) + "</th></tr>";
+        codes.forEach(function (c) {
+          html += '<tr><td class="code">' + S.esc(nice(c)) + "</td>" + P.map(function (p) {
+            var x = by[c][p]; if (!x) return "<td></td>";
+            return '<td title="' + S.esc((names[p] || p) + ": " + x.models.length + " of 3 models" + (x.committed ? ", endorsed or operational" : "")) + '"><span class="dotc' + (x.committed ? " c" : "") + '"></span></td>';
+          }).join("") + '<td class="n">' + Object.keys(by[c]).length + "</td></tr>";
+        });
+      });
+      $("mx").innerHTML = html;
+      var other = {}; rows.filter(function (x) { return x.family === "other named"; }).forEach(function (x) { (other[x.project] = other[x.project] || []).push(nice(x.code)); });
+      $("other").innerHTML = Object.keys(other).sort().map(function (p) { return "<p><b>" + S.esc(names[p] || p) + ":</b> " + other[p].map(S.esc).join(", ") + "</p>"; }).join("") || "<p class='muted'>None.</p>";
+    }
+    var ids = {}; D.rows.forEach(function (x) { ids[x.project] = 1; });
+    $("proj").innerHTML = Object.keys(ids).sort(function (a, b) { return (names[a] || a).localeCompare(names[b] || b); }).map(function (k) { return '<option value="' + k + '">' + S.esc(names[k] || k) + "</option>"; }).join("");
+    function obs() {
+      var k = $("proj").value, out = [];
+      D.rows.filter(function (x) { return x.project === k; }).forEach(function (x) {
+        x.obs.forEach(function (o) {
+          out.push("<tr><td><b>" + S.esc(nice(x.code)) + "</b>" + (o.text && nice(x.code).toLowerCase() !== o.text.toLowerCase() ? "<div class='small muted'>" + S.esc(o.text) + "</div>" : "") + (x.table === "wholesale" ? "<div class='small muted'>wholesale context</div>" : "") + "</td><td class='small'>" + S.esc(x.family) + "</td><td>" + S.esc(({ claude: "Claude", sol62: "GPT", deepseek: "DeepSeek" })[o.m] || o.m) + "</td><td class='small'>" + S.esc(o.fn) + "</td><td class='small'>" + S.esc([o.ds, o.is === "untested_or_unreported" ? "" : o.is].filter(Boolean).join(", ")) + "</td><td class='small'>" + S.docLink(o.doc) + "</td></tr>");
+        });
+      });
+      $("obs").querySelector("tbody").innerHTML = out.join("") || "<tr><td colspan='6' class='muted'>No PET named.</td></tr>";
+    }
+    $("tier-filter").addEventListener("change", matrix); $("minm").addEventListener("change", matrix); $("proj").addEventListener("change", obs);
+    matrix(); obs();
+  }).catch(function (e) { $("mx").textContent = "The PET table could not be loaded (" + e.message + ")."; });
+})();
+</script>
+</body>
+</html>
