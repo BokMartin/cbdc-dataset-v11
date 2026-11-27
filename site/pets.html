@@ -27,6 +27,7 @@
   <div class="toolbar"><label class="f">Project<select id="proj"></select></label></div>
   <div class="scroll-x card" style="padding:6px 10px"><table class="ptable" id="obs"><thead><tr><th>Technique</th><th>Family</th><th>Model</th><th>What it is for, in the document</th><th>Status</th><th>Document</th></tr></thead><tbody></tbody></table></div>
   <p class="small muted">Wholesale settlement and joint experiments are kept apart as context: they are not part of the retail profile.</p>
+  <p class="small muted" id="masked"></p>
   <section id="provenance" class="narrow"></section>
 </main>
 <footer class="site"></footer>
@@ -41,6 +42,7 @@
     var D = r[0], names = {}, tiers = {};
     r[1].projects.forEach(function (p) { names[p.code] = p.name; tiers[p.code] = p.tier; });
     S.prelim(D.meta); S.provenance(D.meta);
+    if (D.meta.masked && D.meta.masked.length) $("masked").textContent = "Not shown until the authors' verification: " + D.meta.masked.map(function (c) { return names[c] || c; }).join(", ") + ".";
     $("paper").href = D.meta.pet_paper.url; $("paper").title = D.meta.pet_paper.title;
     $("cite").innerHTML = "Codes from: " + S.esc(D.meta.pet_paper.title) + ' <a href="' + S.esc(D.meta.pet_paper.url) + '">' + S.esc(D.meta.pet_paper.url) + "</a>";
     var retail = D.rows.filter(function (x) { return x.table === "retail"; });

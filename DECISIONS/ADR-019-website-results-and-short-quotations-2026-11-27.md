@@ -30,3 +30,14 @@ reading of the assistant, not legal advice; MB asked for the variant that does n
 
 - AGENTS.md, rule on source text: the exception is added with a link here.
 - If an issuer objects, the quotation is removed from the JSON by rebuilding with the document excluded.
+
+## Addendum, 27 Nov 2026: projects under verification are withheld (after audit A6 §13)
+
+MB decided (card in the audit thread, 27 Nov 2026 14:56 UTC) that the results data of the website carry no model value
+for the 14 projects whose cells the authors verify: AU, BS, CA, EU, HK, IL, IN, JM, JP, KZ, NZ, RU, SE, TW. Until the
+verification ends, `scripts/site/build_results_site.py --mask` writes for them only the code, name and tier: no index,
+cell, quotation, talk count, hypothesis flag, PET row, change or paragraph. The branch is public, so a banner would not be
+enough. Earlier commits of the branch keep the unmasked files; history is not rewritten (MB). With 14 of the 16 core
+projects withheld, and the combination rule undecided, the hypothesis has no verdict on the site; the flags of the
+projects shown are computed from the same cells as the index. `tests/test_site_results.py` checks the masking, a quotation
+limit of exactly 300 characters (the ellipsis included) and a page on every PET reference to a PDF.

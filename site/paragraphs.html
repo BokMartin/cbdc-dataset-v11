@@ -24,6 +24,7 @@
   <div class="scroll-x card" style="padding:6px 10px"><table class="ptable" id="pt"><thead><tr><th>Project</th><th>Aspect</th><th>Quotation</th><th>Mechanism · decision</th><th>Document</th></tr></thead><tbody></tbody></table></div>
   <p><button class="btn ghost sm" type="button" id="more" hidden>Show more</button></p>
   <p class="small muted">Quotations are short extracts (at most 300 characters) under the quotation right; the full text stays with the issuer (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/DECISIONS/ADR-019-website-results-and-short-quotations-2026-11-27.md">ADR-019</a>).</p>
+  <p class="small muted" id="masked"></p>
   <section id="provenance" class="narrow"></section>
 </main>
 <footer class="site"></footer>
@@ -37,6 +38,7 @@
     var D = r[0], names = {};
     r[1].projects.forEach(function (p) { names[p.code] = p.name; });
     S.prelim(D.meta); S.provenance(D.meta);
+    if (D.meta.masked && D.meta.masked.length) $("masked").textContent = "Not shown until the authors' verification: " + D.meta.masked.map(function (c) { return names[c] || c; }).join(", ") + ".";
     if (!D.available) { $("pending").hidden = false; $("tools").hidden = true; $("pt").closest(".card").hidden = true; return; }
     var P = {}, A = {}; D.rows.forEach(function (x) { P[x.p] = 1; if (x.a) A[x.a] = 1; });
     $("proj").innerHTML += Object.keys(P).sort(function (a, b) { return (names[a] || a).localeCompare(names[b] || b); }).map(function (k) { return '<option value="' + k + '">' + S.esc(names[k] || k) + "</option>"; }).join("");

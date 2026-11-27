@@ -68,7 +68,7 @@
     var el = document.getElementById("prelim");
     if (!el || !meta) return;
     el.hidden = false;
-    el.innerHTML = "<strong>" + S.esc(meta.status) + ".</strong> Numbers can still change: the authors are verifying the cells against the sources and have not yet chosen how the three models are combined, so both readings are shown. <a href='#provenance'>Where these numbers come from</a>.";
+    el.innerHTML = "<strong>" + S.esc(meta.status) + ".</strong> Numbers can still change: the authors are verifying the cells against the sources and have not yet chosen how the three models are combined, so both readings are shown." + (meta.masked && meta.masked.length ? " The model values of " + meta.masked.length + " projects are withheld until the authors have verified them." : "") + " <a href='#provenance'>Where these numbers come from</a>.";
   };
   S.provenance = function (meta, id) {
     var el = document.getElementById(id || "provenance");
@@ -77,7 +77,7 @@
     var li = [];
     if (src.freeze) li.push("Instrument frozen before the production run: tag <a href='" + R + "/tree/" + S.esc(src.freeze) + "'><code>" + S.esc(src.freeze) + "</code></a> (<a href='" + R + "/blob/main/docs/FREEZE_2026-11-23.md'>freeze record</a>).");
     if (src.reducer) li.push("Cells reduced by <code>scripts/extraction/reduce_v122.py</code> at commit <a href='" + R + "/tree/" + S.esc(src.reducer) + "'><code>" + S.esc(src.reducer.slice(0, 10)) + "</code></a>" + (src.reducer_pr ? " (<a href='" + R + "/pull/" + S.esc(src.reducer_pr) + "'>pull request " + S.esc(src.reducer_pr) + "</a>, repairs after audit A5)" : "") + (src.cells_date ? ", " + S.esc(src.cells_date) : "") + ".");
-    if (src.talk_date) li.push("Talk counts and hypothesis flags: results of " + S.esc(src.talk_date) + "; cell history: " + S.esc(src.history_date || src.talk_date) + (src.paragraphs_date ? "; privacy paragraphs (2 of 3 models label a unit relevant and own-voice; facets by 2-of-3 majority): " + S.esc(src.paragraphs_date) : "") + ".");
+    if (src.talk_date) li.push("Talk counts: results of " + S.esc(src.talk_date) + "; hypothesis flags: computed from these talk counts and the cells above" + (src.cells_date ? " (" + S.esc(src.cells_date) + ")" : "") + "; cell history: " + S.esc(src.history_date || src.talk_date) + (src.paragraphs_date ? "; privacy paragraphs (2 of 3 models label a unit relevant and own-voice; facets by 2-of-3 majority): " + S.esc(src.paragraphs_date) : "") + ".");
     li.push("Index and combination rules: <a href='" + R + "/blob/main/scripts/derive_index.py'><code>scripts/derive_index.py</code></a>, <a href='" + R + "/blob/main/docs/REGISTRATION_A_DRAFT_2026-11-23.md'>Registration A</a>, <a href='" + R + "/blob/main/DECISIONS/ADR-012-audit-2026-11-22-A4b-dispositions.md'>ADR-012</a>. Website data built by <a href='" + R + "/blob/main/scripts/site/build_results_site.py'><code>scripts/site/build_results_site.py</code></a>.");
     li.push("Input files and their SHA-256: " + Object.keys(meta.inputs || {}).map(function (k) { return "<code title='" + S.esc(meta.inputs[k]) + "'>" + S.esc(k) + "</code>"; }).join(", ") + ". The model outputs themselves hold source text and stay outside the repository.");
     el.innerHTML = "<h2>Where these numbers come from</h2><ul class='small'>" + li.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>";

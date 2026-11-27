@@ -17,6 +17,15 @@
     var rule = "prov";
 
     function hyp() {
+      var H = R.hypothesis;
+      if (!H.prov) {  /* no verdict written: core projects withheld or the combination rule undecided */
+        var shown = R.projects.filter(function (p) { return H.shown.indexOf(p.id) >= 0; });
+        $("hyp").innerHTML = '<div class="card"><div class="small muted">Verdict</div><div class="verdict v-inconclusive">not yet given</div>' +
+          "<p class='small'>" + S.esc(H.reason) + "</p>" +
+          "<p class='small'>Core projects: " + H.n + ". Withheld until the authors' verification: " + H.withheld.length + (H.withheld.length ? " (" + H.withheld.map(function (c) { var p = R.projects.filter(function (x) { return x.id === c; })[0]; return S.esc(p ? p.name : c); }).join(", ") + ")" : "") + ". " +
+          "Shown: " + (shown.length ? shown.map(function (p) { return S.esc(p.name) + " (meets both at L · U, " + (rule === "prov" ? "provisional" : "strict") + ": " + yn(p.talk.h[rule][0]) + " · " + yn(p.talk.h[rule][1]) + ")"; }).join("; ") : "none") + ".</p></div>";
+        return;
+      }
       $("hyp").innerHTML = ["prov", "strict"].map(function (k) {
         var h = R.hypothesis[k], n = h.n;
         return '<div class="card' + (k === rule ? " on" : "") + '"><div class="small muted">' + (k === "prov" ? "Provisional reading" : "Strict reading") + "</div>" +
@@ -35,6 +44,7 @@
       }).map(function (p) {
         var t = p.talk, head = "", ix = p.index;
         if (p.tier !== last) { last = p.tier; head = '<tr class="grp"><th colspan="9" scope="rowgroup">' + S.esc(S.TIERLABEL[p.tier] || p.tier) + "</th></tr>"; }
+        if (p.masked) return head + '<tr class="masked" id="p-' + S.esc(p.id) + '"><td><b>' + S.esc(p.name) + "</b><div class='small muted'>" + S.esc(p.tier) + "</div></td><td colspan='8' class='muted small'>Withheld until the authors' verification. The authors are checking the cells of this project against the sources without seeing the models' answers, so no model value is published yet.</td></tr>";
         var models = S.MODELS.map(function (m) { return "<div class='mrow'><span class='small muted'>" + m[1] + "</span>" + S.ivbar(ix.models[m[0]], "thin") + "</div>"; }).join("");
         var h = t && (p.tier === "T1" || p.tier === "T2") ? yn(t.h[rule][0]) + " · " + yn(t.h[rule][1]) : "<span class='muted'>–</span>";
         return head + '<tr tabindex="0" data-id="' + S.esc(p.id) + '" id="p-' + S.esc(p.id) + '">' +
@@ -56,7 +66,7 @@
     tb.addEventListener("keydown", function (e) { var tr = e.target.closest("tr[data-id]"); if (tr && e.key === "Enter") detail(tr.getAttribute("data-id")); });
 
     function detail(id) {
-      var p = R.projects.filter(function (x) { return x.id === id; })[0]; if (!p) return;
+      var p = R.projects.filter(function (x) { return x.id === id; })[0]; if (!p || p.masked) return;
       var cells = ["F1", "F2", "F4", "F7", "F8", "F9", "F10", "F3"].map(function (f) {
         var c = p.cells[f];
         var ms = S.MODELS.map(function (m) {
@@ -81,6 +91,7 @@
     function fromHash() {
       var start = location.hash.slice(1);
       var p = R.projects.filter(function (x) { return x.id === start; })[0];
+      if (p && p.masked) { var row = $("p-" + p.id); if (row) row.scrollIntoView({ block: "center" }); return; }
       if (p) { if (p.tier === "T3" && $("tier-filter").value === "core") { $("tier-filter").value = "all"; paint(); } detail(start); }
     }
     window.addEventListener("hashchange", fromHash);
