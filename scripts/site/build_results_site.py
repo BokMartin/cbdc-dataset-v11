@@ -228,7 +228,8 @@ def build(a):
         for r in rows(a.paragraphs):
             paras["rows"].append({"p": r["project"], "doc": doc_ref(r["doc_key"], r.get("page_index")), "u": r.get("unit_id", ""),
                                   "a": r.get("aspect", ""), "v": r.get("voice", ""), "b": r.get("basis", ""), "d": r.get("decision", ""),
-                                  "q": short(r.get("text", ""))})
+                                  "q": short(r.get("text", "")),
+                                  "mt": (manifest.get(r["doc_key"]) or {}).get("route") == "D"})  # route D: machine translation
         paras["available"] = True
     return {"results.json": results, "cell_history.json": history, "pets.json": pets, "paragraphs.json": paras}
 

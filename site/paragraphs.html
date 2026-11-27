@@ -12,7 +12,7 @@
 <div class="prelim" id="prelim" hidden role="note"></div>
 <main id="main">
   <h1>Privacy paragraphs</h1>
-  <p class="lead">Every passage in the official documents that speaks about users' privacy in the project's own voice, as the three models labelled it: which aspect it is about, whether it states a mechanism and whether it states a decision. Each row shows a short quotation and opens the issuer's document at the page.</p>
+  <p class="lead">Every passage in the official documents that speaks about users' privacy in the project's own voice, as the three models labelled it: which aspect it is about, whether it states a mechanism and whether it states a decision. Each row shows a short quotation and opens the issuer's document at the page. For documents without an English edition the quotation is from our machine translation, and it is marked.</p>
   <div class="note" id="pending" hidden><strong>Being prepared.</strong> The passages are labelled; the table that brings them here is being exported from the production run. This page fills in without any change once it arrives.</div>
   <div class="toolbar" id="tools">
     <input type="search" id="q" placeholder="Search the quotations" aria-label="Search the quotations" style="min-width:240px">
@@ -48,7 +48,7 @@
       });
       $("count").textContent = rows.length + " passages" + (rows.length > PAGE ? ", first " + PAGE + " shown" : "");
       $("pt").querySelector("tbody").innerHTML = rows.slice(0, PAGE).map(function (x) {
-        return "<tr><td>" + S.esc(names[x.p] || x.p) + "</td><td class='small'>" + S.esc((x.a || "").toLowerCase().replace(/_/g, " ")) + "</td><td><blockquote>“" + S.esc(x.q) + "”</blockquote></td><td class='small'>" + S.esc([x.b && x.b !== "NONE" ? "mechanism: " + x.b.toLowerCase() : "", x.d ? "decision: " + x.d.toLowerCase() : ""].filter(Boolean).join(" · ")) + "</td><td class='small'>" + S.docLink(x.doc) + "</td></tr>";
+        return "<tr><td>" + S.esc(names[x.p] || x.p) + "</td><td class='small'>" + S.esc((x.a || "").toLowerCase().replace(/_/g, " ")) + "</td><td><blockquote>“" + S.esc(x.q) + "”</blockquote>" + (x.mt ? "<div class='small muted'>our machine translation of the original</div>" : "") + "</td><td class='small'>" + S.esc([x.b && x.b !== "NONE" ? "mechanism: " + x.b.toLowerCase() : "", x.d ? "decision: " + x.d.toLowerCase() : ""].filter(Boolean).join(" · ")) + "</td><td class='small'>" + S.docLink(x.doc) + "</td></tr>";
       }).join("");
     }
     ["q", "proj", "asp", "st"].forEach(function (id) { $(id).addEventListener("input", paint); });
