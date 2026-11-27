@@ -67,9 +67,21 @@ def block():
          f"| Sentence units | {n(sum(int(r['units']) for r in U))} units; {n(s('D') + s('N') + s('R'))} candidates for classification (dictionary hits {n(s('D'))}, neighbours {n(s('N'))}, random control {n(s('R'))}) |",
          f"| Human coding | development sample: {'drawn, ' + str(len(rows(dev[-1]))) + ' units' if dev else 'not drawn'}; {dev_agreement()} · reference sample (400): {'drawn' if main else 'not drawn'} |",
          f"| Human judgement of translation | {judgement(judged)} |",
-         f"| Model classification of units | {'run' if glob.glob(os.path.join(ROOT, 'data/units/L1_*')) else '**not started** (no unit has been labelled by a model)'} |",
+         f"| Model runs in production | {production_runs()} |",
          f"| Tests in CI | {tests} |", E]
     return "\n".join(L)
+
+
+def production_runs():
+    """Production runs are registered by metadata in docs/provenance/ (their records stay outside git, ADR-016 point 4)."""
+    fs = sorted(glob.glob(os.path.join(ROOT, "docs/provenance/PRODUCTION_RUNS_*.csv")))
+    if not fs:
+        return "**not started**"
+    R = rows(fs[-1]); used = [r for r in R if r["used_for_results"] == "yes"]
+    stages = collections.Counter(r["run"].split("_")[1] for r in used)
+    return (f"{len(used)} runs used for the results ({', '.join(f'{k} {v}' for k, v in sorted(stages.items()))}; three providers), "
+            f"{len(R) - len(used)} stopped and not used; {sum(int(r['complete'] or 0) for r in used)} completed requests; "
+            f"preliminary, not verified by the authors; register `{os.path.relpath(fs[-1], ROOT)}`")
 
 
 def main():

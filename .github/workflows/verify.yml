@@ -15,7 +15,9 @@ jobs:
       - name: replay — project frame and site data rebuild from archived inputs, no API
         run: |
           python scripts/frame/project_frame.py
-          git diff --stat -- data/frame/projects.csv
+          git diff --exit-code --stat -- data/frame/projects.csv
+      - name: the index of dated and historical files is current
+        run: python scripts/provenance/build_archive_index.py --check
       - name: website data are current and contain no unlisted translation
         run: python scripts/site/build_site_data.py --check
       - name: the numbers in PROJECT_BRIEF.md match the data files

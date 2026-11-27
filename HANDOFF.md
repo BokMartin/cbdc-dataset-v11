@@ -2,6 +2,13 @@
 
 For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), `DECISIONS/ADR-008` to `ADR-010` (decided by MB on 21 Nov 2026 and waiting for DS: website and published translations, privacy index, INCLINED documents), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
 
+> **Superseded in part (note of 27 Nov 2026).** Sections 2 onward describe the state of 21 Nov. Since then: production ran on
+> three providers (23 and 24 Nov; register in [`docs/provenance/`](docs/provenance/README.md)), the runner exists
+> (`scripts/pipeline/runner.py`), blind F-cell coding was replaced by verification of model citations (ADR-017), audit A5
+> (26 Nov) and audit A6 of the repository (27 Nov, ADR-020) were held. Open pull requests 29, 28, 7, 6 and 12 hold later
+> work; see [ADR-020](DECISIONS/ADR-020-repository-record-and-cleanup-2026-11-27.md), decision 6. This file is to be
+> rewritten when those are settled.
+
 ## 1. Goal
 
 A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (ten feature cells per project, F1 to F12 with F5 and F6 reserved, with located verbatim quotes). No causal claims.
