@@ -4,6 +4,21 @@
 
 Authors: Martin Bok (MB), Dominik Stroukal (DS), Prague University of Economics and Business. Target: a measurement-and-data paper in *Data & Policy*. Technical collaborator: an LLM (Claude), supervised by the authors.
 
+> **State on 26 Nov 2026 (this block supersedes the sections below where they differ; they were written on 21 Nov).**
+> Production ran on 23 and 24 Nov (talk L1 by page, L2 facets, extraction EX2 on three models; freeze
+> `docs/FREEZE_2026-11-23.md` with amendment 1; ADR-016). Outputs were opened under ADR-017 (MB, 24 Nov): blind coding of
+> the core cells is replaced by verification of model citations. Audit A5 of the results (26 Nov) returned NO-GO for
+> verification with the workbooks of 24 Nov, for the index and hypothesis in the article, for results on the website and for
+> submission, and GO with conditions for a preview to the supervisor; dispositions in the
+> [ADR-018 draft](DECISIONS/ADR-018-audit-2026-11-26-A5-dispositions-DRAFT.md), report registered in
+> [`docs/audits/README.md`](docs/audits/README.md) §4. Done on MB's choice of 26 Nov: reducer repairs
+> ([`docs/REDUCER_REPAIR_2026-11-26.md`](docs/REDUCER_REPAIR_2026-11-26.md)), the replay script
+> (`scripts/audit/recompute_results.py`), the incident ledger ([`docs/RUN_INCIDENTS_2026-11-26.md`](docs/RUN_INCIDENTS_2026-11-26.md)),
+> the exposure registry with the verification pages, and two-pass verification workbooks
+> (`scripts/review/build_verification_workbook_v2.py`). **Next:** both authors fill pass 1, lock it, then pass 2; the
+> authors decide Part C of ADR-018 (DS has confirmed nothing since ADR-013). Per-project values stay out of the repository
+> until verification is locked.
+
 ## 1. Goal
 
 **Question.** When the makers of a retail central bank digital currency say it will respect privacy, what exactly do they say, and what have they committed to?
@@ -64,7 +79,7 @@ State of the data files as of **2026-11-23** (dates are those of the files, not 
 | Human coding | development sample: drawn, 120 units; relevance coded blind by MB and DS (118 units both coded): agreement 67%, Krippendorff's alpha 0.46 (below the 0.667 of the protocol); without the pairs that hold a U: 88 units, agreement 83%, alpha 0.64; facets not coded · reference sample (400): not drawn |
 | Human judgement of translation | matched pairs, weighted to 163 matched sentences, judgeable pairs only · DS: same meaning and strength 87%, weaker 3%, stronger 6%, meaning differs 4% · MB: same meaning and strength 59%, weaker 5%, stronger 6%, meaning differs 30% · **the two judges agree on 59% of the 86 pairs (Cohen's kappa 0.38); not adjudicated** |
 | Model classification of units | **not started** (no unit has been labelled by a model) |
-| Tests in CI | 153 |
+| Tests in CI | 161 |
 <!-- NUMBERS:END -->
 
 ## 4. Checklist, with what a second model has audited

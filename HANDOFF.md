@@ -2,6 +2,21 @@
 
 For an assistant that opens this repository in a new conversation. Read in this order: [`AGENTS.md`](AGENTS.md) (rules that do not change), [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md) (goal, pipeline map, numbers, checklist), this file (state of play), [`DECISIONS/ADR-007`](DECISIONS/ADR-007-audit-2026-11-17-dispositions.md) (the open audit), `DECISIONS/ADR-008` to `ADR-010` (decided by MB on 21 Nov 2026 and waiting for DS: website and published translations, privacy index, INCLINED documents), [`docs/audits/README.md`](docs/audits/README.md) (what the audits are for). This file is rewritten at every handoff; `PROJECT_BRIEF.md` stays the standing overview.
 
+> **State on 26 Nov 2026 (this block supersedes the sections below where they differ; they were written on 21 Nov).**
+> Production ran on 23 and 24 Nov (talk L1 by page, L2 facets, extraction EX2 on three models; freeze
+> `docs/FREEZE_2026-11-23.md` with amendment 1; ADR-016). Outputs were opened under ADR-017 (MB, 24 Nov): blind coding of
+> the core cells is replaced by verification of model citations. Audit A5 of the results (26 Nov) returned NO-GO for
+> verification with the workbooks of 24 Nov, for the index and hypothesis in the article, for results on the website and for
+> submission, and GO with conditions for a preview to the supervisor; dispositions in the
+> [ADR-018 draft](DECISIONS/ADR-018-audit-2026-11-26-A5-dispositions-DRAFT.md), report registered in
+> [`docs/audits/README.md`](docs/audits/README.md) §4. Done on MB's choice of 26 Nov: reducer repairs
+> ([`docs/REDUCER_REPAIR_2026-11-26.md`](docs/REDUCER_REPAIR_2026-11-26.md)), the replay script
+> (`scripts/audit/recompute_results.py`), the incident ledger ([`docs/RUN_INCIDENTS_2026-11-26.md`](docs/RUN_INCIDENTS_2026-11-26.md)),
+> the exposure registry with the verification pages, and two-pass verification workbooks
+> (`scripts/review/build_verification_workbook_v2.py`). **Next:** both authors fill pass 1, lock it, then pass 2; the
+> authors decide Part C of ADR-018 (DS has confirmed nothing since ADR-013). Per-project values stay out of the repository
+> until verification is locked.
+
 ## 1. Goal
 
 A measurement-and-data article for *Data & Policy* by Martin Bok (MB) and Dominik Stroukal (DS), Prague University of Economics and Business: an open, auditable dataset of how the bodies that design retail CBDCs talk about user privacy and what they commit to, for 44 projects (43 national retail projects and the digital euro). Two layers: **privacy talk** (sentence units of official documents, labelled for relevance and seven facets) and **commitments** (ten feature cells per project, F1 to F12 with F5 and F6 reserved, with located verbatim quotes). No causal claims.

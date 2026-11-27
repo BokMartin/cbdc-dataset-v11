@@ -1,0 +1,114 @@
+kind,order,key,project_id,cell,development,models,places,inclusion_probability,seed
+read,1,SE-F7,SE,F7,0,claude deepseek sol62,SE-02:20; SE-04:9,1,20261126
+read,2,KZ-F7,KZ,F7,0,claude deepseek sol62,KZ-02:17; KZ-03:59; KZ-06:30,1,20261126
+read,3,TW-F10,TW,F10,0,claude deepseek sol62,TW-05:4; TW-05:12; TW-09:30,1,20261126
+read,4,UK-F7,UK,F7,1,deepseek,UK-03:74,1,20261126
+read,5,BS-F2,BS,F2,0,deepseek,BS-01:13,1,20261126
+read,6,BS-F4,BS,F4,0,deepseek,BS-01:10,1,20261126
+read,7,NO-F1,NO,F1,1,claude deepseek sol62,NO-06:11; NO-06:16,1,20261126
+read,8,CA-F9,CA,F9,0,deepseek,CA-04:26,1,20261126
+read,9,IL-F10,IL,F10,0,claude deepseek,IL-02:6; IL-07:94,1,20261126
+read,10,NZ-F10,NZ,F10,0,claude deepseek sol62,NZ-02:4; NZ-02:7,1,20261126
+read,11,EU-F1,EU,F1,0,claude deepseek sol62,EU-03:25; EU-13:18,1,20261126
+read,12,NO-F10,NO,F10,1,claude deepseek sol62,NO-06:17,1,20261126
+read,13,IL-F3,IL,F3,0,claude deepseek sol62,IL-07:27; IL-07:113,1,20261126
+read,14,CA-F4,CA,F4,0,deepseek,CA-04:9,1,20261126
+read,15,NO-F7,NO,F7,1,claude deepseek,NO-04:26,1,20261126
+read,16,JM-F1,JM,F1,0,claude deepseek sol62,JM-04:3,1,20261126
+read,17,NO-F9,NO,F9,1,deepseek,NO-06:12,1,20261126
+read,18,JP-F1,JP,F1,0,claude deepseek sol62,JP-09:1; JP-10:5,1,20261126
+read,19,UK-F3,UK,F3,1,claude deepseek sol62,UK-01:32; UK-06:31; UK-06:43,1,20261126
+read,20,TW-F3,TW,F3,0,claude deepseek sol62,TW-09:9,1,20261126
+read,21,KZ-F2,KZ,F2,0,claude deepseek sol62,KZ-03:36; KZ-03:44; KZ-08:22,1,20261126
+read,22,RU-F4,RU,F4,0,deepseek,RU-05:9,1,20261126
+read,23,SE-F1,SE,F1,0,claude deepseek sol62,SE-02:19; SE-02:20; SE-09:4,1,20261126
+read,24,AU-F8,AU,F8,0,claude deepseek sol62,AU-01:8; AU-02:14,1,20261126
+read,25,CA-F7,CA,F7,0,claude deepseek,CA-03:20,1,20261126
+read,26,EU-F7,EU,F7,0,claude deepseek sol62,EU-02:13; EU-03:35,1,20261126
+read,27,NO-F2,NO,F2,1,claude deepseek sol62,NO-04:25; NO-06:16,1,20261126
+read,28,EU-F4,EU,F4,0,claude deepseek sol62,EU-11:2; EU-13:16,1,20261126
+read,29,SE-F10,SE,F10,0,claude deepseek sol62,SE-05:6; SE-07:11; SE-09:4,1,20261126
+read,30,EU-F8,EU,F8,0,claude deepseek sol62,EU-02:14; EU-03:21; EU-13:18,1,20261126
+read,31,EU-F2,EU,F2,0,deepseek sol62,EU-14:9,1,20261126
+read,32,RU-F3,RU,F3,0,deepseek,RU-03:2,1,20261126
+read,33,UK-F1,UK,F1,1,claude deepseek sol62,UK-06:44; UK-18:6; UK-18:7,1,20261126
+read,34,CA-F2,CA,F2,0,deepseek,CA-04:17,1,20261126
+read,35,IL-F2,IL,F2,0,deepseek,IL-07:41,1,20261126
+read,36,AU-F7,AU,F7,0,claude deepseek sol62,AU-01:7; AU-02:14,1,20261126
+read,37,KZ-F3,KZ,F3,0,claude deepseek,KZ-10:22; KZ-10:37,1,20261126
+read,38,SE-F8,SE,F8,0,claude deepseek,SE-04:9,1,20261126
+read,39,AU-F1,AU,F1,0,claude deepseek sol62,AU-01:11; AU-02:13,1,20261126
+read,40,NO-F8,NO,F8,1,claude deepseek sol62,NO-02:27; NO-06:16; NO-07:9,1,20261126
+read,41,IN-F10,IN,F10,0,claude,IN-02:34,1,20261126
+read,42,BS-F1,BS,F1,0,deepseek,BS-01:12,1,20261126
+read,43,HK-F1,HK,F1,0,claude sol62,HK-01:40; HK-02:30,1,20261126
+read,44,TW-F9,TW,F9,0,claude deepseek,TW-09:31,1,20261126
+read,45,IL-F4,IL,F4,0,deepseek sol62,IL-07:7; IL-07:97,1,20261126
+read,46,IL-F8,IL,F8,0,claude deepseek sol62,IL-03:10; IL-07:40; IL-08:8,1,20261126
+read,47,EU-F9,EU,F9,0,deepseek,EU-03:41,1,20261126
+read,48,UK-F4,UK,F4,1,deepseek sol62,UK-13:4,1,20261126
+read,49,RU-F2,RU,F2,0,deepseek,RU-01:32,1,20261126
+read,50,KZ-F9,KZ,F9,0,deepseek,KZ-06:30,1,20261126
+read,51,JP-F2,JP,F2,0,claude sol62,JP-10:4; JP-10:5,1,20261126
+read,52,TW-F7,TW,F7,0,claude deepseek sol62,TW-09:8; TW-09:32,1,20261126
+read,53,KZ-F8,KZ,F8,0,claude deepseek,KZ-09:11; KZ-10:26,1,20261126
+read,54,IL-F9,IL,F9,0,deepseek,IL-07:113,1,20261126
+read,55,NZ-F8,NZ,F8,0,claude deepseek sol62,NZ-01:22; NZ-02:8,1,20261126
+read,56,UK-F9,UK,F9,1,deepseek,UK-01:32,1,20261126
+read,57,BS-F7,BS,F7,0,claude deepseek sol62,BS-03:4,1,20261126
+read,58,UK-F10,UK,F10,1,claude deepseek sol62,UK-18:7,1,20261126
+read,59,EU-F3,EU,F3,0,deepseek,EU-02:12,1,20261126
+read,60,HK-F3,HK,F3,0,deepseek,HK-02:29,1,20261126
+read,61,CA-F1,CA,F1,0,claude deepseek,CA-04:15,1,20261126
+read,62,AU-F2,AU,F2,0,deepseek,AU-01:8,1,20261126
+read,63,CA-F10,CA,F10,0,claude deepseek,CA-04:5; CA-04:15,1,20261126
+read,64,KZ-F1,KZ,F1,0,claude,KZ-03:67,1,20261126
+read,65,UK-F8,UK,F8,1,claude deepseek sol62,UK-06:40; UK-08:7,1,20261126
+read,66,IL-F1,IL,F1,0,claude deepseek sol62,IL-08:8; IL-08:41,1,20261126
+read,67,JM-F8,JM,F8,0,claude deepseek sol62,JM-04:2,1,20261126
+read,68,HK-F10,HK,F10,0,claude deepseek sol62,HK-04:16; HK-05:17,1,20261126
+read,69,RU-F10,RU,F10,0,claude deepseek sol62,RU-05:24; RU-06:7; RU-07:1,1,20261126
+read,70,JM-F3,JM,F3,0,claude deepseek,JM-04:3,1,20261126
+read,71,TW-F2,TW,F2,0,deepseek,TW-09:9,1,20261126
+read,72,HK-F4,HK,F4,0,claude sol62,HK-01:39,1,20261126
+read,73,BS-F8,BS,F8,0,claude sol62,BS-01:24; BS-03:5,1,20261126
+read,74,NO-F4,NO,F4,1,claude deepseek,NO-01:8; NO-04:48,1,20261126
+read,75,EU-F10,EU,F10,0,claude deepseek sol62,EU-14:12,1,20261126
+read,76,RU-F8,RU,F8,0,claude deepseek,RU-01:32,1,20261126
+read,77,JM-F9,JM,F9,0,deepseek,JM-04:3,1,20261126
+read,78,JP-F4,JP,F4,0,deepseek,JP-11:23,1,20261126
+read,79,JP-F8,JP,F8,0,claude deepseek sol62,JP-10:11; JP-11:21,1,20261126
+read,80,RU-F1,RU,F1,0,claude deepseek sol62,RU-01:26; RU-05:7,1,20261126
+read,81,NZ-F1,NZ,F1,0,claude deepseek sol62,NZ-02:4; NZ-02:27,1,20261126
+read,82,CA-F8,CA,F8,0,claude deepseek,CA-03:18; CA-04:33,1,20261126
+read,83,NZ-F7,NZ,F7,0,claude sol62,NZ-01:22,1,20261126
+read,84,HK-F9,HK,F9,0,deepseek,HK-01:37,1,20261126
+read,85,JM-F2,JM,F2,0,claude deepseek,JM-04:3,1,20261126
+read,86,JP-F10,JP,F10,0,claude deepseek sol62,JP-11:15; JP-12:7; JP-12:29,1,20261126
+read,87,CA-F3,CA,F3,0,deepseek,CA-04:17,1,20261126
+read,88,UK-F2,UK,F2,1,claude deepseek sol62,UK-02:22; UK-02:56,1,20261126
+read,89,TW-F8,TW,F8,0,claude deepseek sol62,TW-09:8; TW-09:30,1,20261126
+read,90,SE-F3,SE,F3,0,deepseek,SE-03:13,1,20261126
+read,91,HK-F2,HK,F2,0,claude sol62,HK-01:37,1,20261126
+read,92,SE-F4,SE,F4,0,claude sol62,SE-01:21; SE-07:19,1,20261126
+read,93,IN-F1,IN,F1,0,sol62,IN-02:8,1,20261126
+read,94,IL-F7,IL,F7,0,deepseek,IL-08:22,1,20261126
+read,95,BS-F10,BS,F10,0,claude deepseek sol62,BS-01:10; BS-04:3,1,20261126
+read,96,TW-F1,TW,F1,0,claude deepseek sol62,TW-09:9; TW-09:31,1,20261126
+read,97,SE-F2,SE,F2,0,claude deepseek,SE-09:4,1,20261126
+read,98,AU-F10,AU,F10,0,claude sol62,AU-02:14,1,20261126
+read,99,KZ-F4,KZ,F4,0,claude deepseek sol62,KZ-03:65; KZ-06:103; KZ-10:41,1,20261126
+read,100,KZ-F10,KZ,F10,0,claude deepseek,KZ-10:19; KZ-10:26,1,20261126
+search_negative,,AU-F3,AU,F3,0,deepseek,,1,
+search_negative,,IN-F3,IN,F3,0,sol62,,1,
+search_negative,,NO-F3,NO,F3,1,deepseek,,1,
+empty_key,,IN-F9,IN,F9,0,,,0.4,
+empty_key,,IN-F2,IN,F2,0,,,0.4,
+empty_key,,IN-F8,IN,F8,0,,,0.4,
+empty_key,,JM-F10,JM,F10,0,,,0.4,
+empty_key,,IN-F4,IN,F4,0,,,0.4,
+empty_key,,JM-F7,JM,F7,0,,,0.4,
+empty_key,,JM-F4,JM,F4,0,,,0.4,
+empty_key,,JP-F3,JP,F3,0,,,0.4,
+empty_key,,JP-F7,JP,F7,0,,,0.4,
+empty_key,,AU-F4,AU,F4,0,,,0.4,

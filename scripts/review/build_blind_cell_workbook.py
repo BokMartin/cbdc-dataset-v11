@@ -122,9 +122,11 @@ def _sha(path):
     return h.hexdigest()
 
 
-def documents():
+def documents(projects=None):
     """Evidence documents of the 14 blind projects in a fixed order (project, year, id), with a short code per project,
-    plus the INCLINED documents of these projects, listed but not for F-cells (ADR-012 D5: wholesale is context and PET)."""
+    plus the INCLINED documents of these projects, listed but not for F-cells (ADR-012 D5: wholesale is context and PET).
+    `projects` lists other projects in the same form (the verification workbooks of 26 Nov add NO and UK); the codes of
+    the 14 projects do not change with it."""
     tiers = _read(TIERS)
     core = sorted({r["project"] for r in tiers if r["tier"] in ("T1", "T2")} - set(DEVELOPMENT))
     if tuple(core) != BLIND:
@@ -140,7 +142,7 @@ def documents():
                 if r.get("status") == "ok":
                     trans[r["id"]] = r["translation_file"]
     out = []
-    for p in BLIND:
+    for p in (projects or BLIND):
         rows = [r for r in _read(UNITS_MANIFEST) if r["project"] == p]
         rows.sort(key=lambda r: (r["stratum"] != "evidence", r["year"], r["id"]))
         n = 0

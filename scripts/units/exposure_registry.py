@@ -10,6 +10,9 @@ Sources, in this order:
   data/units/AGREEMENT_SAMPLE_*.csv            shown to the authors (set name from the file; dates and coders from SOURCES below)
   data/units/DEV_ADJUDICATED_RELEVANCE_*.csv   shown to the authors together with a model's proposal (model-labelled too)
   data/*/runs/*/RUN_META.json with purpose development: every unit of the run is model-labelled (prompt tuning sees it)
+  data/index/VERIFY_ITEMS_*.csv                pages that the verification workbooks send the authors to (ADR-017; added
+                                               26 Nov 2026 after audit A5, item 2 of A4 F06): every paragraph of such a
+                                               page counts as shown, because the author reads the page around the quote
 Output data/units/EXPOSURE_REGISTRY_<date>.csv, one row per block, with no text: doc_key, page, para, block, units, sets,
 shown_to, model_labelled_by, first_date. `blocks()` reads it; any later draw of a reference sample must leave these blocks out.
 Which blocks the reference estimand excludes (only shown ones, or also those labelled in development runs) is for the authors
@@ -17,7 +20,7 @@ to approve (ADR-007 F06); the registry records both kinds apart so either rule c
 
 usage: exposure_registry.py --units <units dir> --date 2026-11-23
 """
-import argparse, csv, glob, json, os, re
+import argparse, csv, glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # who saw a sample and when (from the exposure ledger); a sample not listed here is refused, so that nothing is registered silently
@@ -25,6 +28,11 @@ SOURCES = {
     "AGREEMENT_SAMPLE_dev_2026-11-13.csv": ("dev_2026-11-13", "MB DS", "", "2026-11-17"),
     "AGREEMENT_SAMPLE_facet80_2026-11-22.csv": ("facet80_2026-11-22", "MB DS", "", "2026-11-22"),
     "DEV_ADJUDICATED_RELEVANCE_MB_DS_2026-11-22.csv": ("dev_adjudication_2026-11-22", "MB DS", "gpt-6-astra (proposal shown)", "2026-11-22"),
+}
+# verification workbooks: set, shown to, model values shown with them, date the workbooks were built
+VERIFY = {
+    "VERIFY_ITEMS_2026-11-24.csv": ("verify_2026-11-24", "MB DS", "claude-opus-5-5; gpt-6.2-sol; deepseek-v4-pro (values shown)", "2026-11-24"),
+    "VERIFY_ITEMS_2026-11-26.csv": ("verify_2026-11-26", "MB DS", "claude-opus-5-5; gpt-6.2-sol; deepseek-v4-pro (values shown in pass 2)", "2026-11-26"),
 }
 COLS = ["doc_key", "page", "para", "block", "units", "sets", "shown_to", "model_labelled_by", "first_date"]
 
@@ -44,6 +52,18 @@ def collect(root=ROOT):
         if b not in SOURCES: raise SystemExit(f"{b}: no entry in SOURCES (who saw it, when); add one from the exposure ledger")
         s, who, model, date = SOURCES[b]
         out += [(r["unit_id"], s, who, model, date) for r in rd(f)]
+    vfiles = sorted(glob.glob(os.path.join(root, "data/index/VERIFY_ITEMS_*.csv")))
+    if vfiles:
+        sys.path.insert(0, os.path.join(root, "scripts", "review"))
+        from build_blind_cell_workbook import BLIND, DEVELOPMENT, documents
+        code = {d["code"]: d["doc_key"] for d in documents(tuple(sorted(BLIND + DEVELOPMENT)))}
+    for f in vfiles:
+        b = os.path.basename(f)
+        if b not in VERIFY: raise SystemExit(f"{b}: no entry in VERIFY (who saw it, when)")
+        s, who, model, date = VERIFY[b]
+        for r in rd(f):
+            places = [(r["doc_code"], r["page_index"])] if "doc_code" in r else [tuple(x.split(":")) for x in (r.get("places") or "").split("; ") if x]
+            out += [(f"{code[c]}@{int(pg)}", s, who, model, date) for c, pg in places if c and pg]
     for mf in sorted(glob.glob(os.path.join(root, "data", "*", "runs", "*", "RUN_META.json"))):
         m = json.load(open(mf, encoding="utf-8"))
         if m.get("purpose") != "development": continue
@@ -62,9 +82,10 @@ def build(units_dir, entries, root=ROOT):
     expanded = []
     for e in entries:   # an extraction run names a whole document (doc_key, no ":p"): every unit of it was sent to the model
         if ":p" in e[0]: expanded.append(e); continue
-        p = os.path.join(units_dir, e[0] + ".units.csv")
+        d, _, page = e[0].partition("@")   # doc_key@page: every unit of that page was shown (verification workbooks)
+        p = os.path.join(units_dir, d + ".units.csv")
         if not os.path.exists(p): missing.append(e[0]); continue
-        expanded += [(u["unit_id"],) + tuple(e[1:]) for u in rd(p)]
+        expanded += [(u["unit_id"],) + tuple(e[1:]) for u in rd(p) if not page or int(u["page"]) == int(page)]
     for uid, s, who, model, date in expanded:
         uid = joins.get(uid, uid); d = doc_of(uid)
         if d not in where:
