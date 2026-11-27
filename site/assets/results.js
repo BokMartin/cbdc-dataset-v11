@@ -36,6 +36,33 @@
       }).join("");
     }
 
+    /* At a glance: every project in blocks by tier, one coloured square per cell (like the results PDF of 24 Nov). */
+    var GCOLS = ["F1", "F2", "F4", "F7", "F8", "F9", "F10", "F3"];
+    var GHEAD = { F1: "Central bank sees who pays", F2: "Intermediary sees who pays", F4: "Private offline mode", F7: "Low-identity route", F8: "ID needed to open a wallet", F9: "Re-identification process", F10: "Programmable restrictions", F3: "Lawful access route" };
+    var PROT = { F1: "no", F2: "no", F4: "yes", F7: "yes", F8: "no", F9: "no", F10: "no" };
+    function gcell(p, f) {
+      var c = p.cells[f], v = c[rule], n = 0;
+      if (c.agree === "conflict") return '<td><span class="gc g-conf" title="' + S.esc(f + ": the models disagree") + '">≠</span></td>';
+      if (!v) return '<td><span class="gc g-un" title="' + S.esc(f + ": no value" + (rule === "strict" && c.prov ? " in the strict reading" : "")) + '">·</span></td>';
+      S.MODELS.forEach(function (m) { if (c.models[m[0]].v === v) n++; });
+      var cls = f === "F3" ? "g-cat" : (v === PROT[f] ? "g-pro" : "g-non") + (n === 3 ? "3" : "");
+      return '<td><span class="gc ' + cls + '" title="' + S.esc(f + ": " + (S.VAL[v] || v) + ", " + n + " of 3 models") + '">' + S.esc(S.VAL[v] || v) + "<sup>" + n + "/3</sup></span></td>";
+    }
+    function glance() {
+      var head = "<thead><tr><th scope='col' class='gp'>Project</th>" + GCOLS.map(function (f) { return "<th scope='col'><b>" + f + "</b><span>" + GHEAD[f] + "</span></th>"; }).join("") +
+        "<th scope='col'><b>Index</b><span>7 cells, " + (rule === "prov" ? "provisional" : "strict") + "</span></th><th scope='col'><b>Legal basis</b><span>of the CBDC</span></th></tr></thead>";
+      $("glance").innerHTML = ["T1", "T2", "T3"].map(function (t) {
+        var ps = rows.filter(function (p) { return p.tier === t; });
+        if (!ps.length) return "";
+        var body = ps.map(function (p) {
+          var name = "<th scope='row' class='gp'>" + S.esc(p.name) + "</th>";
+          if (p.masked) return "<tr class='gmask'>" + name + "<td colspan='" + (GCOLS.length + 1) + "'><span class='gc g-mask'>withheld until the authors' verification</span></td><td class='glb' title='Legal basis of the CBDC: being collected'>pending</td></tr>";
+          return '<tr tabindex="0" data-id="' + S.esc(p.id) + '">' + name + GCOLS.map(function (f) { return gcell(p, f); }).join("") +
+            "<td class='gix'>" + S.ivbar(p.index[rule], "thin") + "</td><td class='glb' title='Legal basis of the CBDC: being collected'>pending</td></tr>";
+        }).join("");
+        return "<section class='card glance'><h3>" + S.esc(S.TIERLABEL[t] || t) + " <span class='small muted'>" + ps.length + " projects</span></h3><div class='scroll-x'><table class='gtable'><colgroup><col class='c-p'>" + GCOLS.map(function () { return "<col>"; }).join("") + "<col class='c-ix'><col class='c-lb'></colgroup>" + head + "<tbody>" + body + "</tbody></table></div></section>";
+      }).join("") + "<p class='small muted'>Click a project for the quotation behind each square. The superscript counts the models that give the value shown. The legal basis of each CBDC (ordinary law, constitution or other) is being collected and will appear in the last column.</p>";
+    }
     var rows = R.projects.slice().sort(function (a, b) { return a.tier.localeCompare(b.tier) || a.name.localeCompare(b.name); });
     function paint() {
       var f = $("tier-filter").value, last = "";
@@ -59,7 +86,9 @@
           "<td>" + h + "</td></tr>";
       }).join("");
     }
-    $("rule").addEventListener("change", function () { rule = this.value; hyp(); paint(); });
+    $("rule").addEventListener("change", function () { rule = this.value; hyp(); glance(); paint(); });
+    $("glance").addEventListener("click", function (e) { var tr = e.target.closest("tr[data-id]"); if (tr) detail(tr.getAttribute("data-id")); });
+    $("glance").addEventListener("keydown", function (e) { var tr = e.target.closest("tr[data-id]"); if (tr && e.key === "Enter") detail(tr.getAttribute("data-id")); });
     $("tier-filter").addEventListener("change", paint);
     var tb = document.querySelector("#rtable tbody");
     tb.addEventListener("click", function (e) { var tr = e.target.closest("tr[data-id]"); if (tr) detail(tr.getAttribute("data-id")); });
@@ -87,7 +116,7 @@
       d.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", "#" + p.id);
     }
-    hyp(); paint();
+    hyp(); glance(); paint();
     function fromHash() {
       var start = location.hash.slice(1);
       var p = R.projects.filter(function (x) { return x.id === start; })[0];
