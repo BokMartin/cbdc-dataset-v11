@@ -22,6 +22,7 @@
     <span class="small muted" id="count"></span>
   </div>
   <div class="scroll-x card" style="padding:6px 10px"><table class="ptable" id="pt"><thead><tr><th>Project</th><th>Aspect</th><th>Quotation</th><th>Mechanism · decision</th><th>Document</th></tr></thead><tbody></tbody></table></div>
+  <p><button class="btn ghost sm" type="button" id="more" hidden>Show more</button></p>
   <p class="small muted">Quotations are short extracts (at most 300 characters) under the quotation right; the full text stays with the issuer (<a href="https://github.com/BokMartin/cbdc-dataset-v11/blob/main/DECISIONS/ADR-019-website-results-and-short-quotations-2026-11-27.md">ADR-019</a>).</p>
   <section id="provenance" class="narrow"></section>
 </main>
@@ -31,7 +32,7 @@
 (function () {
   "use strict";
   var S = SITE, $ = function (id) { return document.getElementById(id); };
-  var PAGE = 200;
+  var PAGE = 200, shown = PAGE;
   Promise.all([S.get("assets/paragraphs.json"), S.get("assets/projects.json")]).then(function (r) {
     var D = r[0], names = {};
     r[1].projects.forEach(function (p) { names[p.code] = p.name; });
@@ -46,12 +47,14 @@
         return (!p || x.p === p) && (!a || x.a === a) && (!q || x.q.toLowerCase().indexOf(q) >= 0) &&
           (!st || (st === "mech" ? x.b && x.b !== "NONE" : x.d === "ENDORSED"));
       });
-      $("count").textContent = rows.length + " passages" + (rows.length > PAGE ? ", first " + PAGE + " shown" : "");
-      $("pt").querySelector("tbody").innerHTML = rows.slice(0, PAGE).map(function (x) {
-        return "<tr><td>" + S.esc(names[x.p] || x.p) + "</td><td class='small'>" + S.esc((x.a || "").toLowerCase().replace(/_/g, " ")) + "</td><td><blockquote>“" + S.esc(x.q) + "”</blockquote>" + (x.mt ? "<div class='small muted'>our machine translation of the original</div>" : "") + "</td><td class='small'>" + S.esc([x.b && x.b !== "NONE" ? "mechanism: " + x.b.toLowerCase() : "", x.d ? "decision: " + x.d.toLowerCase() : ""].filter(Boolean).join(" · ")) + "</td><td class='small'>" + S.docLink(x.doc) + "</td></tr>";
+      $("count").textContent = rows.length + " passages" + (rows.length > shown ? ", first " + shown + " shown" : "");
+      $("pt").querySelector("tbody").innerHTML = rows.slice(0, shown).map(function (x) {
+        return "<tr><td>" + S.esc(names[x.p] || x.p) + "</td><td class='small'>" + S.esc((x.a || "").toLowerCase().replace(/_/g, " ")) + "</td><td><blockquote>“" + S.esc(x.q) + "”</blockquote>" + (x.mt ? "<div class='small muted'>our machine translation of the original</div>" : "") + "</td><td class='small'>" + S.esc([x.b && x.b !== "NONE" ? "mechanism: " + x.b.toLowerCase().replace(/_/g, " ") : "", x.d && x.d !== "NOT_APPLICABLE" ? "decision: " + x.d.toLowerCase().replace(/_/g, " ") : ""].filter(Boolean).join(" · ")) + "</td><td class='small'>" + S.docLink(x.doc) + "</td></tr>";
       }).join("");
+      $("more").hidden = rows.length <= shown;
     }
-    ["q", "proj", "asp", "st"].forEach(function (id) { $(id).addEventListener("input", paint); });
+    ["q", "proj", "asp", "st"].forEach(function (id) { $(id).addEventListener("input", function () { shown = PAGE; paint(); }); });
+    $("more").addEventListener("click", function () { shown += 500; paint(); });
     paint();
   });
 })();
